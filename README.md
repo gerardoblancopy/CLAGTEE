@@ -33,6 +33,13 @@ Optional:
 
 Firestore reads from `GCS_*` or `GCP_*` variables, so you can set either set.
 
+Required for email sending (reviewer invites):
+- `RESEND_API_KEY` (Resend API key)
+- `SENDER_EMAIL` (verified sender address/domain in Resend)
+
+Recommended for email links:
+- `VITE_CMS_URL` (CMS URL used in invitation emails; if unset on Vercel, it falls back to `https://$VERCEL_URL/cms`)
+
 ## Build / Preview
 - `npm run build`
 - `npm run preview`
@@ -41,3 +48,14 @@ Firestore reads from `GCS_*` or `GCP_*` variables, so you can set either set.
 Deploy to Vercel. Configure the environment variables above for Preview/Production.
 Add your custom domain in Vercel and update DNS records per Vercel instructions.
 
+## Vercel checklist (Preview vs Production)
+Preview:
+- Set env vars: `GCS_PROJECT_ID`, `GCS_CLIENT_EMAIL`, `GCS_PRIVATE_KEY`, `GCS_BUCKET` (or `GCP_*`).
+- Set email vars: `RESEND_API_KEY`, `SENDER_EMAIL`, and optionally `VITE_CMS_URL`.
+- Confirm `SENDER_EMAIL` domain is verified in Resend.
+- Run a test invite: `POST /api/auth/invite-reviewer` and confirm the email arrives.
+
+Production:
+- Mirror the Preview env vars, but with production values/URLs.
+- Ensure the production sender domain is verified in Resend.
+- Run the same invite test and check Vercel function logs for errors.

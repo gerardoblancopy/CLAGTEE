@@ -26,13 +26,13 @@ export const Footer: React.FC = () => {
                 href="mailto:info@clagtee2026.org" 
                 className="text-lg text-[#F4A261] font-semibold hover:underline"
             >
-                info@clagtee2026.org
+                clagtee2026@clagtee.org
             </a>
         </motion.div>
       </div>
       <div className="bg-[#08203e] text-gray-400 py-6">
         <div className="container mx-auto px-6 md:px-8 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} CLAGTEE 2026. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Escuela de Ingeniería Eléctrica - PUCV. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

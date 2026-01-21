@@ -147,6 +147,9 @@ export const CMSLayout: React.FC<CMSLayoutProps> = ({
             </motion.div>
           </AnimatePresence>
         </div>
+        <footer className="px-8 pb-8 text-center text-xs text-gray-400">
+          © 2026 Escuela de Ingeniería Eléctrica - PUCV
+        </footer>
       </main>
     </div>
   );

@@ -30,6 +30,7 @@ interface AuthContextType {
     email: string;
     affiliation?: string;
   }) => Promise<{ email: string; tempPassword: string } | null>;
+  deleteReviewer: (userId: string) => Promise<boolean>;
   refreshUsers: (role?: UserRole) => Promise<void>;
   logout: () => void;
   isAuthenticated: boolean;
@@ -209,6 +210,32 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
+  const deleteReviewer = async (userId: string) => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/auth/users', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId }),
+      });
+      if (!response.ok) {
+        const errorPayload = (await response.json()) as { error?: string };
+        setError(errorPayload.error || 'No se pudo eliminar al revisor.');
+        setIsLoading(false);
+        return false;
+      }
+      await refreshUsers('reviewer');
+      setIsLoading(false);
+      return true;
+    } catch (fetchError) {
+      setError('No se pudo eliminar al revisor.');
+      setIsLoading(false);
+      return false;
+    }
+  };
+
   const logout = () => {
     setUser(null);
     if (typeof window === 'undefined') return;
@@ -227,6 +254,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         login,
         register,
         inviteReviewer,
+        deleteReviewer,
         refreshUsers,
         logout,
         isAuthenticated: !!user,

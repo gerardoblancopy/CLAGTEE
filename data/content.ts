@@ -238,7 +238,7 @@ export const appData: AppData = {
       "callForPapers": {
         "title": "LLAMADO A ENVÍO DE ARTÍCULOS",
         "intro": [
-          "Incentivamos el envío de trabajos que aborden cualquiera de las temáticas incluidas en la lista \"Tópicos de Discusión\" de CLAGTEE 2024.",
+          "Incentivamos el envío de trabajos que aborden cualquiera de las temáticas incluidas en la lista \"Tópicos de Discusión\" de CLAGTEE 2026.",
           "Lea atentamente las siguientes pautas antes de enviar su trabajo:"
         ],
         "submissionDates": {

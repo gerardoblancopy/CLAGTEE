@@ -17,7 +17,8 @@
     "express": "^5.2.1",
     "framer-motion": "^11.0.0",
     "react": "^19.2.1",
-    "react-dom": "^19.2.1"
+    "react-dom": "^19.2.1",
+    "resend": "^6.8.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

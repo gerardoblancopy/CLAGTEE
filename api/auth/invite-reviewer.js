@@ -1,5 +1,6 @@
 import { hash } from 'bcryptjs';
 import { getFirestore, seedUsersIfNeeded, userDocId } from '../_lib/firestore.js';
+import { sendReviewerInvitation } from '../_lib/email.js';
 
 const generateTempPassword = () => `rev-${Math.random().toString(36).slice(2, 8)}`;
 
@@ -44,6 +45,17 @@ export default async function handler(req, res) {
 
     await ref.set(user);
 
+    // Send invitation email (non-blocking for response)
+    try {
+      await sendReviewerInvitation({
+        to: user.email,
+        name: user.name,
+        tempPassword,
+      });
+    } catch (emailError) {
+      console.error('[invite-reviewer] Email failed (user still created):', emailError.message);
+    }
+
     res.status(201).json({ email: user.email, tempPassword });
   } catch (error) {
     const message = error && error.message ? error.message : 'Failed to invite reviewer';
@@ -51,3 +63,4 @@ export default async function handler(req, res) {
     res.status(500).json({ error: 'Failed to invite reviewer' });
   }
 }
+
