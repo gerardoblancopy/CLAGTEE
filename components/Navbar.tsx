@@ -48,6 +48,11 @@ export const Navbar: React.FC<NavbarProps> = ({ navItems, onCmsClick }) => {
     }
   };
 
+  const handleCmsClick = () => {
+    setIsOpen(false);
+    onCmsClick();
+  };
+
   const navLinkClasses = `
     font-['Montserrat'] font-bold 
     text-white hover:text-[#F4A261]
@@ -118,7 +123,7 @@ export const Navbar: React.FC<NavbarProps> = ({ navItems, onCmsClick }) => {
               <XIcon className="h-8 w-8" />
             </button>
         </div>
-        <nav className="flex flex-col items-center justify-center h-full w-full space-y-8">
+        <nav className="flex flex-col items-center justify-start h-full w-full space-y-6 overflow-y-auto px-6 pt-24 pb-16">
           {navItems.map((item) => (
             <a 
               key={item.text} 
@@ -129,6 +134,12 @@ export const Navbar: React.FC<NavbarProps> = ({ navItems, onCmsClick }) => {
               {item.text}
             </a>
           ))}
+          <button
+            onClick={handleCmsClick}
+            className="mt-4 bg-[#F4A261] text-[#0D2C54] px-6 py-3 rounded-full font-bold uppercase text-sm tracking-wide hover:bg-[#E76F51] hover:text-white transition-colors"
+          >
+            Gesti&#243;n de Papers
+          </button>
         </nav>
       </div>
     </>
