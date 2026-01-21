@@ -15,9 +15,7 @@ const getResend = () => {
   return resendClient;
 };
 
-const vercelHost = process.env.VERCEL_URL;
-const vercelCmsUrl = vercelHost ? `https://${vercelHost}/cms` : '';
-const CMS_URL = process.env.VITE_CMS_URL || vercelCmsUrl || 'https://clagtee2026.org/cms';
+const CMS_URL = 'https://clagtee2026.org/cms';
 // Use verified domain for production emails
 const SENDER_EMAIL = process.env.SENDER_EMAIL || 'clagtee2026@clagtee.org';
 

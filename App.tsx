@@ -95,9 +95,27 @@ const CMSContainer: React.FC<{
   );
 };
 
+const resolveViewFromPath = (path: string) => (path.startsWith('/cms') ? 'cms' : 'web');
+
 const AppContent: React.FC = () => {
   const { designSystem, content } = appData;
-  const [view, setView] = React.useState<'web' | 'cms'>('web');
+  const [view, setView] = React.useState<'web' | 'cms'>(() => resolveViewFromPath(window.location.pathname));
+
+  const navigateTo = React.useCallback((nextView: 'web' | 'cms') => {
+    const nextPath = nextView === 'cms' ? '/cms' : '/';
+    if (window.location.pathname !== nextPath) {
+      window.history.pushState({}, '', nextPath);
+    }
+    setView(nextView);
+  }, []);
+
+  React.useEffect(() => {
+    const handlePopState = () => {
+      setView(resolveViewFromPath(window.location.pathname));
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   const CommitteeMember: React.FC<{ name: string; affiliation: string }> = ({ name, affiliation }) => (
     <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow h-full">
@@ -110,12 +128,12 @@ const AppContent: React.FC = () => {
   );
 
   if (view === 'cms') {
-    return <CMSContainer onLogout={() => setView('web')} />;
+    return <CMSContainer onLogout={() => navigateTo('web')} />;
   }
 
   return (
     <div className="bg-white flex flex-col h-full" style={{ fontFamily: designSystem.typography.fontFamily.body }}>
-      <Navbar navItems={content.navigation} onCmsClick={() => setView('cms')} />
+      <Navbar navItems={content.navigation} onCmsClick={() => navigateTo('cms')} />
       <Header heroContent={content.sections.hero} />
       {/* ... resten del main ... */}
 
@@ -174,8 +192,7 @@ const AppContent: React.FC = () => {
             className="grid grid-cols-1 md:grid-cols-2 gap-8"
             variants={staggerContainer}
             initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
+            animate="show"
           >
             {content.sections.thematicAxes.tracks.map((track, index) => (
               <motion.div 
@@ -218,6 +235,16 @@ const AppContent: React.FC = () => {
               {content.sections.callForPapers.intro.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
+              <p>
+                Accede al CMS para el env&#237;o de trabajos en
+                <a
+                  href="https://clagtee2026.org/cms"
+                  className="ml-1 font-semibold text-[#2A9D8F] hover:text-[#0D2C54] transition-colors"
+                >
+                  https://clagtee2026.org/cms
+                </a>
+                .
+              </p>
             </motion.div>
 
             <motion.div variants={fadeInUpItem} className="space-y-4">
