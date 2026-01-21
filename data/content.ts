@@ -244,7 +244,7 @@ export const appData: AppData = {
         "submissionDates": {
           "title": "Fechas de presentación",
           "window": "El Comité Revisor del CLAGTEE 2026 aceptará artículos para el proceso de revisión desde el 1 de febrero de 2026 hasta el 15 de junio de 20268 de agosto de 2026.",
-          "process": "El proceso de envío se realizará a través del la Plataforma de Gestión de Pappers y toda la comunicación con los autores se gestionará a través del correo electrónico oficial CLAGTEE 2026. No se aceptarán trabajos enviados por email ni por ningún otro medio electrónico.",
+          "process": "El proceso de envío se realizará a través del la Plataforma de Gestión de Papers y toda la comunicación con los autores se gestionará a través del correo electrónico oficial CLAGTEE 2026. No se aceptarán trabajos enviados por email ni por ningún otro medio electrónico.",
           "notification": "La notificación de aceptación/rechazo a los autores será el 15 de Septiembre de 2026, debiendo enviarse la versión final (en caso de haberse solicitado realizar cambios) de los trabajos aceptados hasta el 15 de octubre de 2026."
         },
         "guidelines": {
