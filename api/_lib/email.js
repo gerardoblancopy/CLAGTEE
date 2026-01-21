@@ -15,7 +15,7 @@ const getResend = () => {
   return resendClient;
 };
 
-const CMS_URL = 'https://clagtee2026.org/cms';
+const CMS_URL = 'https://www.clagtee2026.org/cms';
 // Use verified domain for production emails
 const SENDER_EMAIL = process.env.SENDER_EMAIL || 'clagtee2026@clagtee.org';
 

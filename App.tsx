@@ -238,10 +238,10 @@ const AppContent: React.FC = () => {
               <p>
                 Accede al CMS para el env&#237;o de trabajos en
                 <a
-                  href="https://clagtee2026.org/cms"
+                  href="https://www.clagtee2026.org/cms"
                   className="ml-1 font-semibold text-[#2A9D8F] hover:text-[#0D2C54] transition-colors"
                 >
-                  https://clagtee2026.org/cms
+                  https://www.clagtee2026.org/cms
                 </a>
                 .
               </p>
