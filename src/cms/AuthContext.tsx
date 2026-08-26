@@ -1,6 +1,6 @@
 import React, { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
-export type UserRole = 'author' | 'reviewer' | 'chair';
+export type UserRole = 'author' | 'reviewer' | 'chair' | 'staff';
 
 export interface User {
   id: string;
@@ -31,6 +31,15 @@ interface AuthContextType {
     affiliation?: string;
   }) => Promise<{ email: string; tempPassword: string } | null>;
   deleteReviewer: (userId: string) => Promise<boolean>;
+  deleteAuthor: (userId: string) => Promise<boolean>;
+  sendEmailToUser: (payload: {
+    to: string | string[];
+    name?: string;
+    subject: string;
+    body: string;
+  }) => Promise<boolean>;
+  changePassword: (currentPassword: string, newPassword: string) => Promise<boolean>;
+  requestPasswordReset: (email: string, role: UserRole) => Promise<boolean>;
   refreshUsers: (role?: UserRole) => Promise<void>;
   logout: () => void;
   isAuthenticated: boolean;
@@ -90,7 +99,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   useEffect(() => {
     if (user?.role === 'chair') {
-      void refreshUsers('reviewer');
+      void refreshUsers();
     }
   }, [user?.role]);
 
@@ -135,7 +144,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       localStorage.setItem(STORAGE_KEYS.session, JSON.stringify({ user: payload.user }));
       setIsLoading(false);
       if (payload.user.role === 'chair') {
-        await refreshUsers('reviewer');
+        await refreshUsers();
       }
       return true;
     } catch (fetchError) {
@@ -201,7 +210,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
       const result = (await response.json()) as { email: string; tempPassword: string };
       setIsLoading(false);
-      await refreshUsers('reviewer');
+      await refreshUsers();
       return result;
     } catch (fetchError) {
       setError('No se pudo invitar al revisor.');
@@ -210,7 +219,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
-  const deleteReviewer = async (userId: string) => {
+  const deleteUserByRole = async (userId: string, role: UserRole, errorLabel: string) => {
     setIsLoading(true);
     setError(null);
 
@@ -218,19 +227,116 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const response = await fetch('/api/auth/users', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userId }),
+        body: JSON.stringify({ userId, role }),
       });
       if (!response.ok) {
         const errorPayload = (await response.json()) as { error?: string };
-        setError(errorPayload.error || 'No se pudo eliminar al revisor.');
+        setError(errorPayload.error || `No se pudo eliminar al ${errorLabel}.`);
         setIsLoading(false);
         return false;
       }
-      await refreshUsers('reviewer');
+      await refreshUsers();
       setIsLoading(false);
       return true;
     } catch (fetchError) {
-      setError('No se pudo eliminar al revisor.');
+      setError(`No se pudo eliminar al ${errorLabel}.`);
+      setIsLoading(false);
+      return false;
+    }
+  };
+
+  const deleteReviewer = (userId: string) => deleteUserByRole(userId, 'reviewer', 'revisor');
+  const deleteAuthor = (userId: string) => deleteUserByRole(userId, 'author', 'autor');
+
+  const sendEmailToUser = async (payload: {
+    to: string | string[];
+    name?: string;
+    subject: string;
+    body: string;
+  }) => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/auth/users', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) {
+        const errorPayload = (await response.json()) as { error?: string };
+        setError(errorPayload.error || 'No se pudo enviar el correo.');
+        setIsLoading(false);
+        return false;
+      }
+      setIsLoading(false);
+      return true;
+    } catch (fetchError) {
+      setError('No se pudo enviar el correo.');
+      setIsLoading(false);
+      return false;
+    }
+  };
+
+  const changePassword = async (currentPassword: string, newPassword: string) => {
+    if (!user) {
+      setError('No hay una sesion activa.');
+      return false;
+    }
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/auth/users', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: user.email,
+          role: user.role,
+          currentPassword,
+          newPassword,
+        }),
+      });
+      if (!response.ok) {
+        const errorPayload = (await response.json()) as { error?: string };
+        const messageMap: Record<string, string> = {
+          'Current password is incorrect': 'La contrasena actual es incorrecta.',
+          'New password must be at least 6 characters': 'La nueva contrasena debe tener al menos 6 caracteres.',
+          'User not found': 'No se encontro el usuario.',
+        };
+        setError(messageMap[errorPayload.error || ''] || errorPayload.error || 'No se pudo cambiar la contrasena.');
+        setIsLoading(false);
+        return false;
+      }
+      setIsLoading(false);
+      return true;
+    } catch (fetchError) {
+      setError('No se pudo cambiar la contrasena.');
+      setIsLoading(false);
+      return false;
+    }
+  };
+
+  const requestPasswordReset = async (email: string, role: UserRole) => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/auth/users', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, role }),
+      });
+      if (!response.ok) {
+        const errorPayload = (await response.json()) as { error?: string };
+        setError(errorPayload.error || 'No se pudo solicitar la recuperacion.');
+        setIsLoading(false);
+        return false;
+      }
+      setIsLoading(false);
+      return true;
+    } catch (fetchError) {
+      setError('No se pudo solicitar la recuperacion.');
       setIsLoading(false);
       return false;
     }
@@ -255,6 +361,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         register,
         inviteReviewer,
         deleteReviewer,
+        deleteAuthor,
+        sendEmailToUser,
+        changePassword,
+        requestPasswordReset,
         refreshUsers,
         logout,
         isAuthenticated: !!user,

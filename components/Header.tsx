@@ -6,6 +6,7 @@ import { CalendarIcon, MapPinIcon } from './icons';
 
 interface HeaderProps {
   heroContent: Content['sections']['hero'];
+  learnMore: string;
 }
 
 const heroContainerVariants: Variants = {
@@ -25,7 +26,7 @@ const heroItemVariants: Variants = {
 };
 
 
-export const Header: React.FC<HeaderProps> = ({ heroContent }) => {
+export const Header: React.FC<HeaderProps> = ({ heroContent, learnMore }) => {
   const handleCTAClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     const targetId = event.currentTarget.getAttribute('href')?.substring(1);
@@ -80,7 +81,7 @@ export const Header: React.FC<HeaderProps> = ({ heroContent }) => {
                 onClick={handleCTAClick}
                 className="mt-12 inline-block bg-[#F4A261] text-[#0D2C54] font-bold font-['Montserrat'] uppercase py-3 px-8 rounded-full text-lg hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-xl"
               >
-                Saber Más
+                {learnMore}
               </motion.a>
           </motion.div>
       </div>

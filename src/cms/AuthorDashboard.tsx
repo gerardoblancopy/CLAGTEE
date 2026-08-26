@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { SubmissionIcon, ChevronRightIcon } from '../../components/icons';
 import { useAuth } from './AuthContext';
 import { useCMSData } from './CMSDataContext';
+import { buildDownloadUrl } from './downloadUrl';
 
 const statusStyles = {
   'pending': 'bg-yellow-100 text-yellow-700 border-yellow-200',
@@ -20,41 +21,14 @@ const statusLabels = {
   'withdrawn': 'Retirado',
 };
 
-export const AuthorDashboard: React.FC<{ onNewSubmission: () => void }> = ({ onNewSubmission }) => {
+export const AuthorDashboard: React.FC<{
+  onNewSubmission: () => void;
+  onEditSubmission?: (paperId: string) => void;
+}> = ({ onNewSubmission, onEditSubmission }) => {
   const { user } = useAuth();
   const { papers, withdrawPaper } = useCMSData();
   const [expandedPaperId, setExpandedPaperId] = React.useState<string | null>(null);
 
-  const triggerDownload = (url: string, fileName: string) => {
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = fileName || 'paper.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-  const handleDownload = async (fileKey?: string, fileUrl?: string, fileName?: string) => {
-    if (fileKey) {
-      try {
-        const response = await fetch(`/api/gcs-sign-download?object=${encodeURIComponent(fileKey)}`);
-        if (!response.ok) {
-          throw new Error('No se pudo generar la descarga.');
-        }
-        const payload = (await response.json()) as { url: string };
-        window.open(payload.url, '_blank', 'noopener,noreferrer');
-        return;
-      } catch (error) {
-        // Fall back to fileUrl if available
-      }
-    }
-    if (!fileUrl) return;
-    if (fileUrl.startsWith('data:')) {
-      triggerDownload(fileUrl, fileName || 'paper.pdf');
-      return;
-    }
-    window.open(fileUrl, '_blank', 'noopener,noreferrer');
-  };
 
   const myPapers = useMemo(() => {
     if (!user) return [];
@@ -145,14 +119,30 @@ export const AuthorDashboard: React.FC<{ onNewSubmission: () => void }> = ({ onN
                     <p className="text-sm font-medium text-gray-700">{formatDate(paper.updatedAt)}</p>
                   </div>
                   {paper.fileKey || paper.fileUrl ? (
-                    <button
-                      type="button"
-                      onClick={() => handleDownload(paper.fileKey, paper.fileUrl, paper.fileName)}
+                    <a
+                      href={
+                        paper.fileKey
+                          ? buildDownloadUrl(paper.fileKey, paper.fileName)
+                          : paper.fileUrl
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-[#2A9D8F] text-xs font-bold hover:underline"
                     >
                       Descargar PDF
-                    </button>
+                    </a>
                   ) : null}
+                  {paper.status === 'pending' &&
+                    paper.assignedReviewerIds.length === 0 &&
+                    onEditSubmission && (
+                      <button
+                        type="button"
+                        onClick={() => onEditSubmission(paper.id)}
+                        className="text-[#0D2C54] text-xs font-bold hover:underline"
+                      >
+                        Editar envio
+                      </button>
+                    )}
                   <div className={`px-4 py-1.5 rounded-full text-xs font-bold border ${statusStyles[paper.status]}`}>
                     {statusLabels[paper.status]}
                   </div>
@@ -179,6 +169,17 @@ export const AuthorDashboard: React.FC<{ onNewSubmission: () => void }> = ({ onN
                     <div className="flex flex-wrap gap-4 text-xs text-gray-500 items-center">
                       <span>Estado actual: {statusLabels[paper.status]}</span>
                       <span>Evaluaciones: {paper.reviews.length}</span>
+                      {paper.status === 'pending' &&
+                        paper.assignedReviewerIds.length === 0 &&
+                        onEditSubmission && (
+                          <button
+                            type="button"
+                            onClick={() => onEditSubmission(paper.id)}
+                            className="text-[#2A9D8F] font-bold hover:underline"
+                          >
+                            Editar envio
+                          </button>
+                        )}
                       {paper.status !== 'withdrawn' && (
                         <button
                           type="button"

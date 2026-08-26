@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ReviewIcon, ChevronRightIcon } from '../../components/icons';
 import { useAuth } from './AuthContext';
 import { useCMSData } from './CMSDataContext';
+import { buildDownloadUrl } from './downloadUrl';
 
 type ReviewRecommendation = 'accept' | 'minor-revision' | 'major-revision' | 'reject';
 
@@ -28,38 +29,6 @@ export const ReviewerDashboard: React.FC = () => {
     const [activePaperId, setActivePaperId] = useState<string | null>(null);
     const [drafts, setDrafts] = useState<Record<string, ReviewDraft>>({});
 
-    const triggerDownload = (url: string, fileName: string) => {
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = fileName || 'paper.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
-
-    const handleDownload = async (fileKey?: string, fileUrl?: string, fileName?: string) => {
-        if (fileKey) {
-            try {
-                const response = await fetch(
-                    `/api/gcs-sign-download?object=${encodeURIComponent(fileKey)}`
-                );
-                if (!response.ok) {
-                    throw new Error('No se pudo generar la descarga.');
-                }
-                const payload = (await response.json()) as { url: string };
-                window.open(payload.url, '_blank', 'noopener,noreferrer');
-                return;
-            } catch (error) {
-                // Fall back to fileUrl if available
-            }
-        }
-        if (!fileUrl) return;
-        if (fileUrl.startsWith('data:')) {
-            triggerDownload(fileUrl, fileName || 'paper.pdf');
-            return;
-        }
-        window.open(fileUrl, '_blank', 'noopener,noreferrer');
-    };
 
     const assignedPapers = useMemo(() => {
         if (!user) return [];
@@ -196,15 +165,18 @@ export const ReviewerDashboard: React.FC = () => {
                                                     'No informado'}
                                             </span>
                                             {paper.fileKey || paper.fileUrl ? (
-                                                <button
-                                                    type="button"
-                                                    onClick={() =>
-                                                        handleDownload(paper.fileKey, paper.fileUrl, paper.fileName)
+                                                <a
+                                                    href={
+                                                        paper.fileKey
+                                                            ? buildDownloadUrl(paper.fileKey, paper.fileName)
+                                                            : paper.fileUrl
                                                     }
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
                                                     className="text-[#2A9D8F] font-bold hover:underline"
                                                 >
                                                     Descargar PDF
-                                                </button>
+                                                </a>
                                             ) : paper.fileName ? (
                                                 <span className="text-gray-400">
                                                     Archivo: {paper.fileName} (sin carga)

@@ -2,24 +2,48 @@ import React, { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRightIcon } from '../../components/icons';
 import { appData } from '../../data/content';
-import { PaperInput } from './CMSDataContext';
+import { Paper, PaperInput } from './CMSDataContext';
 
 export const SubmissionForm: React.FC<{
   onCancel: () => void;
   onSubmit: (payload: PaperInput) => void;
-}> = ({ onCancel, onSubmit }) => {
+  initialPaper?: Paper;
+  mode?: 'create' | 'edit';
+}> = ({ onCancel, onSubmit, initialPaper, mode = 'create' }) => {
+  const isEdit = mode === 'edit' && !!initialPaper;
   const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState<PaperInput>({
-    title: '',
-    abstract: '',
-    keywords: '',
-    authors: [{ name: '', email: '', affiliation: '' }],
-    track: 'Planificación, Operación y Confiabilidad de Sistemas de Potencia',
-    fileName: '',
-    fileUrl: '',
-    fileKey: '',
+  const [formData, setFormData] = useState<PaperInput>(() => {
+    if (initialPaper) {
+      return {
+        title: initialPaper.title || '',
+        abstract: initialPaper.abstract || '',
+        keywords: (initialPaper.keywords || []).join(', '),
+        authors:
+          initialPaper.authors && initialPaper.authors.length > 0
+            ? initialPaper.authors.map((author: { name?: string; email?: string; affiliation?: string }) => ({
+                name: author.name || '',
+                email: author.email || '',
+                affiliation: author.affiliation || '',
+              }))
+            : [{ name: '', email: '', affiliation: '' }],
+        track: initialPaper.track || 'Planificación, Operación y Confiabilidad de Sistemas de Potencia',
+        fileName: initialPaper.fileName || '',
+        fileUrl: initialPaper.fileUrl || '',
+        fileKey: initialPaper.fileKey || '',
+      };
+    }
+    return {
+      title: '',
+      abstract: '',
+      keywords: '',
+      authors: [{ name: '', email: '', affiliation: '' }],
+      track: 'Planificación, Operación y Confiabilidad de Sistemas de Potencia',
+      fileName: '',
+      fileUrl: '',
+      fileKey: '',
+    };
   });
-  const [fileName, setFileName] = useState<string>('');
+  const [fileName, setFileName] = useState<string>(initialPaper?.fileName || '');
   const [isFileLoading, setIsFileLoading] = useState(false);
   const [fileError, setFileError] = useState<string | null>(null);
 
@@ -68,7 +92,7 @@ export const SubmissionForm: React.FC<{
     setFileError(null);
     const uploadFile = async () => {
       try {
-        const response = await fetch('/api/gcs-sign-upload', {
+        const response = await fetch('/api/gcs-sign', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -270,12 +294,12 @@ export const SubmissionForm: React.FC<{
           >
             {step === 1 ? 'Cancelar' : 'Anterior'}
           </button>
-          <button 
+          <button
             onClick={step === 3 ? handleSubmit : nextStep}
-            disabled={step === 3 && (isFileLoading || !formData.fileKey)}
+            disabled={step === 3 && (isFileLoading || (!isEdit && !formData.fileKey))}
             className="bg-[#0D2C54] text-white px-8 py-3 rounded-xl font-bold hover:bg-[#1A4B8A] transition-all flex items-center space-x-2 shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            <span>{step === 3 ? 'Finalizar Envío' : 'Siguiente Paso'}</span>
+            <span>{step === 3 ? (isEdit ? 'Guardar cambios' : 'Finalizar Envío') : 'Siguiente Paso'}</span>
             <ChevronRightIcon className="w-5 h-5" />
           </button>
         </div>

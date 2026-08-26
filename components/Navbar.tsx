@@ -1,16 +1,20 @@
 
 import React, { useState, useEffect } from 'react';
-import { NavItem } from '../types';
+import { NavItem, UIStrings } from '../types';
 import { MenuIcon, XIcon } from './icons';
+import { LanguageSelector } from './LanguageSelector';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface NavbarProps {
   navItems: NavItem[];
   onCmsClick: () => void;
+  ui: UIStrings;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ navItems, onCmsClick }) => {
+export const Navbar: React.FC<NavbarProps> = ({ navItems, onCmsClick, ui }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { language, setLanguage } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,7 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({ navItems, onCmsClick }) => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -54,11 +58,11 @@ export const Navbar: React.FC<NavbarProps> = ({ navItems, onCmsClick }) => {
   };
 
   const navLinkClasses = `
-    font-['Montserrat'] font-bold 
+    font-['Montserrat'] font-bold
     text-white hover:text-[#F4A261]
     transition-colors duration-300 uppercase text-[11px] xl:text-xs
-    relative after:content-[''] after:absolute after:w-0 after:h-[2px] 
-    after:block after:bg-[#F4A261] after:transition-all after:duration-300 
+    relative after:content-[''] after:absolute after:w-0 after:h-[2px]
+    after:block after:bg-[#F4A261] after:transition-all after:duration-300
     after:left-1/2 after:-translate-x-1/2 after:bottom-[-4px]
     hover:after:w-full
   `;
@@ -66,32 +70,33 @@ export const Navbar: React.FC<NavbarProps> = ({ navItems, onCmsClick }) => {
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#0D2C54] shadow-lg' : 'bg-transparent'}`}>
-        <div className="w-full px-4 lg:px-8 xl:px-12 flex justify-between items-center h-20">
-          <a href="#inicio" aria-label="XVI CLAGTEE 2026, ir al inicio" onClick={handleNavClick}>
-            <img 
-              src="https://res.cloudinary.com/dnh5bxvvy/image/upload/v1753825283/image_efe0xn.png" 
-              alt="CLAGTEE 2026 Logo" 
-              className="h-[120px] object-contain mt-8"
+        <div className="w-full px-4 lg:px-8 xl:px-12 flex justify-between items-center gap-3 xl:gap-10 h-20">
+          <a href="#inicio" aria-label={ui.ariaHome} onClick={handleNavClick} className="shrink-0">
+            <img
+              src="/CLAGTEE_2026_blanco.png"
+              alt="CLAGTEE 2026 Logo"
+              className="h-16 object-contain"
             />
           </a>
           <div className="hidden lg:flex items-center space-x-4 xl:space-x-6">
             {navItems.map((item) => (
-              <a key={item.text} href={item.url} className={navLinkClasses} onClick={handleNavClick}>
+              <a key={item.url} href={item.url} className={navLinkClasses} onClick={handleNavClick}>
                 {item.text}
               </a>
             ))}
-            <button 
+            <LanguageSelector language={language} onLanguageChange={setLanguage} variant="desktop" />
+            <button
               onClick={onCmsClick}
               className="bg-[#F4A261] text-white px-4 py-2 rounded-xl font-bold hover:bg-[#E76F51] transition-all text-[11px] xl:text-xs uppercase whitespace-nowrap"
             >
-              Gestión de Papers
+              {ui.paperManagement}
             </button>
           </div>
           <div className="lg:hidden">
-            <button 
-              onClick={() => setIsOpen(true)} 
+            <button
+              onClick={() => setIsOpen(true)}
               className="text-white"
-              aria-label="Abrir menú de navegación"
+              aria-label={ui.ariaOpenMenu}
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
             >
@@ -100,9 +105,9 @@ export const Navbar: React.FC<NavbarProps> = ({ navItems, onCmsClick }) => {
           </div>
         </div>
       </nav>
-      
+
       {/* Mobile Menu Overlay */}
-      <div 
+      <div
         id="mobile-menu"
         className={`
           lg:hidden
@@ -115,20 +120,21 @@ export const Navbar: React.FC<NavbarProps> = ({ navItems, onCmsClick }) => {
         aria-hidden={!isOpen}
       >
         <div className="absolute top-6 right-6">
-            <button 
-              onClick={() => setIsOpen(false)} 
+            <button
+              onClick={() => setIsOpen(false)}
               className="text-[#0D2C54]"
-              aria-label="Cerrar menú de navegación"
+              aria-label={ui.ariaCloseMenu}
             >
               <XIcon className="h-8 w-8" />
             </button>
         </div>
         <nav className="flex flex-col items-center justify-start h-full w-full space-y-6 overflow-y-auto px-6 pt-24 pb-16">
+          <LanguageSelector language={language} onLanguageChange={setLanguage} variant="mobile" />
           {navItems.map((item) => (
-            <a 
-              key={item.text} 
-              href={item.url} 
-              onClick={handleNavClick} 
+            <a
+              key={item.url}
+              href={item.url}
+              onClick={handleNavClick}
               className="text-2xl font-['Montserrat'] font-bold text-[#0D2C54] hover:text-[#2A9D8F] transition-colors"
             >
               {item.text}
@@ -138,7 +144,7 @@ export const Navbar: React.FC<NavbarProps> = ({ navItems, onCmsClick }) => {
             onClick={handleCmsClick}
             className="mt-4 bg-[#F4A261] text-[#0D2C54] px-6 py-3 rounded-full font-bold uppercase text-sm tracking-wide hover:bg-[#E76F51] hover:text-white transition-colors"
           >
-            Gesti&#243;n de Papers
+            {ui.paperManagement}
           </button>
         </nav>
       </div>

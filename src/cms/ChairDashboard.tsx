@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { UserIcon } from '../../components/icons';
 import { useAuth } from './AuthContext';
 import { PaperStatus, useCMSData } from './CMSDataContext';
+import { buildDownloadUrl } from './downloadUrl';
 
 const statusStyles = {
   'pending': 'bg-yellow-100 text-yellow-700',
@@ -21,7 +22,7 @@ const statusLabels: Record<PaperStatus, string> = {
 };
 
 export const ChairDashboard: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'papers' | 'reviewers'>('papers');
+  const [activeTab, setActiveTab] = useState<'papers' | 'reviewers' | 'authors'>('papers');
   const [filter, setFilter] = useState('all');
   const [assignments, setAssignments] = useState<Record<string, string>>({});
   const [expandedPaperId, setExpandedPaperId] = useState<string | null>(null);
@@ -33,8 +34,15 @@ export const ChairDashboard: React.FC = () => {
   const [inviteResult, setInviteResult] = useState<{ email: string; tempPassword: string } | null>(
     null
   );
-  const { users, inviteReviewer, deleteReviewer, error, clearError, isLoading } = useAuth();
-  const { papers, assignReviewer, setDecision, deletePaper } = useCMSData();
+  const { users, inviteReviewer, deleteReviewer, deleteAuthor, sendEmailToUser, error, clearError, isLoading } = useAuth();
+  const { papers, assignReviewer, unassignReviewer, setDecision, deletePaper } = useCMSData();
+
+  const [emailModal, setEmailModal] = useState<{
+    to: string;
+    name: string;
+  } | null>(null);
+  const [emailForm, setEmailForm] = useState({ subject: '', body: '' });
+  const [emailFeedback, setEmailFeedback] = useState<string | null>(null);
 
   const handleDeleteReviewer = async (reviewerId: string, reviewerName: string) => {
     const ok = window.confirm(`¿Deseas eliminar al revisor "${reviewerName}"? Esta accion no se puede deshacer.`);
@@ -42,38 +50,46 @@ export const ChairDashboard: React.FC = () => {
     await deleteReviewer(reviewerId);
   };
 
-  const triggerDownload = (url: string, fileName: string) => {
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = fileName || 'paper.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleDeleteAuthor = async (authorId: string, authorName: string) => {
+    const ok = window.confirm(
+      `¿Deseas eliminar al autor "${authorName}"? Sus envios permaneceran en el sistema. Esta accion no se puede deshacer.`
+    );
+    if (!ok) return;
+    await deleteAuthor(authorId);
   };
 
-  const handleDownload = async (fileKey?: string, fileUrl?: string, fileName?: string) => {
-    if (fileKey) {
-      try {
-        const response = await fetch(`/api/gcs-sign-download?object=${encodeURIComponent(fileKey)}`);
-        if (!response.ok) {
-          throw new Error('No se pudo generar la descarga.');
-        }
-        const payload = (await response.json()) as { url: string };
-        window.open(payload.url, '_blank', 'noopener,noreferrer');
-        return;
-      } catch (error) {
-        // Fall back to fileUrl if available
-      }
+  const openEmailModal = (to: string, name: string) => {
+    setEmailModal({ to, name });
+    setEmailForm({ subject: '', body: '' });
+    setEmailFeedback(null);
+    clearError();
+  };
+
+  const closeEmailModal = () => {
+    setEmailModal(null);
+    setEmailForm({ subject: '', body: '' });
+    setEmailFeedback(null);
+  };
+
+  const handleSendEmail = async (event: React.FormEvent) => {
+    event.preventDefault();
+    if (!emailModal) return;
+    if (!emailForm.subject.trim() || !emailForm.body.trim()) return;
+    const ok = await sendEmailToUser({
+      to: emailModal.to,
+      name: emailModal.name,
+      subject: emailForm.subject,
+      body: emailForm.body,
+    });
+    if (ok) {
+      setEmailFeedback('Correo enviado correctamente.');
+      setEmailForm({ subject: '', body: '' });
+      setTimeout(() => closeEmailModal(), 1500);
     }
-    if (!fileUrl) return;
-    if (fileUrl.startsWith('data:')) {
-      triggerDownload(fileUrl, fileName || 'paper.pdf');
-      return;
-    }
-    window.open(fileUrl, '_blank', 'noopener,noreferrer');
   };
 
   const reviewers = useMemo(() => users.filter((user) => user.role === 'reviewer'), [users]);
+  const authors = useMemo(() => users.filter((user) => user.role === 'author'), [users]);
 
   const filteredPapers = useMemo(() => {
     if (filter === 'all') return papers;
@@ -87,6 +103,14 @@ export const ChairDashboard: React.FC = () => {
     if (!reviewerId) return;
     assignReviewer(paperId, reviewerId);
     setAssignments((prev) => ({ ...prev, [paperId]: '' }));
+  };
+
+  const handleUnassign = async (paperId: string, reviewerId: string, reviewerName: string) => {
+    const ok = window.confirm(
+      `¿Deseas quitar a "${reviewerName}" de este trabajo? Dejara de verlo en su panel.`
+    );
+    if (!ok) return;
+    await unassignReviewer(paperId, reviewerId);
   };
 
   const handleDelete = async (paperId: string) => {
@@ -143,6 +167,12 @@ export const ChairDashboard: React.FC = () => {
             </div>
             <span className="text-sm font-medium text-gray-600">Revisores</span>
           </div>
+          <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-3">
+            <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold">
+              {authors.length}
+            </div>
+            <span className="text-sm font-medium text-gray-600">Autores</span>
+          </div>
         </div>
       </div>
 
@@ -165,6 +195,15 @@ export const ChairDashboard: React.FC = () => {
             }`}
         >
           👥 Revisores
+        </button>
+        <button
+          onClick={() => setActiveTab('authors')}
+          className={`px-6 py-3 rounded-xl font-bold transition-colors ${activeTab === 'authors'
+            ? 'bg-[#0D2C54] text-white'
+            : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+            }`}
+        >
+          ✍️ Autores
         </button>
       </div>
 
@@ -282,14 +321,24 @@ export const ChairDashboard: React.FC = () => {
                   <div className="col-span-4">
                     <p className="font-bold text-gray-800 truncate">{paper.title}</p>
                     <p className="text-xs text-gray-400">{paper.track}</p>
-                    {paper.fileKey || paper.fileUrl ? (
-                      <button
-                        type="button"
-                        onClick={() => handleDownload(paper.fileKey, paper.fileUrl, paper.fileName)}
-                        className="text-xs font-bold text-[#2A9D8F] hover:underline mt-1"
+                    {paper.fileKey ? (
+                      <a
+                        href={buildDownloadUrl(paper.fileKey, paper.fileName)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block text-xs font-bold text-[#2A9D8F] hover:underline mt-1"
                       >
                         Descargar PDF
-                      </button>
+                      </a>
+                    ) : paper.fileUrl ? (
+                      <a
+                        href={paper.fileUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block text-xs font-bold text-[#2A9D8F] hover:underline mt-1"
+                      >
+                        Descargar PDF
+                      </a>
                     ) : (
                       <p className="text-[11px] text-gray-400 mt-1">PDF no disponible</p>
                     )}
@@ -314,71 +363,100 @@ export const ChairDashboard: React.FC = () => {
                     </select>
                   </div>
                   <div className="col-span-3">
-                    {paper.assignedReviewerIds.length > 0 ? (
-                      <div className="flex flex-col text-xs text-gray-600 gap-1">
-                        {paper.assignedReviewerIds.map((reviewerId) => (
-                          <div key={reviewerId} className="flex items-center">
-                            <div className="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center text-xs mr-2">
-                              {resolveReviewerName(reviewerId).charAt(0)}
+                    {(() => {
+                      const availableReviewers = reviewers.filter(
+                        (reviewer) => !paper.assignedReviewerIds.includes(reviewer.id)
+                      );
+                      return (
+                        <div className="flex flex-col gap-2">
+                          {paper.assignedReviewerIds.length > 0 && (
+                            <div className="flex flex-col text-xs text-gray-600 gap-1">
+                              {paper.assignedReviewerIds.map((reviewerId) => (
+                                <div key={reviewerId} className="flex items-center">
+                                  <div className="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center text-xs mr-2">
+                                    {resolveReviewerName(reviewerId).charAt(0)}
+                                  </div>
+                                  <span className="flex-1 truncate">
+                                    {resolveReviewerName(reviewerId)}
+                                  </span>
+                                  <button
+                                    type="button"
+                                    title="Quitar revisor"
+                                    aria-label={`Quitar a ${resolveReviewerName(reviewerId)}`}
+                                    onClick={() =>
+                                      handleUnassign(
+                                        paper.id,
+                                        reviewerId,
+                                        resolveReviewerName(reviewerId)
+                                      )
+                                    }
+                                    className="ml-2 text-red-500 hover:text-red-600 text-sm font-bold leading-none px-1"
+                                  >
+                                    ×
+                                  </button>
+                                </div>
+                              ))}
+                              <span className="text-[11px] text-gray-400">
+                                Reviews: {paper.reviews.length}
+                              </span>
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  setExpandedPaperId((prev) => (prev === paper.id ? null : paper.id))
+                                }
+                                className="text-[#2A9D8F] text-[11px] font-bold hover:underline text-left"
+                              >
+                                {expandedPaperId === paper.id
+                                  ? 'Ocultar evaluaciones'
+                                  : 'Ver evaluaciones'}
+                              </button>
                             </div>
-                            <span>{resolveReviewerName(reviewerId)}</span>
-                          </div>
-                        ))}
-                        <span className="text-[11px] text-gray-400">
-                          Reviews: {paper.reviews.length}
-                        </span>
-                        <button
-                          type="button"
-                          onClick={() =>
-                            setExpandedPaperId((prev) => (prev === paper.id ? null : paper.id))
-                          }
-                          className="text-[#2A9D8F] text-[11px] font-bold hover:underline text-left"
-                        >
-                          {expandedPaperId === paper.id ? 'Ocultar evaluaciones' : 'Ver evaluaciones'}
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => handleDelete(paper.id)}
-                          className="text-red-500 text-[11px] font-bold hover:underline text-left"
-                        >
-                          Eliminar envio
-                        </button>
-                      </div>
-                    ) : (
-                      <div className="flex flex-col gap-2">
-                        <select
-                          className="text-xs px-2 py-1 border border-gray-200 rounded-lg"
-                          value={assignments[paper.id] || ''}
-                          onChange={(event) =>
-                            setAssignments((prev) => ({
-                              ...prev,
-                              [paper.id]: event.target.value,
-                            }))
-                          }
-                        >
-                          <option value="">Selecciona revisor</option>
-                          {reviewers.map((reviewer) => (
-                            <option key={reviewer.id} value={reviewer.id}>
-                              {reviewer.name}
-                            </option>
-                          ))}
-                        </select>
-                        <button
-                          onClick={() => handleAssign(paper.id)}
-                          className="text-[#2A9D8F] text-xs font-bold hover:underline flex items-center"
-                          disabled={!assignments[paper.id]}
-                        >
-                          + Asignar Revisor
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => handleDelete(paper.id)}
-                          className="text-red-500 text-xs font-bold hover:underline text-left"
-                        >
-                          Eliminar envio
-                        </button>
-                      </div>
-                    )}
+                          )}
+
+                          {availableReviewers.length > 0 ? (
+                            <>
+                              <select
+                                className="text-xs px-2 py-1 border border-gray-200 rounded-lg"
+                                value={assignments[paper.id] || ''}
+                                onChange={(event) =>
+                                  setAssignments((prev) => ({
+                                    ...prev,
+                                    [paper.id]: event.target.value,
+                                  }))
+                                }
+                              >
+                                <option value="">Selecciona revisor</option>
+                                {availableReviewers.map((reviewer) => (
+                                  <option key={reviewer.id} value={reviewer.id}>
+                                    {reviewer.name}
+                                  </option>
+                                ))}
+                              </select>
+                              <button
+                                type="button"
+                                onClick={() => handleAssign(paper.id)}
+                                className="text-[#2A9D8F] text-xs font-bold hover:underline flex items-center disabled:opacity-40"
+                                disabled={!assignments[paper.id]}
+                              >
+                                + Asignar Revisor
+                              </button>
+                            </>
+                          ) : (
+                            <span className="text-[11px] text-gray-400">
+                              Todos los revisores estan asignados
+                            </span>
+                          )}
+
+                          <button
+                            type="button"
+                            onClick={() => handleDelete(paper.id)}
+                            className="text-red-500 text-xs font-bold hover:underline text-left"
+                          >
+                            Eliminar envio
+                          </button>
+                        </div>
+                      );
+                    })()}
                   </div>
 
                   {expandedPaperId === paper.id && (
@@ -498,6 +576,155 @@ export const ChairDashboard: React.FC = () => {
                 );
               })
             )}
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'authors' && (
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="p-4 border-b border-gray-100">
+            <h4 className="text-lg font-bold text-[#0D2C54]">Lista de Autores</h4>
+            <p className="text-sm text-gray-500">Todos los autores registrados en el sistema</p>
+          </div>
+
+          <div className="grid grid-cols-12 gap-4 p-4 bg-gray-50 text-xs font-bold text-gray-500 uppercase tracking-wider">
+            <div className="col-span-3">Nombre</div>
+            <div className="col-span-3">Email</div>
+            <div className="col-span-3">Afiliación</div>
+            <div className="col-span-1">Papers</div>
+            <div className="col-span-2">Acciones</div>
+          </div>
+
+          <div className="divide-y divide-gray-100">
+            {authors.length === 0 ? (
+              <div className="p-8 text-center text-gray-400">
+                Aún no hay autores registrados.
+              </div>
+            ) : (
+              authors.map((author) => {
+                const submittedPapers = papers.filter((p) => p.submitterId === author.id);
+                return (
+                  <motion.div
+                    key={author.id}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="grid grid-cols-12 gap-4 p-4 items-center hover:bg-[#F8FAFC] transition-colors"
+                  >
+                    <div className="col-span-3 flex items-center">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-[#0D2C54] flex items-center justify-center text-white font-bold mr-3">
+                        {author.name.charAt(0).toUpperCase()}
+                      </div>
+                      <span className="font-bold text-gray-800">{author.name}</span>
+                    </div>
+                    <div className="col-span-3 text-sm text-gray-600 truncate">{author.email}</div>
+                    <div className="col-span-3 text-sm text-gray-500">
+                      {author.affiliation || '—'}
+                    </div>
+                    <div className="col-span-1">
+                      <span className={`px-3 py-1 rounded-full text-xs font-bold ${submittedPapers.length > 0
+                        ? 'bg-purple-100 text-purple-700'
+                        : 'bg-gray-100 text-gray-500'
+                        }`}>
+                        {submittedPapers.length}
+                      </span>
+                    </div>
+                    <div className="col-span-2 flex flex-col gap-1">
+                      <button
+                        type="button"
+                        onClick={() => openEmailModal(author.email, author.name)}
+                        className="text-[#2A9D8F] text-xs font-bold hover:underline text-left"
+                      >
+                        ✉️ Enviar email
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handleDeleteAuthor(author.id, author.name)}
+                        disabled={isLoading}
+                        className="text-red-500 text-xs font-bold hover:underline text-left disabled:opacity-50"
+                      >
+                        🗑️ Eliminar
+                      </button>
+                    </div>
+                  </motion.div>
+                );
+              })
+            )}
+          </div>
+        </div>
+      )}
+
+      {emailModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl shadow-xl w-full max-w-lg p-6">
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <h4 className="text-lg font-bold text-[#0D2C54]">Enviar email</h4>
+                <p className="text-sm text-gray-500">
+                  Para: <span className="font-bold">{emailModal.name}</span> &lt;{emailModal.to}&gt;
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={closeEmailModal}
+                className="text-gray-400 hover:text-gray-600 text-xl"
+              >
+                ×
+              </button>
+            </div>
+
+            <form onSubmit={handleSendEmail} className="space-y-4">
+              <div>
+                <label className="block text-xs font-bold text-gray-500 mb-1">Asunto</label>
+                <input
+                  type="text"
+                  value={emailForm.subject}
+                  onChange={(e) => setEmailForm((prev) => ({ ...prev, subject: e.target.value }))}
+                  className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#2A9D8F] outline-none"
+                  placeholder="Asunto del correo"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-gray-500 mb-1">Mensaje</label>
+                <textarea
+                  value={emailForm.body}
+                  onChange={(e) => setEmailForm((prev) => ({ ...prev, body: e.target.value }))}
+                  rows={8}
+                  className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#2A9D8F] outline-none resize-none"
+                  placeholder="Escribe el contenido del mensaje..."
+                  required
+                />
+              </div>
+
+              {error && (
+                <div className="bg-red-50 border border-red-100 text-red-600 text-sm px-4 py-3 rounded-xl">
+                  {error}
+                </div>
+              )}
+
+              {emailFeedback && (
+                <div className="bg-green-50 border border-green-100 text-green-700 text-sm px-4 py-3 rounded-xl">
+                  {emailFeedback}
+                </div>
+              )}
+
+              <div className="flex justify-end gap-2">
+                <button
+                  type="button"
+                  onClick={closeEmailModal}
+                  className="px-4 py-2 rounded-xl text-gray-600 font-bold hover:bg-gray-100"
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  disabled={isLoading || !emailForm.subject.trim() || !emailForm.body.trim()}
+                  className="bg-[#2A9D8F] text-white px-6 py-2 rounded-xl font-bold hover:bg-[#238C7E] disabled:opacity-50"
+                >
+                  {isLoading ? 'Enviando...' : 'Enviar'}
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       )}

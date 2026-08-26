@@ -29,6 +29,7 @@
     "App.tsx",
     "index.tsx",
     "components",
+    "contexts",
     "data",
     "src",
     "types.ts",

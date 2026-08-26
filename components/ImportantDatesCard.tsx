@@ -17,7 +17,7 @@ export const ImportantDatesCard: React.FC<ImportantDatesCardProps> = ({ item, in
         </div>
       </div>
       <div>
-        <p className="font-bold text-[#0D2C54] text-lg">{item.date}</p>
+        <p className={`font-bold text-lg ${item.highlight ? 'text-red-600' : 'text-[#0D2C54]'}`}>{item.date}</p>
         <p className="text-gray-600 font-['Roboto']">{item.event}</p>
       </div>
     </div>

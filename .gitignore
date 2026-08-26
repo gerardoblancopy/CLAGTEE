@@ -24,3 +24,10 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# Local tool state
+.claude/
+.vercel-global-config/
+
+# Local credential notes
+src/cms/pass.md

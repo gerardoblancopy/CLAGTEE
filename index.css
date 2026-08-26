@@ -1,1 +1,30 @@
 /* Base stylesheet placeholder for Vite dev server */
+
+/* Marquesina de anuncio bajo el hero. El track se duplica en el DOM y se
+   desplaza -50% para lograr un bucle continuo sin salto visible. */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.marquee-root:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    justify-content: center;
+    width: 100%;
+  }
+}

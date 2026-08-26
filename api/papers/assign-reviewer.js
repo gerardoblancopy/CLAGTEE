@@ -20,11 +20,13 @@ export default async function handler(req, res) {
 
   try {
     const body = parseBody(req);
-    const { paperId, reviewerId } = body || {};
+    const { paperId, reviewerId, action } = body || {};
     if (!paperId || !reviewerId) {
       res.status(400).json({ error: 'Missing required fields' });
       return;
     }
+
+    const unassign = action === 'unassign';
 
     const db = getFirestore();
     const ref = db.collection('papers').doc(String(paperId));
@@ -35,17 +37,28 @@ export default async function handler(req, res) {
     }
 
     const data = snapshot.data() || {};
-    const assigned = new Set(
-      Array.isArray(data.assignedReviewerIds) ? data.assignedReviewerIds : []
-    );
-    assigned.add(reviewerId);
+    const current = Array.isArray(data.assignedReviewerIds) ? data.assignedReviewerIds : [];
 
-    const status = data.status === 'pending' ? 'under-review' : data.status || 'pending';
+    let assigned;
+    let status;
+    if (unassign) {
+      assigned = current.filter((id) => id !== reviewerId);
+      status =
+        assigned.length === 0 && data.status === 'under-review'
+          ? 'pending'
+          : data.status || 'pending';
+    } else {
+      const next = new Set(current);
+      next.add(reviewerId);
+      assigned = Array.from(next);
+      status = data.status === 'pending' ? 'under-review' : data.status || 'pending';
+    }
+
     const updatedAt = new Date().toISOString();
 
     await ref.set(
       {
-        assignedReviewerIds: Array.from(assigned),
+        assignedReviewerIds: assigned,
         status,
         updatedAt,
       },
@@ -55,8 +68,8 @@ export default async function handler(req, res) {
     const updatedSnapshot = await ref.get();
     res.status(200).json({ paper: normalizePaper(updatedSnapshot) });
   } catch (error) {
-    const message = error && error.message ? error.message : 'Failed to assign reviewer';
+    const message = error && error.message ? error.message : 'Failed to update reviewer assignment';
     console.error('[papers-assign-reviewer]', message);
-    res.status(500).json({ error: 'Failed to assign reviewer' });
+    res.status(500).json({ error: 'Failed to update reviewer assignment' });
   }
 }

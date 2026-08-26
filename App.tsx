@@ -1,9 +1,11 @@
 
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import { appData } from './data/content';
+import { designSystem } from './data/content';
+import { useLanguage } from './contexts/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { Header } from './components/Header';
+import { AnnouncementMarquee } from './components/AnnouncementMarquee';
 import { Section } from './components/Section';
 import { ImportantDatesCard } from './components/ImportantDatesCard';
 import { BookCoverCard } from './components/BookCoverCard';
@@ -15,8 +17,10 @@ import { AuthProvider, useAuth } from './src/cms/AuthContext';
 import { LoginScreen } from './src/cms/LoginScreen';
 import { ChairDashboard } from './src/cms/ChairDashboard';
 import { ReviewerDashboard } from './src/cms/ReviewerDashboard';
+import { StaffDashboard } from './src/cms/StaffDashboard';
 import { SubmissionForm } from './src/cms/SubmissionForm';
 import { CMSDataProvider, useCMSData } from './src/cms/CMSDataContext';
+import { RegistrationSection } from './src/registration/RegistrationSection';
 
 const staggerContainer: Variants = {
   hidden: { opacity: 0 },
@@ -43,8 +47,13 @@ const CMSContainer: React.FC<{
   onLogout: () => void 
 }> = ({ onLogout }) => {
   const { user, logout, isAuthenticated } = useAuth();
-  const { createPaper } = useCMSData();
+  const { papers, createPaper, updatePaper } = useCMSData();
   const [activeCmsTab, setActiveCmsTab] = React.useState('submissions');
+  const [editingPaperId, setEditingPaperId] = React.useState<string | null>(null);
+  const editingPaper = React.useMemo(
+    () => (editingPaperId ? papers.find((paper) => paper.id === editingPaperId) || null : null),
+    [editingPaperId, papers]
+  );
 
   React.useEffect(() => {
     if (!user) return;
@@ -52,6 +61,8 @@ const CMSContainer: React.FC<{
       setActiveCmsTab('reviews');
     } else if (user.role === 'chair') {
       setActiveCmsTab('admin');
+    } else if (user.role === 'staff') {
+      setActiveCmsTab('staff');
     } else {
       setActiveCmsTab('submissions');
     }
@@ -72,11 +83,20 @@ const CMSContainer: React.FC<{
       }}
     >
       {activeCmsTab === 'submissions' && (
-        <AuthorDashboard onNewSubmission={() => setActiveCmsTab('new-submission')} />
+        <AuthorDashboard
+          onNewSubmission={() => {
+            setEditingPaperId(null);
+            setActiveCmsTab('new-submission');
+          }}
+          onEditSubmission={(paperId: string) => {
+            setEditingPaperId(paperId);
+            setActiveCmsTab('edit-submission');
+          }}
+        />
       )}
       {activeCmsTab === 'new-submission' && (
-        <SubmissionForm 
-          onCancel={() => setActiveCmsTab('submissions')} 
+        <SubmissionForm
+          onCancel={() => setActiveCmsTab('submissions')}
           onSubmit={async (payload) => {
             if (!user) return;
             const created = await createPaper(payload, user);
@@ -86,11 +106,47 @@ const CMSContainer: React.FC<{
             }
             alert('¡Trabajo enviado con éxito!');
             setActiveCmsTab('submissions');
-          }} 
+          }}
         />
+      )}
+      {activeCmsTab === 'edit-submission' && editingPaper && (
+        <SubmissionForm
+          mode="edit"
+          initialPaper={editingPaper}
+          onCancel={() => {
+            setEditingPaperId(null);
+            setActiveCmsTab('submissions');
+          }}
+          onSubmit={async (payload) => {
+            if (!user || !editingPaper) return;
+            const updated = await updatePaper(editingPaper.id, payload, user);
+            if (!updated) {
+              alert('No se pudo actualizar el trabajo. Verifica que aun no haya sido asignado a revisores.');
+              return;
+            }
+            alert('Cambios guardados.');
+            setEditingPaperId(null);
+            setActiveCmsTab('submissions');
+          }}
+        />
+      )}
+      {activeCmsTab === 'edit-submission' && !editingPaper && (
+        <div className="bg-white border border-gray-100 rounded-2xl p-10 text-center text-gray-500">
+          Envío no encontrado.
+          <div className="mt-4">
+            <button
+              type="button"
+              onClick={() => setActiveCmsTab('submissions')}
+              className="text-[#2A9D8F] font-bold hover:underline"
+            >
+              Volver a mis envíos
+            </button>
+          </div>
+        </div>
       )}
       {activeCmsTab === 'reviews' && <ReviewerDashboard />}
       {activeCmsTab === 'admin' && <ChairDashboard />}
+      {activeCmsTab === 'staff' && <StaffDashboard />}
     </CMSLayout>
   );
 };
@@ -98,8 +154,23 @@ const CMSContainer: React.FC<{
 const resolveViewFromPath = (path: string) => (path.startsWith('/cms') ? 'cms' : 'web');
 
 const AppContent: React.FC = () => {
-  const { designSystem, content } = appData;
+  const { content, ui } = useLanguage();
   const [view, setView] = React.useState<'web' | 'cms'>(() => resolveViewFromPath(window.location.pathname));
+  const [downloadingTemplate, setDownloadingTemplate] = React.useState<string | null>(null);
+
+  const handleTemplateDownload = async (gcsKey: string) => {
+    setDownloadingTemplate(gcsKey);
+    try {
+      const response = await fetch(`/api/gcs-sign?object=${encodeURIComponent(gcsKey)}`);
+      if (!response.ok) throw new Error('Failed to get download URL');
+      const { url } = await response.json() as { url: string };
+      window.open(url, '_blank', 'noopener,noreferrer');
+    } catch {
+      alert('No se pudo generar el enlace de descarga. Intente nuevamente.');
+    } finally {
+      setDownloadingTemplate(null);
+    }
+  };
 
   const navigateTo = React.useCallback((nextView: 'web' | 'cms') => {
     const nextPath = nextView === 'cms' ? '/cms' : '/';
@@ -120,7 +191,7 @@ const AppContent: React.FC = () => {
   const CommitteeMember: React.FC<{ name: string; affiliation: string }> = ({ name, affiliation }) => (
     <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow h-full">
       <div className="mx-auto bg-gray-200 h-24 w-24 rounded-full mb-4 flex items-center justify-center">
-         <span className="text-gray-500 text-sm">Foto</span>
+         <span className="text-gray-500 text-sm">{ui.photoPlaceholder}</span>
       </div>
       <h4 className="font-bold text-[#0D2C54]">{name}</h4>
       <p className="text-sm text-gray-500">{affiliation || ' '}</p>
@@ -133,8 +204,9 @@ const AppContent: React.FC = () => {
 
   return (
     <div className="bg-white flex flex-col h-full" style={{ fontFamily: designSystem.typography.fontFamily.body }}>
-      <Navbar navItems={content.navigation} onCmsClick={() => navigateTo('cms')} />
-      <Header heroContent={content.sections.hero} />
+      <Navbar navItems={content.navigation} onCmsClick={() => navigateTo('cms')} ui={ui} />
+      <Header heroContent={content.sections.hero} learnMore={ui.learnMore} />
+      <AnnouncementMarquee text={ui.deadlineBanner} />
       {/* ... resten del main ... */}
 
       <main className="flex-grow bg-white">
@@ -236,7 +308,7 @@ const AppContent: React.FC = () => {
                 <p key={index}>{paragraph}</p>
               ))}
               <p>
-                Accede al CMS para el env&#237;o de trabajos en
+                {ui.cmsAccessText}
                 <a
                   href="https://www.clagtee2026.org/cms"
                   className="ml-1 font-semibold text-[#2A9D8F] hover:text-[#0D2C54] transition-colors"
@@ -246,6 +318,20 @@ const AppContent: React.FC = () => {
                 .
               </p>
             </motion.div>
+
+            {content.sections.callForPapers.ieeeNotice && (
+              <motion.div
+                variants={fadeInUpItem}
+                className="border-l-4 border-[#00629B] bg-[#EAF3FA] rounded-r-2xl p-6 shadow-sm"
+              >
+                <p className="text-sm uppercase tracking-wider font-bold text-[#00629B] mb-2">
+                  IEEE
+                </p>
+                <p className="text-base leading-relaxed text-gray-800">
+                  {content.sections.callForPapers.ieeeNotice}
+                </p>
+              </motion.div>
+            )}
 
             <motion.div variants={fadeInUpItem} className="space-y-4">
               <h3 className="text-2xl font-bold text-[#0D2C54]">
@@ -317,8 +403,8 @@ const AppContent: React.FC = () => {
                 <table className="min-w-full border border-gray-200 text-sm">
                   <thead className="bg-gray-50 text-gray-700">
                     <tr>
-                      <th className="px-4 py-3 text-left font-semibold">Plantilla</th>
-                      <th className="px-4 py-3 text-left font-semibold">Vinculo de descarga</th>
+                      <th className="px-4 py-3 text-left font-semibold">{ui.templateHeader}</th>
+                      <th className="px-4 py-3 text-left font-semibold">{ui.downloadLinkHeader}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -326,12 +412,13 @@ const AppContent: React.FC = () => {
                       <tr key={template.label} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                         <td className="px-4 py-3 border-t border-gray-200">{template.label}</td>
                         <td className="px-4 py-3 border-t border-gray-200">
-                          <a
-                            href={template.href}
-                            className="text-[#2A9D8F] font-bold hover:underline"
+                          <button
+                            onClick={() => handleTemplateDownload(template.href)}
+                            disabled={downloadingTemplate === template.href}
+                            className="text-[#2A9D8F] font-bold hover:underline disabled:opacity-50"
                           >
-                            DESCARGAR
-                          </a>
+                            {downloadingTemplate === template.href ? '...' : ui.downloadLabel}
+                          </button>
                         </td>
                       </tr>
                     ))}
@@ -347,20 +434,12 @@ const AppContent: React.FC = () => {
 
         <Section
           id="inscripcion"
-          title={content.sections.payments.title}
+          title={content.sections.registration.title}
           className="bg-[#0D2C54] py-16 md:py-24"
           titleClassName="text-white"
-          contentClassName="!max-w-2xl"
+          contentClassName="!max-w-5xl"
         >
-          <motion.p
-            className="text-center text-lg leading-relaxed text-gray-300 font-['Roboto']"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeIn}
-          >
-            {content.sections.payments.body}
-          </motion.p>
+          <RegistrationSection />
         </Section>
 
         <Section id="conferencistas" title={content.sections.speakers.title} className="bg-gray-100 py-16 md:py-24">
@@ -371,25 +450,74 @@ const AppContent: React.FC = () => {
             viewport={{ once: true, amount: 0.5 }}
             variants={fadeIn}
           >
-            Los conferencistas magistrales serán anunciados próximamente.
+            {ui.speakersPlaceholder}
           </motion.p>
         </Section>
         
-        <Section id="sede" title="Sede del Evento">
-            <motion.div 
-              className="text-center"
+        <Section id="sede" title={ui.venueTitle} contentClassName="!max-w-6xl">
+            <motion.div
+              className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start"
               variants={staggerContainer}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
             >
-                 <motion.h3 variants={fadeInUpItem} className="text-2xl font-bold text-[#2A9D8F]">Santiago de Chile</motion.h3>
-                 <motion.p variants={fadeInUpItem} className="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
-                    La conferencia se llevará a cabo en Santiago de Chile, la capital y el centro económico del país. Ubicada en un valle rodeado por las cumbres nevadas de los Andes y la Cordillera de la Costa, Santiago ofrece una rica vida cultural, histórica y una moderna infraestructura, proporcionando un escenario ideal para el intercambio de conocimientos. Próximamente se anunciará la sede específica y las opciones de alojamiento.
-                 </motion.p>
-                 <motion.img 
-                   variants={fadeInUpItem} 
-                   src="https://assets-us-01.kc-usercontent.com/b2956330-c34f-0064-2c6f-27bd5c0147fc/3a824406-78ad-4378-a448-94cce9350c6a/skyline-santiago-andes-invierno.jpg" alt="Santiago de Chile" className="mt-8 rounded-xl shadow-lg mx-auto" />
+                <motion.div variants={fadeInUpItem} className="space-y-6">
+                  <img
+                    src="/venue-mrhotel.jpg"
+                    alt={ui.venueHotelName}
+                    className="rounded-2xl shadow-lg w-full object-cover max-h-[440px]"
+                  />
+                  <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                    <iframe
+                      title="Mapa MR. Hotel"
+                      src="https://www.google.com/maps?q=MR.%20Hotel%2C%20Av.%20Pedro%20de%20Valdivia%20164%2C%20Providencia%2C%20Santiago%2C%20Chile&output=embed"
+                      width="100%"
+                      height="380"
+                      style={{ border: 0 }}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      allowFullScreen
+                    />
+                  </div>
+                </motion.div>
+                <motion.div variants={fadeInUpItem} className="text-left space-y-4">
+                  <p className="text-sm font-bold uppercase tracking-wide text-[#2A9D8F]">{ui.venueCity}</p>
+                  <h3 className="text-2xl font-bold text-[#0D2C54]">{ui.venueHotelName}</h3>
+                  <p className="flex items-start gap-2 text-base font-semibold text-gray-700">
+                    <span aria-hidden="true">📍</span>
+                    <span>{ui.venueAddress}</span>
+                  </p>
+                  <p className="text-base leading-relaxed text-gray-700 font-['Roboto']">{ui.venueDescription}</p>
+                  <div className="bg-[#2A9D8F]/10 border border-[#2A9D8F]/30 rounded-xl p-4 text-[#0D2C54] font-semibold">
+                    {ui.venueRatesNote}
+                  </div>
+                  <div className="bg-white border border-gray-200 rounded-xl p-5 space-y-3">
+                    <h4 className="text-lg font-bold text-[#0D2C54]">{ui.venueBookingTitle}</h4>
+                    <p className="text-sm text-gray-700 font-['Roboto']">{ui.venueBookingIntro}</p>
+                    <div className="text-sm text-gray-800 font-['Roboto'] space-y-1">
+                      <p className="font-bold text-[#0D2C54]">{ui.venueBookingContactName}</p>
+                      <p>{ui.venueBookingContactRole}</p>
+                      <p>{ui.venueBookingPhone}</p>
+                      <p>{ui.venueBookingMobile}</p>
+                      <p>
+                        <a href={`mailto:${ui.venueBookingEmail}`} className="text-[#2A9D8F] hover:underline">
+                          {ui.venueBookingEmail}
+                        </a>
+                      </p>
+                    </div>
+                    <p className="text-xs text-gray-500 font-['Roboto']">{ui.venueBookingWarning}</p>
+                  </div>
+                  <a
+                    href="https://www.mrhoteles.cl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-[#0D2C54] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#1A4B8A] transition-all shadow-lg"
+                  >
+                    <span>mrhoteles.cl</span>
+                    <ChevronRightIcon className="w-4 h-4" />
+                  </a>
+                </motion.div>
             </motion.div>
         </Section>
 
@@ -407,13 +535,13 @@ const AppContent: React.FC = () => {
                         variants={fadeInUpItem} 
                         className="flex-shrink-0 w-80 snap-center"
                     >
-                        <BookCoverCard item={edition} />
+                        <BookCoverCard item={edition} editionPrefix={ui.editionPrefix} />
                     </motion.div>
                 ))}
             </motion.div>
         </Section>
         
-        <Section id="comites" title="Comités" className="bg-gray-100 py-16 md:py-24">
+        <Section id="comites" title={ui.committeesTitle} className="bg-gray-100 py-16 md:py-24">
           <motion.div 
             className="space-y-12 max-w-5xl mx-auto"
             initial="hidden"
@@ -460,7 +588,7 @@ const AppContent: React.FC = () => {
         </Section>
         
       </main>
-      <Footer />
+      <Footer ui={ui} />
     </div>
   );
 };

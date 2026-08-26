@@ -54,7 +54,9 @@ interface CMSDataContextType {
   error: string | null;
   refreshPapers: (options?: { submitterId?: string; reviewerId?: string }) => Promise<void>;
   createPaper: (input: PaperInput, submitter: User) => Promise<Paper | null>;
+  updatePaper: (paperId: string, input: PaperInput, submitter: User) => Promise<Paper | null>;
   assignReviewer: (paperId: string, reviewerId: string) => Promise<void>;
+  unassignReviewer: (paperId: string, reviewerId: string) => Promise<void>;
   submitReview: (
     paperId: string,
     review: Omit<ReviewEntry, 'id' | 'submittedAt'>,
@@ -154,6 +156,32 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
     }
   };
 
+  const updatePaper = async (paperId: string, input: PaperInput, submitter: User) => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await fetch('/api/papers', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ paperId, submitterId: submitter.id, input }),
+      });
+      if (!response.ok) {
+        const payload = await response.json().catch(() => ({}));
+        throw new Error(payload.error || 'No se pudo actualizar el trabajo.');
+      }
+      const payload = (await response.json()) as { paper: Paper };
+      setPapers((prev) => upsertPaper(prev, payload.paper));
+      return payload.paper;
+    } catch (fetchError) {
+      const message =
+        fetchError instanceof Error ? fetchError.message : 'No se pudo actualizar el trabajo.';
+      setError(message);
+      return null;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const assignReviewer = async (paperId: string, reviewerId: string) => {
     setIsLoading(true);
     setError(null);
@@ -170,6 +198,27 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
       setPapers((prev) => upsertPaper(prev, payload.paper));
     } catch (fetchError) {
       setError('No se pudo asignar el revisor.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const unassignReviewer = async (paperId: string, reviewerId: string) => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await fetch('/api/papers/assign-reviewer', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ paperId, reviewerId, action: 'unassign' }),
+      });
+      if (!response.ok) {
+        throw new Error('No se pudo quitar el revisor.');
+      }
+      const payload = (await response.json()) as { paper: Paper };
+      setPapers((prev) => upsertPaper(prev, payload.paper));
+    } catch (fetchError) {
+      setError('No se pudo quitar el revisor.');
     } finally {
       setIsLoading(false);
     }
@@ -269,7 +318,9 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
       error,
       refreshPapers,
       createPaper,
+      updatePaper,
       assignReviewer,
+      unassignReviewer,
       submitReview,
       setDecision,
       withdrawPaper,

@@ -6,11 +6,12 @@ const roleLabels: Record<UserRole, string> = {
   author: 'Autor',
   reviewer: 'Revisor',
   chair: 'Chair',
+  staff: 'Staff',
 };
 
 export const LoginScreen: React.FC<{ onBack?: () => void }> = ({ onBack }) => {
-  const { login, register, isLoading, error, clearError } = useAuth();
-  const [mode, setMode] = useState<'login' | 'register'>('login');
+  const { login, register, requestPasswordReset, isLoading, error, clearError } = useAuth();
+  const [mode, setMode] = useState<'login' | 'register' | 'forgot'>('login');
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -19,10 +20,12 @@ export const LoginScreen: React.FC<{ onBack?: () => void }> = ({ onBack }) => {
     role: 'author' as UserRole,
   });
   const [formError, setFormError] = useState<string | null>(null);
+  const [resetSent, setResetSent] = useState(false);
 
   useEffect(() => {
     clearError();
     setFormError(null);
+    setResetSent(false);
     if (mode === 'register' && formState.role === 'chair') {
       setFormState((prev) => ({ ...prev, role: 'author' }));
     }
@@ -33,6 +36,18 @@ export const LoginScreen: React.FC<{ onBack?: () => void }> = ({ onBack }) => {
     setFormError(null);
     const email = formState.email.trim();
     const password = formState.password;
+
+    if (mode === 'forgot') {
+      if (!email) {
+        setFormError('Ingresa tu email.');
+        return;
+      }
+      const ok = await requestPasswordReset(email, formState.role);
+      if (ok) {
+        setResetSent(true);
+      }
+      return;
+    }
 
     if (mode === 'login') {
       if (!email && !password) {
@@ -98,29 +113,33 @@ export const LoginScreen: React.FC<{ onBack?: () => void }> = ({ onBack }) => {
               </button>
             )}
             <h2 className="text-3xl font-bold text-[#0D2C54] mb-2">
-              {mode === 'login' ? 'Bienvenido' : 'Crea tu cuenta'}
+              {mode === 'login' && 'Bienvenido'}
+              {mode === 'register' && 'Crea tu cuenta'}
+              {mode === 'forgot' && 'Recuperar contraseña'}
             </h2>
             <p className="text-gray-500">
-              {mode === 'login'
-                ? 'Ingresa a la plataforma de gestión CLAGTEE 2026'
-                : 'Registra tu perfil para gestionar envíos y revisiones'}
+              {mode === 'login' && 'Ingresa a la plataforma de gestión CLAGTEE 2026'}
+              {mode === 'register' && 'Registra tu perfil para gestionar envíos y revisiones'}
+              {mode === 'forgot' && 'Te enviaremos una contraseña temporal a tu correo'}
             </p>
           </div>
 
-          <div className="flex bg-gray-100 rounded-xl p-1 mb-8">
-            {(['login', 'register'] as const).map((tab) => (
-              <button
-                key={tab}
-                type="button"
-                onClick={() => setMode(tab)}
-                className={`flex-1 py-2 rounded-lg font-bold text-sm transition-all ${
-                  mode === tab ? 'bg-white text-[#0D2C54] shadow' : 'text-gray-500'
-                }`}
-              >
-                {tab === 'login' ? 'Iniciar Sesion' : 'Crear Cuenta'}
-              </button>
-            ))}
-          </div>
+          {mode !== 'forgot' && (
+            <div className="flex bg-gray-100 rounded-xl p-1 mb-8">
+              {(['login', 'register'] as const).map((tab) => (
+                <button
+                  key={tab}
+                  type="button"
+                  onClick={() => setMode(tab)}
+                  className={`flex-1 py-2 rounded-lg font-bold text-sm transition-all ${
+                    mode === tab ? 'bg-white text-[#0D2C54] shadow' : 'text-gray-500'
+                  }`}
+                >
+                  {tab === 'login' ? 'Iniciar Sesion' : 'Crear Cuenta'}
+                </button>
+              ))}
+            </div>
+          )}
 
           <form onSubmit={handleSubmit} className="space-y-5">
             {mode === 'register' && (
@@ -147,24 +166,37 @@ export const LoginScreen: React.FC<{ onBack?: () => void }> = ({ onBack }) => {
               />
             </div>
 
-            <div>
-              <label className="block text-sm font-bold text-gray-700 mb-2">Contraseña</label>
-              <input
-                type="password"
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#2A9D8F] outline-none transition-all"
-                placeholder="••••••••"
-                value={formState.password}
-                onChange={(event) => updateField('password', event.target.value)}
-              />
-            </div>
+            {mode !== 'forgot' && (
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <label className="block text-sm font-bold text-gray-700">Contraseña</label>
+                  {mode === 'login' && (
+                    <button
+                      type="button"
+                      onClick={() => setMode('forgot')}
+                      className="text-xs font-bold text-[#2A9D8F] hover:underline"
+                    >
+                      ¿Olvidaste tu contraseña?
+                    </button>
+                  )}
+                </div>
+                <input
+                  type="password"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#2A9D8F] outline-none transition-all"
+                  placeholder="••••••••"
+                  value={formState.password}
+                  onChange={(event) => updateField('password', event.target.value)}
+                />
+              </div>
+            )}
 
-            {mode === 'login' && (
+            {(mode === 'login' || mode === 'forgot') && (
               <div className="p-4 bg-gray-50 rounded-xl border border-dashed border-gray-200">
                 <p className="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wide">
                   Rol de acceso
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {(['author', 'reviewer', 'chair'] as UserRole[]).map((role) => (
+                  {(['author', 'reviewer', 'chair', 'staff'] as UserRole[]).map((role) => (
                     <button
                       key={role}
                       type="button"
@@ -225,6 +257,12 @@ export const LoginScreen: React.FC<{ onBack?: () => void }> = ({ onBack }) => {
               </div>
             )}
 
+            {resetSent && mode === 'forgot' && (
+              <div className="bg-green-50 border border-green-100 text-green-700 text-sm px-4 py-3 rounded-xl">
+                Si el email está registrado, recibirás una contraseña temporal en breve. Revisa tu bandeja de entrada (y spam).
+              </div>
+            )}
+
             <button
               type="submit"
               disabled={isLoading}
@@ -234,21 +272,26 @@ export const LoginScreen: React.FC<{ onBack?: () => void }> = ({ onBack }) => {
                 <span>Procesando...</span>
               ) : (
                 <>
-                  <span>{mode === 'login' ? 'Iniciar Sesion' : 'Registrar Cuenta'}</span>
+                  <span>
+                    {mode === 'login' && 'Iniciar Sesion'}
+                    {mode === 'register' && 'Registrar Cuenta'}
+                    {mode === 'forgot' && 'Enviar contraseña temporal'}
+                  </span>
                   <ChevronRightIcon className="w-5 h-5" />
                 </>
               )}
             </button>
-          </form>
 
-          <div className="mt-8 text-sm text-gray-500 space-y-2">
-            <p className="font-bold text-gray-400 uppercase tracking-wide text-xs">Accesos demo</p>
-            <div className="flex flex-col gap-1">
-              <span>Chair: chair@clagtee.org / chair2026</span>
-              <span>Reviewer: reviewer@clagtee.org / reviewer2026</span>
-              <span>Author: author@clagtee.org / author2026</span>
-            </div>
-          </div>
+            {mode === 'forgot' && (
+              <button
+                type="button"
+                onClick={() => setMode('login')}
+                className="w-full text-sm font-bold text-gray-500 hover:text-[#0D2C54] transition-colors"
+              >
+                Volver a iniciar sesión
+              </button>
+            )}
+          </form>
         </div>
 
         <div className="hidden md:block w-1/2 bg-[#F8FAFC] relative">
@@ -258,11 +301,11 @@ export const LoginScreen: React.FC<{ onBack?: () => void }> = ({ onBack }) => {
             alt="Conference networking"
             className="absolute inset-0 w-full h-full object-cover grayscale opacity-50"
           />
-          <div className="absolute top-8 right-8 z-20 rounded-2xl bg-white/40 backdrop-blur-sm p-0 shadow-lg">
+          <div className="absolute top-8 right-8 z-20 rounded-2xl bg-[#0D2C54]/60 backdrop-blur-sm p-4 shadow-lg">
             <img
-              src="https://res.cloudinary.com/dnh5bxvvy/image/upload/v1753825283/image_efe0xn.png"
+              src="/CLAGTEE_2026_blanco.png"
               alt="Logo CLAGTEE 2026"
-              className="h-32 w-auto lg:h-40"
+              className="h-20 w-auto lg:h-24 object-contain"
             />
           </div>
           <div className="relative z-20 h-full flex flex-col justify-end p-12 pr-28 text-white">

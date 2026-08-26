@@ -80,6 +80,73 @@ export default async function handler(req, res) {
     return;
   }
 
+  if (req.method === 'PUT') {
+    try {
+      const body = parseBody(req);
+      const { paperId, submitterId, input } = body || {};
+      if (!paperId || !submitterId || !input) {
+        res.status(400).json({ error: 'Missing required fields' });
+        return;
+      }
+
+      const db = getFirestore();
+      const ref = db.collection('papers').doc(String(paperId));
+      const snapshot = await ref.get();
+      if (!snapshot.exists) {
+        res.status(404).json({ error: 'Paper not found' });
+        return;
+      }
+
+      const current = snapshot.data();
+
+      if (current.submitterId !== submitterId) {
+        res.status(403).json({ error: 'Not allowed to edit this paper' });
+        return;
+      }
+
+      const reviewerIds = Array.isArray(current.assignedReviewerIds)
+        ? current.assignedReviewerIds
+        : [];
+      if (reviewerIds.length > 0) {
+        res.status(409).json({ error: 'Paper already assigned to reviewers' });
+        return;
+      }
+      if (current.status && current.status !== 'pending') {
+        res.status(409).json({ error: 'Paper cannot be edited in current status' });
+        return;
+      }
+
+      const updates = {
+        title: String(input.title || '').trim(),
+        abstract: String(input.abstract || '').trim(),
+        keywords: parseKeywords(input.keywords),
+        authors: Array.isArray(input.authors) ? input.authors : [],
+        track: String(input.track || current.track || '').trim(),
+        updatedAt: new Date().toISOString(),
+      };
+
+      if (typeof input.fileName === 'string' && input.fileName.trim()) {
+        updates.fileName = input.fileName.trim();
+      }
+      if (typeof input.fileUrl === 'string') {
+        updates.fileUrl = input.fileUrl.trim();
+      }
+      if (typeof input.fileKey === 'string' && input.fileKey.trim()) {
+        updates.fileKey = input.fileKey.trim();
+      }
+
+      await ref.set(updates, { merge: true });
+
+      const updatedSnapshot = await ref.get();
+      res.status(200).json({ paper: normalizePaper(updatedSnapshot) });
+    } catch (error) {
+      const message = error && error.message ? error.message : 'Failed to update paper';
+      console.error('[papers-update]', message);
+      res.status(500).json({ error: 'Failed to update paper' });
+    }
+    return;
+  }
+
   if (req.method === 'POST') {
     try {
       const body = parseBody(req);
