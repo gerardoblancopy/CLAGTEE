@@ -18,6 +18,10 @@ const getResend = () => {
 const CMS_URL = 'https://www.clagtee2026.org/cms';
 // Use verified domain for production emails
 const SENDER_EMAIL = process.env.SENDER_EMAIL || 'clagtee2026@clagtee.org';
+// Replies from recipients go here, matching the contact address in the email footer
+const REPLY_TO_EMAIL = process.env.REPLY_TO_EMAIL || 'gerardo.blanco@pucv.cl';
+// Archive copy for chair-initiated emails; set to empty to disable
+const BCC_EMAIL = process.env.BCC_EMAIL || 'gerardo.blanco@pucv.cl';
 
 export const sendReviewerInvitation = async ({ to, name, tempPassword }) => {
   const resend = getResend();
@@ -105,6 +109,7 @@ export const sendReviewerInvitation = async ({ to, name, tempPassword }) => {
 
   const { data, error } = await resend.emails.send({
     from: `CLAGTEE 2026 <${SENDER_EMAIL}>`,
+    replyTo: REPLY_TO_EMAIL,
     to: [to],
     subject: 'Invitación como Revisor - CLAGTEE 2026',
     html,
@@ -127,7 +132,7 @@ const escapeHtml = (value) =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
 
-export const sendCustomEmail = async ({ to, name, subject, body }) => {
+export const sendCustomEmail = async ({ to, name, subject, body, archiveCopy = false }) => {
   const resend = getResend();
 
   const safeBody = escapeHtml(body).replace(/\n/g, '<br>');
@@ -177,7 +182,9 @@ export const sendCustomEmail = async ({ to, name, subject, body }) => {
 
   const { data, error } = await resend.emails.send({
     from: `CLAGTEE 2026 <${SENDER_EMAIL}>`,
+    replyTo: REPLY_TO_EMAIL,
     to: [to],
+    ...(archiveCopy && BCC_EMAIL ? { bcc: [BCC_EMAIL] } : {}),
     subject,
     html,
   });
@@ -277,6 +284,7 @@ export const sendPasswordReset = async ({ to, name, tempPassword }) => {
 
   const { data, error } = await resend.emails.send({
     from: `CLAGTEE 2026 <${SENDER_EMAIL}>`,
+    replyTo: REPLY_TO_EMAIL,
     to: [to],
     subject: 'Recuperación de contraseña - CLAGTEE 2026',
     html,
@@ -394,6 +402,7 @@ export const sendRegistrationReceipt = async ({
 
   const { data, error } = await resend.emails.send({
     from: `CLAGTEE 2026 <${SENDER_EMAIL}>`,
+    replyTo: REPLY_TO_EMAIL,
     to: [to],
     subject: `Pre-registro recibido (${id}) - CLAGTEE 2026`,
     html: emailShell('Pre-registro recibido - CLAGTEE 2026', inner),
@@ -437,6 +446,7 @@ export const sendCouponConfirmation = async ({ to, name, id, category, couponCod
 
   const { data, error } = await resend.emails.send({
     from: `CLAGTEE 2026 <${SENDER_EMAIL}>`,
+    replyTo: REPLY_TO_EMAIL,
     to: [to],
     subject: `Inscripción confirmada (${id}) - CLAGTEE 2026`,
     html: emailShell('Inscripción confirmada - CLAGTEE 2026', inner),
@@ -471,6 +481,7 @@ export const sendComprobanteReceived = async ({ to, name, id }) => {
 
   const { data, error } = await resend.emails.send({
     from: `CLAGTEE 2026 <${SENDER_EMAIL}>`,
+    replyTo: REPLY_TO_EMAIL,
     to: [to],
     subject: `Comprobante recibido (${id}) - CLAGTEE 2026`,
     html: emailShell('Comprobante recibido - CLAGTEE 2026', inner),

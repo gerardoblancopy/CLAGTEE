@@ -109,12 +109,14 @@ export default async function handler(req, res) {
       }
 
       const results = await Promise.allSettled(
-        recipients.map((recipient) =>
+        recipients.map((recipient, index) =>
           sendCustomEmail({
             to: recipient,
             name: name || '',
             subject: trimmedSubject,
             body: trimmedBody,
+            // One archive copy per send action, not one per recipient
+            archiveCopy: index === 0,
           })
         )
       );
