@@ -9,6 +9,10 @@ export interface User {
   role: UserRole;
   avatarUrl?: string;
   affiliation?: string;
+  // Set when the reviewer invitation email was dispatched; absent for
+  // reviewers invited before this was recorded.
+  invitationSentAt?: string | null;
+  invitationError?: string | null;
 }
 
 interface AuthContextType {
@@ -29,7 +33,12 @@ interface AuthContextType {
     name: string;
     email: string;
     affiliation?: string;
-  }) => Promise<{ email: string; tempPassword: string } | null>;
+  }) => Promise<{
+    email: string;
+    tempPassword: string;
+    emailSent?: boolean;
+    emailError?: string | null;
+  } | null>;
   deleteReviewer: (userId: string) => Promise<boolean>;
   deleteAuthor: (userId: string) => Promise<boolean>;
   sendEmailToUser: (payload: {
@@ -208,7 +217,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setIsLoading(false);
         return null;
       }
-      const result = (await response.json()) as { email: string; tempPassword: string };
+      const result = (await response.json()) as {
+        email: string;
+        tempPassword: string;
+        emailSent?: boolean;
+        emailError?: string | null;
+      };
       setIsLoading(false);
       await refreshUsers();
       return result;

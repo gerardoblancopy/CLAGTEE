@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { UserIcon } from '../../components/icons';
-import { useAuth } from './AuthContext';
+import { User, useAuth } from './AuthContext';
 import { Paper, PaperStatus, useCMSData } from './CMSDataContext';
 import { buildDownloadUrl } from './downloadUrl';
 
@@ -31,7 +31,12 @@ export const ChairDashboard: React.FC = () => {
     email: '',
     affiliation: '',
   });
-  const [inviteResult, setInviteResult] = useState<{ email: string; tempPassword: string } | null>(
+  const [inviteResult, setInviteResult] = useState<{
+    email: string;
+    tempPassword: string;
+    emailSent?: boolean;
+    emailError?: string | null;
+  } | null>(
     null
   );
   const { users, inviteReviewer, deleteReviewer, deleteAuthor, sendEmailToUser, error, clearError, isLoading } = useAuth();
@@ -133,6 +138,30 @@ export const ChairDashboard: React.FC = () => {
 
   const resolveReviewerName = (reviewerId: string) =>
     reviewers.find((reviewer) => reviewer.id === reviewerId)?.name || 'Revisor externo';
+
+  // Reviewers invited before the outcome was recorded have neither field set,
+  // which is unknown rather than failed.
+  const invitationStatus = (reviewer: User) => {
+    if (reviewer.invitationError) {
+      return {
+        label: 'Invitacion fallida',
+        title: reviewer.invitationError,
+        className: 'bg-red-100 text-red-700',
+      };
+    }
+    if (reviewer.invitationSentAt) {
+      return {
+        label: 'Invitacion enviada',
+        title: reviewer.invitationSentAt,
+        className: 'bg-green-100 text-green-700',
+      };
+    }
+    return {
+      label: 'Sin registro',
+      title: 'Invitado antes de que se registrara el envio. Verifica en Resend.',
+      className: 'bg-gray-100 text-gray-500',
+    };
+  };
 
   const recommendationLabels: Record<string, string> = {
     'accept': 'Aceptar',
@@ -362,6 +391,15 @@ ${commentsBlock}Valoramos su interes en CLAGTEE 2026 y esperamos contar con su p
                 <p className="font-bold text-[#0D2C54] mb-2">Credenciales generadas</p>
                 <p>Email: {inviteResult.email}</p>
                 <p>Clave temporal: {inviteResult.tempPassword}</p>
+                {inviteResult.emailSent === false ? (
+                  <p className="mt-2 text-red-600 font-bold">
+                    El correo de invitacion NO se envio
+                    {inviteResult.emailError ? `: ${inviteResult.emailError}` : '.'} Entrega estas
+                    credenciales por otro medio o reintenta desde la tabla de revisores.
+                  </p>
+                ) : (
+                  <p className="mt-2 text-green-700">Correo de invitacion enviado.</p>
+                )}
               </div>
             )}
           </div>
@@ -634,7 +672,20 @@ ${commentsBlock}Valoramos su interes en CLAGTEE 2026 y esperamos contar con su p
                       </div>
                       <span className="font-bold text-gray-800">{reviewer.name}</span>
                     </div>
-                    <div className="col-span-3 text-sm text-gray-600">{reviewer.email}</div>
+                    <div className="col-span-3 text-sm text-gray-600">
+                      <span className="block break-all">{reviewer.email}</span>
+                      {(() => {
+                        const status = invitationStatus(reviewer);
+                        return (
+                          <span
+                            title={status.title}
+                            className={`inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-bold ${status.className}`}
+                          >
+                            {status.label}
+                          </span>
+                        );
+                      })()}
+                    </div>
                     <div className="col-span-2 text-sm text-gray-500">
                       {reviewer.affiliation || '—'}
                     </div>

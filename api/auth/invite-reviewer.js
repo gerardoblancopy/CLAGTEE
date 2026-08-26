@@ -45,18 +45,32 @@ export default async function handler(req, res) {
 
     await ref.set(user);
 
-    // Send invitation email (non-blocking for response)
+    // Send invitation email (non-blocking for response) and record the outcome,
+    // so a reviewer that never got credentials is visible in the chair panel.
+    let invitationSentAt = null;
+    let invitationError = null;
     try {
       await sendReviewerInvitation({
         to: user.email,
         name: user.name,
         tempPassword,
       });
+      invitationSentAt = new Date().toISOString();
     } catch (emailError) {
-      console.error('[invite-reviewer] Email failed (user still created):', emailError.message);
+      invitationError = emailError && emailError.message ? emailError.message : 'Error desconocido';
+      console.error('[invite-reviewer] Email failed (user still created):', invitationError);
     }
 
-    res.status(201).json({ email: user.email, tempPassword });
+    // Deliberately not touching updatedAt: it only tracks password activity,
+    // which is the signal that a reviewer actually used their credentials.
+    await ref.set({ invitationSentAt, invitationError }, { merge: true });
+
+    res.status(201).json({
+      email: user.email,
+      tempPassword,
+      emailSent: Boolean(invitationSentAt),
+      emailError: invitationError,
+    });
   } catch (error) {
     const message = error && error.message ? error.message : 'Failed to invite reviewer';
     console.error('[auth-invite-reviewer]', message);
