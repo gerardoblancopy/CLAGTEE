@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { UserIcon } from '../../components/icons';
 import { useAuth } from './AuthContext';
-import { PaperStatus, useCMSData } from './CMSDataContext';
+import { Paper, PaperStatus, useCMSData } from './CMSDataContext';
 import { buildDownloadUrl } from './downloadUrl';
 
 const statusStyles = {
@@ -38,11 +38,15 @@ export const ChairDashboard: React.FC = () => {
   const { papers, assignReviewer, unassignReviewer, setDecision, deletePaper } = useCMSData();
 
   const [emailModal, setEmailModal] = useState<{
-    to: string;
-    name: string;
+    to: string | string[];
+    name?: string;
+    label: string;
+    title: string;
+    decisionPaper?: Paper;
   } | null>(null);
   const [emailForm, setEmailForm] = useState({ subject: '', body: '' });
   const [emailFeedback, setEmailFeedback] = useState<string | null>(null);
+  const [includeReviewerComments, setIncludeReviewerComments] = useState(true);
 
   const handleDeleteReviewer = async (reviewerId: string, reviewerName: string) => {
     const ok = window.confirm(`¿Deseas eliminar al revisor "${reviewerName}"? Esta accion no se puede deshacer.`);
@@ -59,7 +63,7 @@ export const ChairDashboard: React.FC = () => {
   };
 
   const openEmailModal = (to: string, name: string) => {
-    setEmailModal({ to, name });
+    setEmailModal({ to, name, label: `${name} <${to}>`, title: 'Enviar email' });
     setEmailForm({ subject: '', body: '' });
     setEmailFeedback(null);
     clearError();
@@ -75,6 +79,14 @@ export const ChairDashboard: React.FC = () => {
     event.preventDefault();
     if (!emailModal) return;
     if (!emailForm.subject.trim() || !emailForm.body.trim()) return;
+    if (emailModal.decisionPaper) {
+      const count = Array.isArray(emailModal.to) ? emailModal.to.length : 1;
+      const decision = emailModal.decisionPaper.status === 'accepted' ? 'aceptacion' : 'rechazo';
+      const ok = window.confirm(
+        `Se enviara la notificacion de ${decision} de "${emailModal.decisionPaper.title}" a ${count} destinatario(s). Esta accion no se puede deshacer. ¿Continuar?`
+      );
+      if (!ok) return;
+    }
     const ok = await sendEmailToUser({
       to: emailModal.to,
       name: emailModal.name,
@@ -127,6 +139,76 @@ export const ChairDashboard: React.FC = () => {
     'minor-revision': 'Revision menor',
     'major-revision': 'Revision mayor',
     'reject': 'Rechazar',
+  };
+
+  const resolveDecisionRecipients = (paper: Paper) => {
+    const submitter = users.find((candidate) => candidate.id === paper.submitterId);
+    const emails = [submitter?.email, ...paper.authors.map((author) => author.email)]
+      .map((email) => (email || '').trim().toLowerCase())
+      .filter(Boolean);
+    return Array.from(new Set(emails));
+  };
+
+  const buildReviewerCommentsBlock = (paper: Paper) => {
+    if (paper.reviews.length === 0) return '';
+    const blocks = paper.reviews.map((review, index) => {
+      const recommendation = recommendationLabels[review.recommendation] || review.recommendation;
+      const header = `Revisor ${index + 1} — Recomendacion: ${recommendation} | Puntaje: ${review.score}/10`;
+      const comments = review.comments.trim() || 'Sin comentarios adicionales.';
+      return `${header}\n${comments}`;
+    });
+    return `Comentarios de la revision por pares:\n\n${blocks.join('\n\n')}\n\n`;
+  };
+
+  const buildDecisionEmail = (paper: Paper, withComments: boolean) => {
+    const accepted = paper.status === 'accepted';
+    const commentsBlock = withComments ? buildReviewerCommentsBlock(paper) : '';
+    const subject = accepted
+      ? `CLAGTEE 2026 — Trabajo aceptado (${paper.id})`
+      : `CLAGTEE 2026 — Resultado de la evaluacion (${paper.id})`;
+
+    const body = accepted
+      ? `Estimados/as autores/as,
+
+Nos complace informarles que el trabajo "${paper.title}" (ID: ${paper.id}), enviado al track ${paper.track}, ha sido ACEPTADO para su presentacion en CLAGTEE 2026.
+
+${commentsBlock}Proximamente les haremos llegar las instrucciones para la version final del manuscrito y la inscripcion al congreso.
+
+Agradecemos su contribucion.`
+      : `Estimados/as autores/as,
+
+Agradecemos el envio del trabajo "${paper.title}" (ID: ${paper.id}) al track ${paper.track} de CLAGTEE 2026.
+
+Tras el proceso de revision por pares, lamentamos informarles que el trabajo NO ha sido aceptado para su presentacion en esta edicion del congreso.
+
+${commentsBlock}Valoramos su interes en CLAGTEE 2026 y esperamos contar con su participacion en futuras ediciones.`;
+
+    return { subject, body };
+  };
+
+  const openDecisionEmail = (paper: Paper) => {
+    const recipients = resolveDecisionRecipients(paper);
+    if (recipients.length === 0) {
+      window.alert('Este trabajo no tiene direcciones de correo asociadas.');
+      return;
+    }
+    const withComments = paper.reviews.length > 0;
+    setIncludeReviewerComments(withComments);
+    setEmailModal({
+      to: recipients,
+      label: recipients.join(', '),
+      title: paper.status === 'accepted' ? 'Notificar aceptacion' : 'Notificar rechazo',
+      decisionPaper: paper,
+    });
+    setEmailForm(buildDecisionEmail(paper, withComments));
+    setEmailFeedback(null);
+    clearError();
+  };
+
+  const toggleReviewerComments = (checked: boolean) => {
+    setIncludeReviewerComments(checked);
+    if (!emailModal?.decisionPaper) return;
+    setEmailForm(buildDecisionEmail(emailModal.decisionPaper, checked));
   };
 
   const handleInviteSubmit = async (event: React.FormEvent) => {
@@ -447,6 +529,16 @@ export const ChairDashboard: React.FC = () => {
                             </span>
                           )}
 
+                          {(paper.status === 'accepted' || paper.status === 'rejected') && (
+                            <button
+                              type="button"
+                              onClick={() => openDecisionEmail(paper)}
+                              className="text-[#0D2C54] text-xs font-bold hover:underline text-left"
+                            >
+                              ✉ Notificar {paper.status === 'accepted' ? 'aceptacion' : 'rechazo'}
+                            </button>
+                          )}
+
                           <button
                             type="button"
                             onClick={() => handleDelete(paper.id)}
@@ -658,10 +750,15 @@ export const ChairDashboard: React.FC = () => {
           <div className="bg-white rounded-2xl shadow-xl w-full max-w-lg p-6">
             <div className="flex items-start justify-between mb-4">
               <div>
-                <h4 className="text-lg font-bold text-[#0D2C54]">Enviar email</h4>
-                <p className="text-sm text-gray-500">
-                  Para: <span className="font-bold">{emailModal.name}</span> &lt;{emailModal.to}&gt;
+                <h4 className="text-lg font-bold text-[#0D2C54]">{emailModal.title}</h4>
+                <p className="text-sm text-gray-500 break-all">
+                  Para: <span className="font-bold">{emailModal.label}</span>
                 </p>
+                {emailModal.decisionPaper && (
+                  <p className="text-xs text-gray-400 mt-1">
+                    {emailModal.decisionPaper.id} · {emailModal.decisionPaper.title}
+                  </p>
+                )}
               </div>
               <button
                 type="button"
@@ -695,6 +792,23 @@ export const ChairDashboard: React.FC = () => {
                   required
                 />
               </div>
+
+              {emailModal.decisionPaper && emailModal.decisionPaper.reviews.length > 0 && (
+                <label className="flex items-start gap-2 text-sm text-gray-600 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={includeReviewerComments}
+                    onChange={(e) => toggleReviewerComments(e.target.checked)}
+                    className="mt-1 accent-[#2A9D8F]"
+                  />
+                  <span>
+                    Incluir comentarios de los revisores ({emailModal.decisionPaper.reviews.length})
+                    <span className="block text-xs text-gray-400">
+                      Al cambiar esta opcion se regenera el mensaje y se pierden las ediciones manuales.
+                    </span>
+                  </span>
+                </label>
+              )}
 
               {error && (
                 <div className="bg-red-50 border border-red-100 text-red-600 text-sm px-4 py-3 rounded-xl">

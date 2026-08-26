@@ -269,6 +269,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setIsLoading(false);
         return false;
       }
+      const result = (await response.json().catch(() => ({}))) as {
+        sent?: number;
+        failed?: number;
+      };
+      if (result.failed) {
+        const total = (result.sent || 0) + result.failed;
+        setError(`Enviado a ${result.sent || 0} de ${total} destinatarios. ${result.failed} fallaron.`);
+      }
       setIsLoading(false);
       return true;
     } catch (fetchError) {
