@@ -39,7 +39,7 @@ export const ChairDashboard: React.FC = () => {
   } | null>(
     null
   );
-  const { users, inviteReviewer, deleteReviewer, deleteAuthor, sendEmailToUser, error, clearError, isLoading } = useAuth();
+  const { users, inviteReviewer, resendReviewerInvitation, deleteReviewer, deleteAuthor, sendEmailToUser, error, clearError, isLoading } = useAuth();
   const { papers, assignReviewer, unassignReviewer, setDecision, deletePaper } = useCMSData();
 
   const [emailModal, setEmailModal] = useState<{
@@ -52,6 +52,21 @@ export const ChairDashboard: React.FC = () => {
   const [emailForm, setEmailForm] = useState({ subject: '', body: '' });
   const [emailFeedback, setEmailFeedback] = useState<string | null>(null);
   const [includeReviewerComments, setIncludeReviewerComments] = useState(true);
+  const [resendResult, setResendResult] = useState<{ email: string; tempPassword: string } | null>(
+    null
+  );
+
+  const handleResendInvitation = async (reviewer: User) => {
+    const ok = window.confirm(
+      `Se enviara una nueva invitacion a "${reviewer.name}" <${reviewer.email}> con una clave temporal nueva.\n\n` +
+        'Si el revisor ya definio su propia contrasena, dejara de funcionar y tendra que usar la nueva. ¿Continuar?'
+    );
+    if (!ok) return;
+    const result = await resendReviewerInvitation(reviewer.email);
+    if (result) {
+      setResendResult({ email: result.email, tempPassword: result.tempPassword });
+    }
+  };
 
   const handleDeleteReviewer = async (reviewerId: string, reviewerName: string) => {
     const ok = window.confirm(`¿Deseas eliminar al revisor "${reviewerName}"? Esta accion no se puede deshacer.`);
@@ -634,6 +649,27 @@ ${commentsBlock}Valoramos su interes en CLAGTEE 2026 y esperamos contar con su p
             <p className="text-sm text-gray-500">Todos los revisores registrados en el sistema</p>
           </div>
 
+          {error && (
+            <div className="mx-4 mt-4 bg-red-50 border border-red-100 text-red-600 text-sm px-4 py-3 rounded-xl">
+              {error}
+            </div>
+          )}
+
+          {resendResult && (
+            <div className="mx-4 mt-4 bg-green-50 border border-green-100 text-sm text-gray-700 px-4 py-3 rounded-xl">
+              <p className="font-bold text-green-700 mb-1">Invitacion reenviada</p>
+              <p>Email: {resendResult.email}</p>
+              <p>Nueva clave temporal: {resendResult.tempPassword}</p>
+              <button
+                type="button"
+                onClick={() => setResendResult(null)}
+                className="mt-2 text-xs font-bold text-gray-500 hover:underline"
+              >
+                Cerrar
+              </button>
+            </div>
+          )}
+
           {/* Table Header */}
           <div className="grid grid-cols-12 gap-4 p-4 bg-gray-50 text-xs font-bold text-gray-500 uppercase tracking-wider">
             <div className="col-span-3">Nombre</div>
@@ -705,7 +741,15 @@ ${commentsBlock}Valoramos su interes en CLAGTEE 2026 y esperamos contar con su p
                         {completedReviews}
                       </span>
                     </div>
-                    <div className="col-span-2">
+                    <div className="col-span-2 flex flex-col gap-1 items-start">
+                      <button
+                        type="button"
+                        onClick={() => handleResendInvitation(reviewer)}
+                        disabled={isLoading}
+                        className="text-[#2A9D8F] text-xs font-bold hover:underline disabled:opacity-50"
+                      >
+                        ✉ Reenviar invitacion
+                      </button>
                       <button
                         type="button"
                         onClick={() => handleDeleteReviewer(reviewer.id, reviewer.name)}

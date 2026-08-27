@@ -111,6 +111,7 @@ export const sendReviewerInvitation = async ({ to, name, tempPassword }) => {
     from: `CLAGTEE 2026 <${SENDER_EMAIL}>`,
     replyTo: REPLY_TO_EMAIL,
     to: [to],
+    ...(BCC_EMAIL ? { bcc: [BCC_EMAIL] } : {}),
     subject: 'Invitación como Revisor - CLAGTEE 2026',
     html,
   });

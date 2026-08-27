@@ -12,9 +12,10 @@ export default async function handler(req, res) {
 
   try {
     await seedUsersIfNeeded();
-    const { name, email, affiliation } = req.body || {};
+    const { name, email, affiliation, action } = req.body || {};
+    const isResend = action === 'resend';
 
-    if (!name || !email) {
+    if (!email || (!isResend && !name)) {
       res.status(400).json({ error: 'Missing required fields' });
       return;
     }
@@ -23,6 +24,49 @@ export default async function handler(req, res) {
     const db = getFirestore();
     const ref = db.collection('users').doc(userDocId(email, role));
     const existing = await ref.get();
+
+    if (isResend) {
+      if (!existing.exists) {
+        res.status(404).json({ error: 'Reviewer not found' });
+        return;
+      }
+      const current = existing.data() || {};
+      const newPassword = generateTempPassword();
+      const newHash = await hash(newPassword, 10);
+
+      let resentAt = null;
+      let resendError = null;
+      try {
+        await sendReviewerInvitation({
+          to: current.email,
+          name: current.name,
+          tempPassword: newPassword,
+        });
+        resentAt = new Date().toISOString();
+      } catch (emailError) {
+        resendError = emailError && emailError.message ? emailError.message : 'Error desconocido';
+        console.error('[invite-reviewer] Resend failed:', resendError);
+      }
+
+      // Only replace the stored password once the email carrying it went out,
+      // otherwise a failed resend would lock out a reviewer who had credentials.
+      const updates = { invitationSentAt: resentAt, invitationError: resendError };
+      if (resentAt) updates.passwordHash = newHash;
+      await ref.set(updates, { merge: true });
+
+      if (!resentAt) {
+        res.status(502).json({ error: 'No se pudo enviar la invitacion', emailError: resendError });
+        return;
+      }
+
+      res.status(200).json({
+        email: current.email,
+        tempPassword: newPassword,
+        emailSent: true,
+        emailError: null,
+      });
+      return;
+    }
 
     if (existing.exists) {
       res.status(409).json({ error: 'Email already registered for reviewer' });

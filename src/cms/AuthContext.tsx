@@ -39,6 +39,10 @@ interface AuthContextType {
     emailSent?: boolean;
     emailError?: string | null;
   } | null>;
+  resendReviewerInvitation: (email: string) => Promise<{
+    email: string;
+    tempPassword: string;
+  } | null>;
   deleteReviewer: (userId: string) => Promise<boolean>;
   deleteAuthor: (userId: string) => Promise<boolean>;
   sendEmailToUser: (payload: {
@@ -262,6 +266,33 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const deleteReviewer = (userId: string) => deleteUserByRole(userId, 'reviewer', 'revisor');
   const deleteAuthor = (userId: string) => deleteUserByRole(userId, 'author', 'autor');
 
+  const resendReviewerInvitation = async (email: string) => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/auth/invite-reviewer', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, action: 'resend' }),
+      });
+      if (!response.ok) {
+        const errorPayload = (await response.json()) as { error?: string; emailError?: string };
+        setError(errorPayload.emailError || errorPayload.error || 'No se pudo reenviar la invitacion.');
+        setIsLoading(false);
+        return null;
+      }
+      const result = (await response.json()) as { email: string; tempPassword: string };
+      setIsLoading(false);
+      await refreshUsers();
+      return result;
+    } catch (fetchError) {
+      setError('No se pudo reenviar la invitacion.');
+      setIsLoading(false);
+      return null;
+    }
+  };
+
   const sendEmailToUser = async (payload: {
     to: string | string[];
     name?: string;
@@ -382,6 +413,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         login,
         register,
         inviteReviewer,
+        resendReviewerInvitation,
         deleteReviewer,
         deleteAuthor,
         sendEmailToUser,
