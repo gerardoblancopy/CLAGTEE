@@ -79,6 +79,7 @@ export const getFirestore = () => {
       client_email: clientEmail,
       private_key: privateKey,
     },
+    ignoreUndefinedProperties: true,
   });
 
   return cachedFirestore;

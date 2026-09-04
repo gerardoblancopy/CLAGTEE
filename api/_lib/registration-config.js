@@ -62,6 +62,17 @@ const needsPaper = (category, studentType) =>
   category === 'paper-adicional' ||
   (category === 'estudiante' && studentType === 'autor');
 
+export const stripUndefined = (obj) => {
+  if (!obj || typeof obj !== 'object') return obj;
+  const result = {};
+  for (const [key, value] of Object.entries(obj)) {
+    if (value !== undefined) {
+      result[key] = value;
+    }
+  }
+  return result;
+};
+
 /**
  * Valida el input según la categoría y devuelve un objeto limpio listo para persistir.
  * @returns {{ ok: boolean, errors: string[], clean: object|null }}
@@ -166,5 +177,5 @@ export const validateRegistrationInput = (input) => {
     });
   }
 
-  return { ok: errors.length === 0, errors, clean: errors.length === 0 ? clean : null };
+  return { ok: errors.length === 0, errors, clean: errors.length === 0 ? stripUndefined(clean) : null };
 };

@@ -330,7 +330,7 @@ export const RegistrationForm: React.FC = () => {
       {showRequired && missing.length > 0 && (
         <p className="text-sm text-red-500 font-semibold">{r.messages.requiredFields}</p>
       )}
-      {error === 'create-failed' && (
+      {error && !couponErrorMessage && (
         <p className="text-sm text-red-500 font-semibold">{r.messages.errorGeneric}</p>
       )}
 

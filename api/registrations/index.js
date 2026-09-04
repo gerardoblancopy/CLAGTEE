@@ -6,6 +6,7 @@ import {
   validateRegistrationInput,
   getCouponDefinition,
   normalizeCouponCode,
+  stripUndefined,
 } from '../_lib/registration-config.js';
 import { sendRegistrationReceipt, sendComprobanteReceived, sendCouponConfirmation } from '../_lib/email.js';
 
@@ -192,20 +193,23 @@ export default async function handler(req, res) {
         const id = `REG-${String(number).padStart(4, '0')}`;
         const token = randomBytes(16).toString('hex');
         const now = new Date().toISOString();
-        return {
+        const record = {
           id,
           token,
           ...clean,
-          couponCode: applyCoupon ? couponDef.code : undefined,
           phase,
           amountUsd: applyCoupon ? 0 : pricing.amountUsd,
           currency: pricing.currency,
           paymentUrl: applyCoupon ? null : pricing.paymentUrl,
           status: applyCoupon ? 'confirmada' : 'pre-registro-creado',
-          paperMatch,
+          paperMatch: paperMatch ?? null,
           createdAt: now,
           updatedAt: now,
         };
+        if (applyCoupon && couponDef) {
+          record.couponCode = couponDef.code;
+        }
+        return stripUndefined(record);
       };
 
       const result = await createRegistrationTransaction(db, { couponDef, couponKey, buildRecord });
