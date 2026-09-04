@@ -9,6 +9,7 @@ import { AnnouncementMarquee } from './components/AnnouncementMarquee';
 import { Section } from './components/Section';
 import { ImportantDatesCard } from './components/ImportantDatesCard';
 import { BookCoverCard } from './components/BookCoverCard';
+import { SpeakerCarousel } from './components/SpeakerCarousel';
 import { ChevronRightIcon } from './components/icons';
 import { Footer } from './components/Footer';
 import { CMSLayout } from './src/cms/CMSLayout';
@@ -154,7 +155,7 @@ const CMSContainer: React.FC<{
 const resolveViewFromPath = (path: string) => (path.startsWith('/cms') ? 'cms' : 'web');
 
 const AppContent: React.FC = () => {
-  const { content, ui } = useLanguage();
+  const { content, ui, language } = useLanguage();
   const [view, setView] = React.useState<'web' | 'cms'>(() => resolveViewFromPath(window.location.pathname));
   const [downloadingTemplate, setDownloadingTemplate] = React.useState<string | null>(null);
 
@@ -442,16 +443,13 @@ const AppContent: React.FC = () => {
           <RegistrationSection />
         </Section>
 
-        <Section id="conferencistas" title={content.sections.speakers.title} className="bg-gray-100 py-16 md:py-24">
-          <motion.p 
-            className="text-center text-lg text-gray-600"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={fadeIn}
-          >
-            {ui.speakersPlaceholder}
-          </motion.p>
+        <Section id="conferencistas" title={content.sections.speakers.title} className="bg-gray-100 py-16 md:py-24" contentClassName="!max-w-7xl">
+          <SpeakerCarousel
+            speakers={content.sections.speakers.list}
+            subtitle={content.sections.speakers.subtitle}
+            moreSoonText={ui.speakersPlaceholder}
+            viewFullText={language === 'es' ? 'Ver afiche oficial' : language === 'pt' ? 'Ver cartaz oficial' : 'View official banner'}
+          />
         </Section>
         
         <Section id="sede" title={ui.venueTitle} contentClassName="!max-w-6xl">

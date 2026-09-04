@@ -424,8 +424,20 @@ export const contentES: Content = {
       }
     },
     "speakers": {
-      "title": "Conferencistas",
-      "list": []
+      "title": "Conferencistas Magistrales",
+      "subtitle": "Destacadas personalidades del ámbito científico y tecnológico internacional compartirán su visión en CLAGTEE 2026.",
+      "list": [
+        {
+          "id": "dr-jose-rodriguez",
+          "name": "Dr. José Rodríguez",
+          "badge": "Conferencista Magistral Confirmado",
+          "title": "“El rol de la Electrónica de Potencia en la transición energética hacia un mundo más sostenible”",
+          "tagline": "El investigador chileno más citado del mundo",
+          "date": "28 de Octubre 2026",
+          "imageUrl": "/speakers/keynote-jose-rodriguez.png",
+          "description": "Life Fellow del IEEE, miembro de la Academia de Ingeniería de Chile, Premio Nacional de Ciencias Aplicadas y Tecnológicas 2014 e Investigador N°1 de Chile en el Ranking de la Universidad de Stanford 2025."
+        }
+      ]
     },
     "pastEditions": {
       "title": "Ediciones Anteriores",
@@ -495,7 +507,7 @@ export const uiES: UIStrings = {
   ariaHome: "XVI CLAGTEE 2026, ir al inicio",
   ariaOpenMenu: "Abrir menú de navegación",
   ariaCloseMenu: "Cerrar menú de navegación",
-  speakersPlaceholder: "Los conferencistas magistrales serán anunciados próximamente.",
+  speakersPlaceholder: "Más conferencistas magistrales serán anunciados próximamente.",
   deadlineBanner: "Nueva fecha límite para la presentación de trabajos completos: 22 de Agosto de 2026",
   venueTitle: "Sede del Evento",
   venueCity: "Providencia, Santiago de Chile",

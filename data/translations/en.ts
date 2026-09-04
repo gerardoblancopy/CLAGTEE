@@ -424,8 +424,20 @@ export const contentEN: Content = {
       }
     },
     "speakers": {
-      "title": "Speakers",
-      "list": []
+      "title": "Keynote Speakers",
+      "subtitle": "Distinguished international leaders in science and technology will share their expertise at CLAGTEE 2026.",
+      "list": [
+        {
+          "id": "dr-jose-rodriguez",
+          "name": "Dr. José Rodríguez",
+          "badge": "Confirmed Keynote Speaker",
+          "title": "“The role of Power Electronics in the energy transition toward a more sustainable world”",
+          "tagline": "The most cited Chilean researcher in the world",
+          "date": "October 28, 2026",
+          "imageUrl": "/speakers/keynote-jose-rodriguez.png",
+          "description": "IEEE Life Fellow, member of the Chilean Academy of Engineering, 2014 National Prize for Applied Sciences and Technologies, and #1 Researcher in Chile in the 2025 Stanford University Ranking."
+        }
+      ]
     },
     "pastEditions": {
       "title": "Past Editions",
@@ -495,7 +507,7 @@ export const uiEN: UIStrings = {
   ariaHome: "XVI CLAGTEE 2026, go to top",
   ariaOpenMenu: "Open navigation menu",
   ariaCloseMenu: "Close navigation menu",
-  speakersPlaceholder: "Keynote speakers will be announced soon.",
+  speakersPlaceholder: "More keynote speakers will be announced soon.",
   deadlineBanner: "New deadline for full paper submissions: August 22, 2026",
   venueTitle: "Event Venue",
   venueCity: "Providencia, Santiago, Chile",

@@ -65,6 +65,18 @@ export interface BookCover {
   imageUrl: string;
 }
 
+export interface KeynoteSpeaker {
+  id: string;
+  name: string;
+  badge?: string;
+  title: string;
+  affiliation?: string;
+  tagline?: string;
+  date?: string;
+  imageUrl: string;
+  description?: string;
+}
+
 export interface CallForPapersTemplate {
   label: string;
   href: string;
@@ -137,7 +149,8 @@ export interface Content {
     registration: RegistrationContent;
     speakers: {
       title: string;
-      list: any[]; // Empty list as per requirement
+      subtitle?: string;
+      list: KeynoteSpeaker[];
     };
     pastEditions: {
       title: string;
