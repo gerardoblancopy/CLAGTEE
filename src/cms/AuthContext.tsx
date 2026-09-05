@@ -13,6 +13,9 @@ export interface User {
   // reviewers invited before this was recorded.
   invitationSentAt?: string | null;
   invitationError?: string | null;
+  // Ultimo aviso de trabajos asignados enviado al revisor.
+  assignmentNotifiedAt?: string | null;
+  assignmentNotifyError?: string | null;
 }
 
 interface AuthContextType {

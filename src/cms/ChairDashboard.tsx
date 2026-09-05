@@ -40,7 +40,14 @@ export const ChairDashboard: React.FC = () => {
     null
   );
   const { users, inviteReviewer, resendReviewerInvitation, deleteReviewer, deleteAuthor, sendEmailToUser, error, clearError, isLoading } = useAuth();
-  const { papers, assignReviewer, unassignReviewer, setDecision, deletePaper } = useCMSData();
+  const {
+    papers,
+    assignReviewer,
+    notifyReviewerAssignments,
+    unassignReviewer,
+    setDecision,
+    deletePaper,
+  } = useCMSData();
 
   const [emailModal, setEmailModal] = useState<{
     to: string | string[];
@@ -55,6 +62,7 @@ export const ChairDashboard: React.FC = () => {
   const [resendResult, setResendResult] = useState<{ email: string; tempPassword: string } | null>(
     null
   );
+  const [notifyResult, setNotifyResult] = useState<{ ok: boolean; message: string } | null>(null);
 
   const handleResendInvitation = async (reviewer: User) => {
     const ok = window.confirm(
@@ -130,11 +138,67 @@ export const ChairDashboard: React.FC = () => {
 
   const pendingCount = papers.filter((paper) => paper.status === 'pending').length;
 
-  const handleAssign = (paperId: string) => {
+  const handleAssign = async (paperId: string) => {
     const reviewerId = assignments[paperId];
     if (!reviewerId) return;
-    assignReviewer(paperId, reviewerId);
+    const result = await assignReviewer(paperId, reviewerId);
     setAssignments((prev) => ({ ...prev, [paperId]: '' }));
+    // La asignacion se guarda igual aunque el aviso por correo falle.
+    if (result && !result.emailSent) {
+      window.alert(
+        `Revisor asignado, pero el aviso por correo no se envio${
+          result.emailError ? `: ${result.emailError}` : '.'
+        }\nPuedes enviarle el resumen a mano desde la pestana "Revisores".`
+      );
+    }
+  };
+
+  const formatDateTime = (value: string) =>
+    new Date(value).toLocaleString('es-CL', {
+      day: '2-digit',
+      month: 'short',
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+
+  // Ultimo correo de asignacion enviado al revisor (automatico o manual).
+  const assignmentStatus = (reviewer: User) => {
+    if (reviewer.assignmentNotifyError) {
+      return {
+        label: 'Aviso fallido',
+        title: reviewer.assignmentNotifyError,
+        className: 'bg-red-100 text-red-700',
+      };
+    }
+    if (reviewer.assignmentNotifiedAt) {
+      return {
+        label: `Aviso ${formatDateTime(reviewer.assignmentNotifiedAt)}`,
+        title: reviewer.assignmentNotifiedAt,
+        className: 'bg-blue-100 text-blue-700',
+      };
+    }
+    return null;
+  };
+
+  const handleNotifyAssignments = async (reviewer: User, assignedCount: number) => {
+    const ok = window.confirm(
+      `Se enviara a "${reviewer.name}" <${reviewer.email}> un resumen con los ${assignedCount} trabajo(s) asignados, su estado de revision y las estadisticas de sus evaluaciones. ¿Continuar?`
+    );
+    if (!ok) return;
+    const result = await notifyReviewerAssignments(reviewer.id);
+    if (result?.emailSent) {
+      setNotifyResult({
+        ok: true,
+        message: `Resumen enviado a ${reviewer.email} con ${result.papersCount || assignedCount} trabajo(s).`,
+      });
+      return;
+    }
+    setNotifyResult({
+      ok: false,
+      message: `No se pudo enviar el resumen a ${reviewer.email}${
+        result?.emailError ? `: ${result.emailError}` : '.'
+      }`,
+    });
   };
 
   const handleUnassign = async (paperId: string, reviewerId: string, reviewerName: string) => {
@@ -477,6 +541,21 @@ ${commentsBlock}Valoramos su interes en CLAGTEE 2026 y esperamos contar con su p
                     ) : (
                       <p className="text-[11px] text-gray-400 mt-1">PDF no disponible</p>
                     )}
+                    {paper.revisedFileKey && (
+                      <a
+                        href={buildDownloadUrl(paper.revisedFileKey, paper.revisedFileName)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-xs font-bold text-[#0D2C54] hover:underline mt-1"
+                      >
+                        Descargar version revisada
+                      </a>
+                    )}
+                    {paper.revisionNote && (
+                      <p className="text-[11px] text-gray-500 mt-1 whitespace-pre-line">
+                        Nota del autor: {paper.revisionNote}
+                      </p>
+                    )}
                   </div>
                   <div className="col-span-2 text-sm text-gray-600 flex items-center">
                     <UserIcon className="w-3 h-3 mr-1 text-gray-400" />
@@ -646,7 +725,11 @@ ${commentsBlock}Valoramos su interes en CLAGTEE 2026 y esperamos contar con su p
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
           <div className="p-4 border-b border-gray-100">
             <h4 className="text-lg font-bold text-[#0D2C54]">Lista de Revisores</h4>
-            <p className="text-sm text-gray-500">Todos los revisores registrados en el sistema</p>
+            <p className="text-sm text-gray-500">
+              Al asignar un trabajo se envia un aviso automatico con ese trabajo. Usa "Enviar
+              resumen de revisiones" para mandar un correo con todos sus trabajos asignados,
+              cuales ya reviso y las estadisticas de sus evaluaciones.
+            </p>
           </div>
 
           {error && (
@@ -663,6 +746,25 @@ ${commentsBlock}Valoramos su interes en CLAGTEE 2026 y esperamos contar con su p
               <button
                 type="button"
                 onClick={() => setResendResult(null)}
+                className="mt-2 text-xs font-bold text-gray-500 hover:underline"
+              >
+                Cerrar
+              </button>
+            </div>
+          )}
+
+          {notifyResult && (
+            <div
+              className={`mx-4 mt-4 border text-sm px-4 py-3 rounded-xl ${
+                notifyResult.ok
+                  ? 'bg-green-50 border-green-100 text-green-700'
+                  : 'bg-red-50 border-red-100 text-red-600'
+              }`}
+            >
+              <p className="font-bold">{notifyResult.message}</p>
+              <button
+                type="button"
+                onClick={() => setNotifyResult(null)}
                 className="mt-2 text-xs font-bold text-gray-500 hover:underline"
               >
                 Cerrar
@@ -721,6 +823,18 @@ ${commentsBlock}Valoramos su interes en CLAGTEE 2026 y esperamos contar con su p
                           </span>
                         );
                       })()}
+                      {(() => {
+                        const status = assignmentStatus(reviewer);
+                        if (!status) return null;
+                        return (
+                          <span
+                            title={status.title}
+                            className={`inline-block mt-1 ml-1 px-2 py-0.5 rounded text-[10px] font-bold ${status.className}`}
+                          >
+                            {status.label}
+                          </span>
+                        );
+                      })()}
                     </div>
                     <div className="col-span-2 text-sm text-gray-500">
                       {reviewer.affiliation || '—'}
@@ -749,6 +863,19 @@ ${commentsBlock}Valoramos su interes en CLAGTEE 2026 y esperamos contar con su p
                         className="text-[#2A9D8F] text-xs font-bold hover:underline disabled:opacity-50"
                       >
                         ✉ Reenviar invitacion
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handleNotifyAssignments(reviewer, assignedPapers.length)}
+                        disabled={isLoading || assignedPapers.length === 0}
+                        title={
+                          assignedPapers.length === 0
+                            ? 'Este revisor no tiene trabajos asignados'
+                            : 'Enviar resumen con sus trabajos asignados, estado y estadisticas'
+                        }
+                        className="text-[#0D2C54] text-xs font-bold hover:underline disabled:opacity-40 disabled:cursor-not-allowed text-left"
+                      >
+                        📋 Enviar resumen de revisiones
                       </button>
                       <button
                         type="button"

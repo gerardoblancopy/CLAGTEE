@@ -4,6 +4,7 @@ import { SubmissionIcon, ChevronRightIcon } from '../../components/icons';
 import { useAuth } from './AuthContext';
 import { useCMSData } from './CMSDataContext';
 import { buildDownloadUrl } from './downloadUrl';
+import { RevisionUpload } from './RevisionUpload';
 
 const statusStyles = {
   'pending': 'bg-yellow-100 text-yellow-700 border-yellow-200',
@@ -98,7 +99,7 @@ export const AuthorDashboard: React.FC<{
               <motion.div
                 key={paper.id}
                 whileHover={{ scale: 1.01 }}
-                className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+                className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row md:flex-wrap md:items-center md:justify-between gap-6"
               >
                 <div className="flex items-center space-x-6">
                   <div className="w-12 h-12 bg-[#F8FAFC] rounded-xl flex items-center justify-center border border-gray-100">
@@ -163,6 +164,8 @@ export const AuthorDashboard: React.FC<{
                     />
                   </button>
                 </div>
+
+                {paper.status === 'accepted' && <RevisionUpload paper={paper} />}
 
                 {expandedPaperId === paper.id && (
                   <div className="w-full border-t border-gray-100 pt-4 text-sm text-gray-600 space-y-3">

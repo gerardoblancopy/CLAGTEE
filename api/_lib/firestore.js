@@ -172,6 +172,11 @@ export const normalizePaper = (doc) => {
     fileName: data.fileName || '',
     fileUrl: data.fileUrl || '',
     fileKey: data.fileKey || '',
+    revisedFileName: data.revisedFileName || '',
+    revisedFileUrl: data.revisedFileUrl || '',
+    revisedFileKey: data.revisedFileKey || '',
+    revisedAt: data.revisedAt || '',
+    revisionNote: data.revisionNote || '',
     assignedReviewerIds: Array.isArray(data.assignedReviewerIds)
       ? data.assignedReviewerIds
       : [],

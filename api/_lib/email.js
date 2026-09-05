@@ -496,3 +496,206 @@ export const sendComprobanteReceived = async ({ to, name, id }) => {
   console.log('[email] Comprobante received sent:', data?.id);
   return data;
 };
+
+// Envoltura comun para los correos dirigidos a revisores.
+const renderReviewerShell = ({ title, inner }) => `
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${escapeHtml(title)}</title>
+</head>
+<body style="margin:0; padding:0; background-color:#f4f6fb; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color:#1f2a44;">
+  <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background-color:#f4f6fb; padding:24px 0;">
+    <tr>
+      <td align="center">
+        <table role="presentation" cellpadding="0" cellspacing="0" width="600" style="width:100%; max-width:600px; background-color:#ffffff; border:1px solid #e6e9ef; border-radius:12px; overflow:hidden;">
+          <tr>
+            <td style="background-color:#0D2C54; padding:24px 32px;">
+              <img src="https://www.clagtee2026.org/CLAGTEE_2026_blanco.png" alt="CLAGTEE 2026" width="150" style="display:block; border:0; outline:none; text-decoration:none;">
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:32px;">
+              <h1 style="margin:0 0 16px; font-size:20px; line-height:1.3; color:#0D2C54;">${escapeHtml(title)}</h1>
+              ${inner}
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="margin-top:24px;">
+                <tr>
+                  <td align="center">
+                    <a href="${CMS_URL}" style="background-color:#F4A261; color:#0D2C54; text-decoration:none; font-weight:700; padding:12px 26px; border-radius:8px; display:inline-block; letter-spacing:0.2px;">
+                      Acceder al CMS
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              <p style="margin:20px 0 0; font-size:13px; line-height:1.6; color:#667085;">
+                Si tiene alguna duda o no puede revisar alguno de estos trabajos, por favor escriba a
+                <a href="mailto:clagtee2026@pucv.cl" style="color:#0D2C54; text-decoration:underline;">clagtee2026@pucv.cl</a>.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#f1f4f9; padding:16px 32px; text-align:center; font-size:12px; color:#667085;">
+              Comité Organizador CLAGTEE 2026
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+`.trim();
+
+const sendReviewerEmail = async ({ to, subject, html, label }) => {
+  const resend = getResend();
+  const { data, error } = await resend.emails.send({
+    from: `CLAGTEE 2026 <${SENDER_EMAIL}>`,
+    replyTo: REPLY_TO_EMAIL,
+    to: [to],
+    ...(BCC_EMAIL ? { bcc: [BCC_EMAIL] } : {}),
+    subject,
+    html,
+  });
+
+  if (error) {
+    console.error(`[email] Failed to send ${label}:`, error);
+    throw error;
+  }
+
+  console.log(`[email] ${label} sent:`, data?.id);
+  return data;
+};
+
+// Aviso automatico al asignar un trabajo: solo informa ese trabajo.
+export const sendReviewerAssignment = async ({ to, name, paper }) => {
+  const title = 'Nuevo trabajo asignado para revisión';
+  const subject = `Nuevo trabajo asignado para revisión (${paper.id}) - CLAGTEE 2026`;
+
+  const inner = `
+              ${name ? `<p style="margin:0 0 16px; font-size:15px; line-height:1.6; color:#425466;">Estimado/a <strong>${escapeHtml(name)}</strong>,</p>` : ''}
+              <p style="margin:0 0 16px; font-size:15px; line-height:1.6; color:#425466;">
+                Se le ha asignado el siguiente trabajo para su revisión en <strong>CLAGTEE 2026</strong>.
+              </p>
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="margin:20px 0; background-color:#f7f9fc; border:1px solid #e1e7f0; border-radius:10px;">
+                <tr>
+                  <td style="padding:18px 20px;">
+                    <p style="margin:0 0 6px; font-size:12px; font-weight:700; color:#0D2C54; text-transform:uppercase; letter-spacing:0.4px;">${escapeHtml(paper.id)}</p>
+                    <p style="margin:0 0 6px; font-size:15px; line-height:1.5; color:#1f2a44; font-weight:600;">${escapeHtml(paper.title)}</p>
+                    ${paper.track ? `<p style="margin:0; font-size:13px; color:#8a94a6;">${escapeHtml(paper.track)}</p>` : ''}
+                  </td>
+                </tr>
+              </table>
+              <p style="margin:0; font-size:15px; line-height:1.6; color:#425466;">
+                Puede descargar el manuscrito y cargar su evaluación ingresando al sistema con sus credenciales:
+              </p>`;
+
+  return sendReviewerEmail({
+    to,
+    subject,
+    html: renderReviewerShell({ title, inner }),
+    label: 'Reviewer assignment',
+  });
+};
+
+const RECOMMENDATION_LABELS = {
+  accept: 'Aceptar',
+  'minor-revision': 'Revisión menor',
+  'major-revision': 'Revisión mayor',
+  reject: 'Rechazar',
+};
+
+// Resumen manual enviado por el chair: todos los trabajos asignados, cuales ya
+// fueron revisados y las estadisticas de las evaluaciones del revisor.
+export const sendReviewerAssignmentSummary = async ({ to, name, papers = [], stats }) => {
+  const title = 'Resumen de sus trabajos asignados';
+  const subject = `Resumen de trabajos asignados (${papers.length}) - CLAGTEE 2026`;
+
+  const statCell = (label, value, color) => `
+                  <td style="padding:12px 10px; text-align:center; border-right:1px solid #e1e7f0;">
+                    <p style="margin:0; font-size:20px; font-weight:700; color:${color};">${escapeHtml(String(value))}</p>
+                    <p style="margin:2px 0 0; font-size:11px; color:#8a94a6; text-transform:uppercase; letter-spacing:0.4px;">${escapeHtml(label)}</p>
+                  </td>`;
+
+  const recommendationSummary = Object.entries(stats.recommendations || {})
+    .filter(([, count]) => count > 0)
+    .map(([key, count]) => `${RECOMMENDATION_LABELS[key] || key}: ${count}`)
+    .join(' · ');
+
+  const rows = papers
+    .map((paper) => {
+      const badge = paper.reviewed
+        ? `<span style="display:inline-block; padding:3px 8px; border-radius:6px; background-color:#e6f6f1; color:#1f7a68; font-size:11px; font-weight:700;">Revisado</span>`
+        : `<span style="display:inline-block; padding:3px 8px; border-radius:6px; background-color:#fdf1e3; color:#a2620f; font-size:11px; font-weight:700;">Pendiente</span>`;
+      const detail =
+        paper.reviewed && paper.recommendation
+          ? `<br><span style="font-size:11px; color:#8a94a6;">${escapeHtml(
+              RECOMMENDATION_LABELS[paper.recommendation] || paper.recommendation
+            )}${paper.score ? ` · ${escapeHtml(String(paper.score))}/10` : ''}</span>`
+          : '';
+      return `
+                <tr>
+                  <td style="padding:10px 12px; border-bottom:1px solid #e6e9ef; font-size:13px; color:#0D2C54; font-weight:700; white-space:nowrap; vertical-align:top;">
+                    ${escapeHtml(paper.id)}
+                  </td>
+                  <td style="padding:10px 12px; border-bottom:1px solid #e6e9ef; font-size:13px; color:#425466;">
+                    ${escapeHtml(paper.title)}
+                    ${paper.track ? `<br><span style="font-size:12px; color:#8a94a6;">${escapeHtml(paper.track)}</span>` : ''}
+                  </td>
+                  <td style="padding:10px 12px; border-bottom:1px solid #e6e9ef; text-align:right; vertical-align:top; white-space:nowrap;">
+                    ${badge}${detail}
+                  </td>
+                </tr>`;
+    })
+    .join('');
+
+  const inner = `
+              ${name ? `<p style="margin:0 0 16px; font-size:15px; line-height:1.6; color:#425466;">Estimado/a <strong>${escapeHtml(name)}</strong>,</p>` : ''}
+              <p style="margin:0 0 16px; font-size:15px; line-height:1.6; color:#425466;">
+                Le compartimos el estado de los trabajos que tiene asignados para revisión en
+                <strong>CLAGTEE 2026</strong>.
+              </p>
+
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="margin:20px 0; border:1px solid #e1e7f0; border-radius:10px; border-collapse:collapse; overflow:hidden;">
+                <tr>
+                  ${statCell('Asignados', stats.total, '#0D2C54')}
+                  ${statCell('Revisados', stats.reviewed, '#2A9D8F')}
+                  ${statCell('Pendientes', stats.pending, '#E76F51')}
+                  <td style="padding:12px 10px; text-align:center;">
+                    <p style="margin:0; font-size:20px; font-weight:700; color:#0D2C54;">${
+                      stats.averageScore === null ? '—' : escapeHtml(String(stats.averageScore))
+                    }</p>
+                    <p style="margin:2px 0 0; font-size:11px; color:#8a94a6; text-transform:uppercase; letter-spacing:0.4px;">Puntaje medio</p>
+                  </td>
+                </tr>
+              </table>
+              ${
+                recommendationSummary
+                  ? `<p style="margin:0 0 16px; font-size:13px; color:#667085;">Recomendaciones emitidas: ${escapeHtml(recommendationSummary)}.</p>`
+                  : ''
+              }
+
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="margin:0 0 20px; border:1px solid #e1e7f0; border-radius:10px; border-collapse:collapse; overflow:hidden;">
+                <tr>
+                  <td style="padding:10px 12px; background-color:#f7f9fc; font-size:12px; font-weight:700; color:#0D2C54; text-transform:uppercase; letter-spacing:0.4px;">ID</td>
+                  <td style="padding:10px 12px; background-color:#f7f9fc; font-size:12px; font-weight:700; color:#0D2C54; text-transform:uppercase; letter-spacing:0.4px;">Título / Eje temático</td>
+                  <td style="padding:10px 12px; background-color:#f7f9fc; font-size:12px; font-weight:700; color:#0D2C54; text-transform:uppercase; letter-spacing:0.4px; text-align:right;">Estado</td>
+                </tr>${rows}
+              </table>
+
+              <p style="margin:0; font-size:15px; line-height:1.6; color:#425466;">
+                ${
+                  stats.pending > 0
+                    ? `Le agradecemos completar las <strong>${stats.pending}</strong> evaluación(es) pendiente(s) ingresando al sistema:`
+                    : 'Agradecemos su dedicación: ya completó todas las evaluaciones asignadas.'
+                }
+              </p>`;
+
+  return sendReviewerEmail({
+    to,
+    subject,
+    html: renderReviewerShell({ title, inner }),
+    label: 'Reviewer assignment summary',
+  });
+};

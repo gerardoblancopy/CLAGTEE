@@ -33,8 +33,20 @@ export interface Paper {
   fileName?: string;
   fileUrl?: string;
   fileKey?: string;
+  revisedFileName?: string;
+  revisedFileUrl?: string;
+  revisedFileKey?: string;
+  revisedAt?: string;
+  revisionNote?: string;
   assignedReviewerIds: string[];
   reviews: ReviewEntry[];
+}
+
+export interface RevisionInput {
+  fileName: string;
+  fileUrl?: string;
+  fileKey: string;
+  revisionNote?: string;
 }
 
 export interface PaperInput {
@@ -48,6 +60,12 @@ export interface PaperInput {
   fileKey?: string;
 }
 
+export interface EmailResult {
+  emailSent: boolean;
+  emailError: string | null;
+  papersCount?: number;
+}
+
 interface CMSDataContextType {
   papers: Paper[];
   isLoading: boolean;
@@ -55,7 +73,13 @@ interface CMSDataContextType {
   refreshPapers: (options?: { submitterId?: string; reviewerId?: string }) => Promise<void>;
   createPaper: (input: PaperInput, submitter: User) => Promise<Paper | null>;
   updatePaper: (paperId: string, input: PaperInput, submitter: User) => Promise<Paper | null>;
-  assignReviewer: (paperId: string, reviewerId: string) => Promise<void>;
+  submitRevision: (
+    paperId: string,
+    input: RevisionInput,
+    submitter: User
+  ) => Promise<Paper | null>;
+  assignReviewer: (paperId: string, reviewerId: string) => Promise<EmailResult | null>;
+  notifyReviewerAssignments: (reviewerId: string) => Promise<EmailResult | null>;
   unassignReviewer: (paperId: string, reviewerId: string) => Promise<void>;
   submitReview: (
     paperId: string,
@@ -182,6 +206,29 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
     }
   };
 
+  const submitRevision = async (paperId: string, input: RevisionInput, submitter: User) => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await fetch('/api/papers', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ paperId, submitterId: submitter.id, input, action: 'revision' }),
+      });
+      if (!response.ok) {
+        throw new Error('No se pudo enviar la version revisada.');
+      }
+      const payload = (await response.json()) as { paper: Paper };
+      setPapers((prev) => upsertPaper(prev, payload.paper));
+      return payload.paper;
+    } catch (fetchError) {
+      setError('No se pudo enviar la version revisada.');
+      return null;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const assignReviewer = async (paperId: string, reviewerId: string) => {
     setIsLoading(true);
     setError(null);
@@ -194,10 +241,47 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
       if (!response.ok) {
         throw new Error('No se pudo asignar el revisor.');
       }
-      const payload = (await response.json()) as { paper: Paper };
+      const payload = (await response.json()) as {
+        paper: Paper;
+        emailSent?: boolean;
+        emailError?: string | null;
+      };
       setPapers((prev) => upsertPaper(prev, payload.paper));
+      return {
+        emailSent: Boolean(payload.emailSent),
+        emailError: payload.emailError || null,
+      };
     } catch (fetchError) {
       setError('No se pudo asignar el revisor.');
+      return null;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Reenvio manual del aviso con todos los trabajos ya asignados al revisor.
+  const notifyReviewerAssignments = async (reviewerId: string) => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await fetch('/api/papers/assign-reviewer', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ reviewerId, action: 'notify' }),
+      });
+      const payload = (await response.json().catch(() => ({}))) as {
+        emailSent?: boolean;
+        emailError?: string | null;
+        papersCount?: number;
+      };
+      return {
+        emailSent: Boolean(payload.emailSent),
+        emailError: payload.emailError || null,
+        papersCount: payload.papersCount || 0,
+      };
+    } catch (fetchError) {
+      setError('No se pudo enviar el aviso al revisor.');
+      return null;
     } finally {
       setIsLoading(false);
     }
@@ -319,7 +403,9 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
       refreshPapers,
       createPaper,
       updatePaper,
+      submitRevision,
       assignReviewer,
+      notifyReviewerAssignments,
       unassignReviewer,
       submitReview,
       setDecision,

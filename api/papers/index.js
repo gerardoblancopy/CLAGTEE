@@ -83,7 +83,7 @@ export default async function handler(req, res) {
   if (req.method === 'PUT') {
     try {
       const body = parseBody(req);
-      const { paperId, submitterId, input } = body || {};
+      const { paperId, submitterId, input, action } = body || {};
       if (!paperId || !submitterId || !input) {
         res.status(400).json({ error: 'Missing required fields' });
         return;
@@ -101,6 +101,36 @@ export default async function handler(req, res) {
 
       if (current.submitterId !== submitterId) {
         res.status(403).json({ error: 'Not allowed to edit this paper' });
+        return;
+      }
+
+      // Version revisada (camera-ready): solo para papers ya aceptados y solo
+      // reemplaza el PDF, nunca los metadatos evaluados por los revisores.
+      if (action === 'revision') {
+        if (current.status !== 'accepted') {
+          res.status(409).json({ error: 'Paper is not accepted' });
+          return;
+        }
+        if (typeof input.fileKey !== 'string' || !input.fileKey.trim()) {
+          res.status(400).json({ error: 'Missing revised file' });
+          return;
+        }
+
+        const revisedAt = new Date().toISOString();
+        await ref.set(
+          {
+            revisedFileName: String(input.fileName || '').trim(),
+            revisedFileUrl: String(input.fileUrl || '').trim(),
+            revisedFileKey: input.fileKey.trim(),
+            revisionNote: String(input.revisionNote || '').trim(),
+            revisedAt,
+            updatedAt: revisedAt,
+          },
+          { merge: true }
+        );
+
+        const revisedSnapshot = await ref.get();
+        res.status(200).json({ paper: normalizePaper(revisedSnapshot) });
         return;
       }
 
