@@ -6,8 +6,13 @@
 //
 // Todas las mutaciones apuntan a ids inexistentes: si la autorizacion fallara,
 // el peor caso es un 404, nunca un borrado real.
+//
+// En un deployment de preview con Vercel Authentication, el SSO responde antes
+// que la API y falsea el resultado. Para atravesarlo, pasa la cookie de bypass:
+//   VERIFY_COOKIE="_vercel_jwt=..." node scripts/verify-api-auth.mjs <url>
 
 const baseUrl = (process.argv[2] || 'https://www.clagtee2026.org').replace(/\/$/, '');
+const bypassCookie = process.env.VERIFY_COOKIE || '';
 const FAKE_PAPER_ID = 'TEST-AUTH-CHECK-DOES-NOT-EXIST';
 
 const json = (body) => ({
@@ -128,7 +133,11 @@ const run = async () => {
   for (const check of checks) {
     let status;
     try {
-      const response = await fetch(`${baseUrl}${check.path}`, check.init);
+      const init = { ...check.init };
+      if (bypassCookie) {
+        init.headers = { ...(init.headers || {}), Cookie: bypassCookie };
+      }
+      const response = await fetch(`${baseUrl}${check.path}`, init);
       status = response.status;
     } catch (error) {
       status = `error: ${error.message}`;
