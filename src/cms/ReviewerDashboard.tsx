@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ReviewIcon, ChevronRightIcon } from '../../components/icons';
 import { useAuth } from './AuthContext';
 import { useCMSData } from './CMSDataContext';
-import { buildDownloadUrl } from './downloadUrl';
+import { DownloadLink } from './DownloadLink';
 
 type ReviewRecommendation = 'accept' | 'minor-revision' | 'major-revision' | 'reject';
 
@@ -165,18 +165,14 @@ export const ReviewerDashboard: React.FC = () => {
                                                     'No informado'}
                                             </span>
                                             {paper.fileKey || paper.fileUrl ? (
-                                                <a
-                                                    href={
-                                                        paper.fileKey
-                                                            ? buildDownloadUrl(paper.fileKey, paper.fileName)
-                                                            : paper.fileUrl
-                                                    }
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
+                                                <DownloadLink
+                                                    fileKey={paper.fileKey}
+                                                    fileUrl={paper.fileUrl}
+                                                    fileName={paper.fileName}
                                                     className="text-[#2A9D8F] font-bold hover:underline"
                                                 >
                                                     Descargar PDF
-                                                </a>
+                                                </DownloadLink>
                                             ) : paper.fileName ? (
                                                 <span className="text-gray-400">
                                                     Archivo: {paper.fileName} (sin carga)

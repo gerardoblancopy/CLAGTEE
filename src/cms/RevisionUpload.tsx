@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useAuth } from './AuthContext';
 import { Paper, useCMSData } from './CMSDataContext';
-import { buildDownloadUrl } from './downloadUrl';
+import { DownloadLink } from './DownloadLink';
+import { apiFetch } from './api';
 
 // Envio de la version revisada (camera-ready) de un paper ya aceptado.
 // Reutiliza el mismo flujo de carga firmada que SubmissionForm: se firma la
@@ -43,7 +44,7 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
     setIsUploading(true);
 
     try {
-      const response = await fetch('/api/gcs-sign', {
+      const response = await apiFetch('/api/gcs-sign', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -82,11 +83,12 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
     if (!user || !fileKey) return;
     setIsSaving(true);
     setError(null);
-    const updated = await submitRevision(
-      paper.id,
-      { fileName, fileUrl, fileKey, revisionNote: note },
-      user
-    );
+    const updated = await submitRevision(paper.id, {
+      fileName,
+      fileUrl,
+      fileKey,
+      revisionNote: note,
+    });
     setIsSaving(false);
     if (!updated) {
       setError('No se pudo enviar la version revisada.');
@@ -105,14 +107,13 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
       <div className="flex flex-wrap items-center gap-3">
         <span className="text-xs font-bold text-[#0D2C54]">Version revisada (final)</span>
         {paper.revisedFileKey ? (
-          <a
-            href={buildDownloadUrl(paper.revisedFileKey, paper.revisedFileName)}
-            target="_blank"
-            rel="noopener noreferrer"
+          <DownloadLink
+            fileKey={paper.revisedFileKey}
+            fileName={paper.revisedFileName}
             className="text-[#2A9D8F] text-xs font-bold hover:underline"
           >
             Descargar version revisada
-          </a>
+          </DownloadLink>
         ) : (
           <span className="text-xs text-gray-400">Aun no has enviado una version revisada.</span>
         )}

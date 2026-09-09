@@ -1,5 +1,6 @@
 import { hash } from 'bcryptjs';
 import { getFirestore, sanitizeUser, seedUsersIfNeeded, userDocId } from '../_lib/firestore.js';
+import { signSession } from '../_lib/auth.js';
 
 const allowedRoles = new Set(['author', 'reviewer']);
 
@@ -48,7 +49,8 @@ export default async function handler(req, res) {
 
     await ref.set(user);
 
-    res.status(201).json({ user: sanitizeUser(user) });
+    const created = sanitizeUser(user);
+    res.status(201).json({ user: created, token: signSession(created) });
   } catch (error) {
     const message = error && error.message ? error.message : 'Failed to register user';
     console.error('[auth-register]', message);

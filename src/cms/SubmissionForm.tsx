@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ChevronRightIcon } from '../../components/icons';
 import { appData } from '../../data/content';
 import { Paper, PaperInput } from './CMSDataContext';
+import { apiFetch } from './api';
 
 export const SubmissionForm: React.FC<{
   onCancel: () => void;
@@ -92,7 +93,7 @@ export const SubmissionForm: React.FC<{
     setFileError(null);
     const uploadFile = async () => {
       try {
-        const response = await fetch('/api/gcs-sign', {
+        const response = await apiFetch('/api/gcs-sign', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({

@@ -1,4 +1,5 @@
 import { getFirestore, normalizePaper, seedPapersIfNeeded } from '../_lib/firestore.js';
+import { isStaffRole, requireAuth } from '../_lib/auth.js';
 
 const parseBody = (req) => {
   if (!req.body) return null;
@@ -10,15 +11,6 @@ const parseBody = (req) => {
     }
   }
   return req.body;
-};
-
-const getQueryParam = (req, key) => {
-  if (req.query && typeof req.query[key] === 'string') {
-    return req.query[key];
-  }
-  if (!req.url) return null;
-  const url = new URL(req.url, 'http://localhost');
-  return url.searchParams.get(key);
 };
 
 const parseKeywords = (keywords) => {
@@ -55,15 +47,20 @@ export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
       await seedPapersIfNeeded();
-      const submitterId = getQueryParam(req, 'submitterId');
-      const reviewerId = getQueryParam(req, 'reviewerId');
+      const session = requireAuth(req, res);
+      if (!session) return;
 
       const db = getFirestore();
+      // El alcance lo decide la sesion, no el cliente: un autor solo ve lo suyo
+      // y un revisor solo lo que tiene asignado.
       let query = db.collection('papers');
-      if (submitterId) {
-        query = query.where('submitterId', '==', submitterId);
-      } else if (reviewerId) {
-        query = query.where('assignedReviewerIds', 'array-contains', reviewerId);
+      if (session.role === 'author') {
+        query = query.where('submitterId', '==', session.id);
+      } else if (session.role === 'reviewer') {
+        query = query.where('assignedReviewerIds', 'array-contains', session.id);
+      } else if (!isStaffRole(session.role)) {
+        res.status(403).json({ error: 'Forbidden' });
+        return;
       }
 
       const snapshot = await query.get();
@@ -82,9 +79,12 @@ export default async function handler(req, res) {
 
   if (req.method === 'PUT') {
     try {
+      const session = requireAuth(req, res);
+      if (!session) return;
+
       const body = parseBody(req);
-      const { paperId, submitterId, input, action } = body || {};
-      if (!paperId || !submitterId || !input) {
+      const { paperId, input, action } = body || {};
+      if (!paperId || !input) {
         res.status(400).json({ error: 'Missing required fields' });
         return;
       }
@@ -99,7 +99,7 @@ export default async function handler(req, res) {
 
       const current = snapshot.data();
 
-      if (current.submitterId !== submitterId) {
+      if (current.submitterId !== session.id && session.role !== 'chair') {
         res.status(403).json({ error: 'Not allowed to edit this paper' });
         return;
       }
@@ -179,10 +179,12 @@ export default async function handler(req, res) {
 
   if (req.method === 'POST') {
     try {
+      const session = requireAuth(req, res);
+      if (!session) return;
+
       const body = parseBody(req);
       const input = body?.input;
-      const submitter = body?.submitter;
-      if (!input || !submitter?.id) {
+      if (!input) {
         res.status(400).json({ error: 'Missing required fields' });
         return;
       }
@@ -204,7 +206,7 @@ export default async function handler(req, res) {
         trackCode,
         paperNumber,
         status: 'pending',
-        submitterId: submitter.id,
+        submitterId: session.id,
         submittedAt: now,
         updatedAt: now,
         fileName: input.fileName ? String(input.fileName).trim() : '',

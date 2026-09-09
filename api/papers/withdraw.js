@@ -1,4 +1,5 @@
 import { getFirestore, normalizePaper } from '../_lib/firestore.js';
+import { requireAuth } from '../_lib/auth.js';
 
 const parseBody = (req) => {
   if (!req.body) return null;
@@ -19,6 +20,9 @@ export default async function handler(req, res) {
   }
 
   try {
+    const session = requireAuth(req, res);
+    if (!session) return;
+
     const body = parseBody(req);
     const { paperId } = body || {};
     if (!paperId) {
@@ -31,6 +35,11 @@ export default async function handler(req, res) {
     const snapshot = await ref.get();
     if (!snapshot.exists) {
       res.status(404).json({ error: 'Paper not found' });
+      return;
+    }
+
+    if (snapshot.data().submitterId !== session.id && session.role !== 'chair') {
+      res.status(403).json({ error: 'Not allowed to withdraw this paper' });
       return;
     }
 

@@ -100,7 +100,7 @@ const CMSContainer: React.FC<{
           onCancel={() => setActiveCmsTab('submissions')}
           onSubmit={async (payload) => {
             if (!user) return;
-            const created = await createPaper(payload, user);
+            const created = await createPaper(payload);
             if (!created) {
               alert('No se pudo enviar el trabajo. Intenta nuevamente.');
               return;
@@ -120,7 +120,7 @@ const CMSContainer: React.FC<{
           }}
           onSubmit={async (payload) => {
             if (!user || !editingPaper) return;
-            const updated = await updatePaper(editingPaper.id, payload, user);
+            const updated = await updatePaper(editingPaper.id, payload);
             if (!updated) {
               alert('No se pudo actualizar el trabajo. Verifica que aun no haya sido asignado a revisores.');
               return;

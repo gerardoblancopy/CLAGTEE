@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { SubmissionIcon, ChevronRightIcon } from '../../components/icons';
 import { useAuth } from './AuthContext';
 import { useCMSData } from './CMSDataContext';
-import { buildDownloadUrl } from './downloadUrl';
+import { DownloadLink } from './DownloadLink';
 import { RevisionUpload } from './RevisionUpload';
 
 const statusStyles = {
@@ -120,18 +120,14 @@ export const AuthorDashboard: React.FC<{
                     <p className="text-sm font-medium text-gray-700">{formatDate(paper.updatedAt)}</p>
                   </div>
                   {paper.fileKey || paper.fileUrl ? (
-                    <a
-                      href={
-                        paper.fileKey
-                          ? buildDownloadUrl(paper.fileKey, paper.fileName)
-                          : paper.fileUrl
-                      }
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <DownloadLink
+                      fileKey={paper.fileKey}
+                      fileUrl={paper.fileUrl}
+                      fileName={paper.fileName}
                       className="text-[#2A9D8F] text-xs font-bold hover:underline"
                     >
                       Descargar PDF
-                    </a>
+                    </DownloadLink>
                   ) : null}
                   {paper.status === 'pending' &&
                     paper.assignedReviewerIds.length === 0 &&

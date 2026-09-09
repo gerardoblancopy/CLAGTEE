@@ -33,6 +33,12 @@ Optional:
 
 Firestore reads from `GCS_*` or `GCP_*` variables, so you can set either set.
 
+Required for CMS authentication:
+- `SESSION_SECRET` (HMAC key for CMS session tokens; generate with `openssl rand -hex 32`)
+
+Without `SESSION_SECRET` every authenticated CMS endpoint fails closed with a 500,
+so set it before deploying. Changing it invalidates all active sessions.
+
 Required for email sending (reviewer invites):
 - `RESEND_API_KEY` (Resend API key)
 - `SENDER_EMAIL` (verified sender address/domain in Resend)
@@ -51,9 +57,11 @@ Add your custom domain in Vercel and update DNS records per Vercel instructions.
 ## Vercel checklist (Preview vs Production)
 Preview:
 - Set env vars: `GCS_PROJECT_ID`, `GCS_CLIENT_EMAIL`, `GCS_PRIVATE_KEY`, `GCS_BUCKET` (or `GCP_*`).
+- Set `SESSION_SECRET`.
 - Set email vars: `RESEND_API_KEY`, `SENDER_EMAIL`, and optionally `VITE_CMS_URL`.
 - Confirm `SENDER_EMAIL` domain is verified in Resend.
 - Run a test invite: `POST /api/auth/invite-reviewer` and confirm the email arrives.
+- Check the API rejects anonymous calls: `node scripts/verify-api-auth.mjs <preview-url>`.
 
 Production:
 - Mirror the Preview env vars, but with production values/URLs.

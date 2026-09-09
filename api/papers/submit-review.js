@@ -1,4 +1,5 @@
 import { getFirestore, normalizePaper } from '../_lib/firestore.js';
+import { requireAuth } from '../_lib/auth.js';
 
 const parseBody = (req) => {
   if (!req.body) return null;
@@ -26,12 +27,22 @@ export default async function handler(req, res) {
   }
 
   try {
+    const session = requireAuth(req, res);
+    if (!session) return;
+    if (session.role !== 'reviewer') {
+      res.status(403).json({ error: 'Forbidden' });
+      return;
+    }
+
     const body = parseBody(req);
     const { paperId, review, status } = body || {};
-    if (!paperId || !review?.reviewerId) {
+    if (!paperId || !review) {
       res.status(400).json({ error: 'Missing required fields' });
       return;
     }
+
+    // La revision se atribuye siempre a la sesion, nunca al reviewerId del body.
+    const reviewerId = session.id;
     if (status && !allowedStatuses.has(status)) {
       res.status(400).json({ error: 'Invalid status' });
       return;
@@ -48,14 +59,17 @@ export default async function handler(req, res) {
       }
 
       const data = snapshot.data() || {};
+      const assignedIds = Array.isArray(data.assignedReviewerIds) ? data.assignedReviewerIds : [];
+      if (!assignedIds.includes(reviewerId)) {
+        throw new Error('NOT_ASSIGNED');
+      }
+
       const reviews = Array.isArray(data.reviews) ? [...data.reviews] : [];
-      const existingIndex = reviews.findIndex(
-        (entry) => entry.reviewerId === review.reviewerId
-      );
+      const existingIndex = reviews.findIndex((entry) => entry.reviewerId === reviewerId);
       const existing = existingIndex >= 0 ? reviews[existingIndex] : null;
       const nextReview = {
-        id: existing?.id || `r-${review.reviewerId}-${Date.now().toString(36)}`,
-        reviewerId: review.reviewerId,
+        id: existing?.id || `r-${reviewerId}-${Date.now().toString(36)}`,
+        reviewerId,
         score: coerceNumber(review.score),
         confidence: coerceNumber(review.confidence),
         recommendation: review.recommendation,
@@ -69,10 +83,7 @@ export default async function handler(req, res) {
         reviews.push(nextReview);
       }
 
-      const assigned = new Set(
-        Array.isArray(data.assignedReviewerIds) ? data.assignedReviewerIds : []
-      );
-      assigned.add(review.reviewerId);
+      const assigned = new Set(assignedIds);
 
       const nextStatus = status
         ? status
@@ -93,6 +104,10 @@ export default async function handler(req, res) {
   } catch (error) {
     if (error && error.message === 'NOT_FOUND') {
       res.status(404).json({ error: 'Paper not found' });
+      return;
+    }
+    if (error && error.message === 'NOT_ASSIGNED') {
+      res.status(403).json({ error: 'Reviewer not assigned to this paper' });
       return;
     }
     const message = error && error.message ? error.message : 'Failed to submit review';

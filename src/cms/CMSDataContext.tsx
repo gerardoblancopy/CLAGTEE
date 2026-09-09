@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { User, useAuth } from './AuthContext';
+import { useAuth } from './AuthContext';
+import { apiFetch } from './api';
 
 export type PaperStatus = 'pending' | 'under-review' | 'accepted' | 'rejected' | 'withdrawn';
 
@@ -70,14 +71,10 @@ interface CMSDataContextType {
   papers: Paper[];
   isLoading: boolean;
   error: string | null;
-  refreshPapers: (options?: { submitterId?: string; reviewerId?: string }) => Promise<void>;
-  createPaper: (input: PaperInput, submitter: User) => Promise<Paper | null>;
-  updatePaper: (paperId: string, input: PaperInput, submitter: User) => Promise<Paper | null>;
-  submitRevision: (
-    paperId: string,
-    input: RevisionInput,
-    submitter: User
-  ) => Promise<Paper | null>;
+  refreshPapers: () => Promise<void>;
+  createPaper: (input: PaperInput) => Promise<Paper | null>;
+  updatePaper: (paperId: string, input: PaperInput) => Promise<Paper | null>;
+  submitRevision: (paperId: string, input: RevisionInput) => Promise<Paper | null>;
   assignReviewer: (paperId: string, reviewerId: string) => Promise<EmailResult | null>;
   notifyReviewerAssignments: (reviewerId: string) => Promise<EmailResult | null>;
   unassignReviewer: (paperId: string, reviewerId: string) => Promise<void>;
@@ -92,15 +89,6 @@ interface CMSDataContextType {
 }
 
 const CMSDataContext = createContext<CMSDataContextType | undefined>(undefined);
-
-const buildQuery = (options?: { submitterId?: string; reviewerId?: string }) => {
-  if (!options) return '';
-  const params = new URLSearchParams();
-  if (options.submitterId) params.set('submitterId', options.submitterId);
-  if (options.reviewerId) params.set('reviewerId', options.reviewerId);
-  const query = params.toString();
-  return query ? `?${query}` : '';
-};
 
 const upsertPaper = (papers: Paper[], next: Paper) => {
   const index = papers.findIndex((paper) => paper.id === next.id);
@@ -118,11 +106,13 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const refreshPapers = async (options?: { submitterId?: string; reviewerId?: string }) => {
+  // El servidor decide que trabajos devuelve segun la sesion: el autor los
+  // suyos, el revisor los asignados, chair/staff todos.
+  const refreshPapers = async () => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch(`/api/papers${buildQuery(options)}`);
+      const response = await apiFetch('/api/papers');
       if (!response.ok) {
         throw new Error('No se pudieron cargar los trabajos.');
       }
@@ -141,30 +131,23 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
       return;
     }
 
-    const options =
-      user.role === 'author'
-        ? { submitterId: user.id }
-        : user.role === 'reviewer'
-        ? { reviewerId: user.id }
-        : undefined;
-
-    void refreshPapers(options);
+    void refreshPapers();
 
     const interval = window.setInterval(() => {
-      void refreshPapers(options);
+      void refreshPapers();
     }, 12000);
 
     return () => window.clearInterval(interval);
   }, [user?.id, user?.role]);
 
-  const createPaper = async (input: PaperInput, submitter: User) => {
+  const createPaper = async (input: PaperInput) => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('/api/papers', {
+      const response = await apiFetch('/api/papers', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ input, submitter }),
+        body: JSON.stringify({ input }),
       });
       if (!response.ok) {
         throw new Error('No se pudo crear el trabajo.');
@@ -180,14 +163,14 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
     }
   };
 
-  const updatePaper = async (paperId: string, input: PaperInput, submitter: User) => {
+  const updatePaper = async (paperId: string, input: PaperInput) => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('/api/papers', {
+      const response = await apiFetch('/api/papers', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ paperId, submitterId: submitter.id, input }),
+        body: JSON.stringify({ paperId, input }),
       });
       if (!response.ok) {
         const payload = await response.json().catch(() => ({}));
@@ -206,14 +189,14 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
     }
   };
 
-  const submitRevision = async (paperId: string, input: RevisionInput, submitter: User) => {
+  const submitRevision = async (paperId: string, input: RevisionInput) => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('/api/papers', {
+      const response = await apiFetch('/api/papers', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ paperId, submitterId: submitter.id, input, action: 'revision' }),
+        body: JSON.stringify({ paperId, input, action: 'revision' }),
       });
       if (!response.ok) {
         throw new Error('No se pudo enviar la version revisada.');
@@ -233,7 +216,7 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('/api/papers/assign-reviewer', {
+      const response = await apiFetch('/api/papers/assign-reviewer', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ paperId, reviewerId }),
@@ -264,7 +247,7 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('/api/papers/assign-reviewer', {
+      const response = await apiFetch('/api/papers/assign-reviewer', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ reviewerId, action: 'notify' }),
@@ -291,7 +274,7 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('/api/papers/assign-reviewer', {
+      const response = await apiFetch('/api/papers/assign-reviewer', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ paperId, reviewerId, action: 'unassign' }),
@@ -316,7 +299,7 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('/api/papers/submit-review', {
+      const response = await apiFetch('/api/papers/submit-review', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ paperId, review, status }),
@@ -337,7 +320,7 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('/api/papers/decision', {
+      const response = await apiFetch('/api/papers/decision', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ paperId, status }),
@@ -358,7 +341,7 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('/api/papers/withdraw', {
+      const response = await apiFetch('/api/papers/withdraw', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ paperId }),
@@ -379,7 +362,7 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('/api/papers/delete', {
+      const response = await apiFetch('/api/papers/delete', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ paperId }),

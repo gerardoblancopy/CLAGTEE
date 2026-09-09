@@ -1,4 +1,5 @@
 import React, { createContext, useCallback, useContext, useEffect, useState } from 'react';
+import { apiFetch, SESSION_EXPIRED_EVENT, SESSION_STORAGE_KEY } from './api';
 
 export type UserRole = 'author' | 'reviewer' | 'chair' | 'staff';
 
@@ -64,9 +65,11 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 const STORAGE_KEYS = {
-  session: 'clagtee_session',
+  session: SESSION_STORAGE_KEY,
   legacyUser: 'clagtee_user',
 };
+
+const SESSION_EXPIRED_MESSAGE = 'Tu sesion expiro. Vuelve a iniciar sesion.';
 
 const LOGIN_ERROR_MESSAGES: Record<string, string> = {
   'Missing required fields': 'Completa el email, la contrasena y el rol.',
@@ -98,19 +101,32 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [error, setError] = useState<string | null>(null);
   const clearError = useCallback(() => setError(null), []);
 
+  // Solo se restaura una sesion con token: las sesiones anteriores a la
+  // autenticacion por token no sirven contra la API y obligan a reingresar.
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    const storedSession = safeParse<{ user: User } | null>(
+    const storedSession = safeParse<{ user: User; token?: string } | null>(
       localStorage.getItem(STORAGE_KEYS.session),
       null
     );
-    const legacyUser = safeParse<User | null>(localStorage.getItem(STORAGE_KEYS.legacyUser), null);
-    if (storedSession?.user) {
+    localStorage.removeItem(STORAGE_KEYS.legacyUser);
+    if (storedSession?.user && storedSession.token) {
       setUser(storedSession.user);
-    } else if (legacyUser) {
-      setUser(legacyUser);
-      localStorage.setItem(STORAGE_KEYS.session, JSON.stringify({ user: legacyUser }));
+      return;
     }
+    localStorage.removeItem(STORAGE_KEYS.session);
+  }, []);
+
+  // La API responde 401 cuando el token expiro o fue revocado.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handleExpired = () => {
+      setUser(null);
+      localStorage.removeItem(STORAGE_KEYS.session);
+      setError(SESSION_EXPIRED_MESSAGE);
+    };
+    window.addEventListener(SESSION_EXPIRED_EVENT, handleExpired);
+    return () => window.removeEventListener(SESSION_EXPIRED_EVENT, handleExpired);
   }, []);
 
   useEffect(() => {
@@ -122,7 +138,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const refreshUsers = async (role?: UserRole) => {
     try {
       const query = role ? `?role=${encodeURIComponent(role)}` : '';
-      const response = await fetch(`/api/auth/users${query}`);
+      const response = await apiFetch(`/api/auth/users${query}`);
       if (!response.ok) {
         throw new Error('No se pudieron cargar los usuarios.');
       }
@@ -155,9 +171,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setIsLoading(false);
         return false;
       }
-      const payload = (await response.json()) as { user: User };
+      const payload = (await response.json()) as { user: User; token: string };
       setUser(payload.user);
-      localStorage.setItem(STORAGE_KEYS.session, JSON.stringify({ user: payload.user }));
+      localStorage.setItem(
+        STORAGE_KEYS.session,
+        JSON.stringify({ user: payload.user, token: payload.token })
+      );
       setIsLoading(false);
       if (payload.user.role === 'chair') {
         await refreshUsers();
@@ -192,9 +211,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setIsLoading(false);
         return false;
       }
-      const payloadResponse = (await response.json()) as { user: User };
+      const payloadResponse = (await response.json()) as { user: User; token: string };
       setUser(payloadResponse.user);
-      localStorage.setItem(STORAGE_KEYS.session, JSON.stringify({ user: payloadResponse.user }));
+      localStorage.setItem(
+        STORAGE_KEYS.session,
+        JSON.stringify({ user: payloadResponse.user, token: payloadResponse.token })
+      );
       setIsLoading(false);
       return true;
     } catch (fetchError) {
@@ -213,7 +235,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setError(null);
 
     try {
-      const response = await fetch('/api/auth/invite-reviewer', {
+      const response = await apiFetch('/api/auth/invite-reviewer', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -245,7 +267,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setError(null);
 
     try {
-      const response = await fetch('/api/auth/users', {
+      const response = await apiFetch('/api/auth/users', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId, role }),
@@ -274,7 +296,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setError(null);
 
     try {
-      const response = await fetch('/api/auth/invite-reviewer', {
+      const response = await apiFetch('/api/auth/invite-reviewer', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, action: 'resend' }),
@@ -306,7 +328,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setError(null);
 
     try {
-      const response = await fetch('/api/auth/users', {
+      const response = await apiFetch('/api/auth/users', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -343,7 +365,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setError(null);
 
     try {
-      const response = await fetch('/api/auth/users', {
+      const response = await apiFetch('/api/auth/users', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -378,7 +400,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setError(null);
 
     try {
-      const response = await fetch('/api/auth/users', {
+      const response = await apiFetch('/api/auth/users', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, role }),

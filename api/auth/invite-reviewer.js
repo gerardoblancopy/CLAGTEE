@@ -1,6 +1,7 @@
 import { hash } from 'bcryptjs';
 import { getFirestore, seedUsersIfNeeded, userDocId } from '../_lib/firestore.js';
 import { sendReviewerInvitation } from '../_lib/email.js';
+import { requireChair } from '../_lib/auth.js';
 
 const generateTempPassword = () => `rev-${Math.random().toString(36).slice(2, 8)}`;
 
@@ -12,6 +13,8 @@ export default async function handler(req, res) {
 
   try {
     await seedUsersIfNeeded();
+    if (!(await requireChair(req, res))) return;
+
     const { name, email, affiliation, action } = req.body || {};
     const isResend = action === 'resend';
 

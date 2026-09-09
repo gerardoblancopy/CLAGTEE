@@ -1,5 +1,6 @@
 import { compare } from 'bcryptjs';
 import { getFirestore, sanitizeUser, seedUsersIfNeeded, userDocId } from '../_lib/firestore.js';
+import { signSession } from '../_lib/auth.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -31,7 +32,8 @@ export default async function handler(req, res) {
       return;
     }
 
-    res.status(200).json({ user: sanitizeUser(data) });
+    const user = sanitizeUser(data);
+    res.status(200).json({ user, token: signSession(user) });
   } catch (error) {
     const message = error && error.message ? error.message : 'Failed to login';
     console.error('[auth-login]', message);

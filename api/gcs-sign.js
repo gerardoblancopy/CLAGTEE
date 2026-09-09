@@ -3,6 +3,8 @@ import { Storage } from '@google-cloud/storage';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { getFirestore } from './_lib/firestore.js';
+import { getSession, isStaffRole, requireAuth, requireStaff } from './_lib/auth.js';
 
 // Endpoint unificado de firmas GCS:
 //   POST  -> sube (firma write).  body: { fileName, contentType, prefix }
@@ -85,6 +87,10 @@ const parseBody = (req) => {
   return req.body;
 };
 
+// Prefijos que puede subir quien no tiene cuenta: el flujo de inscripcion
+// adjunta comprobantes de pago y credenciales de estudiante sin registrarse.
+const PUBLIC_UPLOAD_PREFIXES = ['comprobantes', 'student-proofs'];
+
 const signUpload = async (req, res) => {
   const body = parseBody(req);
   if (!body?.fileName) {
@@ -99,6 +105,10 @@ const signUpload = async (req, res) => {
   const allowedPrefixes = ['submissions', 'comprobantes', 'student-proofs'];
   const requestedPrefix = sanitizeFileName(body.prefix || 'submissions');
   const prefix = allowedPrefixes.includes(requestedPrefix) ? requestedPrefix : 'submissions';
+
+  if (!PUBLIC_UPLOAD_PREFIXES.includes(prefix) && !requireAuth(req, res)) {
+    return;
+  }
   const fileKey = `${prefix}/${timestamp}-${safeName}`;
   const contentType = body.contentType || 'application/pdf';
 
@@ -124,12 +134,65 @@ const buildAttachmentDisposition = (fileName) => {
   return `attachment; filename="${ascii}"; filename*=UTF-8''${encodeURIComponent(safe)}`;
 };
 
+// Las plantillas del sitio publico se descargan sin cuenta; todo lo demas
+// (articulos, comprobantes de pago) exige sesion y una relacion con el archivo.
+const PUBLIC_DOWNLOAD_PREFIX = 'Templates/';
+const STAFF_ONLY_DOWNLOAD_PREFIXES = ['comprobantes/', 'student-proofs/'];
+
+const findPaperByFileKey = async (db, fileKey) => {
+  for (const field of ['fileKey', 'revisedFileKey']) {
+    const snapshot = await db.collection('papers').where(field, '==', fileKey).limit(1).get();
+    if (!snapshot.empty) return snapshot.docs[0].data();
+  }
+  return null;
+};
+
+// Devuelve true si la peticion puede leer fileKey. Responde 401/403 si no.
+const authorizeDownload = async (req, res, fileKey) => {
+  if (fileKey.startsWith(PUBLIC_DOWNLOAD_PREFIX)) return true;
+
+  if (STAFF_ONLY_DOWNLOAD_PREFIXES.some((prefix) => fileKey.startsWith(prefix))) {
+    return Boolean(await requireStaff(req, res));
+  }
+
+  if (!fileKey.startsWith('submissions/')) {
+    if (!getSession(req)) {
+      res.status(401).json({ error: 'Unauthorized' });
+      return false;
+    }
+    res.status(403).json({ error: 'Forbidden' });
+    return false;
+  }
+
+  const session = requireAuth(req, res);
+  if (!session) return false;
+  if (isStaffRole(session.role)) return true;
+
+  const paper = await findPaperByFileKey(getFirestore(), fileKey);
+  if (!paper) {
+    res.status(404).json({ error: 'File not found' });
+    return false;
+  }
+
+  const isSubmitter = paper.submitterId === session.id;
+  const assigned = Array.isArray(paper.assignedReviewerIds) ? paper.assignedReviewerIds : [];
+  const isAssignedReviewer = session.role === 'reviewer' && assigned.includes(session.id);
+  if (!isSubmitter && !isAssignedReviewer) {
+    res.status(403).json({ error: 'Forbidden' });
+    return false;
+  }
+
+  return true;
+};
+
 const signDownload = async (req, res) => {
   const fileKey = typeof req.query.object === 'string' ? req.query.object : '';
   if (!fileKey) {
     res.status(400).json({ error: 'object is required' });
     return;
   }
+
+  if (!(await authorizeDownload(req, res, fileKey))) return;
 
   const storage = getStorage();
   const bucketName = getEnv('GCS_BUCKET');

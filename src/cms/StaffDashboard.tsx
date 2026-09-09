@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { useAuth } from './AuthContext';
 import { useCMSData } from './CMSDataContext';
 import { RegistrationCategory, RegistrationRecord, RegistrationStatus } from '../../types';
-import { buildDownloadUrl } from './downloadUrl';
+import { DownloadLink } from './DownloadLink';
+import { apiFetch } from './api';
 
 const STATUS_ORDER: RegistrationStatus[] = [
   'pre-registro-creado',
@@ -63,8 +64,7 @@ export const StaffDashboard: React.FC = () => {
     if (!user) return;
     setError(null);
     try {
-      const query = `scope=staff&staffEmail=${encodeURIComponent(user.email)}&staffRole=${encodeURIComponent(user.role)}`;
-      const response = await fetch(`/api/registrations?${query}`);
+      const response = await apiFetch('/api/registrations?scope=staff');
       if (!response.ok) throw new Error('fetch-failed');
       const payload = (await response.json()) as { registrations: RegistrationRecord[] };
       setRegistrations(payload.registrations || []);
@@ -84,10 +84,10 @@ export const StaffDashboard: React.FC = () => {
     setUpdatingId(id);
     setError(null);
     try {
-      const response = await fetch('/api/registrations', {
+      const response = await apiFetch('/api/registrations', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id, newStatus, staffEmail: user.email, staffRole: user.role }),
+        body: JSON.stringify({ id, newStatus }),
       });
       if (!response.ok) throw new Error('update-failed');
       const payload = (await response.json()) as { registration: RegistrationRecord };
@@ -228,24 +228,22 @@ export const StaffDashboard: React.FC = () => {
                   </select>
                   <div className="flex flex-wrap gap-2">
                     {reg.comprobanteFileKey && (
-                      <a
-                        href={buildDownloadUrl(reg.comprobanteFileKey, reg.comprobanteFileName)}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <DownloadLink
+                        fileKey={reg.comprobanteFileKey}
+                        fileName={reg.comprobanteFileName}
                         className="text-[11px] font-bold text-[#2A9D8F] hover:underline"
                       >
                         📎 Comprobante
-                      </a>
+                      </DownloadLink>
                     )}
                     {reg.studentProofFileKey && (
-                      <a
-                        href={buildDownloadUrl(reg.studentProofFileKey, reg.studentProofFileName)}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <DownloadLink
+                        fileKey={reg.studentProofFileKey}
+                        fileName={reg.studentProofFileName}
                         className="text-[11px] font-bold text-[#2A9D8F] hover:underline"
                       >
                         🎓 Cert. estudiante
-                      </a>
+                      </DownloadLink>
                     )}
                     {reg.transactionCode && (
                       <span className="text-[11px] text-gray-400">Tx: {reg.transactionCode}</span>

@@ -1,5 +1,6 @@
 import { randomBytes } from 'node:crypto';
-import { getFirestore, userDocId } from '../_lib/firestore.js';
+import { getFirestore } from '../_lib/firestore.js';
+import { requireStaff } from '../_lib/auth.js';
 import {
   getPhase,
   resolvePricing,
@@ -24,17 +25,6 @@ const STAFF_STATUSES = [
   'confirmada',
   'cancelada',
 ];
-
-// Autorización ligera de staff: verifica que el usuario exista en `users` con rol staff o chair.
-// Nota: no es autenticación fuerte (no hay sesión/JWT en el sistema); endurecer con
-// Firestore Rules o tokens de sesión más adelante.
-const isStaff = async (db, email, role) => {
-  if (!email || (role !== 'staff' && role !== 'chair')) return false;
-  const snap = await db.collection('users').doc(userDocId(email, role)).get();
-  if (!snap.exists) return false;
-  const docRole = snap.data().role;
-  return docRole === 'staff' || docRole === 'chair';
-};
 
 const stripToken = (record) => {
   const { token, ...rest } = record;
@@ -113,15 +103,11 @@ const checkPaperMatch = async (db, clean) => {
 export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
-      // Listado para staff/chair: GET ?scope=staff&staffEmail=&staffRole=
+      // Listado para staff/chair: GET ?scope=staff (autorizado por token de sesion)
       if (getQueryParam(req, 'scope') === 'staff') {
-        const staffEmail = getQueryParam(req, 'staffEmail');
-        const staffRole = getQueryParam(req, 'staffRole');
+        if (!(await requireStaff(req, res))) return;
+
         const db = getFirestore();
-        if (!(await isStaff(db, staffEmail, staffRole))) {
-          res.status(403).json({ error: 'Not authorized' });
-          return;
-        }
         const snapshot = await db.collection('registrations').get();
         const registrations = snapshot.docs
           .map((doc) => stripToken(doc.data()))
@@ -259,14 +245,13 @@ export default async function handler(req, res) {
       const body = parseBody(req);
       const id = str(body?.id);
 
-      // Cambio de estado por staff/chair: { id, newStatus, staffEmail, staffRole, staffNote? }
+      // Cambio de estado por staff/chair: { id, newStatus, staffNote? } (autorizado por token)
       const newStatus = str(body?.newStatus);
       if (newStatus) {
+        const staffSession = await requireStaff(req, res);
+        if (!staffSession) return;
+
         const db = getFirestore();
-        if (!(await isStaff(db, str(body?.staffEmail), str(body?.staffRole)))) {
-          res.status(403).json({ error: 'Not authorized' });
-          return;
-        }
         if (!id || !STAFF_STATUSES.includes(newStatus)) {
           res.status(400).json({ error: 'Invalid id or status' });
           return;
@@ -281,7 +266,7 @@ export default async function handler(req, res) {
           {
             status: newStatus,
             staffNote: str(body?.staffNote) || snapshot.data().staffNote || '',
-            reviewedBy: str(body?.staffEmail),
+            reviewedBy: staffSession.email,
             updatedAt: new Date().toISOString(),
           },
           { merge: true }

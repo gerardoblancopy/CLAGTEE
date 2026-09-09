@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { UserIcon } from '../../components/icons';
 import { User, useAuth } from './AuthContext';
 import { Paper, PaperStatus, useCMSData } from './CMSDataContext';
-import { buildDownloadUrl } from './downloadUrl';
+import { DownloadLink } from './DownloadLink';
 
 const statusStyles = {
   'pending': 'bg-yellow-100 text-yellow-700',
@@ -521,14 +521,13 @@ ${commentsBlock}Valoramos su interes en CLAGTEE 2026 y esperamos contar con su p
                     <p className="font-bold text-gray-800 truncate">{paper.title}</p>
                     <p className="text-xs text-gray-400">{paper.track}</p>
                     {paper.fileKey ? (
-                      <a
-                        href={buildDownloadUrl(paper.fileKey, paper.fileName)}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <DownloadLink
+                        fileKey={paper.fileKey}
+                        fileName={paper.fileName}
                         className="inline-block text-xs font-bold text-[#2A9D8F] hover:underline mt-1"
                       >
                         Descargar PDF
-                      </a>
+                      </DownloadLink>
                     ) : paper.fileUrl ? (
                       <a
                         href={paper.fileUrl}
@@ -542,14 +541,13 @@ ${commentsBlock}Valoramos su interes en CLAGTEE 2026 y esperamos contar con su p
                       <p className="text-[11px] text-gray-400 mt-1">PDF no disponible</p>
                     )}
                     {paper.revisedFileKey && (
-                      <a
-                        href={buildDownloadUrl(paper.revisedFileKey, paper.revisedFileName)}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <DownloadLink
+                        fileKey={paper.revisedFileKey}
+                        fileName={paper.revisedFileName}
                         className="block text-xs font-bold text-[#0D2C54] hover:underline mt-1"
                       >
                         Descargar version revisada
-                      </a>
+                      </DownloadLink>
                     )}
                     {paper.revisionNote && (
                       <p className="text-[11px] text-gray-500 mt-1 whitespace-pre-line">

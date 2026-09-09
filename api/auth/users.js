@@ -1,6 +1,7 @@
 import { compare, hash } from 'bcryptjs';
 import { getFirestore, sanitizeUser, seedUsersIfNeeded, userDocId } from '../_lib/firestore.js';
 import { sendCustomEmail, sendPasswordReset } from '../_lib/email.js';
+import { requireAuth, requireChair, requireStaff } from '../_lib/auth.js';
 
 const generateTempPassword = () => `tmp-${Math.random().toString(36).slice(2, 10)}`;
 
@@ -54,10 +55,19 @@ export default async function handler(req, res) {
 
     // PUT: Change password (requires current password)
     if (req.method === 'PUT') {
+      const session = requireAuth(req, res);
+      if (!session) return;
+
       const { email, role, currentPassword, newPassword } = req.body || {};
 
       if (!email || !role || !currentPassword || !newPassword) {
         res.status(400).json({ error: 'Missing required fields' });
+        return;
+      }
+
+      // Solo la propia cuenta de la sesion, nunca la de otro usuario.
+      if (String(email).toLowerCase() !== String(session.email).toLowerCase() || role !== session.role) {
+        res.status(403).json({ error: 'Forbidden' });
         return;
       }
 
@@ -92,6 +102,9 @@ export default async function handler(req, res) {
 
     // POST: Send a custom email to one or more users
     if (req.method === 'POST') {
+      // Sin esto cualquiera podia enviar correo desde el dominio de la conferencia.
+      if (!(await requireStaff(req, res))) return;
+
       const { to, name, subject, body } = req.body || {};
 
       if (!to || !subject || !body) {
@@ -139,6 +152,8 @@ export default async function handler(req, res) {
 
     // GET: List users (optionally filtered by role)
     if (req.method === 'GET') {
+      if (!(await requireStaff(req, res))) return;
+
       const role = typeof req.query.role === 'string' ? req.query.role : '';
       let query = db.collection('users');
       if (role) {
@@ -152,6 +167,8 @@ export default async function handler(req, res) {
 
     // DELETE: Delete a user by userId or email (with role)
     if (req.method === 'DELETE') {
+      if (!(await requireChair(req, res))) return;
+
       const { userId, email, role } = req.body || {};
 
       if (!userId && !email) {
