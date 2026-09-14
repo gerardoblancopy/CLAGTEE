@@ -36,7 +36,7 @@ export default async function handler(req, res) {
     if (!session) return;
 
     const body = parseBody(req);
-    const { action, paperId, review, status } = body || {};
+    const { action, paperId, review, status, customPrompt, currentComments } = body || {};
 
     if (!paperId) {
       res.status(400).json({ error: 'Missing paperId' });
@@ -76,7 +76,12 @@ export default async function handler(req, res) {
         pdfBuffer = await fetchPaperPdfBuffer(paperData.fileKey);
       }
 
-      const aiReview = await generateAIReview({ paper: paperData, pdfBuffer });
+      const aiReview = await generateAIReview({
+        paper: paperData,
+        pdfBuffer,
+        customPrompt: typeof customPrompt === 'string' ? customPrompt : undefined,
+        currentComments: typeof currentComments === 'string' ? currentComments : undefined,
+      });
       res.status(200).json({ success: true, review: aiReview });
       return;
     }

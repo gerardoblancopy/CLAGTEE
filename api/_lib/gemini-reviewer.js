@@ -148,7 +148,7 @@ B. CORRECCIONES MENORES Y FORMATO (CAMERA-READY CLAGTEE 2026 - PLAZO MÁXIMO 2 M
 - status: "accepted" (todos los papers son aceptados para la conferencia) o "under-review"
 - decisionLabel: "Aceptar (CLAGTEE 2026)" o "Aceptar (Delimitación para IEEE Xplore)"`;
 
-const generateOpenAIReview = async ({ paper, pdfBuffer, apiKey }) => {
+const generateOpenAIReview = async ({ paper, pdfBuffer, apiKey, customPrompt, currentComments }) => {
   let uploadedFileId = null;
 
   try {
@@ -226,6 +226,25 @@ Responde obligatoriamente en formato JSON con la siguiente estructura:
       });
     }
 
+    if (customPrompt && typeof customPrompt === 'string' && customPrompt.trim()) {
+      userContent.push({
+        type: 'text',
+        text: `SOLICITUD EXPLÍCITA DE AJUSTE DEL REVISOR HUMANO:
+El revisor humano está ajustando este dictamen y ha indicado la siguiente instrucción específica:
+"${customPrompt.trim()}"
+
+${currentComments && currentComments.trim() ? `BORRADOR / COMENTARIOS PREVIOS A MODIFICAR:
+"""
+${currentComments.trim()}
+"""` : ''}
+
+INSTRUCCIONES PARA EL AJUSTE:
+- Modifica el dictamen y parámetros (score, recommendation, comments, status) para cumplir exactamente con la solicitud del revisor.
+- Si el revisor solicita cambiar o eliminar requisitos (por ejemplo, eliminar pedidos de simulaciones o modelos cuantitativos, ajustar fechas del congreso al 28, 29 y 30 de octubre de 2026, modificar el puntaje o cambiar a revisión menor), aplícalo con absoluta prioridad.
+- Conserva el formato formal en texto plano sin markdown ni latex, con tildes y eñes correctas, y la regla obligatoria de aceptación para CLAGTEE 2026.`,
+      });
+    }
+
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -299,7 +318,7 @@ Responde obligatoriamente en formato JSON con la siguiente estructura:
   }
 };
 
-const generateGeminiReview = async ({ paper, pdfBuffer }) => {
+const generateGeminiReview = async ({ paper, pdfBuffer, customPrompt, currentComments }) => {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     throw new Error('MISSING_GEMINI_API_KEY');
@@ -358,6 +377,24 @@ Responde únicamente en formato JSON con la siguiente estructura:
   "decisionLabel": "Aceptar (CLAGTEE 2026)",
   "comments": "EVALUACIÓN DE ARTÍCULO / REVIEW REPORT\\n\\n..."
 }`,
+    });
+  }
+
+  if (customPrompt && typeof customPrompt === 'string' && customPrompt.trim()) {
+    parts.push({
+      text: `SOLICITUD EXPLÍCITA DE AJUSTE DEL REVISOR HUMANO:
+El revisor humano está ajustando este dictamen y ha indicado la siguiente instrucción específica:
+"${customPrompt.trim()}"
+
+${currentComments && currentComments.trim() ? `BORRADOR / COMENTARIOS PREVIOS A MODIFICAR:
+"""
+${currentComments.trim()}
+"""` : ''}
+
+INSTRUCCIONES PARA EL AJUSTE:
+- Modifica el dictamen y parámetros (score, recommendation, comments, status) para cumplir exactamente con la solicitud del revisor.
+- Si el revisor solicita cambiar o eliminar requisitos (por ejemplo, eliminar pedidos de simulaciones o modelos cuantitativos, ajustar fechas del congreso al 28, 29 y 30 de octubre de 2026, modificar el puntaje o cambiar a revisión menor), aplícalo con absoluta prioridad.
+- Conserva el formato formal en texto plano sin markdown ni latex, con tildes y eñes correctas, y la regla obligatoria de aceptación para CLAGTEE 2026.`,
     });
   }
 
@@ -430,17 +467,17 @@ Responde únicamente en formato JSON con la siguiente estructura:
   throw lastError || new Error('ALL_GEMINI_MODELS_FAILED');
 };
 
-export const generateAIReview = async ({ paper, pdfBuffer }) => {
+export const generateAIReview = async ({ paper, pdfBuffer, customPrompt, currentComments }) => {
   const openaiApiKey = process.env.OPENAI_API_KEY;
 
   if (openaiApiKey) {
     try {
       console.log(`[AI Review] Executing review with OpenAI gpt-5.6-luna for paper ${paper.id}...`);
-      return await generateOpenAIReview({ paper, pdfBuffer, apiKey: openaiApiKey });
+      return await generateOpenAIReview({ paper, pdfBuffer, apiKey: openaiApiKey, customPrompt, currentComments });
     } catch (openaiError) {
       console.warn('[AI Review] OpenAI gpt-5.6-luna failed, falling back to Gemini:', openaiError.message);
     }
   }
 
-  return await generateGeminiReview({ paper, pdfBuffer });
+  return await generateGeminiReview({ paper, pdfBuffer, customPrompt, currentComments });
 };

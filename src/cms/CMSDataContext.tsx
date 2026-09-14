@@ -93,7 +93,11 @@ interface CMSDataContextType {
     review: Omit<ReviewEntry, 'id' | 'submittedAt'>,
     status?: PaperStatus
   ) => Promise<void>;
-  requestAIReview: (paperId: string) => Promise<AIReviewResult | null>;
+  requestAIReview: (
+    paperId: string,
+    customPrompt?: string,
+    currentComments?: string
+  ) => Promise<AIReviewResult | null>;
   setDecision: (paperId: string, status: PaperStatus) => Promise<void>;
   withdrawPaper: (paperId: string) => Promise<void>;
   deletePaper: (paperId: string) => Promise<void>;
@@ -327,14 +331,23 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
     }
   };
 
-  const requestAIReview = async (paperId: string): Promise<AIReviewResult | null> => {
+  const requestAIReview = async (
+    paperId: string,
+    customPrompt?: string,
+    currentComments?: string
+  ): Promise<AIReviewResult | null> => {
     setIsLoading(true);
     setError(null);
     try {
       const response = await apiFetch('/api/papers/submit-review', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'ai-review', paperId }),
+        body: JSON.stringify({
+          action: 'ai-review',
+          paperId,
+          customPrompt: customPrompt?.trim() || undefined,
+          currentComments: currentComments?.trim() || undefined,
+        }),
       });
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));

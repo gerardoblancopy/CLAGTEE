@@ -32,6 +32,8 @@ export const ReviewerDashboard: React.FC = () => {
     const [aiAssistedMap, setAiAssistedMap] = useState<Record<string, { modelUsed?: string; decisionLabel?: string }>>({});
     const [aiErrorMap, setAiErrorMap] = useState<Record<string, string>>({});
     const [copyFeedback, setCopyFeedback] = useState<string | null>(null);
+    const [adjustPromptMap, setAdjustPromptMap] = useState<Record<string, string>>({});
+    const [showAdjustBox, setShowAdjustBox] = useState<Record<string, boolean>>({});
 
     const assignedPapers = useMemo(() => {
         if (!user) return [];
@@ -48,12 +50,13 @@ export const ReviewerDashboard: React.FC = () => {
         }));
     };
 
-    const handleGenerateAI = async (paperId: string) => {
+    const handleGenerateAI = async (paperId: string, customPrompt?: string) => {
         setIsGeneratingAI((prev) => ({ ...prev, [paperId]: true }));
         setAiErrorMap((prev) => ({ ...prev, [paperId]: '' }));
         setActivePaperId(paperId);
         try {
-            const result = await requestAIReview(paperId);
+            const currentComments = drafts[paperId]?.comments || '';
+            const result = await requestAIReview(paperId, customPrompt, currentComments);
             if (result) {
                 updateDraft(paperId, {
                     score: result.score,
@@ -69,6 +72,7 @@ export const ReviewerDashboard: React.FC = () => {
                         decisionLabel: result.decisionLabel,
                     },
                 }));
+                setShowAdjustBox((prev) => ({ ...prev, [paperId]: false }));
             }
         } catch (err: any) {
             setAiErrorMap((prev) => ({
@@ -234,10 +238,11 @@ export const ReviewerDashboard: React.FC = () => {
                                                 <span>{aiErrorMap[paper.id]}</span>
                                                 <button
                                                     type="button"
-                                                    onClick={() => handleGenerateAI(paper.id)}
-                                                    className="font-bold underline text-red-900 flex-shrink-0 hover:text-red-950"
+                                                    onClick={() => setShowAdjustBox((prev) => ({ ...prev, [paper.id]: true }))}
+                                                    className="font-bold underline text-red-900 flex-shrink-0 hover:text-red-950 flex items-center gap-1"
                                                 >
-                                                    Reintentar
+                                                    <SparklesIcon className="w-3.5 h-3.5" />
+                                                    <span>Ajustar Revisión IA</span>
                                                 </button>
                                             </div>
                                         )}
@@ -271,11 +276,116 @@ export const ReviewerDashboard: React.FC = () => {
                                                     <button
                                                         type="button"
                                                         disabled={isGeneratingAI[paper.id]}
-                                                        onClick={() => handleGenerateAI(paper.id)}
-                                                        className="font-bold bg-emerald-700 text-white hover:bg-emerald-800 px-3 py-1.5 rounded-lg transition-colors"
+                                                        onClick={() => setShowAdjustBox((prev) => ({ ...prev, [paper.id]: !prev[paper.id] }))}
+                                                        className="font-bold bg-amber-600 text-white hover:bg-amber-700 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1 shadow-xs"
                                                     >
-                                                        Regenerar
+                                                        <SparklesIcon className="w-3.5 h-3.5" />
+                                                        <span>Ajustar Revisión IA</span>
                                                     </button>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {/* Caja expandible para Ajustar Revisión IA con prompt específico */}
+                                        {showAdjustBox[paper.id] && (
+                                            <div className="p-4 md:p-5 bg-gradient-to-br from-amber-50/90 via-orange-50/40 to-white border border-amber-300 rounded-2xl space-y-3.5 shadow-sm">
+                                                <div className="flex items-center justify-between">
+                                                    <div className="flex items-center space-x-2">
+                                                        <span className="p-1.5 bg-amber-100 text-amber-800 rounded-lg">
+                                                            <SparklesIcon className="w-4 h-4" />
+                                                        </span>
+                                                        <p className="font-bold text-amber-950 text-sm">
+                                                            Ajustar Revisión IA con instrucciones personalizadas
+                                                        </p>
+                                                    </div>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => setShowAdjustBox((prev) => ({ ...prev, [paper.id]: false }))}
+                                                        className="text-xs text-amber-800 hover:text-amber-950 font-medium px-2 py-1 rounded hover:bg-amber-100 transition-colors"
+                                                    >
+                                                        Cerrar
+                                                    </button>
+                                                </div>
+
+                                                <p className="text-xs text-amber-800/90 leading-relaxed">
+                                                    Indica qué cambios específicos deseas que la IA realice sobre la evaluación actual (ej: eliminar peticiones de simulaciones, indicar las fechas oficiales del 28 al 30 de octubre de 2026, modificar el puntaje, o ajustar a revisión menor):
+                                                </p>
+
+                                                <textarea
+                                                    rows={3}
+                                                    value={adjustPromptMap[paper.id] || ''}
+                                                    onChange={(e) => setAdjustPromptMap((prev) => ({ ...prev, [paper.id]: e.target.value }))}
+                                                    placeholder="Escribe aquí tus instrucciones de ajuste. Ej: 'Eliminar cualquier requerimiento de nuevas simulaciones o modelos cuantitativos y proyectarlo como trabajo futuro; recordar que las fechas del congreso son el 28, 29 y 30 de octubre de 2026'..."
+                                                    className="w-full p-3 rounded-xl border border-amber-200 bg-white text-xs md:text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all shadow-inner font-sans"
+                                                />
+
+                                                {/* Sugerencias rápidas */}
+                                                <div className="flex flex-wrap items-center gap-2 pt-0.5">
+                                                    <span className="text-[11px] font-bold text-amber-900">Sugerencias rápidas:</span>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => setAdjustPromptMap((prev) => ({ ...prev, [paper.id]: 'Eliminar cualquier solicitud de nuevas simulaciones o modelos cuantitativos y proyectar todo como trabajo futuro.' }))}
+                                                        className="text-[11px] bg-white border border-amber-200 text-amber-900 px-2.5 py-1 rounded-lg hover:bg-amber-100 transition-colors shadow-2xs font-medium"
+                                                    >
+                                                        Sin simulaciones (trabajo futuro)
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => setAdjustPromptMap((prev) => ({ ...prev, [paper.id]: 'Ajustar la verificación de fechas indicando que la conferencia es el 28, 29 y 30 de octubre de 2026.' }))}
+                                                        className="text-[11px] bg-white border border-amber-200 text-amber-900 px-2.5 py-1 rounded-lg hover:bg-amber-100 transition-colors shadow-2xs font-medium"
+                                                    >
+                                                        Fechas oficiales (28-30 Oct 2026)
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => setAdjustPromptMap((prev) => ({ ...prev, [paper.id]: 'Cambiar la recomendación a Revisión Menor con ajustes formales de delimitación y correcciones editoriales.' }))}
+                                                        className="text-[11px] bg-white border border-amber-200 text-amber-900 px-2.5 py-1 rounded-lg hover:bg-amber-100 transition-colors shadow-2xs font-medium"
+                                                    >
+                                                        Cambiar a Revisión Menor
+                                                    </button>
+                                                </div>
+
+                                                <div className="flex items-center justify-between pt-1 border-t border-amber-200/60">
+                                                    <button
+                                                        type="button"
+                                                        disabled={isGeneratingAI[paper.id]}
+                                                        onClick={() => handleGenerateAI(paper.id)}
+                                                        className="text-xs text-gray-500 hover:text-gray-800 font-medium transition-colors"
+                                                        title="Vuelve a generar la revisión estándar sin instrucciones personalizadas"
+                                                    >
+                                                        Regenerar sin instrucciones adicionales
+                                                    </button>
+
+                                                    <div className="flex items-center gap-2">
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => setShowAdjustBox((prev) => ({ ...prev, [paper.id]: false }))}
+                                                            className="text-xs text-gray-600 hover:text-gray-900 px-3 py-1.5 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
+                                                        >
+                                                            Cancelar
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            disabled={isGeneratingAI[paper.id] || !(adjustPromptMap[paper.id] || '').trim()}
+                                                            onClick={() => handleGenerateAI(paper.id, adjustPromptMap[paper.id])}
+                                                            className="bg-gradient-to-r from-amber-600 to-orange-600 text-white font-bold text-xs px-4 py-2 rounded-lg hover:brightness-105 transition-all shadow-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-1.5"
+                                                        >
+                                                            {isGeneratingAI[paper.id] ? (
+                                                                <>
+                                                                    <svg className="animate-spin h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24">
+                                                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                                                                    </svg>
+                                                                    <span>Ajustando con IA...</span>
+                                                                </>
+                                                            ) : (
+                                                                <>
+                                                                    <SparklesIcon className="w-3.5 h-3.5 text-white" />
+                                                                    <span>Aplicar Ajuste con IA</span>
+                                                                </>
+                                                            )}
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         )}
@@ -386,11 +496,17 @@ export const ReviewerDashboard: React.FC = () => {
                                                 <button
                                                     type="button"
                                                     disabled={isGeneratingAI[paper.id]}
-                                                    onClick={() => handleGenerateAI(paper.id)}
+                                                    onClick={() => {
+                                                        if (draft.comments) {
+                                                            setShowAdjustBox((prev) => ({ ...prev, [paper.id]: !prev[paper.id] }));
+                                                        } else {
+                                                            handleGenerateAI(paper.id);
+                                                        }
+                                                    }}
                                                     className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-600 hover:text-amber-700 transition-colors"
                                                 >
                                                     <SparklesIcon className="w-3.5 h-3.5" />
-                                                    <span>{draft.comments ? 'Regenerar con IA' : 'Generar borrador con IA'}</span>
+                                                    <span>{draft.comments ? 'Ajustar Revisión IA' : 'Generar borrador con IA'}</span>
                                                 </button>
                                             </div>
                                             <textarea
