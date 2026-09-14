@@ -110,19 +110,20 @@ ESTADO PARA IEEE XPLORE: Aprobado (con ajustes menores) / Condicionado a Requisi
 --------------------------------------------------------------------------------
 
 3. OBSERVACIONES Y REQUISITOS PARA LA VERSIÓN FINAL (CAMERA-READY) E IEEE XPLORE
-Se solicita a los autores incorporar las siguientes precisiones (todas factibles en el plazo de dos meses para un conference paper; sin exigir nuevas simulaciones ni nuevas formulaciones):
+Se solicita a los autores incorporar las siguientes precisiones (todas realizables en el plazo máximo de 2 meses para un conference paper; ESTÁ TERMINANTEMENTE PROHIBIDO solicitar nuevas simulaciones, nuevos modelos cuantitativos o nuevas formulaciones):
 
-A. REQUISITOS PARA PUBLICACIÓN EN IEEE XPLORE (CAMBIOS MAYORES / DELIMITACIÓN):
-- [Requisito 1: Delimitar explícitamente el alcance del artículo (p. ej. conceptual, exploratorio o preliminar), moderando afirmaciones concluyentes que excedan los datos presentados].
-- [Requisito 2: Incorporar un párrafo explícito de limitaciones y revisión crítica en el texto, reconociendo la ausencia de simulaciones dinámicas o formulaciones analíticas cerradas y proyectándolas como trabajo futuro].
-- [Requisito 3: Precisar conceptualmente las variables, supuestos de aplicación y mecanismos propuestos sin necesidad de implementar nuevos modelos matemáticos].
-- [Requisito 4: Verificación documental y citación de fuentes institucionales públicas y auditables para respaldar datos y proyecciones clave].
+A. REQUISITOS PARA PUBLICACIÓN EN IEEE XPLORE (DELIMITACIÓN CONCEPTUAL, DISCUSIÓN CRÍTICA Y VERIFICACIÓN DOCUMENTAL):
+(Bajo ninguna circunstancia pidas simulaciones numéricas, calibraciones, modelos de optimización o formulaciones adicionales. Exige exclusivamente):
+- Delimitar explícitamente el alcance del artículo: Indicar que se trata de un marco conceptual y exploratorio, moderando afirmaciones concluyentes de impacto, causalidad o política pública que excedan los datos presentados.
+- Incorporar un párrafo explícito de limitaciones y revisión crítica: Discutir en el texto las restricciones del análisis (p. ej. carácter determinista, ausencia de simulaciones dinámicas, simplificaciones regulatorias) y proyectar formalmente la cuantificación y simulación como TRABAJO FUTURO (future work).
+- Precisar conceptualmente las variables y supuestos existentes: Aclarar la definición de términos (p. ej. factor fd, precio de potencia, potencia de suficiencia) sin necesidad de formular ecuaciones o modelos nuevos.
+- Verificación documental de fuentes: Reemplazar o respaldar datos de fuentes no auditables o no públicas con referencias institucionales verificables.
 
 B. CORRECCIONES MENORES Y FORMATO (CAMERA-READY CLAGTEE 2026 - PLAZO MÁXIMO 2 MESES):
-- [Aclaración de nomenclatura, unidades y supuestos ya presentes en el manuscrito]
-- [Corrección de epígrafes o leyendas erróneas en figuras/tablas]
-- [Eliminación de párrafos duplicados o redundancias]
-- [Erratas tipográficas y ortográficas específicas indicando página y sección]
+- Aclaración de nomenclatura, unidades y supuestos ya presentes en el manuscrito.
+- Corrección de epígrafes o leyendas erróneas en figuras/tablas.
+- Eliminación de párrafos duplicados o redundancias textuales.
+- Corrección de erratas tipográficas y ortográficas específicas indicando página y sección.
 
 --------------------------------------------------------------------------------
 
