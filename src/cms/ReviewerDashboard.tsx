@@ -185,7 +185,7 @@ export const ReviewerDashboard: React.FC = () => {
                                             ) : (
                                                 <>
                                                     <SparklesIcon className="w-4 h-4 text-white" />
-                                                    <span>Revisión IA</span>
+                                                    <span>Borrador IA</span>
                                                 </>
                                             )}
                                         </button>
