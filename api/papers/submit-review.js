@@ -98,8 +98,6 @@ export default async function handler(req, res) {
       return;
     }
 
-    const db = getFirestore();
-    const ref = db.collection('papers').doc(String(paperId));
     const now = new Date().toISOString();
 
     await db.runTransaction(async (transaction) => {
