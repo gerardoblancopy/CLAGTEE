@@ -1,5 +1,10 @@
 import { getFirestore, normalizePaper } from '../_lib/firestore.js';
-import { requireAuth } from '../_lib/auth.js';
+import { requireAuth, isStaffRole } from '../_lib/auth.js';
+import { fetchPaperPdfBuffer, generateAIReview } from '../_lib/gemini-reviewer.js';
+
+export const config = {
+  maxDuration: 60,
+};
 
 const parseBody = (req) => {
   if (!req.body) return null;
@@ -29,14 +34,59 @@ export default async function handler(req, res) {
   try {
     const session = requireAuth(req, res);
     if (!session) return;
+
+    const body = parseBody(req);
+    const { action, paperId, review, status } = body || {};
+
+    if (!paperId) {
+      res.status(400).json({ error: 'Missing paperId' });
+      return;
+    }
+
+    const db = getFirestore();
+    const ref = db.collection('papers').doc(String(paperId));
+
+    // ACCIÓN: Generar revisión automática asistida por IA (Skill CLAGTEE Reviewer)
+    if (action === 'ai-review') {
+      const isReviewer = session.role === 'reviewer';
+      const isStaffOrChair = isStaffRole(session.role);
+
+      if (!isReviewer && !isStaffOrChair) {
+        res.status(403).json({ error: 'Forbidden' });
+        return;
+      }
+
+      const snapshot = await ref.get();
+      if (!snapshot.exists) {
+        res.status(404).json({ error: 'Paper not found' });
+        return;
+      }
+
+      const paperData = normalizePaper(snapshot);
+      const assignedIds = Array.isArray(paperData.assignedReviewerIds) ? paperData.assignedReviewerIds : [];
+
+      if (isReviewer && !assignedIds.includes(session.id)) {
+        res.status(403).json({ error: 'Reviewer not assigned to this paper' });
+        return;
+      }
+
+      // Descargar PDF de GCS si fileKey existe
+      let pdfBuffer = null;
+      if (paperData.fileKey) {
+        pdfBuffer = await fetchPaperPdfBuffer(paperData.fileKey);
+      }
+
+      const aiReview = await generateAIReview({ paper: paperData, pdfBuffer });
+      res.status(200).json({ success: true, review: aiReview });
+      return;
+    }
+
     if (session.role !== 'reviewer') {
       res.status(403).json({ error: 'Forbidden' });
       return;
     }
 
-    const body = parseBody(req);
-    const { paperId, review, status } = body || {};
-    if (!paperId || !review) {
+    if (!review) {
       res.status(400).json({ error: 'Missing required fields' });
       return;
     }

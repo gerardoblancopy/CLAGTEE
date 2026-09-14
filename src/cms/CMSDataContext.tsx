@@ -67,6 +67,16 @@ export interface EmailResult {
   papersCount?: number;
 }
 
+export interface AIReviewResult {
+  score: number;
+  confidence: number;
+  recommendation: 'accept' | 'minor-revision' | 'major-revision' | 'reject';
+  status: 'under-review' | 'accepted' | 'rejected';
+  decisionLabel?: string;
+  comments: string;
+  modelUsed?: string;
+}
+
 interface CMSDataContextType {
   papers: Paper[];
   isLoading: boolean;
@@ -83,6 +93,7 @@ interface CMSDataContextType {
     review: Omit<ReviewEntry, 'id' | 'submittedAt'>,
     status?: PaperStatus
   ) => Promise<void>;
+  requestAIReview: (paperId: string) => Promise<AIReviewResult | null>;
   setDecision: (paperId: string, status: PaperStatus) => Promise<void>;
   withdrawPaper: (paperId: string) => Promise<void>;
   deletePaper: (paperId: string) => Promise<void>;
@@ -316,6 +327,30 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
     }
   };
 
+  const requestAIReview = async (paperId: string): Promise<AIReviewResult | null> => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await apiFetch('/api/papers/submit-review', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'ai-review', paperId }),
+      });
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData?.error || 'No se pudo generar la revisión técnica con IA.');
+      }
+      const data = (await response.json()) as { success: boolean; review: AIReviewResult };
+      return data.review;
+    } catch (fetchError: any) {
+      const msg = fetchError?.message || 'Error al procesar la revisión técnica con IA.';
+      setError(msg);
+      throw fetchError;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const setDecision = async (paperId: string, status: PaperStatus) => {
     setIsLoading(true);
     setError(null);
@@ -391,6 +426,7 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
       notifyReviewerAssignments,
       unassignReviewer,
       submitReview,
+      requestAIReview,
       setDecision,
       withdrawPaper,
       deletePaper,
