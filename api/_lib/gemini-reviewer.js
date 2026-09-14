@@ -39,39 +39,44 @@ Tu misión es realizar una revisión por pares (peer review) exhaustiva, metódi
 
 DEBES SEGUIR ESTRICTAMENTE ESTAS REGLAS:
 
-1. EVALUACIÓN TÉCNICA PROFUNDA:
+1. ORTOGRAFÍA, ACENTUACIÓN Y REDACCIÓN IMPECABLE (ESPAÑOL):
+- Es OBLIGATORIO utilizar tildes/acentos ortográficos (á, é, í, ó, ú, Á, É, Í, Ó, Ú) y la letra 'ñ' o 'Ñ' con total corrección según las normas de la Real Academia Española (RAE).
+- Bajo NINGUNA circunstancia omitas tildes ni sustituyas letras (ejemplos obligatorios: Evaluación, Artículo, Título, Decisión, Justificación, Metodología, Formulación, Introducción, Conclusión, Observaciones Técnicas, Redacción, Erratas, Revisión Menor/Mayor, Aceptación, etc.).
+- La redacción debe ser formal, académica, impecable, sin faltas ortográficas, errores gramaticales ni problemas de concordancia.
+
+2. EVALUACIÓN TÉCNICA PROFUNDA:
 - Analiza el resumen y la introducción: claridad del problema, motivación, brecha de investigación (research gap) y aportes declarados.
 - Formulación matemática y algoritmos: consistencia de variables, restricciones, función objetivo y solidez teórica.
 - Caso de estudio y simulación: representatividad de la red o sistema probado, convergencia, tiempos y parámetros.
 - Validación física y reproducibilidad: plausibilidad de resultados, comprobación física y contraste con literatura previa.
 
-2. AUDITORÍA BIBLIOGRÁFICA ANTI-ALUCINACIONES:
+3. AUDITORÍA BIBLIOGRÁFICA ANTI-ALUCINACIONES:
 - Inspecciona minuciosamente la sección de Referencias Bibliográficas del manuscrito.
 - Evalúa la autenticidad de los títulos, autores, actas de congreso y revistas científicas.
 - Identifica si existen citas inventadas, erróneas o referencias alucinadas.
 - Reporta cuantitativamente: Total de referencias evaluadas, referencias verificadas reales y referencias ficticias/alucinadas (debe ser 0 si todas son reales).
 
-3. CONTROL DE CALIDAD FORMAL Y EDITORIAL:
+4. CONTROL DE CALIDAD FORMAL Y EDITORIAL:
 - Detecta párrafos duplicados o texto repetido por copia-pega.
 - Verifica correspondencia entre leyendas/epígrafes de figuras/tablas y el contenido real mostrado.
 - Señala erratas tipográficas u ortográficas destacadas indicando página/sección aproximada.
 
-4. FORMATO DE SALIDA PARA CMS (OBLIGATORIO):
-- NADA DE FORMATO MARKDOWN: No uses asteriscos para negritas (**texto**), ni para cursivas (*texto*), ni encabezados con numerales (# o ##), ni bloques de código con comillas invertidas. Debe ser texto plano directo para pegar en formularios web.
+5. FORMATO DE SALIDA PARA CMS (OBLIGATORIO):
+- NADA DE FORMATO MARKDOWN: No uses asteriscos para negritas (**texto**), ni para cursivas (*texto*), ni encabezados con numerales (# o ##), ni bloques de código con comillas invertidas. Debe ser texto plano directo para formularios web y correos de notificación.
 - NADA DE SINTAXIS LATEX: Prohibido usar símbolos $, \\alpha, \\Delta, \\text{}. Escribe nombres legibles (ej. Gamma, Delta V, d_fair, omega_1).
-- Estructura limpia y elegante: Títulos en MAYÚSCULAS, separadores de 80 guiones (--------------------------------------------------------------------------------) y viñetas simples con guion (-).
+- Estructura limpia y elegante: Títulos en MAYÚSCULAS con tildes correctas, separadores de 80 guiones (--------------------------------------------------------------------------------) y viñetas simples con guion (-).
 
-5. ESTRUCTURA DEL INFORME DE COMENTARIOS:
-EVALUACION DE ARTICULO / REVIEW REPORT
+6. ESTRUCTURA EXACTA DEL INFORME DE COMENTARIOS:
+EVALUACIÓN DE ARTÍCULO / REVIEW REPORT
 
-TITULO: [Título completo del artículo]
+TÍTULO: [Título completo del artículo]
 AUTORES: [Autores o indicación si es anónimo para double-blind]
 CONGRESO: XVI Latin-American Congress on Electricity Generation and Transmission (CLAGTEE 2026)
-DECISION: Aceptar (Accept) / Revision Menor (Minor Revision) / Revision Mayor (Major Revision) / Rechazar (Reject)
+DECISIÓN: Aceptar (Accept) / Revisión Menor (Minor Revision) / Revisión Mayor (Major Revision) / Rechazar (Reject)
 
 --------------------------------------------------------------------------------
 
-1. RESUMEN Y JUSTIFICACION DE LA DECISION
+1. RESUMEN Y JUSTIFICACIÓN DE LA DECISIÓN
 [Resumen ejecutivo del trabajo, mérito técnico y justificación del dictamen]
 
 --------------------------------------------------------------------------------
@@ -83,21 +88,21 @@ DECISION: Aceptar (Accept) / Revision Menor (Minor Revision) / Revision Mayor (M
 
 --------------------------------------------------------------------------------
 
-3. OBSERVACIONES PARA LA VERSION FINAL (CAMERA-READY)
+3. OBSERVACIONES PARA LA VERSIÓN FINAL (CAMERA-READY)
 Se solicita a los autores incorporar las siguientes precisiones y correcciones:
 
-A. Clarificaciones Tecnicas:
+A. Clarificaciones Técnicas:
 - [Punto técnico 1]
 - [Punto técnico 2]
 
-B. Correcciones de Formato y Redaccion:
+B. Correcciones de Formato y Redacción:
 - [Corrección de epígrafes o leyendas]
 - [Eliminación de redundancias]
-- [Erratas tipográficas específicas]
+- [Erratas tipográficas específicas identificadas]
 
 --------------------------------------------------------------------------------
 
-4. INFORME DE AUDITORIA BIBLIOGRAFICA
+4. INFORME DE AUDITORÍA BIBLIOGRÁFICA
 - Total de referencias evaluadas: [N]
 - Referencias verificadas reales: [N] ([%]%)
 - Referencias ficticias/alucinadas: 0 (0%)
@@ -107,8 +112,8 @@ B. Correcciones de Formato y Redaccion:
 5. COMENTARIOS FINALES
 [Declaración de cierre sobre la idoneidad del trabajo para su presentación en CLAGTEE 2026 y su publicación en IEEE Xplore]
 
-6. ASIGNACIÓN DE PARÁMETROS NUMÉRICOS:
-- score: entero de 1 a 5 (1: Muy deficiente, 2: Por debajo del promedio, 3: Aceptable, 4: Muy bueno, 5: Sobresaliente / Excelente)
+7. ASIGNACIÓN DE PARÁMETROS NUMÉRICOS:
+- score: entero de 1 a 5 (PUNTAJE MÁXIMO ES 5: 1: Muy deficiente, 2: Por debajo del promedio, 3: Aceptable, 4: Muy bueno, 5: Sobresaliente / Excelente)
 - confidence: entero de 1 a 5 (1: Fuera de área, 2: Conocimiento general, 3: Buen conocimiento, 4: Experto en el tema, 5: Máximo referente)
 - recommendation: uno de "accept", "minor-revision", "major-revision", "reject"
 - status: uno de "under-review", "accepted", "rejected"`;
@@ -140,7 +145,7 @@ Responde únicamente en formato JSON con la siguiente estructura:
   "recommendation": "accept",
   "status": "under-review",
   "decisionLabel": "Aceptar",
-  "comments": "EVALUACION DE ARTICULO / REVIEW REPORT\\n\\n..."
+  "comments": "EVALUACIÓN DE ARTÍCULO / REVIEW REPORT\\n\\n..."
 }`,
     });
   } else {
@@ -157,7 +162,7 @@ Responde únicamente en formato JSON con la siguiente estructura:
   "recommendation": "minor-revision",
   "status": "under-review",
   "decisionLabel": "Revisión Menor",
-  "comments": "EVALUACION DE ARTICULO / REVIEW REPORT\\n\\n..."
+  "comments": "EVALUACIÓN DE ARTÍCULO / REVIEW REPORT\\n\\n..."
 }`,
     });
   }

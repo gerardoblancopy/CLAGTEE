@@ -632,7 +632,7 @@ export const sendReviewerAssignmentSummary = async ({ to, name, papers = [], sta
         paper.reviewed && paper.recommendation
           ? `<br><span style="font-size:11px; color:#8a94a6;">${escapeHtml(
               RECOMMENDATION_LABELS[paper.recommendation] || paper.recommendation
-            )}${paper.score ? ` · ${escapeHtml(String(paper.score))}/10` : ''}</span>`
+            )}${paper.score ? ` · ${escapeHtml(String(paper.score))}/5` : ''}</span>`
           : '';
       return `
                 <tr>

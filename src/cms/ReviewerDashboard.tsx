@@ -345,7 +345,7 @@ export const ReviewerDashboard: React.FC = () => {
                                                 </select>
                                             </label>
                                             <label className="text-xs font-bold text-gray-500">
-                                                Recomendacion
+                                                Recomendación
                                                 <select
                                                     className="mt-2 w-full px-3 py-2 rounded-lg border border-gray-200"
                                                     value={draft.recommendation}
@@ -356,8 +356,8 @@ export const ReviewerDashboard: React.FC = () => {
                                                     }
                                                 >
                                                     <option value="accept">Aceptar</option>
-                                                    <option value="minor-revision">Revision menor</option>
-                                                    <option value="major-revision">Revision mayor</option>
+                                                    <option value="minor-revision">Revisión menor</option>
+                                                    <option value="major-revision">Revisión mayor</option>
                                                     <option value="reject">Rechazar</option>
                                                 </select>
                                             </label>

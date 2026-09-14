@@ -109,9 +109,9 @@ export const ChairDashboard: React.FC = () => {
     if (!emailForm.subject.trim() || !emailForm.body.trim()) return;
     if (emailModal.decisionPaper) {
       const count = Array.isArray(emailModal.to) ? emailModal.to.length : 1;
-      const decision = emailModal.decisionPaper.status === 'accepted' ? 'aceptacion' : 'rechazo';
+      const decision = emailModal.decisionPaper.status === 'accepted' ? 'aceptación' : 'rechazo';
       const ok = window.confirm(
-        `Se enviara la notificacion de ${decision} de "${emailModal.decisionPaper.title}" a ${count} destinatario(s). Esta accion no se puede deshacer. ¿Continuar?`
+        `Se enviará la notificación de ${decision} de "${emailModal.decisionPaper.title}" a ${count} destinatario(s). Esta acción no se puede deshacer. ¿Continuar?`
       );
       if (!ok) return;
     }
@@ -244,8 +244,8 @@ export const ChairDashboard: React.FC = () => {
 
   const recommendationLabels: Record<string, string> = {
     'accept': 'Aceptar',
-    'minor-revision': 'Revision menor',
-    'major-revision': 'Revision mayor',
+    'minor-revision': 'Revisión menor',
+    'major-revision': 'Revisión mayor',
     'reject': 'Rechazar',
   };
 
@@ -261,35 +261,41 @@ export const ChairDashboard: React.FC = () => {
     if (paper.reviews.length === 0) return '';
     const blocks = paper.reviews.map((review, index) => {
       const recommendation = recommendationLabels[review.recommendation] || review.recommendation;
-      const header = `Revisor ${index + 1} — Recomendacion: ${recommendation} | Puntaje: ${review.score}/10`;
+      const header = `Revisor ${index + 1} — Recomendación: ${recommendation} | Puntaje: ${review.score}/5`;
       const comments = review.comments.trim() || 'Sin comentarios adicionales.';
       return `${header}\n${comments}`;
     });
-    return `Comentarios de la revision por pares:\n\n${blocks.join('\n\n')}\n\n`;
+    return `Comentarios de la revisión por pares:\n\n${blocks.join('\n\n')}\n\n`;
   };
 
   const buildDecisionEmail = (paper: Paper, withComments: boolean) => {
     const accepted = paper.status === 'accepted';
     const commentsBlock = withComments ? buildReviewerCommentsBlock(paper) : '';
     const subject = accepted
-      ? `CLAGTEE 2026 — Trabajo aceptado (${paper.id})`
-      : `CLAGTEE 2026 — Resultado de la evaluacion (${paper.id})`;
+      ? `CLAGTEE 2026 — Notificación de aceptación del trabajo (${paper.id})`
+      : `CLAGTEE 2026 — Notificación de evaluación del trabajo (${paper.id})`;
 
     const body = accepted
-      ? `Estimados/as autores/as,
+      ? `Estimados/as autores/as:
 
-Nos complace informarles que el trabajo "${paper.title}" (ID: ${paper.id}), enviado al track ${paper.track}, ha sido ACEPTADO para su presentacion en CLAGTEE 2026.
+Nos complace informarles que su trabajo titulado "${paper.title}" (ID: ${paper.id}), postulado en el área temática "${paper.track}", ha sido ACEPTADO para su presentación y publicación en el XVI Congreso Latinoamericano de Generación y Transmisión de Energía Eléctrica (CLAGTEE 2026).
 
-${commentsBlock}Proximamente les haremos llegar las instrucciones para la version final del manuscrito y la inscripcion al congreso.
+${commentsBlock}Próximamente les haremos llegar las instrucciones detalladas para la preparación de la versión final del manuscrito (camera-ready) y los requisitos para la inscripción de los autores al congreso.
 
-Agradecemos su contribucion.`
-      : `Estimados/as autores/as,
+Agradecemos sinceramente su valiosa contribución científica y dedicación.
 
-Agradecemos el envio del trabajo "${paper.title}" (ID: ${paper.id}) al track ${paper.track} de CLAGTEE 2026.
+Atentamente,
+Comité Organizador CLAGTEE 2026`
+      : `Estimados/as autores/as:
 
-Tras el proceso de revision por pares, lamentamos informarles que el trabajo NO ha sido aceptado para su presentacion en esta edicion del congreso.
+Agradecemos sinceramente el envío de su trabajo titulado "${paper.title}" (ID: ${paper.id}) al área temática "${paper.track}" de CLAGTEE 2026.
 
-${commentsBlock}Valoramos su interes en CLAGTEE 2026 y esperamos contar con su participacion en futuras ediciones.`;
+Tras el riguroso proceso de evaluación y revisión por pares, lamentamos comunicarles que en esta oportunidad el trabajo no ha sido seleccionado para su presentación en el congreso.
+
+${commentsBlock}Apreciamos enormemente su interés en CLAGTEE 2026 y los motivamos a seguir compartiendo sus investigaciones en futuras ediciones del congreso.
+
+Atentamente,
+Comité Organizador CLAGTEE 2026`;
 
     return { subject, body };
   };
@@ -305,7 +311,7 @@ ${commentsBlock}Valoramos su interes en CLAGTEE 2026 y esperamos contar con su p
     setEmailModal({
       to: recipients,
       label: recipients.join(', '),
-      title: paper.status === 'accepted' ? 'Notificar aceptacion' : 'Notificar rechazo',
+      title: paper.status === 'accepted' ? 'Notificar aceptación' : 'Notificar rechazo',
       decisionPaper: paper,
     });
     setEmailForm(buildDecisionEmail(paper, withComments));
@@ -665,7 +671,7 @@ ${commentsBlock}Valoramos su interes en CLAGTEE 2026 y esperamos contar con su p
                               onClick={() => openDecisionEmail(paper)}
                               className="text-[#0D2C54] text-xs font-bold hover:underline text-left"
                             >
-                              ✉ Notificar {paper.status === 'accepted' ? 'aceptacion' : 'rechazo'}
+                              ✉ Notificar {paper.status === 'accepted' ? 'aceptación' : 'rechazo'}
                             </button>
                           )}
 
@@ -674,7 +680,7 @@ ${commentsBlock}Valoramos su interes en CLAGTEE 2026 y esperamos contar con su p
                             onClick={() => handleDelete(paper.id)}
                             className="text-red-500 text-xs font-bold hover:underline text-left"
                           >
-                            Eliminar envio
+                            Eliminar envío
                           </button>
                         </div>
                       );
