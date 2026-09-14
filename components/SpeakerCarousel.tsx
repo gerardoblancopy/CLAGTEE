@@ -125,18 +125,26 @@ export const SpeakerCarousel: React.FC<SpeakerCarouselProps> = ({
             <div className="group bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-1.5 flex flex-col h-full">
               {/* Banner Image Container */}
               <div
-                className="relative overflow-hidden bg-slate-900 aspect-[16/9] cursor-pointer"
+                className="relative overflow-hidden bg-[#08203E] aspect-[16/9] cursor-pointer flex items-center justify-center"
                 onClick={() => setSelectedSpeaker(speaker)}
               >
+                {/* Ambient blurred backdrop so vertical posters feel natural and match the card format */}
+                <img
+                  src={speaker.imageUrl}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover blur-xl opacity-35 scale-125 pointer-events-none"
+                  aria-hidden="true"
+                />
+
                 <img
                   src={speaker.imageUrl}
                   alt={speaker.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="relative z-0 max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
 
                 {/* Subtle Hover Overlay */}
-                <div className="absolute inset-0 bg-[#0D2C54]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="absolute inset-0 z-10 bg-[#0D2C54]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <span className="inline-flex items-center gap-2 bg-white/95 text-[#0D2C54] px-4 py-2 rounded-full font-bold text-xs tracking-wide shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                     <ZoomInIcon className="w-4 h-4 text-[#2A9D8F]" />
                     {viewFullText}
@@ -162,7 +170,7 @@ export const SpeakerCarousel: React.FC<SpeakerCarouselProps> = ({
                     )}
                   </div>
 
-                  {/* Speaker Name */}
+                  {/* Speaker / Panel Name */}
                   <h3 className="text-2xl font-bold text-[#0D2C54] font-['Montserrat'] tracking-tight">
                     {speaker.name}
                   </h3>
@@ -174,11 +182,11 @@ export const SpeakerCarousel: React.FC<SpeakerCarouselProps> = ({
                     </p>
                   )}
 
-                  {/* Talk Title */}
+                  {/* Talk / Theme Title */}
                   {speaker.title && (
                     <div className="mt-4 p-3.5 bg-slate-50 rounded-xl border-l-4 border-[#F4A261]">
                       <span className="block text-[11px] font-bold uppercase tracking-wider text-gray-500 mb-1">
-                        Charla Magistral
+                        {speaker.typeLabel || 'Charla Magistral'}
                       </span>
                       <p className="text-sm md:text-base font-semibold text-[#0D2C54] font-['Roboto'] leading-snug">
                         {speaker.title}
@@ -186,12 +194,38 @@ export const SpeakerCarousel: React.FC<SpeakerCarouselProps> = ({
                     </div>
                   )}
 
-                  {/* Description / Summary */}
-                  {speaker.description && (
+                  {/* Panelists Grid or Speaker Description */}
+                  {speaker.panelists && speaker.panelists.length > 0 ? (
+                    <div className="mt-4 space-y-2.5">
+                      <span className="block text-[11px] font-bold uppercase tracking-wider text-[#2A9D8F]">
+                        Panelistas destacados
+                      </span>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {speaker.panelists.map((panelist, pIdx) => (
+                          <div
+                            key={pIdx}
+                            className="bg-slate-50 border border-gray-100 rounded-xl p-2.5 flex flex-col justify-between hover:bg-slate-100/80 transition-colors"
+                          >
+                            <span className="font-bold text-xs text-[#0D2C54]">
+                              {panelist.name}
+                            </span>
+                            <span className="text-[11px] text-gray-600 mt-0.5 leading-tight">
+                              {panelist.role}
+                            </span>
+                            {panelist.affiliation && (
+                              <span className="text-[10px] text-[#2A9D8F] font-medium mt-0.5 leading-tight">
+                                {panelist.affiliation}
+                              </span>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ) : speaker.description ? (
                     <p className="text-xs text-gray-600 font-['Roboto'] mt-3 leading-relaxed">
                       {speaker.description}
                     </p>
-                  )}
+                  ) : null}
                 </div>
 
                 {/* Action Button */}
@@ -224,7 +258,7 @@ export const SpeakerCarousel: React.FC<SpeakerCarouselProps> = ({
         </div>
       )}
 
-      {/* Lightbox Modal for Full-Resolution Banner */}
+      {/* Lightbox Modal for Full-Resolution Banner / Poster */}
       <AnimatePresence>
         {selectedSpeaker && (
           <motion.div
@@ -240,37 +274,49 @@ export const SpeakerCarousel: React.FC<SpeakerCarouselProps> = ({
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-5xl w-full bg-[#0D2C54] rounded-2xl overflow-hidden shadow-2xl border border-white/10"
+              className="relative max-w-5xl w-full max-h-[92vh] flex flex-col bg-[#0D2C54] rounded-2xl overflow-hidden shadow-2xl border border-white/10"
             >
               {/* Close Button */}
               <button
                 onClick={() => setSelectedSpeaker(null)}
                 aria-label="Cerrar modal"
-                className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/60 text-white hover:bg-white hover:text-[#0D2C54] transition-all flex items-center justify-center"
+                className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/60 text-white hover:bg-white hover:text-[#0D2C54] transition-all flex items-center justify-center shadow-lg"
               >
                 <XIcon className="w-6 h-6" />
               </button>
 
-              {/* High-Resolution Banner Image */}
-              <div className="relative aspect-[16/9] w-full bg-slate-900 overflow-hidden">
+              {/* High-Resolution Banner / Poster Image */}
+              <div className="relative flex-1 min-h-0 bg-slate-950 overflow-hidden flex items-center justify-center p-2 md:p-4">
                 <img
                   src={selectedSpeaker.imageUrl}
                   alt={selectedSpeaker.name}
-                  className="w-full h-full object-contain"
+                  className="max-h-[72vh] w-auto max-w-full object-contain rounded-lg shadow-xl"
                 />
               </div>
 
               {/* Modal Footer info */}
-              <div className="p-4 md:p-6 bg-[#08203E] text-white flex flex-col md:flex-row md:items-center justify-between gap-3">
-                <div>
-                  <h4 className="text-lg font-bold text-white font-['Montserrat']">
+              <div className="p-4 md:p-5 bg-[#08203E] text-white flex flex-col md:flex-row md:items-center justify-between gap-3 flex-shrink-0">
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center gap-2 mb-1">
+                    {selectedSpeaker.badge && (
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#F4A261]">
+                        {selectedSpeaker.badge}
+                      </span>
+                    )}
+                    {selectedSpeaker.date && (
+                      <span className="text-xs text-gray-300">
+                        • {selectedSpeaker.date}
+                      </span>
+                    )}
+                  </div>
+                  <h4 className="text-lg md:text-xl font-bold text-white font-['Montserrat'] truncate">
                     {selectedSpeaker.name}
                   </h4>
-                  <p className="text-xs text-gray-300">
+                  <p className="text-xs md:text-sm text-gray-300 line-clamp-2">
                     {selectedSpeaker.title}
                   </p>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 flex-shrink-0">
                   <a
                     href={selectedSpeaker.imageUrl}
                     target="_blank"

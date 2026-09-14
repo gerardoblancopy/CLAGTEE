@@ -424,18 +424,85 @@ export const contentPT: Content = {
       }
     },
     "speakers": {
-      "title": "Palestrantes Magistrais",
-      "subtitle": "Destacadas personalidades do âmbito científico e tecnológico internacional compartilharão sua visão no CLAGTEE 2026.",
+      "title": "Palestrantes Magistrais e Painéis",
+      "subtitle": "Destacadas personalidades do âmbito científico, tecnológico e empresarial compartilharão sua visão em palestras magnas e painéis de especialistas no CLAGTEE 2026.",
       "list": [
         {
           "id": "dr-jose-rodriguez",
           "name": "Dr. José Rodríguez",
           "badge": "Palestrante Magistral Confirmado",
+          "typeLabel": "Palestra Magna",
           "title": "“O papel da Eletrônica de Potência na transição energética para um mundo mais sustentável”",
           "tagline": "O pesquisador chileno mais citado do mundo",
           "date": "28 de Outubro de 2026",
           "imageUrl": "/speakers/keynote-jose-rodriguez.png",
           "description": "Life Fellow do IEEE, membro da Academia de Engenharia do Chile, Prêmio Nacional de Ciências Aplicadas e Tecnológicas 2014 e Pesquisador Nº 1 do Chile no Ranking da Universidade de Stanford 2025."
+        },
+        {
+          "id": "panel-operacion-sistemas-electricos",
+          "name": "Operação de Sistemas Elétricos",
+          "badge": "Painel de Especialistas Confirmado",
+          "typeLabel": "Painel de Especialistas",
+          "title": "“Operação de Sistemas Elétricos”",
+          "tagline": "Líderes da indústria e da academia debatem o futuro do setor elétrico",
+          "date": "28 de Outubro de 2026",
+          "imageUrl": "/speakers/panel-operacion-sistemas-electricos.jpg",
+          "description": "Painel de alto nível sobre operação técnica e regulação do setor elétrico com renomados representantes da transmissão, coordenação e academia.",
+          "panelists": [
+            {
+              "name": "Jaime Acevedo",
+              "role": "Gerente de Transmissão",
+              "affiliation": "Chilquinta Energía S.A."
+            },
+            {
+              "name": "Jaime Peralta",
+              "role": "Membro do Conselho Diretivo",
+              "affiliation": "Coordinador Eléctrico Nacional"
+            },
+            {
+              "name": "Paola Hartung",
+              "role": "Diretora de Assuntos Regulatórios",
+              "affiliation": "AES Andes"
+            },
+            {
+              "name": "Jorge Mendoza",
+              "role": "Vice-reitor de Desenvolvimento",
+              "affiliation": "PUCV"
+            }
+          ]
+        },
+        {
+          "id": "panel-especial-motores",
+          "name": "Projeto de Sistemas de Propulsão Elétrica",
+          "badge": "Painel Especial Motores",
+          "typeLabel": "Painel Especial Motores",
+          "title": "“Projeto de sistemas de propulsão elétrica para veículos de carga pesada: Topologias, projeto, otimização robusta e controle”",
+          "tagline": "Inovação e eletromobilidade para veículos de carga pesada",
+          "date": "29 de Outubro de 2026",
+          "imageUrl": "/speakers/panel-especial-motores.jpg",
+          "description": "Painel técnico especializado focado em desenvolvimento, topologias, otimização e controle avançado de sistemas de tração elétrica pesada.",
+          "panelists": [
+            {
+              "name": "Juan A. Tapia",
+              "role": "Dr. Engenharia Elétrica",
+              "affiliation": "Professor Titular UdeC · Diretor Projeto Anillo ACT250005"
+            },
+            {
+              "name": "Álvaro Hoffer",
+              "role": "Dr. Engenharia Elétrica",
+              "affiliation": "Pesquisador CTE-USS · Professor Assistente USS"
+            },
+            {
+              "name": "Carlos Madariaga",
+              "role": "Dr. Engenharia Elétrica",
+              "affiliation": "Professor Assistente UdeC"
+            },
+            {
+              "name": "Werner Jara",
+              "role": "Dr. Ciências da Engenharia",
+              "affiliation": "Professor Associado PUCV"
+            }
+          ]
         }
       ]
     },
@@ -507,7 +574,7 @@ export const uiPT: UIStrings = {
   ariaHome: "XVI CLAGTEE 2026, ir ao início",
   ariaOpenMenu: "Abrir menu de navegação",
   ariaCloseMenu: "Fechar menu de navegação",
-  speakersPlaceholder: "Mais palestrantes magistrais serão anunciados em breve.",
+  speakersPlaceholder: "Mais palestrantes magistrais e painéis serão anunciados em breve.",
   deadlineBanner: "Nova data limite para submissão de trabalhos completos: 22 de Agosto de 2026",
   venueTitle: "Local do Evento",
   venueCity: "Providencia, Santiago do Chile",

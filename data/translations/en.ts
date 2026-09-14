@@ -424,18 +424,85 @@ export const contentEN: Content = {
       }
     },
     "speakers": {
-      "title": "Keynote Speakers",
-      "subtitle": "Distinguished international leaders in science and technology will share their expertise at CLAGTEE 2026.",
+      "title": "Keynote Speakers & Panels",
+      "subtitle": "Distinguished figures from science, technology, and industry will share their vision in keynote lectures and expert panels at CLAGTEE 2026.",
       "list": [
         {
           "id": "dr-jose-rodriguez",
           "name": "Dr. José Rodríguez",
           "badge": "Confirmed Keynote Speaker",
+          "typeLabel": "Keynote Lecture",
           "title": "“The role of Power Electronics in the energy transition toward a more sustainable world”",
           "tagline": "The most cited Chilean researcher in the world",
           "date": "October 28, 2026",
           "imageUrl": "/speakers/keynote-jose-rodriguez.png",
           "description": "IEEE Life Fellow, member of the Chilean Academy of Engineering, 2014 National Prize for Applied Sciences and Technologies, and #1 Researcher in Chile in the 2025 Stanford University Ranking."
+        },
+        {
+          "id": "panel-operacion-sistemas-electricos",
+          "name": "Power Systems Operation",
+          "badge": "Confirmed Expert Panel",
+          "typeLabel": "Expert Panel",
+          "title": "“Power Systems Operation”",
+          "tagline": "Industry and academic leaders debate the future of the electric power sector",
+          "date": "October 28, 2026",
+          "imageUrl": "/speakers/panel-operacion-sistemas-electricos.jpg",
+          "description": "High-level discussion panel on operational and regulatory challenges in modern power grids with leaders from transmission, regulation, and academia.",
+          "panelists": [
+            {
+              "name": "Jaime Acevedo",
+              "role": "Transmission Manager",
+              "affiliation": "Chilquinta Energía S.A."
+            },
+            {
+              "name": "Jaime Peralta",
+              "role": "Board Member",
+              "affiliation": "Coordinador Eléctrico Nacional"
+            },
+            {
+              "name": "Paola Hartung",
+              "role": "Director of Regulatory Affairs",
+              "affiliation": "AES Andes"
+            },
+            {
+              "name": "Jorge Mendoza",
+              "role": "Vice Rector of Development",
+              "affiliation": "PUCV"
+            }
+          ]
+        },
+        {
+          "id": "panel-especial-motores",
+          "name": "Electric Propulsion Systems Design",
+          "badge": "Special Motors Panel",
+          "typeLabel": "Special Panel",
+          "title": "“Design of electric propulsion systems for heavy-duty vehicles: Topologies, design, robust optimization and control”",
+          "tagline": "Innovation and electromobility for heavy-duty commercial vehicles",
+          "date": "October 29, 2026",
+          "imageUrl": "/speakers/panel-especial-motores.jpg",
+          "description": "Specialized panel focused on topologies, advanced design methodologies, and robust control for heavy-duty electric vehicle propulsion.",
+          "panelists": [
+            {
+              "name": "Juan A. Tapia",
+              "role": "PhD Electrical Eng.",
+              "affiliation": "Full Professor UdeC · Director Anillo Project ACT250005"
+            },
+            {
+              "name": "Álvaro Hoffer",
+              "role": "PhD Electrical Eng.",
+              "affiliation": "Researcher CTE-USS · Assistant Professor USS"
+            },
+            {
+              "name": "Carlos Madariaga",
+              "role": "PhD Electrical Eng.",
+              "affiliation": "Assistant Professor UdeC"
+            },
+            {
+              "name": "Werner Jara",
+              "role": "PhD Engineering Sciences",
+              "affiliation": "Associate Professor PUCV"
+            }
+          ]
         }
       ]
     },
@@ -507,7 +574,7 @@ export const uiEN: UIStrings = {
   ariaHome: "XVI CLAGTEE 2026, go to top",
   ariaOpenMenu: "Open navigation menu",
   ariaCloseMenu: "Close navigation menu",
-  speakersPlaceholder: "More keynote speakers will be announced soon.",
+  speakersPlaceholder: "More keynote speakers and panels will be announced soon.",
   deadlineBanner: "New deadline for full paper submissions: August 22, 2026",
   venueTitle: "Event Venue",
   venueCity: "Providencia, Santiago, Chile",

@@ -65,16 +65,24 @@ export interface BookCover {
   imageUrl: string;
 }
 
+export interface SpeakerPanelist {
+  name: string;
+  role: string;
+  affiliation?: string;
+}
+
 export interface KeynoteSpeaker {
   id: string;
   name: string;
   badge?: string;
+  typeLabel?: string;
   title: string;
   affiliation?: string;
   tagline?: string;
   date?: string;
   imageUrl: string;
   description?: string;
+  panelists?: SpeakerPanelist[];
 }
 
 export interface CallForPapersTemplate {
