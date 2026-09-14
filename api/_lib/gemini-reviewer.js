@@ -118,7 +118,145 @@ B. Correcciones de Formato y Redacción:
 - recommendation: uno de "accept", "minor-revision", "major-revision", "reject"
 - status: uno de "under-review", "accepted", "rejected"`;
 
-export const generateAIReview = async ({ paper, pdfBuffer }) => {
+const generateOpenAIReview = async ({ paper, pdfBuffer, apiKey }) => {
+  let uploadedFileId = null;
+
+  try {
+    const userContent = [];
+
+    if (pdfBuffer && Buffer.isBuffer(pdfBuffer) && pdfBuffer.length > 0) {
+      const formData = new FormData();
+      const blob = new Blob([pdfBuffer], { type: 'application/pdf' });
+      formData.append('file', blob, `paper-${paper.id}.pdf`);
+      formData.append('purpose', 'user_data');
+
+      const fileRes = await fetch('https://api.openai.com/v1/files', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${apiKey}` },
+        body: formData,
+      });
+
+      const fileData = await fileRes.json();
+      if (!fileRes.ok || !fileData?.id) {
+        throw new Error(fileData?.error?.message || `OpenAI File Upload failed: HTTP ${fileRes.status}`);
+      }
+      uploadedFileId = fileData.id;
+
+      userContent.push({
+        type: 'text',
+        text: `Aquí tienes el manuscrito en PDF del artículo #${paper.id} titulado "${paper.title}" presentado en el Track "${paper.track || 'General'}".
+Abstract declarado: "${paper.abstract || 'No disponible'}".
+
+Por favor, lee el documento completo en PDF y genera la evaluación completa con la rigurosidad de CLAGTEE e IEEE según las instrucciones del sistema.
+Responde obligatoriamente en formato JSON con la siguiente estructura:
+{
+  "score": 4,
+  "confidence": 4,
+  "recommendation": "accept",
+  "status": "under-review",
+  "decisionLabel": "Aceptar",
+  "comments": "EVALUACIÓN DE ARTÍCULO / REVIEW REPORT\\n\\n..."
+}`,
+      });
+
+      userContent.push({
+        type: 'file',
+        file: { file_id: uploadedFileId },
+      });
+    } else {
+      userContent.push({
+        type: 'text',
+        text: `El artículo #${paper.id} titulado "${paper.title}" fue presentado en el Track "${paper.track || 'General'}" con el siguiente resumen técnico:
+"${paper.abstract || 'Sin resumen disponible'}".
+Autores declarados: ${(paper.authors || []).map((a) => a.name).join(', ') || 'No especificados'}.
+
+Genera una evaluación técnica preliminar de este artículo basada en el abstract y el contexto temático de CLAGTEE 2026 e IEEE.
+Responde obligatoriamente en formato JSON con la siguiente estructura:
+{
+  "score": 3,
+  "confidence": 3,
+  "recommendation": "minor-revision",
+  "status": "under-review",
+  "decisionLabel": "Revisión Menor",
+  "comments": "EVALUACIÓN DE ARTÍCULO / REVIEW REPORT\\n\\n..."
+}`,
+      });
+    }
+
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'gpt-5.6-luna',
+        messages: [
+          {
+            role: 'system',
+            content: SYSTEM_INSTRUCTIONS,
+          },
+          {
+            role: 'user',
+            content: userContent,
+          },
+        ],
+        response_format: { type: 'json_object' },
+      }),
+    });
+
+    const data = await response.json();
+    if (!response.ok || data.error) {
+      throw new Error(data.error?.message || `OpenAI Chat Completion failed: HTTP ${response.status}`);
+    }
+
+    const rawText = data.choices?.[0]?.message?.content;
+    if (!rawText) {
+      throw new Error('EMPTY_OPENAI_RESPONSE');
+    }
+
+    let parsed;
+    try {
+      parsed = JSON.parse(rawText);
+    } catch (parseError) {
+      const cleaned = rawText.replace(/```json\s*|```\s*$/g, '').trim();
+      parsed = JSON.parse(cleaned);
+    }
+
+    const validRecs = new Set(['accept', 'minor-revision', 'major-revision', 'reject']);
+    const recommendation = validRecs.has(parsed.recommendation) ? parsed.recommendation : 'minor-revision';
+
+    const validStatuses = new Set(['under-review', 'accepted', 'rejected']);
+    const status = validStatuses.has(parsed.status) ? parsed.status : 'under-review';
+
+    const score = Math.max(1, Math.min(5, Number(parsed.score) || 3));
+    const confidence = Math.max(1, Math.min(5, Number(parsed.confidence) || 3));
+    const comments = String(parsed.comments || '').trim();
+
+    return {
+      score,
+      confidence,
+      recommendation,
+      status,
+      decisionLabel: parsed.decisionLabel || (recommendation === 'accept' ? 'Aceptar' : recommendation === 'reject' ? 'Rechazar' : 'Revisión'),
+      comments,
+      modelUsed: 'gpt-5.6-luna',
+    };
+  } finally {
+    if (uploadedFileId) {
+      try {
+        await fetch(`https://api.openai.com/v1/files/${uploadedFileId}`, {
+          method: 'DELETE',
+          headers: { Authorization: `Bearer ${apiKey}` },
+        });
+      } catch (cleanupErr) {
+        console.warn('Failed to clean up OpenAI file:', uploadedFileId, cleanupErr?.message);
+      }
+    }
+  }
+};
+
+const generateGeminiReview = async ({ paper, pdfBuffer }) => {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     throw new Error('MISSING_GEMINI_API_KEY');
@@ -234,4 +372,19 @@ Responde únicamente en formato JSON con la siguiente estructura:
   }
 
   throw lastError || new Error('ALL_GEMINI_MODELS_FAILED');
+};
+
+export const generateAIReview = async ({ paper, pdfBuffer }) => {
+  const openaiApiKey = process.env.OPENAI_API_KEY;
+
+  if (openaiApiKey) {
+    try {
+      console.log(`[AI Review] Executing review with OpenAI gpt-5.6-luna for paper ${paper.id}...`);
+      return await generateOpenAIReview({ paper, pdfBuffer, apiKey: openaiApiKey });
+    } catch (openaiError) {
+      console.warn('[AI Review] OpenAI gpt-5.6-luna failed, falling back to Gemini:', openaiError.message);
+    }
+  }
+
+  return await generateGeminiReview({ paper, pdfBuffer });
 };

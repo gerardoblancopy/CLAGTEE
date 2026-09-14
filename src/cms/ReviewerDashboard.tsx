@@ -249,7 +249,7 @@ export const ReviewerDashboard: React.FC = () => {
                                                     <span className="text-lg">✨</span>
                                                     <div className="space-y-0.5">
                                                         <p className="font-bold text-emerald-950">
-                                                            Borrador sugerido por IA (Norma CLAGTEE 2026 / IEEE)
+                                                            Borrador sugerido por IA {aiAssistedMap[paper.id]?.modelUsed ? `(${aiAssistedMap[paper.id]?.modelUsed?.includes('luna') ? 'ChatGPT Luna' : aiAssistedMap[paper.id]?.modelUsed})` : '(Norma CLAGTEE 2026 / IEEE)'}
                                                         </p>
                                                         <p className="text-emerald-800 leading-relaxed">
                                                             Se han precompletado los puntajes y el informe técnico. Tienes el control total para revisar, ajustar o complementar el texto antes de guardar.
