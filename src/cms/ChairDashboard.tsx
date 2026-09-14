@@ -90,9 +90,17 @@ export const ChairDashboard: React.FC = () => {
     await deleteAuthor(authorId);
   };
 
-  const openEmailModal = (to: string, name: string) => {
-    setEmailModal({ to, name, label: `${name} <${to}>`, title: 'Enviar email' });
-    setEmailForm({ subject: '', body: '' });
+  const openEmailModal = (
+    to: string | string[],
+    name?: string,
+    label?: string,
+    title?: string,
+    initialSubject = '',
+    initialBody = ''
+  ) => {
+    const displayLabel = label || (Array.isArray(to) ? `${to.length} destinatarios` : `${name || ''} <${to}>`);
+    setEmailModal({ to, name, label: displayLabel, title: title || 'Enviar email' });
+    setEmailForm({ subject: initialSubject, body: initialBody });
     setEmailFeedback(null);
     clearError();
   };
@@ -130,6 +138,42 @@ export const ChairDashboard: React.FC = () => {
 
   const reviewers = useMemo(() => users.filter((user) => user.role === 'reviewer'), [users]);
   const authors = useMemo(() => users.filter((user) => user.role === 'author'), [users]);
+
+  const reviewersWithPendingReviews = useMemo(() => {
+    return reviewers.filter((reviewer) => {
+      const assigned = papers.filter((p) => p.assignedReviewerIds.includes(reviewer.id));
+      const reviewedCount = papers.reduce(
+        (acc, p) => acc + p.reviews.filter((r) => r.reviewerId === reviewer.id).length,
+        0
+      );
+      return assigned.length > reviewedCount;
+    });
+  }, [reviewers, papers]);
+
+  const openEmailAllReviewers = (onlyPending = false) => {
+    const targetReviewers = onlyPending ? reviewersWithPendingReviews : reviewers;
+    const emails = targetReviewers.map((r) => r.email).filter(Boolean);
+    if (emails.length === 0) {
+      alert(onlyPending ? 'No hay revisores con evaluaciones pendientes.' : 'No hay revisores registrados con correo.');
+      return;
+    }
+    const labelText = onlyPending
+      ? `Revisores con pendientes (${emails.length} destinatarios)`
+      : `Todos los revisores (${emails.length} destinatarios)`;
+    const titleText = onlyPending
+      ? 'Enviar email a revisores con evaluaciones pendientes'
+      : 'Enviar email a todos los revisores';
+
+    const defaultSubject = onlyPending
+      ? 'CLAGTEE 2026 - Recordatorio de evaluaciones pendientes'
+      : 'CLAGTEE 2026 - Comunicación oficial a revisores';
+
+    const defaultBody = onlyPending
+      ? `Estimado/a Revisor/a,\n\nLe recordamos amablemente que tiene trabajos asignados con dictámenes pendientes para el congreso CLAGTEE 2026.\n\nAgradecemos completar sus evaluaciones en la plataforma a la brevedad posible para continuar con el proceso editorial:\nhttps://www.clagtee2026.org/admin\n\nSaludos cordiales,\nComité Organizador CLAGTEE 2026`
+      : `Estimados/as Revisores/as,\n\nLes escribimos en nombre del Comité Organizador del XVI Latin-American Congress on Electricity Generation and Transmission (CLAGTEE 2026), a celebrarse los días 28, 29 y 30 de octubre de 2026.\n\nAgradecemos profundamente su valiosa colaboración en el proceso de revisión por pares.\n\nPueden acceder a su panel de revisor en cualquier momento en:\nhttps://www.clagtee2026.org/admin\n\nSaludos cordiales,\nChairman CLAGTEE 2026`;
+
+    openEmailModal(emails, undefined, labelText, titleText, defaultSubject, defaultBody);
+  };
 
   const filteredPapers = useMemo(() => {
     if (filter === 'all') return papers;
@@ -372,35 +416,61 @@ Comité Organizador CLAGTEE 2026`;
         </div>
       </div>
 
-      {/* Tab Navigation */}
-      <div className="flex space-x-2">
-        <button
-          onClick={() => setActiveTab('papers')}
-          className={`px-6 py-3 rounded-xl font-bold transition-colors ${activeTab === 'papers'
-            ? 'bg-[#0D2C54] text-white'
-            : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
-            }`}
-        >
-          📄 Papers
-        </button>
-        <button
-          onClick={() => setActiveTab('reviewers')}
-          className={`px-6 py-3 rounded-xl font-bold transition-colors ${activeTab === 'reviewers'
-            ? 'bg-[#0D2C54] text-white'
-            : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
-            }`}
-        >
-          👥 Revisores
-        </button>
-        <button
-          onClick={() => setActiveTab('authors')}
-          className={`px-6 py-3 rounded-xl font-bold transition-colors ${activeTab === 'authors'
-            ? 'bg-[#0D2C54] text-white'
-            : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
-            }`}
-        >
-          ✍️ Autores
-        </button>
+      {/* Tab Navigation & Global Actions */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="flex space-x-2">
+          <button
+            onClick={() => setActiveTab('papers')}
+            className={`px-6 py-3 rounded-xl font-bold transition-colors ${activeTab === 'papers'
+              ? 'bg-[#0D2C54] text-white'
+              : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+              }`}
+          >
+            📄 Papers ({papers.length})
+          </button>
+          <button
+            onClick={() => setActiveTab('reviewers')}
+            className={`px-6 py-3 rounded-xl font-bold transition-colors ${activeTab === 'reviewers'
+              ? 'bg-[#0D2C54] text-white'
+              : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+              }`}
+          >
+            👥 Revisores ({reviewers.length})
+          </button>
+          <button
+            onClick={() => setActiveTab('authors')}
+            className={`px-6 py-3 rounded-xl font-bold transition-colors ${activeTab === 'authors'
+              ? 'bg-[#0D2C54] text-white'
+              : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
+              }`}
+          >
+            ✍️ Autores ({authors.length})
+          </button>
+        </div>
+
+        {/* Global Email Actions to Reviewers */}
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => openEmailAllReviewers(false)}
+            disabled={reviewers.length === 0}
+            className="bg-[#2A9D8F] text-white px-4 py-3 rounded-xl text-xs md:text-sm font-bold hover:bg-[#238C7E] transition-all flex items-center gap-2 shadow-sm disabled:opacity-50"
+            title="Enviar correo a todos los revisores registrados"
+          >
+            <span>✉ Enviar email a revisores ({reviewers.length})</span>
+          </button>
+
+          {reviewersWithPendingReviews.length > 0 && (
+            <button
+              type="button"
+              onClick={() => openEmailAllReviewers(true)}
+              className="bg-amber-600 text-white px-4 py-3 rounded-xl text-xs md:text-sm font-bold hover:bg-amber-700 transition-all flex items-center gap-2 shadow-sm"
+              title={`Enviar recordatorio urgente a ${reviewersWithPendingReviews.length} revisores con evaluaciones pendientes`}
+            >
+              <span>🔔 Recordar pendientes ({reviewersWithPendingReviews.length})</span>
+            </button>
+          )}
+        </div>
       </div>
 
       {activeTab === 'papers' && (
@@ -628,6 +698,25 @@ Comité Organizador CLAGTEE 2026`;
                                   ? 'Ocultar evaluaciones'
                                   : 'Ver evaluaciones'}
                               </button>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  const emails = assignedReviewers.map((r) => r.email).filter(Boolean);
+                                  if (emails.length > 0) {
+                                    openEmailModal(
+                                      emails,
+                                      undefined,
+                                      `Revisores de #${paper.id} (${emails.join(', ')})`,
+                                      `Enviar email a revisores de #${paper.id}`,
+                                      `CLAGTEE 2026 - Consulta sobre artículo #${paper.id}: ${paper.title}`,
+                                      `Estimado/a Revisor/a,\n\nNos comunicamos en relación al artículo #${paper.id} titulado "${paper.title}" asignado a su evaluación en el congreso CLAGTEE 2026.\n\n...\n\nSaludos cordiales,\nChairman CLAGTEE 2026`
+                                    );
+                                  }
+                                }}
+                                className="text-[#0D2C54] text-[11px] font-bold hover:underline text-left flex items-center gap-1"
+                              >
+                                ✉ Email a revisores ({assignedReviewers.length})
+                              </button>
                             </div>
                           )}
 
@@ -727,13 +816,34 @@ Comité Organizador CLAGTEE 2026`;
 
       {activeTab === 'reviewers' && (
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-          <div className="p-4 border-b border-gray-100">
-            <h4 className="text-lg font-bold text-[#0D2C54]">Lista de Revisores</h4>
-            <p className="text-sm text-gray-500">
-              Al asignar un trabajo se envia un aviso automatico con ese trabajo. Usa "Enviar
-              resumen de revisiones" para mandar un correo con todos sus trabajos asignados,
-              cuales ya reviso y las estadisticas de sus evaluaciones.
-            </p>
+          <div className="p-4 md:p-6 border-b border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h4 className="text-lg font-bold text-[#0D2C54]">Lista de Revisores</h4>
+              <p className="text-sm text-gray-500">
+                Gestiona los evaluadores, reenvía credenciales o comunícate directamente con el equipo de revisión.
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <button
+                type="button"
+                onClick={() => openEmailAllReviewers(false)}
+                disabled={reviewers.length === 0}
+                className="bg-[#0D2C54] text-white px-4 py-2.5 rounded-xl text-xs font-bold hover:bg-[#1A4B8A] transition-colors flex items-center gap-1.5 shadow-sm disabled:opacity-50"
+                title="Enviar un correo personalizado a todos los revisores"
+              >
+                <span>✉ Enviar email a revisores ({reviewers.length})</span>
+              </button>
+              {reviewersWithPendingReviews.length > 0 && (
+                <button
+                  type="button"
+                  onClick={() => openEmailAllReviewers(true)}
+                  className="bg-amber-600 text-white px-3.5 py-2.5 rounded-xl text-xs font-bold hover:bg-amber-700 transition-colors flex items-center gap-1.5 shadow-sm"
+                  title={`Enviar recordatorio a ${reviewersWithPendingReviews.length} revisores con dictámenes pendientes`}
+                >
+                  <span>🔔 Recordar pendientes ({reviewersWithPendingReviews.length})</span>
+                </button>
+              )}
+            </div>
           </div>
 
           {error && (
@@ -862,11 +972,20 @@ Comité Organizador CLAGTEE 2026`;
                     <div className="col-span-2 flex flex-col gap-1 items-start">
                       <button
                         type="button"
-                        onClick={() => handleResendInvitation(reviewer)}
+                        onClick={() =>
+                          openEmailModal(
+                            reviewer.email,
+                            reviewer.name,
+                            `${reviewer.name} <${reviewer.email}>`,
+                            `Enviar email a ${reviewer.name}`,
+                            `CLAGTEE 2026 - Consulta sobre arbitraje`,
+                            `Estimado/a ${reviewer.name},\n\nNos comunicamos respecto a su labor de revisión en el congreso CLAGTEE 2026.\n\n...\n\nSaludos cordiales,\nChairman CLAGTEE 2026`
+                          )
+                        }
                         disabled={isLoading}
-                        className="text-[#2A9D8F] text-xs font-bold hover:underline disabled:opacity-50"
+                        className="text-[#2A9D8F] text-xs font-bold hover:underline disabled:opacity-50 flex items-center gap-1"
                       >
-                        ✉ Reenviar invitacion
+                        ✉ Enviar email
                       </button>
                       <button
                         type="button"
@@ -880,6 +999,14 @@ Comité Organizador CLAGTEE 2026`;
                         className="text-[#0D2C54] text-xs font-bold hover:underline disabled:opacity-40 disabled:cursor-not-allowed text-left"
                       >
                         📋 Enviar resumen de revisiones
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handleResendInvitation(reviewer)}
+                        disabled={isLoading}
+                        className="text-gray-500 text-xs font-medium hover:underline disabled:opacity-50"
+                      >
+                        🔑 Reenviar invitacion
                       </button>
                       <button
                         type="button"
@@ -1008,12 +1135,65 @@ Comité Organizador CLAGTEE 2026`;
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold text-gray-500 mb-1">Mensaje</label>
+                <div className="flex items-center justify-between mb-1">
+                  <label className="block text-xs font-bold text-gray-500">Mensaje</label>
+                  <div className="flex items-center gap-1 text-[11px]">
+                    <span className="text-gray-400 font-medium">Plantillas:</span>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setEmailForm({
+                          subject: '[CLAGTEE 2026] Recordatorio importante: Plazo de revisiones vence mañana – Nueva funcionalidad "Borrador IA"',
+                          body: `Estimado/a colega y miembro del Comité Técnico de Revisores de CLAGTEE 2026,\n\nEsperamos que se encuentre muy bien.\n\nLe escribimos desde el Comité de Programa Técnico de CLAGTEE 2026 para recordarle cordialmente que el plazo límite para el envío de las evaluaciones de los artículos asignados vence mañana.\n\n🚀 NUEVA FUNCIONALIDAD: "Borrador IA" para agilizar su proceso de revisión\n\nCon el objetivo de facilitarle el trabajo y optimizar sus tiempos de evaluación, hemos integrado en la plataforma una nueva herramienta de asistencia:\n• Botón "Borrador IA": Al ingresar a su panel de revisor, verá junto a cada artículo asignado el botón "Borrador IA". Al pulsarlo, el sistema analiza el manuscrito en PDF y genera en segundos un borrador estructurado de evaluación técnica y auditoría de referencias.\n• Ajuste asistido o edición directa: Puede usar "Ajustar Revisión IA" para afinar el dictamen con instrucciones simples o editar el texto libremente.\n• Criterio experto: El borrador es solo una sugerencia de partida para ahorrarle tiempo; la decisión final y las observaciones definitivas están siempre bajo su total supervisión.\n\nPara ingresar y enviar sus evaluaciones, acceda a:\n👉 https://clagtee2026.org/cms\n\nAgradecemos sinceramente su valioso compromiso y colaboración con el congreso.\n\nAtentamente,\nComité de Programa Técnico (TPC)\nXVI Latin-American Congress on Electricity Generation and Transmission (CLAGTEE 2026)\nSitio web: https://clagtee2026.org`,
+                        });
+                      }}
+                      className="px-2 py-0.5 rounded bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold transition-colors"
+                    >
+                      Plazo mañana + Borrador IA
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setEmailForm({
+                          subject: 'CLAGTEE 2026 - Recordatorio de evaluaciones asignadas',
+                          body: `Estimado/a Revisor/a,\n\nLe recordamos amablemente que tiene trabajos asignados con evaluaciones pendientes para el congreso CLAGTEE 2026.\n\nAgradecemos completar sus dictámenes en la plataforma para asegurar el oportuno avance del proceso editorial:\nhttps://clagtee2026.org/cms\n\nSaludos cordiales,\nComité Organizador CLAGTEE 2026`,
+                        });
+                      }}
+                      className="px-2 py-0.5 rounded bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold transition-colors"
+                    >
+                      Recordatorio
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setEmailForm({
+                          subject: 'CLAGTEE 2026 - Pautas y criterios de revisión',
+                          body: `Estimado/a Revisor/a,\n\nLe compartimos las directrices clave para la evaluación técnica en CLAGTEE 2026 (28, 29 y 30 de octubre de 2026):\n1. Calificación en escala de 1 a 5 puntos.\n2. Todos los artículos evaluados son aceptados para las actas de CLAGTEE 2026.\n3. Los cambios mayores se formulan como requisitos de delimitación conceptual, limitaciones y discusión crítica para IEEE Xplore, sin solicitar nuevas simulaciones ni nuevas formulaciones matemáticas.\n\nAcceso a la plataforma:\nhttps://clagtee2026.org/cms\n\nAtentamente,\nChairman CLAGTEE 2026`,
+                        });
+                      }}
+                      className="px-2 py-0.5 rounded bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold transition-colors"
+                    >
+                      Pautas
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setEmailForm({
+                          subject: 'CLAGTEE 2026 - Agradecimiento por su labor de arbitraje',
+                          body: `Estimado/a Revisor/a,\n\nQueremos expresar nuestro sincero agradecimiento por su rigurosa y dedicada labor en la evaluación técnica de los artículos de CLAGTEE 2026.\n\nSu contribución científica asegura el más alto nivel de excelencia en el congreso.\n\nCordialmente,\nChairman CLAGTEE 2026`,
+                        });
+                      }}
+                      className="px-2 py-0.5 rounded bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold transition-colors"
+                    >
+                      Agradecimiento
+                    </button>
+                  </div>
+                </div>
                 <textarea
                   value={emailForm.body}
                   onChange={(e) => setEmailForm((prev) => ({ ...prev, body: e.target.value }))}
                   rows={8}
-                  className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#2A9D8F] outline-none resize-none"
+                  className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-[#2A9D8F] outline-none resize-none font-sans text-xs md:text-sm"
                   placeholder="Escribe el contenido del mensaje..."
                   required
                 />

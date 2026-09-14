@@ -46,7 +46,7 @@ export default async function handler(req, res) {
     const db = getFirestore();
     const ref = db.collection('papers').doc(String(paperId));
 
-    // ACCIÓN: Generar revisión automática asistida por IA (Skill CLAGTEE Reviewer)
+    // ACCIÓN: Generar revisión automática asistida por IA
     if (action === 'ai-review') {
       const isReviewer = session.role === 'reviewer';
       const isStaffOrChair = isStaffRole(session.role);

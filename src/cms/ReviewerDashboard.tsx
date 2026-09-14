@@ -176,7 +176,7 @@ export const ReviewerDashboard: React.FC = () => {
                                                 handleGenerateAI(paper.id);
                                             }}
                                             className="bg-gradient-to-r from-amber-500 via-[#F4A261] to-orange-500 text-white px-4 md:px-5 py-3 rounded-xl font-bold hover:brightness-105 transition-all flex items-center space-x-2 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed text-xs md:text-sm"
-                                            title="Generar evaluación técnica y auditoría bibliográfica asistida con IA (Skill CLAGTEE e IEEE)"
+                                            title="Generar borrador de evaluación técnica y auditoría bibliográfica asistida con IA"
                                         >
                                             {isGeneratingAI[paper.id] ? (
                                                 <>
@@ -223,7 +223,7 @@ export const ReviewerDashboard: React.FC = () => {
                                                 </div>
                                                 <div className="space-y-1">
                                                     <p className="font-bold text-amber-900 text-sm">
-                                                        Auditoría técnica y bibliográfica en progreso (Skill CLAGTEE Reviewer)
+                                                        Auditoría técnica y bibliográfica en progreso
                                                     </p>
                                                     <p className="text-xs text-amber-700 leading-relaxed">
                                                         Leyendo manuscrito en PDF, auditando consistencia matemática, verificando referencias reales contra alucinaciones y redactando informe estructurado para CMS...
