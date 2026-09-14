@@ -355,9 +355,9 @@ export const ReviewerDashboard: React.FC = () => {
                                                         })
                                                     }
                                                 >
-                                                    <option value="accept">Aceptar</option>
-                                                    <option value="minor-revision">Revisión menor</option>
-                                                    <option value="major-revision">Revisión mayor</option>
+                                                    <option value="accept">Aceptar (CLAGTEE 2026)</option>
+                                                    <option value="minor-revision">Revisión menor (Camera-ready)</option>
+                                                    <option value="major-revision">Revisión mayor (Requisito IEEE Xplore)</option>
                                                     <option value="reject">Rechazar</option>
                                                 </select>
                                             </label>
