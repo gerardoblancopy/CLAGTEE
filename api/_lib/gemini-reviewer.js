@@ -80,6 +80,9 @@ DEBES SEGUIR ESTRICTAMENTE ESTAS REGLAS:
 - Detecta párrafos duplicados o texto repetido por copia-pega.
 - Verifica correspondencia entre leyendas/epígrafes de figuras/tablas y el contenido real mostrado.
 - Señala erratas tipográficas u ortográficas destacadas indicando página/sección aproximada.
+- FECHAS OFICIALES DE LA CONFERENCIA CLAGTEE 2026:
+  Las fechas oficiales son: 28, 29 y 30 de octubre de 2026 (October 28-30, 2026).
+  Verifica la cabecera (header), pie de página, portada o texto del manuscrito. Si el paper muestra una fecha diferente o errónea (o una numeración equivocada como "21th"), SOLICITA OBLIGATORIAMENTE en la sección 3.B corregirla a las fechas oficiales: 28, 29 y 30 de octubre de 2026 (October 28-30, 2026).
 
 5. FORMATO DE SALIDA PARA CMS (OBLIGATORIO):
 - NADA DE FORMATO MARKDOWN: No uses asteriscos para negritas (**texto**), ni para cursivas (*texto*), ni encabezados con numerales (# o ##), ni bloques de código con comillas invertidas. Debe ser texto plano directo para formularios web y correos de notificación.
@@ -120,6 +123,7 @@ A. REQUISITOS PARA PUBLICACIÓN EN IEEE XPLORE (DELIMITACIÓN CONCEPTUAL, DISCUS
 - Verificación documental de fuentes: Reemplazar o respaldar datos de fuentes no auditables o no públicas con referencias institucionales verificables.
 
 B. CORRECCIONES MENORES Y FORMATO (CAMERA-READY CLAGTEE 2026 - PLAZO MÁXIMO 2 MESES):
+- Verificación de fechas de la conferencia: Confirmar que en la cabecera o texto conste la fecha oficial del congreso: 28, 29 y 30 de octubre de 2026 (October 28-30, 2026). Si el artículo muestra una fecha diferente o errónea, exigir su corrección expresa.
 - Aclaración de nomenclatura, unidades y supuestos ya presentes en el manuscrito.
 - Corrección de epígrafes o leyendas erróneas en figuras/tablas.
 - Eliminación de párrafos duplicados o redundancias textuales.
@@ -178,6 +182,7 @@ RECORDATORIO MANDATORIO:
 2. El plazo para la versión final es de solo DOS MESES.
 3. ESTÁ TOTALMENTE PROHIBIDO solicitar nuevas simulaciones, nuevas pruebas en redes adicionales o nuevas formulaciones matemáticas.
 4. Si el trabajo es conceptual o le falta validación cuantitativa, NO pidas que la realicen: exige en su lugar que declaren explícitamente las limitaciones del paper en el texto, que incorporen un párrafo de revisión crítica y discusión que reflexione sobre estos aspectos y los plantee como trabajo futuro (future work), y que moderen sus conclusiones.
+5. FECHAS OFICIALES DE LA CONFERENCIA: 28, 29 y 30 de octubre de 2026 (October 28-30, 2026). Si en la cabecera o texto del paper figura una fecha diferente o errónea, solicita obligatoriamente la corrección a las fechas oficiales en la sección 3.B.
 
 Por favor, lee el documento completo en PDF y genera la evaluación completa con la rigurosidad de CLAGTEE e IEEE según las instrucciones del sistema.
 Responde obligatoriamente en formato JSON con la siguiente estructura:
@@ -206,6 +211,7 @@ RECORDATORIO MANDATORIO:
 1. Es un ARTÍCULO DE CONFERENCIA (conference paper), NO un journal paper. Plazo de 2 meses.
 2. PROHIBIDO solicitar nuevas simulaciones o nuevas formulaciones matemáticas.
 3. Si requiere mejoras, solicita declarar limitaciones en el texto, un párrafo de discusión crítica/trabajo futuro y moderar conclusiones.
+4. FECHAS OFICIALES: 28, 29 y 30 de octubre de 2026 (October 28-30, 2026). Si la fecha es diferente, solicita la corrección en la sección 3.B.
 
 Genera una evaluación técnica preliminar de este artículo basada en el abstract y el contexto temático de CLAGTEE 2026 e IEEE.
 Responde obligatoriamente en formato JSON con la siguiente estructura:
@@ -317,6 +323,7 @@ RECORDATORIO MANDATORIO:
 2. El plazo para la versión final es de solo DOS MESES.
 3. ESTÁ TOTALMENTE PROHIBIDO solicitar nuevas simulaciones, nuevas pruebas en redes adicionales o nuevas formulaciones matemáticas.
 4. Si el trabajo es conceptual o le falta validación cuantitativa, NO pidas que la realicen: exige en su lugar que declaren explícitamente las limitaciones del paper en el texto, que incorporen un párrafo de revisión crítica y discusión que reflexione sobre estos aspectos y los plantee como trabajo futuro (future work), y que moderen sus conclusiones.
+5. FECHAS OFICIALES DE LA CONFERENCIA: 28, 29 y 30 de octubre de 2026 (October 28-30, 2026). Si en la cabecera o texto del paper figura una fecha diferente o errónea, solicita obligatoriamente la corrección a las fechas oficiales en la sección 3.B.
 
 Por favor, lee el documento completo en PDF y genera la evaluación completa con la rigurosidad de CLAGTEE e IEEE según las instrucciones del sistema.
 Responde únicamente en formato JSON con la siguiente estructura:
@@ -339,6 +346,7 @@ RECORDATORIO MANDATORIO:
 1. Es un ARTÍCULO DE CONFERENCIA (conference paper), NO un journal paper. Plazo de 2 meses.
 2. PROHIBIDO solicitar nuevas simulaciones o nuevas formulaciones matemáticas.
 3. Si requiere mejoras, solicita declarar limitaciones en el texto, un párrafo de discusión crítica/trabajo futuro y moderar conclusiones.
+4. FECHAS OFICIALES: 28, 29 y 30 de octubre de 2026 (October 28-30, 2026). Si la fecha es diferente, solicita la corrección en la sección 3.B.
 
 Genera una evaluación técnica preliminar de este artículo basada en el abstract y el contexto temático de CLAGTEE 2026 e IEEE.
 Responde únicamente en formato JSON con la siguiente estructura:
