@@ -181,22 +181,31 @@ export const sendCustomEmail = async ({ to, name, subject, body, archiveCopy = f
 </html>
   `.trim();
 
-  const { data, error } = await resend.emails.send({
-    from: `CLAGTEE 2026 <${SENDER_EMAIL}>`,
-    replyTo: REPLY_TO_EMAIL,
-    to: [to],
-    ...(archiveCopy && BCC_EMAIL ? { bcc: [BCC_EMAIL] } : {}),
-    subject,
-    html,
-  });
+  let attempt = 0;
+  while (attempt < 3) {
+    attempt++;
+    const { data, error } = await resend.emails.send({
+      from: `CLAGTEE 2026 <${SENDER_EMAIL}>`,
+      replyTo: REPLY_TO_EMAIL,
+      to: [to],
+      ...(archiveCopy && BCC_EMAIL ? { bcc: [BCC_EMAIL] } : {}),
+      subject,
+      html,
+    });
 
-  if (error) {
-    console.error('[email] Failed to send custom email:', error);
-    throw error;
+    if (error) {
+      if (error.statusCode === 429 && attempt < 3) {
+        console.warn(`[email] Rate limit (429) sending to ${to}, retrying in 1.2s (attempt ${attempt})...`);
+        await new Promise((resolve) => setTimeout(resolve, 1200));
+        continue;
+      }
+      console.error(`[email] Failed to send custom email to ${to}:`, error);
+      throw error;
+    }
+
+    console.log(`[email] Custom email sent to ${to}:`, data?.id);
+    return data;
   }
-
-  console.log('[email] Custom email sent:', data?.id);
-  return data;
 };
 
 export const sendPasswordReset = async ({ to, name, tempPassword }) => {

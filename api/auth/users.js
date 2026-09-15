@@ -121,32 +121,49 @@ export default async function handler(req, res) {
         return;
       }
 
-      const results = await Promise.allSettled(
-        recipients.map((recipient, index) =>
-          sendCustomEmail({
+      const succeededRecipients = [];
+      const failedRecipients = [];
+
+      for (let i = 0; i < recipients.length; i++) {
+        const recipient = recipients[i];
+        if (i > 0) {
+          // Delay de 200ms para asegurar máximo 5 req/s (límite de Resend es 10 req/s)
+          await new Promise((resolve) => setTimeout(resolve, 200));
+        }
+
+        try {
+          await sendCustomEmail({
             to: recipient,
             name: name || '',
             subject: trimmedSubject,
             body: trimmedBody,
             // One archive copy per send action, not one per recipient
-            archiveCopy: index === 0,
-          })
-        )
-      );
+            archiveCopy: i === 0,
+          });
+          succeededRecipients.push(recipient);
+        } catch (sendErr) {
+          const errMsg = sendErr && sendErr.message ? sendErr.message : 'Error desconocido';
+          console.error(`[auth-users] Error sending email to ${recipient}:`, errMsg);
+          failedRecipients.push({ email: recipient, error: errMsg });
+        }
+      }
 
-      const failed = results.filter((r) => r.status === 'rejected');
-      const succeeded = results.length - failed.length;
-
-      if (failed.length > 0 && succeeded === 0) {
-        const reason = failed[0].reason;
+      if (failedRecipients.length > 0 && succeededRecipients.length === 0) {
         res.status(500).json({
           error: 'Failed to send email',
-          details: reason && reason.message ? reason.message : undefined,
+          details: failedRecipients[0].error,
+          failedRecipients,
         });
         return;
       }
 
-      res.status(200).json({ success: true, sent: succeeded, failed: failed.length });
+      res.status(200).json({
+        success: true,
+        sent: succeededRecipients.length,
+        failed: failedRecipients.length,
+        sentRecipients: succeededRecipients,
+        failedRecipients,
+      });
       return;
     }
 

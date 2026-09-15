@@ -342,10 +342,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const result = (await response.json().catch(() => ({}))) as {
         sent?: number;
         failed?: number;
+        failedRecipients?: Array<{ email: string; error?: string }> | string[];
       };
       if (result.failed) {
         const total = (result.sent || 0) + result.failed;
-        setError(`Enviado a ${result.sent || 0} de ${total} destinatarios. ${result.failed} fallaron.`);
+        const failedEmails = Array.isArray(result.failedRecipients)
+          ? result.failedRecipients.map((f) => (typeof f === 'string' ? f : f.email)).join(', ')
+          : '';
+        setError(
+          `Enviado a ${result.sent || 0} de ${total} destinatarios. ${result.failed} fallaron${
+            failedEmails ? `: ${failedEmails}` : '.'
+          }`
+        );
       }
       setIsLoading(false);
       return true;
