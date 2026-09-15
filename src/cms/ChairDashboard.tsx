@@ -169,8 +169,8 @@ export const ChairDashboard: React.FC = () => {
       : 'CLAGTEE 2026 - Comunicación oficial a revisores';
 
     const defaultBody = onlyPending
-      ? `Estimado/a Revisor/a,\n\nLe recordamos amablemente que tiene trabajos asignados con dictámenes pendientes para el congreso CLAGTEE 2026.\n\nAgradecemos completar sus evaluaciones en la plataforma a la brevedad posible para continuar con el proceso editorial:\nhttps://www.clagtee2026.org/admin\n\nSaludos cordiales,\nComité Organizador CLAGTEE 2026`
-      : `Estimados/as Revisores/as,\n\nLes escribimos en nombre del Comité Organizador del XVI Latin-American Congress on Electricity Generation and Transmission (CLAGTEE 2026), a celebrarse los días 28, 29 y 30 de octubre de 2026.\n\nAgradecemos profundamente su valiosa colaboración en el proceso de revisión por pares.\n\nPueden acceder a su panel de revisor en cualquier momento en:\nhttps://www.clagtee2026.org/admin\n\nSaludos cordiales,\nChairman CLAGTEE 2026`;
+      ? `Estimado/a Revisor/a,\n\nLe recordamos amablemente que tiene trabajos asignados con dictámenes pendientes para el congreso CLAGTEE 2026.\n\nAgradecemos completar sus evaluaciones en la plataforma a la brevedad posible para continuar con el proceso editorial:\nhttps://clagtee2026.org/cms\n\nSaludos cordiales,\nComité Organizador CLAGTEE 2026`
+      : `Estimados/as Revisores/as,\n\nLes escribimos en nombre del Comité Organizador del XVI Latin-American Congress on Electricity Generation and Transmission (CLAGTEE 2026), a celebrarse los días 28, 29 y 30 de octubre de 2026.\n\nAgradecemos profundamente su valiosa colaboración en el proceso de revisión por pares.\n\nPueden acceder a su panel de revisor en cualquier momento en:\nhttps://clagtee2026.org/cms\n\nSaludos cordiales,\nChairman CLAGTEE 2026`;
 
     openEmailModal(emails, undefined, labelText, titleText, defaultSubject, defaultBody);
   };
@@ -653,6 +653,7 @@ Comité Organizador CLAGTEE 2026`;
                   <div className="col-span-3">
                     {(() => {
                       const assignedIds = Array.isArray(paper?.assignedReviewerIds) ? paper.assignedReviewerIds : [];
+                      const assignedReviewers = (reviewers || []).filter((r) => assignedIds.includes(r.id));
                       const availableReviewers = (reviewers || []).filter(
                         (reviewer) => !assignedIds.includes(reviewer.id)
                       );
