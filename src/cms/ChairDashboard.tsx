@@ -140,10 +140,10 @@ export const ChairDashboard: React.FC = () => {
   const authors = useMemo(() => users.filter((user) => user.role === 'author'), [users]);
 
   const reviewersWithPendingReviews = useMemo(() => {
-    return reviewers.filter((reviewer) => {
-      const assigned = papers.filter((p) => p.assignedReviewerIds.includes(reviewer.id));
-      const reviewedCount = papers.reduce(
-        (acc, p) => acc + p.reviews.filter((r) => r.reviewerId === reviewer.id).length,
+    return (reviewers || []).filter((reviewer) => {
+      const assigned = (papers || []).filter((p) => Array.isArray(p?.assignedReviewerIds) && p.assignedReviewerIds.includes(reviewer.id));
+      const reviewedCount = (papers || []).reduce(
+        (acc, p) => acc + (Array.isArray(p?.reviews) ? p.reviews.filter((r) => r?.reviewerId === reviewer.id).length : 0),
         0
       );
       return assigned.length > reviewedCount;
@@ -652,14 +652,15 @@ Comité Organizador CLAGTEE 2026`;
                   </div>
                   <div className="col-span-3">
                     {(() => {
-                      const availableReviewers = reviewers.filter(
-                        (reviewer) => !paper.assignedReviewerIds.includes(reviewer.id)
+                      const assignedIds = Array.isArray(paper?.assignedReviewerIds) ? paper.assignedReviewerIds : [];
+                      const availableReviewers = (reviewers || []).filter(
+                        (reviewer) => !assignedIds.includes(reviewer.id)
                       );
                       return (
                         <div className="flex flex-col gap-2">
-                          {paper.assignedReviewerIds.length > 0 && (
+                          {assignedIds.length > 0 && (
                             <div className="flex flex-col text-xs text-gray-600 gap-1">
-                              {paper.assignedReviewerIds.map((reviewerId) => (
+                              {assignedIds.map((reviewerId) => (
                                 <div key={reviewerId} className="flex items-center">
                                   <div className="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center text-xs mr-2">
                                     {resolveReviewerName(reviewerId).charAt(0)}
@@ -685,7 +686,7 @@ Comité Organizador CLAGTEE 2026`;
                                 </div>
                               ))}
                               <span className="text-[11px] text-gray-400">
-                                Reviews: {paper.reviews.length}
+                                Reviews: {Array.isArray(paper?.reviews) ? paper.reviews.length : 0}
                               </span>
                               <button
                                 type="button"
@@ -778,11 +779,13 @@ Comité Organizador CLAGTEE 2026`;
 
                   {expandedPaperId === paper.id && (
                     <div className="col-span-12 bg-white border border-gray-100 rounded-xl p-4 text-sm text-gray-600">
-                      {paper.reviews.length === 0 ? (
-                        <p className="text-sm text-gray-400">Aun no hay evaluaciones.</p>
-                      ) : (
-                        <div className="grid gap-3">
-                          {paper.reviews.map((review) => (
+                      {(() => {
+                        const reviewsList = Array.isArray(paper?.reviews) ? paper.reviews : [];
+                        return reviewsList.length === 0 ? (
+                          <p className="text-sm text-gray-400">Aun no hay evaluaciones.</p>
+                        ) : (
+                          <div className="grid gap-3">
+                            {reviewsList.map((review) => (
                             <div key={review.id} className="bg-[#F8FAFC] border border-gray-100 rounded-lg p-3">
                               <div className="flex flex-wrap items-center gap-3 text-xs text-gray-500">
                                 <span className="font-bold text-[#0D2C54]">
@@ -804,7 +807,8 @@ Comité Organizador CLAGTEE 2026`;
                             </div>
                           ))}
                         </div>
-                      )}
+                        );
+                      })()}
                     </div>
                   )}
                 </motion.div>
@@ -904,11 +908,11 @@ Comité Organizador CLAGTEE 2026`;
               </div>
             ) : (
               reviewers.map((reviewer) => {
-                const assignedPapers = papers.filter((p) =>
-                  p.assignedReviewerIds.includes(reviewer.id)
+                const assignedPapers = (papers || []).filter((p) =>
+                  Array.isArray(p?.assignedReviewerIds) && p.assignedReviewerIds.includes(reviewer.id)
                 );
-                const completedReviews = papers.reduce(
-                  (count, p) => count + p.reviews.filter((r) => r.reviewerId === reviewer.id).length,
+                const completedReviews = (papers || []).reduce(
+                  (count, p) => count + (Array.isArray(p?.reviews) ? p.reviews.filter((r) => r?.reviewerId === reviewer.id).length : 0),
                   0
                 );
                 return (
@@ -1199,7 +1203,7 @@ Comité Organizador CLAGTEE 2026`;
                 />
               </div>
 
-              {emailModal.decisionPaper && emailModal.decisionPaper.reviews.length > 0 && (
+              {emailModal.decisionPaper && Array.isArray(emailModal.decisionPaper.reviews) && emailModal.decisionPaper.reviews.length > 0 && (
                 <label className="flex items-start gap-2 text-sm text-gray-600 cursor-pointer">
                   <input
                     type="checkbox"

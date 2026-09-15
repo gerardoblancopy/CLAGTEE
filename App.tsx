@@ -44,6 +44,48 @@ const fadeIn: Variants = {
   show: { opacity: 1, transition: { duration: 0.8, ease: 'easeOut' } },
 };
 
+class CMSErrorBoundary extends React.Component<
+  { children: React.ReactNode },
+  { hasError: boolean; error: Error | null }
+> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+  static getDerivedStateFromError(error: Error) {
+    return { hasError: true, error };
+  }
+  componentDidCatch(error: Error, info: React.ErrorInfo) {
+    console.error('[CMS ErrorBoundary]:', error, info);
+  }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="bg-white rounded-2xl shadow-sm border border-red-100 p-8 max-w-xl mx-auto my-12 text-center space-y-4">
+          <div className="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center mx-auto text-xl font-bold">
+            !
+          </div>
+          <h3 className="text-lg font-bold text-gray-800">Ocurrió un error al cargar la vista</h3>
+          <p className="text-xs text-gray-500 font-mono bg-gray-50 p-3 rounded-lg text-left overflow-auto max-h-32">
+            {this.state.error?.message || 'Error inesperado'}
+          </p>
+          <button
+            type="button"
+            onClick={() => {
+              this.setState({ hasError: false, error: null });
+              window.location.reload();
+            }}
+            className="bg-[#2A9D8F] text-white px-5 py-2.5 rounded-xl font-bold text-xs hover:bg-[#238C7E] transition-colors"
+          >
+            Recargar panel
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 const CMSContainer: React.FC<{ 
   onLogout: () => void 
 }> = ({ onLogout }) => {
@@ -145,9 +187,21 @@ const CMSContainer: React.FC<{
           </div>
         </div>
       )}
-      {activeCmsTab === 'reviews' && <ReviewerDashboard />}
-      {activeCmsTab === 'admin' && <ChairDashboard />}
-      {activeCmsTab === 'staff' && <StaffDashboard />}
+      {activeCmsTab === 'reviews' && (
+        <CMSErrorBoundary>
+          <ReviewerDashboard />
+        </CMSErrorBoundary>
+      )}
+      {activeCmsTab === 'admin' && (
+        <CMSErrorBoundary>
+          <ChairDashboard />
+        </CMSErrorBoundary>
+      )}
+      {activeCmsTab === 'staff' && (
+        <CMSErrorBoundary>
+          <StaffDashboard />
+        </CMSErrorBoundary>
+      )}
     </CMSLayout>
   );
 };
