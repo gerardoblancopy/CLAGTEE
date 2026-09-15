@@ -41,6 +41,8 @@ export interface Paper {
   revisionNote?: string;
   assignedReviewerIds: string[];
   reviews: ReviewEntry[];
+  decisionNotifiedAt?: string | null;
+  decisionNotifiedStatus?: string | null;
 }
 
 export interface RevisionInput {
@@ -99,6 +101,7 @@ interface CMSDataContextType {
     currentComments?: string
   ) => Promise<AIReviewResult | null>;
   setDecision: (paperId: string, status: PaperStatus) => Promise<void>;
+  markDecisionNotified: (paperId: string, status?: PaperStatus) => Promise<Paper | null>;
   withdrawPaper: (paperId: string) => Promise<void>;
   deletePaper: (paperId: string) => Promise<void>;
 }
@@ -406,6 +409,29 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
     }
   };
 
+  const markDecisionNotified = async (paperId: string, status?: PaperStatus) => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await apiFetch('/api/papers/decision', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ paperId, status, markNotified: true }),
+      });
+      if (!response.ok) {
+        throw new Error('No se pudo marcar la notificación.');
+      }
+      const payload = (await response.json()) as { paper: Paper };
+      setPapers((prev) => upsertPaper(prev, payload.paper));
+      return payload.paper;
+    } catch (fetchError) {
+      console.error('Error marking decision notified:', fetchError);
+      return null;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const deletePaper = async (paperId: string) => {
     setIsLoading(true);
     setError(null);
@@ -441,6 +467,7 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
       submitReview,
       requestAIReview,
       setDecision,
+      markDecisionNotified,
       withdrawPaper,
       deletePaper,
     }),

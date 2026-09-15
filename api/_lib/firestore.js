@@ -181,6 +181,8 @@ export const normalizePaper = (doc) => {
       ? data.assignedReviewerIds
       : [],
     reviews: Array.isArray(data.reviews) ? data.reviews : [],
+    decisionNotifiedAt: data.decisionNotifiedAt || null,
+    decisionNotifiedStatus: data.decisionNotifiedStatus || null,
   };
 };
 

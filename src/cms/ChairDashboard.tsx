@@ -21,6 +21,18 @@ const statusLabels: Record<PaperStatus, string> = {
   withdrawn: 'Retirado',
 };
 
+const formatDateTime = (value?: string | null) => {
+  if (!value) return '';
+  const date = new Date(value);
+  if (isNaN(date.getTime())) return String(value);
+  return date.toLocaleString('es-CL', {
+    day: '2-digit',
+    month: 'short',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+};
+
 export const ChairDashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'papers' | 'reviewers' | 'authors'>('papers');
   const [filter, setFilter] = useState('all');
@@ -46,6 +58,7 @@ export const ChairDashboard: React.FC = () => {
     notifyReviewerAssignments,
     unassignReviewer,
     setDecision,
+    markDecisionNotified,
     deletePaper,
   } = useCMSData();
 
@@ -118,9 +131,12 @@ export const ChairDashboard: React.FC = () => {
     if (emailModal.decisionPaper) {
       const count = Array.isArray(emailModal.to) ? emailModal.to.length : 1;
       const decision = emailModal.decisionPaper.status === 'accepted' ? 'aceptación' : 'rechazo';
-      const ok = window.confirm(
-        `Se enviará la notificación de ${decision} de "${emailModal.decisionPaper.title}" a ${count} destinatario(s). Esta acción no se puede deshacer. ¿Continuar?`
-      );
+      const alreadyNotified = Boolean(emailModal.decisionPaper.decisionNotifiedAt);
+      const confirmMessage = alreadyNotified
+        ? `⚠️ ATENCIÓN: La notificación de ${decision} de "${emailModal.decisionPaper.title}" YA FUE ENVIADA previamente el ${formatDateTime(emailModal.decisionPaper.decisionNotifiedAt!)}.\n\n` +
+          `Para evitar enviar notificaciones duplicadas a los autores, confirma si realmente deseas REENVIAR este correo a ${count} destinatario(s).`
+        : `Se enviará la notificación de ${decision} de "${emailModal.decisionPaper.title}" a ${count} destinatario(s). Esta acción no se puede deshacer. ¿Continuar?`;
+      const ok = window.confirm(confirmMessage);
       if (!ok) return;
     }
     const ok = await sendEmailToUser({
@@ -130,7 +146,10 @@ export const ChairDashboard: React.FC = () => {
       body: emailForm.body,
     });
     if (ok) {
-      setEmailFeedback('Correo enviado correctamente.');
+      if (emailModal.decisionPaper) {
+        await markDecisionNotified(emailModal.decisionPaper.id, emailModal.decisionPaper.status);
+      }
+      setEmailFeedback('Correo enviado correctamente y marcado en el sistema.');
       setEmailForm({ subject: '', body: '' });
       setTimeout(() => closeEmailModal(), 1500);
     }
@@ -175,8 +194,19 @@ export const ChairDashboard: React.FC = () => {
     openEmailModal(emails, undefined, labelText, titleText, defaultSubject, defaultBody);
   };
 
+  const unnotifiedCount = useMemo(() => {
+    return (papers || []).filter(
+      (p) => (p.status === 'accepted' || p.status === 'rejected') && !p.decisionNotifiedAt
+    ).length;
+  }, [papers]);
+
   const filteredPapers = useMemo(() => {
     if (filter === 'all') return papers;
+    if (filter === 'unnotified') {
+      return (papers || []).filter(
+        (p) => (p.status === 'accepted' || p.status === 'rejected') && !p.decisionNotifiedAt
+      );
+    }
     return papers.filter((paper) => paper.status === filter);
   }, [filter, papers]);
 
@@ -197,14 +227,6 @@ export const ChairDashboard: React.FC = () => {
     }
   };
 
-  const formatDateTime = (value: string) =>
-    new Date(value).toLocaleString('es-CL', {
-      day: '2-digit',
-      month: 'short',
-      hour: '2-digit',
-      minute: '2-digit',
-    });
-
   // Ultimo correo de asignacion enviado al revisor (automatico o manual).
   const assignmentStatus = (reviewer: User) => {
     if (reviewer.assignmentNotifyError) {
@@ -216,18 +238,25 @@ export const ChairDashboard: React.FC = () => {
     }
     if (reviewer.assignmentNotifiedAt) {
       return {
-        label: `Aviso ${formatDateTime(reviewer.assignmentNotifiedAt)}`,
-        title: reviewer.assignmentNotifiedAt,
-        className: 'bg-blue-100 text-blue-700',
+        label: `✓ Aviso enviado (${formatDateTime(reviewer.assignmentNotifiedAt)})`,
+        title: `Enviado el: ${reviewer.assignmentNotifiedAt}`,
+        className: 'bg-emerald-100 text-emerald-800 border border-emerald-200',
       };
     }
-    return null;
+    return {
+      label: 'Sin aviso enviado',
+      title: 'Aún no se ha enviado el resumen de asignaciones a este revisor.',
+      className: 'bg-gray-100 text-gray-500',
+    };
   };
 
   const handleNotifyAssignments = async (reviewer: User, assignedCount: number) => {
-    const ok = window.confirm(
-      `Se enviara a "${reviewer.name}" <${reviewer.email}> un resumen con los ${assignedCount} trabajo(s) asignados, su estado de revision y las estadisticas de sus evaluaciones. ¿Continuar?`
-    );
+    const alreadyNotified = Boolean(reviewer.assignmentNotifiedAt);
+    const confirmMessage = alreadyNotified
+      ? `⚠️ ATENCIÓN: El resumen de asignaciones para "${reviewer.name}" YA FUE ENVIADO previamente el ${formatDateTime(reviewer.assignmentNotifiedAt)}.\n\n` +
+        `Para evitar enviar notificaciones duplicadas al revisor, confirma si realmente deseas REENVIAR este resumen con los ${assignedCount} trabajo(s) asignados.`
+      : `Se enviará a "${reviewer.name}" <${reviewer.email}> un resumen con los ${assignedCount} trabajo(s) asignados, su estado de revisión y las estadísticas de sus evaluaciones. ¿Continuar?`;
+    const ok = window.confirm(confirmMessage);
     if (!ok) return;
     const result = await notifyReviewerAssignments(reviewer.id);
     if (result?.emailSent) {
@@ -349,6 +378,14 @@ Comité Organizador CLAGTEE 2026`;
     if (recipients.length === 0) {
       window.alert('Este trabajo no tiene direcciones de correo asociadas.');
       return;
+    }
+    if (paper.decisionNotifiedAt) {
+      const decision = paper.status === 'accepted' ? 'aceptación' : 'rechazo';
+      const ok = window.confirm(
+        `⚠️ ATENCIÓN: La notificación de ${decision} para el trabajo #${paper.id} YA FUE ENVIADA previamente el ${formatDateTime(paper.decisionNotifiedAt)}.\n\n` +
+        `¿Deseas abrir la ventana para REENVIAR la notificación a los autores?`
+      );
+      if (!ok) return;
     }
     const withComments = paper.reviews.length > 0;
     setIncludeReviewerComments(withComments);
@@ -561,7 +598,7 @@ Comité Organizador CLAGTEE 2026`;
 
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
             {/* Toolbar */}
-            <div className="p-4 border-b border-gray-100 flex space-x-2">
+            <div className="p-4 border-b border-gray-100 flex flex-wrap items-center gap-2">
               {['all', 'pending', 'under-review', 'accepted', 'rejected', 'withdrawn'].map(f => (
                 <button
                   key={f}
@@ -572,6 +609,24 @@ Comité Organizador CLAGTEE 2026`;
                   {f === 'all' ? 'Todos' : statusLabels[f as PaperStatus]}
                 </button>
               ))}
+
+              <button
+                type="button"
+                onClick={() => setFilter('unnotified')}
+                className={`px-3.5 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${
+                  filter === 'unnotified'
+                    ? 'bg-amber-600 text-white shadow-sm ring-2 ring-amber-400'
+                    : 'bg-amber-50 text-amber-900 hover:bg-amber-100 border border-amber-200'
+                }`}
+                title="Filtrar artículos con decisión (aceptados/rechazados) cuya notificación aún no se ha enviado"
+              >
+                <span>⚠️ Sin notificar</span>
+                <span className={`px-2 py-0.5 rounded-full text-xs font-black ${
+                  filter === 'unnotified' ? 'bg-amber-700 text-white' : 'bg-amber-200 text-amber-900'
+                }`}>
+                  {unnotifiedCount}
+                </span>
+              </button>
             </div>
 
             {/* Table Header */}
@@ -649,6 +704,27 @@ Comité Organizador CLAGTEE 2026`;
                         )
                       )}
                     </select>
+
+                    {(paper.status === 'accepted' || paper.status === 'rejected') && (
+                      <div className="mt-1.5">
+                        {paper.decisionNotifiedAt ? (
+                          <span
+                            title={`Notificación oficial enviada el ${paper.decisionNotifiedAt}`}
+                            className="inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200"
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                            ✓ Notificado ({formatDateTime(paper.decisionNotifiedAt)})
+                          </span>
+                        ) : (
+                          <span
+                            title="Decisión tomada, pero aún no se ha notificado a los autores por correo"
+                            className="inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded bg-amber-50 text-amber-800 border border-amber-200"
+                          >
+                            ⚠️ Sin notificar
+                          </span>
+                        )}
+                      </div>
+                    )}
                   </div>
                   <div className="col-span-3">
                     {(() => {
@@ -760,9 +836,23 @@ Comité Organizador CLAGTEE 2026`;
                             <button
                               type="button"
                               onClick={() => openDecisionEmail(paper)}
-                              className="text-[#0D2C54] text-xs font-bold hover:underline text-left"
+                              className={`text-xs font-bold hover:underline text-left flex items-center gap-1 ${
+                                paper.decisionNotifiedAt ? 'text-gray-500 hover:text-gray-700' : 'text-[#0D2C54]'
+                              }`}
+                              title={
+                                paper.decisionNotifiedAt
+                                  ? `Ya fue notificado el ${paper.decisionNotifiedAt}. Clic para reenviar.`
+                                  : `Enviar notificación de ${paper.status === 'accepted' ? 'aceptación' : 'rechazo'} a los autores`
+                              }
                             >
-                              ✉ Notificar {paper.status === 'accepted' ? 'aceptación' : 'rechazo'}
+                              {paper.decisionNotifiedAt ? (
+                                <>
+                                  <span>✓ {paper.status === 'accepted' ? 'Aceptación' : 'Rechazo'} notificada</span>
+                                  <span className="text-[10px] text-gray-400 font-normal">({formatDateTime(paper.decisionNotifiedAt)}) · Reenviar</span>
+                                </>
+                              ) : (
+                                <span>✉ Notificar {paper.status === 'accepted' ? 'aceptación' : 'rechazo'}</span>
+                              )}
                             </button>
                           )}
 
@@ -999,11 +1089,22 @@ Comité Organizador CLAGTEE 2026`;
                         title={
                           assignedPapers.length === 0
                             ? 'Este revisor no tiene trabajos asignados'
-                            : 'Enviar resumen con sus trabajos asignados, estado y estadisticas'
+                            : reviewer.assignmentNotifiedAt
+                            ? `Resumen enviado el ${reviewer.assignmentNotifiedAt}. Clic para reenviar.`
+                            : 'Enviar resumen con sus trabajos asignados, estado y estadísticas'
                         }
-                        className="text-[#0D2C54] text-xs font-bold hover:underline disabled:opacity-40 disabled:cursor-not-allowed text-left"
+                        className={`text-xs font-bold hover:underline disabled:opacity-40 disabled:cursor-not-allowed text-left flex items-center gap-1 ${
+                          reviewer.assignmentNotifiedAt ? 'text-gray-500 hover:text-gray-700' : 'text-[#0D2C54]'
+                        }`}
                       >
-                        📋 Enviar resumen de revisiones
+                        {reviewer.assignmentNotifiedAt ? (
+                          <>
+                            <span>✓ Resumen enviado</span>
+                            <span className="text-[10px] text-gray-400 font-normal">({formatDateTime(reviewer.assignmentNotifiedAt)}) · Reenviar</span>
+                          </>
+                        ) : (
+                          <span>📋 Enviar resumen de revisiones</span>
+                        )}
                       </button>
                       <button
                         type="button"
@@ -1127,6 +1228,19 @@ Comité Organizador CLAGTEE 2026`;
               </button>
             </div>
 
+            {emailModal.decisionPaper?.decisionNotifiedAt && (
+              <div className="mb-4 bg-amber-50 border border-amber-300 rounded-xl p-3 flex items-start gap-2.5 text-amber-900 text-xs">
+                <span className="text-base leading-none">⚠️</span>
+                <div>
+                  <p className="font-bold text-amber-900">Notificación enviada previamente</p>
+                  <p className="mt-0.5 text-amber-800 leading-relaxed">
+                    Este trabajo ya fue marcado como notificado el <strong>{formatDateTime(emailModal.decisionPaper.decisionNotifiedAt)}</strong>.
+                    Si vuelves a enviar este correo, los autores recibirán una notificación duplicada.
+                  </p>
+                </div>
+              </div>
+            )}
+
             <form onSubmit={handleSendEmail} className="space-y-4">
               <div>
                 <label className="block text-xs font-bold text-gray-500 mb-1">Asunto</label>
@@ -1244,9 +1358,13 @@ Comité Organizador CLAGTEE 2026`;
                 <button
                   type="submit"
                   disabled={isLoading || !emailForm.subject.trim() || !emailForm.body.trim()}
-                  className="bg-[#2A9D8F] text-white px-6 py-2 rounded-xl font-bold hover:bg-[#238C7E] disabled:opacity-50"
+                  className="bg-[#2A9D8F] text-white px-6 py-2 rounded-xl font-bold hover:bg-[#238C7E] disabled:opacity-50 flex items-center gap-2"
                 >
-                  {isLoading ? 'Enviando...' : 'Enviar'}
+                  {isLoading
+                    ? 'Enviando...'
+                    : emailModal.decisionPaper?.decisionNotifiedAt
+                    ? 'Reenviar notificación a autores'
+                    : 'Enviar'}
                 </button>
               </div>
             </form>

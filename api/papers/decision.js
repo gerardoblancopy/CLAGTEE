@@ -25,12 +25,12 @@ export default async function handler(req, res) {
     if (!(await requireChair(req, res))) return;
 
     const body = parseBody(req);
-    const { paperId, status } = body || {};
-    if (!paperId || !status) {
+    const { paperId, status, markNotified } = body || {};
+    if (!paperId || (!status && !markNotified)) {
       res.status(400).json({ error: 'Missing required fields' });
       return;
     }
-    if (!allowedStatuses.has(status)) {
+    if (status && !allowedStatuses.has(status)) {
       res.status(400).json({ error: 'Invalid status' });
       return;
     }
@@ -43,8 +43,20 @@ export default async function handler(req, res) {
       return;
     }
 
+    const currentData = snapshot.data() || {};
     const updatedAt = new Date().toISOString();
-    await ref.set({ status, updatedAt }, { merge: true });
+    const updateData = { updatedAt };
+
+    if (status) {
+      updateData.status = status;
+    }
+
+    if (markNotified) {
+      updateData.decisionNotifiedAt = updatedAt;
+      updateData.decisionNotifiedStatus = status || currentData.status || null;
+    }
+
+    await ref.set(updateData, { merge: true });
 
     const updatedSnapshot = await ref.get();
     res.status(200).json({ paper: normalizePaper(updatedSnapshot) });
