@@ -575,7 +575,7 @@ export const uiES: UIStrings = {
   ariaOpenMenu: "Abrir menú de navegación",
   ariaCloseMenu: "Cerrar menú de navegación",
   speakersPlaceholder: "Más conferencistas magistrales y paneles serán anunciados próximamente.",
-  deadlineBanner: "Nueva fecha límite para la presentación de trabajos completos: 22 de Agosto de 2026",
+  deadlineBanner: "Nueva fecha de notificación de aceptación de trabajos completos: 21 de Septiembre de 2026",
   venueTitle: "Sede del Evento",
   venueCity: "Providencia, Santiago de Chile",
   venueHotelName: "MR. Hotel (ex Hotel Neruda)",

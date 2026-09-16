@@ -575,7 +575,7 @@ export const uiEN: UIStrings = {
   ariaOpenMenu: "Open navigation menu",
   ariaCloseMenu: "Close navigation menu",
   speakersPlaceholder: "More keynote speakers and panels will be announced soon.",
-  deadlineBanner: "New deadline for full paper submissions: August 22, 2026",
+  deadlineBanner: "New notification date of full paper acceptance: September 21, 2026",
   venueTitle: "Event Venue",
   venueCity: "Providencia, Santiago, Chile",
   venueHotelName: "MR. Hotel (former Hotel Neruda)",

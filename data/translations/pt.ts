@@ -575,7 +575,7 @@ export const uiPT: UIStrings = {
   ariaOpenMenu: "Abrir menu de navegação",
   ariaCloseMenu: "Fechar menu de navegação",
   speakersPlaceholder: "Mais palestrantes magistrais e painéis serão anunciados em breve.",
-  deadlineBanner: "Nova data limite para submissão de trabalhos completos: 22 de Agosto de 2026",
+  deadlineBanner: "Nova data de notificação de aceitação de trabalhos completos: 21 de Setembro de 2026",
   venueTitle: "Local do Evento",
   venueCity: "Providencia, Santiago do Chile",
   venueHotelName: "MR. Hotel (ex-Hotel Neruda)",
