@@ -57,7 +57,7 @@ export const contentES: Content = {
       "dates": [
         { "event": "Lanzamiento y apertura para envío de trabajos completos", "date": "1 de Mayo de 2026" },
         { "event": "Nueva fecha límite para la presentación de trabajos completos", "date": "22 de Agosto de 2026", "highlight": true },
-        { "event": "Notificación de aceptación de trabajos completos", "date": "21 de Septiembre de 2026" },
+        { "event": "Nueva fecha de notificación de aceptación de trabajos completos", "date": "21 de Septiembre de 2026", "highlight": true },
         { "event": "Pre-Conferencia", "date": "27 de Octubre de 2026" },
         { "event": "Inicio de la Conferencia", "date": "28 de Octubre de 2026" },
         { "event": "Finalización de la Conferencia", "date": "30 de Octubre de 2026" }
@@ -229,7 +229,7 @@ export const contentES: Content = {
         "title": "Fechas de presentación",
         "window": "El Comité Revisor del CLAGTEE 2026 aceptará artículos para el proceso de revisión desde el 1 de mayo de 2026 hasta el 22 de agosto de 2026.",
         "process": "El proceso de envío se realizará a través del la Plataforma de Gestión de Papers y toda la comunicación con los autores se gestionará a través del correo electrónico oficial CLAGTEE 2026. No se aceptarán trabajos enviados por email ni por ningún otro medio electrónico.",
-        "notification": "La notificación de aceptación/rechazo a los autores será el 21 de Septiembre de 2026, debiendo enviarse la versión final (en caso de haberse solicitado realizar cambios) de los trabajos aceptados hasta el 15 de octubre de 2026."
+        "notification": "La nueva fecha de notificación de aceptación/rechazo a los autores será el 21 de Septiembre de 2026, debiendo enviarse la versión final (en caso de haberse solicitado realizar cambios) de los trabajos aceptados hasta el 15 de octubre de 2026."
       },
       "guidelines": {
         "title": "Directrices para el envío",

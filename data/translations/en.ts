@@ -57,7 +57,7 @@ export const contentEN: Content = {
       "dates": [
         { "event": "Launch and opening for full paper submissions", "date": "May 1, 2026" },
         { "event": "New deadline for full paper submissions", "date": "August 22, 2026", "highlight": true },
-        { "event": "Notification of full paper acceptance", "date": "September 21, 2026" },
+        { "event": "New notification date of full paper acceptance", "date": "September 21, 2026", "highlight": true },
         { "event": "Pre-Conference", "date": "October 27, 2026" },
         { "event": "Conference Opening", "date": "October 28, 2026" },
         { "event": "Conference Closing", "date": "October 30, 2026" }
@@ -229,7 +229,7 @@ export const contentEN: Content = {
         "title": "Submission Dates",
         "window": "The CLAGTEE 2026 Review Committee will accept papers for the review process from May 1, 2026 until August 22, 2026.",
         "process": "The submission process will be carried out through the Paper Management Platform and all communication with authors will be managed through the official CLAGTEE 2026 email. Papers submitted via email or any other electronic means will not be accepted.",
-        "notification": "The acceptance/rejection notification to authors will be on September 21, 2026, and the final version (if changes were requested) of accepted papers must be submitted by October 15, 2026."
+        "notification": "The new acceptance/rejection notification date to authors will be on September 21, 2026, and the final version (if changes were requested) of accepted papers must be submitted by October 15, 2026."
       },
       "guidelines": {
         "title": "Submission Guidelines",
