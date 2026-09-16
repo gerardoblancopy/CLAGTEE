@@ -25,8 +25,8 @@ export default async function handler(req, res) {
     if (!(await requireChair(req, res))) return;
 
     const body = parseBody(req);
-    const { paperId, status, markNotified } = body || {};
-    if (!paperId || (!status && !markNotified)) {
+    const { paperId, status, markNotified, unmarkNotified, customNotifiedAt } = body || {};
+    if (!paperId || (!status && !markNotified && !unmarkNotified)) {
       res.status(400).json({ error: 'Missing required fields' });
       return;
     }
@@ -52,8 +52,11 @@ export default async function handler(req, res) {
     }
 
     if (markNotified) {
-      updateData.decisionNotifiedAt = updatedAt;
+      updateData.decisionNotifiedAt = (typeof customNotifiedAt === 'string' && customNotifiedAt) || updatedAt;
       updateData.decisionNotifiedStatus = status || currentData.status || null;
+    } else if (unmarkNotified) {
+      updateData.decisionNotifiedAt = null;
+      updateData.decisionNotifiedStatus = null;
     }
 
     await ref.set(updateData, { merge: true });

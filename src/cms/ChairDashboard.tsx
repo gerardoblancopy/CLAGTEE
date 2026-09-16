@@ -59,6 +59,7 @@ export const ChairDashboard: React.FC = () => {
     unassignReviewer,
     setDecision,
     markDecisionNotified,
+    unmarkDecisionNotified,
     deletePaper,
   } = useCMSData();
 
@@ -706,22 +707,50 @@ Comité Organizador CLAGTEE 2026`;
                     </select>
 
                     {(paper.status === 'accepted' || paper.status === 'rejected') && (
-                      <div className="mt-1.5">
+                      <div className="mt-1.5 flex flex-col gap-1 items-start">
                         {paper.decisionNotifiedAt ? (
-                          <span
-                            title={`Notificación oficial enviada el ${paper.decisionNotifiedAt}`}
-                            className="inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200"
-                          >
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                            ✓ Notificado ({formatDateTime(paper.decisionNotifiedAt)})
-                          </span>
+                          <div className="flex items-center gap-1.5 flex-wrap">
+                            <span
+                              title={`Notificación oficial enviada el ${paper.decisionNotifiedAt}`}
+                              className="inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200"
+                            >
+                              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                              ✓ Notificado ({formatDateTime(paper.decisionNotifiedAt)})
+                            </span>
+                            <button
+                              type="button"
+                              onClick={async () => {
+                                if (window.confirm(`¿Deseas desmarcar la notificación de #${paper.id} y volver a ponerlo como "Sin notificar"?`)) {
+                                  await unmarkDecisionNotified(paper.id);
+                                }
+                              }}
+                              className="text-[10px] text-gray-400 hover:text-red-500 underline transition-colors"
+                              title="Desmarcar notificación"
+                            >
+                              Desmarcar
+                            </button>
+                          </div>
                         ) : (
-                          <span
-                            title="Decisión tomada, pero aún no se ha notificado a los autores por correo"
-                            className="inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded bg-amber-50 text-amber-800 border border-amber-200"
-                          >
-                            ⚠️ Sin notificar
-                          </span>
+                          <div className="flex items-center gap-1.5 flex-wrap">
+                            <span
+                              title="Decisión tomada, pero aún no se ha marcado como notificado por correo"
+                              className="inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded bg-amber-50 text-amber-800 border border-amber-200"
+                            >
+                              ⚠️ Sin notificar
+                            </span>
+                            <button
+                              type="button"
+                              onClick={async () => {
+                                if (window.confirm(`¿Confirmas que la notificación del trabajo #${paper.id} YA FUE ENVIADA previamente a los autores? Se marcará como notificado sin enviar un correo nuevo.`)) {
+                                  await markDecisionNotified(paper.id, paper.status);
+                                }
+                              }}
+                              className="text-[10px] text-blue-600 hover:text-blue-800 font-bold underline transition-colors"
+                              title="Hacer clic si ya enviaste la notificación a los autores previamente por otro medio o en días anteriores"
+                            >
+                              ✓ Marcar ya notificado
+                            </button>
+                          </div>
                         )}
                       </div>
                     )}

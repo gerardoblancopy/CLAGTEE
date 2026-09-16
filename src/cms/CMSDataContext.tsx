@@ -102,6 +102,7 @@ interface CMSDataContextType {
   ) => Promise<AIReviewResult | null>;
   setDecision: (paperId: string, status: PaperStatus) => Promise<void>;
   markDecisionNotified: (paperId: string, status?: PaperStatus) => Promise<Paper | null>;
+  unmarkDecisionNotified: (paperId: string) => Promise<Paper | null>;
   withdrawPaper: (paperId: string) => Promise<void>;
   deletePaper: (paperId: string) => Promise<void>;
 }
@@ -432,6 +433,29 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
     }
   };
 
+  const unmarkDecisionNotified = async (paperId: string) => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await apiFetch('/api/papers/decision', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ paperId, unmarkNotified: true }),
+      });
+      if (!response.ok) {
+        throw new Error('No se pudo desmarcar la notificación.');
+      }
+      const payload = (await response.json()) as { paper: Paper };
+      setPapers((prev) => upsertPaper(prev, payload.paper));
+      return payload.paper;
+    } catch (fetchError) {
+      console.error('Error unmarking decision notified:', fetchError);
+      return null;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const deletePaper = async (paperId: string) => {
     setIsLoading(true);
     setError(null);
@@ -468,6 +492,7 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
       requestAIReview,
       setDecision,
       markDecisionNotified,
+      unmarkDecisionNotified,
       withdrawPaper,
       deletePaper,
     }),
