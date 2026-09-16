@@ -57,7 +57,7 @@ export const contentPT: Content = {
       "dates": [
         { "event": "Lançamento e abertura para submissão de trabalhos completos", "date": "1 de Maio de 2026" },
         { "event": "Nova data limite para submissão de trabalhos completos", "date": "22 de Agosto de 2026", "highlight": true },
-        { "event": "Notificação de aceitação de trabalhos completos", "date": "15 de Setembro de 2026" },
+        { "event": "Notificação de aceitação de trabalhos completos", "date": "21 de Setembro de 2026" },
         { "event": "Pré-Conferência", "date": "27 de Outubro de 2026" },
         { "event": "Início da Conferência", "date": "28 de Outubro de 2026" },
         { "event": "Encerramento da Conferência", "date": "30 de Outubro de 2026" }
@@ -229,7 +229,7 @@ export const contentPT: Content = {
         "title": "Datas de submissão",
         "window": "O Comitê Revisor do CLAGTEE 2026 aceitará artigos para o processo de revisão de 1 de maio de 2026 até 22 de agosto de 2026.",
         "process": "O processo de submissão será realizado através da Plataforma de Gestão de Papers e toda a comunicação com os autores será gerenciada através do e-mail oficial do CLAGTEE 2026. Não serão aceitos trabalhos enviados por e-mail nem por qualquer outro meio eletrônico.",
-        "notification": "A notificação de aceitação/rejeição aos autores será em 15 de setembro de 2026, devendo ser enviada a versão final (caso tenham sido solicitadas alterações) dos trabalhos aceitos até 15 de outubro de 2026."
+        "notification": "A notificação de aceitação/rejeição aos autores será em 21 de setembro de 2026, devendo ser enviada a versão final (caso tenham sido solicitadas alterações) dos trabalhos aceitos até 15 de outubro de 2026."
       },
       "guidelines": {
         "title": "Diretrizes para submissão",
