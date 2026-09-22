@@ -31,3 +31,8 @@ dist-ssr
 
 # Local credential notes
 src/cms/pass.md
+
+# Scratch and local files
+scratch/
+*.pdf
+clagtee-conference/assets/revisiones.md

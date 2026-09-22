@@ -1,0 +1,7 @@
+.git
+node_modules
+*.pdf
+.env*.local
+dist
+.system_generated
+scratch
