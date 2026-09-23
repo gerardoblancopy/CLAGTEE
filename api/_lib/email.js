@@ -1,21 +1,46 @@
 import { Resend } from 'resend';
-
-const getEnv = (name) => {
-  const value = process.env[name];
-  if (!value) throw new Error(`Missing env: ${name}`);
-  return value;
-};
+import nodemailer from 'nodemailer';
 
 let resendClient = null;
 
 const getResend = () => {
   if (!resendClient) {
-    resendClient = new Resend(getEnv('RESEND_API_KEY'));
+    const key = process.env.RESEND_API_KEY;
+    if (!key) throw new Error('Missing env: RESEND_API_KEY');
+    resendClient = new Resend(key);
   }
   return resendClient;
 };
 
-const CMS_URL = 'https://www.clagtee2026.org/cms';
+let smtpTransporter = null;
+
+const getSmtpTransporter = () => {
+  if (smtpTransporter) return smtpTransporter;
+
+  const host = process.env.SMTP_HOST || 'smtp.gmail.com';
+  const port = parseInt(process.env.SMTP_PORT || '465', 10);
+  const secure = process.env.SMTP_SECURE ? process.env.SMTP_SECURE === 'true' : port === 465;
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASS ? process.env.SMTP_PASS.replace(/\s+/g, '') : undefined;
+
+  if (!user || !pass) {
+    return null;
+  }
+
+  smtpTransporter = nodemailer.createTransport({
+    host,
+    port,
+    secure,
+    auth: {
+      user,
+      pass,
+    },
+  });
+
+  return smtpTransporter;
+};
+
+const CMS_URL = 'https://www.clagTEE2026.org/cms'.toLowerCase();
 // Use verified domain for production emails
 const SENDER_EMAIL = process.env.SENDER_EMAIL || 'clagtee2026@clagtee.org';
 // Replies from recipients go here, matching the contact address in the email footer
@@ -23,8 +48,107 @@ const REPLY_TO_EMAIL = process.env.REPLY_TO_EMAIL || 'gerardo.blanco@pucv.cl';
 // Archive copy for chair-initiated emails; set to empty to disable
 const BCC_EMAIL = process.env.BCC_EMAIL || 'gerardo.blanco@pucv.cl';
 
+/**
+ * Envia correos intentando primero via Resend. Si Resend retorna error (cuota diaria excedida,
+ * 429 rate limit persistente o caida de servicio) y SMTP esta configurado, conmuta
+ * automaticamente a SMTP via Nodemailer.
+ */
+export const sendMailWithFallback = async ({
+  to,
+  subject,
+  html,
+  text,
+  replyTo = REPLY_TO_EMAIL,
+  bcc,
+  label = 'email',
+}) => {
+  const toList = Array.isArray(to) ? to : [to];
+  const bccList = bcc ? (Array.isArray(bcc) ? bcc : [bcc]) : [];
+
+  let resendError = null;
+
+  // 1. Intentar primero con Resend si hay RESEND_API_KEY configurada
+  if (process.env.RESEND_API_KEY) {
+    let attempt = 0;
+    while (attempt < 2) {
+      attempt++;
+      try {
+        const resend = getResend();
+        const { data, error } = await resend.emails.send({
+          from: `CLAGTEE 2026 <${SENDER_EMAIL}>`,
+          replyTo,
+          to: toList,
+          ...(bccList.length > 0 ? { bcc: bccList } : {}),
+          subject,
+          html,
+          ...(text ? { text } : {}),
+        });
+
+        if (error) {
+          if (error.statusCode === 429 && attempt < 2) {
+            console.warn(`[email] Resend rate limit (429) en ${label}, reintentando en 1.2s...`);
+            await new Promise((resolve) => setTimeout(resolve, 1200));
+            continue;
+          }
+          resendError = error;
+          break;
+        }
+
+        console.log(`[email:resend] ${label} enviado a ${toList.join(', ')}:`, data?.id);
+        return { id: data?.id, provider: 'resend' };
+      } catch (err) {
+        resendError = err;
+        break;
+      }
+    }
+  }
+
+  // 2. Fallback: Intentar con SMTP (Nodemailer)
+  const transporter = getSmtpTransporter();
+  if (transporter) {
+    try {
+      const reason = resendError
+        ? `Resend fallo (${resendError.message || JSON.stringify(resendError)})`
+        : 'RESEND_API_KEY no configurada';
+      console.warn(`[email:fallback] Activando fallback SMTP para ${label} hacia ${toList.join(', ')}. Motivo: ${reason}`);
+
+      const smtpSender =
+        process.env.SMTP_FROM ||
+        (process.env.SMTP_USER ? `CLAGTEE 2026 <${process.env.SMTP_USER}>` : `CLAGTEE 2026 <${SENDER_EMAIL}>`);
+
+      const info = await transporter.sendMail({
+        from: smtpSender,
+        to: toList.join(', '),
+        replyTo,
+        ...(bccList.length > 0 ? { bcc: bccList.join(', ') } : {}),
+        subject,
+        html,
+        ...(text ? { text } : {}),
+      });
+
+      console.log(`[email:smtp] Envio exitoso via SMTP para ${label} a ${toList.join(', ')}:`, info.messageId);
+      return { id: info.messageId, provider: 'smtp' };
+    } catch (smtpErr) {
+      console.error(`[email:smtp] Error en envio via SMTP para ${label}:`, smtpErr);
+      const compositeError = new Error(
+        `Fallo el envio por todos los proveedores. Resend: ${resendError?.message || 'N/A'}. SMTP: ${smtpErr?.message || 'N/A'}`
+      );
+      compositeError.resendError = resendError;
+      compositeError.smtpError = smtpErr;
+      throw compositeError;
+    }
+  }
+
+  // 3. Si no hay SMTP configurado y Resend fallo, arrojar el error de Resend
+  if (resendError) {
+    console.error(`[email] Error enviando ${label} con Resend y sin fallback SMTP configurado:`, resendError);
+    throw resendError;
+  }
+
+  throw new Error('No hay proveedor de correo configurado (falta RESEND_API_KEY o credenciales SMTP).');
+};
+
 export const sendReviewerInvitation = async ({ to, name, tempPassword }) => {
-  const resend = getResend();
 
   const html = `
 <!DOCTYPE html>
@@ -107,22 +231,13 @@ export const sendReviewerInvitation = async ({ to, name, tempPassword }) => {
 </html>
   `.trim();
 
-  const { data, error } = await resend.emails.send({
-    from: `CLAGTEE 2026 <${SENDER_EMAIL}>`,
-    replyTo: REPLY_TO_EMAIL,
-    to: [to],
-    ...(BCC_EMAIL ? { bcc: [BCC_EMAIL] } : {}),
+  return sendMailWithFallback({
+    to,
     subject: 'Invitación como Revisor - CLAGTEE 2026',
     html,
+    bcc: BCC_EMAIL || undefined,
+    label: 'Invitación a revisor/a',
   });
-
-  if (error) {
-    console.error('[email] Failed to send reviewer invitation:', error);
-    throw error;
-  }
-
-  console.log('[email] Reviewer invitation sent:', data?.id);
-  return data;
 };
 
 const escapeHtml = (value) =>
@@ -134,7 +249,6 @@ const escapeHtml = (value) =>
     .replace(/'/g, '&#39;');
 
 export const sendCustomEmail = async ({ to, name, subject, body, archiveCopy = false }) => {
-  const resend = getResend();
 
   const safeBody = escapeHtml(body).replace(/\n/g, '<br>');
   const greetingName = name ? escapeHtml(name) : '';
@@ -181,35 +295,16 @@ export const sendCustomEmail = async ({ to, name, subject, body, archiveCopy = f
 </html>
   `.trim();
 
-  let attempt = 0;
-  while (attempt < 3) {
-    attempt++;
-    const { data, error } = await resend.emails.send({
-      from: `CLAGTEE 2026 <${SENDER_EMAIL}>`,
-      replyTo: REPLY_TO_EMAIL,
-      to: [to],
-      ...(archiveCopy && BCC_EMAIL ? { bcc: [BCC_EMAIL] } : {}),
-      subject,
-      html,
-    });
-
-    if (error) {
-      if (error.statusCode === 429 && attempt < 3) {
-        console.warn(`[email] Rate limit (429) sending to ${to}, retrying in 1.2s (attempt ${attempt})...`);
-        await new Promise((resolve) => setTimeout(resolve, 1200));
-        continue;
-      }
-      console.error(`[email] Failed to send custom email to ${to}:`, error);
-      throw error;
-    }
-
-    console.log(`[email] Custom email sent to ${to}:`, data?.id);
-    return data;
-  }
+  return sendMailWithFallback({
+    to,
+    subject,
+    html,
+    bcc: archiveCopy && BCC_EMAIL ? BCC_EMAIL : undefined,
+    label: `Correo personalizado a ${to}`,
+  });
 };
 
 export const sendPasswordReset = async ({ to, name, tempPassword }) => {
-  const resend = getResend();
 
   const html = `
 <!DOCTYPE html>
@@ -292,21 +387,12 @@ export const sendPasswordReset = async ({ to, name, tempPassword }) => {
 </html>
   `.trim();
 
-  const { data, error } = await resend.emails.send({
-    from: `CLAGTEE 2026 <${SENDER_EMAIL}>`,
-    replyTo: REPLY_TO_EMAIL,
-    to: [to],
+  return sendMailWithFallback({
+    to,
     subject: 'Recuperación de contraseña - CLAGTEE 2026',
     html,
+    label: 'Recuperación de contraseña',
   });
-
-  if (error) {
-    console.error('[email] Failed to send password reset:', error);
-    throw error;
-  }
-
-  console.log('[email] Password reset sent:', data?.id);
-  return data;
 };
 
 const REGISTRATION_CATEGORY_LABELS = {
@@ -368,7 +454,6 @@ export const sendRegistrationReceipt = async ({
   paymentUrl,
   resumeUrl,
 }) => {
-  const resend = getResend();
   const categoryLabel = REGISTRATION_CATEGORY_LABELS[category] || category || '';
 
   const inner = `
@@ -410,25 +495,15 @@ export const sendRegistrationReceipt = async ({
       </td></tr>
     </table>`;
 
-  const { data, error } = await resend.emails.send({
-    from: `CLAGTEE 2026 <${SENDER_EMAIL}>`,
-    replyTo: REPLY_TO_EMAIL,
-    to: [to],
+  return sendMailWithFallback({
+    to,
     subject: `Pre-registro recibido (${id}) - CLAGTEE 2026`,
     html: emailShell('Pre-registro recibido - CLAGTEE 2026', inner),
+    label: 'Recibo de pre-registro',
   });
-
-  if (error) {
-    console.error('[email] Failed to send registration receipt:', error);
-    throw error;
-  }
-
-  console.log('[email] Registration receipt sent:', data?.id);
-  return data;
 };
 
 export const sendCouponConfirmation = async ({ to, name, id, category, couponCode, resumeUrl }) => {
-  const resend = getResend();
   const categoryLabel = REGISTRATION_CATEGORY_LABELS[category] || category || '';
 
   const inner = `
@@ -454,25 +529,15 @@ export const sendCouponConfirmation = async ({ to, name, id, category, couponCod
       </td></tr>
     </table>`;
 
-  const { data, error } = await resend.emails.send({
-    from: `CLAGTEE 2026 <${SENDER_EMAIL}>`,
-    replyTo: REPLY_TO_EMAIL,
-    to: [to],
+  return sendMailWithFallback({
+    to,
     subject: `Inscripción confirmada (${id}) - CLAGTEE 2026`,
     html: emailShell('Inscripción confirmada - CLAGTEE 2026', inner),
+    label: 'Confirmación de cupón',
   });
-
-  if (error) {
-    console.error('[email] Failed to send coupon confirmation:', error);
-    throw error;
-  }
-
-  console.log('[email] Coupon confirmation sent:', data?.id);
-  return data;
 };
 
 export const sendComprobanteReceived = async ({ to, name, id }) => {
-  const resend = getResend();
 
   const inner = `
     <h1 style="margin:0 0 12px; font-size:22px; line-height:1.3; color:#0D2C54;">Comprobante recibido</h1>
@@ -489,21 +554,12 @@ export const sendComprobanteReceived = async ({ to, name, id }) => {
       pago, monto o datos, nos pondremos en contacto con usted.
     </p>`;
 
-  const { data, error } = await resend.emails.send({
-    from: `CLAGTEE 2026 <${SENDER_EMAIL}>`,
-    replyTo: REPLY_TO_EMAIL,
-    to: [to],
+  return sendMailWithFallback({
+    to,
     subject: `Comprobante recibido (${id}) - CLAGTEE 2026`,
     html: emailShell('Comprobante recibido - CLAGTEE 2026', inner),
+    label: 'Comprobante recibido',
   });
-
-  if (error) {
-    console.error('[email] Failed to send comprobante received:', error);
-    throw error;
-  }
-
-  console.log('[email] Comprobante received sent:', data?.id);
-  return data;
 };
 
 // Envoltura comun para los correos dirigidos a revisores.
@@ -558,23 +614,13 @@ const renderReviewerShell = ({ title, inner }) => `
 `.trim();
 
 const sendReviewerEmail = async ({ to, subject, html, label }) => {
-  const resend = getResend();
-  const { data, error } = await resend.emails.send({
-    from: `CLAGTEE 2026 <${SENDER_EMAIL}>`,
-    replyTo: REPLY_TO_EMAIL,
-    to: [to],
-    ...(BCC_EMAIL ? { bcc: [BCC_EMAIL] } : {}),
+  return sendMailWithFallback({
+    to,
     subject,
     html,
+    bcc: BCC_EMAIL || undefined,
+    label,
   });
-
-  if (error) {
-    console.error(`[email] Failed to send ${label}:`, error);
-    throw error;
-  }
-
-  console.log(`[email] ${label} sent:`, data?.id);
-  return data;
 };
 
 // Aviso automatico al asignar un trabajo: solo informa ese trabajo.
