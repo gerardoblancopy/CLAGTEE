@@ -165,6 +165,6 @@ export default async function handler(req, res) {
     }
     const message = error && error.message ? error.message : 'Failed to submit review';
     console.error('[papers-submit-review]', message);
-    res.status(500).json({ error: 'Failed to submit review' });
+    res.status(500).json({ error: message });
   }
 }

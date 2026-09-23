@@ -427,6 +427,7 @@ INSTRUCCIONES PARA EL AJUSTE:
         Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
+      signal: AbortSignal.timeout(35000),
       body: JSON.stringify({
         model: 'gpt-5.6-luna',
         messages: [
@@ -440,6 +441,7 @@ INSTRUCCIONES PARA EL AJUSTE:
           },
         ],
         response_format: { type: 'json_object' },
+        reasoning_effort: 'low',
       }),
     });
 
@@ -579,7 +581,7 @@ INSTRUCCIONES PARA EL AJUSTE:
     });
   }
 
-  const candidateModels = ['gemini-3.5-flash', 'gemini-flash-latest', 'gemini-3.6-flash', 'gemini-3.8-flash'];
+  const candidateModels = ['gemini-3.6-flash', 'gemini-3.8-flash', 'gemini-flash-latest', 'gemini-3.1-pro-preview'];
   let lastError = null;
 
   for (const model of candidateModels) {
@@ -590,6 +592,7 @@ INSTRUCCIONES PARA EL AJUSTE:
         headers: {
           'Content-Type': 'application/json',
         },
+        signal: AbortSignal.timeout(20000),
         body: JSON.stringify({
           systemInstruction: {
             parts: [{ text: SYSTEM_INSTRUCTIONS }],
