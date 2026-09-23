@@ -36,3 +36,4 @@ src/cms/pass.md
 scratch/
 *.pdf
 clagtee-conference/assets/revisiones.md
+node_modules

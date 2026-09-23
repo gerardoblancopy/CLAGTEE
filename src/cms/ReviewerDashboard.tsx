@@ -23,6 +23,42 @@ const defaultDraft: ReviewDraft = {
     status: 'under-review',
 };
 
+const statusLabels: Record<string, string> = {
+    pending: 'Pendiente',
+    'under-review': 'En revisión',
+    accepted: 'Aceptado',
+    rejected: 'Rechazado',
+    withdrawn: 'Retirado',
+};
+
+const statusStyles: Record<string, string> = {
+    accepted: 'bg-emerald-50 text-emerald-800 border-emerald-200',
+    rejected: 'bg-rose-50 text-rose-800 border-rose-200',
+    'under-review': 'bg-blue-50 text-blue-800 border-blue-200',
+    pending: 'bg-amber-50 text-amber-800 border-amber-200',
+    withdrawn: 'bg-gray-100 text-gray-700 border-gray-200',
+};
+
+const statusDotColors: Record<string, string> = {
+    accepted: 'bg-emerald-500',
+    rejected: 'bg-rose-500',
+    'under-review': 'bg-blue-500',
+    pending: 'bg-amber-500',
+    withdrawn: 'bg-gray-400',
+};
+
+const formatDateTime = (value?: string | null) => {
+    if (!value) return '';
+    const date = new Date(value);
+    if (isNaN(date.getTime())) return String(value);
+    return date.toLocaleString('es-CL', {
+        day: '2-digit',
+        month: 'short',
+        hour: '2-digit',
+        minute: '2-digit',
+    });
+};
+
 export const ReviewerDashboard: React.FC = () => {
     const { user } = useAuth();
     const { papers, submitReview, requestAIReview } = useCMSData();
@@ -159,10 +195,46 @@ export const ReviewerDashboard: React.FC = () => {
                                             <h5 className="font-bold text-[#0D2C54] text-lg">{paper.title}</h5>
                                         </div>
                                         <p className="text-gray-500 text-sm line-clamp-2 max-w-2xl">{paper.abstract}</p>
-                                        <div className="flex flex-wrap items-center gap-4 text-xs font-medium mt-2">
-                                            <span className="text-gray-400">Track: {paper.track}</span>
+                                        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-medium mt-2">
                                             <span className="text-gray-400">
-                                                Revisiones: {paper.reviews.length}
+                                                Track: <span className="text-gray-700 font-semibold">{paper.track}</span>
+                                            </span>
+                                            <span className="text-gray-400">
+                                                Revisiones: <span className="text-gray-700 font-semibold">{paper.reviews.length}</span>
+                                            </span>
+                                            <span className="text-gray-400 flex items-center gap-1.5">
+                                                Estado:
+                                                <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold border ${statusStyles[paper.status] || 'bg-gray-100 text-gray-700 border-gray-200'}`}>
+                                                    <span className={`w-1.5 h-1.5 rounded-full ${statusDotColors[paper.status] || 'bg-gray-400'}`} />
+                                                    {statusLabels[paper.status] || paper.status}
+                                                </span>
+                                            </span>
+                                            <span className="text-gray-400 flex items-center gap-1.5">
+                                                Notificación autores:
+                                                {paper.decisionNotifiedAt ? (
+                                                    <span
+                                                        title={`Notificación oficial de decisión enviada a los autores el ${formatDateTime(paper.decisionNotifiedAt)}`}
+                                                        className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200"
+                                                    >
+                                                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                                                        ✓ Notificado ({formatDateTime(paper.decisionNotifiedAt)})
+                                                    </span>
+                                                ) : paper.status === 'accepted' || paper.status === 'rejected' ? (
+                                                    <span
+                                                        title="La decisión ya fue registrada en el sistema pero aún no ha sido notificada oficialmente a los autores por correo"
+                                                        className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200"
+                                                    >
+                                                        <span>⚠️</span>
+                                                        No notificado
+                                                    </span>
+                                                ) : (
+                                                    <span
+                                                        title="Aún no se ha emitido una decisión de aceptación o rechazo para este artículo"
+                                                        className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600 border border-gray-200"
+                                                    >
+                                                        No notificado (en evaluación)
+                                                    </span>
+                                                )}
                                             </span>
                                         </div>
                                     </div>
