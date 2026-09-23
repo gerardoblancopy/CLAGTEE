@@ -62,8 +62,9 @@ export const sendMailWithFallback = async ({
   bcc,
   label = 'email',
 }) => {
-  const toList = Array.isArray(to) ? to : [to];
-  const bccList = bcc ? (Array.isArray(bcc) ? bcc : [bcc]) : [];
+  const cleanAddress = (addr) => String(addr || '').trim().replace(/\s+/g, '');
+  const toList = (Array.isArray(to) ? to : [to]).map(cleanAddress).filter(Boolean);
+  const bccList = (bcc ? (Array.isArray(bcc) ? bcc : [bcc]) : []).map(cleanAddress).filter(Boolean);
 
   let resendError = null;
 
