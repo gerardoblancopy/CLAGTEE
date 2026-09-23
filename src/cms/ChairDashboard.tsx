@@ -15,7 +15,7 @@ const statusStyles = {
 
 const statusLabels: Record<PaperStatus, string> = {
   pending: 'Pendiente',
-  'under-review': 'En revision',
+  'under-review': 'En revisión',
   accepted: 'Aceptado',
   rejected: 'Rechazado',
   withdrawn: 'Retirado',
@@ -211,7 +211,23 @@ export const ChairDashboard: React.FC = () => {
     return papers.filter((paper) => paper.status === filter);
   }, [filter, papers]);
 
-  const pendingCount = papers.filter((paper) => paper.status === 'pending').length;
+  const statusCounts = useMemo(() => {
+    const counts: Record<PaperStatus, number> = {
+      pending: 0,
+      'under-review': 0,
+      accepted: 0,
+      rejected: 0,
+      withdrawn: 0,
+    };
+    (papers || []).forEach((paper) => {
+      if (counts[paper.status] !== undefined) {
+        counts[paper.status]++;
+      }
+    });
+    return counts;
+  }, [papers]);
+
+  const pendingCount = statusCounts.pending;
 
   const handleAssign = async (paperId: string) => {
     const reviewerId = assignments[paperId];
@@ -420,36 +436,48 @@ Comité Organizador CLAGTEE 2026`;
 
   return (
     <div className="space-y-8">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
         <div>
           <h3 className="text-2xl font-bold text-[#0D2C54]">Panel de Control (Chair)</h3>
           <p className="text-gray-500">Gestión general de envíos y asignaciones</p>
         </div>
-        <div className="flex space-x-4">
+        <div className="flex flex-wrap items-center gap-3">
           {/* Summary Cards */}
-          <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-3">
+          <div className="bg-white p-3.5 px-4 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-3">
             <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">
               {papers.length}
             </div>
-            <span className="text-sm font-medium text-gray-600">Total Papers</span>
-          </div>
-          <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 font-bold">
-              {pendingCount}
+            <div>
+              <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider block">Total</span>
+              <span className="text-sm font-bold text-gray-700">Papers</span>
             </div>
-            <span className="text-sm font-medium text-gray-600">Pendientes</span>
           </div>
-          <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-3">
+          <div className="bg-white p-3.5 px-4 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-3">
+            <div className="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 font-bold">
+              {statusCounts.pending}
+            </div>
+            <div>
+              <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider block">Por evaluar</span>
+              <span className="text-sm font-bold text-gray-700">Pendientes</span>
+            </div>
+          </div>
+          <div className="bg-white p-3.5 px-4 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-3">
             <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold">
               {reviewers.length}
             </div>
-            <span className="text-sm font-medium text-gray-600">Revisores</span>
+            <div>
+              <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider block">Equipo</span>
+              <span className="text-sm font-bold text-gray-700">Revisores</span>
+            </div>
           </div>
-          <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-3">
+          <div className="bg-white p-3.5 px-4 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-3">
             <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold">
               {authors.length}
             </div>
-            <span className="text-sm font-medium text-gray-600">Autores</span>
+            <div>
+              <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider block">Registrados</span>
+              <span className="text-sm font-bold text-gray-700">Autores</span>
+            </div>
           </div>
         </div>
       </div>
@@ -597,19 +625,135 @@ Comité Organizador CLAGTEE 2026`;
             )}
           </div>
 
+          {/* Cards de Conteo por Estado de Papers */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            {[
+              {
+                id: 'all',
+                label: 'Total Papers',
+                count: papers.length,
+                subtext: '100%',
+                bgColor: 'bg-slate-50',
+                borderColor: 'border-slate-300',
+                ringColor: 'ring-slate-400',
+                icon: '📚',
+              },
+              {
+                id: 'pending',
+                label: 'Pendientes',
+                count: statusCounts.pending,
+                subtext: papers.length > 0 ? `${Math.round((statusCounts.pending / papers.length) * 100)}%` : '0%',
+                bgColor: 'bg-yellow-50',
+                borderColor: 'border-yellow-300',
+                ringColor: 'ring-yellow-400',
+                icon: '⏳',
+              },
+              {
+                id: 'under-review',
+                label: 'En revisión',
+                count: statusCounts['under-review'],
+                subtext: papers.length > 0 ? `${Math.round((statusCounts['under-review'] / papers.length) * 100)}%` : '0%',
+                bgColor: 'bg-blue-50',
+                borderColor: 'border-blue-300',
+                ringColor: 'ring-blue-400',
+                icon: '🔍',
+              },
+              {
+                id: 'accepted',
+                label: 'Aceptados',
+                count: statusCounts.accepted,
+                subtext: papers.length > 0 ? `${Math.round((statusCounts.accepted / papers.length) * 100)}%` : '0%',
+                bgColor: 'bg-emerald-50',
+                borderColor: 'border-emerald-300',
+                ringColor: 'ring-emerald-400',
+                icon: '✅',
+              },
+              {
+                id: 'rejected',
+                label: 'Rechazados',
+                count: statusCounts.rejected,
+                subtext: papers.length > 0 ? `${Math.round((statusCounts.rejected / papers.length) * 100)}%` : '0%',
+                bgColor: 'bg-rose-50',
+                borderColor: 'border-rose-300',
+                ringColor: 'ring-rose-400',
+                icon: '❌',
+              },
+              {
+                id: 'withdrawn',
+                label: 'Retirados',
+                count: statusCounts.withdrawn,
+                subtext: papers.length > 0 ? `${Math.round((statusCounts.withdrawn / papers.length) * 100)}%` : '0%',
+                bgColor: 'bg-gray-50',
+                borderColor: 'border-gray-300',
+                ringColor: 'ring-gray-400',
+                icon: '📦',
+              },
+            ].map((item) => {
+              const isSelected = filter === item.id;
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => setFilter(item.id)}
+                  className={`p-3.5 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
+                    isSelected
+                      ? `${item.bgColor} ${item.borderColor} shadow-sm ring-2 ${item.ringColor}`
+                      : 'bg-white border-gray-100 hover:border-gray-200 hover:shadow-xs'
+                  }`}
+                  title={`Filtrar lista por ${item.label}`}
+                >
+                  <div className="flex items-center justify-between w-full mb-1">
+                    <span className="text-xs font-bold text-gray-500 truncate">{item.label}</span>
+                    <span className="text-sm">{item.icon}</span>
+                  </div>
+                  <div className="flex items-baseline gap-2 mt-0.5">
+                    <span className="text-2xl font-black text-[#0D2C54]">{item.count}</span>
+                    <span className="text-xs font-semibold text-gray-400">({item.subtext})</span>
+                  </div>
+                  {isSelected ? (
+                    <div className="mt-2 text-[10px] font-bold text-[#2A9D8F] uppercase tracking-wider flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#2A9D8F]" /> Activo
+                    </div>
+                  ) : (
+                    <div className="mt-2 text-[10px] font-medium text-gray-400 flex items-center gap-1 opacity-0 hover:opacity-100 transition-opacity">
+                      Clic para filtrar
+                    </div>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
             {/* Toolbar */}
             <div className="p-4 border-b border-gray-100 flex flex-wrap items-center gap-2">
-              {['all', 'pending', 'under-review', 'accepted', 'rejected', 'withdrawn'].map(f => (
-                <button
-                  key={f}
-                  onClick={() => setFilter(f)}
-                  className={`px-4 py-2 rounded-lg text-sm font-bold capitalize transition-colors ${filter === f ? 'bg-[#0D2C54] text-white' : 'bg-gray-50 text-gray-500 hover:bg-gray-100'
+              {(['all', 'pending', 'under-review', 'accepted', 'rejected', 'withdrawn'] as const).map((f) => {
+                const count = f === 'all' ? papers.length : statusCounts[f];
+                const label = f === 'all' ? 'Todos' : statusLabels[f];
+                const isSelected = filter === f;
+                return (
+                  <button
+                    key={f}
+                    onClick={() => setFilter(f)}
+                    className={`px-3.5 py-2 rounded-lg text-sm font-bold transition-colors flex items-center gap-2 ${
+                      isSelected
+                        ? 'bg-[#0D2C54] text-white shadow-xs'
+                        : 'bg-gray-50 text-gray-600 hover:bg-gray-100 border border-gray-200/60'
                     }`}
-                >
-                  {f === 'all' ? 'Todos' : statusLabels[f as PaperStatus]}
-                </button>
-              ))}
+                  >
+                    <span>{label}</span>
+                    <span
+                      className={`px-2 py-0.5 rounded-full text-xs font-black ${
+                        isSelected
+                          ? 'bg-white/20 text-white'
+                          : 'bg-gray-200 text-gray-700'
+                      }`}
+                    >
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
 
               <button
                 type="button"
@@ -641,7 +785,24 @@ Comité Organizador CLAGTEE 2026`;
 
             {/* Table Body */}
             <div className="divide-y divide-gray-100">
-              {filteredPapers.map((paper) => (
+              {filteredPapers.length === 0 ? (
+                <div className="p-12 text-center text-gray-400">
+                  <p className="text-base font-bold text-gray-600">No hay artículos con este estado</p>
+                  <p className="text-xs text-gray-400 mt-1">
+                    Prueba cambiando el filtro o seleccionando "Todos".
+                  </p>
+                  {filter !== 'all' && (
+                    <button
+                      type="button"
+                      onClick={() => setFilter('all')}
+                      className="mt-3 inline-block px-3 py-1.5 rounded-lg bg-gray-100 text-xs font-bold text-[#0D2C54] hover:bg-gray-200 transition-colors"
+                    >
+                      Ver todos los artículos ({papers.length})
+                    </button>
+                  )}
+                </div>
+              ) : (
+                filteredPapers.map((paper) => (
                 <motion.div
                   key={paper.id}
                   initial={{ opacity: 0 }}
@@ -932,7 +1093,8 @@ Comité Organizador CLAGTEE 2026`;
                     </div>
                   )}
                 </motion.div>
-              ))}
+              )))
+            }
             </div>
           </div>
         </>
