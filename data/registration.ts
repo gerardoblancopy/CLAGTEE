@@ -7,6 +7,7 @@ export const REGISTRATION_CATEGORY_ORDER: RegistrationCategory[] = [
   'autor',
   'general',
   'estudiante',
+  'empresa-stand',
   'paper-adicional',
   'cena-adicional',
 ];
@@ -20,6 +21,7 @@ export const REGISTRATION_PRICING: Record<RegistrationCategory, CategoryPricing>
   autor: { earlyBird: 300, regular: 350 },
   general: { earlyBird: 250, regular: 300 },
   estudiante: { earlyBird: 150, regular: 180 },
+  'empresa-stand': { earlyBird: 800, regular: 800 },
   'paper-adicional': { earlyBird: 75, regular: 100 },
   'cena-adicional': { earlyBird: 40, regular: 60 },
 };

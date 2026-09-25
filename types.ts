@@ -236,7 +236,8 @@ export type RegistrationCategory =
   | 'general'
   | 'estudiante'
   | 'paper-adicional'
-  | 'cena-adicional';
+  | 'cena-adicional'
+  | 'empresa-stand';
 
 export type RegistrationPhase = 'early-bird' | 'regular';
 
@@ -284,6 +285,14 @@ export interface RegistrationInput {
   mainParticipantEmail?: string;
   ticketUserName?: string;
   ticketDietary?: string;
+  // Empresa / Stand - Exhibición
+  companyName?: string;
+  contactPhone?: string;
+  billingTaxId?: string;
+  standRepresentative2Name?: string;
+  standRepresentative2Email?: string;
+  dinnerAttendeeName?: string;
+  standNotes?: string;
 }
 
 /** Full registration document as stored in Firestore / returned by the API. */
@@ -364,6 +373,30 @@ export interface RegistrationContent {
     couponLabel: string;
     couponPlaceholder: string;
     couponHint: string;
+    // Campos específicos para Empresas (Stand)
+    sectionCompany: string;
+    companyName: string;
+    contactPhone: string;
+    billingTaxId: string;
+    representative1Title: string;
+    representative2Title: string;
+    representative2Name: string;
+    representative2Email: string;
+    sectionStandDinner: string;
+    dinnerAttendeeName: string;
+    standNotes: string;
+    standDetailsTitle: string;
+    standDetailsSpace: string;
+    standDetailsIncludes: string;
+  };
+  companyBanner?: {
+    badge: string;
+    title: string;
+    desc: string;
+    includesTitle: string;
+    includesList: string[];
+    price: string;
+    action: string;
   };
   warnings: {
     studentNoDinner: string;

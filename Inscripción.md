@@ -107,3 +107,5 @@ Autor: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=1898
 Paper adicional: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=1908
 
 Cena de Gala adicional: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=1909
+
+Stand - Exhibición Empresas: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=2215

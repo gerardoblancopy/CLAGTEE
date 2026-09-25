@@ -66,6 +66,26 @@ export const PreRegistroSummary: React.FC = () => {
           <p className="text-sm text-gray-600">
             {r.summary.amountLabel}: <strong>{formatUsd(registration.amountUsd)}</strong>
           </p>
+          {registration.category === 'empresa-stand' && (
+            <>
+              <p className="text-sm text-gray-600">
+                Empresa: <strong>{registration.companyName || registration.affiliation}</strong>
+              </p>
+              <p className="text-sm text-gray-600">
+                Representante 1: <strong>{registration.firstName} {registration.lastName}</strong>
+              </p>
+              {registration.standRepresentative2Name && (
+                <p className="text-sm text-gray-600">
+                  Representante 2: <strong>{registration.standRepresentative2Name}</strong>
+                </p>
+              )}
+              {registration.dinnerAttendeeName && (
+                <p className="text-sm text-gray-600">
+                  Asistente a Cena de Gala: <strong>{registration.dinnerAttendeeName}</strong>
+                </p>
+              )}
+            </>
+          )}
           <p className="text-sm text-gray-600">
             {r.statuses[registration.status]}
           </p>

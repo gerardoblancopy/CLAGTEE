@@ -330,7 +330,26 @@ export const contentEN: Content = {
           "name": "Additional gala dinner",
           "includes": "Additional ticket for the gala dinner.",
           "note": "Does not constitute conference registration."
+        },
+        "empresa-stand": {
+          "name": "Companies (Exhibition Stand)",
+          "includes": "2x2 m² space, table, chairs. Two representatives per stand with full conference access plus one invitation to the gala dinner.",
+          "note": "Dedicated space for companies to showcase products and services, generate business contacts, and present solutions to attendees."
         }
+      },
+      "companyBanner": {
+        "badge": "Corporate Opportunity",
+        "title": "Exhibition Stand for Companies at CLAGTEE 2026",
+        "desc": "A premium space for companies to showcase products and services, forge strategic connections, and present solutions to leaders in the power and energy sector.",
+        "includesTitle": "Each exhibition stand includes:",
+        "includesList": [
+          "Allocated 2x2 m² booth space in prime exhibition area",
+          "Standard furnishings provided: 1 table and chairs",
+          "Full conference credentials for two (2) representatives with access to all keynotes, technical tracks, and coffee breaks",
+          "One (1) official invitation to the Gala Dinner"
+        ],
+        "price": "USD 800",
+        "action": "Register Company Stand"
       },
       "form": {
         "selectLabel": "Registration type",
@@ -338,6 +357,20 @@ export const contentEN: Content = {
         "sectionPaper": "Paper information",
         "sectionStudent": "Student information",
         "sectionDinner": "Additional gala dinner",
+        "sectionCompany": "Company information",
+        "companyName": "Company name / Legal business name",
+        "contactPhone": "Contact phone / WhatsApp",
+        "billingTaxId": "Tax ID / VAT / Registration number (optional)",
+        "representative1Title": "Representative 1 (Primary contact)",
+        "representative2Title": "Representative 2 (Second attendee)",
+        "representative2Name": "Name of representative 2",
+        "representative2Email": "Email address of representative 2",
+        "sectionStandDinner": "Gala dinner (1 pass included)",
+        "dinnerAttendeeName": "Name of attendee for the gala dinner",
+        "standNotes": "Special requests or notes for the stand",
+        "standDetailsTitle": "Company Exhibition Stand",
+        "standDetailsSpace": "2x2 m² space, equipped with table and chairs in prime area.",
+        "standDetailsIncludes": "Includes full conference access for two (2) representatives plus one (1) gala dinner invitation.",
         "firstName": "First name",
         "lastName": "Last name",
         "email": "Email",

@@ -14,6 +14,7 @@ const PUCV_LINKS = {
   estudiante: `${PUCV_BASE}?id=1900`,
   'paper-adicional': `${PUCV_BASE}?id=1908`,
   'cena-adicional': `${PUCV_BASE}?id=1909`,
+  'empresa-stand': `${PUCV_BASE}?id=2215`,
 };
 
 // category -> { 'early-bird': USD, regular: USD, link }
@@ -23,6 +24,7 @@ const PRICING = {
   estudiante: { 'early-bird': 150, regular: 180, link: PUCV_LINKS.estudiante },
   'paper-adicional': { 'early-bird': 75, regular: 100, link: PUCV_LINKS['paper-adicional'] },
   'cena-adicional': { 'early-bird': 40, regular: 60, link: PUCV_LINKS['cena-adicional'] },
+  'empresa-stand': { 'early-bird': 800, regular: 800, link: PUCV_LINKS['empresa-stand'] },
 };
 
 export const REGISTRATION_CATEGORIES = Object.keys(PRICING);
@@ -98,7 +100,7 @@ export const validateRegistrationInput = (input) => {
   if (!lastName) errors.push('lastName');
   if (!isEmail(email)) errors.push('email');
   if (!country) errors.push('country');
-  if (category !== 'cena-adicional' && !affiliation) errors.push('affiliation');
+  if (category !== 'cena-adicional' && category !== 'empresa-stand' && !affiliation) errors.push('affiliation');
 
   const clean = {
     category,
@@ -110,6 +112,31 @@ export const validateRegistrationInput = (input) => {
     dietary: str(input.dietary) || undefined,
     couponCode: str(input.couponCode) || undefined,
   };
+
+  // Empresa (Stand - Exhibición)
+  if (category === 'empresa-stand') {
+    const companyName = str(input.companyName) || affiliation;
+    const contactPhone = str(input.contactPhone);
+    const billingTaxId = str(input.billingTaxId);
+    const standRepresentative2Name = str(input.standRepresentative2Name);
+    const standRepresentative2Email = str(input.standRepresentative2Email);
+    const dinnerAttendeeName = str(input.dinnerAttendeeName);
+    const standNotes = str(input.standNotes);
+
+    if (!companyName) errors.push('companyName');
+    if (!contactPhone) errors.push('contactPhone');
+
+    Object.assign(clean, {
+      companyName,
+      affiliation: companyName,
+      contactPhone,
+      billingTaxId: billingTaxId || undefined,
+      standRepresentative2Name: standRepresentative2Name || undefined,
+      standRepresentative2Email: standRepresentative2Email || undefined,
+      dinnerAttendeeName: dinnerAttendeeName || undefined,
+      standNotes: standNotes || undefined,
+    });
+  }
 
   // Autor / estudiante-autor / paper adicional -> datos del paper
   if (needsPaper(category, studentType)) {

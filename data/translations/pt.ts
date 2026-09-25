@@ -330,7 +330,26 @@ export const contentPT: Content = {
           "name": "Jantar de gala adicional",
           "includes": "Ingresso adicional para o jantar de gala.",
           "note": "Não equivale a inscrição no congresso."
+        },
+        "empresa-stand": {
+          "name": "Empresas (Estande de Exposição)",
+          "includes": "Espaço 2x2 m², mesa, cadeiras. Duas pessoas por estande com acesso completo às conferências e um convite para o jantar de gala.",
+          "note": "Espaço dedicado para empresas exibirem produtos e serviços, gerarem contatos e divulgarem suas soluções aos participantes."
         }
+      },
+      "companyBanner": {
+        "badge": "Oportunidade para Empresas",
+        "title": "Estande de Exposição de Empresas no CLAGTEE 2026",
+        "desc": "Espaço privilegiado para empresas exibirem seus produtos e serviços, gerarem conexões estratégicas e apresentarem soluções para a comunidade do setor elétrico e tomadores de decisão.",
+        "includesTitle": "Cada estande inclui:",
+        "includesList": [
+          "Espaço reservado de 2x2 m² em área nobre de exposição",
+          "Mobiliário básico fornecido: 1 mesa e cadeiras",
+          "Credenciamento completo para duas (2) pessoas por estande com acesso total a conferências magnas, sessões técnicas e coffee breaks",
+          "Um (1) convite oficial para o Jantar de Gala"
+        ],
+        "price": "USD 800",
+        "action": "Inscrever Estande de Empresa"
       },
       "form": {
         "selectLabel": "Tipo de inscrição",
@@ -338,6 +357,20 @@ export const contentPT: Content = {
         "sectionPaper": "Dados do artigo",
         "sectionStudent": "Dados do estudante",
         "sectionDinner": "Jantar de gala adicional",
+        "sectionCompany": "Dados da empresa",
+        "companyName": "Nome da empresa / Razão social",
+        "contactPhone": "Telefone / WhatsApp de contato",
+        "billingTaxId": "CNPJ / NIF / Identificação tributária (opcional)",
+        "representative1Title": "Representante 1 (Contato principal)",
+        "representative2Title": "Representante 2 (Segundo participante)",
+        "representative2Name": "Nome do representante 2",
+        "representative2Email": "E-mail do representante 2",
+        "sectionStandDinner": "Jantar de gala (1 convite incluso)",
+        "dinnerAttendeeName": "Nome do participante no jantar de gala",
+        "standNotes": "Requisitos ou notas especiais para o estande",
+        "standDetailsTitle": "Estande de Exposição para Empresas",
+        "standDetailsSpace": "Espaço de 2x2 m², equipado com mesa e cadeiras em localização preferencial.",
+        "standDetailsIncludes": "Inclui acesso completo a todas as conferências para dois (2) representantes e um (1) convite para o jantar de gala.",
         "firstName": "Nome",
         "lastName": "Sobrenome",
         "email": "E-mail",

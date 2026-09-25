@@ -134,7 +134,7 @@ export const ChairDashboard: React.FC = () => {
       const decision = emailModal.decisionPaper.status === 'accepted' ? 'aceptación' : 'rechazo';
       const alreadyNotified = Boolean(emailModal.decisionPaper.decisionNotifiedAt);
       const confirmMessage = alreadyNotified
-        ? `⚠️ ATENCIÓN: La notificación de ${decision} de "${emailModal.decisionPaper.title}" YA FUE ENVIADA previamente el ${formatDateTime(emailModal.decisionPaper.decisionNotifiedAt!)}.\n\n` +
+        ? `ATENCIÓN: La notificación de ${decision} de "${emailModal.decisionPaper.title}" YA FUE ENVIADA previamente el ${formatDateTime(emailModal.decisionPaper.decisionNotifiedAt!)}.\n\n` +
           `Para evitar enviar notificaciones duplicadas a los autores, confirma si realmente deseas REENVIAR este correo a ${count} destinatario(s).`
         : `Se enviará la notificación de ${decision} de "${emailModal.decisionPaper.title}" a ${count} destinatario(s). Esta acción no se puede deshacer. ¿Continuar?`;
       const ok = window.confirm(confirmMessage);
@@ -255,7 +255,7 @@ export const ChairDashboard: React.FC = () => {
     }
     if (reviewer.assignmentNotifiedAt) {
       return {
-        label: `✓ Aviso enviado (${formatDateTime(reviewer.assignmentNotifiedAt)})`,
+        label: `Aviso enviado (${formatDateTime(reviewer.assignmentNotifiedAt)})`,
         title: `Enviado el: ${reviewer.assignmentNotifiedAt}`,
         className: 'bg-emerald-100 text-emerald-800 border border-emerald-200',
       };
@@ -270,7 +270,7 @@ export const ChairDashboard: React.FC = () => {
   const handleNotifyAssignments = async (reviewer: User, assignedCount: number) => {
     const alreadyNotified = Boolean(reviewer.assignmentNotifiedAt);
     const confirmMessage = alreadyNotified
-      ? `⚠️ ATENCIÓN: El resumen de asignaciones para "${reviewer.name}" YA FUE ENVIADO previamente el ${formatDateTime(reviewer.assignmentNotifiedAt)}.\n\n` +
+      ? `ATENCIÓN: El resumen de asignaciones para "${reviewer.name}" YA FUE ENVIADO previamente el ${formatDateTime(reviewer.assignmentNotifiedAt)}.\n\n` +
         `Para evitar enviar notificaciones duplicadas al revisor, confirma si realmente deseas REENVIAR este resumen con los ${assignedCount} trabajo(s) asignados.`
       : `Se enviará a "${reviewer.name}" <${reviewer.email}> un resumen con los ${assignedCount} trabajo(s) asignados, su estado de revisión y las estadísticas de sus evaluaciones. ¿Continuar?`;
     const ok = window.confirm(confirmMessage);
@@ -399,7 +399,7 @@ Comité Organizador CLAGTEE 2026`;
     if (paper.decisionNotifiedAt) {
       const decision = paper.status === 'accepted' ? 'aceptación' : 'rechazo';
       const ok = window.confirm(
-        `⚠️ ATENCIÓN: La notificación de ${decision} para el trabajo #${paper.id} YA FUE ENVIADA previamente el ${formatDateTime(paper.decisionNotifiedAt)}.\n\n` +
+        `ATENCIÓN: La notificación de ${decision} para el trabajo #${paper.id} YA FUE ENVIADA previamente el ${formatDateTime(paper.decisionNotifiedAt)}.\n\n` +
         `¿Deseas abrir la ventana para REENVIAR la notificación a los autores?`
       );
       if (!ok) return;
@@ -492,7 +492,7 @@ Comité Organizador CLAGTEE 2026`;
               : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
               }`}
           >
-            📄 Papers ({papers.length})
+            Papers ({papers.length})
           </button>
           <button
             onClick={() => setActiveTab('reviewers')}
@@ -501,7 +501,7 @@ Comité Organizador CLAGTEE 2026`;
               : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
               }`}
           >
-            👥 Revisores ({reviewers.length})
+            Revisores ({reviewers.length})
           </button>
           <button
             onClick={() => setActiveTab('authors')}
@@ -510,7 +510,7 @@ Comité Organizador CLAGTEE 2026`;
               : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-50'
               }`}
           >
-            ✍️ Autores ({authors.length})
+            Autores ({authors.length})
           </button>
         </div>
 
@@ -523,7 +523,7 @@ Comité Organizador CLAGTEE 2026`;
             className="bg-[#2A9D8F] text-white px-4 py-3 rounded-xl text-xs md:text-sm font-bold hover:bg-[#238C7E] transition-all flex items-center gap-2 shadow-sm disabled:opacity-50"
             title="Enviar correo a todos los revisores registrados"
           >
-            <span>✉ Enviar email a revisores ({reviewers.length})</span>
+            <span>Enviar email a revisores ({reviewers.length})</span>
           </button>
 
           {reviewersWithPendingReviews.length > 0 && (
@@ -533,7 +533,7 @@ Comité Organizador CLAGTEE 2026`;
               className="bg-amber-600 text-white px-4 py-3 rounded-xl text-xs md:text-sm font-bold hover:bg-amber-700 transition-all flex items-center gap-2 shadow-sm"
               title={`Enviar recordatorio urgente a ${reviewersWithPendingReviews.length} revisores con evaluaciones pendientes`}
             >
-              <span>🔔 Recordar pendientes ({reviewersWithPendingReviews.length})</span>
+              <span>Recordar pendientes ({reviewersWithPendingReviews.length})</span>
             </button>
           )}
         </div>
@@ -636,7 +636,7 @@ Comité Organizador CLAGTEE 2026`;
                 bgColor: 'bg-slate-50',
                 borderColor: 'border-slate-300',
                 ringColor: 'ring-slate-400',
-                icon: '📚',
+                dotColor: 'bg-slate-400',
               },
               {
                 id: 'pending',
@@ -646,7 +646,7 @@ Comité Organizador CLAGTEE 2026`;
                 bgColor: 'bg-yellow-50',
                 borderColor: 'border-yellow-300',
                 ringColor: 'ring-yellow-400',
-                icon: '⏳',
+                dotColor: 'bg-amber-400',
               },
               {
                 id: 'under-review',
@@ -656,7 +656,7 @@ Comité Organizador CLAGTEE 2026`;
                 bgColor: 'bg-blue-50',
                 borderColor: 'border-blue-300',
                 ringColor: 'ring-blue-400',
-                icon: '🔍',
+                dotColor: 'bg-blue-500',
               },
               {
                 id: 'accepted',
@@ -666,7 +666,7 @@ Comité Organizador CLAGTEE 2026`;
                 bgColor: 'bg-emerald-50',
                 borderColor: 'border-emerald-300',
                 ringColor: 'ring-emerald-400',
-                icon: '✅',
+                dotColor: 'bg-emerald-500',
               },
               {
                 id: 'rejected',
@@ -676,7 +676,7 @@ Comité Organizador CLAGTEE 2026`;
                 bgColor: 'bg-rose-50',
                 borderColor: 'border-rose-300',
                 ringColor: 'ring-rose-400',
-                icon: '❌',
+                dotColor: 'bg-rose-500',
               },
               {
                 id: 'withdrawn',
@@ -686,7 +686,7 @@ Comité Organizador CLAGTEE 2026`;
                 bgColor: 'bg-gray-50',
                 borderColor: 'border-gray-300',
                 ringColor: 'ring-gray-400',
-                icon: '📦',
+                dotColor: 'bg-gray-400',
               },
             ].map((item) => {
               const isSelected = filter === item.id;
@@ -704,7 +704,7 @@ Comité Organizador CLAGTEE 2026`;
                 >
                   <div className="flex items-center justify-between w-full mb-1">
                     <span className="text-xs font-bold text-gray-500 truncate">{item.label}</span>
-                    <span className="text-sm">{item.icon}</span>
+                    <span className={`w-2.5 h-2.5 rounded-full ${item.dotColor}`} />
                   </div>
                   <div className="flex items-baseline gap-2 mt-0.5">
                     <span className="text-2xl font-black text-[#0D2C54]">{item.count}</span>
@@ -765,7 +765,7 @@ Comité Organizador CLAGTEE 2026`;
                 }`}
                 title="Filtrar artículos con decisión (aceptados/rechazados) cuya notificación aún no se ha enviado"
               >
-                <span>⚠️ Sin notificar</span>
+                <span>Sin notificar</span>
                 <span className={`px-2 py-0.5 rounded-full text-xs font-black ${
                   filter === 'unnotified' ? 'bg-amber-700 text-white' : 'bg-amber-200 text-amber-900'
                 }`}>
@@ -876,7 +876,7 @@ Comité Organizador CLAGTEE 2026`;
                               className="inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200"
                             >
                               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                              ✓ Notificado ({formatDateTime(paper.decisionNotifiedAt)})
+                              Notificado ({formatDateTime(paper.decisionNotifiedAt)})
                             </span>
                             <button
                               type="button"
@@ -897,7 +897,7 @@ Comité Organizador CLAGTEE 2026`;
                               title="Decisión tomada, pero aún no se ha marcado como notificado por correo"
                               className="inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded bg-amber-50 text-amber-800 border border-amber-200"
                             >
-                              ⚠️ Sin notificar
+                              Sin notificar
                             </span>
                             <button
                               type="button"
@@ -909,7 +909,7 @@ Comité Organizador CLAGTEE 2026`;
                               className="text-[10px] text-blue-600 hover:text-blue-800 font-bold underline transition-colors"
                               title="Hacer clic si ya enviaste la notificación a los autores previamente por otro medio o en días anteriores"
                             >
-                              ✓ Marcar ya notificado
+                              Marcar ya notificado
                             </button>
                           </div>
                         )}
@@ -983,7 +983,7 @@ Comité Organizador CLAGTEE 2026`;
                                 }}
                                 className="text-[#0D2C54] text-[11px] font-bold hover:underline text-left flex items-center gap-1"
                               >
-                                ✉ Email a revisores ({assignedReviewers.length})
+                                Email a revisores ({assignedReviewers.length})
                               </button>
                             </div>
                           )}
@@ -1037,11 +1037,11 @@ Comité Organizador CLAGTEE 2026`;
                             >
                               {paper.decisionNotifiedAt ? (
                                 <>
-                                  <span>✓ {paper.status === 'accepted' ? 'Aceptación' : 'Rechazo'} notificada</span>
+                                  <span>{paper.status === 'accepted' ? 'Aceptación' : 'Rechazo'} notificada</span>
                                   <span className="text-[10px] text-gray-400 font-normal">({formatDateTime(paper.decisionNotifiedAt)}) · Reenviar</span>
                                 </>
                               ) : (
-                                <span>✉ Notificar {paper.status === 'accepted' ? 'aceptación' : 'rechazo'}</span>
+                                <span>Notificar {paper.status === 'accepted' ? 'aceptación' : 'rechazo'}</span>
                               )}
                             </button>
                           )}
@@ -1117,7 +1117,7 @@ Comité Organizador CLAGTEE 2026`;
                 className="bg-[#0D2C54] text-white px-4 py-2.5 rounded-xl text-xs font-bold hover:bg-[#1A4B8A] transition-colors flex items-center gap-1.5 shadow-sm disabled:opacity-50"
                 title="Enviar un correo personalizado a todos los revisores"
               >
-                <span>✉ Enviar email a revisores ({reviewers.length})</span>
+                <span>Enviar email a revisores ({reviewers.length})</span>
               </button>
               {reviewersWithPendingReviews.length > 0 && (
                 <button
@@ -1126,7 +1126,7 @@ Comité Organizador CLAGTEE 2026`;
                   className="bg-amber-600 text-white px-3.5 py-2.5 rounded-xl text-xs font-bold hover:bg-amber-700 transition-colors flex items-center gap-1.5 shadow-sm"
                   title={`Enviar recordatorio a ${reviewersWithPendingReviews.length} revisores con dictámenes pendientes`}
                 >
-                  <span>🔔 Recordar pendientes ({reviewersWithPendingReviews.length})</span>
+                  <span>Recordar pendientes ({reviewersWithPendingReviews.length})</span>
                 </button>
               )}
             </div>
@@ -1271,7 +1271,7 @@ Comité Organizador CLAGTEE 2026`;
                         disabled={isLoading}
                         className="text-[#2A9D8F] text-xs font-bold hover:underline disabled:opacity-50 flex items-center gap-1"
                       >
-                        ✉ Enviar email
+                        Enviar email
                       </button>
                       <button
                         type="button"
@@ -1290,11 +1290,11 @@ Comité Organizador CLAGTEE 2026`;
                       >
                         {reviewer.assignmentNotifiedAt ? (
                           <>
-                            <span>✓ Resumen enviado</span>
+                            <span>Resumen enviado</span>
                             <span className="text-[10px] text-gray-400 font-normal">({formatDateTime(reviewer.assignmentNotifiedAt)}) · Reenviar</span>
                           </>
                         ) : (
-                          <span>📋 Enviar resumen de revisiones</span>
+                          <span>Enviar resumen de revisiones</span>
                         )}
                       </button>
                       <button
@@ -1303,7 +1303,7 @@ Comité Organizador CLAGTEE 2026`;
                         disabled={isLoading}
                         className="text-gray-500 text-xs font-medium hover:underline disabled:opacity-50"
                       >
-                        🔑 Reenviar invitacion
+                        Reenviar invitacion
                       </button>
                       <button
                         type="button"
@@ -1311,7 +1311,7 @@ Comité Organizador CLAGTEE 2026`;
                         disabled={isLoading}
                         className="text-red-500 text-xs font-bold hover:underline disabled:opacity-50"
                       >
-                        🗑️ Eliminar
+                        Eliminar
                       </button>
                     </div>
                   </motion.div>
@@ -1376,7 +1376,7 @@ Comité Organizador CLAGTEE 2026`;
                         onClick={() => openEmailModal(author.email, author.name)}
                         className="text-[#2A9D8F] text-xs font-bold hover:underline text-left"
                       >
-                        ✉️ Enviar email
+                        Enviar email
                       </button>
                       <button
                         type="button"
@@ -1384,7 +1384,7 @@ Comité Organizador CLAGTEE 2026`;
                         disabled={isLoading}
                         className="text-red-500 text-xs font-bold hover:underline text-left disabled:opacity-50"
                       >
-                        🗑️ Eliminar
+                        Eliminar
                       </button>
                     </div>
                   </motion.div>
@@ -1421,7 +1421,6 @@ Comité Organizador CLAGTEE 2026`;
 
             {emailModal.decisionPaper?.decisionNotifiedAt && (
               <div className="mb-4 bg-amber-50 border border-amber-300 rounded-xl p-3 flex items-start gap-2.5 text-amber-900 text-xs">
-                <span className="text-base leading-none">⚠️</span>
                 <div>
                   <p className="font-bold text-amber-900">Notificación enviada previamente</p>
                   <p className="mt-0.5 text-amber-800 leading-relaxed">
@@ -1454,7 +1453,7 @@ Comité Organizador CLAGTEE 2026`;
                       onClick={() => {
                         setEmailForm({
                           subject: '[CLAGTEE 2026] Recordatorio importante: Plazo de revisiones vence mañana – Nueva funcionalidad "Borrador IA"',
-                          body: `Estimado/a colega y miembro del Comité Técnico de Revisores de CLAGTEE 2026,\n\nEsperamos que se encuentre muy bien.\n\nLe escribimos desde el Comité de Programa Técnico de CLAGTEE 2026 para recordarle cordialmente que el plazo límite para el envío de las evaluaciones de los artículos asignados vence mañana.\n\n🚀 NUEVA FUNCIONALIDAD: "Borrador IA" para agilizar su proceso de revisión\n\nCon el objetivo de facilitarle el trabajo y optimizar sus tiempos de evaluación, hemos integrado en la plataforma una nueva herramienta de asistencia:\n• Botón "Borrador IA": Al ingresar a su panel de revisor, verá junto a cada artículo asignado el botón "Borrador IA". Al pulsarlo, el sistema analiza el manuscrito en PDF y genera en segundos un borrador estructurado de evaluación técnica y auditoría de referencias.\n• Ajuste asistido o edición directa: Puede usar "Ajustar Revisión IA" para afinar el dictamen con instrucciones simples o editar el texto libremente.\n• Criterio experto: El borrador es solo una sugerencia de partida para ahorrarle tiempo; la decisión final y las observaciones definitivas están siempre bajo su total supervisión.\n\nPara ingresar y enviar sus evaluaciones, acceda a:\n👉 https://clagtee2026.org/cms\n\nAgradecemos sinceramente su valioso compromiso y colaboración con el congreso.\n\nAtentamente,\nComité de Programa Técnico (TPC)\nXVI Latin-American Congress on Electricity Generation and Transmission (CLAGTEE 2026)\nSitio web: https://clagtee2026.org`,
+                          body: `Estimado/a colega y miembro del Comité Técnico de Revisores de CLAGTEE 2026,\n\nEsperamos que se encuentre muy bien.\n\nLe escribimos desde el Comité de Programa Técnico de CLAGTEE 2026 para recordarle cordialmente que el plazo límite para el envío de las evaluaciones de los artículos asignados vence mañana.\n\nNUEVA FUNCIONALIDAD: "Borrador IA" para agilizar su proceso de revisión\n\nCon el objetivo de facilitarle el trabajo y optimizar sus tiempos de evaluación, hemos integrado en la plataforma una nueva herramienta de asistencia:\n• Botón "Borrador IA": Al ingresar a su panel de revisor, verá junto a cada artículo asignado el botón "Borrador IA". Al pulsarlo, el sistema analiza el manuscrito en PDF y genera en segundos un borrador estructurado de evaluación técnica y auditoría de referencias.\n• Ajuste asistido o edición directa: Puede usar "Ajustar Revisión IA" para afinar el dictamen con instrucciones simples o editar el texto libremente.\n• Criterio experto: El borrador es solo una sugerencia de partida para ahorrarle tiempo; la decisión final y las observaciones definitivas están siempre bajo su total supervisión.\n\nPara ingresar y enviar sus evaluaciones, acceda a:\nhttps://clagtee2026.org/cms\n\nAgradecemos sinceramente su valioso compromiso y colaboración con el congreso.\n\nAtentamente,\nComité de Programa Técnico (TPC)\nXVI Latin-American Congress on Electricity Generation and Transmission (CLAGTEE 2026)\nSitio web: https://clagtee2026.org`,
                         });
                       }}
                       className="px-2 py-0.5 rounded bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold transition-colors"

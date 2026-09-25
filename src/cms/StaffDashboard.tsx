@@ -39,9 +39,22 @@ const categoryLabels: Record<RegistrationCategory, string> = {
   estudiante: 'Estudiante',
   'paper-adicional': 'Paper adicional',
   'cena-adicional': 'Cena adicional',
+  'empresa-stand': 'Stand Empresas',
 };
 
 const PAPER_CATEGORIES: RegistrationCategory[] = ['autor', 'paper-adicional'];
+
+const CheckIcon = ({ className = 'w-3.5 h-3.5' }: { className?: string }) => (
+  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+  </svg>
+);
+
+const XIcon = ({ className = 'w-3.5 h-3.5' }: { className?: string }) => (
+  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+  </svg>
+);
 
 export const StaffDashboard: React.FC = () => {
   const { user } = useAuth();
@@ -117,13 +130,15 @@ export const StaffDashboard: React.FC = () => {
     if (paper) {
       return (
         <span className="inline-flex items-center gap-1 text-green-700" title={paper.title}>
-          ✓ {reg.cmsPaperId}
+          <CheckIcon className="w-3.5 h-3.5" />
+          <span>{reg.cmsPaperId}</span>
         </span>
       );
     }
     return (
       <span className="inline-flex items-center gap-1 text-red-600" title="No coincide con un paper aceptado">
-        ✗ {reg.cmsPaperId}
+        <XIcon className="w-3.5 h-3.5" />
+        <span>{reg.cmsPaperId}</span>
       </span>
     );
   };
@@ -233,7 +248,7 @@ export const StaffDashboard: React.FC = () => {
                         fileName={reg.comprobanteFileName}
                         className="text-[11px] font-bold text-[#2A9D8F] hover:underline"
                       >
-                        📎 Comprobante
+                        Comprobante
                       </DownloadLink>
                     )}
                     {reg.studentProofFileKey && (
@@ -242,7 +257,7 @@ export const StaffDashboard: React.FC = () => {
                         fileName={reg.studentProofFileName}
                         className="text-[11px] font-bold text-[#2A9D8F] hover:underline"
                       >
-                        🎓 Cert. estudiante
+                        Cert. estudiante
                       </DownloadLink>
                     )}
                     {reg.transactionCode && (
@@ -256,6 +271,17 @@ export const StaffDashboard: React.FC = () => {
                     <Detail label="País" value={reg.country} />
                     <Detail label="Afiliación" value={reg.affiliation} />
                     <Detail label="Dieta" value={reg.dietary} />
+                    {reg.companyName && <Detail label="Empresa" value={reg.companyName} />}
+                    {reg.contactPhone && <Detail label="Teléfono" value={reg.contactPhone} />}
+                    {reg.billingTaxId && <Detail label="RUT / Tax ID" value={reg.billingTaxId} />}
+                    {reg.standRepresentative2Name && (
+                      <Detail
+                        label="Representante 2"
+                        value={`${reg.standRepresentative2Name}${reg.standRepresentative2Email ? ` (${reg.standRepresentative2Email})` : ''}`}
+                      />
+                    )}
+                    {reg.dinnerAttendeeName && <Detail label="Asiste a Cena" value={reg.dinnerAttendeeName} />}
+                    {reg.standNotes && <Detail label="Notas Stand" value={reg.standNotes} />}
                     {reg.cmsPaperId && <Detail label="Paper ID (CMS)" value={reg.cmsPaperId} />}
                     {reg.paperTitle && <Detail label="Título paper" value={reg.paperTitle} />}
                     {reg.presenterName && <Detail label="Autor presentador" value={reg.presenterName} />}
@@ -303,11 +329,13 @@ export const StaffDashboard: React.FC = () => {
                   <div className="col-span-5">
                     {regs.length > 0 ? (
                       <span className="inline-flex items-center gap-1 text-green-700 text-xs font-bold">
-                        ✓ Inscrito: {regs.map((r) => r.id).join(', ')}
+                        <CheckIcon className="w-3.5 h-3.5" />
+                        <span>Inscrito: {regs.map((r) => r.id).join(', ')}</span>
                       </span>
                     ) : (
                       <span className="inline-flex items-center gap-1 text-red-600 text-xs font-bold">
-                        ✗ Sin inscripción asociada
+                        <XIcon className="w-3.5 h-3.5" />
+                        <span>Sin inscripción asociada</span>
                       </span>
                     )}
                   </div>

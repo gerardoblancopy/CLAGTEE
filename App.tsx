@@ -537,7 +537,10 @@ const AppContent: React.FC = () => {
                   <p className="text-sm font-bold uppercase tracking-wide text-[#2A9D8F]">{ui.venueCity}</p>
                   <h3 className="text-2xl font-bold text-[#0D2C54]">{ui.venueHotelName}</h3>
                   <p className="flex items-start gap-2 text-base font-semibold text-gray-700">
-                    <span aria-hidden="true">📍</span>
+                    <svg className="w-5 h-5 text-[#2A9D8F] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
                     <span>{ui.venueAddress}</span>
                   </p>
                   <p className="text-base leading-relaxed text-gray-700 font-['Roboto']">{ui.venueDescription}</p>

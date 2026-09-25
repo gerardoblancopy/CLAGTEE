@@ -402,6 +402,7 @@ const REGISTRATION_CATEGORY_LABELS = {
   estudiante: 'Estudiante',
   'paper-adicional': 'Paper adicional',
   'cena-adicional': 'Cena de gala adicional',
+  'empresa-stand': 'Empresas (Stand - Exhibición)',
 };
 
 const emailShell = (title, innerHtml) =>

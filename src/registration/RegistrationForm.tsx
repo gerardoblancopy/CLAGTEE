@@ -23,6 +23,13 @@ const emptyForm = (category: RegistrationCategory): RegistrationInput => ({
   affiliation: '',
   dietary: '',
   couponCode: '',
+  companyName: '',
+  contactPhone: '',
+  billingTaxId: '',
+  standRepresentative2Name: '',
+  standRepresentative2Email: '',
+  dinnerAttendeeName: '',
+  standNotes: '',
 });
 
 const needsPaper = (category: RegistrationCategory, studentType?: StudentType) =>
@@ -30,12 +37,16 @@ const needsPaper = (category: RegistrationCategory, studentType?: StudentType) =
   category === 'paper-adicional' ||
   (category === 'estudiante' && studentType === 'autor');
 
-export const RegistrationForm: React.FC = () => {
+interface RegistrationFormProps {
+  forcedCategory?: RegistrationCategory;
+}
+
+export const RegistrationForm: React.FC<RegistrationFormProps> = ({ forcedCategory }) => {
   const { content } = useLanguage();
   const r = content.sections.registration;
   const { createRegistration, uploadFile, isSubmitting, error } = useRegistration();
 
-  const [form, setForm] = useState<RegistrationInput>(() => emptyForm('autor'));
+  const [form, setForm] = useState<RegistrationInput>(() => emptyForm(forcedCategory || 'autor'));
   const [proofName, setProofName] = useState('');
   const [proofLoading, setProofLoading] = useState(false);
   const [proofError, setProofError] = useState(false);
@@ -50,10 +61,35 @@ export const RegistrationForm: React.FC = () => {
 
   const handleCategory = (next: RegistrationCategory) => {
     // Reset category-specific fields to avoid stale data leaking across types.
-    setForm({ ...emptyForm(next), firstName: form.firstName, lastName: form.lastName, email: form.email, country: form.country, affiliation: form.affiliation, dietary: form.dietary });
+    setForm({
+      ...emptyForm(next),
+      firstName: form.firstName,
+      lastName: form.lastName,
+      email: form.email,
+      country: form.country,
+      affiliation: form.affiliation,
+      dietary: form.dietary,
+      companyName: form.companyName,
+      contactPhone: form.contactPhone,
+      billingTaxId: form.billingTaxId,
+    });
     setProofName('');
     setProofError(false);
   };
+
+  React.useEffect(() => {
+    if (forcedCategory && forcedCategory !== category) {
+      handleCategory(forcedCategory);
+    }
+  }, [forcedCategory]);
+
+  React.useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('cat') as RegistrationCategory;
+    if (cat && REGISTRATION_CATEGORY_ORDER.includes(cat) && cat !== category) {
+      handleCategory(cat);
+    }
+  }, []);
 
   const handleProof = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -80,7 +116,11 @@ export const RegistrationForm: React.FC = () => {
     if (!form.lastName.trim()) m.push('lastName');
     if (!/.+@.+\..+/.test(form.email)) m.push('email');
     if (!form.country.trim()) m.push('country');
-    if (category !== 'cena-adicional' && !form.affiliation.trim()) m.push('affiliation');
+    if (category !== 'cena-adicional' && category !== 'empresa-stand' && !form.affiliation.trim()) m.push('affiliation');
+    if (category === 'empresa-stand') {
+      if (!form.companyName?.trim() && !form.affiliation?.trim()) m.push('companyName');
+      if (!form.contactPhone?.trim()) m.push('contactPhone');
+    }
     if (showPaper) {
       if (!form.cmsPaperId?.trim()) m.push('cmsPaperId');
       if (!form.paperTitle?.trim()) m.push('paperTitle');
@@ -156,40 +196,197 @@ export const RegistrationForm: React.FC = () => {
         </div>
       )}
 
-      {/* Datos personales */}
-      <div className="space-y-4">
-        <h4 className="text-lg font-bold text-[#0D2C54]">{r.form.sectionPersonal}</h4>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className={labelClass}>{r.form.firstName}</label>
-            <input className={inputClass} value={form.firstName} onChange={(e) => set('firstName', e.target.value)} />
-          </div>
-          <div>
-            <label className={labelClass}>{r.form.lastName}</label>
-            <input className={inputClass} value={form.lastName} onChange={(e) => set('lastName', e.target.value)} />
-          </div>
-          <div>
-            <label className={labelClass}>{r.form.email}</label>
-            <input type="email" className={inputClass} value={form.email} onChange={(e) => set('email', e.target.value)} />
-          </div>
-          <div>
-            <label className={labelClass}>{r.form.country}</label>
-            <input className={inputClass} value={form.country} onChange={(e) => set('country', e.target.value)} />
-          </div>
-          {category !== 'cena-adicional' && (
-            <div className="md:col-span-2">
-              <label className={labelClass}>{r.form.affiliation}</label>
-              <input className={inputClass} value={form.affiliation} onChange={(e) => set('affiliation', e.target.value)} />
+      {/* Datos personales / Datos de la empresa */}
+      {category === 'empresa-stand' ? (
+        <div className="space-y-6">
+          {/* Card explicativa destacada del stand */}
+          <div className="bg-[#0D2C54]/5 border-2 border-[#2A9D8F]/30 rounded-2xl p-5 md:p-6 space-y-3">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <span className="bg-[#2A9D8F] text-white text-xs uppercase font-extrabold px-3 py-1 rounded-full tracking-wider">
+                {r.categories['empresa-stand'].name}
+              </span>
+              <span className="text-[#0D2C54] font-extrabold text-xl">USD 800</span>
             </div>
-          )}
-          <div className="md:col-span-2">
-            <label className={labelClass}>
-              {r.form.dietary} <span className="text-gray-400 font-normal">({r.form.optional})</span>
-            </label>
-            <input className={inputClass} value={form.dietary || ''} onChange={(e) => set('dietary', e.target.value)} />
+            <p className="text-sm text-gray-700 leading-relaxed font-medium">
+              {r.categories['empresa-stand'].note}
+            </p>
+            <div className="bg-white rounded-xl p-4 border border-gray-100 text-xs text-gray-600 space-y-2">
+              <div className="flex items-start gap-2 font-semibold text-[#0D2C54]">
+                <svg className="w-4 h-4 text-[#2A9D8F] shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span>{r.form.standDetailsSpace}</span>
+              </div>
+              <div className="flex items-start gap-2 font-semibold text-[#0D2C54]">
+                <svg className="w-4 h-4 text-[#2A9D8F] shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span>{r.form.standDetailsIncludes}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Datos de la Empresa */}
+          <div className="space-y-4">
+            <h4 className="text-lg font-bold text-[#0D2C54]">{r.form.sectionCompany}</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="md:col-span-2">
+                <label className={labelClass}>{r.form.companyName}</label>
+                <input
+                  className={inputClass}
+                  value={form.companyName || form.affiliation || ''}
+                  onChange={(e) => {
+                    set('companyName', e.target.value);
+                    set('affiliation', e.target.value);
+                  }}
+                  placeholder="Nombre de la empresa o razón social"
+                />
+              </div>
+              <div>
+                <label className={labelClass}>{r.form.contactPhone}</label>
+                <input
+                  className={inputClass}
+                  value={form.contactPhone || ''}
+                  onChange={(e) => set('contactPhone', e.target.value)}
+                  placeholder="+56 9 1234 5678"
+                />
+              </div>
+              <div>
+                <label className={labelClass}>
+                  {r.form.billingTaxId} <span className="text-gray-400 font-normal">({r.form.optional})</span>
+                </label>
+                <input
+                  className={inputClass}
+                  value={form.billingTaxId || ''}
+                  onChange={(e) => set('billingTaxId', e.target.value)}
+                  placeholder="RUT / Tax ID / NIF"
+                />
+              </div>
+              <div className="md:col-span-2">
+                <label className={labelClass}>{r.form.country}</label>
+                <input className={inputClass} value={form.country} onChange={(e) => set('country', e.target.value)} />
+              </div>
+            </div>
+          </div>
+
+          {/* Representante 1 */}
+          <div className="space-y-4 border-t border-gray-100 pt-6">
+            <h4 className="text-lg font-bold text-[#0D2C54]">{r.form.representative1Title}</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className={labelClass}>{r.form.firstName}</label>
+                <input className={inputClass} value={form.firstName} onChange={(e) => set('firstName', e.target.value)} />
+              </div>
+              <div>
+                <label className={labelClass}>{r.form.lastName}</label>
+                <input className={inputClass} value={form.lastName} onChange={(e) => set('lastName', e.target.value)} />
+              </div>
+              <div className="md:col-span-2">
+                <label className={labelClass}>{r.form.email}</label>
+                <input type="email" className={inputClass} value={form.email} onChange={(e) => set('email', e.target.value)} />
+              </div>
+            </div>
+          </div>
+
+          {/* Representante 2 */}
+          <div className="space-y-4 border-t border-gray-100 pt-6">
+            <h4 className="text-lg font-bold text-[#0D2C54]">
+              {r.form.representative2Title}{' '}
+              <span className="text-gray-400 font-normal text-sm">({r.form.optional})</span>
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className={labelClass}>{r.form.representative2Name}</label>
+                <input
+                  className={inputClass}
+                  value={form.standRepresentative2Name || ''}
+                  onChange={(e) => set('standRepresentative2Name', e.target.value)}
+                  placeholder="Nombre y apellido"
+                />
+              </div>
+              <div>
+                <label className={labelClass}>{r.form.representative2Email}</label>
+                <input
+                  type="email"
+                  className={inputClass}
+                  value={form.standRepresentative2Email || ''}
+                  onChange={(e) => set('standRepresentative2Email', e.target.value)}
+                  placeholder="correo@empresa.com"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Cena de gala y requerimientos */}
+          <div className="space-y-4 border-t border-gray-100 pt-6">
+            <h4 className="text-lg font-bold text-[#0D2C54]">{r.form.sectionStandDinner}</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="md:col-span-2">
+                <label className={labelClass}>
+                  {r.form.dinnerAttendeeName} <span className="text-gray-400 font-normal">({r.form.optional})</span>
+                </label>
+                <input
+                  className={inputClass}
+                  value={form.dinnerAttendeeName || ''}
+                  onChange={(e) => set('dinnerAttendeeName', e.target.value)}
+                  placeholder="Nombre de la persona que asistirá (ej. Representante 1)"
+                />
+              </div>
+              <div className="md:col-span-2">
+                <label className={labelClass}>
+                  {r.form.dietary} <span className="text-gray-400 font-normal">({r.form.optional})</span>
+                </label>
+                <input className={inputClass} value={form.dietary || ''} onChange={(e) => set('dietary', e.target.value)} />
+              </div>
+              <div className="md:col-span-2">
+                <label className={labelClass}>
+                  {r.form.standNotes} <span className="text-gray-400 font-normal">({r.form.optional})</span>
+                </label>
+                <textarea
+                  className={`${inputClass} resize-y min-h-[80px]`}
+                  value={form.standNotes || ''}
+                  onChange={(e) => set('standNotes', e.target.value)}
+                  placeholder="Ej. Requerimientos de conexión eléctrica, dimensiones especiales de paneles o pendones, etc."
+                />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div className="space-y-4">
+          <h4 className="text-lg font-bold text-[#0D2C54]">{r.form.sectionPersonal}</h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className={labelClass}>{r.form.firstName}</label>
+              <input className={inputClass} value={form.firstName} onChange={(e) => set('firstName', e.target.value)} />
+            </div>
+            <div>
+              <label className={labelClass}>{r.form.lastName}</label>
+              <input className={inputClass} value={form.lastName} onChange={(e) => set('lastName', e.target.value)} />
+            </div>
+            <div>
+              <label className={labelClass}>{r.form.email}</label>
+              <input type="email" className={inputClass} value={form.email} onChange={(e) => set('email', e.target.value)} />
+            </div>
+            <div>
+              <label className={labelClass}>{r.form.country}</label>
+              <input className={inputClass} value={form.country} onChange={(e) => set('country', e.target.value)} />
+            </div>
+            {category !== 'cena-adicional' && (
+              <div className="md:col-span-2">
+                <label className={labelClass}>{r.form.affiliation}</label>
+                <input className={inputClass} value={form.affiliation} onChange={(e) => set('affiliation', e.target.value)} />
+              </div>
+            )}
+            <div className="md:col-span-2">
+              <label className={labelClass}>
+                {r.form.dietary} <span className="text-gray-400 font-normal">({r.form.optional})</span>
+              </label>
+              <input className={inputClass} value={form.dietary || ''} onChange={(e) => set('dietary', e.target.value)} />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Datos del paper */}
       {showPaper && (

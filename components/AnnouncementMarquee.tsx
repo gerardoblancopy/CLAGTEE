@@ -12,9 +12,7 @@ export const AnnouncementMarquee: React.FC<AnnouncementMarqueeProps> = ({ text }
   const group = Array.from({ length: REPEATS_PER_GROUP }, (_, index) => (
     <span key={index} className="flex items-center whitespace-nowrap">
       <span className="px-8 text-sm md:text-base font-bold uppercase tracking-wide">{text}</span>
-      <span aria-hidden="true" className="text-[#F4A261]">
-        ★
-      </span>
+      <span aria-hidden="true" className="w-2 h-2 rounded-full bg-[#F4A261] inline-block" />
     </span>
   ));
 

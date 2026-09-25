@@ -217,14 +217,13 @@ export const ReviewerDashboard: React.FC = () => {
                                                         className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200"
                                                     >
                                                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                                                        ✓ Notificado ({formatDateTime(paper.decisionNotifiedAt)})
+                                                        Notificado ({formatDateTime(paper.decisionNotifiedAt)})
                                                     </span>
                                                 ) : paper.status === 'accepted' || paper.status === 'rejected' ? (
                                                     <span
                                                         title="La decisión ya fue registrada en el sistema pero aún no ha sido notificada oficialmente a los autores por correo"
                                                         className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200"
                                                     >
-                                                        <span>⚠️</span>
                                                         No notificado
                                                     </span>
                                                 ) : (
@@ -323,7 +322,7 @@ export const ReviewerDashboard: React.FC = () => {
                                         {aiAssistedMap[paper.id] && (
                                             <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-emerald-900 shadow-sm">
                                                 <div className="flex items-start space-x-2.5">
-                                                    <span className="text-lg">✨</span>
+                                                    <SparklesIcon className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
                                                     <div className="space-y-0.5">
                                                         <p className="font-bold text-emerald-950">
                                                             Borrador sugerido por IA {aiAssistedMap[paper.id]?.modelUsed ? `(${aiAssistedMap[paper.id]?.modelUsed?.includes('luna') ? 'ChatGPT Luna' : aiAssistedMap[paper.id]?.modelUsed})` : '(Norma CLAGTEE 2026 / IEEE)'}
