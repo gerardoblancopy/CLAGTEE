@@ -103,3 +103,7 @@ Estudiante: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=1900
 General: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=1899
 
 Autor: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=1898
+
+Paper adicional: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=1908
+
+Cena de Gala adicional: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=1909

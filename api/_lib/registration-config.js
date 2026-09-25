@@ -12,6 +12,8 @@ const PUCV_LINKS = {
   autor: `${PUCV_BASE}?id=1898`,
   general: `${PUCV_BASE}?id=1899`,
   estudiante: `${PUCV_BASE}?id=1900`,
+  'paper-adicional': `${PUCV_BASE}?id=1908`,
+  'cena-adicional': `${PUCV_BASE}?id=1909`,
 };
 
 // category -> { 'early-bird': USD, regular: USD, link }
@@ -19,9 +21,8 @@ const PRICING = {
   autor: { 'early-bird': 300, regular: 350, link: PUCV_LINKS.autor },
   general: { 'early-bird': 250, regular: 300, link: PUCV_LINKS.general },
   estudiante: { 'early-bird': 150, regular: 180, link: PUCV_LINKS.estudiante },
-  // TODO: links definitivos pendientes -> por ahora autor/general.
-  'paper-adicional': { 'early-bird': 75, regular: 100, link: PUCV_LINKS.autor },
-  'cena-adicional': { 'early-bird': 40, regular: 60, link: PUCV_LINKS.general },
+  'paper-adicional': { 'early-bird': 75, regular: 100, link: PUCV_LINKS['paper-adicional'] },
+  'cena-adicional': { 'early-bird': 40, regular: 60, link: PUCV_LINKS['cena-adicional'] },
 };
 
 export const REGISTRATION_CATEGORIES = Object.keys(PRICING);
