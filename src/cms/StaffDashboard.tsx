@@ -6,6 +6,7 @@ import { RegistrationCategory, RegistrationRecord, RegistrationStatus } from '..
 import { DownloadLink } from './DownloadLink';
 import { apiFetch } from './api';
 import { StaffMailer } from './StaffMailer';
+import { AcceptedPapersList } from './AcceptedPapersList';
 import { MailSegment, getUncoveredPapers, normalizePaperId, resolveRegistrationPaperId } from './registrationSegments';
 
 const STATUS_ORDER: RegistrationStatus[] = [
@@ -429,47 +430,13 @@ export const StaffDashboard: React.FC = () => {
       </div>
 
       {/* Accepted papers cross-check */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-        <div className="p-4 border-b border-gray-100">
-          <h4 className="text-lg font-bold text-[#0D2C54]">Papers aceptados ({acceptedPapers.length})</h4>
-          <p className="text-sm text-gray-500">Verifica que cada paper aceptado tenga un autor inscrito.</p>
-        </div>
-        <div className="divide-y divide-gray-100">
-          {acceptedPapers.length === 0 ? (
-            <div className="p-8 text-center text-gray-400">No hay papers aceptados aún.</div>
-          ) : (
-            acceptedPapers.map((paper) => {
-              const regs = registrations.filter(
-                (r) =>
-                  r.status !== 'cancelada' &&
-                  resolveRegistrationPaperId(r, acceptedPapers) === normalizePaperId(paper.id)
-              );
-              return (
-                <div key={paper.id} className="grid grid-cols-12 gap-3 p-4 items-center text-sm">
-                  <div className="col-span-1 font-bold text-[#0D2C54]">{paper.id}</div>
-                  <div className="col-span-6">
-                    <p className="font-bold text-gray-800 truncate">{paper.title}</p>
-                    <p className="text-xs text-gray-400 truncate">{paper.authors[0]?.name}</p>
-                  </div>
-                  <div className="col-span-5">
-                    {regs.length > 0 ? (
-                      <span className="inline-flex items-center gap-1 text-green-700 text-xs font-bold">
-                        <CheckIcon className="w-3.5 h-3.5" />
-                        <span>Inscrito: {regs.map((r) => r.id).join(', ')}</span>
-                      </span>
-                    ) : (
-                      <span className="inline-flex items-center gap-1 text-red-600 text-xs font-bold">
-                        <XIcon className="w-3.5 h-3.5" />
-                        <span>Sin inscripción asociada</span>
-                      </span>
-                    )}
-                  </div>
-                </div>
-              );
-            })
-          )}
-        </div>
-      </div>
+      <AcceptedPapersList
+        acceptedPapers={acceptedPapers}
+        registrations={registrations}
+        statusLabels={statusLabels}
+        statusStyles={statusStyles}
+        categoryLabels={categoryLabels}
+      />
 
       {isLoading && <p className="text-center text-sm text-gray-400">Cargando…</p>}
     </div>
