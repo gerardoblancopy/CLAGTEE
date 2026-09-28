@@ -24,6 +24,7 @@ import {
   sendStatusNotification,
 } from '../_lib/participant-access.js';
 import { sendRegistrationReceipt, sendComprobanteReceived, sendCouponConfirmation } from '../_lib/email.js';
+import { handleSponsorshipInquiry } from '../_lib/sponsorship-inquiry.js';
 
 const str = (value) => (typeof value === 'string' ? value.trim() : '');
 
@@ -210,6 +211,12 @@ export default async function handler(req, res) {
       // Correos masivos/individuales del staff: { action: 'notify', ... } (autorizado por token).
       if (str(body?.action) === 'notify') {
         await handleStaffNotify(req, res, body);
+        return;
+      }
+
+      // Pre-reserva o consulta de auspicios corporativos: { action: 'sponsorship-inquiry', ... } (público).
+      if (str(body?.action) === 'sponsorship-inquiry') {
+        await handleSponsorshipInquiry(getFirestore(), res, body);
         return;
       }
 

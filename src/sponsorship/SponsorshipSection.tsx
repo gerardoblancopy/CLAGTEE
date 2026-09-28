@@ -93,10 +93,11 @@ const SponsorshipInquiryForm: React.FC<{ initialTier?: string; onSwitchToStand: 
     setError(null);
 
     try {
-      const response = await fetch('/api/sponsorship-inquiry', {
+      const response = await fetch('/api/registrations', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          action: 'sponsorship-inquiry',
           companyName,
           contactName,
           email,
