@@ -160,19 +160,18 @@ export const StaffDashboard: React.FC = () => {
           <p className="text-gray-500">Gestión de registros, validación de pagos y documentos</p>
         </div>
         <div className="flex flex-wrap gap-3">
-          {[
-            { label: 'Total', value: counts.all, color: 'bg-blue-100 text-blue-600' },
-            { label: 'Comprobante', value: counts['comprobante-recibido'], color: 'bg-blue-100 text-blue-600' },
-            { label: 'Observados', value: counts.observado, color: 'bg-yellow-100 text-yellow-600' },
-            { label: 'Confirmados', value: counts.confirmada, color: 'bg-green-100 text-green-600' },
-          ].map((card) => (
-            <div key={card.label} className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-3">
-              <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${card.color}`}>
-                {card.value}
-              </div>
-              <span className="text-sm font-medium text-gray-600">{card.label}</span>
+          {/* Total = registros iniciados (cualquier estado) + papers aceptados sin iniciar */}
+          <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-3">
+            <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold bg-blue-100 text-blue-600">
+              {counts.all + uncoveredPapers.length}
             </div>
-          ))}
+            <span className="text-sm font-medium text-gray-600 text-left">
+              Total
+              <span className="block text-[11px] text-gray-400">
+                {counts.all} iniciados + {uncoveredPapers.length} sin iniciar
+              </span>
+            </span>
+          </div>
           {/* Papers aceptados sin ninguna inscripción: abre el panel de correos filtrado */}
           <button
             type="button"
@@ -191,6 +190,18 @@ export const StaffDashboard: React.FC = () => {
               <span className="block text-[11px] text-gray-400">papers sin inscripción</span>
             </span>
           </button>
+          {[
+            { label: 'Comprobante', value: counts['comprobante-recibido'], color: 'bg-blue-100 text-blue-600' },
+            { label: 'Observados', value: counts.observado, color: 'bg-yellow-100 text-yellow-600' },
+            { label: 'Confirmados', value: counts.confirmada, color: 'bg-green-100 text-green-600' },
+          ].map((card) => (
+            <div key={card.label} className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-3">
+              <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${card.color}`}>
+                {card.value}
+              </div>
+              <span className="text-sm font-medium text-gray-600">{card.label}</span>
+            </div>
+          ))}
         </div>
       </div>
 
