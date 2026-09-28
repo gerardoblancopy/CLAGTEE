@@ -1,10 +1,12 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useAuth } from './AuthContext';
 import { useCMSData } from './CMSDataContext';
 import { RegistrationCategory, RegistrationRecord, RegistrationStatus } from '../../types';
 import { DownloadLink } from './DownloadLink';
 import { apiFetch } from './api';
+import { StaffMailer } from './StaffMailer';
+import { MailSegment, getUncoveredPapers, normalizePaperId } from './registrationSegments';
 
 const STATUS_ORDER: RegistrationStatus[] = [
   'pre-registro-creado',
@@ -65,6 +67,8 @@ export const StaffDashboard: React.FC = () => {
   const [filter, setFilter] = useState<'all' | RegistrationStatus>('all');
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [updatingId, setUpdatingId] = useState<string | null>(null);
+  const [mailSegment, setMailSegment] = useState<MailSegment>('sin-iniciar');
+  const mailerRef = useRef<HTMLDivElement>(null);
 
   const acceptedPapers = useMemo(() => papers.filter((p) => p.status === 'accepted'), [papers]);
   const acceptedById = useMemo(() => {
@@ -111,6 +115,11 @@ export const StaffDashboard: React.FC = () => {
       setUpdatingId(null);
     }
   };
+
+  const uncoveredPapers = useMemo(
+    () => getUncoveredPapers(acceptedPapers, registrations),
+    [acceptedPapers, registrations]
+  );
 
   const counts = useMemo(() => {
     const c: Record<string, number> = { all: registrations.length };
@@ -164,6 +173,24 @@ export const StaffDashboard: React.FC = () => {
               <span className="text-sm font-medium text-gray-600">{card.label}</span>
             </div>
           ))}
+          {/* Papers aceptados sin ninguna inscripción: abre el panel de correos filtrado */}
+          <button
+            type="button"
+            onClick={() => {
+              setMailSegment('sin-iniciar');
+              mailerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+            title="Papers aceptados sin inscripción activa. Clic para escribir a sus autores."
+            className="bg-white p-4 rounded-xl shadow-sm border border-orange-200 flex items-center space-x-3 hover:bg-orange-50 transition-colors"
+          >
+            <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold bg-orange-100 text-orange-600">
+              {uncoveredPapers.length}
+            </div>
+            <span className="text-sm font-medium text-gray-600 text-left">
+              Sin iniciar
+              <span className="block text-[11px] text-gray-400">papers sin inscripción</span>
+            </span>
+          </button>
         </div>
       </div>
 
@@ -308,6 +335,16 @@ export const StaffDashboard: React.FC = () => {
         </div>
       </div>
 
+      <div ref={mailerRef}>
+        <StaffMailer
+          registrations={registrations}
+          uncoveredPapers={uncoveredPapers}
+          categoryLabels={categoryLabels}
+          segment={mailSegment}
+          onSegmentChange={setMailSegment}
+        />
+      </div>
+
       {/* Accepted papers cross-check */}
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
         <div className="p-4 border-b border-gray-100">
@@ -319,7 +356,9 @@ export const StaffDashboard: React.FC = () => {
             <div className="p-8 text-center text-gray-400">No hay papers aceptados aún.</div>
           ) : (
             acceptedPapers.map((paper) => {
-              const regs = registrations.filter((r) => r.cmsPaperId === paper.id && r.status !== 'cancelada');
+              const regs = registrations.filter(
+                (r) => normalizePaperId(r.cmsPaperId) === normalizePaperId(paper.id) && r.status !== 'cancelada'
+              );
               return (
                 <div key={paper.id} className="grid grid-cols-12 gap-3 p-4 items-center text-sm">
                   <div className="col-span-1 font-bold text-[#0D2C54]">{paper.id}</div>

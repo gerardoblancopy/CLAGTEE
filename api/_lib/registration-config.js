@@ -29,6 +29,12 @@ const PRICING = {
 
 export const REGISTRATION_CATEGORIES = Object.keys(PRICING);
 
+export const getSiteBaseUrl = () =>
+  (process.env.SITE_BASE_URL || 'https://www.clagtee2026.org').replace(/\/$/, '');
+
+export const buildResumeUrl = (id, token) =>
+  `${getSiteBaseUrl()}/?reg=${encodeURIComponent(id)}&token=${encodeURIComponent(token)}#inscripcion`;
+
 // Cupones de descuento. `appliesTo` restringe la categoría; `maxUses` limita el total de
 // canjes (contabilizado en Firestore counters/coupon_<CODE> vía transacción atómica).
 const COUPONS = {

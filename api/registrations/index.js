@@ -11,7 +11,9 @@ import {
   findDuplicateRegistration,
   isRegistrationOwnedBy,
   stripUndefined,
+  buildResumeUrl,
 } from '../_lib/registration-config.js';
+import { handleStaffNotify, handleEmailLog } from '../_lib/registration-notify.js';
 import { sendRegistrationReceipt, sendComprobanteReceived, sendCouponConfirmation } from '../_lib/email.js';
 
 const str = (value) => (typeof value === 'string' ? value.trim() : '');
@@ -82,10 +84,6 @@ const createRegistrationTransaction = async (db, { couponDef, couponKey, buildRe
     return { record };
   });
 
-const buildResumeUrl = (id, token) => {
-  const base = (process.env.SITE_BASE_URL || 'https://www.clagtee2026.org').replace(/\/$/, '');
-  return `${base}/?reg=${encodeURIComponent(id)}&token=${encodeURIComponent(token)}#inscripcion`;
-};
 
 // Reenvía el enlace para retomar cuando alguien intenta inscribirse de nuevo.
 // Solo al correo ya registrado, solo si el registro aún requiere acción del
@@ -153,6 +151,12 @@ export default async function handler(req, res) {
         return;
       }
 
+      // Último correo enviado por destinatario: GET ?scope=email-log (staff/chair).
+      if (getQueryParam(req, 'scope') === 'email-log') {
+        await handleEmailLog(req, res);
+        return;
+      }
+
       // Inscripciones del usuario del CMS: GET ?scope=mine (perfil del autor).
       // Se devuelve el enlace para retomar en vez del token.
       if (getQueryParam(req, 'scope') === 'mine') {
@@ -197,6 +201,13 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
       const body = parseBody(req);
+
+      // Correos masivos/individuales del staff: { action: 'notify', ... } (autorizado por token).
+      if (str(body?.action) === 'notify') {
+        await handleStaffNotify(req, res, body);
+        return;
+      }
+
       const { ok, errors, clean } = validateRegistrationInput(body || {});
       if (!ok) {
         res.status(400).json({ error: 'Invalid registration input', fields: errors });

@@ -251,7 +251,10 @@ const escapeHtml = (value) =>
 
 export const sendCustomEmail = async ({ to, name, subject, body, archiveCopy = false }) => {
 
-  const safeBody = escapeHtml(body).replace(/\n/g, '<br>');
+  // URLs clickeables (sin arrastrar la puntuación final de la oración).
+  const safeBody = escapeHtml(body)
+    .replace(/(https?:\/\/[^\s<]*[^\s<.,;:!?)])/g, '<a href="$1" style="color:#2A9D8F; font-weight:700;">$1</a>')
+    .replace(/\n/g, '<br>');
   const greetingName = name ? escapeHtml(name) : '';
 
   const html = `
