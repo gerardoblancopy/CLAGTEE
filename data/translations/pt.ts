@@ -440,11 +440,10 @@ export const contentPT: Content = {
       },
       "comprobante": {
         "title": "Passo 2: comprovante de pagamento",
-        "instruction": "Após pagar, anexe o comprovante ou informe o número/código da transação.",
+        "instruction": "Após pagar, anexe o comprovante de pagamento (PDF ou imagem). É obrigatório; se tiver, informe também o número da transação.",
         "fileLabel": "Anexar comprovante",
         "fileAccepted": "Formatos aceitos: PDF, JPG ou PNG.",
-        "codeLabel": "Número / código da transação",
-        "eitherHint": "ou"
+        "codeLabel": "Número / código da transação"
       },
       "statuses": {
         "pre-registro-creado": "Status: pré-registro criado (aguardando pagamento).",

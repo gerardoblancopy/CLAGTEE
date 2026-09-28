@@ -440,7 +440,6 @@ export interface RegistrationContent {
     fileLabel: string;
     fileAccepted: string;
     codeLabel: string;
-    eitherHint: string;
   };
   statuses: Record<RegistrationStatus, string>;
   messages: {

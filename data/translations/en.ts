@@ -440,11 +440,10 @@ export const contentEN: Content = {
       },
       "comprobante": {
         "title": "Step 2: payment receipt",
-        "instruction": "After paying, attach the receipt or enter the transaction number/code.",
+        "instruction": "After paying, attach the payment receipt (PDF or image). It is required; if you have it, also add the transaction number.",
         "fileLabel": "Attach receipt",
         "fileAccepted": "Accepted formats: PDF, JPG or PNG.",
-        "codeLabel": "Transaction number / code",
-        "eitherHint": "or"
+        "codeLabel": "Transaction number / code"
       },
       "statuses": {
         "pre-registro-creado": "Status: pre-registration created (payment pending).",

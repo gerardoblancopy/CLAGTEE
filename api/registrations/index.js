@@ -403,8 +403,10 @@ export default async function handler(req, res) {
       const comprobanteUrl = str(body?.comprobanteUrl);
       const comprobanteFileName = str(body?.comprobanteFileName);
       const transactionCode = str(body?.transactionCode);
-      if (!comprobanteFileKey && !transactionCode) {
-        res.status(400).json({ error: 'comprobante or transactionCode required' });
+      // El archivo (PDF o imagen) es obligatorio: sin él no hay "comprobante recibido".
+      // El código de transacción es solo información adicional.
+      if (!comprobanteFileKey) {
+        res.status(400).json({ error: 'comprobante file required' });
         return;
       }
 

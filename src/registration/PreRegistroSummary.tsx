@@ -24,7 +24,8 @@ export const PreRegistroSummary: React.FC = () => {
   // Sin paper (asistente/empresa): su cuenta del CMS se envía por correo al recuperar o confirmar.
   const cmsRole = cmsRoleForRegistration(registration);
   const received = registration.status === 'comprobante-recibido' || registration.status === 'pago-validado' || registration.status === 'confirmada';
-  const canSubmit = !!fileKey || transactionCode.trim().length > 0;
+  // Sin archivo no se puede enviar: el código de transacción solo complementa.
+  const canSubmit = !!fileKey;
 
   const handleFile = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -148,14 +149,10 @@ export const PreRegistroSummary: React.FC = () => {
               {fileError && <span className="block text-xs text-red-500 mt-1">{r.messages.errorGeneric}</span>}
             </label>
 
-            <div className="flex items-center gap-3">
-              <div className="flex-grow border-t border-gray-100" />
-              <span className="text-xs text-gray-400 uppercase">{r.comprobante.eitherHint}</span>
-              <div className="flex-grow border-t border-gray-100" />
-            </div>
-
             <div>
-              <label className="block text-sm font-bold text-gray-700 mb-2">{r.comprobante.codeLabel}</label>
+              <label className="block text-sm font-bold text-gray-700 mb-2">
+                {r.comprobante.codeLabel} <span className="text-gray-400 font-normal">({r.form.optional})</span>
+              </label>
               <input className={inputClass} value={transactionCode} onChange={(e) => setTransactionCode(e.target.value)} />
             </div>
 

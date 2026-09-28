@@ -440,11 +440,10 @@ export const contentES: Content = {
       },
       "comprobante": {
         "title": "Paso 2: comprobante de pago",
-        "instruction": "Tras pagar, adjunte el comprobante o ingrese el número/código de transacción.",
+        "instruction": "Tras pagar, adjunte el comprobante de pago (PDF o imagen). Es obligatorio; si lo tiene, agregue también el número de transacción.",
         "fileLabel": "Adjuntar comprobante",
         "fileAccepted": "Formatos aceptados: PDF, JPG o PNG.",
-        "codeLabel": "Número / código de transacción",
-        "eitherHint": "o"
+        "codeLabel": "Número / código de transacción"
       },
       "statuses": {
         "pre-registro-creado": "Estado: pre-registro creado (pendiente de pago).",
