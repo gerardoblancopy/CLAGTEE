@@ -171,7 +171,7 @@ export default async function handler(req, res) {
         const registrations = registrationsSnap.docs
           .map((doc) => doc.data())
           .filter((record) => isRegistrationOwnedBy(record, { email: session.email, paperIds }))
-          .map((record) => ({ ...stripToken(record), resumeUrl: buildResumeUrl(record.id, record.token) }))
+          .map((record) => ({ ...stripToken(record), resumeUrl: buildResumeUrl(record.id, record.token, record.category) }))
           .sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''));
         res.status(200).json({ registrations });
         return;
@@ -296,7 +296,7 @@ export default async function handler(req, res) {
       }
 
       const record = result.record;
-      const resumeUrl = buildResumeUrl(record.id, record.token);
+      const resumeUrl = buildResumeUrl(record.id, record.token, record.category);
       try {
         if (applyCoupon) {
           await sendCouponConfirmation({

@@ -9,6 +9,7 @@ export const contentEN: Content = {
     { "text": "Tracks", "url": "#ejes" },
     { "text": "Submissions", "url": "#envio" },
     { "text": "Registration", "url": "#inscripcion" },
+    { "text": "Sponsorship", "url": "#patrocinio" },
     { "text": "Speakers", "url": "#conferencistas" },
     { "text": "Venue", "url": "#sede" },
     { "text": "Past Editions", "url": "#ediciones" },
@@ -469,6 +470,232 @@ export const contentEN: Content = {
         "duplicateRegistration": "There is already an active registration ({id}) for this email. Resume it from the link in your pre-registration email or from your author profile in the CMS.",
         "duplicateLinkResent": "We have resent the link to your email.",
         "duplicatePaper": "This paper is already covered by registration {id}. If you are a co-author and will attend, please register in the General category. If you think this is a mistake, contact the organizers."
+      }
+    },
+    "sponsorship": {
+      "title": "Sponsorship & Auspices",
+      "subtitle": "Corporate Sponsorship & Exhibition Opportunities at CLAGTEE 2026",
+      "intro": "Below are the sponsorship tiers available for CLAGTEE 2026, designed to provide varying levels of visibility and participation throughout the conference.",
+      "vatNote": "Note: All values expressed in Chilean Pesos exclude VAT (19%).",
+      "tiersTitle": "Corporate Sponsorship Tiers",
+      "tiersSubtitle": "Connect your organization with the leading scientific, industrial, and government community in electrical energy across Latin America.",
+      "tiers": [
+        {
+          "id": "oro",
+          "name": "GOLD",
+          "badge": "1 Exclusive Slot",
+          "price": "$5,000,000 CLP",
+          "priceNote": "+ VAT (19%)",
+          "slots": "1 (Exclusive)",
+          "description": "Maximum visibility during the event, with prime brand exposure, prominent spaces, participation in promotion and networking sessions, and the option to deliver a technical presentation.",
+          "complimentaryRegistrations": "6 complimentary registrations",
+          "exhibitionSpace": "6 m²",
+          "programAdvertising": "Full page",
+          "technicalLecture": true,
+          "merchandisingLogo": true,
+          "pressMention": true,
+          "dinnerSpeech": true,
+          "dinnerBanner": true
+        },
+        {
+          "id": "plata",
+          "name": "SILVER",
+          "badge": "3 Slots Available",
+          "price": "$4,000,000 CLP",
+          "priceNote": "+ VAT (19%)",
+          "slots": "3 slots",
+          "description": "Aimed at organizations seeking primarily to present their products, services, or technological solutions to a specialized audience.",
+          "complimentaryRegistrations": "4 complimentary registrations",
+          "exhibitionSpace": "4 m²",
+          "programAdvertising": "Half page",
+          "technicalLecture": true,
+          "merchandisingLogo": false,
+          "pressMention": false,
+          "dinnerSpeech": false,
+          "dinnerBanner": true
+        },
+        {
+          "id": "bronce",
+          "name": "BRONZE",
+          "badge": "Subject to availability",
+          "price": "$2,000,000 CLP",
+          "priceNote": "+ VAT (19%)",
+          "slots": "Subject to availability",
+          "description": "An accessible option to support scientific and technological exchange while providing visibility for your organization before a specialized audience.",
+          "complimentaryRegistrations": "2 complimentary registrations",
+          "exhibitionSpace": "4 m²",
+          "programAdvertising": "Mention",
+          "technicalLecture": false,
+          "merchandisingLogo": false,
+          "pressMention": false,
+          "dinnerSpeech": false,
+          "dinnerBanner": false
+        }
+      ],
+      "tableTitle": "Comparative Benefits Matrix",
+      "tableHeaders": {
+        "feature": "Benefit / Feature",
+        "oro": "GOLD ($5,000,000)",
+        "plata": "SILVER ($4,000,000)",
+        "bronce": "BRONZE ($2,000,000)"
+      },
+      "tableRows": [
+        {
+          "label": "Brief description",
+          "oro": "Maximum visibility during the event, prime brand exposure, prominent spaces, networking participation, and technical presentation option.",
+          "plata": "Aimed at organizations primarily seeking to showcase products, services, or technical solutions to a specialized audience.",
+          "bronce": "An accessible option to support scientific and technological exchange while gaining organizational visibility."
+        },
+        {
+          "label": "Contribution",
+          "oro": "$5,000,000 CLP",
+          "plata": "$4,000,000 CLP",
+          "bronce": "$2,000,000 CLP"
+        },
+        {
+          "label": "Slots",
+          "oro": "1 (Exclusive)",
+          "plata": "3",
+          "bronce": "Subject to availability"
+        },
+        {
+          "label": "Complimentary registrations",
+          "oro": "6",
+          "plata": "4",
+          "bronce": "2"
+        },
+        {
+          "label": "Exhibition Space",
+          "oro": "6 m²",
+          "plata": "4 m²",
+          "bronce": "4 m²"
+        },
+        {
+          "label": "Program Advertising",
+          "oro": "Full page",
+          "plata": "Half page",
+          "bronce": "Mention"
+        },
+        {
+          "label": "Technical presentation",
+          "oro": "true",
+          "plata": "true",
+          "bronce": "false",
+          "isBoolean": true
+        },
+        {
+          "label": "Logo on Merchandising",
+          "oro": "true",
+          "plata": "false",
+          "bronce": "false",
+          "isBoolean": true
+        },
+        {
+          "label": "Press Mention",
+          "oro": "true",
+          "plata": "false",
+          "bronce": "false",
+          "isBoolean": true
+        },
+        {
+          "label": "Gala Dinner Speech",
+          "oro": "true",
+          "plata": "false",
+          "bronce": "false",
+          "isBoolean": true
+        },
+        {
+          "label": "Gala Dinner Banner",
+          "oro": "true",
+          "plata": "true",
+          "bronce": "false",
+          "isBoolean": true
+        }
+      ],
+      "standDetails": {
+        "badge": "Commercial Exhibition",
+        "title": "Company Exhibition Stand at CLAGTEE 2026",
+        "price": "USD 800",
+        "desc": "Dedicated space for companies to exhibit products and services, make strategic connections, and present solutions to the electrical engineering community and decision makers.",
+        "includesTitle": "Each stand includes:",
+        "includesList": [
+          "Assigned 2x2 m² space in preferred exhibition area",
+          "Standard furnishings provided: 1 table and chairs",
+          "Full conference registration for two (2) representatives with access to keynote lectures, technical sessions, and coffee breaks",
+          "One (1) official Gala Dinner invitation",
+          "Access to the CMS conference portal with company credentials"
+        ],
+        "action": "Register Stand Online"
+      },
+      "termsTitle": "TERMS OF AGREEMENT AND CANCELLATION - CLAGTEE 2026",
+      "terms": [
+        {
+          "number": "1",
+          "title": "Allocation",
+          "description": "Exhibition spaces and exclusivity levels are allocated on a strict first-come, first-served basis upon receipt of payment."
+        },
+        {
+          "number": "2",
+          "title": "Invoicing",
+          "description": "Payment must be completed within a maximum period of 15 days following the signing of the acceptance form."
+        },
+        {
+          "number": "3",
+          "title": "Refund Policy",
+          "description": "Cancellation more than 90 days prior: 50% refund. Cancellation less than 90 days prior: no refund."
+        },
+        {
+          "number": "4",
+          "title": "Advertising Material",
+          "description": "Sponsors are responsible for delivering graphic material (high-resolution logos and press artwork) before the deadlines communicated by the organizing committee."
+        }
+      ],
+      "preReservation": {
+        "badge": "Strategic Partnerships",
+        "title": "Acceptance Form (Pre-Reservation)",
+        "desc": "If your institution wishes to join as a strategic partner of CLAGTEE 2026 or pre-reserve a sponsorship tier, please fill out the interest form below:",
+        "action": "Complete Sponsor Form",
+        "formTitle": "Sponsorship Pre-Reservation Request",
+        "formDesc": "Provide your institution's contact details and desired sponsorship tier. An organizing coordinator will get in touch shortly.",
+        "companyLabel": "Institution / Company",
+        "companyPlaceholder": "e.g., Enel, Transelec, Siemens, ABB, etc.",
+        "contactNameLabel": "Contact Full Name",
+        "contactNamePlaceholder": "e.g., John Smith",
+        "emailLabel": "Contact Email",
+        "emailPlaceholder": "contact@company.com",
+        "phoneLabel": "Contact Phone / WhatsApp",
+        "phonePlaceholder": "+56 9 1234 5678",
+        "tierLabel": "Tier of Interest",
+        "tierOptions": [
+          { "value": "oro", "label": "GOLD Sponsorship ($5,000,000 CLP + VAT - 1 Slot)" },
+          { "value": "plata", "label": "SILVER Sponsorship ($4,000,000 CLP + VAT - 3 Slots)" },
+          { "value": "bronce", "label": "BRONZE Sponsorship ($2,000,000 CLP + VAT)" },
+          { "value": "stand", "label": "Commercial Exhibition Stand (USD 800)" },
+          { "value": "personalizado", "label": "Custom Sponsorship Proposal / Other" }
+        ],
+        "notesLabel": "Comments or specific requirements (optional)",
+        "notesPlaceholder": "Details about your interest, questions about invoicing or technical requests...",
+        "submitButton": "Submit Sponsorship Pre-Reservation",
+        "submittingButton": "Sending request...",
+        "successTitle": "Pre-Reservation Request Submitted!",
+        "successMessage": "We have received your institution's interest. The CLAGTEE 2026 Organizing Committee will contact you within the next 24 business hours to finalize the agreement and allocation.",
+        "errorMessage": "There was a problem submitting your request. Please try again or write to us at clagtee2026@pucv.cl.",
+        "sendAnother": "Submit another inquiry"
+      },
+      "contact": {
+        "title": "Contact & Coordination",
+        "intro": "For any inquiries, please check the information on our website or contact the CLAGTEE 2026 Organizing Committee directly through our official channels:",
+        "webLabel": "Website",
+        "webValue": "www.clagtee2026.org",
+        "emailLabel": "Email",
+        "emailValue": "clagtee2026@pucv.cl",
+        "phoneLabel": "Phone",
+        "phoneValue": "+56 32 227 3661"
+      },
+      "tabs": {
+        "sponsorships": "Sponsorship Tiers",
+        "standForm": "Stand Registration",
+        "inquiryForm": "Sponsorship Pre-Reservation"
       }
     },
     "speakers": {

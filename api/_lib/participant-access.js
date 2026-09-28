@@ -105,7 +105,7 @@ const STATUS_MESSAGES = {
       paragraph('Revisamos su inscripción y encontramos observaciones que debe corregir:') +
       paragraph(`<strong>${escapeHtml(registration.staffNote || 'Revise los datos y el comprobante informados.')}</strong>`) +
       paragraph('Puede corregirla y volver a adjuntar el comprobante desde este enlace:') +
-      button(buildResumeUrl(registration.id, registration.token), 'Revisar mi inscripción'),
+      button(buildResumeUrl(registration.id, registration.token, registration.category), 'Revisar mi inscripción'),
   },
   'pago-validado': {
     subject: (id) => `Pago validado (${id}) - CLAGTEE 2026`,
@@ -179,7 +179,7 @@ export const sendRecoveryEmail = async (db, registration) => {
     title: 'Retome su inscripción',
     inner:
       paragraph('Puede pagar y adjuntar su comprobante desde este enlace:') +
-      button(buildResumeUrl(registration.id, registration.token), 'Completar mi inscripción') +
+      button(buildResumeUrl(registration.id, registration.token, registration.category), 'Completar mi inscripción') +
       accessBlock(access),
     segment: 'recovery',
     sentBy: 'sistema',

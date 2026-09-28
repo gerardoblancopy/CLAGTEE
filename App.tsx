@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { Component, ReactNode, ErrorInfo } from 'react';
 import { motion, Variants } from 'framer-motion';
 import { designSystem } from './data/content';
 import { useLanguage } from './contexts/LanguageContext';
@@ -23,6 +23,7 @@ import { ParticipantDashboard } from './src/cms/ParticipantDashboard';
 import { SubmissionForm } from './src/cms/SubmissionForm';
 import { CMSDataProvider, useCMSData } from './src/cms/CMSDataContext';
 import { RegistrationSection } from './src/registration/RegistrationSection';
+import { SponsorshipSection } from './src/sponsorship/SponsorshipSection';
 
 const staggerContainer: Variants = {
   hidden: { opacity: 0 },
@@ -45,21 +46,19 @@ const fadeIn: Variants = {
   show: { opacity: 1, transition: { duration: 0.8, ease: 'easeOut' } },
 };
 
-class CMSErrorBoundary extends React.Component<
-  { children: React.ReactNode },
+class CMSErrorBoundary extends Component<
+  { children: ReactNode },
   { hasError: boolean; error: Error | null }
 > {
-  constructor(props: { children: React.ReactNode }) {
-    super(props);
-    this.state = { hasError: false, error: null };
-  }
+  override state = { hasError: false, error: null as Error | null };
+
   static getDerivedStateFromError(error: Error) {
     return { hasError: true, error };
   }
-  componentDidCatch(error: Error, info: React.ErrorInfo) {
+  override componentDidCatch(error: Error, info: ErrorInfo) {
     console.error('[CMS ErrorBoundary]:', error, info);
   }
-  render() {
+  override render() {
     if (this.state.hasError) {
       return (
         <div className="bg-white rounded-2xl shadow-sm border border-red-100 p-8 max-w-xl mx-auto my-12 text-center space-y-4">
@@ -503,6 +502,16 @@ const AppContent: React.FC = () => {
           contentClassName="!max-w-5xl"
         >
           <RegistrationSection />
+        </Section>
+
+        <Section
+          id="patrocinio"
+          title={content.sections.sponsorship.title}
+          className="bg-[#081B33] py-16 md:py-24 border-t border-white/10"
+          titleClassName="text-white"
+          contentClassName="!max-w-6xl"
+        >
+          <SponsorshipSection />
         </Section>
 
         <Section id="conferencistas" title={content.sections.speakers.title} className="bg-gray-100 py-16 md:py-24" contentClassName="!max-w-7xl">

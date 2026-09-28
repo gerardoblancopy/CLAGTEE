@@ -41,8 +41,10 @@ export const cmsRoleForRegistration = (record) => {
   return null;
 };
 
-export const buildResumeUrl = (id, token) =>
-  `${getSiteBaseUrl()}/?reg=${encodeURIComponent(id)}&token=${encodeURIComponent(token)}#inscripcion`;
+export const buildResumeUrl = (id, token, category) => {
+  const hash = category === 'empresa-stand' ? '#patrocinio' : '#inscripcion';
+  return `${getSiteBaseUrl()}/?reg=${encodeURIComponent(id)}&token=${encodeURIComponent(token)}${hash}`;
+};
 
 // Cupones de descuento. `appliesTo` restringe la categoría; `maxUses` limita el total de
 // canjes (contabilizado en Firestore counters/coupon_<CODE> vía transacción atómica).

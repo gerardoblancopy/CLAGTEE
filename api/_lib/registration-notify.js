@@ -41,7 +41,7 @@ const resolveValues = async (db, recipient, paperIds, paperCache) => {
     if (snapshot.exists) {
       const registration = snapshot.data();
       registro = registration.id;
-      enlace = buildResumeUrl(registration.id, registration.token);
+      enlace = buildResumeUrl(registration.id, registration.token, registration.category);
     }
   }
 

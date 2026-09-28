@@ -155,6 +155,7 @@ export interface Content {
       body: string;
     };
     registration: RegistrationContent;
+    sponsorship: SponsorshipContent;
     speakers: {
       title: string;
       subtitle?: string;
@@ -178,6 +179,108 @@ export interface Content {
         members: { name: string; affiliation: string }[];
       };
     };
+  };
+}
+
+export interface SponsorshipTier {
+  id: 'oro' | 'plata' | 'bronce';
+  name: string;
+  badge?: string;
+  price: string;
+  priceNote: string;
+  slots: string;
+  description: string;
+  complimentaryRegistrations: string;
+  exhibitionSpace: string;
+  programAdvertising: string;
+  technicalLecture: boolean;
+  merchandisingLogo: boolean;
+  pressMention: boolean;
+  dinnerSpeech: boolean;
+  dinnerBanner: boolean;
+}
+
+export interface SponsorshipTermsItem {
+  number: string;
+  title: string;
+  description: string;
+}
+
+export interface SponsorshipTableRow {
+  label: string;
+  oro: string;
+  plata: string;
+  bronce: string;
+  isBoolean?: boolean;
+}
+
+export interface SponsorshipContent {
+  title: string;
+  subtitle: string;
+  intro: string;
+  vatNote: string;
+  tiersTitle: string;
+  tiersSubtitle: string;
+  tiers: SponsorshipTier[];
+  tableTitle: string;
+  tableHeaders: {
+    feature: string;
+    oro: string;
+    plata: string;
+    bronce: string;
+  };
+  tableRows: SponsorshipTableRow[];
+  standDetails: {
+    badge: string;
+    title: string;
+    price: string;
+    desc: string;
+    includesTitle: string;
+    includesList: string[];
+    action: string;
+  };
+  termsTitle: string;
+  terms: SponsorshipTermsItem[];
+  preReservation: {
+    badge: string;
+    title: string;
+    desc: string;
+    action: string;
+    formTitle: string;
+    formDesc: string;
+    companyLabel: string;
+    companyPlaceholder: string;
+    contactNameLabel: string;
+    contactNamePlaceholder: string;
+    emailLabel: string;
+    emailPlaceholder: string;
+    phoneLabel: string;
+    phonePlaceholder: string;
+    tierLabel: string;
+    tierOptions: { value: string; label: string }[];
+    notesLabel: string;
+    notesPlaceholder: string;
+    submitButton: string;
+    submittingButton: string;
+    successTitle: string;
+    successMessage: string;
+    errorMessage: string;
+    sendAnother: string;
+  };
+  contact: {
+    title: string;
+    intro: string;
+    webLabel: string;
+    webValue: string;
+    emailLabel: string;
+    emailValue: string;
+    phoneLabel: string;
+    phoneValue: string;
+  };
+  tabs: {
+    sponsorships: string;
+    standForm: string;
+    inquiryForm: string;
   };
 }
 

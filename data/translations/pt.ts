@@ -9,6 +9,7 @@ export const contentPT: Content = {
     { "text": "Eixos Temáticos", "url": "#ejes" },
     { "text": "Submissões", "url": "#envio" },
     { "text": "Inscrição", "url": "#inscripcion" },
+    { "text": "Patrocínio", "url": "#patrocinio" },
     { "text": "Palestrantes", "url": "#conferencistas" },
     { "text": "Local", "url": "#sede" },
     { "text": "Edições", "url": "#ediciones" },
@@ -469,6 +470,232 @@ export const contentPT: Content = {
         "duplicateRegistration": "Já existe uma inscrição ativa ({id}) para este e-mail. Retome-a pelo link do e-mail de pré-registro ou pelo seu perfil de autor no CMS.",
         "duplicateLinkResent": "Reenviamos o link para o seu e-mail.",
         "duplicatePaper": "Este paper já está coberto pela inscrição {id}. Se você é coautor e vai participar, inscreva-se na categoria Geral. Se acha que é um erro, entre em contato com a organização."
+      }
+    },
+    "sponsorship": {
+      "title": "Patrocínios e Apoios",
+      "subtitle": "Modalidades de Patrocínio e Participação Empresarial no CLAGTEE 2026",
+      "intro": "A seguir, apresentam-se as modalidades de patrocínio disponíveis para o congresso CLAGTEE 2026, projetadas para oferecer diferentes níveis de visibilidade e participação durante o evento.",
+      "vatNote": "Nota: Todos os valores expressos em pesos chilenos excluem o IVA (19%).",
+      "tiersTitle": "Modalidades de Patrocínio Corporativo",
+      "tiersSubtitle": "Conecte sua instituição com a comunidade científica, industrial e governamental líder em energia elétrica da América Latina.",
+      "tiers": [
+        {
+          "id": "oro",
+          "name": "OURO",
+          "badge": "1 Vaga (Exclusivo)",
+          "price": "$5.000.000 CLP",
+          "priceNote": "+ IVA (19%)",
+          "slots": "1 (Exclusivo)",
+          "description": "Máxima visibilidade durante o evento, com exposição preferencial de marca, espaços destacados, participação em instâncias de divulgação e networking, e a opção de realizar uma palestra técnica.",
+          "complimentaryRegistrations": "6 inscrições de cortesia",
+          "exhibitionSpace": "6 m²",
+          "programAdvertising": "Página inteira",
+          "technicalLecture": true,
+          "merchandisingLogo": true,
+          "pressMention": true,
+          "dinnerSpeech": true,
+          "dinnerBanner": true
+        },
+        {
+          "id": "plata",
+          "name": "PRATA",
+          "badge": "3 Vagas Disponíveis",
+          "price": "$4.000.000 CLP",
+          "priceNote": "+ IVA (19%)",
+          "slots": "3 vagas",
+          "description": "Orientada a organizações que buscam principalmente apresentar seus produtos, serviços ou soluções tecnológicas para um público especializado.",
+          "complimentaryRegistrations": "4 inscrições de cortesia",
+          "exhibitionSpace": "4 m²",
+          "programAdvertising": "Meia página",
+          "technicalLecture": true,
+          "merchandisingLogo": false,
+          "pressMention": false,
+          "dinnerSpeech": false,
+          "dinnerBanner": true
+        },
+        {
+          "id": "bronce",
+          "name": "BRONZE",
+          "badge": "Conforme disponibilidade",
+          "price": "$2.000.000 CLP",
+          "priceNote": "+ IVA (19%)",
+          "slots": "Conforme disponibilidade",
+          "description": "Uma opção acessível para apoiar o intercâmbio científico e tecnológico e dar visibilidade à sua organização perante um público especializado.",
+          "complimentaryRegistrations": "2 inscrições de cortesia",
+          "exhibitionSpace": "4 m²",
+          "programAdvertising": "Menção",
+          "technicalLecture": false,
+          "merchandisingLogo": false,
+          "pressMention": false,
+          "dinnerSpeech": false,
+          "dinnerBanner": false
+        }
+      ],
+      "tableTitle": "Matriz Comparativa de Benefícios",
+      "tableHeaders": {
+        "feature": "Benefício / Característica",
+        "oro": "OURO ($5.000.000)",
+        "plata": "PRATA ($4.000.000)",
+        "bronce": "BRONZE ($2.000.000)"
+      },
+      "tableRows": [
+        {
+          "label": "Breve descrição",
+          "oro": "Máxima visibilidade durante o evento, exposição preferencial de marca, espaços destacados, networking e opção de palestra técnica.",
+          "plata": "Voltada para organizações que buscam principalmente apresentar produtos, serviços ou soluções tecnológicas para público especializado.",
+          "bronce": "Opção acessível para apoiar o intercâmbio científico e tecnológico e obter visibilidade institucional."
+        },
+        {
+          "label": "Contribuição",
+          "oro": "$5.000.000 CLP",
+          "plata": "$4.000.000 CLP",
+          "bronce": "$2.000.000 CLP"
+        },
+        {
+          "label": "Vagas",
+          "oro": "1 (Exclusivo)",
+          "plata": "3",
+          "bronce": "Conforme disponibilidade"
+        },
+        {
+          "label": "Inscrições cortesia",
+          "oro": "6",
+          "plata": "4",
+          "bronce": "2"
+        },
+        {
+          "label": "Espaço de Exposição",
+          "oro": "6 m²",
+          "plata": "4 m²",
+          "bronce": "4 m²"
+        },
+        {
+          "label": "Publicidade no Programa",
+          "oro": "Página inteira",
+          "plata": "Meia página",
+          "bronce": "Menção"
+        },
+        {
+          "label": "Palestra técnica",
+          "oro": "true",
+          "plata": "true",
+          "bronce": "false",
+          "isBoolean": true
+        },
+        {
+          "label": "Logo em Merchandising",
+          "oro": "true",
+          "plata": "false",
+          "bronce": "false",
+          "isBoolean": true
+        },
+        {
+          "label": "Menção na Imprensa",
+          "oro": "true",
+          "plata": "false",
+          "bronce": "false",
+          "isBoolean": true
+        },
+        {
+          "label": "Discurso no Jantar",
+          "oro": "true",
+          "plata": "false",
+          "bronce": "false",
+          "isBoolean": true
+        },
+        {
+          "label": "Banner no Jantar",
+          "oro": "true",
+          "plata": "true",
+          "bronce": "false",
+          "isBoolean": true
+        }
+      ],
+      "standDetails": {
+        "badge": "Participação Comercial",
+        "title": "Estande de Exposição para Empresas no CLAGTEE 2026",
+        "price": "USD 800",
+        "desc": "Espaço destinado para que as empresas exponham seus produtos e serviços, estabeleçam contatos estratégicos e apresentem suas soluções aos participantes e tomadores de decisão.",
+        "includesTitle": "Cada estande inclui:",
+        "includesList": [
+          "Espaço atribuído de 2x2 m² em área preferencial de exposição",
+          "Mobiliário fornecido: 1 mesa e cadeiras",
+          "Credenciamento completo para dois (2) representantes com acesso total a palestras magnas, sessões técnicas e coffee breaks",
+          "Um (1) convite oficial para o Jantar de Gala",
+          "Acesso à plataforma CMS com perfil empresarial para gestão de participantes"
+        ],
+        "action": "Inscrever Estande Online"
+      },
+      "termsTitle": "TERMOS DE ACORDO E CANCELAMENTO - CLAGTEE 2026",
+      "terms": [
+        {
+          "number": "1",
+          "title": "Atribuição",
+          "description": "Os espaços de exposição e os níveis de exclusividade são atribuídos por estrita ordem de pagamento (\"First-come, first-served\")."
+        },
+        {
+          "number": "2",
+          "title": "Faturamento",
+          "description": "O pagamento deve ser efetuado no prazo máximo de 15 dias a contar da assinatura do formulário de aceitação."
+        },
+        {
+          "number": "3",
+          "title": "Política de Reembolso",
+          "description": "Cancelamento com mais de 90 dias de antecedência: reembolso de 50%. Cancelamento com menos de 90 dias de antecedência: sem direito a reembolso."
+        },
+        {
+          "number": "4",
+          "title": "Material Publicitário",
+          "description": "Os patrocinadores são responsáveis por entregar o material gráfico (logotipos em alta resolução e artes de imprensa) antes dos prazos comunicados pela organização."
+        }
+      ],
+      "preReservation": {
+        "badge": "Alianças Estratégicas",
+        "title": "Formulário de Aceitação (Pré-Reserva)",
+        "desc": "Se sua instituição deseja somar-se como parceira estratégica do CLAGTEE 2026 ou reservar uma das modalidades de patrocínio corporativo, convidamos a preencher o formulário abaixo:",
+        "action": "Preencher Formulário de Patrocinadores",
+        "formTitle": "Solicitação de Pré-Reserva de Patrocínio",
+        "formDesc": "Informe os dados de sua instituição e modalidade de patrocínio desejada. Um coordenador do Comitê Organizador entrará em contato em breve.",
+        "companyLabel": "Instituição / Empresa",
+        "companyPlaceholder": "Ex: Enel, Transelec, Siemens, ABB, etc.",
+        "contactNameLabel": "Nome e Sobrenome do Contato",
+        "contactNamePlaceholder": "Ex: João Silva",
+        "emailLabel": "E-mail de Contato",
+        "emailPlaceholder": "contato@empresa.com",
+        "phoneLabel": "Telefone / WhatsApp de Contato",
+        "phonePlaceholder": "+56 9 1234 5678",
+        "tierLabel": "Modalidade de Interesse",
+        "tierOptions": [
+          { "value": "oro", "label": "Patrocínio OURO ($5.000.000 CLP + IVA - 1 Vaga)" },
+          { "value": "plata", "label": "Patrocínio PRATA ($4.000.000 CLP + IVA - 3 Vagas)" },
+          { "value": "bronce", "label": "Patrocínio BRONZE ($2.000.000 CLP + IVA)" },
+          { "value": "stand", "label": "Estande de Exposição Comercial (USD 800)" },
+          { "value": "personalizado", "label": "Proposta de Patrocínio Sob Medida / Outra" }
+        ],
+        "notesLabel": "Comentários ou necessidades específicas (opcional)",
+        "notesPlaceholder": "Detalhes sobre o interesse da sua empresa, dúvidas sobre faturamento ou solicitações técnicas...",
+        "submitButton": "Enviar Pré-Reserva de Patrocínio",
+        "submittingButton": "Enviando solicitação...",
+        "successTitle": "Solicitação de Pré-Reserva Enviada!",
+        "successMessage": "Recebemos com sucesso o interesse de sua instituição. O Comitê Organizador do CLAGTEE 2026 entrará em contato nas próximas 24 horas úteis para coordenar o acordo e a atribuição.",
+        "errorMessage": "Houve um problema ao enviar sua solicitação. Por favor, tente novamente ou escreva para clagtee2026@pucv.cl.",
+        "sendAnother": "Enviar outra solicitação"
+      },
+      "contact": {
+        "title": "Contato e Coordenação",
+        "intro": "Para qualquer dúvida ou consulta, consulte as informações em nosso site e contate o Comitê Organizador do CLAGTEE 2026 pelos canais oficiais:",
+        "webLabel": "Site",
+        "webValue": "www.clagtee2026.org",
+        "emailLabel": "E-mail",
+        "emailValue": "clagtee2026@pucv.cl",
+        "phoneLabel": "Telefone",
+        "phoneValue": "+56 32 227 3661"
+      },
+      "tabs": {
+        "sponsorships": "Modalidades de Patrocínio",
+        "standForm": "Inscrição de Estande",
+        "inquiryForm": "Pré-Reserva de Patrocínio"
       }
     },
     "speakers": {

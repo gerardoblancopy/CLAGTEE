@@ -40,14 +40,23 @@ const needsPaper = (category: RegistrationCategory, studentType?: StudentType) =
 
 interface RegistrationFormProps {
   forcedCategory?: RegistrationCategory;
+  allowedCategories?: RegistrationCategory[];
+  hideCategorySelect?: boolean;
 }
 
-export const RegistrationForm: React.FC<RegistrationFormProps> = ({ forcedCategory }) => {
+export const RegistrationForm: React.FC<RegistrationFormProps> = ({
+  forcedCategory,
+  allowedCategories,
+  hideCategorySelect,
+}) => {
   const { content } = useLanguage();
   const r = content.sections.registration;
   const { createRegistration, uploadFile, isSubmitting, error, conflict } = useRegistration();
 
-  const [form, setForm] = useState<RegistrationInput>(() => emptyForm(forcedCategory || 'autor'));
+  const categoriesList = allowedCategories || (forcedCategory ? [forcedCategory] : REGISTRATION_CATEGORY_ORDER);
+  const initialCat = forcedCategory || (allowedCategories ? allowedCategories[0] : 'autor');
+
+  const [form, setForm] = useState<RegistrationInput>(() => emptyForm(initialCat));
   const [proofName, setProofName] = useState('');
   const [proofLoading, setProofLoading] = useState(false);
   const [proofError, setProofError] = useState(false);
@@ -87,7 +96,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ forcedCatego
   React.useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const cat = params.get('cat') as RegistrationCategory;
-    if (cat && REGISTRATION_CATEGORY_ORDER.includes(cat) && cat !== category) {
+    if (cat && categoriesList.includes(cat) && cat !== category) {
       handleCategory(cat);
     }
   }, []);
@@ -177,20 +186,22 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ forcedCatego
       <ResumeBanner />
 
       {/* Tipo de inscripción */}
-      <div>
-        <label className={labelClass}>{r.form.selectLabel}</label>
-        <select className={inputClass} value={category} onChange={(e) => handleCategory(e.target.value as RegistrationCategory)}>
-          {REGISTRATION_CATEGORY_ORDER.map((c) => (
-            <option key={c} value={c}>
-              {r.categories[c].name} — {formatUsd(REGISTRATION_PRICING[c][phase === 'early-bird' ? 'earlyBird' : 'regular'])}
-            </option>
-          ))}
-        </select>
-        <p className="text-sm text-gray-500 mt-2">{r.categories[category].includes}</p>
-        {r.categories[category].note && (
-          <p className="text-sm text-[#E76F51] font-semibold mt-1">{r.categories[category].note}</p>
-        )}
-      </div>
+      {!hideCategorySelect && (
+        <div>
+          <label className={labelClass}>{r.form.selectLabel}</label>
+          <select className={inputClass} value={category} onChange={(e) => handleCategory(e.target.value as RegistrationCategory)}>
+            {categoriesList.map((c) => (
+              <option key={c} value={c}>
+                {r.categories[c].name} — {formatUsd(REGISTRATION_PRICING[c][phase === 'early-bird' ? 'earlyBird' : 'regular'])}
+              </option>
+            ))}
+          </select>
+          <p className="text-sm text-gray-500 mt-2">{r.categories[category].includes}</p>
+          {r.categories[category].note && (
+            <p className="text-sm text-[#E76F51] font-semibold mt-1">{r.categories[category].note}</p>
+          )}
+        </div>
+      )}
 
       {/* Cupón de descuento */}
       {category === 'autor' && (

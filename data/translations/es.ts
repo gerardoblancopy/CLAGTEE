@@ -9,6 +9,7 @@ export const contentES: Content = {
     { "text": "Ejes", "url": "#ejes" },
     { "text": "Envíos", "url": "#envio" },
     { "text": "Inscripción", "url": "#inscripcion" },
+    { "text": "Patrocinio", "url": "#patrocinio" },
     { "text": "Conferencistas", "url": "#conferencistas" },
     { "text": "Sede", "url": "#sede" },
     { "text": "Ediciones", "url": "#ediciones" },
@@ -469,6 +470,232 @@ export const contentES: Content = {
         "duplicateRegistration": "Ya existe una inscripción activa ({id}) para este correo. Retómela desde el enlace del correo de pre-registro o desde su perfil de autor en el CMS.",
         "duplicateLinkResent": "Le reenviamos el enlace a su correo.",
         "duplicatePaper": "Este paper ya está cubierto por la inscripción {id}. Si usted es coautor y asistirá, inscríbase en la categoría General. Si cree que es un error, contacte a la organización."
+      }
+    },
+    "sponsorship": {
+      "title": "Patrocinios y Auspicios",
+      "subtitle": "Modalidades de Auspicio y Participación Empresarial en CLAGTEE 2026",
+      "intro": "A continuación, se presentan las modalidades de auspicio disponibles para el congreso CLAGTEE 2026, diseñadas para ofrecer distintos niveles de visibilidad y participación durante el evento.",
+      "vatNote": "Nota: Todos los valores expresados en pesos chilenos excluyen el IVA (19%).",
+      "tiersTitle": "Modalidades de Auspicio Corporativo",
+      "tiersSubtitle": "Conecte su institución con la comunidad científica, industrial y gubernamental líder en energía eléctrica de América Latina.",
+      "tiers": [
+        {
+          "id": "oro",
+          "name": "ORO",
+          "badge": "1 Cupo (Exclusivo)",
+          "price": "$5.000.000 CLP",
+          "priceNote": "+ IVA (19%)",
+          "slots": "1 (Exclusivo)",
+          "description": "Máxima visibilidad durante el evento, con exposición preferente de marca, espacios destacados, participación en instancias de difusión y networking, y la opción de realizar una charla técnica.",
+          "complimentaryRegistrations": "6 inscripciones de cortesía",
+          "exhibitionSpace": "6 m²",
+          "programAdvertising": "Página completa",
+          "technicalLecture": true,
+          "merchandisingLogo": true,
+          "pressMention": true,
+          "dinnerSpeech": true,
+          "dinnerBanner": true
+        },
+        {
+          "id": "plata",
+          "name": "PLATA",
+          "badge": "3 Cupos Disponibles",
+          "price": "$4.000.000 CLP",
+          "priceNote": "+ IVA (19%)",
+          "slots": "3 cupos",
+          "description": "Orientada a organizaciones que buscan principalmente presentar sus productos, servicios o soluciones tecnológicas ante una audiencia especializada.",
+          "complimentaryRegistrations": "4 inscripciones de cortesía",
+          "exhibitionSpace": "4 m²",
+          "programAdvertising": "Media página",
+          "technicalLecture": true,
+          "merchandisingLogo": false,
+          "pressMention": false,
+          "dinnerSpeech": false,
+          "dinnerBanner": true
+        },
+        {
+          "id": "bronce",
+          "name": "BRONCE",
+          "badge": "Según disponibilidad",
+          "price": "$2.000.000 CLP",
+          "priceNote": "+ IVA (19%)",
+          "slots": "Según disponibilidad",
+          "description": "Una opción accesible para apoyar el intercambio científico y tecnológico y dar visibilidad a su organización ante una audiencia especializada.",
+          "complimentaryRegistrations": "2 inscripciones de cortesía",
+          "exhibitionSpace": "4 m²",
+          "programAdvertising": "Mención",
+          "technicalLecture": false,
+          "merchandisingLogo": false,
+          "pressMention": false,
+          "dinnerSpeech": false,
+          "dinnerBanner": false
+        }
+      ],
+      "tableTitle": "Matriz Comparativa de Beneficios",
+      "tableHeaders": {
+        "feature": "Beneficio / Característica",
+        "oro": "ORO ($5.000.000)",
+        "plata": "PLATA ($4.000.000)",
+        "bronce": "BRONCE ($2.000.000)"
+      },
+      "tableRows": [
+        {
+          "label": "Breve descripción",
+          "oro": "Máxima visibilidad durante el evento, con exposición preferente de marca, espacios destacados, participación en instancias de difusión y networking, y la opción de realizar una charla técnica.",
+          "plata": "Orientada a organizaciones que buscan principalmente presentar sus productos, servicios o soluciones tecnológicas ante una audiencia especializada.",
+          "bronce": "Una opción accesible para apoyar el intercambio científico y tecnológico y dar visibilidad a su organización ante una audiencia especializada."
+        },
+        {
+          "label": "Contribución",
+          "oro": "$5.000.000 CLP",
+          "plata": "$4.000.000 CLP",
+          "bronce": "$2.000.000 CLP"
+        },
+        {
+          "label": "Cupos",
+          "oro": "1 (Exclusivo)",
+          "plata": "3",
+          "bronce": "Según disponibilidad"
+        },
+        {
+          "label": "Inscripciones cortesía",
+          "oro": "6",
+          "plata": "4",
+          "bronce": "2"
+        },
+        {
+          "label": "Espacio Exhibición",
+          "oro": "6 m²",
+          "plata": "4 m²",
+          "bronce": "4 m²"
+        },
+        {
+          "label": "Publicidad en Programa",
+          "oro": "Página completa",
+          "plata": "Media página",
+          "bronce": "Mención"
+        },
+        {
+          "label": "Conferencia técnica",
+          "oro": "true",
+          "plata": "true",
+          "bronce": "false",
+          "isBoolean": true
+        },
+        {
+          "label": "Logo en Merchandising",
+          "oro": "true",
+          "plata": "false",
+          "bronce": "false",
+          "isBoolean": true
+        },
+        {
+          "label": "Mención en Prensa",
+          "oro": "true",
+          "plata": "false",
+          "bronce": "false",
+          "isBoolean": true
+        },
+        {
+          "label": "Discurso en Cena",
+          "oro": "true",
+          "plata": "false",
+          "bronce": "false",
+          "isBoolean": true
+        },
+        {
+          "label": "Banner en Cena",
+          "oro": "true",
+          "plata": "true",
+          "bronce": "false",
+          "isBoolean": true
+        }
+      ],
+      "standDetails": {
+        "badge": "Participación Comercial",
+        "title": "Stand - Exhibición de Empresas en CLAGTEE 2026",
+        "price": "USD 800",
+        "desc": "Espacio destinado para que las empresas exhiban sus productos y servicios, generen contactos estratégicos y den a conocer sus soluciones a la comunidad de energía eléctrica y tomadores de decisión.",
+        "includesTitle": "Cada stand incluye:",
+        "includesList": [
+          "Espacio asignado de 2x2 m² en zona preferente de exhibición",
+          "Mobiliario provisto: 1 mesa y sillas",
+          "Acreditación completa para dos (2) personas por stand con acceso total a conferencias magistrales, sesiones técnicas y coffee breaks",
+          "Una (1) invitación oficial a la Cena de Gala",
+          "Acceso a la plataforma CMS con perfil de empresa para gestión de participantes"
+        ],
+        "action": "Inscribir Stand en Línea"
+      },
+      "termsTitle": "TÉRMINOS DE ACUERDO Y CANCELACIÓN - CLAGTEE 2026",
+      "terms": [
+        {
+          "number": "1",
+          "title": "Asignación",
+          "description": "Los espacios de exhibición y los niveles de exclusividad se asignan por estricto orden de pago (\"First-come, first-served\")."
+        },
+        {
+          "number": "2",
+          "title": "Facturación",
+          "description": "El pago debe realizarse en un plazo máximo de 15 días a partir de la firma del formulario de aceptación."
+        },
+        {
+          "number": "3",
+          "title": "Política de Reembolso",
+          "description": "Cancelación con más de 90 días de antelación: reembolso del 50%. Cancelación con menos de 90 días de antelación: sin derecho a reembolso."
+        },
+        {
+          "number": "4",
+          "title": "Material Publicitario",
+          "description": "Los patrocinadores son responsables de entregar el material gráfico (logos en alta resolución y artes de prensa) antes de las fechas límite comunicadas por la organización."
+        }
+      ],
+      "preReservation": {
+        "badge": "Alianzas Estratégicas",
+        "title": "Formulario de Aceptación (Pre-Reserva)",
+        "desc": "Si su institución desea sumarse como aliada estratégica de CLAGTEE 2026 o reservar una de las modalidades de auspicio corporativo, le invitamos a completar el siguiente formulario de interés:",
+        "action": "Completar Formulario de Auspiciadores",
+        "formTitle": "Solicitud de Pre-Reserva de Auspicio",
+        "formDesc": "Indique la información de su institución y modalidad de auspicio deseada. Un coordinador del Comité Organizador se pondrá en contacto a la brevedad.",
+        "companyLabel": "Institución / Empresa",
+        "companyPlaceholder": "Ej: Enel, Transelec, Siemens, ABB, etc.",
+        "contactNameLabel": "Nombre y Apellido de Contacto",
+        "contactNamePlaceholder": "Ej: Juan Pérez",
+        "emailLabel": "Correo Electrónico de Contacto",
+        "emailPlaceholder": "contacto@empresa.com",
+        "phoneLabel": "Teléfono / WhatsApp de Contacto",
+        "phonePlaceholder": "+56 9 1234 5678",
+        "tierLabel": "Modalidad de Interés",
+        "tierOptions": [
+          { "value": "oro", "label": "Auspicio ORO ($5.000.000 CLP + IVA - 1 Cupo)" },
+          { "value": "plata", "label": "Auspicio PLATA ($4.000.000 CLP + IVA - 3 Cupos)" },
+          { "value": "bronce", "label": "Auspicio BRONCE ($2.000.000 CLP + IVA)" },
+          { "value": "stand", "label": "Stand de Exhibición Comercial (USD 800)" },
+          { "value": "personalizado", "label": "Propuesta de Auspicio a Medida / Otra" }
+        ],
+        "notesLabel": "Comentarios o requerimientos específicos (opcional)",
+        "notesPlaceholder": "Detalles sobre su interés en el evento, dudas sobre facturación o solicitudes técnicas...",
+        "submitButton": "Enviar Pre-Reserva de Auspicio",
+        "submittingButton": "Enviando solicitud...",
+        "successTitle": "¡Solicitud de Pre-Reserva Enviada!",
+        "successMessage": "Hemos recibido exitosamente el interés de su institución. El Comité Organizador de CLAGTEE 2026 se comunicará con usted dentro de las próximas 24 horas hábiles para coordinar el acuerdo y la asignación.",
+        "errorMessage": "Hubo un inconveniente al enviar su solicitud. Por favor intente nuevamente o escríbanos a clagtee2026@pucv.cl.",
+        "sendAnother": "Enviar otra solicitud"
+      },
+      "contact": {
+        "title": "Contacto y Coordinación",
+        "intro": "Ante cualquier duda o consulta, puede revisar toda la información disponible en nuestro sitio web y contactar al Comité Organizador de CLAGTEE 2026 a través de los siguientes canales oficiales:",
+        "webLabel": "Sitio Web",
+        "webValue": "www.clagtee2026.org",
+        "emailLabel": "Email",
+        "emailValue": "clagtee2026@pucv.cl",
+        "phoneLabel": "Teléfono",
+        "phoneValue": "+56 32 227 3661"
+      },
+      "tabs": {
+        "sponsorships": "Modalidades de Auspicio",
+        "standForm": "Inscripción de Stand",
+        "inquiryForm": "Pre-Reserva de Auspicio"
       }
     },
     "speakers": {

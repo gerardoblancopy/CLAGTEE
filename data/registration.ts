@@ -3,13 +3,21 @@ import { RegistrationCategory, RegistrationPhase } from '../types';
 // Espejo de cliente para mostrar la tabla de tarifas y estimar el monto.
 // La autoridad de precios/links sigue siendo el servidor (api/_lib/registration-config.js).
 
+export const CONFERENCE_REGISTRATION_CATEGORIES: RegistrationCategory[] = [
+  'autor',
+  'general',
+  'estudiante',
+  'paper-adicional',
+  'cena-adicional',
+];
+
 export const REGISTRATION_CATEGORY_ORDER: RegistrationCategory[] = [
   'autor',
   'general',
   'estudiante',
-  'empresa-stand',
   'paper-adicional',
   'cena-adicional',
+  'empresa-stand',
 ];
 
 export interface CategoryPricing {
