@@ -65,6 +65,7 @@ export const StaffDashboard: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [filter, setFilter] = useState<'all' | RegistrationStatus>('all');
+  const [categoryFilter, setCategoryFilter] = useState<'all' | RegistrationCategory>('all');
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [updatingId, setUpdatingId] = useState<string | null>(null);
   const [mailSegment, setMailSegment] = useState<MailSegment>('sin-iniciar');
@@ -127,9 +128,18 @@ export const StaffDashboard: React.FC = () => {
     return c;
   }, [registrations]);
 
-  const filtered = useMemo(
+  // Filtros combinables: cada fila de chips cuenta dentro del filtro elegido en la otra.
+  const inStatus = useMemo(
     () => (filter === 'all' ? registrations : registrations.filter((r) => r.status === filter)),
     [filter, registrations]
+  );
+  const inCategory = useMemo(
+    () => (categoryFilter === 'all' ? registrations : registrations.filter((r) => r.category === categoryFilter)),
+    [categoryFilter, registrations]
+  );
+  const filtered = useMemo(
+    () => (categoryFilter === 'all' ? inStatus : inStatus.filter((r) => r.category === categoryFilter)),
+    [inStatus, categoryFilter]
   );
 
   const renderPaperMatch = (reg: RegistrationRecord) => {
@@ -209,19 +219,38 @@ export const StaffDashboard: React.FC = () => {
         <div className="bg-red-50 border border-red-100 text-red-600 text-sm px-4 py-3 rounded-xl">{error}</div>
       )}
 
-      {/* Filter */}
-      <div className="flex flex-wrap gap-2">
-        {(['all', ...STATUS_ORDER] as const).map((f) => (
-          <button
-            key={f}
-            onClick={() => setFilter(f)}
-            className={`px-4 py-2 rounded-lg text-sm font-bold transition-colors ${
-              filter === f ? 'bg-[#0D2C54] text-white' : 'bg-gray-50 text-gray-500 hover:bg-gray-100'
-            }`}
-          >
-            {f === 'all' ? `Todos (${counts.all})` : `${statusLabels[f]} (${counts[f]})`}
-          </button>
-        ))}
+      {/* Filtros: estado y categoría de inscripción */}
+      <div className="space-y-3">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-xs font-bold text-gray-400 uppercase w-20">Estado</span>
+          {(['all', ...STATUS_ORDER] as const).map((f) => (
+            <button
+              key={f}
+              onClick={() => setFilter(f)}
+              className={`px-4 py-2 rounded-lg text-sm font-bold transition-colors ${
+                filter === f ? 'bg-[#0D2C54] text-white' : 'bg-gray-50 text-gray-500 hover:bg-gray-100'
+              }`}
+            >
+              {f === 'all' ? 'Todos' : statusLabels[f]} (
+              {f === 'all' ? inCategory.length : inCategory.filter((r) => r.status === f).length})
+            </button>
+          ))}
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-xs font-bold text-gray-400 uppercase w-20">Categoría</span>
+          {(['all', ...(Object.keys(categoryLabels) as RegistrationCategory[])] as const).map((c) => (
+            <button
+              key={c}
+              onClick={() => setCategoryFilter(c)}
+              className={`px-4 py-2 rounded-lg text-sm font-bold transition-colors ${
+                categoryFilter === c ? 'bg-[#2A9D8F] text-white' : 'bg-gray-50 text-gray-500 hover:bg-gray-100'
+              }`}
+            >
+              {c === 'all' ? 'Todas' : categoryLabels[c]} (
+              {c === 'all' ? inStatus.length : inStatus.filter((r) => r.category === c).length})
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Table */}
