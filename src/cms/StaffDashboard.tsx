@@ -46,6 +46,9 @@ export const categoryLabels: Record<RegistrationCategory, string> = {
 
 const PAPER_CATEGORIES: RegistrationCategory[] = ['autor', 'paper-adicional'];
 
+// Estados que envían un correo automático al participante (ver api/_lib/participant-access.js).
+const NOTIFY_STATUSES: RegistrationStatus[] = ['observado', 'pago-validado', 'confirmada'];
+
 const CheckIcon = ({ className = 'w-3.5 h-3.5' }: { className?: string }) => (
   <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -64,6 +67,7 @@ export const StaffDashboard: React.FC = () => {
   const [registrations, setRegistrations] = useState<RegistrationRecord[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
   const [filter, setFilter] = useState<'all' | RegistrationStatus>('all');
   const [categoryFilter, setCategoryFilter] = useState<'all' | RegistrationCategory>('all');
   const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -99,17 +103,41 @@ export const StaffDashboard: React.FC = () => {
 
   const updateStatus = async (id: string, newStatus: RegistrationStatus) => {
     if (!user) return;
+    const current = registrations.find((r) => r.id === id);
+    const willNotify = Boolean(current) && current!.status !== newStatus && NOTIFY_STATUSES.includes(newStatus);
+    let staffNote: string | undefined;
+    if (willNotify && newStatus === 'observado') {
+      const note = window.prompt(
+        `Motivo de la observación de ${id}. Se incluirá en el correo automático a ${current!.email}:`,
+        current!.staffNote || ''
+      );
+      if (note === null) return;
+      staffNote = note.trim() || undefined;
+    } else if (
+      willNotify &&
+      !window.confirm(
+        `Se cambiará ${id} a "${statusLabels[newStatus]}" y se enviará un correo automático a ${current!.email}. ¿Continuar?`
+      )
+    ) {
+      return;
+    }
+
     setUpdatingId(id);
     setError(null);
+    setNotice(null);
     try {
       const response = await apiFetch('/api/registrations', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id, newStatus }),
+        body: JSON.stringify({ id, newStatus, staffNote }),
       });
       if (!response.ok) throw new Error('update-failed');
-      const payload = (await response.json()) as { registration: RegistrationRecord };
+      const payload = (await response.json()) as { registration: RegistrationRecord; notified?: boolean };
       setRegistrations((prev) => prev.map((r) => (r.id === id ? payload.registration : r)));
+      if (willNotify) {
+        if (payload.notified) setNotice(`${id}: estado actualizado y correo enviado a ${current!.email}.`);
+        else setError(`${id}: estado actualizado, pero no se pudo enviar el correo a ${current!.email}.`);
+      }
     } catch {
       setError('No se pudo actualizar el estado.');
     } finally {
@@ -217,6 +245,9 @@ export const StaffDashboard: React.FC = () => {
 
       {error && (
         <div className="bg-red-50 border border-red-100 text-red-600 text-sm px-4 py-3 rounded-xl">{error}</div>
+      )}
+      {notice && (
+        <div className="bg-green-50 border border-green-100 text-green-700 text-sm px-4 py-3 rounded-xl">{notice}</div>
       )}
 
       {/* Filtros: estado y categoría de inscripción */}
@@ -365,6 +396,12 @@ export const StaffDashboard: React.FC = () => {
                     {reg.ticketDietary && <Detail label="Dieta ticket" value={reg.ticketDietary} />}
                     {reg.staffNote && <Detail label="Nota staff" value={reg.staffNote} />}
                     {reg.reviewedBy && <Detail label="Revisado por" value={reg.reviewedBy} />}
+                    {reg.statusNotifiedAt && reg.statusNotified && (
+                      <Detail
+                        label="Último aviso automático"
+                        value={`${statusLabels[reg.statusNotified]} · ${new Date(reg.statusNotifiedAt).toLocaleString()}`}
+                      />
+                    )}
                     {reg.cancelledBy === 'participant' && <Detail label="Anulado por" value="El participante" />}
                     <Detail label="Creado" value={new Date(reg.createdAt).toLocaleString()} />
                   </div>

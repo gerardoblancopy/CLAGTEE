@@ -32,6 +32,15 @@ export const REGISTRATION_CATEGORIES = Object.keys(PRICING);
 export const getSiteBaseUrl = () =>
   (process.env.SITE_BASE_URL || 'https://www.clagtee2026.org').replace(/\/$/, '');
 
+// Rol del CMS para inscripciones sin paper. Las que tienen paper (autor, paper
+// adicional, estudiante autor) usan la cuenta de autor, así que no tienen rol propio.
+export const cmsRoleForRegistration = (record) => {
+  if (record.category === 'empresa-stand') return 'company';
+  if (record.category === 'general' || record.category === 'cena-adicional') return 'attendee';
+  if (record.category === 'estudiante' && record.studentType !== 'autor') return 'attendee';
+  return null;
+};
+
 export const buildResumeUrl = (id, token) =>
   `${getSiteBaseUrl()}/?reg=${encodeURIComponent(id)}&token=${encodeURIComponent(token)}#inscripcion`;
 

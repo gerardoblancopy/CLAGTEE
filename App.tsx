@@ -19,6 +19,7 @@ import { LoginScreen } from './src/cms/LoginScreen';
 import { ChairDashboard } from './src/cms/ChairDashboard';
 import { ReviewerDashboard } from './src/cms/ReviewerDashboard';
 import { StaffDashboard } from './src/cms/StaffDashboard';
+import { ParticipantDashboard } from './src/cms/ParticipantDashboard';
 import { SubmissionForm } from './src/cms/SubmissionForm';
 import { CMSDataProvider, useCMSData } from './src/cms/CMSDataContext';
 import { RegistrationSection } from './src/registration/RegistrationSection';
@@ -106,6 +107,8 @@ const CMSContainer: React.FC<{
       setActiveCmsTab('admin');
     } else if (user.role === 'staff') {
       setActiveCmsTab('staff');
+    } else if (user.role === 'attendee' || user.role === 'company') {
+      setActiveCmsTab('registration');
     } else {
       setActiveCmsTab('submissions');
     }
@@ -200,6 +203,11 @@ const CMSContainer: React.FC<{
       {activeCmsTab === 'staff' && (
         <CMSErrorBoundary>
           <StaffDashboard />
+        </CMSErrorBoundary>
+      )}
+      {activeCmsTab === 'registration' && (
+        <CMSErrorBoundary>
+          <ParticipantDashboard />
         </CMSErrorBoundary>
       )}
     </CMSLayout>

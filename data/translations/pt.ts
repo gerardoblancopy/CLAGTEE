@@ -425,13 +425,18 @@ export const contentPT: Content = {
         "amountLabel": "Valor a pagar",
         "payInstruction": "Passo 1: pague na plataforma PUCV correspondente à sua categoria (abre em uma nova aba).",
         "resumeNote": "Enviamos um e-mail com um link para retomar este pré-registro mais tarde.",
+        "participantNote": "Se perder este link, solicite seu acesso em \"Já iniciou sua inscrição?\" no formulário: enviaremos o link e uma senha provisória do CMS.",
         "profileNote": "Se você tem conta de autor no CMS, também pode retomá-lo a partir do seu perfil (entre com o mesmo e-mail).",
         "profileLink": "Ir para meu perfil"
       },
       "resumeBanner": {
         "title": "Já iniciou sua inscrição?",
-        "desc": "Se você já preencheu este formulário (por exemplo, ainda falta pagar ou enviar o comprovante), não o preencha novamente. Retome seu pré-registro a partir do seu perfil de autor no CMS, entrando com o mesmo e-mail, ou pelo link do e-mail de confirmação.",
-        "action": "Ir para meu perfil no CMS"
+        "desc": "Se você já preencheu este formulário (por exemplo, ainda falta pagar ou enviar o comprovante), não o preencha novamente. Retome seu pré-registro a partir do seu perfil no CMS ou pelo link do e-mail de confirmação. Se não tem conta ou perdeu o link, informe seu e-mail e enviaremos o link e seu acesso ao CMS.",
+        "action": "Ir para meu perfil no CMS",
+        "recoverLabel": "E-mail usado na inscrição",
+        "recoverButton": "Enviar meu acesso",
+        "recoverSending": "Enviando…",
+        "recoverSent": "Se houver uma inscrição pendente com esse e-mail, enviamos uma mensagem com o link para concluí-la e seu acesso ao CMS. Verifique também a pasta de spam."
       },
       "comprobante": {
         "title": "Passo 2: comprovante de pagamento",

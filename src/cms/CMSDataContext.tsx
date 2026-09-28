@@ -145,7 +145,8 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
   };
 
   useEffect(() => {
-    if (!user) {
+    // Asistentes y empresas no tienen trabajos: la API les responde 403.
+    if (!user || user.role === 'attendee' || user.role === 'company') {
       setPapers([]);
       return;
     }

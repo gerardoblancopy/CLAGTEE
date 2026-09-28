@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { formatUsd } from '../../data/registration';
+import { cmsRoleForRegistration, formatUsd } from '../../data/registration';
 import { useRegistration } from './RegistrationContext';
 
 const inputClass =
@@ -21,6 +21,8 @@ export const PreRegistroSummary: React.FC = () => {
   if (!registration) return null;
 
   const couponApplied = Boolean(registration.couponCode);
+  // Sin paper (asistente/empresa): su cuenta del CMS se envía por correo al recuperar o confirmar.
+  const cmsRole = cmsRoleForRegistration(registration);
   const received = registration.status === 'comprobante-recibido' || registration.status === 'pago-validado' || registration.status === 'confirmada';
   const canSubmit = !!fileKey || transactionCode.trim().length > 0;
 
@@ -95,12 +97,18 @@ export const PreRegistroSummary: React.FC = () => {
             {r.statuses[registration.status]}
           </p>
         </div>
-        <p className="text-sm text-gray-500">
-          {r.summary.resumeNote} {r.summary.profileNote}{' '}
-          <a href="/cms" className="font-bold text-[#2A9D8F] hover:underline">
-            {r.summary.profileLink}
-          </a>
-        </p>
+        {cmsRole ? (
+          <p className="text-sm text-gray-500">
+            {r.summary.resumeNote} {r.summary.participantNote}
+          </p>
+        ) : (
+          <p className="text-sm text-gray-500">
+            {r.summary.resumeNote} {r.summary.profileNote}{' '}
+            <a href="/cms" className="font-bold text-[#2A9D8F] hover:underline">
+              {r.summary.profileLink}
+            </a>
+          </p>
+        )}
       </div>
 
       {couponApplied ? (

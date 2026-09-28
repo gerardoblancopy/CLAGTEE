@@ -26,6 +26,19 @@ export const REGISTRATION_PRICING: Record<RegistrationCategory, CategoryPricing>
   'cena-adicional': { earlyBird: 40, regular: 60 },
 };
 
+// Rol del CMS para inscripciones sin paper (espejo de cmsRoleForRegistration en el servidor).
+export type ParticipantRole = 'attendee' | 'company';
+
+export const cmsRoleForRegistration = (record: {
+  category: RegistrationCategory;
+  studentType?: string;
+}): ParticipantRole | null => {
+  if (record.category === 'empresa-stand') return 'company';
+  if (record.category === 'general' || record.category === 'cena-adicional') return 'attendee';
+  if (record.category === 'estudiante' && record.studentType !== 'autor') return 'attendee';
+  return null;
+};
+
 // Categorías que SIEMPRE requieren datos de paper. Para 'estudiante' depende de studentType === 'autor'.
 export const ALWAYS_PAPER_CATEGORIES: RegistrationCategory[] = ['autor', 'paper-adicional'];
 

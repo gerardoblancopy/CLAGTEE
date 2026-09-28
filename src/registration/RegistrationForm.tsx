@@ -9,6 +9,7 @@ import {
 } from '../../types';
 import { REGISTRATION_CATEGORY_ORDER, REGISTRATION_PRICING, formatUsd, getClientPhase } from '../../data/registration';
 import { useRegistration } from './RegistrationContext';
+import { ResumeBanner } from './ResumeBanner';
 
 const inputClass =
   'w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#2A9D8F] outline-none transition-all';
@@ -173,19 +174,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ forcedCatego
 
   return (
     <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 md:p-10 text-left space-y-8">
-      {/* Aviso para quien ya inició su inscripción: retomar desde el CMS en vez de duplicar */}
-      <div className="bg-[#F4A261]/10 border-2 border-[#F4A261] rounded-2xl p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div className="space-y-1">
-          <p className="text-lg font-bold text-[#0D2C54]">{r.resumeBanner.title}</p>
-          <p className="text-sm text-gray-600 leading-relaxed">{r.resumeBanner.desc}</p>
-        </div>
-        <a
-          href="/cms"
-          className="shrink-0 text-center bg-[#0D2C54] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#1A4B8A] transition-all shadow-lg"
-        >
-          {r.resumeBanner.action}
-        </a>
-      </div>
+      <ResumeBanner />
 
       {/* Tipo de inscripción */}
       <div>

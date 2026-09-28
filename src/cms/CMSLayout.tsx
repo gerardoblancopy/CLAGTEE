@@ -14,7 +14,7 @@ interface NavItem {
   id: string;
   label: string;
   icon: React.ReactNode;
-  roles: Array<'author' | 'reviewer' | 'chair' | 'staff' | 'all'>;
+  roles: Array<User['role'] | 'all'>;
 }
 
 const navItems: NavItem[] = [
@@ -23,6 +23,7 @@ const navItems: NavItem[] = [
   { id: 'reviews', label: 'Revisiones', icon: <ReviewIcon className="w-5 h-5" />, roles: ['reviewer'] },
   { id: 'admin', label: 'Administración', icon: <SettingsIcon className="w-5 h-5" />, roles: ['chair'] },
   { id: 'staff', label: 'Inscripciones', icon: <SubmissionIcon className="w-5 h-5" />, roles: ['staff', 'chair'] },
+  { id: 'registration', label: 'Mi Inscripción', icon: <UserIcon className="w-5 h-5" />, roles: ['attendee', 'company'] },
 ];
 
 interface CMSLayoutProps {

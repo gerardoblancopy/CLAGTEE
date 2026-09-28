@@ -12,8 +12,15 @@ import {
   isRegistrationOwnedBy,
   stripUndefined,
   buildResumeUrl,
+  cmsRoleForRegistration,
 } from '../_lib/registration-config.js';
 import { handleStaffNotify, handleEmailLog } from '../_lib/registration-notify.js';
+import {
+  NOTIFY_STATUSES,
+  handleRecoverRequest,
+  sendRecoveryEmail,
+  sendStatusNotification,
+} from '../_lib/participant-access.js';
 import { sendRegistrationReceipt, sendComprobanteReceived, sendCouponConfirmation } from '../_lib/email.js';
 
 const str = (value) => (typeof value === 'string' ? value.trim() : '');
@@ -85,36 +92,15 @@ const createRegistrationTransaction = async (db, { couponDef, couponKey, buildRe
   });
 
 
-// Reenvía el enlace para retomar cuando alguien intenta inscribirse de nuevo.
-// Solo al correo ya registrado, solo si el registro aún requiere acción del
-// participante y como máximo una vez cada 15 min (el POST es público).
-const RESEND_COOLDOWN_MS = 15 * 60 * 1000;
-
+// Cuando alguien intenta inscribirse de nuevo con una inscripción pendiente, se le
+// reenvía el enlace para retomarla junto con su acceso al CMS. Solo al correo ya
+// registrado (máximo cada 15 min, ver sendRecoveryEmail).
 const resendResumeLink = async (db, record, requesterEmail) => {
-  if (!['pre-registro-creado', 'observado'].includes(record.status)) return false;
   if (str(record.email).toLowerCase() !== str(requesterEmail).toLowerCase()) return false;
-
-  const lastSentAt = Date.parse(record.linkResentAt || '') || 0;
-  if (Date.now() - lastSentAt < RESEND_COOLDOWN_MS) return true;
-
   try {
-    await db.collection('registrations').doc(record.id).set(
-      { linkResentAt: new Date().toISOString() },
-      { merge: true }
-    );
-    await sendRegistrationReceipt({
-      to: record.email,
-      name: `${record.firstName || ''} ${record.lastName || ''}`.trim(),
-      id: record.id,
-      category: record.category,
-      amountUsd: record.amountUsd,
-      currency: record.currency,
-      paymentUrl: record.paymentUrl,
-      resumeUrl: buildResumeUrl(record.id, record.token),
-    });
-    return true;
+    return await sendRecoveryEmail(db, record);
   } catch (error) {
-    console.error('[registrations] resume link resend failed:', error?.message);
+    console.error('[registrations] recovery email failed:', error?.message);
     return false;
   }
 };
@@ -201,6 +187,12 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
       const body = parseBody(req);
+
+      // Recuperar inscripción inconclusa por correo: { action: 'recover', email } (público).
+      if (str(body?.action) === 'recover') {
+        await handleRecoverRequest(getFirestore(), res, body);
+        return;
+      }
 
       // Correos masivos/individuales del staff: { action: 'notify', ... } (autorizado por token).
       if (str(body?.action) === 'notify') {
@@ -311,6 +303,7 @@ export default async function handler(req, res) {
             currency: pricing.currency,
             paymentUrl: pricing.paymentUrl,
             resumeUrl,
+            cmsRole: cmsRoleForRegistration(record),
           });
         }
       } catch (emailError) {
@@ -347,6 +340,7 @@ export default async function handler(req, res) {
           res.status(404).json({ error: 'Registration not found' });
           return;
         }
+        const previousStatus = snapshot.data().status;
         await ref.set(
           {
             status: newStatus,
@@ -356,8 +350,23 @@ export default async function handler(req, res) {
           },
           { merge: true }
         );
+
+        // Aviso automático al participante (y acceso al CMS si no tiene paper).
+        // Un fallo del correo no revierte el cambio de estado.
+        let notified = false;
+        if (previousStatus !== newStatus && NOTIFY_STATUSES.includes(newStatus)) {
+          try {
+            notified = await sendStatusNotification(db, (await ref.get()).data(), staffSession.email);
+            if (notified) {
+              await ref.set({ statusNotifiedAt: new Date().toISOString(), statusNotified: newStatus }, { merge: true });
+            }
+          } catch (error) {
+            console.error('[registrations] status notification failed:', error?.message);
+          }
+        }
+
         const updated = await ref.get();
-        res.status(200).json({ registration: stripToken(updated.data()) });
+        res.status(200).json({ registration: stripToken(updated.data()), notified });
         return;
       }
 

@@ -40,7 +40,7 @@ const getSmtpTransporter = () => {
   return smtpTransporter;
 };
 
-const CMS_URL = 'https://www.clagTEE2026.org/cms'.toLowerCase();
+export const CMS_URL = 'https://www.clagTEE2026.org/cms'.toLowerCase();
 // Use verified domain for production emails
 const SENDER_EMAIL = process.env.SENDER_EMAIL || 'clagtee2026@clagtee.org';
 // Replies from recipients go here, matching the contact address in the email footer
@@ -241,7 +241,7 @@ export const sendReviewerInvitation = async ({ to, name, tempPassword }) => {
   });
 };
 
-const escapeHtml = (value) =>
+export const escapeHtml = (value) =>
   String(value)
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -408,7 +408,7 @@ const REGISTRATION_CATEGORY_LABELS = {
   'empresa-stand': 'Empresas (Stand - Exhibición)',
 };
 
-const emailShell = (title, innerHtml) =>
+export const emailShell = (title, innerHtml) =>
   `
 <!DOCTYPE html>
 <html lang="es">
@@ -458,8 +458,13 @@ export const sendRegistrationReceipt = async ({
   currency = 'USD',
   paymentUrl,
   resumeUrl,
+  cmsRole = null,
 }) => {
   const categoryLabel = REGISTRATION_CATEGORY_LABELS[category] || category || '';
+  // Sin paper (asistente/empresa): la cuenta del CMS se crea sola y se envía al recuperar o confirmar.
+  const cmsNote = cmsRole
+    ? 'Si pierde este correo, pida su acceso desde «¿Ya inició su inscripción?» en el formulario de inscripción: le enviaremos el enlace y una contraseña provisional del CMS. CMS:'
+    : 'Si tiene cuenta de autor en el CMS, también puede retomar su pre-registro desde su perfil (ingrese con el mismo correo):';
 
   const inner = `
     <h1 style="margin:0 0 12px; font-size:22px; line-height:1.3; color:#0D2C54;">Pre-registro recibido</h1>
@@ -500,8 +505,7 @@ export const sendRegistrationReceipt = async ({
       </td></tr>
     </table>
     <p style="margin:20px 0 0; font-size:13px; line-height:1.6; color:#6b7c93;">
-      Si tiene cuenta de autor en el CMS, también puede retomar su pre-registro desde su perfil
-      (ingrese con el mismo correo): <a href="${CMS_URL}" style="color:#2A9D8F; font-weight:700;">${CMS_URL}</a>
+      ${cmsNote} <a href="${CMS_URL}" style="color:#2A9D8F; font-weight:700;">${CMS_URL}</a>
     </p>`;
 
   return sendMailWithFallback({

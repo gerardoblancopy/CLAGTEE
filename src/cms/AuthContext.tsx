@@ -1,7 +1,8 @@
 import React, { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import { apiFetch, SESSION_EXPIRED_EVENT, SESSION_STORAGE_KEY } from './api';
 
-export type UserRole = 'author' | 'reviewer' | 'chair' | 'staff';
+// attendee/company: cuentas creadas desde una inscripción sin paper (asistentes, empresas).
+export type UserRole = 'author' | 'reviewer' | 'chair' | 'staff' | 'attendee' | 'company';
 
 export interface User {
   id: string;

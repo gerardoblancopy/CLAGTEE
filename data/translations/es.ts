@@ -425,13 +425,18 @@ export const contentES: Content = {
         "amountLabel": "Monto a pagar",
         "payInstruction": "Paso 1: pague en la plataforma PUCV correspondiente a su categoría (se abre en una nueva pestaña).",
         "resumeNote": "Le enviamos un correo con un enlace para retomar este pre-registro más tarde.",
+        "participantNote": "Si pierde este enlace, pida su acceso desde \"¿Ya inició su inscripción?\" en el formulario: le enviaremos el enlace y una contraseña provisional del CMS.",
         "profileNote": "Si tiene cuenta de autor en el CMS, también puede retomarlo desde su perfil (ingrese con el mismo correo).",
         "profileLink": "Ir a mi perfil"
       },
       "resumeBanner": {
         "title": "¿Ya inició su inscripción?",
-        "desc": "Si ya completó este formulario antes (por ejemplo, le falta pagar o subir el comprobante), no lo llene de nuevo. Retome su pre-registro desde su perfil de autor en el CMS, ingresando con el mismo correo, o desde el enlace del correo de confirmación.",
-        "action": "Ir a mi perfil en el CMS"
+        "desc": "Si ya completó este formulario antes (por ejemplo, le falta pagar o subir el comprobante), no lo llene de nuevo. Retome su pre-registro desde su perfil en el CMS o desde el enlace del correo de confirmación. Si no tiene cuenta o perdió el enlace, ingrese su correo y le enviaremos el enlace y su acceso al CMS.",
+        "action": "Ir a mi perfil en el CMS",
+        "recoverLabel": "Correo usado en la inscripción",
+        "recoverButton": "Enviarme el acceso",
+        "recoverSending": "Enviando…",
+        "recoverSent": "Si hay una inscripción pendiente con ese correo, le enviamos un mensaje con el enlace para completarla y su acceso al CMS. Revise también la carpeta de spam."
       },
       "comprobante": {
         "title": "Paso 2: comprobante de pago",

@@ -311,6 +311,9 @@ export interface RegistrationRecord extends RegistrationInput {
   staffNote?: string;
   reviewedBy?: string;
   cancelledBy?: string;
+  cmsUserId?: string;
+  statusNotified?: RegistrationStatus;
+  statusNotifiedAt?: string;
   createdAt: string;
   updatedAt: string;
   comprobanteAt?: string;
@@ -418,6 +421,7 @@ export interface RegistrationContent {
     amountLabel: string;
     payInstruction: string;
     resumeNote: string;
+    participantNote: string;
     profileNote: string;
     profileLink: string;
   };
@@ -425,6 +429,10 @@ export interface RegistrationContent {
     title: string;
     desc: string;
     action: string;
+    recoverLabel: string;
+    recoverButton: string;
+    recoverSending: string;
+    recoverSent: string;
   };
   comprobante: {
     title: string;

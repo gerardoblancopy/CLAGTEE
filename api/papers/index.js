@@ -181,6 +181,10 @@ export default async function handler(req, res) {
     try {
       const session = requireAuth(req, res);
       if (!session) return;
+      if (session.role === 'attendee' || session.role === 'company') {
+        res.status(403).json({ error: 'Forbidden' });
+        return;
+      }
 
       const body = parseBody(req);
       const input = body?.input;

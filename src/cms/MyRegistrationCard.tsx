@@ -9,7 +9,10 @@ type OwnRegistration = Omit<RegistrationRecord, 'token'> & { resumeUrl: string }
 // Estados en que el participante aún debe pagar o corregir su comprobante.
 const ACTION_STATUSES: RegistrationStatus[] = ['pre-registro-creado', 'observado'];
 
-export const MyRegistrationCard: React.FC<{ accountEmail?: string }> = ({ accountEmail }) => {
+export const MyRegistrationCard: React.FC<{ accountEmail?: string; registerHref?: string }> = ({
+  accountEmail,
+  registerHref = '/?cat=autor#inscripcion',
+}) => {
   const [registrations, setRegistrations] = useState<OwnRegistration[] | null>(null);
   const [error, setError] = useState(false);
 
@@ -51,7 +54,7 @@ export const MyRegistrationCard: React.FC<{ accountEmail?: string }> = ({ accoun
             asociadas a tus trabajos. Si te inscribiste con otro correo, usa el enlace del correo de pre-registro.
           </p>
           <a
-            href="/?cat=autor#inscripcion"
+            href={registerHref}
             className="inline-block bg-[#2A9D8F] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#238C7E] transition-colors"
           >
             Inscribirme al congreso

@@ -425,13 +425,18 @@ export const contentEN: Content = {
         "amountLabel": "Amount to pay",
         "payInstruction": "Step 1: pay on the PUCV platform corresponding to your category (opens in a new tab).",
         "resumeNote": "We sent you an email with a link to resume this pre-registration later.",
+        "participantNote": "If you lose this link, request access from \"Already started your registration?\" in the form: we will send you the link and a temporary CMS password.",
         "profileNote": "If you have an author account in the CMS, you can also resume it from your profile (sign in with the same email).",
         "profileLink": "Go to my profile"
       },
       "resumeBanner": {
         "title": "Already started your registration?",
-        "desc": "If you already filled out this form (for example, you still need to pay or upload the receipt), do not fill it out again. Resume your pre-registration from your author profile in the CMS, signing in with the same email, or from the link in your confirmation email.",
-        "action": "Go to my CMS profile"
+        "desc": "If you already filled out this form (for example, you still need to pay or upload the receipt), do not fill it out again. Resume your pre-registration from your CMS profile or from the link in your confirmation email. If you have no account or lost the link, enter your email and we will send you the link and your CMS access.",
+        "action": "Go to my CMS profile",
+        "recoverLabel": "Email used in the registration",
+        "recoverButton": "Send me access",
+        "recoverSending": "Sending…",
+        "recoverSent": "If there is a pending registration with that email, we sent you a message with the link to complete it and your CMS access. Please also check your spam folder."
       },
       "comprobante": {
         "title": "Step 2: payment receipt",

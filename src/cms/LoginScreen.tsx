@@ -7,6 +7,8 @@ const roleLabels: Record<UserRole, string> = {
   reviewer: 'Revisor',
   chair: 'Chair',
   staff: 'Staff',
+  attendee: 'Asistente',
+  company: 'Empresa',
 };
 
 export const LoginScreen: React.FC<{ onBack?: () => void }> = ({ onBack }) => {
@@ -196,7 +198,7 @@ export const LoginScreen: React.FC<{ onBack?: () => void }> = ({ onBack }) => {
                   Rol de acceso
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {(['author', 'reviewer', 'chair', 'staff'] as UserRole[]).map((role) => (
+                  {(['author', 'reviewer', 'chair', 'staff', 'attendee', 'company'] as UserRole[]).map((role) => (
                     <button
                       key={role}
                       type="button"
