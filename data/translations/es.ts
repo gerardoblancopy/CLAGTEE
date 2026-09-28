@@ -658,7 +658,7 @@ export const contentES: Content = {
         "formTitle": "Solicitud de Pre-Reserva de Auspicio",
         "formDesc": "Indique la información de su institución y modalidad de auspicio deseada. Un coordinador del Comité Organizador se pondrá en contacto a la brevedad.",
         "companyLabel": "Institución / Empresa",
-        "companyPlaceholder": "Ej: Enel, Transelec, Siemens, ABB, etc.",
+        "companyPlaceholder": "Nombre de la empresa o institución",
         "contactNameLabel": "Nombre y Apellido de Contacto",
         "contactNamePlaceholder": "Ej: Juan Pérez",
         "emailLabel": "Correo Electrónico de Contacto",

@@ -658,7 +658,7 @@ export const contentEN: Content = {
         "formTitle": "Sponsorship Pre-Reservation Request",
         "formDesc": "Provide your institution's contact details and desired sponsorship tier. An organizing coordinator will get in touch shortly.",
         "companyLabel": "Institution / Company",
-        "companyPlaceholder": "e.g., Enel, Transelec, Siemens, ABB, etc.",
+        "companyPlaceholder": "Company or institution name",
         "contactNameLabel": "Contact Full Name",
         "contactNamePlaceholder": "e.g., John Smith",
         "emailLabel": "Contact Email",

@@ -658,7 +658,7 @@ export const contentPT: Content = {
         "formTitle": "Solicitação de Pré-Reserva de Patrocínio",
         "formDesc": "Informe os dados de sua instituição e modalidade de patrocínio desejada. Um coordenador do Comitê Organizador entrará em contato em breve.",
         "companyLabel": "Instituição / Empresa",
-        "companyPlaceholder": "Ex: Enel, Transelec, Siemens, ABB, etc.",
+        "companyPlaceholder": "Nome da empresa ou instituição",
         "contactNameLabel": "Nome e Sobrenome do Contato",
         "contactNamePlaceholder": "Ex: João Silva",
         "emailLabel": "E-mail de Contato",
