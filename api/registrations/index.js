@@ -8,6 +8,8 @@ import {
   getCouponDefinition,
   normalizeCouponCode,
   normalizePaperId,
+  normalizeTitle,
+  MIN_TITLE_MATCH_LENGTH,
   findDuplicateRegistration,
   isRegistrationOwnedBy,
   stripUndefined,
@@ -105,16 +107,27 @@ const resendResumeLink = async (db, record, requesterEmail) => {
   }
 };
 
-// Cross-check opcional: marca si el CMS Paper ID existe y el título coincide,
-// para que el equipo lo deje 'observado' manualmente si hay discrepancia.
-const checkPaperMatch = async (db, clean) => {
+// Lleva el ID de paper escrito por la persona ("#INT-29", "Sens-8") al ID real del
+// CMS, por ID normalizado o, si no existe, por título. Si lo corrige, conserva lo
+// escrito en cmsPaperIdTyped. Devuelve paperMatch: si el título coincide con el paper.
+const resolvePaper = async (db, clean) => {
   if (!clean.cmsPaperId) return null;
   try {
-    const snapshot = await db.collection('papers').doc(String(clean.cmsPaperId)).get();
-    if (!snapshot.exists) return false;
-    const title = String(snapshot.data().title || '').trim().toLowerCase();
-    const given = String(clean.paperTitle || '').trim().toLowerCase();
-    return given ? title === given : true;
+    const typed = clean.cmsPaperId;
+    const normalized = normalizePaperId(typed);
+    const snapshot = normalized ? await db.collection('papers').doc(normalized).get() : null;
+    let paper = snapshot?.exists ? snapshot.data() : null;
+    const title = normalizeTitle(clean.paperTitle);
+    if (!paper && title.length >= MIN_TITLE_MATCH_LENGTH) {
+      const papers = await db.collection('papers').get();
+      paper = papers.docs.map((doc) => doc.data()).find((candidate) => normalizeTitle(candidate.title) === title) || null;
+    }
+    if (!paper) return false;
+    if (paper.id !== typed) {
+      clean.cmsPaperIdTyped = typed;
+      clean.cmsPaperId = paper.id;
+    }
+    return title ? normalizeTitle(paper.title) === title : true;
   } catch (error) {
     console.error('[registrations] paper cross-check failed:', error?.message);
     return null;
@@ -233,6 +246,8 @@ export default async function handler(req, res) {
       }
 
       const db = getFirestore();
+      // Antes del anti-duplicados, para comparar con el ID real del paper.
+      const paperMatch = await resolvePaper(db, clean);
 
       // Evita duplicados: misma persona o mismo paper con una inscripción activa.
       // La colección es pequeña, así que se compara en memoria (sin distinguir mayúsculas).
@@ -249,7 +264,6 @@ export default async function handler(req, res) {
         return;
       }
 
-      const paperMatch = await checkPaperMatch(db, clean);
       const applyCoupon = Boolean(couponDef);
 
       const buildRecord = (number) => {

@@ -266,6 +266,7 @@ export interface RegistrationInput {
   couponCode?: string;
   // Autor / estudiante-autor / paper adicional
   cmsPaperId?: string;
+  cmsPaperIdTyped?: string;
   paperTitle?: string;
   presenterName?: string;
   cmsEmail?: string;

@@ -19,7 +19,37 @@ export interface MailRecipient {
   category?: RegistrationCategory;
 }
 
-export const normalizePaperId = (value?: string) => String(value || '').trim().toUpperCase();
+// Mismo criterio que el servidor (api/_lib/registration-config.js).
+export const normalizePaperId = (value?: string) =>
+  String(value || '').trim().toUpperCase().replace(/[^A-Z0-9-]/g, '');
+
+// Igual que el servidor: el título solo empareja si es suficientemente largo.
+const MIN_TITLE_MATCH_LENGTH = 20;
+
+export const normalizeTitle = (value?: string) =>
+  String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+
+/**
+ * ID real (normalizado) del paper de una inscripción: por ID si existe entre
+ * `papers`; si no (p. ej. "Sens-8" escrito a mano), por título exacto.
+ */
+export const resolveRegistrationPaperId = (
+  registration: Pick<RegistrationRecord, 'cmsPaperId' | 'paperTitle'>,
+  papers: Paper[]
+): string | null => {
+  if (!registration.cmsPaperId) return null;
+  const id = normalizePaperId(registration.cmsPaperId);
+  if (papers.some((paper) => normalizePaperId(paper.id) === id)) return id;
+  const title = normalizeTitle(registration.paperTitle);
+  const byTitle =
+    title.length >= MIN_TITLE_MATCH_LENGTH ? papers.find((paper) => normalizeTitle(paper.title) === title) : undefined;
+  return byTitle ? normalizePaperId(byTitle.id) : id;
+};
 
 const isEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
@@ -28,7 +58,7 @@ export const getUncoveredPapers = (acceptedPapers: Paper[], registrations: Regis
   const covered = new Set(
     registrations
       .filter((reg) => reg.status !== 'cancelada' && reg.cmsPaperId)
-      .map((reg) => normalizePaperId(reg.cmsPaperId))
+      .map((reg) => resolveRegistrationPaperId(reg, acceptedPapers))
   );
   return acceptedPapers.filter((paper) => !covered.has(normalizePaperId(paper.id)));
 };

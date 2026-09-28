@@ -97,7 +97,21 @@ const PERSON_CATEGORIES = ['autor', 'general', 'estudiante'];
 
 const lower = (value) => str(value).toLowerCase();
 
-export const normalizePaperId = (value) => str(value).toUpperCase();
+// "#INT-29 " -> "INT-29": solo letras, dígitos y guiones.
+export const normalizePaperId = (value) => str(value).toUpperCase().replace(/[^A-Z0-9-]/g, '');
+
+// Título comparable: sin tildes, mayúsculas ni puntuación.
+// Solo se usa para emparejar títulos de al menos MIN_TITLE_MATCH_LENGTH caracteres,
+// así un título corto o genérico no enlaza el paper equivocado.
+export const MIN_TITLE_MATCH_LENGTH = 20;
+
+export const normalizeTitle = (value) =>
+  str(value)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
 
 /**
  * Busca una inscripción activa (no cancelada) que choque con la nueva: la misma

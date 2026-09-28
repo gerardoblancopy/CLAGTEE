@@ -6,7 +6,7 @@ import { RegistrationCategory, RegistrationRecord, RegistrationStatus } from '..
 import { DownloadLink } from './DownloadLink';
 import { apiFetch } from './api';
 import { StaffMailer } from './StaffMailer';
-import { MailSegment, getUncoveredPapers, normalizePaperId } from './registrationSegments';
+import { MailSegment, getUncoveredPapers, normalizePaperId, resolveRegistrationPaperId } from './registrationSegments';
 
 const STATUS_ORDER: RegistrationStatus[] = [
   'pre-registro-creado',
@@ -78,7 +78,7 @@ export const StaffDashboard: React.FC = () => {
   const acceptedPapers = useMemo(() => papers.filter((p) => p.status === 'accepted'), [papers]);
   const acceptedById = useMemo(() => {
     const map = new Map<string, (typeof papers)[number]>();
-    acceptedPapers.forEach((p) => map.set(p.id, p));
+    acceptedPapers.forEach((p) => map.set(normalizePaperId(p.id), p));
     return map;
   }, [acceptedPapers]);
 
@@ -173,12 +173,18 @@ export const StaffDashboard: React.FC = () => {
   const renderPaperMatch = (reg: RegistrationRecord) => {
     if (!PAPER_CATEGORIES.includes(reg.category) && reg.category !== 'estudiante') return <span className="text-gray-300">—</span>;
     if (!reg.cmsPaperId) return <span className="text-gray-300">—</span>;
-    const paper = acceptedById.get(reg.cmsPaperId);
+    const paper = acceptedById.get(resolveRegistrationPaperId(reg, acceptedPapers) || '');
     if (paper) {
+      // Si el ID escrito no es el real (se reconoció por título), se muestra el real.
+      const typedDiffers = normalizePaperId(reg.cmsPaperId) !== normalizePaperId(paper.id);
       return (
-        <span className="inline-flex items-center gap-1 text-green-700" title={paper.title}>
+        <span
+          className="inline-flex items-center gap-1 text-green-700"
+          title={typedDiffers ? `${paper.title} (escrito: ${reg.cmsPaperId})` : paper.title}
+        >
           <CheckIcon className="w-3.5 h-3.5" />
-          <span>{reg.cmsPaperId}</span>
+          <span>{paper.id}</span>
+          {typedDiffers && <span className="text-[10px] text-gray-400">(escrito: {reg.cmsPaperId})</span>}
         </span>
       );
     }
@@ -434,7 +440,9 @@ export const StaffDashboard: React.FC = () => {
           ) : (
             acceptedPapers.map((paper) => {
               const regs = registrations.filter(
-                (r) => normalizePaperId(r.cmsPaperId) === normalizePaperId(paper.id) && r.status !== 'cancelada'
+                (r) =>
+                  r.status !== 'cancelada' &&
+                  resolveRegistrationPaperId(r, acceptedPapers) === normalizePaperId(paper.id)
               );
               return (
                 <div key={paper.id} className="grid grid-cols-12 gap-3 p-4 items-center text-sm">
