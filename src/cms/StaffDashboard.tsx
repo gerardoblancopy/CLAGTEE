@@ -8,6 +8,7 @@ import { apiFetch } from './api';
 import { StaffMailer } from './StaffMailer';
 import { AcceptedPapersList } from './AcceptedPapersList';
 import { MailSegment, getUncoveredPapers, normalizePaperId, resolveRegistrationPaperId } from './registrationSegments';
+import { exportRegistrationsToExcel } from './exportRegistrationsExcel';
 
 const STATUS_ORDER: RegistrationStatus[] = [
   'pre-registro-creado',
@@ -62,6 +63,13 @@ const XIcon = ({ className = 'w-3.5 h-3.5' }: { className?: string }) => (
   </svg>
 );
 
+const ExcelIcon = ({ className = 'w-4 h-4' }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z" />
+    <path d="M8.5 13.5l1.8 3-1.8 3h1.7l1-1.9 1 1.9h1.7l-1.8-3 1.8-3h-1.7l-1 1.9-1-1.9H8.5z" />
+  </svg>
+);
+
 export const StaffDashboard: React.FC = () => {
   const { user } = useAuth();
   const { papers } = useCMSData();
@@ -74,6 +82,7 @@ export const StaffDashboard: React.FC = () => {
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [updatingId, setUpdatingId] = useState<string | null>(null);
   const [mailSegment, setMailSegment] = useState<MailSegment>('sin-iniciar');
+  const [isExporting, setIsExporting] = useState(false);
   const mailerRef = useRef<HTMLDivElement>(null);
 
   const acceptedPapers = useMemo(() => papers.filter((p) => p.status === 'accepted'), [papers]);
@@ -171,6 +180,40 @@ export const StaffDashboard: React.FC = () => {
     [inStatus, categoryFilter]
   );
 
+  const handleExport = async (mode: 'filtered' | 'all' = 'filtered') => {
+    setIsExporting(true);
+    setError(null);
+    try {
+      await exportRegistrationsToExcel({
+        registrations: filtered,
+        allRegistrations: registrations,
+        statusFilter: filter,
+        categoryFilter: categoryFilter,
+        acceptedPapers,
+        statusLabels,
+        categoryLabels,
+        mode,
+      });
+      const activeFilterLabel = [
+        filter !== 'all' ? statusLabels[filter] : null,
+        categoryFilter !== 'all' ? categoryLabels[categoryFilter] : null,
+      ]
+        .filter(Boolean)
+        .join(' · ');
+
+      setNotice(
+        mode === 'all'
+          ? `Planilla Excel generada con los ${registrations.length} registros totales.`
+          : `Planilla Excel descargada con los ${filtered.length} registros${activeFilterLabel ? ` (${activeFilterLabel})` : ''}.`
+      );
+    } catch (err) {
+      console.error('Error al exportar a Excel:', err);
+      setError('No se pudo generar la planilla Excel.');
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
   const renderPaperMatch = (reg: RegistrationRecord) => {
     if (!PAPER_CATEGORIES.includes(reg.category) && reg.category !== 'estudiante') return <span className="text-gray-300">—</span>;
     if (!reg.cmsPaperId) return <span className="text-gray-300">—</span>;
@@ -204,7 +247,21 @@ export const StaffDashboard: React.FC = () => {
           <h3 className="text-2xl font-bold text-[#0D2C54]">Inscripciones (Staff)</h3>
           <p className="text-gray-500">Gestión de registros, validación de pagos y documentos</p>
         </div>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap items-center gap-3">
+          {/* Botón superior de descarga rápida Excel según filtro activo */}
+          <button
+            type="button"
+            onClick={() => void handleExport('filtered')}
+            disabled={filtered.length === 0 || isExporting}
+            className="bg-[#107C41] hover:bg-[#0D6B37] text-white px-4 py-2.5 rounded-xl shadow-sm border border-emerald-600 flex items-center space-x-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:shadow active:scale-[0.98]"
+            title={`Descargar Excel con los ${filtered.length} registrados del filtro actual`}
+          >
+            <ExcelIcon className="w-4 h-4" />
+            <span className="text-sm font-bold">
+              {isExporting ? 'Generando…' : `Descargar Excel (${filtered.length})`}
+            </span>
+          </button>
+
           {/* Total = registros iniciados (cualquier estado) + papers aceptados sin iniciar */}
           <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-3">
             <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold bg-blue-100 text-blue-600">
@@ -288,6 +345,52 @@ export const StaffDashboard: React.FC = () => {
               {c === 'all' ? inStatus.length : inStatus.filter((r) => r.category === c).length})
             </button>
           ))}
+        </div>
+      </div>
+
+      {/* Barra de acción: total filtrado y botón de descarga Excel según cada filtro */}
+      <div className="flex flex-wrap justify-between items-center bg-white p-3.5 sm:p-4 rounded-xl border border-gray-100 shadow-sm gap-3">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-sm text-gray-700">
+            Mostrando <strong className="text-[#0D2C54] font-bold">{filtered.length}</strong> de{' '}
+            <strong className="text-gray-900 font-bold">{registrations.length}</strong> inscripciones
+          </span>
+          {filter !== 'all' || categoryFilter !== 'all' ? (
+            <span className="text-xs bg-teal-50 text-teal-700 border border-teal-200 px-2.5 py-1 rounded-full font-semibold">
+              Filtro: {filter !== 'all' ? statusLabels[filter] : 'Todos los estados'} ·{' '}
+              {categoryFilter !== 'all' ? categoryLabels[categoryFilter] : 'Todas las categorías'}
+            </span>
+          ) : (
+            <span className="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full font-medium">
+              Todos los registros seleccionados
+            </span>
+          )}
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            type="button"
+            onClick={() => void handleExport('filtered')}
+            disabled={filtered.length === 0 || isExporting}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#107C41] hover:bg-[#0D6B37] text-white text-sm font-bold rounded-lg shadow-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:shadow active:scale-[0.98]"
+            title={`Descargar planilla Excel con los ${filtered.length} registrados según el filtro actual`}
+          >
+            <ExcelIcon className="w-4 h-4" />
+            <span>{isExporting ? 'Generando Excel…' : `Descargar Excel (${filtered.length})`}</span>
+          </button>
+
+          {(filter !== 'all' || categoryFilter !== 'all') && (
+            <button
+              type="button"
+              onClick={() => void handleExport('all')}
+              disabled={registrations.length === 0 || isExporting}
+              className="inline-flex items-center gap-1.5 px-3 py-2 bg-gray-50 hover:bg-gray-100 text-gray-700 text-xs font-semibold rounded-lg border border-gray-200 transition-all disabled:opacity-50"
+              title="Descargar libro Excel completo con todas las inscripciones y pestañas por estado"
+            >
+              <ExcelIcon className="w-3.5 h-3.5 text-gray-500" />
+              <span>Descargar Todo ({registrations.length})</span>
+            </button>
+          )}
         </div>
       </div>
 
