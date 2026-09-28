@@ -15,7 +15,7 @@ const STATUS_ORDER: RegistrationStatus[] = [
   'cancelada',
 ];
 
-const statusLabels: Record<RegistrationStatus, string> = {
+export const statusLabels: Record<RegistrationStatus, string> = {
   'pre-registro-creado': 'Pre-registro',
   'comprobante-recibido': 'Comprobante recibido',
   observado: 'Observado',
@@ -24,7 +24,7 @@ const statusLabels: Record<RegistrationStatus, string> = {
   cancelada: 'Cancelada',
 };
 
-const statusStyles: Record<RegistrationStatus, string> = {
+export const statusStyles: Record<RegistrationStatus, string> = {
   'pre-registro-creado': 'bg-gray-100 text-gray-600',
   'comprobante-recibido': 'bg-blue-100 text-blue-700',
   observado: 'bg-yellow-100 text-yellow-700',
@@ -33,7 +33,7 @@ const statusStyles: Record<RegistrationStatus, string> = {
   cancelada: 'bg-red-100 text-red-700',
 };
 
-const categoryLabels: Record<RegistrationCategory, string> = {
+export const categoryLabels: Record<RegistrationCategory, string> = {
   autor: 'Autor',
   general: 'General',
   estudiante: 'Estudiante',
@@ -298,6 +298,7 @@ export const StaffDashboard: React.FC = () => {
                     {reg.ticketDietary && <Detail label="Dieta ticket" value={reg.ticketDietary} />}
                     {reg.staffNote && <Detail label="Nota staff" value={reg.staffNote} />}
                     {reg.reviewedBy && <Detail label="Revisado por" value={reg.reviewedBy} />}
+                    {reg.cancelledBy === 'participant' && <Detail label="Anulado por" value="El participante" />}
                     <Detail label="Creado" value={new Date(reg.createdAt).toLocaleString()} />
                   </div>
                 )}
@@ -318,7 +319,7 @@ export const StaffDashboard: React.FC = () => {
             <div className="p-8 text-center text-gray-400">No hay papers aceptados aún.</div>
           ) : (
             acceptedPapers.map((paper) => {
-              const regs = registrations.filter((r) => r.cmsPaperId === paper.id);
+              const regs = registrations.filter((r) => r.cmsPaperId === paper.id && r.status !== 'cancelada');
               return (
                 <div key={paper.id} className="grid grid-cols-12 gap-3 p-4 items-center text-sm">
                   <div className="col-span-1 font-bold text-[#0D2C54]">{paper.id}</div>

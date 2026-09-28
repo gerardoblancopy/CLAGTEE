@@ -9,7 +9,7 @@ const inputClass =
 export const PreRegistroSummary: React.FC = () => {
   const { content } = useLanguage();
   const r = content.sections.registration;
-  const { registration, submitComprobante, uploadFile, isSubmitting, reset } = useRegistration();
+  const { registration, submitComprobante, cancelAndStartOver, uploadFile, isSubmitting, error } = useRegistration();
 
   const [fileKey, setFileKey] = useState('');
   const [fileUrl, setFileUrl] = useState('');
@@ -51,6 +51,11 @@ export const PreRegistroSummary: React.FC = () => {
     });
   };
 
+  const handleStartOver = async () => {
+    if (!window.confirm(r.messages.confirmStartOver.replace('{id}', registration.id))) return;
+    await cancelAndStartOver();
+  };
+
   return (
     <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 md:p-10 text-left space-y-8">
       {/* Resumen */}
@@ -90,6 +95,12 @@ export const PreRegistroSummary: React.FC = () => {
             {r.statuses[registration.status]}
           </p>
         </div>
+        <p className="text-sm text-gray-500">
+          {r.summary.resumeNote} {r.summary.profileNote}{' '}
+          <a href="/cms" className="font-bold text-[#2A9D8F] hover:underline">
+            {r.summary.profileLink}
+          </a>
+        </p>
       </div>
 
       {couponApplied ? (
@@ -144,10 +155,21 @@ export const PreRegistroSummary: React.FC = () => {
               {r.warnings.manualValidation}
             </div>
 
+            {error && <p className="text-sm text-red-500 font-semibold">{r.messages.errorGeneric}</p>}
+
             <div className="flex items-center justify-between">
-              <button type="button" onClick={reset} className="text-gray-500 font-bold hover:text-gray-700 transition-colors">
-                {r.buttons.startOver}
-              </button>
+              {registration.status === 'pre-registro-creado' ? (
+                <button
+                  type="button"
+                  onClick={handleStartOver}
+                  disabled={isSubmitting}
+                  className="text-gray-500 font-bold hover:text-gray-700 transition-colors disabled:opacity-60"
+                >
+                  {r.buttons.startOver}
+                </button>
+              ) : (
+                <span />
+              )}
               <button
                 type="button"
                 onClick={handleSubmit}

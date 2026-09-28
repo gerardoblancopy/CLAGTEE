@@ -495,7 +495,11 @@ export const sendRegistrationReceipt = async ({
           Completar mi pre-registro
         </a>
       </td></tr>
-    </table>`;
+    </table>
+    <p style="margin:20px 0 0; font-size:13px; line-height:1.6; color:#6b7c93;">
+      Si tiene cuenta de autor en el CMS, también puede retomar su pre-registro desde su perfil
+      (ingrese con el mismo correo): <a href="${CMS_URL}" style="color:#2A9D8F; font-weight:700;">${CMS_URL}</a>
+    </p>`;
 
   return sendMailWithFallback({
     to,

@@ -424,7 +424,14 @@ export const contentEN: Content = {
         "categoryLabel": "Category",
         "amountLabel": "Amount to pay",
         "payInstruction": "Step 1: pay on the PUCV platform corresponding to your category (opens in a new tab).",
-        "resumeNote": "We sent you an email with a link to resume this pre-registration later."
+        "resumeNote": "We sent you an email with a link to resume this pre-registration later.",
+        "profileNote": "If you have an author account in the CMS, you can also resume it from your profile (sign in with the same email).",
+        "profileLink": "Go to my profile"
+      },
+      "resumeBanner": {
+        "title": "Already started your registration?",
+        "desc": "If you already filled out this form (for example, you still need to pay or upload the receipt), do not fill it out again. Resume your pre-registration from your author profile in the CMS, signing in with the same email, or from the link in your confirmation email.",
+        "action": "Go to my CMS profile"
       },
       "comprobante": {
         "title": "Step 2: payment receipt",
@@ -453,7 +460,11 @@ export const contentEN: Content = {
         "couponInvalid": "The coupon code entered is not valid.",
         "couponNotApplicable": "This coupon does not apply to the selected registration category.",
         "couponExhausted": "This coupon has reached its usage limit.",
-        "couponConfirmed": "Your registration was confirmed with a courtesy coupon. No payment is required."
+        "couponConfirmed": "Your registration was confirmed with a courtesy coupon. No payment is required.",
+        "confirmStartOver": "Pre-registration {id} will be cancelled so you can start over. Do you want to continue?",
+        "duplicateRegistration": "There is already an active registration ({id}) for this email. Resume it from the link in your pre-registration email or from your author profile in the CMS.",
+        "duplicateLinkResent": "We have resent the link to your email.",
+        "duplicatePaper": "This paper is already covered by registration {id}. If you are a co-author and will attend, please register in the General category. If you think this is a mistake, contact the organizers."
       }
     },
     "speakers": {

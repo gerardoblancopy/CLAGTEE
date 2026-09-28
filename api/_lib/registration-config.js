@@ -76,6 +76,52 @@ export const stripUndefined = (obj) => {
   return result;
 };
 
+// Categorías que inscriben a una persona al congreso: solo una activa por correo.
+// Stand y cena adicional no se deduplican (una empresa o un acompañante pueden repetir).
+const PERSON_CATEGORIES = ['autor', 'general', 'estudiante'];
+
+const lower = (value) => str(value).toLowerCase();
+
+export const normalizePaperId = (value) => str(value).toUpperCase();
+
+/**
+ * Busca una inscripción activa (no cancelada) que choque con la nueva: la misma
+ * persona en una categoría principal, o el mismo paper ya cubierto por otra inscripción.
+ * @returns {{ code: 'duplicate-registration'|'duplicate-paper', record: object } | null}
+ */
+export const findDuplicateRegistration = (records, clean) => {
+  const active = records.filter((record) => record.status !== 'cancelada');
+
+  if (PERSON_CATEGORIES.includes(clean.category)) {
+    const email = lower(clean.email);
+    const match = active.find(
+      (record) => PERSON_CATEGORIES.includes(record.category) && lower(record.email) === email
+    );
+    if (match) return { code: 'duplicate-registration', record: match };
+  }
+
+  const paperId = normalizePaperId(clean.cmsPaperId);
+  if (paperId) {
+    const match = active.find((record) => normalizePaperId(record.cmsPaperId) === paperId);
+    if (match) return { code: 'duplicate-paper', record: match };
+  }
+
+  return null;
+};
+
+/**
+ * Una inscripción pertenece a una cuenta del CMS si usa su correo (participante o
+ * correo CMS declarado) o si declara un paper enviado por esa cuenta.
+ */
+export const isRegistrationOwnedBy = (record, { email, paperIds }) => {
+  const accountEmail = lower(email);
+  if (accountEmail && (lower(record.email) === accountEmail || lower(record.cmsEmail) === accountEmail)) {
+    return true;
+  }
+  const paperId = normalizePaperId(record.cmsPaperId);
+  return Boolean(paperId) && paperIds.has(paperId);
+};
+
 /**
  * Valida el input según la categoría y devuelve un objeto limpio listo para persistir.
  * @returns {{ ok: boolean, errors: string[], clean: object|null }}

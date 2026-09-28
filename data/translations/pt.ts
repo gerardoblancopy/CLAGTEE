@@ -424,7 +424,14 @@ export const contentPT: Content = {
         "categoryLabel": "Categoria",
         "amountLabel": "Valor a pagar",
         "payInstruction": "Passo 1: pague na plataforma PUCV correspondente à sua categoria (abre em uma nova aba).",
-        "resumeNote": "Enviamos um e-mail com um link para retomar este pré-registro mais tarde."
+        "resumeNote": "Enviamos um e-mail com um link para retomar este pré-registro mais tarde.",
+        "profileNote": "Se você tem conta de autor no CMS, também pode retomá-lo a partir do seu perfil (entre com o mesmo e-mail).",
+        "profileLink": "Ir para meu perfil"
+      },
+      "resumeBanner": {
+        "title": "Já iniciou sua inscrição?",
+        "desc": "Se você já preencheu este formulário (por exemplo, ainda falta pagar ou enviar o comprovante), não o preencha novamente. Retome seu pré-registro a partir do seu perfil de autor no CMS, entrando com o mesmo e-mail, ou pelo link do e-mail de confirmação.",
+        "action": "Ir para meu perfil no CMS"
       },
       "comprobante": {
         "title": "Passo 2: comprovante de pagamento",
@@ -453,7 +460,11 @@ export const contentPT: Content = {
         "couponInvalid": "O código de cupom informado não é válido.",
         "couponNotApplicable": "Este cupom não se aplica à categoria de inscrição selecionada.",
         "couponExhausted": "Este cupom já atingiu seu limite de usos.",
-        "couponConfirmed": "Sua inscrição foi confirmada por meio de um cupom de cortesia. Não é necessário pagamento."
+        "couponConfirmed": "Sua inscrição foi confirmada por meio de um cupom de cortesia. Não é necessário pagamento.",
+        "confirmStartOver": "O pré-registro {id} será cancelado para que você possa começar de novo. Deseja continuar?",
+        "duplicateRegistration": "Já existe uma inscrição ativa ({id}) para este e-mail. Retome-a pelo link do e-mail de pré-registro ou pelo seu perfil de autor no CMS.",
+        "duplicateLinkResent": "Reenviamos o link para o seu e-mail.",
+        "duplicatePaper": "Este paper já está coberto pela inscrição {id}. Se você é coautor e vai participar, inscreva-se na categoria Geral. Se acha que é um erro, entre em contato com a organização."
       }
     },
     "speakers": {

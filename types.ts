@@ -310,6 +310,7 @@ export interface RegistrationRecord extends RegistrationInput {
   transactionCode?: string;
   staffNote?: string;
   reviewedBy?: string;
+  cancelledBy?: string;
   createdAt: string;
   updatedAt: string;
   comprobanteAt?: string;
@@ -417,6 +418,13 @@ export interface RegistrationContent {
     amountLabel: string;
     payInstruction: string;
     resumeNote: string;
+    profileNote: string;
+    profileLink: string;
+  };
+  resumeBanner: {
+    title: string;
+    desc: string;
+    action: string;
   };
   comprobante: {
     title: string;
@@ -439,5 +447,9 @@ export interface RegistrationContent {
     couponNotApplicable: string;
     couponExhausted: string;
     couponConfirmed: string;
+    confirmStartOver: string;
+    duplicateRegistration: string;
+    duplicateLinkResent: string;
+    duplicatePaper: string;
   };
 }

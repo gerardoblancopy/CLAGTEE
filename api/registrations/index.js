@@ -1,12 +1,15 @@
 import { randomBytes } from 'node:crypto';
 import { getFirestore } from '../_lib/firestore.js';
-import { requireStaff } from '../_lib/auth.js';
+import { requireAuth, requireStaff } from '../_lib/auth.js';
 import {
   getPhase,
   resolvePricing,
   validateRegistrationInput,
   getCouponDefinition,
   normalizeCouponCode,
+  normalizePaperId,
+  findDuplicateRegistration,
+  isRegistrationOwnedBy,
   stripUndefined,
 } from '../_lib/registration-config.js';
 import { sendRegistrationReceipt, sendComprobanteReceived, sendCouponConfirmation } from '../_lib/email.js';
@@ -84,6 +87,40 @@ const buildResumeUrl = (id, token) => {
   return `${base}/?reg=${encodeURIComponent(id)}&token=${encodeURIComponent(token)}#inscripcion`;
 };
 
+// Reenvía el enlace para retomar cuando alguien intenta inscribirse de nuevo.
+// Solo al correo ya registrado, solo si el registro aún requiere acción del
+// participante y como máximo una vez cada 15 min (el POST es público).
+const RESEND_COOLDOWN_MS = 15 * 60 * 1000;
+
+const resendResumeLink = async (db, record, requesterEmail) => {
+  if (!['pre-registro-creado', 'observado'].includes(record.status)) return false;
+  if (str(record.email).toLowerCase() !== str(requesterEmail).toLowerCase()) return false;
+
+  const lastSentAt = Date.parse(record.linkResentAt || '') || 0;
+  if (Date.now() - lastSentAt < RESEND_COOLDOWN_MS) return true;
+
+  try {
+    await db.collection('registrations').doc(record.id).set(
+      { linkResentAt: new Date().toISOString() },
+      { merge: true }
+    );
+    await sendRegistrationReceipt({
+      to: record.email,
+      name: `${record.firstName || ''} ${record.lastName || ''}`.trim(),
+      id: record.id,
+      category: record.category,
+      amountUsd: record.amountUsd,
+      currency: record.currency,
+      paymentUrl: record.paymentUrl,
+      resumeUrl: buildResumeUrl(record.id, record.token),
+    });
+    return true;
+  } catch (error) {
+    console.error('[registrations] resume link resend failed:', error?.message);
+    return false;
+  }
+};
+
 // Cross-check opcional: marca si el CMS Paper ID existe y el título coincide,
 // para que el equipo lo deje 'observado' manualmente si hay discrepancia.
 const checkPaperMatch = async (db, clean) => {
@@ -111,6 +148,27 @@ export default async function handler(req, res) {
         const snapshot = await db.collection('registrations').get();
         const registrations = snapshot.docs
           .map((doc) => stripToken(doc.data()))
+          .sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''));
+        res.status(200).json({ registrations });
+        return;
+      }
+
+      // Inscripciones del usuario del CMS: GET ?scope=mine (perfil del autor).
+      // Se devuelve el enlace para retomar en vez del token.
+      if (getQueryParam(req, 'scope') === 'mine') {
+        const session = requireAuth(req, res);
+        if (!session) return;
+
+        const db = getFirestore();
+        const [registrationsSnap, papersSnap] = await Promise.all([
+          db.collection('registrations').get(),
+          db.collection('papers').where('submitterId', '==', session.id).get(),
+        ]);
+        const paperIds = new Set(papersSnap.docs.map((doc) => normalizePaperId(doc.data().id || doc.id)));
+        const registrations = registrationsSnap.docs
+          .map((doc) => doc.data())
+          .filter((record) => isRegistrationOwnedBy(record, { email: session.email, paperIds }))
+          .map((record) => ({ ...stripToken(record), resumeUrl: buildResumeUrl(record.id, record.token) }))
           .sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''));
         res.status(200).json({ registrations });
         return;
@@ -172,6 +230,22 @@ export default async function handler(req, res) {
       }
 
       const db = getFirestore();
+
+      // Evita duplicados: misma persona o mismo paper con una inscripción activa.
+      // La colección es pequeña, así que se compara en memoria (sin distinguir mayúsculas).
+      const existingSnap = await db.collection('registrations').get();
+      const duplicate = findDuplicateRegistration(existingSnap.docs.map((doc) => doc.data()), clean);
+      if (duplicate) {
+        const linkResent = await resendResumeLink(db, duplicate.record, clean.email);
+        res.status(409).json({
+          error: 'Duplicate registration',
+          code: duplicate.code,
+          existingId: duplicate.record.id,
+          linkResent,
+        });
+        return;
+      }
+
       const paperMatch = await checkPaperMatch(db, clean);
       const applyCoupon = Boolean(couponDef);
 
@@ -280,6 +354,28 @@ export default async function handler(req, res) {
       const token = str(body?.token);
       if (!id || !token) {
         res.status(400).json({ error: 'id and token are required' });
+        return;
+      }
+
+      // Anulación por el participante ("Comenzar de nuevo"): solo mientras no
+      // haya enviado comprobante, para que pueda re-inscribirse sin chocar con el anti-duplicados.
+      if (str(body?.action) === 'cancel') {
+        const db = getFirestore();
+        const ref = db.collection('registrations').doc(id);
+        const snapshot = await ref.get();
+        if (!snapshot.exists || snapshot.data().token !== token) {
+          res.status(404).json({ error: 'Registration not found' });
+          return;
+        }
+        if (snapshot.data().status !== 'pre-registro-creado') {
+          res.status(409).json({ error: 'Registration cannot be cancelled in current status' });
+          return;
+        }
+        await ref.set(
+          { status: 'cancelada', cancelledBy: 'participant', updatedAt: new Date().toISOString() },
+          { merge: true }
+        );
+        res.status(200).json({ ok: true });
         return;
       }
 

@@ -14,13 +14,21 @@ interface ComprobantePayload {
   transactionCode?: string;
 }
 
+/** Inscripción activa con la que chocó un POST (409 anti-duplicados). */
+export interface RegistrationConflict {
+  existingId: string;
+  linkResent: boolean;
+}
+
 interface RegistrationContextValue {
   registration: RegistrationRecord | null;
   step: 'form' | 'summary';
   isSubmitting: boolean;
   error: string | null;
+  conflict: RegistrationConflict | null;
   createRegistration: (input: RegistrationInput) => Promise<boolean>;
   submitComprobante: (payload: ComprobantePayload) => Promise<boolean>;
+  cancelAndStartOver: () => Promise<boolean>;
   loadByToken: (id: string, token: string) => Promise<boolean>;
   uploadFile: (file: File, prefix: string) => Promise<UploadResult>;
   reset: () => void;
@@ -33,6 +41,7 @@ export const RegistrationProvider: React.FC<{ children: React.ReactNode }> = ({ 
   const [step, setStep] = useState<'form' | 'summary'>('form');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [conflict, setConflict] = useState<RegistrationConflict | null>(null);
 
   const uploadFile = useCallback(async (file: File, prefix: string): Promise<UploadResult> => {
     const signResponse = await fetch('/api/gcs-sign', {
@@ -62,6 +71,7 @@ export const RegistrationProvider: React.FC<{ children: React.ReactNode }> = ({ 
   const createRegistration = useCallback(async (input: RegistrationInput): Promise<boolean> => {
     setIsSubmitting(true);
     setError(null);
+    setConflict(null);
     try {
       const response = await fetch('/api/registrations', {
         method: 'POST',
@@ -71,8 +81,11 @@ export const RegistrationProvider: React.FC<{ children: React.ReactNode }> = ({ 
       if (!response.ok) {
         let code = 'create-failed';
         try {
-          const body = (await response.json()) as { code?: string };
+          const body = (await response.json()) as { code?: string; existingId?: string; linkResent?: boolean };
           if (typeof body?.code === 'string') code = body.code;
+          if (typeof body?.existingId === 'string') {
+            setConflict({ existingId: body.existingId, linkResent: Boolean(body.linkResent) });
+          }
         } catch {
           // ignore, keep generic code
         }
@@ -146,7 +159,33 @@ export const RegistrationProvider: React.FC<{ children: React.ReactNode }> = ({ 
     setRegistration(null);
     setStep('form');
     setError(null);
+    setConflict(null);
   }, []);
+
+  // Anula el pre-registro sin comprobante para que el anti-duplicados no bloquee el nuevo intento.
+  const cancelAndStartOver = useCallback(async (): Promise<boolean> => {
+    if (!registration) return false;
+    setIsSubmitting(true);
+    setError(null);
+    try {
+      const response = await fetch('/api/registrations', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: registration.id, token: registration.token, action: 'cancel' }),
+      });
+      if (!response.ok) {
+        setError('cancel-failed');
+        return false;
+      }
+      reset();
+      return true;
+    } catch {
+      setError('cancel-failed');
+      return false;
+    } finally {
+      setIsSubmitting(false);
+    }
+  }, [registration, reset]);
 
   return (
     <RegistrationContext.Provider
@@ -155,8 +194,10 @@ export const RegistrationProvider: React.FC<{ children: React.ReactNode }> = ({ 
         step,
         isSubmitting,
         error,
+        conflict,
         createRegistration,
         submitComprobante,
+        cancelAndStartOver,
         loadByToken,
         uploadFile,
         reset,

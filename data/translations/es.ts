@@ -424,7 +424,14 @@ export const contentES: Content = {
         "categoryLabel": "Categoría",
         "amountLabel": "Monto a pagar",
         "payInstruction": "Paso 1: pague en la plataforma PUCV correspondiente a su categoría (se abre en una nueva pestaña).",
-        "resumeNote": "Le enviamos un correo con un enlace para retomar este pre-registro más tarde."
+        "resumeNote": "Le enviamos un correo con un enlace para retomar este pre-registro más tarde.",
+        "profileNote": "Si tiene cuenta de autor en el CMS, también puede retomarlo desde su perfil (ingrese con el mismo correo).",
+        "profileLink": "Ir a mi perfil"
+      },
+      "resumeBanner": {
+        "title": "¿Ya inició su inscripción?",
+        "desc": "Si ya completó este formulario antes (por ejemplo, le falta pagar o subir el comprobante), no lo llene de nuevo. Retome su pre-registro desde su perfil de autor en el CMS, ingresando con el mismo correo, o desde el enlace del correo de confirmación.",
+        "action": "Ir a mi perfil en el CMS"
       },
       "comprobante": {
         "title": "Paso 2: comprobante de pago",
@@ -453,7 +460,11 @@ export const contentES: Content = {
         "couponInvalid": "El código de cupón ingresado no es válido.",
         "couponNotApplicable": "Este cupón no aplica a la categoría de inscripción seleccionada.",
         "couponExhausted": "Este cupón ya alcanzó su límite de usos.",
-        "couponConfirmed": "Su inscripción fue confirmada mediante un cupón de cortesía. No requiere realizar pago."
+        "couponConfirmed": "Su inscripción fue confirmada mediante un cupón de cortesía. No requiere realizar pago.",
+        "confirmStartOver": "Se anulará el pre-registro {id} para que pueda comenzar de nuevo. ¿Desea continuar?",
+        "duplicateRegistration": "Ya existe una inscripción activa ({id}) para este correo. Retómela desde el enlace del correo de pre-registro o desde su perfil de autor en el CMS.",
+        "duplicateLinkResent": "Le reenviamos el enlace a su correo.",
+        "duplicatePaper": "Este paper ya está cubierto por la inscripción {id}. Si usted es coautor y asistirá, inscríbase en la categoría General. Si cree que es un error, contacte a la organización."
       }
     },
     "speakers": {

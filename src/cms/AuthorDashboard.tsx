@@ -5,6 +5,7 @@ import { useAuth } from './AuthContext';
 import { useCMSData } from './CMSDataContext';
 import { DownloadLink } from './DownloadLink';
 import { RevisionUpload } from './RevisionUpload';
+import { MyRegistrationCard } from './MyRegistrationCard';
 
 const statusStyles = {
   'pending': 'bg-yellow-100 text-yellow-700 border-yellow-200',
@@ -75,6 +76,8 @@ export const AuthorDashboard: React.FC<{
         </div>
         <SubmissionIcon className="absolute right-[-20px] bottom-[-20px] w-64 h-64 text-white/5" />
       </div>
+
+      <MyRegistrationCard accountEmail={user?.email} />
 
       {/* Submissions List */}
       <div>
