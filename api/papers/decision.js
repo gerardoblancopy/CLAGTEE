@@ -1,5 +1,5 @@
 import { getFirestore, normalizePaper } from '../_lib/firestore.js';
-import { requireChair } from '../_lib/auth.js';
+import { requireStaff } from '../_lib/auth.js';
 
 const parseBody = (req) => {
   if (!req.body) return null;
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    if (!(await requireChair(req, res))) return;
+    if (!(await requireStaff(req, res))) return;
 
     const body = parseBody(req);
     const { paperId, status, markNotified, unmarkNotified, customNotifiedAt } = body || {};

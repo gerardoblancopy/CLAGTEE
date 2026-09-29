@@ -532,8 +532,9 @@ export const StaffDashboard: React.FC = () => {
         />
       </div>
 
-      {/* Accepted papers cross-check */}
+      {/* Clasificación de papers aceptados y rechazados, datos de autores y exportación Excel */}
       <AcceptedPapersList
+        papers={papers}
         acceptedPapers={acceptedPapers}
         registrations={registrations}
         statusLabels={statusLabels}

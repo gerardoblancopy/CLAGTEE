@@ -4,6 +4,14 @@ import { UserIcon } from '../../components/icons';
 import { User, useAuth } from './AuthContext';
 import { Paper, PaperStatus, useCMSData } from './CMSDataContext';
 import { DownloadLink } from './DownloadLink';
+import { exportPapersToExcel } from './exportPapersExcel';
+
+const ExcelIcon = ({ className = 'w-4 h-4' }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z" />
+    <path d="M8.5 13.5l1.8 3-1.8 3h1.7l1-1.9 1 1.9h1.7l-1.8-3 1.8-3h-1.7l-1 1.9-1-1.9H8.5z" />
+  </svg>
+);
 
 const statusStyles = {
   'pending': 'bg-yellow-100 text-yellow-700',
@@ -210,6 +218,26 @@ export const ChairDashboard: React.FC = () => {
     }
     return papers.filter((paper) => paper.status === filter);
   }, [filter, papers]);
+
+  const [isExportingPapers, setIsExportingPapers] = useState(false);
+
+  const handleExportPapers = async () => {
+    setIsExportingPapers(true);
+    try {
+      await exportPapersToExcel({
+        papers: filteredPapers,
+        allPapers: papers,
+        users,
+        paperFilter: filter === 'unnotified' ? 'all' : (filter as any),
+        mode: filter === 'all' ? 'all' : 'filtered',
+      });
+    } catch (err) {
+      console.error('Error al exportar papers a Excel:', err);
+      alert('No se pudo generar la planilla Excel.');
+    } finally {
+      setIsExportingPapers(false);
+    }
+  };
 
   const statusCounts = useMemo(() => {
     const counts: Record<PaperStatus, number> = {
@@ -726,52 +754,68 @@ Comité Organizador CLAGTEE 2026`;
 
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
             {/* Toolbar */}
-            <div className="p-4 border-b border-gray-100 flex flex-wrap items-center gap-2">
-              {(['all', 'pending', 'under-review', 'accepted', 'rejected', 'withdrawn'] as const).map((f) => {
-                const count = f === 'all' ? papers.length : statusCounts[f];
-                const label = f === 'all' ? 'Todos' : statusLabels[f];
-                const isSelected = filter === f;
-                return (
-                  <button
-                    key={f}
-                    onClick={() => setFilter(f)}
-                    className={`px-3.5 py-2 rounded-lg text-sm font-bold transition-colors flex items-center gap-2 ${
-                      isSelected
-                        ? 'bg-[#0D2C54] text-white shadow-xs'
-                        : 'bg-gray-50 text-gray-600 hover:bg-gray-100 border border-gray-200/60'
-                    }`}
-                  >
-                    <span>{label}</span>
-                    <span
-                      className={`px-2 py-0.5 rounded-full text-xs font-black ${
+            <div className="p-4 border-b border-gray-100 flex flex-wrap items-center justify-between gap-3">
+              <div className="flex flex-wrap items-center gap-2">
+                {(['all', 'pending', 'under-review', 'accepted', 'rejected', 'withdrawn'] as const).map((f) => {
+                  const count = f === 'all' ? papers.length : statusCounts[f];
+                  const label = f === 'all' ? 'Todos' : statusLabels[f];
+                  const isSelected = filter === f;
+                  return (
+                    <button
+                      key={f}
+                      onClick={() => setFilter(f)}
+                      className={`px-3.5 py-2 rounded-lg text-sm font-bold transition-colors flex items-center gap-2 ${
                         isSelected
-                          ? 'bg-white/20 text-white'
-                          : 'bg-gray-200 text-gray-700'
+                          ? 'bg-[#0D2C54] text-white shadow-xs'
+                          : 'bg-gray-50 text-gray-600 hover:bg-gray-100 border border-gray-200/60'
                       }`}
                     >
-                      {count}
-                    </span>
-                  </button>
-                );
-              })}
+                      <span>{label}</span>
+                      <span
+                        className={`px-2 py-0.5 rounded-full text-xs font-black ${
+                          isSelected
+                            ? 'bg-white/20 text-white'
+                            : 'bg-gray-200 text-gray-700'
+                        }`}
+                      >
+                        {count}
+                      </span>
+                    </button>
+                  );
+                })}
 
-              <button
-                type="button"
-                onClick={() => setFilter('unnotified')}
-                className={`px-3.5 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${
-                  filter === 'unnotified'
-                    ? 'bg-amber-600 text-white shadow-sm ring-2 ring-amber-400'
-                    : 'bg-amber-50 text-amber-900 hover:bg-amber-100 border border-amber-200'
-                }`}
-                title="Filtrar artículos con decisión (aceptados/rechazados) cuya notificación aún no se ha enviado"
-              >
-                <span>Sin notificar</span>
-                <span className={`px-2 py-0.5 rounded-full text-xs font-black ${
-                  filter === 'unnotified' ? 'bg-amber-700 text-white' : 'bg-amber-200 text-amber-900'
-                }`}>
-                  {unnotifiedCount}
-                </span>
-              </button>
+                <button
+                  type="button"
+                  onClick={() => setFilter('unnotified')}
+                  className={`px-3.5 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${
+                    filter === 'unnotified'
+                      ? 'bg-amber-600 text-white shadow-sm ring-2 ring-amber-400'
+                      : 'bg-amber-50 text-amber-900 hover:bg-amber-100 border border-amber-200'
+                  }`}
+                  title="Filtrar artículos con decisión (aceptados/rechazados) cuya notificación aún no se ha enviado"
+                >
+                  <span>Sin notificar</span>
+                  <span className={`px-2 py-0.5 rounded-full text-xs font-black ${
+                    filter === 'unnotified' ? 'bg-amber-700 text-white' : 'bg-amber-200 text-amber-900'
+                  }`}>
+                    {unnotifiedCount}
+                  </span>
+                </button>
+              </div>
+
+              {/* Botón de exportación a Excel */}
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={handleExportPapers}
+                  disabled={filteredPapers.length === 0 || isExportingPapers}
+                  className="inline-flex items-center gap-2 px-3.5 py-2 bg-[#107C41] hover:bg-[#0D6B37] text-white text-xs sm:text-sm font-bold rounded-lg shadow-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:shadow active:scale-[0.98]"
+                  title={`Descargar Excel con los ${filteredPapers.length} papers del filtro actual`}
+                >
+                  <ExcelIcon className="w-4 h-4" />
+                  <span>{isExportingPapers ? 'Generando…' : `Descargar Excel (${filteredPapers.length})`}</span>
+                </button>
+              </div>
             </div>
 
             {/* Table Header */}

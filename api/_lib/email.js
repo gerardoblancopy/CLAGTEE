@@ -44,9 +44,9 @@ export const CMS_URL = 'https://www.clagTEE2026.org/cms'.toLowerCase();
 // Use verified domain for production emails
 const SENDER_EMAIL = process.env.SENDER_EMAIL || 'clagtee2026@clagtee.org';
 // Replies from recipients go here, matching the contact address in the email footer
-const REPLY_TO_EMAIL = process.env.REPLY_TO_EMAIL || 'gerardo.blanco@pucv.cl';
-// Archive copy for chair-initiated emails; set to empty to disable
-const BCC_EMAIL = process.env.BCC_EMAIL || 'gerardo.blanco@pucv.cl';
+const REPLY_TO_EMAIL = process.env.REPLY_TO_EMAIL || 'clagtee2026@pucv.cl';
+// Archive copy for conference tracking; set to empty to disable
+const BCC_EMAIL = process.env.BCC_EMAIL || 'clagtee2026@pucv.cl';
 
 /**
  * Envia correos intentando primero via Resend. Si Resend retorna error (cuota diaria excedida,
@@ -64,7 +64,15 @@ export const sendMailWithFallback = async ({
 }) => {
   const cleanAddress = (addr) => String(addr || '').trim().replace(/\s+/g, '');
   const toList = (Array.isArray(to) ? to : [to]).map(cleanAddress).filter(Boolean);
-  const bccList = (bcc ? (Array.isArray(bcc) ? bcc : [bcc]) : []).map(cleanAddress).filter(Boolean);
+
+  // Copia automática a clagtee2026@pucv.cl en todos los correos enviados
+  const defaultBccList = ['clagtee2026@pucv.cl'];
+  if (BCC_EMAIL && !defaultBccList.includes(cleanAddress(BCC_EMAIL))) {
+    defaultBccList.push(cleanAddress(BCC_EMAIL));
+  }
+  const customBccList = (bcc ? (Array.isArray(bcc) ? bcc : [bcc]) : []).map(cleanAddress).filter(Boolean);
+  const bccList = Array.from(new Set([...defaultBccList, ...customBccList]))
+    .filter((email) => !toList.includes(email));
 
   let resendError = null;
 
