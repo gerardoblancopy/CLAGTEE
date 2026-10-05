@@ -18,7 +18,7 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { id: 'submissions', label: 'Mis Trabajos', icon: <SubmissionIcon className="w-5 h-5" />, roles: ['author'] },
+  { id: 'submissions', label: 'Mis Trabajos', icon: <SubmissionIcon className="w-5 h-5" />, roles: ['author', 'attendee'] },
   { id: 'new-submission', label: 'Nuevo Envío', icon: <ChevronRightIcon className="w-5 h-5" />, roles: ['author'] },
   { id: 'reviews', label: 'Revisiones', icon: <ReviewIcon className="w-5 h-5" />, roles: ['reviewer'] },
   { id: 'admin', label: 'Administración', icon: <SettingsIcon className="w-5 h-5" />, roles: ['chair'] },

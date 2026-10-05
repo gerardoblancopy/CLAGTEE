@@ -145,8 +145,8 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
   };
 
   useEffect(() => {
-    // Asistentes y empresas no tienen trabajos: la API les responde 403.
-    if (!user || user.role === 'attendee' || user.role === 'company') {
+    // Empresas no tienen trabajos
+    if (!user || user.role === 'company') {
       setPapers([]);
       return;
     }
@@ -158,7 +158,7 @@ export const CMSDataProvider: React.FC<{ children: React.ReactNode }> = ({ child
     }, 12000);
 
     return () => window.clearInterval(interval);
-  }, [user?.id, user?.role]);
+  }, [user?.id, user?.role, user?.email]);
 
   const createPaper = async (input: PaperInput) => {
     setIsLoading(true);

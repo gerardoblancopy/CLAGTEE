@@ -37,3 +37,4 @@ scratch/
 *.pdf
 clagtee-conference/assets/revisiones.md
 node_modules
+.env*

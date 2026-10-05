@@ -51,23 +51,39 @@ export default async function handler(req, res) {
       if (!session) return;
 
       const db = getFirestore();
-      // El alcance lo decide la sesion, no el cliente: un autor solo ve lo suyo
-      // y un revisor solo lo que tiene asignado.
-      let query = db.collection('papers');
-      if (session.role === 'author') {
-        query = query.where('submitterId', '==', session.id);
+      const userEmail = String(session.email || '').trim().toLowerCase();
+      let papers = [];
+
+      if (isStaffRole(session.role)) {
+        const snapshot = await db.collection('papers').get();
+        papers = snapshot.docs.map((doc) => normalizePaper(doc));
       } else if (session.role === 'reviewer') {
-        query = query.where('assignedReviewerIds', 'array-contains', session.id);
-      } else if (!isStaffRole(session.role)) {
+        const snapshot = await db
+          .collection('papers')
+          .where('assignedReviewerIds', 'array-contains', session.id)
+          .get();
+        papers = snapshot.docs.map((doc) => normalizePaper(doc));
+      } else if (session.role === 'author' || session.role === 'attendee') {
+        const snapshot = await db.collection('papers').get();
+        papers = snapshot.docs
+          .map((doc) => normalizePaper(doc))
+          .filter((paper) => {
+            if (session.role === 'author' && paper.submitterId && paper.submitterId === session.id) {
+              return true;
+            }
+            if (userEmail && Array.isArray(paper.authors)) {
+              return paper.authors.some(
+                (a) => a && typeof a.email === 'string' && a.email.trim().toLowerCase() === userEmail
+              );
+            }
+            return false;
+          });
+      } else {
         res.status(403).json({ error: 'Forbidden' });
         return;
       }
 
-      const snapshot = await query.get();
-      const papers = snapshot.docs
-        .map((doc) => normalizePaper(doc))
-        .sort((a, b) => (b.submittedAt || '').localeCompare(a.submittedAt || ''));
-
+      papers.sort((a, b) => (b.submittedAt || '').localeCompare(a.submittedAt || ''));
       res.status(200).json({ papers });
     } catch (error) {
       const message = error && error.message ? error.message : 'Failed to fetch papers';

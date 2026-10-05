@@ -19,13 +19,20 @@ export default async function handler(req, res) {
         return;
       }
 
-      const ref = db.collection('users').doc(userDocId(email, role));
-      const snapshot = await ref.get();
+      const cleanEmail = String(email).trim().toLowerCase();
+      let ref = role ? db.collection('users').doc(userDocId(cleanEmail, role)) : null;
+      let snapshot = ref ? await ref.get() : null;
 
-      // Always respond with success to avoid leaking whether the email exists
-      if (!snapshot.exists) {
-        res.status(200).json({ success: true });
-        return;
+      // Si no existe con ese rol, buscar cualquier cuenta asociada al correo
+      if (!snapshot || !snapshot.exists) {
+        const querySnap = await db.collection('users').where('email', '==', cleanEmail).limit(1).get();
+        if (querySnap.empty) {
+          // Always respond with success to avoid leaking whether the email exists
+          res.status(200).json({ success: true });
+          return;
+        }
+        ref = querySnap.docs[0].ref;
+        snapshot = querySnap.docs[0];
       }
 
       const data = snapshot.data();

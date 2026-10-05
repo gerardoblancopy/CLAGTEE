@@ -175,9 +175,13 @@ const authorizeDownload = async (req, res, fileKey) => {
   }
 
   const isSubmitter = paper.submitterId === session.id;
+  const userEmail = String(session.email || '').trim().toLowerCase();
+  const isCoAuthor = Array.isArray(paper.authors) && paper.authors.some(
+    (a) => a && typeof a.email === 'string' && a.email.trim().toLowerCase() === userEmail
+  );
   const assigned = Array.isArray(paper.assignedReviewerIds) ? paper.assignedReviewerIds : [];
   const isAssignedReviewer = session.role === 'reviewer' && assigned.includes(session.id);
-  if (!isSubmitter && !isAssignedReviewer) {
+  if (!isSubmitter && !isCoAuthor && !isAssignedReviewer) {
     res.status(403).json({ error: 'Forbidden' });
     return false;
   }
