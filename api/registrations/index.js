@@ -242,7 +242,7 @@ export default async function handler(req, res) {
           });
           return;
         }
-        couponKey = normalizeCouponCode(clean.couponCode);
+        couponKey = normalizeCouponCode(couponDef.code);
       }
 
       const phase = getPhase();

@@ -204,7 +204,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
       )}
 
       {/* Cupón de descuento */}
-      {category === 'autor' && (
+      {['autor', 'estudiante'].includes(category) && (
         <div>
           <label className={labelClass}>
             {r.form.couponLabel} <span className="text-gray-400 font-normal">({r.form.optional})</span>

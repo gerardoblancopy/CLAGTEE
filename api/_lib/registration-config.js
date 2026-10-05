@@ -50,11 +50,33 @@ export const buildResumeUrl = (id, token, category) => {
 // canjes (contabilizado en Firestore counters/coupon_<CODE> vía transacción atómica).
 const COUPONS = {
   PROFEPUCV: { code: 'ProfePUCV', maxUses: 10, appliesTo: ['autor'] },
+  // Cupones 100% de descuento para estudiantes EIE (1 uso único por cupón)
+  'EIE-EST-01': { code: 'EIE-EST-01', maxUses: 1, appliesTo: ['estudiante', 'autor'] },
+  'EIE-EST-02': { code: 'EIE-EST-02', maxUses: 1, appliesTo: ['estudiante', 'autor'] },
+  'EIE-EST-03': { code: 'EIE-EST-03', maxUses: 1, appliesTo: ['estudiante', 'autor'] },
+  'EIE-EST-04': { code: 'EIE-EST-04', maxUses: 1, appliesTo: ['estudiante', 'autor'] },
+  'EIE-EST-05': { code: 'EIE-EST-05', maxUses: 1, appliesTo: ['estudiante', 'autor'] },
+  'EIE-EST-06': { code: 'EIE-EST-06', maxUses: 1, appliesTo: ['estudiante', 'autor'] },
+  'EIE-EST-07': { code: 'EIE-EST-07', maxUses: 1, appliesTo: ['estudiante', 'autor'] },
+  'EIE-EST-08': { code: 'EIE-EST-08', maxUses: 1, appliesTo: ['estudiante', 'autor'] },
+  'EIE-EST-09': { code: 'EIE-EST-09', maxUses: 1, appliesTo: ['estudiante', 'autor'] },
+  'EIE-EST-10': { code: 'EIE-EST-10', maxUses: 1, appliesTo: ['estudiante', 'autor'] },
 };
 
 export const normalizeCouponCode = (value) => str(value).toUpperCase();
 
-export const getCouponDefinition = (code) => COUPONS[normalizeCouponCode(code)] || null;
+export const getCouponDefinition = (code) => {
+  const normalized = normalizeCouponCode(code);
+  if (COUPONS[normalized]) return COUPONS[normalized];
+  // Tolerancia para variantes sin espacios o guiones (ej. EIEEST01 -> EIE-EST-01)
+  const cleanDash = normalized.replace(/[\s-_]/g, '');
+  for (const [key, def] of Object.entries(COUPONS)) {
+    if (key.replace(/[\s-_]/g, '') === cleanDash) {
+      return def;
+    }
+  }
+  return null;
+};
 
 const STUDENT_LEVELS = ['pregrado', 'magister', 'doctorado'];
 const STUDENT_TYPES = ['autor', 'asistente'];
