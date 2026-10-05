@@ -50,7 +50,11 @@ export const buildResumeUrl = (id, token, category) => {
 // canjes (contabilizado en Firestore counters/coupon_<CODE> vía transacción atómica).
 const COUPONS = {
   PROFEPUCV: { code: 'ProfePUCV', maxUses: 10, appliesTo: ['autor'] },
-  // Cupones 100% de descuento para estudiantes EIE (1 uso único por cupón)
+  PROFEEIE: { code: 'ProfeEIE', maxUses: 10, appliesTo: ['autor'] },
+  // Cupón único para estudiantes EIE (10 plazas disponibles en total)
+  ESTUDIANTEEIE: { code: 'EstudianteEIE', maxUses: 10, appliesTo: ['estudiante', 'autor'] },
+  ESTUDIANTESEIE: { code: 'EstudianteEIE', maxUses: 10, appliesTo: ['estudiante', 'autor'] },
+  // Cupones individuales de respaldo
   'EIE-EST-01': { code: 'EIE-EST-01', maxUses: 1, appliesTo: ['estudiante', 'autor'] },
   'EIE-EST-02': { code: 'EIE-EST-02', maxUses: 1, appliesTo: ['estudiante', 'autor'] },
   'EIE-EST-03': { code: 'EIE-EST-03', maxUses: 1, appliesTo: ['estudiante', 'autor'] },
