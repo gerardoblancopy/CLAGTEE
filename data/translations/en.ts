@@ -778,6 +778,44 @@ export const contentEN: Content = {
               "affiliation": "Associate Professor PUCV"
             }
           ]
+        },
+        {
+          "id": "panel-transiciones-energeticas",
+          "name": "Energy Transitions",
+          "badge": "Confirmed Expert Panel",
+          "typeLabel": "Expert Panel",
+          "title": "“Energy Transitions”",
+          "tagline": "Regulatory, academic, and technological perspectives on the evolution of the energy sector",
+          "date": "October 29, 2026",
+          "imageUrl": "/speakers/panel-transiciones-energeticas.jpg",
+          "description": "Distinguished panel discussion featuring leading academic and regulatory figures from Chile and Brazil exploring the strategic, technical, and regulatory challenges of energy transitions.",
+          "panelists": [
+            {
+              "name": "Claudia Rahmann",
+              "role": "Full Professor, Electrical Eng. Dept. UChile",
+              "affiliation": "Council Member, Coordinador Eléctrico Nacional"
+            },
+            {
+              "name": "Enzo Sauma",
+              "role": "Full Professor, Industrial & Systems Eng. Dept.",
+              "affiliation": "Pontificia Universidad Católica de Chile (UC)"
+            },
+            {
+              "name": "Héctor Chávez",
+              "role": "Vice Rector of Postgraduate Studies",
+              "affiliation": "Universidad de Santiago de Chile (USACH)"
+            },
+            {
+              "name": "Osvaldo Saavedra",
+              "role": "Full Professor, Electrical Engineering UFMA, Brazil",
+              "affiliation": "Coordinator INEOF, Brazil"
+            },
+            {
+              "name": "Felipe Feijoo",
+              "role": "Director of PhD Program, School of Industrial Engineering",
+              "affiliation": "Pontificia Universidad Católica de Valparaíso (PUCV)"
+            }
+          ]
         }
       ]
     },

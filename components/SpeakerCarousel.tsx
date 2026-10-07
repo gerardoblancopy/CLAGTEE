@@ -8,6 +8,8 @@ interface SpeakerCarouselProps {
   subtitle?: string;
   moreSoonText?: string;
   viewFullText?: string;
+  panelistsLabel?: string;
+  openNewTabText?: string;
 }
 
 export const SpeakerCarousel: React.FC<SpeakerCarouselProps> = ({
@@ -15,6 +17,8 @@ export const SpeakerCarousel: React.FC<SpeakerCarouselProps> = ({
   subtitle,
   moreSoonText = 'Más conferencistas magistrales serán anunciados próximamente.',
   viewFullText = 'Ver afiche oficial',
+  panelistsLabel = 'Panelistas destacados',
+  openNewTabText = 'Abrir en pestaña nueva',
 }) => {
   const [selectedSpeaker, setSelectedSpeaker] = useState<KeynoteSpeaker | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -198,13 +202,17 @@ export const SpeakerCarousel: React.FC<SpeakerCarouselProps> = ({
                   {speaker.panelists && speaker.panelists.length > 0 ? (
                     <div className="mt-4 space-y-2.5">
                       <span className="block text-[11px] font-bold uppercase tracking-wider text-[#2A9D8F]">
-                        Panelistas destacados
+                        {panelistsLabel}
                       </span>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {speaker.panelists.map((panelist, pIdx) => (
                           <div
                             key={pIdx}
-                            className="bg-slate-50 border border-gray-100 rounded-xl p-2.5 flex flex-col justify-between hover:bg-slate-100/80 transition-colors"
+                            className={`bg-slate-50 border border-gray-100 rounded-xl p-2.5 flex flex-col justify-between hover:bg-slate-100/80 transition-colors ${
+                              speaker.panelists && speaker.panelists.length % 2 !== 0 && pIdx === speaker.panelists.length - 1
+                                ? 'sm:col-span-2'
+                                : ''
+                            }`}
                           >
                             <span className="font-bold text-xs text-[#0D2C54]">
                               {panelist.name}
@@ -323,7 +331,7 @@ export const SpeakerCarousel: React.FC<SpeakerCarouselProps> = ({
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#2A9D8F] text-white text-xs font-bold hover:bg-[#238276] transition-colors"
                   >
-                    Abrir en pestaña nueva
+                    {openNewTabText}
                   </a>
                 </div>
               </div>

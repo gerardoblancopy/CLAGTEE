@@ -520,6 +520,8 @@ const AppContent: React.FC = () => {
             subtitle={content.sections.speakers.subtitle}
             moreSoonText={ui.speakersPlaceholder}
             viewFullText={language === 'es' ? 'Ver afiche oficial' : language === 'pt' ? 'Ver cartaz oficial' : 'View official banner'}
+            panelistsLabel={language === 'es' ? 'Panelistas destacados' : language === 'pt' ? 'Painelistas de destaque' : 'Featured Panelists'}
+            openNewTabText={language === 'es' ? 'Abrir en pestaña nueva' : language === 'pt' ? 'Abrir em nova aba' : 'Open in new tab'}
           />
         </Section>
         

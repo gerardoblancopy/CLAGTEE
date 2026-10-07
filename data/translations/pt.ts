@@ -778,6 +778,44 @@ export const contentPT: Content = {
               "affiliation": "Professor Associado PUCV"
             }
           ]
+        },
+        {
+          "id": "panel-transiciones-energeticas",
+          "name": "Transições Energéticas",
+          "badge": "Painel de Especialistas Confirmado",
+          "typeLabel": "Painel de Especialistas",
+          "title": "“Transições Energéticas”",
+          "tagline": "Perspectivas regulatórias, acadêmicas e tecnológicas na evolução do setor energético",
+          "date": "29 de Outubro de 2026",
+          "imageUrl": "/speakers/panel-transiciones-energeticas.jpg",
+          "description": "Painel de alto nível reunindo lideranças da academia e de órgãos do setor elétrico do Chile e do Brasil para debater os desafios estratégicos, técnicos e regulatórios das transições energéticas.",
+          "panelists": [
+            {
+              "name": "Claudia Rahmann",
+              "role": "Professora Titular Depto. Eng. Elétrica UChile",
+              "affiliation": "Conselheira Coordinador Eléctrico Nacional"
+            },
+            {
+              "name": "Enzo Sauma",
+              "role": "Professor Titular Depto. Eng. Industrial e de Sistemas",
+              "affiliation": "Pontifícia Universidade Católica do Chile (UC)"
+            },
+            {
+              "name": "Héctor Chávez",
+              "role": "Pró-Reitor de Pós-Graduação",
+              "affiliation": "Universidade de Santiago do Chile (USACH)"
+            },
+            {
+              "name": "Osvaldo Saavedra",
+              "role": "Professor Titular Eng. Elétrica UFMA, Brasil",
+              "affiliation": "Coordenador INEOF, Brasil"
+            },
+            {
+              "name": "Felipe Feijoo",
+              "role": "Diretor do Programa de Doutorado da Escola de Eng. Industrial",
+              "affiliation": "Pontifícia Universidade Católica de Valparaíso (PUCV)"
+            }
+          ]
         }
       ]
     },
