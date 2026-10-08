@@ -25,6 +25,7 @@ import {
 } from '../_lib/participant-access.js';
 import { sendRegistrationReceipt, sendComprobanteReceived, sendCouponConfirmation } from '../_lib/email.js';
 import { handleSponsorshipInquiry } from '../_lib/sponsorship-inquiry.js';
+import { handlePreCongressList, handlePreCongressRegistration } from '../_lib/pre-congress.js';
 
 const str = (value) => (typeof value === 'string' ? value.trim() : '');
 
@@ -151,6 +152,12 @@ export default async function handler(req, res) {
         return;
       }
 
+      // Inscripciones al Pre-congreso: GET ?scope=pre-congress (staff/chair).
+      if (getQueryParam(req, 'scope') === 'pre-congress') {
+        await handlePreCongressList(req, res);
+        return;
+      }
+
       // Último correo enviado por destinatario: GET ?scope=email-log (staff/chair).
       if (getQueryParam(req, 'scope') === 'email-log') {
         await handleEmailLog(req, res);
@@ -217,6 +224,12 @@ export default async function handler(req, res) {
       // Pre-reserva o consulta de auspicios corporativos: { action: 'sponsorship-inquiry', ... } (público).
       if (str(body?.action) === 'sponsorship-inquiry') {
         await handleSponsorshipInquiry(getFirestore(), res, body);
+        return;
+      }
+
+      // Inscripción al Pre-congreso: { action: 'pre-congress', ... } (público).
+      if (str(body?.action) === 'pre-congress') {
+        await handlePreCongressRegistration(getFirestore(), res, body);
         return;
       }
 

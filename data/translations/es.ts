@@ -11,6 +11,7 @@ export const contentES: Content = {
     { "text": "Inscripción", "url": "#inscripcion" },
     { "text": "Patrocinio", "url": "#patrocinio" },
     { "text": "Conferencistas", "url": "#conferencistas" },
+    { "text": "Pre-congreso", "url": "#pre-congreso" },
     { "text": "Sede", "url": "#sede" },
     { "text": "Ediciones", "url": "#ediciones" },
     { "text": "Comités", "url": "#comites" },
@@ -696,6 +697,144 @@ export const contentES: Content = {
         "sponsorships": "Modalidades de Auspicio",
         "standForm": "Inscripción de Stand",
         "inquiryForm": "Pre-Reserva de Auspicio"
+      }
+    },
+    "preCongress": {
+      "title": "Pre-congreso",
+      "subtitle": "Workshop + Seminario: Inteligencia Artificial aplicada a Sistemas Eléctricos. Una actividad previa a CLAGTEE 2026, el martes 27 de octubre de 15:00 a 18:00 hrs en Mr. Hotel Providencia, Santiago.",
+      "posters": [
+        {
+          "id": "precongreso-invitacion",
+          "name": "Workshop + Seminario",
+          "badge": "Pre Congreso",
+          "typeLabel": "Actividad Pre Congreso",
+          "title": "“Workshop + Seminario: Inteligencia Artificial aplicada a Sistemas Eléctricos”",
+          "tagline": "27 de octubre · 15:00 a 18:00 hrs · Mr. Hotel Providencia, Santiago",
+          "date": "27 de Octubre 2026",
+          "imageUrl": "/pre-congreso/precongreso-invitacion.jpg",
+          "description": "Organiza el Proyecto FONDEF IDeA I+D 2026 ID26I10727 SAPERE AUDE. Colaboran el Coordinador Eléctrico Nacional y Grupo Saesa."
+        },
+        {
+          "id": "precongreso-programa",
+          "name": "Programa",
+          "badge": "Pre Congreso",
+          "typeLabel": "Workshop + Seminario",
+          "title": "“Inteligencia Artificial aplicada a Sistemas Eléctricos”",
+          "tagline": "Charlas, desafío del workshop y sesión práctica",
+          "date": "27 de Octubre 2026",
+          "imageUrl": "/pre-congreso/precongreso-programa.jpg",
+          "panelistsLabel": "Programa",
+          "panelists": [
+            {
+              "name": "Gerardo Blanco",
+              "role": "Introducción a la Inteligencia Artificial y Toma de Decisiones Multicriterio"
+            },
+            {
+              "name": "Diego Altamirano",
+              "role": "Introducción a la Planificación Expansión del Sistema de Transmisión en Chile"
+            },
+            {
+              "name": "Emmanuel Peralta",
+              "role": "Proyecto SAPERE-AUDE"
+            },
+            {
+              "name": "Emmanuel Peralta",
+              "role": "Presentación del Desafío del Workshop"
+            },
+            {
+              "name": "Equipo PUCV",
+              "role": "Sesión práctica y discusión"
+            }
+          ]
+        },
+        {
+          "id": "precongreso-seminario",
+          "name": "Seminario de IA",
+          "badge": "Pre Congreso",
+          "typeLabel": "Seminario",
+          "title": "“IA aplicada a Sistemas Eléctricos: del potencial tecnológico a la adopción en el sector”",
+          "tagline": "Al finalizar el panel se realizará el Cóctel de Bienvenida de CLAGTEE 2026",
+          "date": "27 de Octubre 2026",
+          "imageUrl": "/pre-congreso/precongreso-seminario.jpg",
+          "panelistsLabel": "Panelistas",
+          "panelists": [
+            {
+              "name": "Deninson Fuentes",
+              "role": "Subgerente de Planificación",
+              "affiliation": "Coordinador Eléctrico Nacional"
+            },
+            {
+              "name": "Mauricio Pereira",
+              "role": "Subgerente Planificación del Sistema",
+              "affiliation": "Grupo Saesa"
+            },
+            {
+              "name": "Rodrigo Moreno",
+              "role": "Director de Ingeniería Civil en Energía",
+              "affiliation": "Universidad Adolfo Ibáñez"
+            }
+          ]
+        },
+        {
+          "id": "clagtee-2026-se-parte",
+          "name": "Sé parte de CLAGTEE 2026",
+          "badge": "CLAGTEE 2026",
+          "typeLabel": "Congreso",
+          "title": "“XVI Congreso Latinoamericano de Generación y Transporte de Energía Eléctrica”",
+          "tagline": "¡Inscríbete y participa!",
+          "date": "28 al 30 de Octubre 2026",
+          "imageUrl": "/pre-congreso/clagtee-2026-se-parte.jpg",
+          "description": "Santiago, Chile. Organizan la Universidad Nacional de Mar del Plata, la Escuela de Ingeniería Eléctrica de la Pontificia Universidad Católica de Valparaíso y la UNESP. Contacto: clagtee2026@pucv.cl."
+        }
+      ],
+      "form": {
+        "badge": "Inscripción Pre-congreso",
+        "title": "Inscríbete al Workshop + Seminario",
+        "description": "Completa el formulario para reservar tu lugar. Te enviaremos la confirmación por correo.",
+        "eventDate": "Martes 27 de octubre · 15:00 a 18:00 hrs",
+        "eventVenue": "Mr. Hotel Providencia, Santiago de Chile",
+        "firstName": "Nombre",
+        "lastName": "Apellido",
+        "email": "Correo electrónico",
+        "institution": "Institución / Empresa",
+        "institutionPlaceholder": "Ej: PUCV, Coordinador Eléctrico Nacional",
+        "position": "Cargo",
+        "country": "País",
+        "phone": "Teléfono",
+        "profile": "Perfil",
+        "profileOptions": [
+          {
+            "value": "estudiante",
+            "label": "Estudiante"
+          },
+          {
+            "value": "academico",
+            "label": "Académico/a o investigador/a"
+          },
+          {
+            "value": "industria",
+            "label": "Industria / empresa"
+          },
+          {
+            "value": "sector-publico",
+            "label": "Sector público / regulador"
+          },
+          {
+            "value": "otro",
+            "label": "Otro"
+          }
+        ],
+        "comments": "Comentarios",
+        "commentsPlaceholder": "¿Algo que debamos saber?",
+        "optional": "opcional",
+        "requiredNote": "Completa los campos marcados con *.",
+        "submit": "Inscribirme",
+        "submitting": "Enviando…",
+        "successTitle": "¡Inscripción recibida!",
+        "successMessage": "Te enviamos un correo con la confirmación y los detalles de la actividad.",
+        "registerAnother": "Inscribir a otra persona",
+        "duplicateError": "Este correo ya está inscrito en el Pre-congreso.",
+        "genericError": "No pudimos registrar tu inscripción. Intenta nuevamente o escribe a clagtee2026@pucv.cl."
       }
     },
     "speakers": {

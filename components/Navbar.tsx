@@ -60,7 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({ navItems, onCmsClick, ui }) => {
   const navLinkClasses = `
     font-['Montserrat'] font-bold
     text-white hover:text-[#F4A261]
-    transition-colors duration-300 uppercase text-[10px] xl:text-[11px] 2xl:text-xs whitespace-nowrap
+    transition-colors duration-300 uppercase text-[10px] 2xl:text-[11px] whitespace-nowrap
     relative after:content-[''] after:absolute after:w-0 after:h-[2px]
     after:block after:bg-[#F4A261] after:transition-all after:duration-300
     after:left-1/2 after:-translate-x-1/2 after:bottom-[-4px]
@@ -70,15 +70,16 @@ export const Navbar: React.FC<NavbarProps> = ({ navItems, onCmsClick, ui }) => {
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#0D2C54] shadow-lg' : 'bg-transparent'}`}>
-        <div className="w-full px-3 lg:px-5 xl:px-8 flex justify-between items-center gap-2 xl:gap-5 h-20">
+        <div className="w-full px-3 lg:px-5 2xl:px-8 flex justify-between items-center gap-2 2xl:gap-4 h-20">
           <a href="#inicio" aria-label={ui.ariaHome} onClick={handleNavClick} className="shrink-0">
             <img
               src="/CLAGTEE_2026_blanco.png"
               alt="CLAGTEE 2026 Logo"
-              className="h-14 xl:h-16 object-contain"
+              className="h-14 xl:h-10 2xl:h-14 object-contain"
             />
           </a>
-          <div className="hidden lg:flex items-center space-x-2 xl:space-x-3.5 2xl:space-x-5">
+          {/* El menú completo necesita ~1280 px; por debajo se usa el menú móvil. */}
+          <div className="hidden xl:flex items-center space-x-1.5 2xl:space-x-2.5">
             {navItems.map((item) => (
               <a key={item.url} href={item.url} className={navLinkClasses} onClick={handleNavClick}>
                 {item.text}
@@ -87,12 +88,12 @@ export const Navbar: React.FC<NavbarProps> = ({ navItems, onCmsClick, ui }) => {
             <LanguageSelector language={language} onLanguageChange={setLanguage} variant="desktop" />
             <button
               onClick={onCmsClick}
-              className="bg-[#F4A261] text-white px-3.5 py-1.5 xl:px-4 xl:py-2 rounded-xl font-bold hover:bg-[#E76F51] transition-all text-[10px] xl:text-xs uppercase whitespace-nowrap shrink-0"
+              className="bg-[#F4A261] text-white px-3 py-1.5 2xl:px-4 2xl:py-2 rounded-xl font-bold hover:bg-[#E76F51] transition-all text-[10px] 2xl:text-xs uppercase whitespace-nowrap shrink-0"
             >
               {ui.paperManagement}
             </button>
           </div>
-          <div className="lg:hidden">
+          <div className="xl:hidden">
             <button
               onClick={() => setIsOpen(true)}
               className="text-white"
@@ -110,7 +111,7 @@ export const Navbar: React.FC<NavbarProps> = ({ navItems, onCmsClick, ui }) => {
       <div
         id="mobile-menu"
         className={`
-          lg:hidden
+          xl:hidden
           fixed inset-0 bg-white z-[100]
           transform transition-transform duration-300 ease-in-out
           ${isOpen ? 'translate-x-0' : 'translate-x-full'}
