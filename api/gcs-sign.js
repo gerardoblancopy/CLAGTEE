@@ -9,6 +9,7 @@ import { getSession, isStaffRole, requireAuth, requireStaff } from './_lib/auth.
 // Endpoint unificado de firmas GCS:
 //   POST  -> sube (firma write).  body: { fileName, contentType, prefix }
 //   GET   -> descarga (firma read). query: ?object=<fileKey>
+//   POST  -> descarga por lotes (staff). body: { action: 'sign-downloads', objects }
 // (Antes eran gcs-sign-upload.js y gcs-sign-download.js; fusionados para
 //  respetar el límite de 12 Serverless Functions del plan Hobby.)
 
@@ -227,6 +228,38 @@ const signDownload = async (req, res) => {
   res.status(200).json({ url });
 };
 
+// Descarga por lotes del staff (comprobantes y certificados de estudiante):
+// firma todas las URLs en una sola llamada para que el CMS arme un ZIP.
+// body: { action: 'sign-downloads', objects: [fileKey, ...] } -> { urls: { [fileKey]: url } }
+const MAX_BATCH_OBJECTS = 1000;
+
+const signDownloadBatch = async (req, res, body) => {
+  if (!(await requireStaff(req, res))) return;
+
+  const objects = Array.isArray(body.objects)
+    ? [...new Set(body.objects.filter((key) => typeof key === 'string' && key))]
+    : [];
+  if (objects.length === 0 || objects.length > MAX_BATCH_OBJECTS) {
+    res.status(400).json({ error: `objects must have between 1 and ${MAX_BATCH_OBJECTS} file keys` });
+    return;
+  }
+  if (!objects.every((key) => STAFF_ONLY_DOWNLOAD_PREFIXES.some((prefix) => key.startsWith(prefix)))) {
+    res.status(403).json({ error: 'Forbidden' });
+    return;
+  }
+
+  const bucket = getStorage().bucket(getEnv('GCS_BUCKET'));
+  const expires = Date.now() + 15 * 60 * 1000;
+  const signed = await Promise.all(
+    objects.map(async (key) => {
+      const [url] = await bucket.file(key).getSignedUrl({ version: 'v4', action: 'read', expires });
+      return [key, url];
+    })
+  );
+
+  res.status(200).json({ urls: Object.fromEntries(signed) });
+};
+
 export default async function handler(req, res) {
   if (!process.env.GCS_PRIVATE_KEY && process.env.GCS_PRIVATE_KEY_ENV) {
     process.env.GCS_PRIVATE_KEY = process.env.GCS_PRIVATE_KEY_ENV;
@@ -234,6 +267,11 @@ export default async function handler(req, res) {
 
   try {
     if (req.method === 'POST') {
+      const body = parseBody(req);
+      if (body?.action === 'sign-downloads') {
+        await signDownloadBatch(req, res, body);
+        return;
+      }
       await signUpload(req, res);
       return;
     }

@@ -9,6 +9,7 @@ import { StaffMailer } from './StaffMailer';
 import { AcceptedPapersList } from './AcceptedPapersList';
 import { MailSegment, getUncoveredPapers, normalizePaperId, resolveRegistrationPaperId } from './registrationSegments';
 import { exportRegistrationsToExcel } from './exportRegistrationsExcel';
+import { collectRegistrationFiles, downloadRegistrationFilesZip } from './downloadRegistrationFiles';
 
 const STATUS_ORDER: RegistrationStatus[] = [
   'pre-registro-creado',
@@ -70,6 +71,12 @@ const ExcelIcon = ({ className = 'w-4 h-4' }: { className?: string }) => (
   </svg>
 );
 
+const ZipIcon = ({ className = 'w-4 h-4' }: { className?: string }) => (
+  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m0 0l-4-4m4 4l4-4" />
+  </svg>
+);
+
 export const StaffDashboard: React.FC = () => {
   const { user } = useAuth();
   const { papers } = useCMSData();
@@ -83,6 +90,7 @@ export const StaffDashboard: React.FC = () => {
   const [updatingId, setUpdatingId] = useState<string | null>(null);
   const [mailSegment, setMailSegment] = useState<MailSegment>('sin-iniciar');
   const [isExporting, setIsExporting] = useState(false);
+  const [zipProgress, setZipProgress] = useState<{ done: number; total: number } | null>(null);
   const mailerRef = useRef<HTMLDivElement>(null);
 
   const acceptedPapers = useMemo(() => papers.filter((p) => p.status === 'accepted'), [papers]);
@@ -179,6 +187,37 @@ export const StaffDashboard: React.FC = () => {
     () => (categoryFilter === 'all' ? inStatus : inStatus.filter((r) => r.category === categoryFilter)),
     [inStatus, categoryFilter]
   );
+
+  // Comprobantes y certificados de estudiante de las inscripciones del filtro actual.
+  const filteredFiles = useMemo(() => collectRegistrationFiles(filtered), [filtered]);
+
+  const handleDownloadFiles = async () => {
+    if (filteredFiles.length === 0 || zipProgress) return;
+    setZipProgress({ done: 0, total: filteredFiles.length });
+    setError(null);
+    setNotice(null);
+    try {
+      const { downloaded, failed } = await downloadRegistrationFilesZip({
+        files: filteredFiles,
+        statusFilter: filter,
+        categoryFilter,
+        onProgress: (done, total) => setZipProgress({ done, total }),
+      });
+      setNotice(`ZIP descargado con ${downloaded} archivos (comprobantes y certificados).`);
+      if (failed.length > 0) {
+        setError(
+          `No se pudieron descargar ${failed.length} archivos (${failed
+            .map((file) => file.registrationId)
+            .join(', ')}). El ZIP incluye la lista en _no-descargados.txt.`
+        );
+      }
+    } catch (err) {
+      console.error('Error al descargar comprobantes y certificados:', err);
+      setError('No se pudo generar el ZIP de comprobantes y certificados.');
+    } finally {
+      setZipProgress(null);
+    }
+  };
 
   const handleExport = async (mode: 'filtered' | 'all' = 'filtered') => {
     setIsExporting(true);
@@ -377,6 +416,21 @@ export const StaffDashboard: React.FC = () => {
           >
             <ExcelIcon className="w-4 h-4" />
             <span>{isExporting ? 'Generando Excel…' : `Descargar Excel (${filtered.length})`}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => void handleDownloadFiles()}
+            disabled={filteredFiles.length === 0 || zipProgress !== null}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#0D2C54] hover:bg-[#0A2242] text-white text-sm font-bold rounded-lg shadow-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:shadow active:scale-[0.98]"
+            title={`Descargar en un ZIP los ${filteredFiles.length} comprobantes de pago y certificados de estudiante del filtro actual`}
+          >
+            <ZipIcon className="w-4 h-4" />
+            <span>
+              {zipProgress
+                ? `Descargando ${zipProgress.done}/${zipProgress.total}…`
+                : `Comprobantes y certificados (${filteredFiles.length})`}
+            </span>
           </button>
 
           {(filter !== 'all' || categoryFilter !== 'all') && (
