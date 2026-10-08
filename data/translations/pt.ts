@@ -701,7 +701,7 @@ export const contentPT: Content = {
     },
     "preCongress": {
       "title": "Pré-congresso",
-      "subtitle": "Workshop + Seminário: Inteligência Artificial aplicada a Sistemas Elétricos. Uma atividade prévia ao CLAGTEE 2026, na terça-feira, 27 de outubro, das 15h às 18h, no Mr. Hotel Providencia, Santiago. Atividade gratuita, com vagas limitadas.",
+      "subtitle": "Workshop + Seminário: Inteligência Artificial aplicada a Sistemas Elétricos. Uma atividade prévia ao CLAGTEE 2026, na terça-feira, 27 de outubro, das 15h às 18h, no Auditorio CEA PUCV (Antonio Bellet 314, Providencia, Santiago). Atividade gratuita, com vagas limitadas.",
       "posters": [
         {
           "id": "precongreso-invitacion",
@@ -709,9 +709,9 @@ export const contentPT: Content = {
           "badge": "Pré-congresso",
           "typeLabel": "Atividade Pré-congresso",
           "title": "“Workshop + Seminário: Inteligência Artificial aplicada a Sistemas Elétricos”",
-          "tagline": "27 de outubro · 15h às 18h · Mr. Hotel Providencia, Santiago",
+          "tagline": "27 de outubro · 15h às 18h · Auditorio CEA PUCV, Antonio Bellet 314, Providencia",
           "date": "27 de Outubro de 2026",
-          "imageUrl": "/pre-congreso/precongreso-invitacion.jpg",
+          "imageUrl": "/pre-congreso/precongreso-portada.jpg",
           "description": "Organizado pelo Projeto FONDEF IDeA I+D 2026 ID26I10727 SAPERE AUDE, com a colaboração do Coordinador Eléctrico Nacional e do Grupo Saesa."
         },
         {
@@ -793,7 +793,7 @@ export const contentPT: Content = {
         "description": "A participação é gratuita, mas as vagas são limitadas. Preencha o formulário para garantir seu lugar; enviaremos a confirmação por e-mail.",
         "freeNote": "Gratuito · Vagas limitadas",
         "eventDate": "Terça-feira, 27 de outubro · 15h às 18h",
-        "eventVenue": "Mr. Hotel Providencia, Santiago do Chile",
+        "eventVenue": "Auditorio CEA PUCV · Antonio Bellet 314, Providencia, Santiago do Chile",
         "firstName": "Nome",
         "lastName": "Sobrenome",
         "email": "E-mail",

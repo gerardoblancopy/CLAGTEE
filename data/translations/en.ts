@@ -701,7 +701,7 @@ export const contentEN: Content = {
     },
     "preCongress": {
       "title": "Pre-congress",
-      "subtitle": "Workshop + Seminar: Artificial Intelligence Applied to Power Systems. An activity ahead of CLAGTEE 2026 on Tuesday, October 27, from 3:00 to 6:00 p.m. at Mr. Hotel Providencia, Santiago. Free of charge, with limited spots.",
+      "subtitle": "Workshop + Seminar: Artificial Intelligence Applied to Power Systems. An activity ahead of CLAGTEE 2026 on Tuesday, October 27, from 3:00 to 6:00 p.m. at Auditorio CEA PUCV (Antonio Bellet 314, Providencia, Santiago). Free of charge, with limited spots.",
       "posters": [
         {
           "id": "precongreso-invitacion",
@@ -709,9 +709,9 @@ export const contentEN: Content = {
           "badge": "Pre-congress",
           "typeLabel": "Pre-congress Activity",
           "title": "“Workshop + Seminar: Artificial Intelligence Applied to Power Systems”",
-          "tagline": "October 27 · 3:00–6:00 p.m. · Mr. Hotel Providencia, Santiago",
+          "tagline": "October 27 · 3:00–6:00 p.m. · Auditorio CEA PUCV, Antonio Bellet 314, Providencia",
           "date": "October 27, 2026",
-          "imageUrl": "/pre-congreso/precongreso-invitacion.jpg",
+          "imageUrl": "/pre-congreso/precongreso-portada.jpg",
           "description": "Organized by the FONDEF IDeA R&D 2026 project ID26I10727 SAPERE AUDE, in collaboration with Coordinador Eléctrico Nacional and Grupo Saesa."
         },
         {
@@ -793,7 +793,7 @@ export const contentEN: Content = {
         "description": "Participation is free, but spots are limited. Fill in the form to save your place; we will send you a confirmation by email.",
         "freeNote": "Free · Limited spots",
         "eventDate": "Tuesday, October 27 · 3:00–6:00 p.m.",
-        "eventVenue": "Mr. Hotel Providencia, Santiago, Chile",
+        "eventVenue": "Auditorio CEA PUCV · Antonio Bellet 314, Providencia, Santiago, Chile",
         "firstName": "First name",
         "lastName": "Last name",
         "email": "Email",

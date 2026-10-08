@@ -79,7 +79,7 @@ const sendPreCongressConfirmation = (record) => {
     <div style="background:#f8fafc; border-left:4px solid #F4A261; padding:12px 16px; margin:0 0 16px;">
       <p style="margin:0 0 6px; font-size:14px; color:#425466;">N° de inscripción: <strong style="color:#0D2C54;">${escapeHtml(record.id)}</strong></p>
       <p style="margin:0 0 6px; font-size:14px; color:#425466;">Fecha: <strong>martes 27 de octubre de 2026, 15:00 a 18:00 hrs.</strong></p>
-      <p style="margin:0; font-size:14px; color:#425466;">Lugar: <strong>Mr. Hotel Providencia, Santiago de Chile</strong></p>
+      <p style="margin:0; font-size:14px; color:#425466;">Lugar: <strong>Auditorio CEA PUCV, Antonio Bellet 314, Providencia, Santiago</strong></p>
     </div>
     <p style="margin:0; font-size:15px; line-height:1.6; color:#425466;">
       Al finalizar el seminario se realizará el Cóctel de Bienvenida de CLAGTEE 2026.
@@ -92,7 +92,7 @@ const sendPreCongressConfirmation = (record) => {
     text:
       `Estimado/a ${name},\n\nHemos registrado su inscripción (${record.id}) al Pre-congreso de CLAGTEE 2026: ` +
       'Workshop + Seminario: Inteligencia Artificial aplicada a Sistemas Eléctricos.\n' +
-      'Fecha: martes 27 de octubre de 2026, 15:00 a 18:00 hrs.\nLugar: Mr. Hotel Providencia, Santiago de Chile.\n\n' +
+      'Fecha: martes 27 de octubre de 2026, 15:00 a 18:00 hrs.\nLugar: Auditorio CEA PUCV, Antonio Bellet 314, Providencia, Santiago.\n\n' +
       'Comité Organizador CLAGTEE 2026 - clagtee2026@pucv.cl',
     label: 'Inscripción Pre-congreso',
   });
