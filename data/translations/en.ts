@@ -302,7 +302,7 @@ export const contentEN: Content = {
     "registration": {
       "title": "Registration and Payments",
       "intro": "Registration for CLAGTEE 2026 is completed in two stages: first fill in the registration form, then make the payment on the PUCV platform corresponding to your category. Because the payment platform operates externally, after paying you must return to the form and enter the transaction number or attach the payment receipt. Your registration will be confirmed by email once the organizing team validates the information.",
-      "phaseNote": "Early Bird and Regular fees depend on the payment date. The Early Bird rate applies until Thursday, October 8, 2026.",
+      "phaseNote": "Early Bird and Regular fees depend on the payment date. The Early Bird rate applies until Friday, October 9, 2026.",
       "feesTitle": "Categories and fees",
       "earlyBirdLabel": "Early Bird",
       "regularLabel": "Regular",
@@ -888,7 +888,7 @@ export const uiEN: UIStrings = {
   ariaOpenMenu: "Open navigation menu",
   ariaCloseMenu: "Close navigation menu",
   speakersPlaceholder: "More keynote speakers and panels will be announced soon.",
-  deadlineBanner: "Early Bird registration rate until Thursday, October 8, 2026",
+  deadlineBanner: "Deadline extended: Early Bird registration rate until Friday, October 9, 2026",
   venueTitle: "Event Venue",
   venueCity: "Providencia, Santiago, Chile",
   venueHotelName: "MR. Hotel (former Hotel Neruda)",

@@ -302,7 +302,7 @@ export const contentPT: Content = {
     "registration": {
       "title": "Inscrição e Pagamentos",
       "intro": "A inscrição no CLAGTEE 2026 é feita em duas etapas: primeiro preencha o formulário de registro e depois efetue o pagamento na plataforma PUCV correspondente à sua categoria. Como a plataforma de pagamentos opera de forma externa, após pagar você deverá voltar ao formulário e informar o número da transação ou anexar o comprovante de pagamento. Sua inscrição será confirmada por e-mail assim que a equipe organizadora validar as informações.",
-      "phaseNote": "As tarifas Early Bird e Regular dependem da data de pagamento. A tarifa Early Bird vale até quinta-feira, 8 de outubro de 2026.",
+      "phaseNote": "As tarifas Early Bird e Regular dependem da data de pagamento. A tarifa Early Bird vale até sexta-feira, 9 de outubro de 2026.",
       "feesTitle": "Modalidades e tarifas",
       "earlyBirdLabel": "Early Bird",
       "regularLabel": "Regular",
@@ -888,7 +888,7 @@ export const uiPT: UIStrings = {
   ariaOpenMenu: "Abrir menu de navegação",
   ariaCloseMenu: "Fechar menu de navegação",
   speakersPlaceholder: "Mais palestrantes magistrais e painéis serão anunciados em breve.",
-  deadlineBanner: "Tarifa Early Bird de inscrição até quinta-feira, 8 de outubro de 2026",
+  deadlineBanner: "Prazo prorrogado: tarifa Early Bird de inscrição até sexta-feira, 9 de outubro de 2026",
   venueTitle: "Local do Evento",
   venueCity: "Providencia, Santiago do Chile",
   venueHotelName: "MR. Hotel (ex-Hotel Neruda)",
