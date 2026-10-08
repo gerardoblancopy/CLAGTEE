@@ -701,7 +701,7 @@ export const contentEN: Content = {
     },
     "preCongress": {
       "title": "Pre-congress",
-      "subtitle": "Workshop + Seminar: Artificial Intelligence Applied to Power Systems. An activity ahead of CLAGTEE 2026 on Tuesday, October 27, from 3:00 to 6:00 p.m. at Mr. Hotel Providencia, Santiago.",
+      "subtitle": "Workshop + Seminar: Artificial Intelligence Applied to Power Systems. An activity ahead of CLAGTEE 2026 on Tuesday, October 27, from 3:00 to 6:00 p.m. at Mr. Hotel Providencia, Santiago. Free of charge, with limited spots.",
       "posters": [
         {
           "id": "precongreso-invitacion",
@@ -790,7 +790,8 @@ export const contentEN: Content = {
       "form": {
         "badge": "Pre-congress Registration",
         "title": "Register for the Workshop + Seminar",
-        "description": "Fill in the form to save your spot. We will send you a confirmation by email.",
+        "description": "Participation is free, but spots are limited. Fill in the form to save your place; we will send you a confirmation by email.",
+        "freeNote": "Free · Limited spots",
         "eventDate": "Tuesday, October 27 · 3:00–6:00 p.m.",
         "eventVenue": "Mr. Hotel Providencia, Santiago, Chile",
         "firstName": "First name",

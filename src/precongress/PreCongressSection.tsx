@@ -140,6 +140,9 @@ const PreCongressForm: React.FC = () => {
         <h4 className="text-2xl font-extrabold text-[#0D2C54] font-['Montserrat'] mt-2">{f.title}</h4>
         <p className="text-gray-500 text-sm mt-1">{f.description}</p>
         <div className="flex flex-wrap gap-2 mt-4 text-xs font-semibold text-[#0D2C54]">
+          <span className="inline-flex items-center bg-[#2A9D8F]/10 border border-[#2A9D8F]/30 text-[#1F7A6F] rounded-lg px-3 py-1.5 font-bold">
+            {f.freeNote}
+          </span>
           <span className="inline-flex items-center gap-1.5 bg-slate-50 border border-gray-100 rounded-lg px-3 py-1.5">
             <CalendarIcon className="w-3.5 h-3.5 text-[#2A9D8F]" />
             {f.eventDate}

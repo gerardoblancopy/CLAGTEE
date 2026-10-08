@@ -701,7 +701,7 @@ export const contentPT: Content = {
     },
     "preCongress": {
       "title": "Pré-congresso",
-      "subtitle": "Workshop + Seminário: Inteligência Artificial aplicada a Sistemas Elétricos. Uma atividade prévia ao CLAGTEE 2026, na terça-feira, 27 de outubro, das 15h às 18h, no Mr. Hotel Providencia, Santiago.",
+      "subtitle": "Workshop + Seminário: Inteligência Artificial aplicada a Sistemas Elétricos. Uma atividade prévia ao CLAGTEE 2026, na terça-feira, 27 de outubro, das 15h às 18h, no Mr. Hotel Providencia, Santiago. Atividade gratuita, com vagas limitadas.",
       "posters": [
         {
           "id": "precongreso-invitacion",
@@ -790,7 +790,8 @@ export const contentPT: Content = {
       "form": {
         "badge": "Inscrição Pré-congresso",
         "title": "Inscreva-se no Workshop + Seminário",
-        "description": "Preencha o formulário para garantir sua vaga. Enviaremos a confirmação por e-mail.",
+        "description": "A participação é gratuita, mas as vagas são limitadas. Preencha o formulário para garantir seu lugar; enviaremos a confirmação por e-mail.",
+        "freeNote": "Gratuito · Vagas limitadas",
         "eventDate": "Terça-feira, 27 de outubro · 15h às 18h",
         "eventVenue": "Mr. Hotel Providencia, Santiago do Chile",
         "firstName": "Nome",

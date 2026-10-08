@@ -227,6 +227,7 @@ export interface PreCongressContent {
     badge: string;
     title: string;
     description: string;
+    freeNote: string;
     eventDate: string;
     eventVenue: string;
     firstName: string;
