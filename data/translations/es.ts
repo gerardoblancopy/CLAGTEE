@@ -701,7 +701,7 @@ export const contentES: Content = {
     },
     "preCongress": {
       "title": "Pre-congreso",
-      "subtitle": "Workshop + Seminario: Inteligencia Artificial aplicada a Sistemas Eléctricos. Una actividad previa a CLAGTEE 2026, el martes 27 de octubre de 15:00 a 18:00 hrs en Mr. Hotel Providencia, Santiago. Actividad gratuita, con cupos limitados.",
+      "subtitle": "Workshop + Seminario: Inteligencia Artificial aplicada a Sistemas Eléctricos. Una actividad previa a CLAGTEE 2026, el martes 27 de octubre de 15:00 a 18:00 hrs en el Auditorio CEA PUCV (Antonio Bellet 314, Providencia, Santiago). Actividad gratuita, con cupos limitados.",
       "posters": [
         {
           "id": "precongreso-invitacion",
@@ -709,9 +709,9 @@ export const contentES: Content = {
           "badge": "Pre Congreso",
           "typeLabel": "Actividad Pre Congreso",
           "title": "“Workshop + Seminario: Inteligencia Artificial aplicada a Sistemas Eléctricos”",
-          "tagline": "27 de octubre · 15:00 a 18:00 hrs · Mr. Hotel Providencia, Santiago",
+          "tagline": "27 de octubre · 15:00 a 18:00 hrs · Auditorio CEA PUCV, Antonio Bellet 314, Providencia",
           "date": "27 de Octubre 2026",
-          "imageUrl": "/pre-congreso/precongreso-invitacion.jpg",
+          "imageUrl": "/pre-congreso/precongreso-portada.jpg",
           "description": "Organiza el Proyecto FONDEF IDeA I+D 2026 ID26I10727 SAPERE AUDE. Colaboran el Coordinador Eléctrico Nacional y Grupo Saesa."
         },
         {
@@ -793,7 +793,7 @@ export const contentES: Content = {
         "description": "La participación es gratuita, pero los cupos son limitados. Completa el formulario para reservar tu lugar; te enviaremos la confirmación por correo.",
         "freeNote": "Gratuito · Cupos limitados",
         "eventDate": "Martes 27 de octubre · 15:00 a 18:00 hrs",
-        "eventVenue": "Mr. Hotel Providencia, Santiago de Chile",
+        "eventVenue": "Auditorio CEA PUCV · Antonio Bellet 314, Providencia, Santiago",
         "firstName": "Nombre",
         "lastName": "Apellido",
         "email": "Correo electrónico",
