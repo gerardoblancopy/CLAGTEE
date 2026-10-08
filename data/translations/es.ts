@@ -714,15 +714,15 @@ export const contentES: Content = {
           "description": "Life Fellow del IEEE, miembro de la Academia de Ingeniería de Chile, Premio Nacional de Ciencias Aplicadas y Tecnológicas 2014 e Investigador N°1 de Chile en el Ranking de la Universidad de Stanford 2025."
         },
         {
-          "id": "panel-operacion-sistemas-electricos",
-          "name": "Operación Sistemas Eléctricos",
+          "id": "panel-desafios-operacion-sistemas-electricos",
+          "name": "Desafíos de la Operación de Sistemas Eléctricos",
           "badge": "Panel de Expertos Confirmado",
           "typeLabel": "Panel de Expertos",
-          "title": "“Operación Sistemas Eléctricos”",
-          "tagline": "Líderes de la industria y la academia debaten el futuro del sector eléctrico",
+          "title": "“Desafíos de la Operación de Sistemas Eléctricos con alta penetración de energías renovables”",
+          "tagline": "Industria, coordinación del sistema y academia frente a la integración masiva de energías renovables",
           "date": "28 de Octubre 2026",
-          "imageUrl": "/speakers/panel-operacion-sistemas-electricos.jpg",
-          "description": "Destacado panel de discusión técnica y regulatoria con referentes del sector eléctrico y la academia sobre los desafíos en la operación de los sistemas eléctricos modernos.",
+          "imageUrl": "/speakers/panel-desafios-operacion-sistemas-electricos.jpg",
+          "description": "Panel de discusión con referentes de la transmisión, la coordinación del sistema, la regulación y la academia de Chile y Brasil sobre los desafíos de operar sistemas eléctricos con alta penetración de energías renovables.",
           "panelists": [
             {
               "name": "Jaime Acevedo",
@@ -731,8 +731,7 @@ export const contentES: Content = {
             },
             {
               "name": "Jaime Peralta",
-              "role": "Miembro del Consejo Directivo",
-              "affiliation": "Coordinador Eléctrico Nacional"
+              "role": "Coordinador Eléctrico Nacional"
             },
             {
               "name": "Paola Hartung",
@@ -740,9 +739,9 @@ export const contentES: Content = {
               "affiliation": "AES Andes"
             },
             {
-              "name": "Jorge Mendoza",
-              "role": "Vicerrector de Desarrollo",
-              "affiliation": "PUCV"
+              "name": "Agnelo Marotta",
+              "role": "Profesor de Ingeniería Eléctrica",
+              "affiliation": "UNESP"
             }
           ]
         },

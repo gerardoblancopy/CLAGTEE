@@ -714,15 +714,15 @@ export const contentEN: Content = {
           "description": "IEEE Life Fellow, member of the Chilean Academy of Engineering, 2014 National Prize for Applied Sciences and Technologies, and #1 Researcher in Chile in the 2025 Stanford University Ranking."
         },
         {
-          "id": "panel-operacion-sistemas-electricos",
-          "name": "Power Systems Operation",
+          "id": "panel-desafios-operacion-sistemas-electricos",
+          "name": "Power System Operation Challenges",
           "badge": "Confirmed Expert Panel",
           "typeLabel": "Expert Panel",
-          "title": "“Power Systems Operation”",
-          "tagline": "Industry and academic leaders debate the future of the electric power sector",
+          "title": "“Challenges in Operating Power Systems with High Penetration of Renewable Energy”",
+          "tagline": "Industry, system operators, and academia on the large-scale integration of renewable energy",
           "date": "October 28, 2026",
-          "imageUrl": "/speakers/panel-operacion-sistemas-electricos.jpg",
-          "description": "High-level discussion panel on operational and regulatory challenges in modern power grids with leaders from transmission, regulation, and academia.",
+          "imageUrl": "/speakers/panel-desafios-operacion-sistemas-electricos.jpg",
+          "description": "Discussion panel with leaders from transmission, system operation, regulation, and academia from Chile and Brazil on the challenges of operating power systems with high penetration of renewable energy.",
           "panelists": [
             {
               "name": "Jaime Acevedo",
@@ -731,8 +731,7 @@ export const contentEN: Content = {
             },
             {
               "name": "Jaime Peralta",
-              "role": "Board Member",
-              "affiliation": "Coordinador Eléctrico Nacional"
+              "role": "Coordinador Eléctrico Nacional"
             },
             {
               "name": "Paola Hartung",
@@ -740,9 +739,9 @@ export const contentEN: Content = {
               "affiliation": "AES Andes"
             },
             {
-              "name": "Jorge Mendoza",
-              "role": "Vice Rector of Development",
-              "affiliation": "PUCV"
+              "name": "Agnelo Marotta",
+              "role": "Professor of Electrical Engineering",
+              "affiliation": "UNESP"
             }
           ]
         },
