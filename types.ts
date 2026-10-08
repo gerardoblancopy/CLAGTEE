@@ -83,6 +83,8 @@ export interface KeynoteSpeaker {
   imageUrl: string;
   description?: string;
   panelists?: SpeakerPanelist[];
+  /** Encabezado de la lista de panelistas; por defecto, el del carrusel. */
+  panelistsLabel?: string;
 }
 
 export interface CallForPapersTemplate {
@@ -156,6 +158,7 @@ export interface Content {
     };
     registration: RegistrationContent;
     sponsorship: SponsorshipContent;
+    preCongress: PreCongressContent;
     speakers: {
       title: string;
       subtitle?: string;
@@ -212,6 +215,59 @@ export interface SponsorshipTableRow {
   plata: string;
   bronce: string;
   isBoolean?: boolean;
+}
+
+export type PreCongressProfile = 'estudiante' | 'academico' | 'industria' | 'sector-publico' | 'otro';
+
+export interface PreCongressContent {
+  title: string;
+  subtitle: string;
+  posters: KeynoteSpeaker[];
+  form: {
+    badge: string;
+    title: string;
+    description: string;
+    freeNote: string;
+    eventDate: string;
+    eventVenue: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    institution: string;
+    institutionPlaceholder: string;
+    position: string;
+    country: string;
+    phone: string;
+    profile: string;
+    profileOptions: { value: PreCongressProfile; label: string }[];
+    comments: string;
+    commentsPlaceholder: string;
+    optional: string;
+    requiredNote: string;
+    submit: string;
+    submitting: string;
+    successTitle: string;
+    successMessage: string;
+    registerAnother: string;
+    duplicateError: string;
+    genericError: string;
+  };
+}
+
+/** Inscripción al Pre-congreso tal como la guarda / devuelve la API. */
+export interface PreCongressRegistration {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  institution: string;
+  position?: string;
+  country: string;
+  phone?: string;
+  profile: PreCongressProfile;
+  comments?: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface SponsorshipContent {

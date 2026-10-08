@@ -19,11 +19,13 @@ import { LoginScreen } from './src/cms/LoginScreen';
 import { ChairDashboard } from './src/cms/ChairDashboard';
 import { ReviewerDashboard } from './src/cms/ReviewerDashboard';
 import { StaffDashboard } from './src/cms/StaffDashboard';
+import { PreCongressDashboard } from './src/cms/PreCongressDashboard';
 import { ParticipantDashboard } from './src/cms/ParticipantDashboard';
 import { SubmissionForm } from './src/cms/SubmissionForm';
 import { CMSDataProvider, useCMSData } from './src/cms/CMSDataContext';
 import { RegistrationSection } from './src/registration/RegistrationSection';
 import { SponsorshipSection } from './src/sponsorship/SponsorshipSection';
+import { PreCongressSection } from './src/precongress/PreCongressSection';
 
 const staggerContainer: Variants = {
   hidden: { opacity: 0 },
@@ -202,6 +204,11 @@ const CMSContainer: React.FC<{
       {activeCmsTab === 'staff' && (
         <CMSErrorBoundary>
           <StaffDashboard />
+        </CMSErrorBoundary>
+      )}
+      {activeCmsTab === 'pre-congress' && (
+        <CMSErrorBoundary>
+          <PreCongressDashboard />
         </CMSErrorBoundary>
       )}
       {activeCmsTab === 'registration' && (
@@ -525,6 +532,13 @@ const AppContent: React.FC = () => {
           />
         </Section>
         
+        <Section id="pre-congreso" title={content.sections.preCongress.title} className="bg-white py-16 md:py-24" contentClassName="!max-w-7xl">
+          <PreCongressSection
+            viewFullText={language === 'es' ? 'Ver afiche oficial' : language === 'pt' ? 'Ver cartaz oficial' : 'View official banner'}
+            openNewTabText={language === 'es' ? 'Abrir en pestaña nueva' : language === 'pt' ? 'Abrir em nova aba' : 'Open in new tab'}
+          />
+        </Section>
+
         <Section id="sede" title={ui.venueTitle} contentClassName="!max-w-6xl">
             <motion.div
               className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start"

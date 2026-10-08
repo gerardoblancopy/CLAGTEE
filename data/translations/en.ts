@@ -11,6 +11,7 @@ export const contentEN: Content = {
     { "text": "Registration", "url": "#inscripcion" },
     { "text": "Sponsorship", "url": "#patrocinio" },
     { "text": "Speakers", "url": "#conferencistas" },
+    { "text": "Pre-congress", "url": "#pre-congreso" },
     { "text": "Venue", "url": "#sede" },
     { "text": "Past Editions", "url": "#ediciones" },
     { "text": "Committees", "url": "#comites" },
@@ -696,6 +697,145 @@ export const contentEN: Content = {
         "sponsorships": "Sponsorship Tiers",
         "standForm": "Stand Registration",
         "inquiryForm": "Sponsorship Pre-Reservation"
+      }
+    },
+    "preCongress": {
+      "title": "Pre-congress",
+      "subtitle": "Workshop + Seminar: Artificial Intelligence Applied to Power Systems. An activity ahead of CLAGTEE 2026 on Tuesday, October 27, from 3:00 to 6:00 p.m. at Mr. Hotel Providencia, Santiago. Free of charge, with limited spots.",
+      "posters": [
+        {
+          "id": "precongreso-invitacion",
+          "name": "Workshop + Seminar",
+          "badge": "Pre-congress",
+          "typeLabel": "Pre-congress Activity",
+          "title": "“Workshop + Seminar: Artificial Intelligence Applied to Power Systems”",
+          "tagline": "October 27 · 3:00–6:00 p.m. · Mr. Hotel Providencia, Santiago",
+          "date": "October 27, 2026",
+          "imageUrl": "/pre-congreso/precongreso-invitacion.jpg",
+          "description": "Organized by the FONDEF IDeA R&D 2026 project ID26I10727 SAPERE AUDE, in collaboration with Coordinador Eléctrico Nacional and Grupo Saesa."
+        },
+        {
+          "id": "precongreso-programa",
+          "name": "Program",
+          "badge": "Pre-congress",
+          "typeLabel": "Workshop + Seminar",
+          "title": "“Artificial Intelligence Applied to Power Systems”",
+          "tagline": "Talks, workshop challenge, and hands-on session",
+          "date": "October 27, 2026",
+          "imageUrl": "/pre-congreso/precongreso-programa.jpg",
+          "panelistsLabel": "Program",
+          "panelists": [
+            {
+              "name": "Gerardo Blanco",
+              "role": "Introduction to Artificial Intelligence and Multi-Criteria Decision Making"
+            },
+            {
+              "name": "Diego Altamirano",
+              "role": "Introduction to Transmission System Expansion Planning in Chile"
+            },
+            {
+              "name": "Emmanuel Peralta",
+              "role": "SAPERE-AUDE Project"
+            },
+            {
+              "name": "Emmanuel Peralta",
+              "role": "Workshop Challenge Presentation"
+            },
+            {
+              "name": "PUCV Team",
+              "role": "Hands-on session and discussion"
+            }
+          ]
+        },
+        {
+          "id": "precongreso-seminario",
+          "name": "AI Seminar",
+          "badge": "Pre-congress",
+          "typeLabel": "Seminar",
+          "title": "“AI Applied to Power Systems: From Technological Potential to Adoption in the Sector”",
+          "tagline": "The CLAGTEE 2026 Welcome Cocktail will follow the panel",
+          "date": "October 27, 2026",
+          "imageUrl": "/pre-congreso/precongreso-seminario.jpg",
+          "panelistsLabel": "Panelists",
+          "panelists": [
+            {
+              "name": "Deninson Fuentes",
+              "role": "Deputy Manager of Planning",
+              "affiliation": "Coordinador Eléctrico Nacional"
+            },
+            {
+              "name": "Mauricio Pereira",
+              "role": "Deputy Manager of System Planning",
+              "affiliation": "Grupo Saesa"
+            },
+            {
+              "name": "Rodrigo Moreno",
+              "role": "Director of Civil Engineering in Energy",
+              "affiliation": "Universidad Adolfo Ibáñez"
+            }
+          ]
+        },
+        {
+          "id": "clagtee-2026-se-parte",
+          "name": "Be part of CLAGTEE 2026",
+          "badge": "CLAGTEE 2026",
+          "typeLabel": "Congress",
+          "title": "“XVI Latin American Congress on Electricity Generation and Transmission”",
+          "tagline": "Register and take part!",
+          "date": "October 28–30, 2026",
+          "imageUrl": "/pre-congreso/clagtee-2026-se-parte.jpg",
+          "description": "Santiago, Chile. Organized by Universidad Nacional de Mar del Plata, the School of Electrical Engineering of Pontificia Universidad Católica de Valparaíso, and UNESP. Contact: clagtee2026@pucv.cl."
+        }
+      ],
+      "form": {
+        "badge": "Pre-congress Registration",
+        "title": "Register for the Workshop + Seminar",
+        "description": "Participation is free, but spots are limited. Fill in the form to save your place; we will send you a confirmation by email.",
+        "freeNote": "Free · Limited spots",
+        "eventDate": "Tuesday, October 27 · 3:00–6:00 p.m.",
+        "eventVenue": "Mr. Hotel Providencia, Santiago, Chile",
+        "firstName": "First name",
+        "lastName": "Last name",
+        "email": "Email",
+        "institution": "Institution / Company",
+        "institutionPlaceholder": "E.g. PUCV, Coordinador Eléctrico Nacional",
+        "position": "Position",
+        "country": "Country",
+        "phone": "Phone",
+        "profile": "Profile",
+        "profileOptions": [
+          {
+            "value": "estudiante",
+            "label": "Student"
+          },
+          {
+            "value": "academico",
+            "label": "Academic / researcher"
+          },
+          {
+            "value": "industria",
+            "label": "Industry / company"
+          },
+          {
+            "value": "sector-publico",
+            "label": "Public sector / regulator"
+          },
+          {
+            "value": "otro",
+            "label": "Other"
+          }
+        ],
+        "comments": "Comments",
+        "commentsPlaceholder": "Anything we should know?",
+        "optional": "optional",
+        "requiredNote": "Please fill in the fields marked with *.",
+        "submit": "Register",
+        "submitting": "Sending…",
+        "successTitle": "Registration received!",
+        "successMessage": "We sent you an email with the confirmation and the activity details.",
+        "registerAnother": "Register another person",
+        "duplicateError": "This email is already registered for the Pre-congress.",
+        "genericError": "We could not save your registration. Please try again or write to clagtee2026@pucv.cl."
       }
     },
     "speakers": {

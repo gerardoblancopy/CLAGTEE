@@ -23,6 +23,7 @@ const navItems: NavItem[] = [
   { id: 'reviews', label: 'Revisiones', icon: <ReviewIcon className="w-5 h-5" />, roles: ['reviewer'] },
   { id: 'admin', label: 'Administración', icon: <SettingsIcon className="w-5 h-5" />, roles: ['chair'] },
   { id: 'staff', label: 'Inscripciones', icon: <SubmissionIcon className="w-5 h-5" />, roles: ['staff', 'chair'] },
+  { id: 'pre-congress', label: 'Pre-congreso', icon: <UserIcon className="w-5 h-5" />, roles: ['staff', 'chair'] },
   { id: 'registration', label: 'Mi Inscripción', icon: <UserIcon className="w-5 h-5" />, roles: ['attendee', 'company'] },
 ];
 

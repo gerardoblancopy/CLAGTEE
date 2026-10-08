@@ -202,7 +202,7 @@ export const SpeakerCarousel: React.FC<SpeakerCarouselProps> = ({
                   {speaker.panelists && speaker.panelists.length > 0 ? (
                     <div className="mt-4 space-y-2.5">
                       <span className="block text-[11px] font-bold uppercase tracking-wider text-[#2A9D8F]">
-                        {panelistsLabel}
+                        {speaker.panelistsLabel || panelistsLabel}
                       </span>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {speaker.panelists.map((panelist, pIdx) => (
