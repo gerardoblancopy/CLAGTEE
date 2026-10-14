@@ -15,6 +15,7 @@ export const contentES: Content = {
     { "text": "Sede", "url": "#sede" },
     { "text": "Ediciones", "url": "#ediciones" },
     { "text": "Comités", "url": "#comites" },
+    { "text": "Patrocinadores", "url": "#patrocinadores" },
     { "text": "Contacto", "url": "#contacto" }
   ],
   "sections": {
@@ -1144,6 +1145,27 @@ export const contentES: Content = {
           { "name": "Prof. Diego Altamirano", "affiliation": "PUCV (Chile)" }
         ]
       }
+    },
+    "sponsors": {
+      "title": "Nuestros Patrocinadores",
+      "subtitle": "Agradecemos a las destacadas organizaciones e instituciones que apoyan el desarrollo y la excelencia técnica del XVI CLAGTEE 2026.",
+      "badge": "Auspiciadores Oficiales",
+      "list": [
+        {
+          "name": "Hendrix by Marmon Utility",
+          "logoUrl": "/sponsors/hendrix-marmon-dark.png",
+          "websiteUrl": "https://www.marmonutility.com",
+          "category": "Patrocinador Industrial"
+        },
+        {
+          "name": "Colegio de Ingenieros de Chile A.G.",
+          "logoUrl": "/sponsors/colegio-de-ingenieros.png",
+          "websiteUrl": "https://www.ingenieros.cl",
+          "category": "Auspiciador Institucional · Zonal Valparaíso"
+        }
+      ],
+      "ctaText": "¿Le interesa que su empresa u organización sea auspiciadora de CLAGTEE 2026?",
+      "ctaButtonText": "Ver Opciones de Patrocinio"
     }
   }
 };

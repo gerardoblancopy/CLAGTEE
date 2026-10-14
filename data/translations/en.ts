@@ -15,6 +15,7 @@ export const contentEN: Content = {
     { "text": "Venue", "url": "#sede" },
     { "text": "Past Editions", "url": "#ediciones" },
     { "text": "Committees", "url": "#comites" },
+    { "text": "Sponsors", "url": "#patrocinadores" },
     { "text": "Contact", "url": "#contacto" }
   ],
   "sections": {
@@ -1142,6 +1143,27 @@ export const contentEN: Content = {
           { "name": "Prof. Diego Altamirano", "affiliation": "PUCV (Chile)" }
         ]
       }
+    },
+    "sponsors": {
+      "title": "Our Sponsors",
+      "subtitle": "We gratefully acknowledge the leading organizations and institutions supporting the advancement and technical excellence of XVI CLAGTEE 2026.",
+      "badge": "Official Sponsors",
+      "list": [
+        {
+          "name": "Hendrix by Marmon Utility",
+          "logoUrl": "/sponsors/hendrix-marmon-dark.png",
+          "websiteUrl": "https://www.marmonutility.com",
+          "category": "Industry Sponsor"
+        },
+        {
+          "name": "Colegio de Ingenieros de Chile A.G.",
+          "logoUrl": "/sponsors/colegio-de-ingenieros.png",
+          "websiteUrl": "https://www.ingenieros.cl",
+          "category": "Institutional Sponsor · Valparaíso Regional Council"
+        }
+      ],
+      "ctaText": "Interested in showcasing your organization or company at CLAGTEE 2026?",
+      "ctaButtonText": "View Sponsorship Opportunities"
     }
   }
 };

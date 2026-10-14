@@ -27,6 +27,7 @@ import { RegistrationSection } from './src/registration/RegistrationSection';
 import { SponsorshipSection } from './src/sponsorship/SponsorshipSection';
 import { PreCongressSection } from './src/precongress/PreCongressSection';
 import { IeeeFinalVersionSection } from './components/IeeeFinalVersionSection';
+import { SponsorsSection } from './components/SponsorsSection';
 
 const staggerContainer: Variants = {
   hidden: { opacity: 0 },
@@ -542,6 +543,9 @@ const AppContent: React.FC = () => {
           </motion.div>
         </Section>
         
+        {content.sections.sponsors && (
+          <SponsorsSection content={content.sections.sponsors} />
+        )}
       </main>
       <Footer ui={ui} />
     </div>

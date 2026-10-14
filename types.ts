@@ -199,6 +199,23 @@ export interface IeeeFinalVersionContent {
   };
 }
 
+export interface SponsorLogo {
+  name: string;
+  logoUrl: string;
+  darkLogoUrl?: string;
+  websiteUrl?: string;
+  category?: string;
+}
+
+export interface SponsorsContent {
+  title: string;
+  subtitle?: string;
+  badge?: string;
+  list: SponsorLogo[];
+  ctaText?: string;
+  ctaButtonText?: string;
+}
+
 export interface Content {
   conferenceTitle: string;
   navigation: NavItem[];
@@ -257,6 +274,7 @@ export interface Content {
         members: { name: string; affiliation: string }[];
       };
     };
+    sponsors: SponsorsContent;
   };
 }
 
