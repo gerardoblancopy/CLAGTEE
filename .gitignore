@@ -35,6 +35,7 @@ src/cms/pass.md
 # Scratch and local files
 scratch/
 *.pdf
+*.docx
 clagtee-conference/assets/revisiones.md
 node_modules
 .env*

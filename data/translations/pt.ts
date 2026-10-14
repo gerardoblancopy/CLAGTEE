@@ -7,7 +7,7 @@ export const contentPT: Content = {
     { "text": "Sobre", "url": "#acerca-de" },
     { "text": "Novas Datas", "url": "#fechas" },
     { "text": "Eixos Temáticos", "url": "#ejes" },
-    { "text": "Submissões", "url": "#envio" },
+    { "text": "Versão Final IEEE", "url": "#version-final-ieee" },
     { "text": "Inscrição", "url": "#inscripcion" },
     { "text": "Patrocínio", "url": "#patrocinio" },
     { "text": "Palestrantes", "url": "#conferencistas" },
@@ -58,11 +58,12 @@ export const contentPT: Content = {
       "title": "Datas Importantes",
       "dates": [
         { "event": "Lançamento e abertura para submissão de trabalhos completos", "date": "1 de Maio de 2026" },
-        { "event": "Nova data limite para submissão de trabalhos completos", "date": "22 de Agosto de 2026", "highlight": true },
-        { "event": "Nova data de notificação de aceitação de trabalhos completos", "date": "21 de Setembro de 2026", "highlight": true },
+        { "event": "Nova data limite para submissão de trabalhos completos", "date": "22 de Agosto de 2026" },
+        { "event": "Nova data de notificação de aceitação de trabalhos completos", "date": "21 de Setembro de 2026" },
         { "event": "Pré-Conferência", "date": "27 de Outubro de 2026" },
         { "event": "Início da Conferência", "date": "28 de Outubro de 2026" },
-        { "event": "Encerramento da Conferência", "date": "30 de Outubro de 2026" }
+        { "event": "Encerramento da Conferência", "date": "30 de Outubro de 2026" },
+        { "event": "Data limite para recebimento da versão final de artigos (Camera-Ready IEEE)", "date": "1 de Novembro de 2026", "highlight": true }
       ]
     },
     "thematicAxes": {
@@ -220,6 +221,134 @@ export const contentPT: Content = {
         }
       ]
     },
+    "ieeeFinalVersion": {
+      "title": "Versão Final IEEE (Camera-Ready)",
+      "subtitle": "Diretrizes oficiais para preparação, validação no IEEE PDF eXpress, assinatura de Copyright e envio final dos trabalhos aceitos para publicação no IEEE Xplore.",
+      "presentation": {
+        "badge": "Publicação IEEE Xplore & SCOPUS",
+        "intro": [
+          "Esta seção contém as instruções oficiais para os autores de artigos aceitos no CLAGTEE 2026 sobre como preparar e enviar a versão final de seus manuscritos (Camera-Ready) para submissão e indexação no IEEE Xplore e SCOPUS.",
+          "Para que os artigos sejam enviados ao IEEE Xplore, eles devem ser apresentados presencialmente durante a conferência por pelo menos um dos autores e seguir rigorosamente as normas técnicas e de formatação exigidas pela IEEE.",
+          "É indispensável seguir ordenadamente cada um dos 6 passos detalhados a seguir:"
+        ],
+        "ieeeNotice": "Esta edição do CLAGTEE conta com o copatrocínio técnico da IEEE Chile Section e do IEEE Chile Section CAS Chapter. A publicação final no IEEE Xplore está estritamente condicionada à aprovação do manuscrito no IEEE PDF eXpress, transferência eletrônica de direitos autorais (eCF) e apresentação oral presencial na conferência.",
+        "deadlineNotice": "É obrigatório cumprir todos esses requisitos e enviar a versão final até 1 de Novembro de 2026 para publicação no IEEE Xplore. A inscrição na conferência deve ser efetuada no prazo estipulado.",
+        "stepsOverview": [
+          "Passo 1: Fazer melhorias no artigo de acordo com as recomendações dos revisores.",
+          "Passo 2: Formatar a versão final de acordo com o modelo oficial da IEEE.",
+          "Passo 3: Gerar e verificar um arquivo PDF compatível usando o serviço IEEE PDF eXpress.",
+          "Passo 4: Preencher e assinar o formulário de Copyright da IEEE (eCF).",
+          "Passo 5: Enviar a versão final do seu artigo no CMS.",
+          "Passo 6: Inscrever-se na conferência."
+        ]
+      },
+      "step1": {
+        "number": "Passo 1",
+        "title": "Fazer melhorias no artigo de acordo com as recomendações dos revisores",
+        "body": [
+          "Acesse o Console do Autor no CMS do CLAGTEE 2026 (https://www.clagtee2026.org/cms) e analise detalhadamente o parecer e as observações técnicas emitidas pelos revisores.",
+          "Todos os requisitos de delimitação conceitual, discussão crítica, esclarecimentos metodológicos e correções apontadas pelo comitê avaliador devem ser integralmente incorporados ao manuscrito final antes da geração da versão Camera-Ready."
+        ]
+      },
+      "step2": {
+        "number": "Passo 2",
+        "title": "Formatar a versão final de acordo com o padrão IEEE",
+        "intro": "As instruções de formatação fornecidas nesta seção DEVEM ser seguidas rigorosamente para que seu artigo seja incluído nos anais e publicado no IEEE Xplore.",
+        "templatePrompt": "O formato padrão de referência para a versão final dos artigos é o modelo oficial da IEEE (Manuscript Templates for Conference Proceedings). Certifique-se de revisar e ajustar o documento de acordo com este modelo:",
+        "templateLinkText": "Baixar Modelos Oficiais IEEE (LaTeX e Word)",
+        "templateUrl": "https://www.ieee.org/conferences/publishing/templates.html",
+        "formattingRules": [
+          "Formatar os artigos em duas colunas, espaçamento simples, formato Carta (US Letter: 8.5″ x 11″ / 215.9 mm x 279.4 mm).",
+          "O título das figuras deve estar centralizado abaixo das mesmas.",
+          "O título das tabelas deve estar centralizado acima das mesmas.",
+          "Utilizar o padrão oficial da IEEE para as referências bibliográficas.",
+          "Extensão máxima do artigo: 6 a 8 páginas (incluindo figuras, tabelas e referências).",
+          "Verificar se as figuras e tabelas possuem alta resolução (mínimo de 300 dpi para imagens ou gráficos vetoriais nativos) e texto legível. Figuras em baixa resolução poderão ser rejeitadas pelo IEEE Xplore.",
+          "Não inserir números de página no manuscrito (a paginação final contínua é atribuída pela IEEE).",
+          "Não aplicar configurações de segurança, senhas ou restrições de impressão/edição ao arquivo PDF.",
+          "Serão aceitos apenas arquivos PDF validados e certificados pelo serviço IEEE PDF eXpress."
+        ],
+        "copyrightNotice": {
+          "title": "Aviso de Direitos Autorais (IEEE Copyright Notice) no rodapé da primeira página",
+          "description": "IMPORTANTE: O aviso de copyright oficial da IEEE (ISBN + ano + preço + IEEE) no rodapé da primeira página DEVE ser adicionado antes do envio final. Em manuscritos em LaTeX, adicione as seguintes linhas imediatamente antes de \\maketitle:",
+          "code": "\\IEEEoverridecommandlockouts\n\\IEEEpubid{\\makebox[\\columnwidth]{979-8-3195-1296-3/26/\\$31.00~\\copyright2026 IEEE \\hfill}\\hspace{\\columnsep}\\makebox[\\columnwidth]{ }}",
+          "placementNote": "Para autores que utilizam Microsoft Word, insira o texto '979-8-3195-1296-3/26/$31.00 ©2026 IEEE' no rodapé da primeira página, alinhado à esquerda na primeira coluna."
+        },
+        "languageRules": {
+          "title": "Regras estritas para Título, Resumo (Abstract) e Palavras-chave (Index Terms)",
+          "body": "Os artigos devem ter APENAS UM título (em inglês), APENAS UM resumo (em inglês) e APENAS UMA lista de palavras-chave (em inglês). Caso o corpo do artigo esteja redigido em espanhol ou português, o título, o abstract e os Index Terms devem estar obrigatoriamente em inglês. Não insira um segundo título ou um segundo resumo em português ou espanhol.",
+          "details": [
+            "Title Case: Primeira letra em maiúscula nas palavras principais do título e minúsculas em artigos/conectivos secundários.",
+            "Nomes dos autores sem numeração: Não inclua nenhuma sequência numerada ao especificar a lista de autores.",
+            "Afiliações em colunas separadas: Autores com afiliações distintas não devem ser agrupados na mesma coluna; devem ser distribuídos em colunas separadas indicando instituição, cidade, país e e-mail ou ORCID.",
+            "No resumo, iniciar com: Abstract— seguido do texto em inglês em parágrafo único (sem subtítulos ou tópicos).",
+            "Nas palavras-chave, iniciar com: Index Terms— seguido dos termos em inglês separados por vírgulas."
+          ]
+        }
+      },
+      "step3": {
+        "number": "Passo 3",
+        "title": "Gerar um arquivo PDF compatível utilizando o serviço IEEE PDF eXpress",
+        "description": "A versão final dos artigos deve ser enviada como arquivo PDF 100% compatível com o IEEE Xplore. Mesmo que seu software gere arquivos PDF, você deve utilizar o serviço gratuito IEEE PDF eXpress para atestar a compatibilidade.",
+        "conferenceId": "71927X",
+        "portalUrl": "https://ieee-pdf-express.org/",
+        "hasAccountTitle": "Caso já possua conta no IEEE PDF eXpress:",
+        "hasAccountText": "Acesse a página do IEEE PDF eXpress utilizando o Conference ID oficial: 71927X, seu e-mail e sua senha.",
+        "createAccountTitle": "Caso ainda não possua conta no PDF eXpress, crie uma seguindo os passos:",
+        "createAccountSteps": [
+          "Acesse a página do IEEE PDF eXpress (https://ieee-pdf-express.org/).",
+          "Clique no link: 'Create account'.",
+          "Insira 71927X no campo 'Conference ID'.",
+          "Insira seu endereço de e-mail e confirme.",
+          "Escolha uma senha segura e clique em 'Submit'.",
+          "Preencha as informações adicionais solicitadas; você receberá um e-mail confirmando a criação da sua conta."
+        ],
+        "dashboardTitle": "Procedimento para cada artigo no PDF eXpress:",
+        "dashboardSteps": [
+          "No seu Dashboard, clique no botão 'Create New Title'.",
+          "Insira um identificador para o seu artigo (use o Paper ID do CLAGTEE ou o título).",
+          "Envie o arquivo: é possível enviar o arquivo fonte (Word/LaTeX) para conversão, ou um arquivo PDF para verificação de conformidade com as normas IEEE.",
+          "Você receberá um e-mail com o arquivo validado. O status deve indicar 'Approved' para que seja considerado apto para publicação. Salve esse arquivo PDF aprovado."
+        ]
+      },
+      "step4": {
+        "number": "Passo 4",
+        "title": "Preencher e assinar o Copyright da IEEE (eCF)",
+        "description": "Um requisito legal obrigatório para que seu artigo seja encaminhado e indexado no IEEE Xplore é a transferência de direitos autorais via formulário eletrônico da IEEE (eCF).",
+        "instructions": [
+          "Acesse o Console do Autor no CMS do CLAGTEE 2026 (https://www.clagtee2026.org/cms).",
+          "Clique na opção de assinatura de Copyright habilitada para o seu artigo aceito.",
+          "Você será redirecionado ao portal oficial da IEEE para assinar digitalmente o Electronic Copyright Form (eCF).",
+          "Ao concluir, faça o download e salve uma cópia digital do IEEE Copyright Form em formato PDF.",
+          "Guarde essa cópia em PDF para anexá-la no envio final no CMS."
+        ],
+        "cmsCtaText": "Ir ao Console do Autor (CMS)"
+      },
+      "step5": {
+        "number": "Passo 5",
+        "title": "Submeter a versão final do seu artigo (Camera-Ready) no CMS",
+        "checklistTitle": "Lista de verificação prévia ao envio final:",
+        "checklist": [
+          "Você incorporou todas as observações e exigências dos revisores?",
+          "O documento está sem numeração de páginas ou cabeçalhos adicionais?",
+          "As figuras e tabelas estão em alta resolução e com texto legível?",
+          "O título, o abstract e os Index Terms estão exclusivamente em inglês?",
+          "O PDF foi validado e marcado como 'Approved' no IEEE PDF eXpress?",
+          "A cópia em PDF do IEEE Copyright Form assinado está salva e pronta para envio?"
+        ],
+        "cmsInstructions": "Com todos os itens verificados, acesse o CMS do CLAGTEE 2026 (https://www.clagtee2026.org/cms), abra a seção de trabalhos aceitos e clique em 'Enviar Versão Final (Camera-Ready)' para anexar o PDF aprovado.",
+        "presentationWarning": "IMPORTANTE: É condição obrigatória que ao menos um dos autores esteja presente no congresso em Santiago do Chile para apresentar o trabalho. Artigos não apresentados não serão enviados ao IEEE Xplore e constarão apenas nos anais locais.",
+        "cmsButtonText": "Acessar o CMS para Enviar Versão Final"
+      },
+      "step6": {
+        "number": "Passo 6",
+        "title": "Inscrever-se na Conferência",
+        "description": "Todo artigo aceito deve ter associada ao menos uma inscrição na categoria Autor (ou Estudante Autor) para garantir sua apresentação e publicação no IEEE Xplore.",
+        "registrationNotice": "Consulte as categorias e valores, e envie o comprovante de pagamento diretamente na seção de Inscrições e Pagamentos. Em caso de dúvidas, entre em contato:",
+        "supportEmail": "clagtee2026@clagtee.org",
+        "registerButtonText": "Ir para Inscrição e Pagamentos"
+      }
+    },
     "callForPapers": {
       "title": "CHAMADA PARA SUBMISSÃO DE ARTIGOS",
       "intro": [
@@ -231,7 +360,7 @@ export const contentPT: Content = {
         "title": "Datas de submissão",
         "window": "O Comitê Revisor do CLAGTEE 2026 aceitará artigos para o processo de revisão de 1 de maio de 2026 até 22 de agosto de 2026.",
         "process": "O processo de submissão será realizado através da Plataforma de Gestão de Papers e toda a comunicação com os autores será gerenciada através do e-mail oficial do CLAGTEE 2026. Não serão aceitos trabalhos enviados por e-mail nem por qualquer outro meio eletrônico.",
-        "notification": "A nova data de notificação de aceitação/rejeição aos autores será em 21 de setembro de 2026, devendo ser enviada a versão final (caso tenham sido solicitadas alterações) dos trabalhos aceitos até 15 de outubro de 2026."
+        "notification": "A nova data de notificação de aceitação/rejeição aos autores será em 21 de setembro de 2026, devendo ser enviada a versão final (caso tenham sido solicitadas alterações) dos trabalhos aceitos até 1 de Novembro de 2026."
       },
       "guidelines": {
         "title": "Diretrizes para submissão",
@@ -275,7 +404,7 @@ export const contentPT: Content = {
       },
       "publicationConditions": {
         "title": "Condições de publicação para trabalhos",
-        "body": "Os trabalhos aceitos serão publicados no \"Book of Abstracts and Proceedings\" do CLAGTEE 2026, desde que o pagamento da taxa de publicação seja efetivado até 15 de outubro de 2026 como data limite."
+        "body": "Os trabalhos aceitos serão publicados no \"Book of Abstracts and Proceedings\" do CLAGTEE 2026, desde que o pagamento da taxa de publicação seja efetivado até 1 de Novembro de 2026 como data limite."
       },
       "styleInstructions": {
         "title": "Instruções de estilo",

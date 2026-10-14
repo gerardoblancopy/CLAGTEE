@@ -125,6 +125,80 @@ export interface CallForPapers {
   };
 }
 
+export interface IeeeFinalVersionContent {
+  title: string;
+  subtitle?: string;
+  presentation: {
+    badge: string;
+    intro: string[];
+    ieeeNotice: string;
+    deadlineNotice: string;
+    stepsOverview: string[];
+  };
+  step1: {
+    number: string;
+    title: string;
+    body: string[];
+  };
+  step2: {
+    number: string;
+    title: string;
+    intro: string;
+    templatePrompt: string;
+    templateLinkText: string;
+    templateUrl: string;
+    formattingRules: string[];
+    copyrightNotice: {
+      title: string;
+      description: string;
+      code: string;
+      placementNote: string;
+    };
+    languageRules: {
+      title: string;
+      body: string;
+      details: string[];
+    };
+  };
+  step3: {
+    number: string;
+    title: string;
+    description: string;
+    conferenceId: string;
+    portalUrl: string;
+    hasAccountTitle: string;
+    hasAccountText: string;
+    createAccountTitle: string;
+    createAccountSteps: string[];
+    dashboardTitle: string;
+    dashboardSteps: string[];
+  };
+  step4: {
+    number: string;
+    title: string;
+    description: string;
+    instructions: string[];
+    cmsCtaText: string;
+  };
+  step5: {
+    number: string;
+    title: string;
+    checklistTitle: string;
+    checklist: string[];
+    cmsInstructions: string;
+    presentationWarning: string;
+    cmsButtonText: string;
+  };
+  step6: {
+    number: string;
+    title: string;
+    description: string;
+    registrationNotice: string;
+    supportEmail: string;
+    registerButtonText: string;
+  };
+}
+
 export interface Content {
   conferenceTitle: string;
   navigation: NavItem[];
@@ -151,7 +225,8 @@ export interface Content {
       title: string;
       tracks: ThematicTrack[];
     };
-    callForPapers: CallForPapers;
+    callForPapers?: CallForPapers;
+    ieeeFinalVersion: IeeeFinalVersionContent;
     payments: {
       title: string;
       body: string;

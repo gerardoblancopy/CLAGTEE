@@ -26,6 +26,7 @@ import { CMSDataProvider, useCMSData } from './src/cms/CMSDataContext';
 import { RegistrationSection } from './src/registration/RegistrationSection';
 import { SponsorshipSection } from './src/sponsorship/SponsorshipSection';
 import { PreCongressSection } from './src/precongress/PreCongressSection';
+import { IeeeFinalVersionSection } from './components/IeeeFinalVersionSection';
 
 const staggerContainer: Variants = {
   hidden: { opacity: 0 },
@@ -360,146 +361,12 @@ const AppContent: React.FC = () => {
           </motion.div>
         </Section>
 
-        <Section
-          id="envio"
-          title={content.sections.callForPapers.title}
-          contentClassName="!max-w-5xl"
-        >
-          <motion.div
-            className="space-y-10 text-gray-700 font-['Roboto']"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            <motion.div variants={fadeInUpItem} className="space-y-4 text-lg leading-relaxed">
-              {content.sections.callForPapers.intro.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))}
-              <p>
-                {ui.cmsAccessText}
-                <a
-                  href="https://www.clagtee2026.org/cms"
-                  className="ml-1 font-semibold text-[#2A9D8F] hover:text-[#0D2C54] transition-colors"
-                >
-                  https://www.clagtee2026.org/cms
-                </a>
-                .
-              </p>
-            </motion.div>
-
-            {content.sections.callForPapers.ieeeNotice && (
-              <motion.div
-                variants={fadeInUpItem}
-                className="border-l-4 border-[#00629B] bg-[#EAF3FA] rounded-r-2xl p-6 shadow-sm"
-              >
-                <p className="text-sm uppercase tracking-wider font-bold text-[#00629B] mb-2">
-                  IEEE
-                </p>
-                <p className="text-base leading-relaxed text-gray-800">
-                  {content.sections.callForPapers.ieeeNotice}
-                </p>
-              </motion.div>
-            )}
-
-            <motion.div variants={fadeInUpItem} className="space-y-4">
-              <h3 className="text-2xl font-bold text-[#0D2C54]">
-                {content.sections.callForPapers.submissionDates.title}
-              </h3>
-              <p className="text-base leading-relaxed">
-                {content.sections.callForPapers.submissionDates.window}
-              </p>
-              <p className="text-base leading-relaxed">
-                {content.sections.callForPapers.submissionDates.process}
-              </p>
-              <p className="text-base leading-relaxed">
-                {content.sections.callForPapers.submissionDates.notification}
-              </p>
-            </motion.div>
-
-            <motion.div variants={fadeInUpItem} className="space-y-4">
-              <h3 className="text-2xl font-bold text-[#0D2C54]">
-                {content.sections.callForPapers.guidelines.title}
-              </h3>
-              {content.sections.callForPapers.guidelines.body.map((paragraph, index) => (
-                <p key={index} className="text-base leading-relaxed">
-                  {paragraph}
-                </p>
-              ))}
-              <ul className="list-disc pl-5 space-y-2 text-base">
-                {content.sections.callForPapers.guidelines.structure.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-              <p className="text-base leading-relaxed">
-                {content.sections.callForPapers.guidelines.translationNote}
-              </p>
-            </motion.div>
-
-            <motion.div variants={fadeInUpItem} className="space-y-4">
-              <h3 className="text-2xl font-bold text-[#0D2C54]">
-                {content.sections.callForPapers.reviewCriteria.title}
-              </h3>
-              <p className="text-base leading-relaxed">
-                {content.sections.callForPapers.reviewCriteria.body}
-              </p>
-              <ul className="list-disc pl-5 space-y-2 text-base">
-                {content.sections.callForPapers.reviewCriteria.criteria.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            </motion.div>
-
-            <motion.div variants={fadeInUpItem} className="space-y-4">
-              <h3 className="text-2xl font-bold text-[#0D2C54]">
-                {content.sections.callForPapers.publicationConditions.title}
-              </h3>
-              <p className="text-base leading-relaxed">
-                {content.sections.callForPapers.publicationConditions.body}
-              </p>
-            </motion.div>
-
-            <motion.div variants={fadeInUpItem} className="space-y-4">
-              <h3 className="text-2xl font-bold text-[#0D2C54]">
-                {content.sections.callForPapers.styleInstructions.title}
-              </h3>
-              {content.sections.callForPapers.styleInstructions.body.map((paragraph, index) => (
-                <p key={index} className="text-base leading-relaxed">
-                  {paragraph}
-                </p>
-              ))}
-              <div className="overflow-x-auto">
-                <table className="min-w-full border border-gray-200 text-sm">
-                  <thead className="bg-gray-50 text-gray-700">
-                    <tr>
-                      <th className="px-4 py-3 text-left font-semibold">{ui.templateHeader}</th>
-                      <th className="px-4 py-3 text-left font-semibold">{ui.downloadLinkHeader}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {content.sections.callForPapers.styleInstructions.templates.map((template, index) => (
-                      <tr key={template.label} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                        <td className="px-4 py-3 border-t border-gray-200">{template.label}</td>
-                        <td className="px-4 py-3 border-t border-gray-200">
-                          <button
-                            onClick={() => handleTemplateDownload(template.href)}
-                            disabled={downloadingTemplate === template.href}
-                            className="text-[#2A9D8F] font-bold hover:underline disabled:opacity-50"
-                          >
-                            {downloadingTemplate === template.href ? '...' : ui.downloadLabel}
-                          </button>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p className="text-base leading-relaxed">
-                {content.sections.callForPapers.styleInstructions.footnote}
-              </p>
-            </motion.div>
-          </motion.div>
-        </Section>
+        <IeeeFinalVersionSection
+          content={content.sections.ieeeFinalVersion}
+          onNavigateCMS={() => navigateTo('cms')}
+          onDownloadTemplate={handleTemplateDownload}
+          downloadingTemplate={downloadingTemplate}
+        />
 
         <Section
           id="inscripcion"

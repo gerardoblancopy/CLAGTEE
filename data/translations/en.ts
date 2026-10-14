@@ -7,7 +7,7 @@ export const contentEN: Content = {
     { "text": "About", "url": "#acerca-de" },
     { "text": "New Dates", "url": "#fechas" },
     { "text": "Tracks", "url": "#ejes" },
-    { "text": "Submissions", "url": "#envio" },
+    { "text": "IEEE Final Version", "url": "#version-final-ieee" },
     { "text": "Registration", "url": "#inscripcion" },
     { "text": "Sponsorship", "url": "#patrocinio" },
     { "text": "Speakers", "url": "#conferencistas" },
@@ -58,11 +58,12 @@ export const contentEN: Content = {
       "title": "Important Dates",
       "dates": [
         { "event": "Launch and opening for full paper submissions", "date": "May 1, 2026" },
-        { "event": "New deadline for full paper submissions", "date": "August 22, 2026", "highlight": true },
-        { "event": "New notification date of full paper acceptance", "date": "September 21, 2026", "highlight": true },
+        { "event": "New deadline for full paper submissions", "date": "August 22, 2026" },
+        { "event": "New notification date of full paper acceptance", "date": "September 21, 2026" },
         { "event": "Pre-Conference", "date": "October 27, 2026" },
         { "event": "Conference Opening", "date": "October 28, 2026" },
-        { "event": "Conference Closing", "date": "October 30, 2026" }
+        { "event": "Conference Closing", "date": "October 30, 2026" },
+        { "event": "Deadline for IEEE Camera-Ready final paper submission", "date": "November 1, 2026", "highlight": true }
       ]
     },
     "thematicAxes": {
@@ -220,6 +221,134 @@ export const contentEN: Content = {
         }
       ]
     },
+    "ieeeFinalVersion": {
+      "title": "IEEE Final Version (Camera-Ready)",
+      "subtitle": "Official guidelines for preparing, validating with IEEE PDF eXpress, signing Copyright, and submitting accepted manuscripts for publication in IEEE Xplore.",
+      "presentation": {
+        "badge": "IEEE Xplore & SCOPUS Publication",
+        "intro": [
+          "This section provides official instructions for authors of accepted papers at CLAGTEE 2026 on how to prepare and submit the final Camera-Ready version of their manuscripts for submission and indexing in IEEE Xplore and SCOPUS.",
+          "For papers to be published in IEEE Xplore, they must be presented in person during the conference by at least one of the authors and strictly comply with the format and technical standards required by IEEE.",
+          "It is essential to follow each of the 6 steps detailed below:"
+        ],
+        "ieeeNotice": "This edition of CLAGTEE is technically co-sponsored by the IEEE Chile Section and the IEEE Chile Section CAS Chapter. Final publication in IEEE Xplore is strictly conditioned on manuscript approval by IEEE PDF eXpress, electronic copyright transfer (eCF), and in-person oral presentation at the conference.",
+        "deadlineNotice": "It is mandatory to complete all these requirements and submit the final version by November 1, 2026, to publish your paper in IEEE Xplore. Conference registration must be completed on schedule.",
+        "stepsOverview": [
+          "Step 1: Improve your paper according to reviewer recommendations.",
+          "Step 2: Format the final version according to the official IEEE template.",
+          "Step 3: Generate and verify a compatible PDF file using IEEE PDF eXpress.",
+          "Step 4: Complete and sign the IEEE Copyright Form (eCF).",
+          "Step 5: Submit the approved final version via the CLAGTEE CMS.",
+          "Step 6: Register for the conference."
+        ]
+      },
+      "step1": {
+        "number": "Step 1",
+        "title": "Improve your paper according to reviewer recommendations",
+        "body": [
+          "Log in to the Author Console in the CLAGTEE 2026 CMS (https://www.clagtee2026.org/cms) and carefully review the technical remarks and evaluation feedback provided by the reviewers.",
+          "All scope delimitations, critical discussion paragraphs, methodological clarifications, and technical adjustments requested by the review committee must be thoroughly integrated into this final manuscript prior to Camera-Ready generation."
+        ]
+      },
+      "step2": {
+        "number": "Step 2",
+        "title": "Format the final version according to IEEE style",
+        "intro": "The formatting instructions provided in this section MUST be strictly followed for your paper to be included in the proceedings and published in IEEE Xplore.",
+        "templatePrompt": "The reference standard for the final version of the papers is the official IEEE Conference Proceedings template. Ensure you review and format your manuscript accordingly:",
+        "templateLinkText": "Download Official IEEE Templates (LaTeX and MS Word)",
+        "templateUrl": "https://www.ieee.org/conferences/publishing/templates.html",
+        "formattingRules": [
+          "Format papers in two columns, single-spaced, standard US Letter size (8.5″ x 11″ / 215.9 mm x 279.4 mm).",
+          "Figure captions must be centered below the figures.",
+          "Table captions must be centered above the tables.",
+          "Use the official IEEE citation and reference style.",
+          "Maximum paper length: 6 to 8 pages (including figures, tables, and references).",
+          "Ensure that figures and tables have high resolution (minimum 300 dpi for raster images or native vector graphics) and legible font sizes. Low-resolution figures may cause rejection by IEEE Xplore.",
+          "Do not add page numbers anywhere in the manuscript (final continuous pagination is added by IEEE).",
+          "Do not apply security restrictions, passwords, or print/edit permissions to the PDF file.",
+          "Only PDF files validated and certified by the IEEE PDF eXpress service are accepted."
+        ],
+        "copyrightNotice": {
+          "title": "IEEE Copyright Notice on the First Page Footer",
+          "description": "IMPORTANT: The official IEEE copyright notice (ISBN + year + price + IEEE) that appears at the bottom of the first page of IEEE published papers MUST be added prior to final submission. In LaTeX manuscripts, add the following lines immediately before \\maketitle:",
+          "code": "\\IEEEoverridecommandlockouts\n\\IEEEpubid{\\makebox[\\columnwidth]{979-8-3195-1296-3/26/\\$31.00~\\copyright2026 IEEE \\hfill}\\hspace{\\columnsep}\\makebox[\\columnwidth]{ }}",
+          "placementNote": "For authors preparing manuscripts in Microsoft Word, insert the copyright notice '979-8-3195-1296-3/26/$31.00 ©2026 IEEE' into the footer of the first page, left-aligned in the first column."
+        },
+        "languageRules": {
+          "title": "Strict Language Rules for Title, Abstract, and Keywords",
+          "body": "Papers must have ONLY ONE title (in English), ONLY ONE abstract (in English), and ONLY ONE list of keywords/Index Terms (in English). If the body of your paper is written in Spanish or Portuguese, the title, abstract, and keywords must strictly be in English. Do not include a second title or abstract in Spanish or Portuguese.",
+          "details": [
+            "Use Title Case for the paper title (capitalize main words and keep minor articles/prepositions lowercase).",
+            "Author names must not be numbered; do not include any numbered sequence when listing authors.",
+            "Authors with different affiliations must not be grouped into the same column; list them separately in distinct columns indicating organization, city, country, and email address or ORCID.",
+            "For the abstract, start with: Abstract— followed by the English abstract as a single continuous paragraph (no subheadings or bullet points).",
+            "For the keywords, start with: Index Terms— followed by the English keywords separated by commas."
+          ]
+        }
+      },
+      "step3": {
+        "number": "Step 3",
+        "title": "Generate and verify a compatible PDF using IEEE PDF eXpress",
+        "description": "The final version must be certified as 100% compliant with IEEE Xplore standards. Even if your software generates PDF files, you must use the free IEEE PDF eXpress service to certify compliance.",
+        "conferenceId": "71927X",
+        "portalUrl": "https://ieee-pdf-express.org/",
+        "hasAccountTitle": "If you already have an IEEE PDF eXpress account:",
+        "hasAccountText": "Log in to the IEEE PDF eXpress portal using the official Conference ID: 71927X, your email address, and your password.",
+        "createAccountTitle": "If you do not yet have an IEEE PDF eXpress account, create one as follows:",
+        "createAccountSteps": [
+          "Go to the IEEE PDF eXpress website (https://ieee-pdf-express.org/).",
+          "Click the 'Create account' link.",
+          "Enter 71927X in the 'Conference ID' field.",
+          "Enter your email address and confirm it.",
+          "Choose a secure password and click 'Submit'.",
+          "Fill in the required profile details; you will receive a confirmation email."
+        ],
+        "dashboardTitle": "Procedure for each paper in PDF eXpress:",
+        "dashboardSteps": [
+          "In your PDF eXpress Dashboard, click 'Create New Title'.",
+          "Enter an identifier for your paper (such as your CLAGTEE Paper ID or the paper title).",
+          "Upload your manuscript file: you may upload source files (Word/LaTeX) for conversion or upload a pre-generated PDF for compliance verification.",
+          "You will receive an email with the verification result. The review status must show 'Approved' for publication. Save the approved PDF file."
+        ]
+      },
+      "step4": {
+        "number": "Step 4",
+        "title": "Complete and sign the IEEE Copyright Form (eCF)",
+        "description": "A mandatory legal requirement for your paper to be sent and indexed in IEEE Xplore is signing the transfer of copyright through the IEEE Electronic Copyright Form (eCF).",
+        "instructions": [
+          "Access the Author Console in the CLAGTEE 2026 CMS (https://www.clagtee2026.org/cms).",
+          "Click on the Copyright option available for your accepted paper.",
+          "You will be redirected to the secure IEEE portal to complete the digital Electronic Copyright Form (eCF).",
+          "Upon completion, download and save a digital copy of the signed IEEE Copyright Form in PDF format.",
+          "You must keep this signed PDF copy and attach it during the final submission step in the CMS."
+        ],
+        "cmsCtaText": "Go to Author Console (CMS)"
+      },
+      "step5": {
+        "number": "Step 5",
+        "title": "Submit the final Camera-Ready version via the CMS",
+        "checklistTitle": "Pre-submission Checklist:",
+        "checklist": [
+          "Have you incorporated all reviewer comments and technical requirements?",
+          "Does the document exclude any page numbering or extra headers?",
+          "Are all figures and tables high-resolution with legible labels?",
+          "Are the title, abstract, and Index Terms strictly in English?",
+          "Has the PDF been validated and Approved by IEEE PDF eXpress?",
+          "Do you have the signed PDF copy of the IEEE Copyright Form ready?"
+        ],
+        "cmsInstructions": "Once all items are verified, log in to the CLAGTEE 2026 CMS (https://www.clagtee2026.org/cms), open your accepted paper under 'My Submissions', and click 'Submit Camera-Ready Version' to attach the approved PDF.",
+        "presentationWarning": "IMPORTANT: At least one author must register and present the paper in person during the conference in Santiago, Chile. Papers not presented will not be forwarded to IEEE Xplore and will only appear in local proceedings.",
+        "cmsButtonText": "Access CMS to Submit Final Version"
+      },
+      "step6": {
+        "number": "Step 6",
+        "title": "Register for the Conference",
+        "description": "Every accepted paper must have at least one Author registration (or Student Author registration) associated with it to cover presentation and publication in IEEE Xplore.",
+        "registrationNotice": "Check the registration categories and fees, and submit your proof of payment through our official Registration & Payments section. For any questions, contact us at:",
+        "supportEmail": "clagtee2026@clagtee.org",
+        "registerButtonText": "Go to Registration & Payments"
+      }
+    },
     "callForPapers": {
       "title": "CALL FOR PAPERS",
       "intro": [
@@ -231,7 +360,7 @@ export const contentEN: Content = {
         "title": "Submission Dates",
         "window": "The CLAGTEE 2026 Review Committee will accept papers for the review process from May 1, 2026 until August 22, 2026.",
         "process": "The submission process will be carried out through the Paper Management Platform and all communication with authors will be managed through the official CLAGTEE 2026 email. Papers submitted via email or any other electronic means will not be accepted.",
-        "notification": "The new acceptance/rejection notification date to authors will be on September 21, 2026, and the final version (if changes were requested) of accepted papers must be submitted by October 15, 2026."
+        "notification": "The new acceptance/rejection notification date to authors will be on September 21, 2026, and the final version (if changes were requested) of accepted papers must be submitted by November 1, 2026."
       },
       "guidelines": {
         "title": "Submission Guidelines",
@@ -275,7 +404,7 @@ export const contentEN: Content = {
       },
       "publicationConditions": {
         "title": "Publication Conditions for Papers",
-        "body": "Accepted papers will be published in the \"Book of Abstracts and Proceedings\" of CLAGTEE 2026, provided that the publication fee payment is completed by October 15, 2026 as the deadline."
+        "body": "Accepted papers will be published in the \"Book of Abstracts and Proceedings\" of CLAGTEE 2026, provided that the publication fee payment is completed by November 1, 2026 as the deadline."
       },
       "styleInstructions": {
         "title": "Style Instructions",
