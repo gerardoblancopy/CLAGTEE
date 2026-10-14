@@ -15,6 +15,7 @@ import {
   stripUndefined,
   buildResumeUrl,
   cmsRoleForRegistration,
+  PUCV_LINKS,
 } from '../_lib/registration-config.js';
 import { handleStaffNotify, handleEmailLog } from '../_lib/registration-notify.js';
 import {
@@ -197,7 +198,11 @@ export default async function handler(req, res) {
         res.status(404).json({ error: 'Registration not found' });
         return;
       }
-      res.status(200).json({ registration: snapshot.data() });
+      const regData = snapshot.data();
+      if (!regData.couponCode && PUCV_LINKS[regData.category] && regData.paymentUrl !== PUCV_LINKS[regData.category]) {
+        regData.paymentUrl = PUCV_LINKS[regData.category];
+      }
+      res.status(200).json({ registration: regData });
     } catch (error) {
       console.error('[registrations-get]', error?.message);
       res.status(500).json({ error: 'Failed to fetch registration' });

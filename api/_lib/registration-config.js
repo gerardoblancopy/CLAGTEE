@@ -8,12 +8,12 @@
 
 const PUCV_BASE = 'https://vaf.ucv.cl:8446/PortalEventos/evento.jsp';
 
-const PUCV_LINKS = {
-  autor: `${PUCV_BASE}?id=1898`,
-  general: `${PUCV_BASE}?id=1899`,
-  estudiante: `${PUCV_BASE}?id=1900`,
-  'paper-adicional': `${PUCV_BASE}?id=1908`,
-  'cena-adicional': `${PUCV_BASE}?id=1909`,
+export const PUCV_LINKS = {
+  autor: `${PUCV_BASE}?id=2292`,
+  general: `${PUCV_BASE}?id=2291`,
+  estudiante: `${PUCV_BASE}?id=2290`,
+  'paper-adicional': `${PUCV_BASE}?id=2289`,
+  'cena-adicional': `${PUCV_BASE}?id=2288`,
   'empresa-stand': `${PUCV_BASE}?id=2215`,
 };
 

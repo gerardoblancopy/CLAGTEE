@@ -98,14 +98,14 @@ Pendientes de definición antes de publicar
 
 Links de pagos:
 
-Estudiante: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=1900
+Autor: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=2292
 
-General: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=1899
+General: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=2291
 
-Autor: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=1898
+Estudiante: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=2290
 
-Paper adicional: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=1908
+Paper adicional: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=2289
 
-Cena de Gala adicional: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=1909
+Cena de Gala adicional: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=2288
 
 Stand - Exhibición Empresas: https://vaf.ucv.cl:8446/PortalEventos/evento.jsp?id=2215
