@@ -366,7 +366,7 @@ export const contentPT: Content = {
           },
           {
             "title": "Tempo de Apresentação",
-            "description": "Cada sessão técnica prevê aproximadamente 15 a 20 minutos de exposição oral, seguidos de 5 minutos para perguntas e debate."
+            "description": "Cada sessão técnica prevê 15 minutos de exposição oral, seguidos de uma sessão de perguntas e debate."
           },
           {
             "title": "Backup e Entrega",

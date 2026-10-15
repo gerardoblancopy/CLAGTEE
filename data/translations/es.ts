@@ -368,7 +368,7 @@ export const contentES: Content = {
           },
           {
             "title": "Tiempo de Exposición",
-            "description": "Cada presentación técnica cuenta con un tiempo estimado de 15 a 20 minutos de disertación, seguidos de 5 minutos para preguntas y debate."
+            "description": "Cada presentación técnica cuenta con un tiempo asignado de 15 minutos de exposición oral, seguidos de una sesión de preguntas y debate."
           },
           {
             "title": "Respaldo y Entrega",

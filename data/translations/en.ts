@@ -366,7 +366,7 @@ export const contentEN: Content = {
           },
           {
             "title": "Presentation Timing",
-            "description": "Each technical paper presentation has an estimated slot of 15 to 20 minutes, followed by 5 minutes for Q&A and discussion."
+            "description": "Each technical paper presentation has an allocated slot of 15 minutes, followed by a Q&A and discussion session."
           },
           {
             "title": "Backup & Delivery",
