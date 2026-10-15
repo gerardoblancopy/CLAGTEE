@@ -197,6 +197,22 @@ export interface IeeeFinalVersionContent {
     supportEmail: string;
     registerButtonText: string;
   };
+  presentationTemplate?: {
+    sectionTitle: string;
+    badge: string;
+    title: string;
+    description: string;
+    guidelinesTitle: string;
+    guidelines: {
+      title: string;
+      description: string;
+    }[];
+    downloadTitle: string;
+    downloadSubtitle: string;
+    downloadButtonText: string;
+    fileName: string;
+    fileSize: string;
+  };
 }
 
 export interface SponsorLogo {

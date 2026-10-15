@@ -350,6 +350,36 @@ export const contentES: Content = {
         "registrationNotice": "La inscripción y carga del comprobante de pago se realiza directamente en esta plataforma, en la sección de Registro y Pagos. Ante cualquier consulta sobre pagos e inscripciones, puede escribir al correo oficial:",
         "supportEmail": "clagtee2026@clagtee.org",
         "registerButtonText": "Ir a Inscripción y Pagos"
+      },
+      "presentationTemplate": {
+        "sectionTitle": "Plantillas para la Presentación",
+        "badge": "Presentación Oral CLAGTEE 2026",
+        "title": "Plantilla Oficial para la Presentación de Ponencias",
+        "description": "Para la exposición presencial de los trabajos aceptados en el CLAGTEE 2026, el comité organizador pone a disposición de los autores y conferencistas la plantilla oficial de diapositivas en formato Microsoft PowerPoint (.POTX). Se solicita utilizar este diseño estandarizado con la identidad gráfica oficial del congreso para preparar su ponencia.",
+        "guidelinesTitle": "Pautas para la Exposición Oral:",
+        "guidelines": [
+          {
+            "title": "Formato y Relación de Aspecto",
+            "description": "La plantilla está configurada en relación panorámica 16:9 (Widescreen), adecuada para las pantallas y proyectores del evento."
+          },
+          {
+            "title": "Identidad Institucional",
+            "description": "Incluye los membretes y logos oficiales de las universidades co-organizadoras (PUCV, UNESP, UNMDP) y el co-auspicio técnico de IEEE."
+          },
+          {
+            "title": "Tiempo de Exposición",
+            "description": "Cada presentación técnica cuenta con un tiempo estimado de 15 a 20 minutos de disertación, seguidos de 5 minutos para preguntas y debate."
+          },
+          {
+            "title": "Respaldo y Entrega",
+            "description": "Se solicita llevar la presentación en una memoria USB en formato PowerPoint (.POTX o .PPTX) y una versión adicional de respaldo en PDF para prever cualquier contingencia."
+          }
+        ],
+        "downloadTitle": "Plantilla Oficial de Diapositivas CLAGTEE 2026",
+        "downloadSubtitle": "Plantilla de PowerPoint (.POTX) lista para editar con sus contenidos",
+        "downloadButtonText": "Descargar Plantilla para la Presentación (.POTX)",
+        "fileName": "CLAGTEE2026_Plantilla_v2.potx",
+        "fileSize": "2.3 MB"
       }
     },
     "callForPapers": {

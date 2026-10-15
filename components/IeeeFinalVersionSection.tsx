@@ -120,6 +120,32 @@ export const IeeeFinalVersionSection: React.FC<IeeeFinalVersionSectionProps> = (
               );
             })}
           </div>
+
+          {content.presentationTemplate && (
+            <a
+              href="#plantillas-presentacion"
+              className="flex items-center justify-between p-4 bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-amber-500/5 rounded-xl border border-amber-300 hover:border-[#D9381E] hover:shadow-sm transition-all group"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-[#D9381E] text-white flex items-center justify-center font-bold text-xs shadow-sm shrink-0">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                  </svg>
+                </div>
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-amber-900 block">
+                    {content.presentationTemplate.sectionTitle}
+                  </span>
+                  <span className="text-xs sm:text-sm font-semibold text-slate-800 group-hover:text-[#D9381E] transition-colors">
+                    {content.presentationTemplate.title} (Descargar .POTX)
+                  </span>
+                </div>
+              </div>
+              <span className="text-amber-900 font-bold text-xs uppercase tracking-wider hidden sm:flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                Ver plantilla &rarr;
+              </span>
+            </a>
+          )}
         </div>
 
         {/* 6 Steps Details */}
@@ -209,6 +235,17 @@ export const IeeeFinalVersionSection: React.FC<IeeeFinalVersionSectionProps> = (
                     </button>
                   </>
                 )}
+
+                <a
+                  href="/CLAGTEE2026_Plantilla_v2.potx"
+                  download="CLAGTEE2026_Plantilla_v2.potx"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white border border-amber-300 hover:border-[#D9381E] text-amber-900 font-semibold text-sm transition-colors shadow-sm"
+                >
+                  <svg className="w-4 h-4 text-[#D9381E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Plantilla Presentación (.POTX)
+                </a>
               </div>
             </div>
 
@@ -530,6 +567,101 @@ export const IeeeFinalVersionSection: React.FC<IeeeFinalVersionSectionProps> = (
               {content.step6.registerButtonText}
             </button>
           </div>
+
+          {/* APARTADO DE PLANTILLAS PARA LA PRESENTACION */}
+          {content.presentationTemplate && (
+            <div
+              id="plantillas-presentacion"
+              className="scroll-mt-24 bg-gradient-to-br from-white via-[#FFFBF5] to-[#FFF5EB] rounded-2xl p-6 md:p-8 shadow-sm border-2 border-amber-300 relative overflow-hidden"
+            >
+              {/* Decorative background watermark */}
+              <div className="absolute right-0 bottom-0 translate-x-8 translate-y-8 opacity-[0.04] pointer-events-none select-none">
+                <svg className="w-80 h-80 text-[#D9381E]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M4 3h16a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2zm0 2v10h16V5H4zm3 14h10v2H7v-2z" />
+                </svg>
+              </div>
+
+              <div className="relative z-10">
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <span className="px-3 py-1 rounded-lg bg-[#D9381E] text-white font-bold text-xs uppercase tracking-wider shadow-sm">
+                    {content.presentationTemplate.badge}
+                  </span>
+                  <span className="text-xs font-bold text-amber-900 uppercase tracking-wider">
+                    {content.presentationTemplate.sectionTitle}
+                  </span>
+                </div>
+
+                <h3 className="text-2xl md:text-3xl font-extrabold text-[#0D2C54] mb-3">
+                  {content.presentationTemplate.title}
+                </h3>
+
+                <p className="text-base text-gray-700 font-['Roboto'] leading-relaxed mb-6 max-w-3xl">
+                  {content.presentationTemplate.description}
+                </p>
+
+                {/* Guidelines grid */}
+                <h4 className="text-sm md:text-base font-bold text-[#0D2C54] uppercase tracking-wider mb-3">
+                  {content.presentationTemplate.guidelinesTitle}
+                </h4>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
+                  {content.presentationTemplate.guidelines.map((guide, idx) => (
+                    <div
+                      key={idx}
+                      className="p-4 rounded-xl bg-white/85 backdrop-blur-sm border border-amber-200 shadow-sm"
+                    >
+                      <h5 className="font-bold text-[#0D2C54] text-sm mb-1 flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-[#D9381E] shrink-0" />
+                        {guide.title}
+                      </h5>
+                      <p className="text-xs md:text-sm text-slate-600 font-['Roboto'] leading-relaxed">
+                        {guide.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Big Download Box */}
+                <div className="bg-white rounded-2xl p-6 border-2 border-amber-300 shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-2xl bg-[#D9381E]/10 border border-[#D9381E]/20 flex items-center justify-center shrink-0">
+                      <svg className="w-8 h-8 text-[#D9381E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h5 className="font-bold text-[#0D2C54] text-base md:text-lg">
+                        {content.presentationTemplate.downloadTitle}
+                      </h5>
+                      <p className="text-xs md:text-sm text-gray-500 font-['Roboto']">
+                        {content.presentationTemplate.downloadSubtitle}
+                      </p>
+                      <div className="flex flex-wrap items-center gap-2 mt-1.5 text-xs text-amber-950 font-medium">
+                        <span className="font-mono bg-amber-100 px-2 py-0.5 rounded font-bold">
+                          {content.presentationTemplate.fileName}
+                        </span>
+                        <span>•</span>
+                        <span>{content.presentationTemplate.fileSize}</span>
+                        <span>•</span>
+                        <span>Microsoft PowerPoint (.POTX)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <a
+                    href={`/${content.presentationTemplate.fileName}`}
+                    download={content.presentationTemplate.fileName}
+                    className="inline-flex items-center justify-center gap-3 w-full md:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#D9381E] to-[#E76F51] hover:from-[#c22e16] hover:to-[#d65f42] text-white font-extrabold text-sm md:text-base transition-all shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] shrink-0"
+                  >
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    <span>{content.presentationTemplate.downloadButtonText}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          )}
 
         </div>
       </div>

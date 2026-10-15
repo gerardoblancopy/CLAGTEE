@@ -348,6 +348,36 @@ export const contentPT: Content = {
         "registrationNotice": "Consulte as categorias e valores, e envie o comprovante de pagamento diretamente na seção de Inscrições e Pagamentos. Em caso de dúvidas, entre em contato:",
         "supportEmail": "clagtee2026@clagtee.org",
         "registerButtonText": "Ir para Inscrição e Pagamentos"
+      },
+      "presentationTemplate": {
+        "sectionTitle": "Modelos para Apresentação",
+        "badge": "Apresentação Oral CLAGTEE 2026",
+        "title": "Modelo Oficial para Apresentação de Artigos",
+        "description": "Para a apresentação presencial dos artigos aceitos no CLAGTEE 2026, o comitê organizador disponibiliza aos autores e palestrantes o modelo oficial de slides em formato Microsoft PowerPoint (.POTX). Solicita-se utilizar este modelo padronizado com a identidade visual oficial do congresso para preparar sua apresentação.",
+        "guidelinesTitle": "Diretrizes para Apresentação Oral:",
+        "guidelines": [
+          {
+            "title": "Formato e Proporção de Tela",
+            "description": "O modelo está configurado no formato widescreen 16:9, ideal para os projetores e telas do centro de convenções."
+          },
+          {
+            "title": "Identidade Institucional",
+            "description": "Contém as logomarcas oficiais das universidades coorganizadoras (PUCV, UNESP, UNMDP) e o apoio técnico da IEEE."
+          },
+          {
+            "title": "Tempo de Apresentação",
+            "description": "Cada sessão técnica prevê aproximadamente 15 a 20 minutos de exposição oral, seguidos de 5 minutos para perguntas e debate."
+          },
+          {
+            "title": "Backup e Entrega",
+            "description": "Recomenda-se levar os slides em pendrive no formato PowerPoint (.POTX ou .PPTX) e uma cópia de segurança em PDF."
+          }
+        ],
+        "downloadTitle": "Modelo Oficial de Slides CLAGTEE 2026",
+        "downloadSubtitle": "Arquivo Microsoft PowerPoint (.POTX) pronto para edição dos seus conteúdos",
+        "downloadButtonText": "Baixar Modelo de Apresentação (.POTX)",
+        "fileName": "CLAGTEE2026_Plantilla_v2.potx",
+        "fileSize": "2.3 MB"
       }
     },
     "callForPapers": {

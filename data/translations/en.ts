@@ -348,6 +348,36 @@ export const contentEN: Content = {
         "registrationNotice": "Check the registration categories and fees, and submit your proof of payment through our official Registration & Payments section. For any questions, contact us at:",
         "supportEmail": "clagtee2026@clagtee.org",
         "registerButtonText": "Go to Registration & Payments"
+      },
+      "presentationTemplate": {
+        "sectionTitle": "Presentation Templates",
+        "badge": "CLAGTEE 2026 Oral Presentation",
+        "title": "Official Slide Template for Oral Presentations",
+        "description": "For the in-person presentation of accepted papers at CLAGTEE 2026, the organizing committee provides authors and speakers with the official slide template in Microsoft PowerPoint (.POTX) format. Please use this standardized layout featuring the official conference branding to prepare your presentation.",
+        "guidelinesTitle": "Oral Presentation Guidelines:",
+        "guidelines": [
+          {
+            "title": "Format & Aspect Ratio",
+            "description": "The template is set up in 16:9 widescreen format, perfectly suited for the conference venue screens and projectors."
+          },
+          {
+            "title": "Institutional Identity",
+            "description": "Features official logos of the co-organizing universities (PUCV, UNESP, UNMDP) and IEEE technical co-sponsorship."
+          },
+          {
+            "title": "Presentation Timing",
+            "description": "Each technical paper presentation has an estimated slot of 15 to 20 minutes, followed by 5 minutes for Q&A and discussion."
+          },
+          {
+            "title": "Backup & Delivery",
+            "description": "Please bring your presentation on a USB flash drive in PowerPoint format (.POTX or .PPTX), along with a backup PDF version."
+          }
+        ],
+        "downloadTitle": "Official CLAGTEE 2026 Slide Template",
+        "downloadSubtitle": "Microsoft PowerPoint (.POTX) template ready to customize with your paper content",
+        "downloadButtonText": "Download Presentation Template (.POTX)",
+        "fileName": "CLAGTEE2026_Plantilla_v2.potx",
+        "fileSize": "2.3 MB"
       }
     },
     "callForPapers": {
