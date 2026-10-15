@@ -238,6 +238,105 @@ export default async function handler(req, res) {
         return;
       }
 
+      // Inscripción manual realizada por el Staff (con comprobante):
+      if (str(body?.action) === 'manual-registration') {
+        const staffSession = await requireStaff(req, res);
+        if (!staffSession) return;
+
+        const category = str(body?.category);
+        const firstName = str(body?.firstName);
+        const lastName = str(body?.lastName);
+        const email = str(body?.email).toLowerCase();
+        const country = str(body?.country) || 'Chile';
+        const affiliation = str(body?.affiliation) || '';
+
+        if (!firstName || !lastName || !email || !category) {
+          res.status(400).json({ error: 'Nombre, apellido, email y categoría son obligatorios.' });
+          return;
+        }
+
+        const phase = getPhase();
+        const pricing = resolvePricing(category, phase);
+        const parsedAmount = Number(body?.amountUsd);
+        const amountUsd = !isNaN(parsedAmount) && parsedAmount >= 0 ? parsedAmount : (pricing?.amountUsd ?? 0);
+
+        const db = getFirestore();
+        const status = STAFF_STATUSES.includes(str(body?.status)) ? str(body?.status) : 'pago-validado';
+
+        let paperMatch = null;
+        if (body?.cmsPaperId) {
+          paperMatch = await resolvePaper(db, {
+            category,
+            cmsPaperId: str(body?.cmsPaperId),
+            paperTitle: str(body?.paperTitle) || '',
+          });
+        }
+
+        const buildRecord = (number) => {
+          const id = `REG-${String(number).padStart(4, '0')}`;
+          const token = randomBytes(16).toString('hex');
+          const now = new Date().toISOString();
+          const record = {
+            id,
+            token,
+            category,
+            firstName,
+            lastName,
+            email,
+            country,
+            affiliation,
+            dietary: str(body?.dietary) || undefined,
+            phase,
+            amountUsd,
+            currency: 'USD',
+            paymentUrl: pricing?.paymentUrl || null,
+            status,
+            comprobanteFileKey: str(body?.comprobanteFileKey) || undefined,
+            comprobanteFileName: str(body?.comprobanteFileName) || undefined,
+            comprobanteUrl: str(body?.comprobanteUrl) || undefined,
+            transactionCode: str(body?.transactionCode) || undefined,
+            studentProofFileKey: str(body?.studentProofFileKey) || undefined,
+            studentProofFileName: str(body?.studentProofFileName) || undefined,
+            studentProofUrl: str(body?.studentProofUrl) || undefined,
+            cmsPaperId: str(body?.cmsPaperId) || undefined,
+            paperTitle: str(body?.paperTitle) || undefined,
+            presenterName: str(body?.presenterName) || `${firstName} ${lastName}`.trim(),
+            cmsEmail: str(body?.cmsEmail) || email,
+            coverage: str(body?.coverage) || (category === 'paper-adicional' ? 'adicional' : 'principal'),
+            studentType: str(body?.studentType) || (category === 'estudiante' ? (body?.cmsPaperId ? 'autor' : 'asistente') : undefined),
+            studentLevel: str(body?.studentLevel) || undefined,
+            paperMatch: paperMatch ?? null,
+            staffNote: str(body?.staffNote) || `Inscripción manual por ${staffSession.email}`,
+            registeredByStaff: staffSession.email,
+            reviewedBy: staffSession.email,
+            createdAt: now,
+            updatedAt: now,
+          };
+          return stripUndefined(record);
+        };
+
+        const result = await createRegistrationTransaction(db, { couponDef: null, couponKey: null, buildRecord });
+        const record = result.record;
+
+        let notified = false;
+        if (Boolean(body?.notifyParticipant)) {
+          try {
+            notified = await sendStatusNotification(db, record, staffSession.email);
+            if (notified) {
+              await db.collection('registrations').doc(record.id).set(
+                { statusNotifiedAt: new Date().toISOString(), statusNotified: record.status },
+                { merge: true }
+              );
+            }
+          } catch (e) {
+            console.error('[manual-registration] notify failed:', e?.message);
+          }
+        }
+
+        res.status(201).json({ registration: stripToken(record), notified });
+        return;
+      }
+
       const { ok, errors, clean } = validateRegistrationInput(body || {});
       if (!ok) {
         res.status(400).json({ error: 'Invalid registration input', fields: errors });
@@ -361,6 +460,62 @@ export default async function handler(req, res) {
     try {
       const body = parseBody(req);
       const id = str(body?.id);
+
+      // Adjuntar o actualizar comprobante por el Staff:
+      if (str(body?.action) === 'staff-attach-comprobante') {
+        const staffSession = await requireStaff(req, res);
+        if (!staffSession) return;
+
+        const db = getFirestore();
+        if (!id) {
+          res.status(400).json({ error: 'id is required' });
+          return;
+        }
+        const ref = db.collection('registrations').doc(id);
+        const snapshot = await ref.get();
+        if (!snapshot.exists) {
+          res.status(404).json({ error: 'Registration not found' });
+          return;
+        }
+
+        const comprobanteFileKey = str(body?.comprobanteFileKey);
+        const comprobanteFileName = str(body?.comprobanteFileName);
+        const comprobanteUrl = str(body?.comprobanteUrl);
+        const transactionCode = str(body?.transactionCode);
+        const assignedStatus = str(body?.newStatus) || 'pago-validado';
+        const targetStatus = STAFF_STATUSES.includes(assignedStatus) ? assignedStatus : 'pago-validado';
+        const staffNote = str(body?.staffNote);
+
+        const currentData = snapshot.data();
+        const updateData = {
+          comprobanteFileKey: comprobanteFileKey || currentData.comprobanteFileKey || '',
+          comprobanteFileName: comprobanteFileName || currentData.comprobanteFileName || '',
+          comprobanteUrl: comprobanteUrl || currentData.comprobanteUrl || '',
+          transactionCode: transactionCode || currentData.transactionCode || '',
+          status: targetStatus,
+          staffNote: staffNote || currentData.staffNote || `Comprobante adjuntado por Staff (${staffSession.email})`,
+          reviewedBy: staffSession.email,
+          updatedAt: new Date().toISOString(),
+        };
+
+        await ref.set(stripUndefined(updateData), { merge: true });
+
+        let notified = false;
+        if (Boolean(body?.notifyParticipant) && currentData.status !== targetStatus && NOTIFY_STATUSES.includes(targetStatus)) {
+          try {
+            notified = await sendStatusNotification(db, (await ref.get()).data(), staffSession.email);
+            if (notified) {
+              await ref.set({ statusNotifiedAt: new Date().toISOString(), statusNotified: targetStatus }, { merge: true });
+            }
+          } catch (error) {
+            console.error('[staff-attach-comprobante] notify failed:', error?.message);
+          }
+        }
+
+        const updated = await ref.get();
+        res.status(200).json({ registration: stripToken(updated.data()), notified });
+        return;
+      }
 
       // Cambio de estado por staff/chair: { id, newStatus, staffNote? } (autorizado por token)
       const newStatus = str(body?.newStatus);

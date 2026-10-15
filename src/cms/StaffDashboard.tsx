@@ -10,6 +10,8 @@ import { AcceptedPapersList } from './AcceptedPapersList';
 import { MailSegment, getUncoveredPapers, normalizePaperId, resolveRegistrationPaperId } from './registrationSegments';
 import { exportRegistrationsToExcel } from './exportRegistrationsExcel';
 import { collectRegistrationFiles, downloadRegistrationFilesZip } from './downloadRegistrationFiles';
+import { ManualRegistrationModal } from './ManualRegistrationModal';
+import { AttachComprobanteModal } from './AttachComprobanteModal';
 
 const STATUS_ORDER: RegistrationStatus[] = [
   'pre-registro-creado',
@@ -91,7 +93,27 @@ export const StaffDashboard: React.FC = () => {
   const [mailSegment, setMailSegment] = useState<MailSegment>('sin-iniciar');
   const [isExporting, setIsExporting] = useState(false);
   const [zipProgress, setZipProgress] = useState<{ done: number; total: number } | null>(null);
+  const [isManualModalOpen, setIsManualModalOpen] = useState(false);
+  const [attachComprobanteReg, setAttachComprobanteReg] = useState<RegistrationRecord | null>(null);
   const mailerRef = useRef<HTMLDivElement>(null);
+
+  const handleManualSuccess = (newReg: RegistrationRecord, notified?: boolean) => {
+    setRegistrations((prev) => [newReg, ...prev]);
+    setNotice(
+      `Inscripción ${newReg.id} creada exitosamente para ${newReg.firstName} ${newReg.lastName}${
+        notified ? ' y notificación enviada por correo.' : '.'
+      }`
+    );
+  };
+
+  const handleAttachSuccess = (updatedReg: RegistrationRecord, notified?: boolean) => {
+    setRegistrations((prev) => prev.map((r) => (r.id === updatedReg.id ? updatedReg : r)));
+    setNotice(
+      `Comprobante guardado con éxito para ${updatedReg.id}${
+        notified ? ' y notificación enviada por correo.' : '.'
+      }`
+    );
+  };
 
   const acceptedPapers = useMemo(() => papers.filter((p) => p.status === 'accepted'), [papers]);
   const acceptedById = useMemo(() => {
@@ -287,6 +309,19 @@ export const StaffDashboard: React.FC = () => {
           <p className="text-gray-500">Gestión de registros, validación de pagos y documentos</p>
         </div>
         <div className="flex flex-wrap items-center gap-3">
+          {/* Botón de Inscripción Manual */}
+          <button
+            type="button"
+            onClick={() => setIsManualModalOpen(true)}
+            className="bg-[#2A9D8F] hover:bg-[#238C7E] text-white px-4 py-2.5 rounded-xl shadow-sm flex items-center space-x-2 transition-all hover:shadow active:scale-[0.98]"
+            title="Registrar manualmente a un participante que envió su comprobante de pago"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+            </svg>
+            <span className="text-sm font-bold">Inscripción Manual</span>
+          </button>
+
           {/* Botón superior de descarga rápida Excel según filtro activo */}
           <button
             type="button"
@@ -503,15 +538,37 @@ export const StaffDashboard: React.FC = () => {
                       </option>
                     ))}
                   </select>
-                  <div className="flex flex-wrap gap-2">
-                    {reg.comprobanteFileKey && (
-                      <DownloadLink
-                        fileKey={reg.comprobanteFileKey}
-                        fileName={reg.comprobanteFileName}
-                        className="text-[11px] font-bold text-[#2A9D8F] hover:underline"
+                  <div className="flex flex-wrap items-center gap-2">
+                    {reg.comprobanteFileKey ? (
+                      <div className="flex items-center gap-1.5">
+                        <DownloadLink
+                          fileKey={reg.comprobanteFileKey}
+                          fileName={reg.comprobanteFileName}
+                          className="text-[11px] font-bold text-[#2A9D8F] hover:underline"
+                        >
+                          Comprobante
+                        </DownloadLink>
+                        <button
+                          type="button"
+                          onClick={() => setAttachComprobanteReg(reg)}
+                          title="Reemplazar comprobante"
+                          className="text-[10px] text-gray-400 hover:text-gray-600 underline"
+                        >
+                          (cambiar)
+                        </button>
+                      </div>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => setAttachComprobanteReg(reg)}
+                        className="inline-flex items-center gap-1 text-[11px] font-bold text-amber-700 hover:text-amber-900 bg-amber-50 hover:bg-amber-100 px-2 py-0.5 rounded border border-amber-200 transition-colors"
+                        title="Subir comprobante recibido por correo u otro medio"
                       >
-                        Comprobante
-                      </DownloadLink>
+                        <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                        </svg>
+                        <span>Subir comprobante</span>
+                      </button>
                     )}
                     {reg.studentProofFileKey && (
                       <DownloadLink
@@ -594,6 +651,21 @@ export const StaffDashboard: React.FC = () => {
         statusLabels={statusLabels}
         statusStyles={statusStyles}
         categoryLabels={categoryLabels}
+      />
+
+      {/* Modal de Inscripción Manual por Staff */}
+      <ManualRegistrationModal
+        isOpen={isManualModalOpen}
+        onClose={() => setIsManualModalOpen(false)}
+        onSuccess={handleManualSuccess}
+        acceptedPapers={acceptedPapers}
+      />
+
+      {/* Modal para Adjuntar Comprobante a un Registro Existente */}
+      <AttachComprobanteModal
+        registration={attachComprobanteReg}
+        onClose={() => setAttachComprobanteReg(null)}
+        onSuccess={handleAttachSuccess}
       />
 
       {isLoading && <p className="text-center text-sm text-gray-400">Cargando…</p>}
