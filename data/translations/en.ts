@@ -559,7 +559,9 @@ export const contentEN: Content = {
         "resumeNote": "We sent you an email with a link to resume this pre-registration later.",
         "participantNote": "If you lose this link, request access from \"Already started your registration?\" in the form: we will send you the link and a temporary CMS password.",
         "profileNote": "If you have an author account in the CMS, you can also resume it from your profile (sign in with the same email).",
-        "profileLink": "Go to my profile"
+        "profileLink": "Go to my profile",
+        "firewallNoticeTitle": "Payment portal connection note",
+        "firewallNoticeBody": "The university payment portal operates through secure port 8446. If you experience connection errors or timeout (ERR_CONNECTION_TIMED_OUT), please open the link using mobile data (4G/5G) or a personal home network, outside restrictive corporate or campus firewalls."
       },
       "resumeBanner": {
         "title": "Already started your registration?",

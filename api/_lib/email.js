@@ -501,6 +501,9 @@ export const sendRegistrationReceipt = async ({
         </a>
       </td></tr>
     </table>
+    <div style="margin:14px 0 18px; padding:12px 14px; background-color:#fff8e6; border:1px solid #f6d289; border-radius:8px; font-size:13px; line-height:1.5; color:#7d5306;">
+      <strong>Nota sobre la conexión:</strong> La plataforma de pago opera en el puerto seguro 8446. Si experimenta error de conexión o tiempo de espera agotado (ERR_CONNECTION_TIMED_OUT), abra el enlace desde una red doméstica o datos móviles (4G/5G), fuera de cortafuegos o redes universitarias restrictivas.
+    </div>
     <p style="margin:20px 0 18px; font-size:15px; line-height:1.6; color:#425466;">
       <strong>Paso 2.</strong> Tras pagar, vuelva a su pre-registro para adjuntar el comprobante o ingresar el
       número de transacción:

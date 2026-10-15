@@ -677,6 +677,8 @@ export interface RegistrationContent {
     participantNote: string;
     profileNote: string;
     profileLink: string;
+    firewallNoticeTitle?: string;
+    firewallNoticeBody?: string;
   };
   resumeBanner: {
     title: string;

@@ -559,7 +559,9 @@ export const contentPT: Content = {
         "resumeNote": "Enviamos um e-mail com um link para retomar este pré-registro mais tarde.",
         "participantNote": "Se perder este link, solicite seu acesso em \"Já iniciou sua inscrição?\" no formulário: enviaremos o link e uma senha provisória do CMS.",
         "profileNote": "Se você tem conta de autor no CMS, também pode retomá-lo a partir do seu perfil (entre com o mesmo e-mail).",
-        "profileLink": "Ir para meu perfil"
+        "profileLink": "Ir para meu perfil",
+        "firewallNoticeTitle": "Nota sobre a conexão ao portal de pagamento",
+        "firewallNoticeBody": "A plataforma universitária de pagamentos opera através da porta segura 8446. Se você encontrar erro de conexão ou tempo limite esgotado (ERR_CONNECTION_TIMED_OUT), abra o link conectado a dados móveis (4G/5G) ou em uma rede doméstica, fora do firewall de redes universitárias ou institucionais."
       },
       "resumeBanner": {
         "title": "Já iniciou sua inscrição?",

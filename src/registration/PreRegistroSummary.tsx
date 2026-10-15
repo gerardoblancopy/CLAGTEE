@@ -134,6 +134,20 @@ export const PreRegistroSummary: React.FC = () => {
             >
               {r.buttons.pay}
             </a>
+
+            {r.summary.firewallNoticeBody && (
+              <div className="bg-amber-50/90 border border-amber-200/90 rounded-xl p-3.5 text-xs md:text-sm text-amber-900 flex items-start gap-2.5 mt-3">
+                <svg className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div className="text-left">
+                  {r.summary.firewallNoticeTitle && (
+                    <p className="font-bold text-amber-950 mb-0.5">{r.summary.firewallNoticeTitle}</p>
+                  )}
+                  <p className="text-amber-900/90 leading-relaxed">{r.summary.firewallNoticeBody}</p>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Paso 2: comprobante */}
