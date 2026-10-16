@@ -1213,7 +1213,7 @@ export const uiPT: UIStrings = {
   ariaOpenMenu: "Abrir menu de navegação",
   ariaCloseMenu: "Fechar menu de navegação",
   speakersPlaceholder: "Mais palestrantes magistrais e painéis serão anunciados em breve.",
-  deadlineBanner: "Prazo prorrogado: tarifa Early Bird de inscrição até sexta-feira, 9 de outubro de 2026",
+  deadlineBanner: "Prazo da versão final IEEE: 1 de Novembro de 2026 • Template oficial de apresentação (.PPTX) já disponível",
   venueTitle: "Local do Evento",
   venueCity: "Providencia, Santiago do Chile",
   venueHotelName: "MR. Hotel (ex-Hotel Neruda)",

@@ -1213,7 +1213,7 @@ export const uiEN: UIStrings = {
   ariaOpenMenu: "Open navigation menu",
   ariaCloseMenu: "Close navigation menu",
   speakersPlaceholder: "More keynote speakers and panels will be announced soon.",
-  deadlineBanner: "Deadline extended: Early Bird registration rate until Friday, October 9, 2026",
+  deadlineBanner: "IEEE Final Version Deadline: November 1, 2026 • Official Presentation Template (.PPTX) now available",
   venueTitle: "Event Venue",
   venueCity: "Providencia, Santiago, Chile",
   venueHotelName: "MR. Hotel (former Hotel Neruda)",
