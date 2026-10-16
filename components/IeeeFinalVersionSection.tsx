@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { IeeeFinalVersionContent } from '../types';
+import { IeeePdfValidatorWidget } from './IeeePdfValidatorWidget';
 
 interface IeeeFinalVersionSectionProps {
   content: IeeeFinalVersionContent;
@@ -343,103 +344,76 @@ export const IeeeFinalVersionSection: React.FC<IeeeFinalVersionSectionProps> = (
               {content.step3.description}
             </p>
 
-            {/* Conference ID badge banner */}
-            <div className="bg-gradient-to-r from-[#00629B] to-[#0D2C54] rounded-2xl p-6 text-white mb-8 shadow-md">
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-sky-200 mb-1">
-                    IEEE PDF eXpress — Conference ID
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl md:text-4xl font-extrabold tracking-wider font-mono">
-                      {content.step3.conferenceId}
-                    </span>
-                    <button
-                      onClick={handleCopyConfId}
-                      className="px-3 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 text-white text-xs font-bold transition-colors flex items-center gap-1.5"
-                    >
-                      {copiedConfId ? (
-                        <>
-                          <svg className="w-3.5 h-3.5 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span>¡Copiado!</span>
-                        </>
-                      ) : (
-                        <>
-                          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                          </svg>
-                          <span>Copiar ID</span>
-                        </>
-                      )}
-                    </button>
+            {/* Interactive Automated Validator Widget */}
+            <IeeePdfValidatorWidget className="mb-8" />
+
+            {/* Direct guidelines for LaTeX, Word and Adobe Self-Check */}
+            {content.step3.directInstructions && (
+              <div className="space-y-6">
+                <h4 className="text-base md:text-lg font-bold text-[#0D2C54] flex items-center gap-2">
+                  <svg className="w-5 h-5 text-[#00629B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                  {content.step3.directInstructionsTitle}
+                </h4>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* LaTeX instructions */}
+                  <div className="border border-emerald-200 bg-emerald-50/40 rounded-xl p-5">
+                    <h5 className="font-bold text-[#0D2C54] text-sm md:text-base mb-3 flex items-center gap-2">
+                      <span className="w-6 h-6 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-xs">
+                        TeX
+                      </span>
+                      {content.step3.directInstructions.latexTitle}
+                    </h5>
+                    <ul className="space-y-2 text-xs md:text-sm text-slate-700 font-['Roboto']">
+                      {content.step3.directInstructions.latexSteps.map((s, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="text-emerald-700 font-bold">•</span>
+                          <span className="leading-relaxed">{s}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Word instructions */}
+                  <div className="border border-blue-200 bg-blue-50/40 rounded-xl p-5">
+                    <h5 className="font-bold text-[#0D2C54] text-sm md:text-base mb-3 flex items-center gap-2">
+                      <span className="w-6 h-6 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-xs">
+                        DOC
+                      </span>
+                      {content.step3.directInstructions.wordTitle}
+                    </h5>
+                    <ul className="space-y-2 text-xs md:text-sm text-slate-700 font-['Roboto']">
+                      {content.step3.directInstructions.wordSteps.map((s, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="text-blue-700 font-bold">•</span>
+                          <span className="leading-relaxed">{s}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-                <a
-                  href={content.step3.portalUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto text-center px-5 py-3 rounded-xl bg-white text-[#00629B] hover:bg-sky-50 font-extrabold text-sm transition-all shadow-md flex items-center justify-center gap-2"
-                >
-                  <span>Abrir Portal PDF eXpress</span>
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
-              </div>
-            </div>
 
-            {/* Two paths: Has account vs Create account */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              {/* Existing user */}
-              <div className="border border-slate-200 rounded-xl p-5 bg-slate-50 flex flex-col justify-between">
-                <div>
-                  <h4 className="font-bold text-[#0D2C54] text-base mb-2 flex items-center gap-2">
-                    <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {/* Self check card */}
+                <div className="border border-indigo-200 bg-indigo-50/40 rounded-xl p-5">
+                  <h5 className="font-bold text-[#0D2C54] text-sm md:text-base mb-2 flex items-center gap-2">
+                    <svg className="w-5 h-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    {content.step3.hasAccountTitle}
-                  </h4>
-                  <p className="text-xs md:text-sm text-slate-700 font-['Roboto'] leading-relaxed">
-                    {content.step3.hasAccountText}
-                  </p>
+                    {content.step3.directInstructions.selfCheckTitle}
+                  </h5>
+                  <ul className="space-y-1.5 text-xs md:text-sm text-slate-700 font-['Roboto']">
+                    {content.step3.directInstructions.selfCheckSteps.map((s, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="text-indigo-600 font-bold">✓</span>
+                        <span className="leading-relaxed">{s}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-
-              {/* New user */}
-              <div className="border border-slate-200 rounded-xl p-5 bg-slate-50">
-                <h4 className="font-bold text-[#0D2C54] text-base mb-2 flex items-center gap-2">
-                  <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
-                  </svg>
-                  {content.step3.createAccountTitle}
-                </h4>
-                <ol className="space-y-1.5 pl-4 list-decimal text-xs md:text-sm text-slate-700 font-['Roboto']">
-                  {content.step3.createAccountSteps.map((step, idx) => (
-                    <li key={idx} className="leading-snug">{step}</li>
-                  ))}
-                </ol>
-              </div>
-            </div>
-
-            {/* Dashboard procedure */}
-            <div className="border border-emerald-200 bg-emerald-50/50 rounded-xl p-5">
-              <h4 className="font-bold text-[#0D2C54] text-base mb-3 flex items-center gap-2">
-                <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                </svg>
-                {content.step3.dashboardTitle}
-              </h4>
-              <ul className="space-y-2 text-xs md:text-sm text-slate-700 font-['Roboto']">
-                {content.step3.dashboardSteps.map((s, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <span className="font-bold text-emerald-700">{idx + 1}.</span>
-                    <span className="leading-relaxed">{s}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            )}
           </div>
 
           {/* STEP 4 */}

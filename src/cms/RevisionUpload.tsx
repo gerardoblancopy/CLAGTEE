@@ -3,6 +3,7 @@ import { useAuth } from './AuthContext';
 import { Paper, useCMSData } from './CMSDataContext';
 import { DownloadLink } from './DownloadLink';
 import { apiFetch } from './api';
+import { validateIeeePdf, IeeeValidationResult } from '../utils/ieeePdfValidator';
 
 // Envio de la version revisada (camera-ready) de un paper ya aceptado.
 // Reutiliza el mismo flujo de carga firmada que SubmissionForm: se firma la
@@ -16,6 +17,8 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
   const [fileUrl, setFileUrl] = useState('');
   const [note, setNote] = useState('');
   const [isUploading, setIsUploading] = useState(false);
+  const [isValidatingPdf, setIsValidatingPdf] = useState(false);
+  const [auditResult, setAuditResult] = useState<IeeeValidationResult | null>(null);
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
@@ -39,9 +42,17 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
     setFileName(file.name);
     setFileKey('');
     setFileUrl('');
+    setAuditResult(null);
     setError(null);
     setSuccess(false);
     setIsUploading(true);
+    setIsValidatingPdf(true);
+
+    // Run IEEE compliance analysis in background
+    validateIeeePdf(file)
+      .then((res) => setAuditResult(res))
+      .catch((err) => console.error('Error analyzing IEEE compliance:', err))
+      .finally(() => setIsValidatingPdf(false));
 
     try {
       const response = await apiFetch('/api/gcs-sign', {
@@ -148,6 +159,53 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
               {isUploading ? 'Subiendo archivo...' : 'Solo PDF, tamaño máximo 10MB'}
             </p>
           </label>
+
+          {/* Validation Feedback */}
+          {isValidatingPdf && (
+            <div className="p-3 bg-sky-50 rounded-lg border border-sky-200 text-xs text-sky-800 flex items-center gap-2">
+              <span className="animate-spin inline-block w-3.5 h-3.5 border-2 border-sky-600 border-t-transparent rounded-full" />
+              <span>Verificando compatibilidad técnica con normas IEEE Xplore...</span>
+            </div>
+          )}
+
+          {auditResult && !isValidatingPdf && (
+            <div
+              className={`p-3.5 rounded-xl border text-xs space-y-1.5 ${
+                auditResult.overallStatus === 'PASS'
+                  ? 'bg-emerald-50/70 border-emerald-300 text-emerald-950'
+                  : auditResult.overallStatus === 'WARNING'
+                  ? 'bg-amber-50/70 border-amber-300 text-amber-950'
+                  : 'bg-rose-50/70 border-rose-300 text-rose-950'
+              }`}
+            >
+              <div className="flex items-center justify-between font-bold">
+                <span className="flex items-center gap-1.5">
+                  {auditResult.overallStatus === 'PASS' ? '✓' : auditResult.overallStatus === 'WARNING' ? '⚠' : '✕'}
+                  {auditResult.overallStatus === 'PASS'
+                    ? 'Manuscrito Aprobado para IEEE Xplore'
+                    : auditResult.overallStatus === 'WARNING'
+                    ? 'Aprobado con Observaciones'
+                    : 'Atención: No cumple especificaciones IEEE Xplore'}
+                </span>
+                <span className="text-[11px] font-mono">{auditResult.pageCount} págs · {auditResult.pageSize.formatName}</span>
+              </div>
+              <p className="text-[11px] leading-relaxed">
+                Fuentes: {auditResult.embeddedFontsCount}/{auditResult.totalFonts} incrustadas.
+                {auditResult.unembeddedFontsCount > 0 && (
+                  <span className="font-semibold text-rose-700 ml-1">
+                    (Fuentes faltantes: {auditResult.fonts.filter((f) => !f.isEmbedded).map((f) => f.name).join(', ')})
+                  </span>
+                )}
+              </p>
+              {auditResult.recommendations.length > 0 && (
+                <ul className="text-[11px] list-disc pl-4 space-y-0.5 text-slate-700 mt-1">
+                  {auditResult.recommendations.slice(0, 2).map((rec, i) => (
+                    <li key={i}>{rec}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
 
           <div>
             <label className="block text-xs font-bold text-gray-500 mb-1">

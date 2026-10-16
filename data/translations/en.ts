@@ -237,7 +237,7 @@ export const contentEN: Content = {
         "stepsOverview": [
           "Step 1: Improve your paper according to reviewer recommendations.",
           "Step 2: Format the final version according to the official IEEE template.",
-          "Step 3: Generate and verify a compatible PDF file using IEEE PDF eXpress.",
+          "Step 3: Validate technical PDF compliance with the Automated IEEE Validator.",
           "Step 4: Complete and sign the IEEE Copyright Form (eCF).",
           "Step 5: Submit the approved final version via the CLAGTEE CMS.",
           "Step 6: Register for the conference."
@@ -267,7 +267,7 @@ export const contentEN: Content = {
           "Ensure that figures and tables have high resolution (minimum 300 dpi for raster images or native vector graphics) and legible font sizes. Low-resolution figures may cause rejection by IEEE Xplore.",
           "Do not add page numbers anywhere in the manuscript (final continuous pagination is added by IEEE).",
           "Do not apply security restrictions, passwords, or print/edit permissions to the PDF file.",
-          "Only PDF files validated and certified by the IEEE PDF eXpress service are accepted."
+          "Only PDF files with 100% embedded fonts (validated via the platform's Automated Validator) are accepted."
         ],
         "copyrightNotice": {
           "title": "IEEE Copyright Notice on the First Page Footer",
@@ -289,28 +289,31 @@ export const contentEN: Content = {
       },
       "step3": {
         "number": "Step 3",
-        "title": "Generate and verify a compatible PDF using IEEE PDF eXpress",
-        "description": "The final version must be certified as 100% compliant with IEEE Xplore standards. Even if your software generates PDF files, you must use the free IEEE PDF eXpress service to certify compliance.",
-        "conferenceId": "70524X",
-        "portalUrl": "https://ieee-pdf-express.org/",
-        "hasAccountTitle": "If you already have an IEEE PDF eXpress account:",
-        "hasAccountText": "Log in to the IEEE PDF eXpress portal using the official Conference ID: 70524X, your email address, and your password.",
-        "createAccountTitle": "If you do not yet have an IEEE PDF eXpress account, create one as follows:",
-        "createAccountSteps": [
-          "Go to the IEEE PDF eXpress website (https://ieee-pdf-express.org/).",
-          "Click the 'Create account' link.",
-          "Enter 70524X in the 'Conference ID' field.",
-          "Enter your email address and confirm it.",
-          "Choose a secure password and click 'Submit'.",
-          "Fill in the required profile details; you will receive a confirmation email."
-        ],
-        "dashboardTitle": "Procedure for each paper in PDF eXpress:",
-        "dashboardSteps": [
-          "In your PDF eXpress Dashboard, click 'Create New Title'.",
-          "Enter an identifier for your paper (such as your CLAGTEE Paper ID or the paper title).",
-          "Upload your manuscript file: you may upload source files (Word/LaTeX) for conversion or upload a pre-generated PDF for compliance verification.",
-          "You will receive an email with the verification result. The review status must show 'Approved' for publication. Save the approved PDF file."
-        ]
+        "title": "Validate your paper with the Automated IEEE Xplore Compliance System",
+        "description": "The final version must strictly adhere to the technical specifications required by IEEE Xplore (100% embedded fonts, US Letter format, no passwords, and optimal image resolution). To streamline this process and eliminate dependencies on external portals, CLAGTEE 2026 features an integrated Automated Manuscript Validator that analyzes your PDF in real time prior to final submission.",
+        "validatorTitle": "Automated IEEE Xplore Manuscript Validator",
+        "validatorDescription": "Drag and drop or select your PDF file in the interactive evaluator below for an instantaneous technical compliance audit.",
+        "directInstructionsTitle": "Direct Export Guidelines for IEEE Compliance:",
+        "directInstructions": {
+          "latexTitle": "Authors using LaTeX:",
+          "latexSteps": [
+            "Compile with `pdflatex` directly using the official IEEEtran template (which automatically embeds scalable Type 1 vector fonts).",
+            "If using dvips/ps2pdf, ensure you include the `-Ppdf -G0` flag to prevent prohibited Type 3 bitmap fonts.",
+            "To guarantee complete font embedding for any custom packages or vector figures, run Ghostscript: `gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -dEmbedAllFonts=true -sOutputFile=paper_final.pdf paper.pdf`."
+          ],
+          "wordTitle": "Authors using Microsoft Word:",
+          "wordSteps": [
+            "Before exporting, navigate to File > Options > Save and check 'Embed fonts in the file'.",
+            "When saving as PDF, choose 'Standard (publishing online and printing)' or export selecting 'Options > PDF/A compliant'.",
+            "Ensure the document paper size is explicitly configured to US Letter (8.5″ × 11″ / 215.9 mm × 279.4 mm)."
+          ],
+          "selfCheckTitle": "Quick Self-Check in Adobe Acrobat Reader:",
+          "selfCheckSteps": [
+            "Open your PDF in Adobe Reader and press `Ctrl + D` (or File > Properties).",
+            "In the 'Fonts' tab, ensure every single font listed specifies '(Embedded)' or '(Embedded Subset)'.",
+            "In the 'Description' tab, verify Page Size is 8.5 x 11 in (Letter) and Security states 'No Security'."
+          ]
+        }
       },
       "step4": {
         "number": "Step 4",
@@ -334,7 +337,7 @@ export const contentEN: Content = {
           "Does the document exclude any page numbering or extra headers?",
           "Are all figures and tables high-resolution with legible labels?",
           "Are the title, abstract, and Index Terms strictly in English?",
-          "Has the PDF been validated and Approved by IEEE PDF eXpress?",
+          "Has the PDF been validated and Approved by the Automated IEEE Validator?",
           "Do you have the signed PDF copy of the IEEE Copyright Form ready?"
         ],
         "cmsInstructions": "Once all items are verified, log in to the CLAGTEE 2026 CMS (https://www.clagtee2026.org/cms), open your accepted paper under 'My Submissions', and click 'Submit Camera-Ready Version' to attach the approved PDF.",

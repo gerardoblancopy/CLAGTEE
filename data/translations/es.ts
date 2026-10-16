@@ -237,7 +237,7 @@ export const contentES: Content = {
         "stepsOverview": [
           "Paso 1: Hacer mejoras a su artículo de acuerdo a las recomendaciones de los revisores.",
           "Paso 2: Formatear la versión final de su artículo de acuerdo al estilo IEEE.",
-          "Paso 3: Generar un archivo PDF compatible para su artículo utilizando el servicio PDF eXpress.",
+          "Paso 3: Validar la compatibilidad técnica de su PDF con el Validador Automático IEEE.",
           "Paso 4: Completar y firmar el Copyright de IEEE.",
           "Paso 5: Enviar la versión final de su artículo en el CMS.",
           "Paso 6: Registrarse en la conferencia."
@@ -267,7 +267,7 @@ export const contentES: Content = {
           "Verificar que las figuras y las tablas posean una alta resolución (mínimo 300 dpi en imágenes rasterizadas o gráficos vectoriales nativos) y que el texto de las mismas pueda ser leído con facilidad. Los artículos con figuras o tablas de baja resolución podrían ser rechazados por IEEE Xplore.",
           "No colocar número de página a su manuscrito (la numeración final correlativa es agregada por IEEE).",
           "No aplique configuraciones de seguridad, contraseñas ni restricciones de edición/impresión a su archivo PDF.",
-          "Se aceptan solamente archivos PDF (preferentemente generados y aprobados por el servicio PDF eXpress de IEEE)."
+          "Se aceptan solamente archivos PDF con fuentes 100% incrustadas (validados mediante el Validador Automático de la plataforma)."
         ],
         "copyrightNotice": {
           "title": "Aviso de Derechos de Autor (IEEE Copyright Notice) en el pie de página",
@@ -289,29 +289,31 @@ export const contentES: Content = {
       },
       "step3": {
         "number": "Paso 3",
-        "title": "Generar un archivo PDF compatible para su artículo utilizando el servicio PDF eXpress",
-        "description": "La versión final de los artículos debe ser enviada como archivo PDF compatible con IEEE Xplore. Aún cuando Usted pueda generar un archivo PDF compatible con IEEE Xplore por otros medios, debe utilizar el servicio PDF eXpress de IEEE para certificar la compatibilidad. PDF eXpress es un servicio gratuito para las conferencias del IEEE, permitiendo a los autores generar archivos PDF compatibles con IEEE Xplore (función de conversión) o verificar que los archivos PDF generados por los autores cumplan todas las normas (función de verificación).",
-        "conferenceId": "70524X",
-        "portalUrl": "https://ieee-pdf-express.org/",
-        "hasAccountTitle": "Si Usted ya posee una cuenta en IEEE PDF eXpress:",
-        "hasAccountText": "Acceda a la página web de IEEE PDF eXpress ingresando con el Conference ID oficial: 70524X, su correo electrónico y su contraseña.",
-        "createAccountTitle": "Si Usted aún no posee cuenta en PDF eXpress, puede crear una con los siguientes pasos:",
-        "createAccountSteps": [
-          "Ir a la página web de IEEE PDF eXpress (https://ieee-pdf-express.org/).",
-          "Haga clic en el enlace: 'Create account'.",
-          "Ingrese 70524X en el campo 'Conference ID'.",
-          "Ingrese su dirección de correo electrónico y confírmela.",
-          "Escoja una clave segura (Choose a Password).",
-          "Haga clic en el botón 'Submit' para continuar e ingrese la información adicional que requiere el sistema (recibirá un email confirmando la creación exitosa de su cuenta)."
-        ],
-        "dashboardTitle": "Procedimiento para cada artículo en PDF eXpress:",
-        "dashboardSteps": [
-          "Ingrese a su Dashboard y haga clic en el botón 'Create New Title'.",
-          "Ingrese un texto que identifique su artículo (use su Paper ID de CLAGTEE o el título de su artículo).",
-          "PDF eXpress le mostrará una tabla con información resumida sobre el archivo cargado. Para convertir o aprobar su artículo revise los íconos del lado derecho:",
-          "El primer ícono convierte desde Word o LaTeX a PDF. El segundo ícono permite validar un archivo PDF ya generado. (Si tiene un archivo DOC/DOCX, use la función de conversión; si ya tiene un PDF, use la función de verificación).",
-          "Usted recibirá un correo con el archivo verificado o con el PDF resultado de la conversión. El estado de su revisión debe indicar 'Approved' para que sea válido para publicación. Guarde ese archivo PDF certificado."
-        ]
+        "title": "Validar su artículo con el Sistema Automático de Conformidad IEEE Xplore",
+        "description": "La versión final de los artículos debe cumplir estrictamente con las especificaciones técnicas requeridas por IEEE Xplore (fuentes 100% incrustadas, formato US Letter, sin contraseñas y resolución óptima). Para agilizar este proceso y evitar dependencias de portales externos, la plataforma CLAGTEE 2026 cuenta con un Validador Automático de Manuscritos integrado que analiza su archivo PDF en tiempo real antes del envío final.",
+        "validatorTitle": "Validador Automático de Manuscritos IEEE Xplore",
+        "validatorDescription": "Arrastre o seleccione su archivo PDF en el evaluador interactivo a continuación para obtener una auditoría técnica instantánea de compatibilidad.",
+        "directInstructionsTitle": "Guía de Exportación Directa para Cumplimiento IEEE:",
+        "directInstructions": {
+          "latexTitle": "Autores en LaTeX:",
+          "latexSteps": [
+            "Compile utilizando `pdflatex` directamente sobre la plantilla oficial IEEEtran (la cual incrusta automáticamente las fuentes vectoriales Type 1).",
+            "Si utiliza dvips/ps2pdf, asegúrese de agregar el flag `-Ppdf -G0` para evitar fuentes bitmap Tipo 3.",
+            "Para garantizar la incrustación de cualquier paquete adicional o gráfico vectorial, puede procesar el PDF con Ghostscript: `gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -dEmbedAllFonts=true -sOutputFile=paper_final.pdf paper.pdf`."
+          ],
+          "wordTitle": "Autores en Microsoft Word:",
+          "wordSteps": [
+            "Antes de exportar, vaya a Archivo > Opciones > Guardar y marque la casilla 'Incrustar fuentes en el archivo' (Embed fonts in the file).",
+            "Al guardar como PDF, elija 'Tamaño estándar (publicación en línea e impresión)' o exporte seleccionando 'Opciones > Compatible con PDF/A'.",
+            "Verifique que el tamaño del papel esté configurado en Carta estadounidense (US Letter: 8.5″ x 11″ / 215.9 mm x 279.4 mm)."
+          ],
+          "selfCheckTitle": "Autoverificación rápida en Adobe Acrobat Reader:",
+          "selfCheckSteps": [
+            "Abra su archivo PDF en Adobe Reader y presione `Ctrl + D` (o Archivo > Propiedades).",
+            "En la pestaña 'Fuentes', verifique que cada una de las fuentes listadas indique '(Incrustada)' o '(Subconjunto incrustado)'.",
+            "En la pestaña 'Descripción', confirme que el Tamaño de página sea 8.5 x 11 pulg. (Letter) y que en 'Seguridad' indique 'Sin seguridad'."
+          ]
+        }
       },
       "step4": {
         "number": "Paso 4",
@@ -336,7 +338,7 @@ export const contentES: Content = {
           "Verifique que utilizó el estilo IEEE para las referencias bibliográficas.",
           "Verifique que el formato del documento sea Carta estadounidense (Letter, 8.5″ x 11″).",
           "Verifique que el artículo posea un único título, un único abstract y una única lista de Index Terms, todos exclusivamente en inglés.",
-          "Verifique haber certificado el archivo PDF final mediante el servicio IEEE PDF eXpress (con estado Approved).",
+          "Verifique haber evaluado y validado su archivo PDF final mediante el Validador Automático de IEEE (con estado Aprobado).",
           "Verifique tener listo el archivo PDF del IEEE Copyright Form firmado."
         ],
         "cmsInstructions": "Una vez verificados todos los puntos, ingrese al CMS de CLAGTEE 2026 (https://www.clagtee2026.org/cms), abra la sección de su paper aceptado y haga clic en 'Enviar Versión Final (Camera-Ready)' para adjuntar el PDF validado.",

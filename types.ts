@@ -164,14 +164,25 @@ export interface IeeeFinalVersionContent {
     number: string;
     title: string;
     description: string;
-    conferenceId: string;
-    portalUrl: string;
-    hasAccountTitle: string;
-    hasAccountText: string;
-    createAccountTitle: string;
-    createAccountSteps: string[];
-    dashboardTitle: string;
-    dashboardSteps: string[];
+    conferenceId?: string;
+    portalUrl?: string;
+    hasAccountTitle?: string;
+    hasAccountText?: string;
+    createAccountTitle?: string;
+    createAccountSteps?: string[];
+    dashboardTitle?: string;
+    dashboardSteps?: string[];
+    validatorTitle?: string;
+    validatorDescription?: string;
+    directInstructionsTitle?: string;
+    directInstructions?: {
+      latexTitle: string;
+      latexSteps: string[];
+      wordTitle: string;
+      wordSteps: string[];
+      selfCheckTitle: string;
+      selfCheckSteps: string[];
+    };
   };
   step4: {
     number: string;
