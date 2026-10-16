@@ -272,8 +272,8 @@ export const contentES: Content = {
         "copyrightNotice": {
           "title": "Aviso de Derechos de Autor (IEEE Copyright Notice) en el pie de página",
           "description": "IMPORTANTE: El aviso de derechos de autor (ISBN + año + precio + IEEE) que va en los papers publicados por IEEE al pie de la primera página DEBE ser agregado previo al envío final. En manuscritos confeccionados en LaTeX, agréguelo mediante las siguientes líneas de código inmediatamente antes de \\maketitle:",
-          "code": "\\IEEEoverridecommandlockouts\n\\IEEEpubid{\\makebox[\\columnwidth]{979-8-3195-1296-3/26/\\$31.00~\\copyright2026 IEEE \\hfill}\\hspace{\\columnsep}\\makebox[\\columnwidth]{ }}",
-          "placementNote": "Para autores que redactan en Microsoft Word, inserte el texto '979-8-3195-1296-3/26/$31.00 ©2026 IEEE' en el pie de la primera página, alineado a la izquierda en la primera columna."
+          "code": "\\IEEEoverridecommandlockouts\n\\IEEEpubid{\\makebox[\\columnwidth]{979-8-3195-1521-6/26/\\$31.00~\\copyright2026 IEEE \\hfill}\\hspace{\\columnsep}\\makebox[\\columnwidth]{ }}",
+          "placementNote": "Para autores que redactan en Microsoft Word, inserte el texto '979-8-3195-1521-6/26/$31.00 ©2026 IEEE' en el pie de la primera página, alineado a la izquierda en la primera columna."
         },
         "languageRules": {
           "title": "Reglas estrictas para Título, Resumen (Abstract) y Palabras Clave (Index Terms)",
@@ -291,15 +291,15 @@ export const contentES: Content = {
         "number": "Paso 3",
         "title": "Generar un archivo PDF compatible para su artículo utilizando el servicio PDF eXpress",
         "description": "La versión final de los artículos debe ser enviada como archivo PDF compatible con IEEE Xplore. Aún cuando Usted pueda generar un archivo PDF compatible con IEEE Xplore por otros medios, debe utilizar el servicio PDF eXpress de IEEE para certificar la compatibilidad. PDF eXpress es un servicio gratuito para las conferencias del IEEE, permitiendo a los autores generar archivos PDF compatibles con IEEE Xplore (función de conversión) o verificar que los archivos PDF generados por los autores cumplan todas las normas (función de verificación).",
-        "conferenceId": "71927X",
+        "conferenceId": "70524X",
         "portalUrl": "https://ieee-pdf-express.org/",
         "hasAccountTitle": "Si Usted ya posee una cuenta en IEEE PDF eXpress:",
-        "hasAccountText": "Acceda a la página web de IEEE PDF eXpress ingresando con el Conference ID oficial: 71927X, su correo electrónico y su contraseña.",
+        "hasAccountText": "Acceda a la página web de IEEE PDF eXpress ingresando con el Conference ID oficial: 70524X, su correo electrónico y su contraseña.",
         "createAccountTitle": "Si Usted aún no posee cuenta en PDF eXpress, puede crear una con los siguientes pasos:",
         "createAccountSteps": [
           "Ir a la página web de IEEE PDF eXpress (https://ieee-pdf-express.org/).",
           "Haga clic en el enlace: 'Create account'.",
-          "Ingrese 71927X en el campo 'Conference ID'.",
+          "Ingrese 70524X en el campo 'Conference ID'.",
           "Ingrese su dirección de correo electrónico y confírmela.",
           "Escoja una clave segura (Choose a Password).",
           "Haga clic en el botón 'Submit' para continuar e ingrese la información adicional que requiere el sistema (recibirá un email confirmando la creación exitosa de su cuenta)."

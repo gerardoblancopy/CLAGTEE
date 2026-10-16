@@ -272,8 +272,8 @@ export const contentPT: Content = {
         "copyrightNotice": {
           "title": "Aviso de Direitos Autorais (IEEE Copyright Notice) no rodapé da primeira página",
           "description": "IMPORTANTE: O aviso de copyright oficial da IEEE (ISBN + ano + preço + IEEE) no rodapé da primeira página DEVE ser adicionado antes do envio final. Em manuscritos em LaTeX, adicione as seguintes linhas imediatamente antes de \\maketitle:",
-          "code": "\\IEEEoverridecommandlockouts\n\\IEEEpubid{\\makebox[\\columnwidth]{979-8-3195-1296-3/26/\\$31.00~\\copyright2026 IEEE \\hfill}\\hspace{\\columnsep}\\makebox[\\columnwidth]{ }}",
-          "placementNote": "Para autores que utilizam Microsoft Word, insira o texto '979-8-3195-1296-3/26/$31.00 ©2026 IEEE' no rodapé da primeira página, alinhado à esquerda na primeira coluna."
+          "code": "\\IEEEoverridecommandlockouts\n\\IEEEpubid{\\makebox[\\columnwidth]{979-8-3195-1521-6/26/\\$31.00~\\copyright2026 IEEE \\hfill}\\hspace{\\columnsep}\\makebox[\\columnwidth]{ }}",
+          "placementNote": "Para autores que utilizam Microsoft Word, insira o texto '979-8-3195-1521-6/26/$31.00 ©2026 IEEE' no rodapé da primeira página, alinhado à esquerda na primeira coluna."
         },
         "languageRules": {
           "title": "Regras estritas para Título, Resumo (Abstract) e Palavras-chave (Index Terms)",
@@ -291,15 +291,15 @@ export const contentPT: Content = {
         "number": "Passo 3",
         "title": "Gerar um arquivo PDF compatível utilizando o serviço IEEE PDF eXpress",
         "description": "A versão final dos artigos deve ser enviada como arquivo PDF 100% compatível com o IEEE Xplore. Mesmo que seu software gere arquivos PDF, você deve utilizar o serviço gratuito IEEE PDF eXpress para atestar a compatibilidade.",
-        "conferenceId": "71927X",
+        "conferenceId": "70524X",
         "portalUrl": "https://ieee-pdf-express.org/",
         "hasAccountTitle": "Caso já possua conta no IEEE PDF eXpress:",
-        "hasAccountText": "Acesse a página do IEEE PDF eXpress utilizando o Conference ID oficial: 71927X, seu e-mail e sua senha.",
+        "hasAccountText": "Acesse a página do IEEE PDF eXpress utilizando o Conference ID oficial: 70524X, seu e-mail e sua senha.",
         "createAccountTitle": "Caso ainda não possua conta no PDF eXpress, crie uma seguindo os passos:",
         "createAccountSteps": [
           "Acesse a página do IEEE PDF eXpress (https://ieee-pdf-express.org/).",
           "Clique no link: 'Create account'.",
-          "Insira 71927X no campo 'Conference ID'.",
+          "Insira 70524X no campo 'Conference ID'.",
           "Insira seu endereço de e-mail e confirme.",
           "Escolha uma senha segura e clique em 'Submit'.",
           "Preencha as informações adicionais solicitadas; você receberá um e-mail confirmando a criação da sua conta."

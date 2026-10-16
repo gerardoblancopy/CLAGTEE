@@ -272,8 +272,8 @@ export const contentEN: Content = {
         "copyrightNotice": {
           "title": "IEEE Copyright Notice on the First Page Footer",
           "description": "IMPORTANT: The official IEEE copyright notice (ISBN + year + price + IEEE) that appears at the bottom of the first page of IEEE published papers MUST be added prior to final submission. In LaTeX manuscripts, add the following lines immediately before \\maketitle:",
-          "code": "\\IEEEoverridecommandlockouts\n\\IEEEpubid{\\makebox[\\columnwidth]{979-8-3195-1296-3/26/\\$31.00~\\copyright2026 IEEE \\hfill}\\hspace{\\columnsep}\\makebox[\\columnwidth]{ }}",
-          "placementNote": "For authors preparing manuscripts in Microsoft Word, insert the copyright notice '979-8-3195-1296-3/26/$31.00 ©2026 IEEE' into the footer of the first page, left-aligned in the first column."
+          "code": "\\IEEEoverridecommandlockouts\n\\IEEEpubid{\\makebox[\\columnwidth]{979-8-3195-1521-6/26/\\$31.00~\\copyright2026 IEEE \\hfill}\\hspace{\\columnsep}\\makebox[\\columnwidth]{ }}",
+          "placementNote": "For authors preparing manuscripts in Microsoft Word, insert the copyright notice '979-8-3195-1521-6/26/$31.00 ©2026 IEEE' into the footer of the first page, left-aligned in the first column."
         },
         "languageRules": {
           "title": "Strict Language Rules for Title, Abstract, and Keywords",
@@ -291,15 +291,15 @@ export const contentEN: Content = {
         "number": "Step 3",
         "title": "Generate and verify a compatible PDF using IEEE PDF eXpress",
         "description": "The final version must be certified as 100% compliant with IEEE Xplore standards. Even if your software generates PDF files, you must use the free IEEE PDF eXpress service to certify compliance.",
-        "conferenceId": "71927X",
+        "conferenceId": "70524X",
         "portalUrl": "https://ieee-pdf-express.org/",
         "hasAccountTitle": "If you already have an IEEE PDF eXpress account:",
-        "hasAccountText": "Log in to the IEEE PDF eXpress portal using the official Conference ID: 71927X, your email address, and your password.",
+        "hasAccountText": "Log in to the IEEE PDF eXpress portal using the official Conference ID: 70524X, your email address, and your password.",
         "createAccountTitle": "If you do not yet have an IEEE PDF eXpress account, create one as follows:",
         "createAccountSteps": [
           "Go to the IEEE PDF eXpress website (https://ieee-pdf-express.org/).",
           "Click the 'Create account' link.",
-          "Enter 71927X in the 'Conference ID' field.",
+          "Enter 70524X in the 'Conference ID' field.",
           "Enter your email address and confirm it.",
           "Choose a secure password and click 'Submit'.",
           "Fill in the required profile details; you will receive a confirmation email."
