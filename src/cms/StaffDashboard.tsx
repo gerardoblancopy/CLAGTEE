@@ -12,6 +12,7 @@ import { exportRegistrationsToExcel } from './exportRegistrationsExcel';
 import { collectRegistrationFiles, downloadRegistrationFilesZip } from './downloadRegistrationFiles';
 import { ManualRegistrationModal } from './ManualRegistrationModal';
 import { AttachComprobanteModal } from './AttachComprobanteModal';
+import { EditRegistrationModal } from './EditRegistrationModal';
 
 const STATUS_ORDER: RegistrationStatus[] = [
   'pre-registro-creado',
@@ -95,6 +96,7 @@ export const StaffDashboard: React.FC = () => {
   const [zipProgress, setZipProgress] = useState<{ done: number; total: number } | null>(null);
   const [isManualModalOpen, setIsManualModalOpen] = useState(false);
   const [attachComprobanteReg, setAttachComprobanteReg] = useState<RegistrationRecord | null>(null);
+  const [editingReg, setEditingReg] = useState<RegistrationRecord | null>(null);
   const mailerRef = useRef<HTMLDivElement>(null);
 
   const handleManualSuccess = (newReg: RegistrationRecord, notified?: boolean) => {
@@ -111,6 +113,15 @@ export const StaffDashboard: React.FC = () => {
     setNotice(
       `Comprobante guardado con éxito para ${updatedReg.id}${
         notified ? ' y notificación enviada por correo.' : '.'
+      }`
+    );
+  };
+
+  const handleEditSuccess = (updatedReg: RegistrationRecord, notified?: boolean) => {
+    setRegistrations((prev) => prev.map((r) => (r.id === updatedReg.id ? updatedReg : r)));
+    setNotice(
+      `Inscripción ${updatedReg.id} actualizada con éxito${
+        notified ? ' y notificación enviada por correo al participante.' : '.'
       }`
     );
   };
@@ -509,13 +520,27 @@ export const StaffDashboard: React.FC = () => {
                 <div className="col-span-3">
                   <p className="font-bold text-gray-800 truncate">{reg.firstName} {reg.lastName}</p>
                   <p className="text-xs text-gray-400 truncate">{reg.email}</p>
-                  <button
-                    type="button"
-                    onClick={() => setExpandedId((prev) => (prev === reg.id ? null : reg.id))}
-                    className="text-[11px] font-bold text-[#2A9D8F] hover:underline mt-1"
-                  >
-                    {expandedId === reg.id ? 'Ocultar detalle' : 'Ver detalle'}
-                  </button>
+                  <div className="flex items-center gap-2 mt-1">
+                    <button
+                      type="button"
+                      onClick={() => setExpandedId((prev) => (prev === reg.id ? null : reg.id))}
+                      className="text-[11px] font-bold text-[#2A9D8F] hover:underline"
+                    >
+                      {expandedId === reg.id ? 'Ocultar' : 'Detalle'}
+                    </button>
+                    <span className="text-gray-300">•</span>
+                    <button
+                      type="button"
+                      onClick={() => setEditingReg(reg)}
+                      className="inline-flex items-center gap-1 text-[11px] font-bold text-[#0D2C54] hover:text-[#2A9D8F] hover:underline transition-colors"
+                      title="Editar registro, categoría, tarifa o datos personales"
+                    >
+                      <svg className="w-3 h-3 text-[#2A9D8F]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                      </svg>
+                      <span>Editar</span>
+                    </button>
+                  </div>
                 </div>
                 <div className="col-span-2 text-sm text-gray-600">
                   {categoryLabels[reg.category]}
@@ -625,6 +650,18 @@ export const StaffDashboard: React.FC = () => {
                     )}
                     {reg.cancelledBy === 'participant' && <Detail label="Anulado por" value="El participante" />}
                     <Detail label="Creado" value={new Date(reg.createdAt).toLocaleString()} />
+                    <div className="col-span-2 md:col-span-3 pt-3 border-t border-gray-200 flex justify-end">
+                      <button
+                        type="button"
+                        onClick={() => setEditingReg(reg)}
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-[#0D2C54] hover:bg-[#1E4D8C] text-white shadow-sm transition-all"
+                      >
+                        <svg className="w-3.5 h-3.5 text-[#2A9D8F]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                        </svg>
+                        <span>Editar información completa de {reg.id}</span>
+                      </button>
+                    </div>
                   </div>
                 )}
               </motion.div>
@@ -666,6 +703,15 @@ export const StaffDashboard: React.FC = () => {
         registration={attachComprobanteReg}
         onClose={() => setAttachComprobanteReg(null)}
         onSuccess={handleAttachSuccess}
+      />
+
+      {/* Modal para Editar Registro Existente por el Staff */}
+      <EditRegistrationModal
+        registration={editingReg}
+        isOpen={Boolean(editingReg)}
+        onClose={() => setEditingReg(null)}
+        onSuccess={handleEditSuccess}
+        acceptedPapers={acceptedPapers}
       />
 
       {isLoading && <p className="text-center text-sm text-gray-400">Cargando…</p>}

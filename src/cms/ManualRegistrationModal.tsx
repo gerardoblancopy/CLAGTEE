@@ -1,5 +1,5 @@
 import React, { useState, useId } from 'react';
-import { RegistrationCategory, RegistrationRecord, RegistrationStatus } from '../../types';
+import { RegistrationCategory, RegistrationPhase, RegistrationRecord, RegistrationStatus } from '../../types';
 import { Paper } from './CMSDataContext';
 import { apiFetch } from './api';
 import { categoryLabels, statusLabels } from './StaffDashboard';
@@ -19,6 +19,7 @@ export const ManualRegistrationModal: React.FC<ManualRegistrationModalProps> = (
   acceptedPapers = [],
 }) => {
   const [category, setCategory] = useState<RegistrationCategory>('autor');
+  const [phase, setPhase] = useState<RegistrationPhase>('early-bird');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -37,7 +38,7 @@ export const ManualRegistrationModal: React.FC<ManualRegistrationModalProps> = (
   const [studentLevel, setStudentLevel] = useState<'pregrado' | 'magister' | 'doctorado'>('pregrado');
 
   // Payment & Comprobante
-  const [amountUsd, setAmountUsd] = useState<number>(REGISTRATION_PRICING['autor'].regular);
+  const [amountUsd, setAmountUsd] = useState<number>(REGISTRATION_PRICING['autor'].earlyBird);
   const [transactionCode, setTransactionCode] = useState('');
   const [status, setStatus] = useState<RegistrationStatus>('pago-validado');
   const [staffNote, setStaffNote] = useState('');
@@ -65,7 +66,17 @@ export const ManualRegistrationModal: React.FC<ManualRegistrationModalProps> = (
 
   const handleCategoryChange = (newCat: RegistrationCategory) => {
     setCategory(newCat);
-    const standardPrice = REGISTRATION_PRICING[newCat]?.regular ?? 350;
+    const standardPrice = phase === 'early-bird'
+      ? (REGISTRATION_PRICING[newCat]?.earlyBird ?? 300)
+      : (REGISTRATION_PRICING[newCat]?.regular ?? 350);
+    setAmountUsd(standardPrice);
+  };
+
+  const handlePhaseChange = (newPhase: RegistrationPhase) => {
+    setPhase(newPhase);
+    const standardPrice = newPhase === 'early-bird'
+      ? (REGISTRATION_PRICING[category]?.earlyBird ?? 300)
+      : (REGISTRATION_PRICING[category]?.regular ?? 350);
     setAmountUsd(standardPrice);
   };
 
@@ -152,6 +163,7 @@ export const ManualRegistrationModal: React.FC<ManualRegistrationModalProps> = (
         body: JSON.stringify({
           action: 'manual-registration',
           category,
+          phase,
           firstName: firstName.trim(),
           lastName: lastName.trim(),
           email: email.trim().toLowerCase(),
@@ -244,17 +256,76 @@ export const ManualRegistrationModal: React.FC<ManualRegistrationModalProps> = (
                     onClick={() => handleCategoryChange(cat)}
                     className={`px-3 py-2.5 rounded-xl border text-xs font-bold transition-all text-left flex flex-col justify-between ${
                       category === cat
-                        ? 'border-[#2A9D8F] bg-[#2A9D8F]/10 text-[#0D2C54] shadow-sm'
+                        ? 'border-[#2A9D8F] bg-[#2A9D8F]/10 text-[#0D2C54] shadow-sm ring-1 ring-[#2A9D8F]/30'
                         : 'border-gray-200 hover:border-gray-300 text-gray-600 bg-white'
                     }`}
                   >
                     <span>{categoryLabels[cat]}</span>
                     <span className="text-[10px] text-gray-400 mt-1 font-normal">
-                      USD {REGISTRATION_PRICING[cat]?.regular ?? 0}
+                      USD {phase === 'early-bird' ? (REGISTRATION_PRICING[cat]?.earlyBird ?? 0) : (REGISTRATION_PRICING[cat]?.regular ?? 0)}
                     </span>
                   </button>
                 )
               )}
+            </div>
+          </div>
+
+          {/* Tarifa / Fase: Early Bird vs Regular */}
+          <div className="bg-amber-500/5 border border-amber-500/20 rounded-2xl p-4">
+            <div className="flex items-center justify-between mb-2">
+              <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider">
+                Tarifa Aplicable (Valores Early Bird / Regular) *
+              </label>
+              <span className="text-[11px] text-gray-500">
+                Seleccione para cargar los valores correspondientes
+              </span>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <button
+                type="button"
+                onClick={() => handlePhaseChange('early-bird')}
+                className={`p-3 rounded-xl border text-left transition-all ${
+                  phase === 'early-bird'
+                    ? 'border-amber-500 bg-amber-500/15 text-amber-950 shadow-sm ring-2 ring-amber-500/30 font-bold'
+                    : 'border-gray-200 bg-white hover:bg-gray-50 text-gray-600'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-xs flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block"></span>
+                    Early Bird
+                  </span>
+                  <span className="font-mono text-xs px-2 py-0.5 rounded bg-amber-200/80 text-amber-950 font-bold">
+                    USD {REGISTRATION_PRICING[category]?.earlyBird ?? 0}
+                  </span>
+                </div>
+                <p className="text-[10px] text-gray-500 mt-1 font-normal">
+                  Tarifa temprana con descuento oficial
+                </p>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => handlePhaseChange('regular')}
+                className={`p-3 rounded-xl border text-left transition-all ${
+                  phase === 'regular'
+                    ? 'border-[#0D2C54] bg-[#0D2C54]/10 text-[#0D2C54] shadow-sm ring-2 ring-[#0D2C54]/30 font-bold'
+                    : 'border-gray-200 bg-white hover:bg-gray-50 text-gray-600'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-xs flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#0D2C54] inline-block"></span>
+                    Regular
+                  </span>
+                  <span className="font-mono text-xs px-2 py-0.5 rounded bg-slate-200 text-slate-800 font-bold">
+                    USD {REGISTRATION_PRICING[category]?.regular ?? 0}
+                  </span>
+                </div>
+                <p className="text-[10px] text-gray-500 mt-1 font-normal">
+                  Tarifa estándar de la conferencia
+                </p>
+              </button>
             </div>
           </div>
 
@@ -501,6 +572,29 @@ export const ManualRegistrationModal: React.FC<ManualRegistrationModalProps> = (
                   onChange={(e) => setAmountUsd(Number(e.target.value) || 0)}
                   className="w-full px-3 py-2 rounded-xl border border-gray-200 bg-white text-xs font-bold text-gray-800"
                 />
+                <div className="flex flex-wrap items-center gap-1.5 mt-1.5">
+                  <button
+                    type="button"
+                    onClick={() => handlePhaseChange('early-bird')}
+                    className="text-[10px] px-2 py-0.5 rounded-md bg-amber-100 text-amber-900 font-semibold hover:bg-amber-200 transition-colors"
+                  >
+                    Early Bird (${REGISTRATION_PRICING[category]?.earlyBird ?? 0})
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handlePhaseChange('regular')}
+                    className="text-[10px] px-2 py-0.5 rounded-md bg-slate-100 text-slate-800 font-semibold hover:bg-slate-200 transition-colors"
+                  >
+                    Regular (${REGISTRATION_PRICING[category]?.regular ?? 0})
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setAmountUsd(0)}
+                    className="text-[10px] px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 font-semibold hover:bg-emerald-200 transition-colors"
+                  >
+                    Liberada ($0)
+                  </button>
+                </div>
               </div>
               <div>
                 <label className="block text-[11px] font-semibold text-gray-600 mb-1">

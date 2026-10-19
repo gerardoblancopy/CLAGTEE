@@ -255,7 +255,7 @@ export default async function handler(req, res) {
           return;
         }
 
-        const phase = getPhase();
+        const phase = (body?.phase === 'early-bird' || body?.phase === 'regular') ? body.phase : getPhase();
         const pricing = resolvePricing(category, phase);
         const parsedAmount = Number(body?.amountUsd);
         const amountUsd = !isNaN(parsedAmount) && parsedAmount >= 0 ? parsedAmount : (pricing?.amountUsd ?? 0);
@@ -509,6 +509,105 @@ export default async function handler(req, res) {
             }
           } catch (error) {
             console.error('[staff-attach-comprobante] notify failed:', error?.message);
+          }
+        }
+
+        const updated = await ref.get();
+        res.status(200).json({ registration: stripToken(updated.data()), notified });
+        return;
+      }
+
+      // Edición completa de registro por el Staff:
+      if (str(body?.action) === 'staff-edit') {
+        const staffSession = await requireStaff(req, res);
+        if (!staffSession) return;
+
+        const db = getFirestore();
+        if (!id) {
+          res.status(400).json({ error: 'id is required' });
+          return;
+        }
+        const ref = db.collection('registrations').doc(id);
+        const snapshot = await ref.get();
+        if (!snapshot.exists) {
+          res.status(404).json({ error: 'Registration not found' });
+          return;
+        }
+
+        const currentData = snapshot.data();
+        const updatedCategory = str(body?.category) || currentData.category;
+        const updatedPhase = (body?.phase === 'early-bird' || body?.phase === 'regular')
+          ? body.phase
+          : (currentData.phase || 'early-bird');
+
+        const parsedAmount = Number(body?.amountUsd);
+        const updatedAmountUsd = !isNaN(parsedAmount) && parsedAmount >= 0 ? parsedAmount : (currentData.amountUsd ?? 0);
+
+        const assignedStatus = str(body?.status);
+        const updatedStatus = STAFF_STATUSES.includes(assignedStatus) ? assignedStatus : currentData.status;
+
+        let paperMatch = currentData.paperMatch;
+        const cmsPaperId = body?.cmsPaperId !== undefined ? str(body.cmsPaperId) : (currentData.cmsPaperId || '');
+        const paperTitle = body?.paperTitle !== undefined ? str(body.paperTitle) : (currentData.paperTitle || '');
+
+        if (cmsPaperId) {
+          paperMatch = await resolvePaper(db, {
+            category: updatedCategory,
+            cmsPaperId,
+            paperTitle,
+          });
+        } else if (body?.cmsPaperId === '') {
+          paperMatch = null;
+        }
+
+        const updateData = {
+          category: updatedCategory,
+          phase: updatedPhase,
+          amountUsd: updatedAmountUsd,
+          firstName: str(body?.firstName) || currentData.firstName,
+          lastName: str(body?.lastName) || currentData.lastName,
+          email: str(body?.email) ? str(body.email).toLowerCase() : currentData.email,
+          country: str(body?.country) || currentData.country,
+          affiliation: str(body?.affiliation) || currentData.affiliation,
+          dietary: body?.dietary !== undefined ? str(body.dietary) : (currentData.dietary || ''),
+          cmsPaperId: cmsPaperId || '',
+          paperTitle: paperTitle || '',
+          presenterName: body?.presenterName !== undefined ? str(body.presenterName) : (currentData.presenterName || ''),
+          cmsEmail: body?.cmsEmail !== undefined ? str(body.cmsEmail) : (currentData.cmsEmail || ''),
+          coverage: body?.coverage !== undefined ? str(body.coverage) : (currentData.coverage || ''),
+          studentType: body?.studentType !== undefined ? str(body.studentType) : (currentData.studentType || ''),
+          studentLevel: body?.studentLevel !== undefined ? str(body.studentLevel) : (currentData.studentLevel || ''),
+          transactionCode: body?.transactionCode !== undefined ? str(body.transactionCode) : (currentData.transactionCode || ''),
+          status: updatedStatus,
+          paperMatch: paperMatch ?? null,
+          staffNote: body?.staffNote !== undefined ? str(body.staffNote) : (currentData.staffNote || ''),
+          reviewedBy: staffSession.email,
+          updatedAt: new Date().toISOString(),
+        };
+
+        if (body?.comprobanteFileKey) {
+          updateData.comprobanteFileKey = str(body.comprobanteFileKey);
+          updateData.comprobanteFileName = str(body?.comprobanteFileName) || '';
+          updateData.comprobanteUrl = str(body?.comprobanteUrl) || '';
+        }
+        if (body?.studentProofFileKey) {
+          updateData.studentProofFileKey = str(body.studentProofFileKey);
+          updateData.studentProofFileName = str(body?.studentProofFileName) || '';
+          updateData.studentProofUrl = str(body?.studentProofUrl) || '';
+        }
+
+        await ref.set(stripUndefined(updateData), { merge: true });
+
+        let notified = false;
+        if (Boolean(body?.notifyParticipant) && NOTIFY_STATUSES.includes(updatedStatus)) {
+          try {
+            const fullDoc = (await ref.get()).data();
+            notified = await sendStatusNotification(db, fullDoc, staffSession.email);
+            if (notified) {
+              await ref.set({ statusNotifiedAt: new Date().toISOString(), statusNotified: updatedStatus }, { merge: true });
+            }
+          } catch (err) {
+            console.error('[staff-edit] notification failed:', err?.message);
           }
         }
 
