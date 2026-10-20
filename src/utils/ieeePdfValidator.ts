@@ -1,5 +1,6 @@
-import { PDFDocument, PDFName, PDFDict, PDFArray, PDFRef, StandardFonts, rgb } from 'pdf-lib';
+import { PDFDocument, PDFName, PDFDict, PDFArray, PDFRef, PDFFont, StandardFonts, rgb } from 'pdf-lib';
 import { extractPdfPagesText } from './pdfText';
+import { detectLanguage, LANGUAGE_NAMES, looksNonEnglish } from './language';
 
 export interface FontInfo {
   name: string;
@@ -49,9 +50,36 @@ function cleanFontName(rawName: string): string {
   return name;
 }
 
+export interface IeeeValidationOptions {
+  // Título en inglés declarado por el autor: se comprueba que coincida con el del PDF
+  expectedTitle?: string;
+}
+
+// Normaliza texto para comparar títulos: sin acentos, ligaduras, signos ni espacios
+const compactForMatch = (value: string) =>
+  value
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, '');
+
+// Abstract de la primera página: desde "Abstract" hasta "Index Terms"/"Keywords"/"Introduction"
+function extractAbstract(pageText: string): string | null {
+  let start = pageText.search(/\bAbstract\s*[—–\-:.]/i);
+  if (start < 0) start = pageText.search(/\b(Abstract|ABSTRACT)\b/);
+  if (start < 0) return null;
+  const rest = pageText.slice(start).replace(/^Abstract\s*[—–\-:.]?\s*/i, '');
+  const end = rest.search(
+    /\b(Index\s*Terms|Key\s*-?\s*words|Palabras\s+clave|Palavras[\s-]+chave|I\s*NTRODUCTION|Introduction|INTRODUCCI[OÓ]N|Introducci[oó]n|INTRODU[CÇ][AÃ]O|Introdu[cç][aã]o|(?:I|1)\.\s+[A-ZÁÉÍÓÚÇ]{4,})/
+  );
+  // Si no hay marcador de fin, basta con el comienzo: el abstract va justo después del encabezado
+  return (end > 0 ? rest.slice(0, end) : rest).trim().split(/\s+/).slice(0, 80).join(' ');
+}
+
 export async function validateIeeePdf(
   fileOrBuffer: File | ArrayBuffer | Uint8Array,
-  fileName: string = 'document.pdf'
+  fileName: string = 'document.pdf',
+  options: IeeeValidationOptions = {}
 ): Promise<IeeeValidationResult> {
   let buffer: ArrayBuffer;
   let fileSizeBytes = 0;
@@ -358,6 +386,12 @@ export async function validateIeeePdf(
     );
   }
 
+  // Check 6: Título y abstract en inglés (IEEE PSPB 8.1.1.I: en artículos en otro
+  // idioma, título y abstract deben ir en inglés)
+  const languageCheck = checkEnglishTitleAndAbstract(firstPageText, options.expectedTitle);
+  checks.push(languageCheck.check);
+  recommendations.push(...languageCheck.recommendations);
+
   // Overall status
   const hasFail = checks.some((c) => c.status === 'fail');
   const hasWarning = checks.some((c) => c.status === 'warning');
@@ -389,6 +423,100 @@ export async function validateIeeePdf(
     overallStatus,
     checks,
     recommendations,
+  };
+}
+
+function checkEnglishTitleAndAbstract(
+  pageText: string,
+  expectedTitle?: string
+): { check: IeeeValidationCheck; recommendations: string[] } {
+  const label = 'Título y Abstract en Inglés';
+  const policy = 'IEEE exige título y abstract en inglés, aunque el artículo esté escrito en español o portugués.';
+  const fix = 'Escriba un solo título y un solo abstract, ambos en inglés ("Abstract—…" e "Index Terms—…"), sin versión en español ni portugués.';
+
+  if (!pageText.trim()) {
+    return {
+      check: {
+        id: 'language',
+        label,
+        status: 'warning',
+        summary: 'No se pudo leer el texto de la primera página para revisar el idioma.',
+        details: policy,
+      },
+      recommendations: ['Verifique manualmente que el título y el abstract estén en inglés.'],
+    };
+  }
+
+  const problems: string[] = [];
+  const notes: string[] = [];
+  let status: IeeeValidationCheck['status'] = 'pass';
+
+  // Encabezados (con mayúscula y guion o dos puntos), no la palabra suelta en el texto
+  const secondAbstract = pageText.match(
+    /\b(Resumen|RESUMEN|Resumo|RESUMO|Palabras\s+[Cc]lave|PALABRAS\s+CLAVE|Palavras[\s-]+[Cc]have|PALAVRAS[\s-]+CHAVE)\s*[—–\-:.]/
+  );
+  if (secondAbstract) {
+    status = 'fail';
+    problems.push(`Se encontró "${secondAbstract[1]}": no incluya un resumen ni palabras clave en español o portugués.`);
+  }
+
+  const abstract = extractAbstract(pageText);
+  if (abstract === null) {
+    if (status === 'pass') status = 'warning';
+    problems.push('No se encontró el encabezado "Abstract" en la primera página.');
+  } else if (looksNonEnglish(abstract)) {
+    status = 'fail';
+    problems.push(`El abstract parece estar en ${LANGUAGE_NAMES[detectLanguage(abstract)]}.`);
+  } else {
+    notes.push('abstract en inglés');
+  }
+
+  // El título va al inicio de la página. Se toman tantas palabras como tiene el
+  // título esperado (8 si no se conoce) para no mezclarlo con las afiliaciones.
+  const title = (expectedTitle || '').trim();
+  const titleWords = title ? Math.min(20, Math.max(6, title.split(/\s+/).length)) : 8;
+  const abstractStart = pageText.search(/\bAbstract\b/i);
+  const pdfTitleSample = (abstractStart > 0 ? pageText.slice(0, abstractStart) : pageText)
+    .trim()
+    .split(/\s+/)
+    .slice(0, titleWords)
+    .join(' ');
+  if (title && looksNonEnglish(title)) {
+    status = 'fail';
+    problems.push(`El título indicado en el CMS parece estar en ${LANGUAGE_NAMES[detectLanguage(title)]}.`);
+  } else if (title && compactForMatch(pageText).includes(compactForMatch(title))) {
+    notes.push('título en inglés coincide con el del CMS');
+  } else if (looksNonEnglish(pdfTitleSample)) {
+    status = 'fail';
+    problems.push(`El título del PDF parece estar en ${LANGUAGE_NAMES[detectLanguage(pdfTitleSample)]}.`);
+  } else if (title) {
+    if (status === 'pass') status = 'warning';
+    problems.push('El título en inglés indicado en el CMS no coincide con el título del PDF.');
+  } else if (detectLanguage(pdfTitleSample) === 'en') {
+    notes.push('título en inglés');
+  }
+
+  if (problems.length === 0) {
+    return {
+      check: {
+        id: 'language',
+        label,
+        status: 'pass',
+        summary: `${notes.join('; ')}.`.replace(/^./, (c) => c.toUpperCase()),
+        details: title ? policy : `${policy} Verifique también que el título esté en inglés.`,
+      },
+      recommendations: [],
+    };
+  }
+
+  return {
+    check: { id: 'language', label, status, summary: problems.join(' '), details: policy },
+    recommendations: [
+      fix,
+      ...(problems.some((p) => p.includes('no coincide'))
+        ? ['Use en el CMS exactamente el mismo título en inglés que aparece en su PDF.']
+        : []),
+    ],
   };
 }
 
@@ -434,19 +562,11 @@ export async function generateIeeeFormatCertificatePdf(
   meta?: FormatCertificateMeta
 ): Promise<Uint8Array> {
   const pdfDoc = await PDFDocument.create();
-  const pdfPage = pdfDoc.addPage([612, 792]); // US Letter standard: 8.5 x 11 inches
-  const { width, height } = pdfPage.getSize();
-
   const fontRegular = await pdfDoc.embedFont(StandardFonts.Helvetica);
   const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
   const fontMono = await pdfDoc.embedFont(StandardFonts.Courier);
-
   const winAnsiChars = new Set(fontRegular.getCharacterSet());
-  const page = {
-    drawRectangle: pdfPage.drawRectangle.bind(pdfPage),
-    drawText: (text: string, options: Parameters<typeof pdfPage.drawText>[1]) =>
-      pdfPage.drawText(toWinAnsi(text, winAnsiChars), options),
-  };
+  const safe = (value: string) => toWinAnsi(value, winAnsiChars);
 
   // Colors
   const primaryBlue = rgb(13 / 255, 44 / 255, 84 / 255); // #0D2C54
@@ -454,55 +574,66 @@ export async function generateIeeeFormatCertificatePdf(
   const textDark = rgb(30 / 255, 41 / 255, 59 / 255); // #1E293B
   const textMuted = rgb(100 / 255, 116 / 255, 139 / 255); // #64748B
   const borderLight = rgb(226 / 255, 232 / 255, 240 / 255); // #E2E8F0
-  const passGreen = rgb(16 / 255, 185 / 255, 129 / 255); // #10B981
-  const warnAmber = rgb(245 / 255, 158 / 255, 11 / 255); // #F59E0B
+  const passGreen = rgb(5 / 255, 150 / 255, 105 / 255); // #059669
+  const warnAmber = rgb(217 / 255, 119 / 255, 6 / 255); // #D97706
+  const failRed = rgb(220 / 255, 38 / 255, 38 / 255); // #DC2626
   const bgLight = rgb(248 / 255, 250 / 255, 252 / 255); // #F8FAFC
 
-  // Draw background border & top band
-  page.drawRectangle({
-    x: 24,
-    y: 24,
-    width: width - 48,
-    height: height - 48,
-    borderColor: borderLight,
-    borderWidth: 1.5,
-  });
+  // US Letter: 8.5 x 11 inches. El contenido se ajusta en líneas y salta de página
+  // si no cabe (antes se recortaba a mano y se encimaban las columnas).
+  const PAGE_W = 612;
+  const PAGE_H = 792;
+  const LEFT = 44;
+  const RIGHT = PAGE_W - 44;
+  const BOTTOM = 56;
 
-  page.drawRectangle({
-    x: 24,
-    y: height - 100,
-    width: width - 48,
-    height: 76,
-    color: primaryBlue,
-  });
+  const addFramedPage = () => {
+    const newPage = pdfDoc.addPage([PAGE_W, PAGE_H]);
+    newPage.drawRectangle({ x: 24, y: 24, width: PAGE_W - 48, height: PAGE_H - 48, borderColor: borderLight, borderWidth: 1.5 });
+    return newPage;
+  };
+  let page = addFramedPage();
+  let y = PAGE_H - 128;
 
-  // Top header text
-  page.drawText('XVI CLAGTEE 2026 — SANTIAGO, CHILE', {
-    x: 44,
-    y: height - 48,
-    size: 11,
-    font: fontBold,
-    color: rgb(1, 1, 1),
-  });
-  page.drawText(
-    'Congreso Latinoamericano de Generación y Transporte de Energía Eléctrica',
-    {
-      x: 44,
-      y: height - 64,
-      size: 9,
-      font: fontRegular,
-      color: rgb(0.85, 0.9, 0.98),
+  const text = (value: string, x: number, atY: number, size: number, font: PDFFont, color = textDark) =>
+    page.drawText(safe(value), { x, y: atY, size, font, color });
+
+  const wrap = (value: string, font: PDFFont, size: number, maxWidth: number): string[] => {
+    const lines: string[] = [];
+    let line = '';
+    for (const word of safe(value).split(/\s+/).filter(Boolean)) {
+      const candidate = line ? `${line} ${word}` : word;
+      if (font.widthOfTextAtSize(candidate, size) <= maxWidth) {
+        line = candidate;
+        continue;
+      }
+      if (line) lines.push(line);
+      // Palabra más ancha que la columna (p. ej. nombres de fuentes): se corta por caracteres
+      let rest = word;
+      while (font.widthOfTextAtSize(rest, size) > maxWidth && rest.length > 1) {
+        let cut = rest.length - 1;
+        while (cut > 1 && font.widthOfTextAtSize(rest.slice(0, cut), size) > maxWidth) cut -= 1;
+        lines.push(rest.slice(0, cut));
+        rest = rest.slice(cut);
+      }
+      line = rest;
     }
-  );
-  page.drawText('Technical Co-Sponsorship: IEEE Chile Section & CAS Chapter', {
-    x: 44,
-    y: height - 78,
-    size: 8,
-    font: fontRegular,
-    color: rgb(0.7, 0.8, 0.95),
-  });
+    if (line) lines.push(line);
+    return lines.length > 0 ? lines : [''];
+  };
 
-  // Title: Certificado de Conformidad
+  const ensureSpace = (needed: number) => {
+    if (y - needed >= BOTTOM) return;
+    page = addFramedPage();
+    y = PAGE_H - 60;
+  };
+
+  // Header band
+  page.drawRectangle({ x: 24, y: PAGE_H - 100, width: PAGE_W - 48, height: 76, color: primaryBlue });
+  text('XVI CLAGTEE 2026 — SANTIAGO, CHILE', LEFT, PAGE_H - 48, 11, fontBold, rgb(1, 1, 1));
+  text('Congreso Latinoamericano de Generación y Transporte de Energía Eléctrica', LEFT, PAGE_H - 64, 9, fontRegular, rgb(0.85, 0.9, 0.98));
+  text('Technical Co-Sponsorship: IEEE Chile Section & CAS Chapter', LEFT, PAGE_H - 78, 8, fontRegular, rgb(0.7, 0.8, 0.95));
+
   const certDate = new Date().toLocaleDateString('es-CL', {
     year: 'numeric',
     month: 'long',
@@ -510,259 +641,150 @@ export async function generateIeeeFormatCertificatePdf(
     hour: '2-digit',
     minute: '2-digit',
   });
-  const certHash = `IEEE-CLAGTEE-${(meta?.paperId || 'DOC').replace(/[^a-zA-Z0-9]/g, '')}-${Date.now().toString(36).toUpperCase()}`;
+  const reference = `IEEE-CLAGTEE-${(meta?.paperId || 'DOC').replace(/[^a-zA-Z0-9]/g, '')}-${Date.now().toString(36).toUpperCase()}`;
 
-  let y = height - 128;
-  page.drawText('CERTIFICADO DE CONFORMIDAD TÉCNICA IEEE XPLORE', {
-    x: 44,
-    y,
-    size: 15,
-    font: fontBold,
-    color: primaryBlue,
-  });
-
+  text('CERTIFICADO DE REVISIÓN DE FORMATO IEEE XPLORE', LEFT, y, 15, fontBold, primaryBlue);
   y -= 16;
-  page.drawText(
-    'Comprobante oficial de validación automática de especificaciones para publicación Camera-Ready',
+  text('Resultado de la revisión automática de especificaciones técnicas del PDF final (camera-ready)', LEFT, y, 9, fontRegular, textMuted);
+
+  // Meta box
+  y -= 30;
+  const firstLine = (value: string, font: PDFFont, size: number, maxWidth: number) => {
+    const lines = wrap(value, font, size, maxWidth);
+    return lines.length > 1 ? `${lines[0]}…` : lines[0];
+  };
+  const metaLines: Array<{ value: string; font: PDFFont; size: number; color: ReturnType<typeof rgb> }> = [
+    { value: `Título: ${meta?.paperTitle || result.fileName || 'Manuscrito'}`, font: fontRegular, size: 8.5, color: textDark },
     {
-      x: 44,
-      y,
-      size: 9,
+      value: `Autor(a): ${meta?.authorName || 'Autor remitente'}${meta?.authorEmail ? ` <${meta.authorEmail}>` : ''}`,
       font: fontRegular,
-      color: textMuted,
-    }
-  );
-
-  // Meta Box
-  y -= 32;
-  page.drawRectangle({
-    x: 44,
-    y: y - 76,
-    width: width - 88,
-    height: 94,
-    color: bgLight,
-    borderColor: borderLight,
-    borderWidth: 1,
-  });
-
-  const pId = meta?.paperId ? `#${meta.paperId}` : 'No especificado';
-  const pTitle = (meta?.paperTitle || result.fileName || 'Manuscrito').slice(0, 78);
-  const pAuthor = meta?.authorName || 'Autor remitente';
-
-  page.drawText(`Artículo ID: ${pId}`, { x: 56, y: y + 2, size: 9, font: fontBold, color: primaryBlue });
-  page.drawText(`Fecha emisión: ${certDate}`, { x: 360, y: y + 2, size: 8, font: fontRegular, color: textMuted });
-
-  page.drawText(`Título: ${pTitle}`, { x: 56, y: y - 16, size: 8.5, font: fontRegular, color: textDark });
-  page.drawText(`Autor(a): ${pAuthor} ${meta?.authorEmail ? `<${meta.authorEmail}>` : ''}`, {
-    x: 56,
-    y: y - 32,
-    size: 8.5,
-    font: fontRegular,
-    color: textDark,
-  });
-  page.drawText(`Archivo analizado: ${result.fileName}`, {
-    x: 56,
-    y: y - 48,
-    size: 8,
-    font: fontMono,
-    color: textMuted,
-  });
-  page.drawText(`Código de Verificación: ${certHash}`, {
-    x: 56,
-    y: y - 64,
-    size: 8,
-    font: fontMono,
-    color: ieeeBlue,
-  });
-
-  // Verdict Banner
-  y -= 102;
-  const isPass = result.overallStatus === 'PASS';
-  const isWarn = result.overallStatus === 'WARNING';
-  const verdictColor = isPass ? passGreen : isWarn ? warnAmber : rgb(0.85, 0.2, 0.2);
-
-  page.drawRectangle({
-    x: 44,
-    y: y - 36,
-    width: width - 88,
-    height: 48,
-    color: isPass ? rgb(0.93, 0.98, 0.95) : rgb(0.99, 0.97, 0.91),
-    borderColor: verdictColor,
-    borderWidth: 1.5,
-  });
-
-  page.drawText(
-    isPass
-      ? 'DICTAMEN: APROBADO — 100% CONFORME CON NORMAS IEEE XPLORE'
-      : isWarn
-      ? 'DICTAMEN: APROBADO CON OBSERVACIONES MENORES'
-      : 'DICTAMEN: REQUIERE CORRECCIONES TÉCNICAS',
-    {
-      x: 58,
-      y: y - 14,
-      size: 11,
-      font: fontBold,
-      color: verdictColor,
-    }
-  );
-
-  page.drawText(
-    isPass
-      ? 'El documento cumple todas las normas de incrustación de fuentes, formato de página y copyright para su publicación en IEEE Xplore.'
-      : 'El archivo cumple las normas esenciales de fuentes, pero revise las observaciones antes del envío definitivo.',
-    {
-      x: 58,
-      y: y - 28,
-      size: 8,
-      font: fontRegular,
+      size: 8.5,
       color: textDark,
-    }
-  );
-
-  // Checks table header
-  y -= 62;
-  page.drawText('DESGLOSE DE VERIFICACIONES TÉCNICAS REALIZADAS', {
-    x: 44,
-    y,
-    size: 10,
-    font: fontBold,
-    color: primaryBlue,
-  });
-
-  y -= 16;
-  page.drawRectangle({
-    x: 44,
-    y: y - 18,
-    width: width - 88,
-    height: 22,
-    color: primaryBlue,
-  });
-  page.drawText('CRITERIO TÉCNICO', { x: 54, y: y - 12, size: 8, font: fontBold, color: rgb(1, 1, 1) });
-  page.drawText('ESTADO', { x: 230, y: y - 12, size: 8, font: fontBold, color: rgb(1, 1, 1) });
-  page.drawText('DETALLE / RESULTADO', { x: 300, y: y - 12, size: 8, font: fontBold, color: rgb(1, 1, 1) });
-
-  // Rows
-  const items = [
-    {
-      label: 'Cifrado y Seguridad',
-      status: 'CONFORME',
-      detail: 'Sin contraseñas ni restricciones de seguridad de impresión.',
     },
-    {
-      label: 'Incrustación de Fuentes',
-      status:
-        result.embeddedFontsCount === result.totalFonts && result.totalFonts > 0
-          ? 'CONFORME (100%)'
-          : `${result.embeddedFontsCount}/${result.totalFonts} Incrustadas`,
-      detail: result.hasType3Fonts
-        ? 'Contiene fuentes Type 3 bitmap (No permitidas por IEEE)'
-        : result.unembeddedFontsCount === 0
-        ? 'Todas las fuentes están vectorizadas e incrustadas.'
-        : `Fuentes faltantes: ${result.fonts.filter((f) => !f.isEmbedded).map((f) => f.name).slice(0, 2).join(', ')}`,
-    },
-    {
-      label: 'Tamaño de Página',
-      status: result.pageSize.formatName.includes('Letter') ? 'CONFORME (Letter)' : result.pageSize.formatName,
-      detail: `Dimensiones: ${result.pageSize.widthInches}″ × ${result.pageSize.heightInches}″ (${result.pageSize.formatName})`,
-    },
-    {
-      label: 'Extensión de Páginas',
-      status: `${result.pageCount} Páginas`,
-      detail:
-        result.pageCount >= 6 && result.pageCount <= 8
-          ? 'Dentro del rango oficial de la conferencia (6 a 8 páginas).'
-          : 'Revisar si cuenta con autorización del comité para esta extensión.',
-    },
-    {
-      label: 'Aviso de Copyright IEEE',
-      status: result.hasCopyrightNotice ? 'DETECTADO' : 'NO DETECTADO',
-      detail: 'Código oficial: 979-8-3195-1521-6/26/$31.00 ©2026 IEEE al pie de la pág 1.',
-    },
+    { value: `Archivo analizado: ${result.fileName}`, font: fontMono, size: 8, color: textMuted },
+    { value: `Referencia: ${reference}`, font: fontMono, size: 8, color: ieeeBlue },
   ];
+  const metaHeight = 22 + metaLines.length * 15;
+  page.drawRectangle({ x: LEFT, y: y - metaHeight + 12, width: RIGHT - LEFT, height: metaHeight, color: bgLight, borderColor: borderLight, borderWidth: 1 });
+  text(`Artículo ID: ${meta?.paperId ? `#${meta.paperId}` : 'No especificado'}`, LEFT + 12, y, 9, fontBold, primaryBlue);
+  text(`Fecha emisión: ${certDate}`, LEFT + 300, y, 8, fontRegular, textMuted);
+  metaLines.forEach((line) => {
+    y -= 15;
+    text(firstLine(line.value, line.font, line.size, RIGHT - LEFT - 24), LEFT + 12, y, line.size, line.font, line.color);
+  });
 
+  // Verdict banner
+  const verdict =
+    result.overallStatus === 'PASS'
+      ? {
+          title: 'DICTAMEN: CONFORME — CUMPLE TODAS LAS VERIFICACIONES DE FORMATO',
+          body: 'El PDF cumple las verificaciones automáticas de seguridad, fuentes, tamaño de página, extensión y aviso de copyright.',
+          color: passGreen,
+          fill: rgb(0.93, 0.98, 0.95),
+        }
+      : result.overallStatus === 'WARNING'
+      ? {
+          title: 'DICTAMEN: CONFORME CON OBSERVACIONES',
+          body: 'El PDF puede procesarse, pero tiene observaciones (marcadas abajo) que deben revisarse y, en lo posible, corregirse antes de la entrega definitiva.',
+          color: warnAmber,
+          fill: rgb(1, 0.97, 0.9),
+        }
+      : {
+          title: 'DICTAMEN: NO CONFORME — REQUIERE CORRECCIONES',
+          body: 'El PDF tiene problemas que IEEE Xplore rechazaría. Corríjalos según las recomendaciones y vuelva a subir el archivo.',
+          color: failRed,
+          fill: rgb(1, 0.95, 0.95),
+        };
+  const verdictLines = wrap(verdict.body, fontRegular, 8.5, RIGHT - LEFT - 28);
+  const verdictHeight = 30 + verdictLines.length * 11;
+  y -= 30;
+  page.drawRectangle({ x: LEFT, y: y - verdictHeight, width: RIGHT - LEFT, height: verdictHeight, color: verdict.fill, borderColor: verdict.color, borderWidth: 1.5 });
+  text(verdict.title, LEFT + 14, y - 18, 11, fontBold, verdict.color);
+  verdictLines.forEach((line, idx) => text(line, LEFT + 14, y - 32 - idx * 11, 8.5, fontRegular, textDark));
+  y -= verdictHeight + 26;
+
+  // Checks table: estado y detalle salen de cada verificación real del validador
+  const COL_LABEL = LEFT + 10;
+  const COL_STATUS = LEFT + 168;
+  const COL_DETAIL = LEFT + 262;
+  const LABEL_W = COL_STATUS - COL_LABEL - 10;
+  const DETAIL_W = RIGHT - COL_DETAIL - 10;
+  const STATUS_STYLE = {
+    pass: { label: 'CONFORME', color: passGreen },
+    warning: { label: 'OBSERVACIÓN', color: warnAmber },
+    fail: { label: 'NO CONFORME', color: failRed },
+  } as const;
+
+  text('DESGLOSE DE VERIFICACIONES TÉCNICAS REALIZADAS', LEFT, y, 10, fontBold, primaryBlue);
+  y -= 8;
+  page.drawRectangle({ x: LEFT, y: y - 20, width: RIGHT - LEFT, height: 20, color: primaryBlue });
+  text('CRITERIO TÉCNICO', COL_LABEL, y - 13, 8, fontBold, rgb(1, 1, 1));
+  text('ESTADO', COL_STATUS, y - 13, 8, fontBold, rgb(1, 1, 1));
+  text('DETALLE / RESULTADO', COL_DETAIL, y - 13, 8, fontBold, rgb(1, 1, 1));
   y -= 20;
-  items.forEach((item, index) => {
-    const rowBg = index % 2 === 0 ? bgLight : rgb(1, 1, 1);
+
+  result.checks.forEach((check, index) => {
+    const style = STATUS_STYLE[check.status];
+    const labelLines = wrap(check.label, fontBold, 8, LABEL_W);
+    const detailLines = wrap(check.summary, fontRegular, 7.5, DETAIL_W);
+    const rowHeight = Math.max(labelLines.length, detailLines.length) * 10 + 12;
+    ensureSpace(rowHeight);
     page.drawRectangle({
-      x: 44,
-      y: y - 22,
-      width: width - 88,
-      height: 24,
-      color: rowBg,
+      x: LEFT,
+      y: y - rowHeight,
+      width: RIGHT - LEFT,
+      height: rowHeight,
+      color: index % 2 === 0 ? bgLight : rgb(1, 1, 1),
       borderColor: borderLight,
       borderWidth: 0.5,
     });
-
-    const isItemPass = item.status.includes('CONFORME') || item.status.includes('DETECTADO') || item.label.includes('Extensión');
-    const badgeColor = isItemPass ? passGreen : warnAmber;
-
-    page.drawText(item.label, { x: 54, y: y - 14, size: 8, font: fontBold, color: textDark });
-    page.drawText(item.status, { x: 230, y: y - 14, size: 8, font: fontBold, color: badgeColor });
-    page.drawText(item.detail.slice(0, 58), { x: 300, y: y - 14, size: 7.5, font: fontRegular, color: textMuted });
-
-    y -= 24;
+    labelLines.forEach((line, idx) => text(line, COL_LABEL, y - 14 - idx * 10, 8, fontBold, textDark));
+    text(style.label, COL_STATUS, y - 14, 8, fontBold, style.color);
+    detailLines.forEach((line, idx) => text(line, COL_DETAIL, y - 14 - idx * 10, 7.5, fontRegular, textMuted));
+    y -= rowHeight;
   });
 
-  // Fonts list preview
-  y -= 14;
-  page.drawText('FUENTES DETECTADAS EN EL DOCUMENTO:', {
-    x: 44,
-    y,
-    size: 8.5,
-    font: fontBold,
-    color: primaryBlue,
+  // Fonts list
+  const fontNames = result.fonts.map((f) => `${f.name} (${f.isEmbedded ? 'incrustada' : 'NO incrustada'})`).join(', ');
+  const fontLines = wrap(fontNames || 'Sin fuentes detectadas', fontRegular, 7, RIGHT - LEFT);
+  const shownFontLines = fontLines.length > 4 ? [...fontLines.slice(0, 3), `${fontLines[3]} …`] : fontLines;
+  y -= 20;
+  ensureSpace(14 + shownFontLines.length * 9);
+  text(`FUENTES DETECTADAS EN EL DOCUMENTO (${result.totalFonts}):`, LEFT, y, 8.5, fontBold, primaryBlue);
+  shownFontLines.forEach((line) => {
+    y -= 10;
+    text(line, LEFT, y, 7, fontRegular, textMuted);
   });
 
-  y -= 12;
-  const fontNames = result.fonts.map((f) => `${f.name} (${f.isEmbedded ? 'incrustada' : 'no incrustada'})`).join(', ');
-  const fontsSample = fontNames.length > 0 ? fontNames.slice(0, 180) + (fontNames.length > 180 ? '...' : '') : 'Sin fuentes detectadas';
-  page.drawText(fontsSample, {
-    x: 44,
-    y,
-    size: 7,
-    font: fontRegular,
-    color: textMuted,
-  });
+  // Recommendations
+  if (result.recommendations.length > 0) {
+    y -= 20;
+    ensureSpace(24);
+    text('CÓMO CORREGIR LAS OBSERVACIONES:', LEFT, y, 8.5, fontBold, primaryBlue);
+    result.recommendations.forEach((recommendation) => {
+      const lines = wrap(recommendation.replace(/`/g, ''), fontRegular, 7.5, RIGHT - LEFT - 12);
+      ensureSpace(lines.length * 10 + 4);
+      lines.forEach((line, idx) => {
+        y -= 10;
+        text(idx === 0 ? `• ${line}` : `  ${line}`, LEFT + 4, y, 7.5, fontRegular, textDark);
+      });
+      y -= 2;
+    });
+  }
 
-  // Bottom Notice & Signatures
-  y -= 36;
-  page.drawRectangle({
-    x: 44,
-    y: y - 48,
-    width: width - 88,
-    height: 52,
-    color: bgLight,
-    borderColor: borderLight,
-    borderWidth: 1,
-  });
-
-  page.drawText(
-    'Este certificado acredita que el manuscrito ha sido procesado mediante el motor de validación de conformidad IEEE Xplore',
-    {
-      x: 54,
-      y: y - 14,
-      size: 7.5,
-      font: fontRegular,
-      color: textMuted,
-    }
+  // Footer notice
+  const footerLines = wrap(
+    'Este certificado resume la revisión automática de formato realizada por la plataforma CLAGTEE 2026 sobre el archivo indicado. Al subir la versión final en el CMS, este certificado se adjunta automáticamente.',
+    fontRegular,
+    7.5,
+    RIGHT - LEFT - 20
   );
-  page.drawText(
-    'integrado de la plataforma CLAGTEE 2026. Al subir la versión final en el CMS, este certificado se adjunta automáticamente.',
-    {
-      x: 54,
-      y: y - 26,
-      size: 7.5,
-      font: fontRegular,
-      color: textMuted,
-    }
-  );
-  page.drawText(`CLAGTEE 2026 Editorial Board • IEEE Chile Section • https://www.clagtee2026.org`, {
-    x: 54,
-    y: y - 40,
-    size: 7.5,
-    font: fontBold,
-    color: ieeeBlue,
-  });
+  const footerHeight = 24 + footerLines.length * 11;
+  y -= 18;
+  ensureSpace(footerHeight);
+  page.drawRectangle({ x: LEFT, y: y - footerHeight, width: RIGHT - LEFT, height: footerHeight, color: bgLight, borderColor: borderLight, borderWidth: 1 });
+  footerLines.forEach((line, idx) => text(line, LEFT + 10, y - 13 - idx * 11, 7.5, fontRegular, textMuted));
+  text('CLAGTEE 2026 Editorial Board • IEEE Chile Section • https://www.clagtee2026.org', LEFT + 10, y - 15 - footerLines.length * 11, 7.5, fontBold, ieeeBlue);
 
   return await pdfDoc.save();
 }

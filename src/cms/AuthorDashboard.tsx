@@ -368,7 +368,7 @@ export const AuthorDashboard: React.FC<{
             <div className="bg-white/10 rounded-xl p-3 border border-white/10">
               <span className="text-emerald-300 font-bold text-xs block mb-0.5">1. Sube tu PDF final</span>
               <p className="text-[11px] text-blue-100">
-                Con formato IEEE y las correcciones de los revisores. Revisamos el formato y generamos tu certificado automáticamente.
+                Con formato IEEE, las correcciones de los revisores y el título y abstract en inglés (también los confirmas en el CMS). Revisamos el formato y generamos tu certificado automáticamente.
               </p>
             </div>
             <div className="bg-white/10 rounded-xl p-3 border border-white/10">

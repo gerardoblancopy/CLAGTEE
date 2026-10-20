@@ -1,4 +1,4 @@
-import { getFirestore, normalizePaper, seedPapersIfNeeded } from '../_lib/firestore.js';
+import { cleanPaperTitle, getFirestore, normalizePaper, seedPapersIfNeeded } from '../_lib/firestore.js';
 import { isStaffRole, requireAuth, signEcfTicket, verifyEcfTicket } from '../_lib/auth.js';
 
 const parseBody = (req) => {
@@ -143,6 +143,18 @@ export default async function handler(req, res) {
           updates.revisionNote = input.revisionNote.trim();
         }
 
+        if (typeof input.titleEn === 'string' || typeof input.abstractEn === 'string') {
+          const titleEn = cleanPaperTitle(input.titleEn).slice(0, 400);
+          const abstractEn = String(input.abstractEn || '').replace(/\s+/g, ' ').trim().slice(0, 5000);
+          if (!titleEn || !abstractEn) {
+            res.status(400).json({ error: 'El título y el abstract en inglés son obligatorios.' });
+            return;
+          }
+          updates.titleEn = titleEn;
+          updates.abstractEn = abstractEn;
+          updates.englishMetaAt = now;
+        }
+
         if (typeof input.fileKey === 'string' && input.fileKey.trim()) {
           updates.revisedFileName = String(input.fileName || '').trim();
           updates.revisedFileUrl = String(input.fileUrl || '').trim();
@@ -271,7 +283,7 @@ export default async function handler(req, res) {
         res.status(200).json({
           paper: {
             id: paperId,
-            title: String(current.title || ''),
+            title: cleanPaperTitle(current.titleEn || current.title),
             authors: (Array.isArray(current.authors) ? current.authors : []).map((a) => ({
               name: String(a?.name || ''),
               email: String(a?.email || ''),

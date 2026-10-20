@@ -11,7 +11,13 @@ import {
 import { normalizePaperId, resolveRegistrationPaperId } from './registrationSegments';
 import { PaperEmailModal, PaperEmailTarget } from './PaperEmailModal';
 import { DownloadLink } from './DownloadLink';
-import { isGeneratedEcfFileName } from './ieeeEcf';
+import { ENGLISH_META_LABELS, englishMetaStatus, isGeneratedEcfFileName } from './ieeeEcf';
+
+const ENGLISH_META_STYLES = {
+  missing: 'text-amber-700 bg-amber-50 border-amber-200',
+  check: 'text-rose-800 bg-rose-50 border-rose-200',
+  ok: 'text-emerald-800 bg-emerald-50 border-emerald-200',
+} as const;
 
 type PaperClassificationFilter = 'all' | PaperStatus;
 type RegistrationFilter = 'all' | 'sin-inscripcion' | 'con-inscripcion' | Exclude<RegistrationStatus, 'cancelada'>;
@@ -469,8 +475,14 @@ export const AcceptedPapersList: React.FC<AcceptedPapersListProps> = ({
                       )}
                     </div>
                     <h5 className="font-bold text-gray-900 text-base leading-snug">
-                      {paper.title}
+                      {paper.title || <span className="italic text-gray-400 font-medium">(Sin título registrado)</span>}
                     </h5>
+                    {paper.titleEn && paper.titleEn !== paper.title && (
+                      <p className="text-sm text-gray-600 leading-snug">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mr-1.5">EN</span>
+                        {paper.titleEn}
+                      </p>
+                    )}
                   </div>
 
                   {/* Clasificador / Selector de Decisión */}
@@ -647,6 +659,15 @@ export const AcceptedPapersList: React.FC<AcceptedPapersListProps> = ({
                       </svg>
                       <span>Original</span>
                     </DownloadLink>
+                  )}
+
+                  {paper.status === 'accepted' && (
+                    <span
+                      className={`text-[11px] border px-2 py-0.5 rounded font-medium ${ENGLISH_META_STYLES[englishMetaStatus(paper)]}`}
+                      title="Título y abstract en inglés que el autor confirma en la entrega final (los que se envían a IEEE)"
+                    >
+                      Título/abstract EN: {ENGLISH_META_LABELS[englishMetaStatus(paper)]}
+                    </span>
                   )}
 
                   {paper.revisedFileKey ? (

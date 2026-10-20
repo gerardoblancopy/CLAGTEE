@@ -24,6 +24,10 @@ export interface Paper {
   id: string;
   title: string;
   abstract: string;
+  // Título y abstract en inglés confirmados en la entrega final (los que van a IEEE)
+  titleEn?: string;
+  abstractEn?: string;
+  englishMetaAt?: string;
   keywords: string[];
   authors: AuthorEntry[];
   track: string;
@@ -59,6 +63,8 @@ export interface RevisionInput {
   fileUrl?: string;
   fileKey?: string;
   revisionNote?: string;
+  titleEn?: string;
+  abstractEn?: string;
   copyrightFileName?: string;
   copyrightFileUrl?: string;
   copyrightFileKey?: string;
