@@ -1,4 +1,5 @@
 import { PDFDocument, PDFName, PDFDict, PDFArray, PDFRef, StandardFonts, rgb } from 'pdf-lib';
+import { extractPdfPagesText } from './pdfText';
 
 export interface FontInfo {
   name: string;
@@ -204,14 +205,21 @@ export async function validateIeeePdf(
   const unembeddedFontsCount = unembeddedFonts.length;
   const hasType3Fonts = fonts.some((f) => f.isType3);
 
-  // Copyright notice text scan in raw bytes
+  // Aviso de copyright (ISBN de CLAGTEE 2026) en el texto de la primera página.
+  // Se lee como texto real: los bytes crudos van comprimidos y buscar ahí daba
+  // "no detectado" en casi todos los PDFs correctos.
+  let firstPageText = '';
+  try {
+    firstPageText = await extractPdfPagesText(new Uint8Array(buffer), 1);
+  } catch (err) {
+    console.error('No se pudo leer el texto del PDF:', err);
+  }
+  const compactText = firstPageText
+    .normalize('NFKC')
+    .replace(/[‐-―−]/g, '-')
+    .replace(/\s+/g, '');
   const rawBytesStr = new TextDecoder('latin1').decode(new Uint8Array(buffer.slice(0, Math.min(buffer.byteLength, 150000))));
-  const hasCopyrightNotice =
-    /979-8-3195-1521-6/i.test(rawBytesStr) ||
-    /979-8-3195/i.test(rawBytesStr) ||
-    /IEEEpubid/i.test(rawBytesStr) ||
-    /copyright.*2026.*IEEE/i.test(rawBytesStr) ||
-    /©.*2026.*IEEE/i.test(rawBytesStr);
+  const hasCopyrightNotice = /979-?8-?3195-?1521-?6/.test(compactText) || rawBytesStr.includes('979-8-3195-1521-6');
 
   // Check 1: Security / Encryption
   checks.push({

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useAuth } from './AuthContext';
 import { Paper, useCMSData } from './CMSDataContext';
 import { DownloadLink } from './DownloadLink';
-import { apiFetch } from './api';
+import { apiFetch, requestDownloadUrl } from './api';
 import {
   validateIeeePdf,
   IeeeValidationResult,
@@ -153,6 +153,32 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
 
   const authorsText = (paper.authors || []).map((a) => a.name).filter(Boolean).join(', ') || user?.name || '';
 
+  // Genera el certificado de formato a partir de la revisión real del PDF y lo guarda
+  const saveFormatCertificate = async (audit: IeeeValidationResult) => {
+    const certBytes = await generateIeeeFormatCertificatePdf(audit, {
+      paperId: paper.id,
+      paperTitle: paper.title,
+      authorName: authorsText,
+      authorEmail: user?.email,
+    });
+    const certName = `Certificado_Formato_IEEE_${paper.id}.pdf`;
+    const certGcs = await uploadToGcs(new Blob([certBytes], { type: 'application/pdf' }), certName);
+    const withCert = await submitRevision(paper.id, {
+      formatCertFileName: certName,
+      formatCertFileUrl: certGcs.fileUrl,
+      formatCertFileKey: certGcs.fileKey,
+      formatValidationStatus: audit.overallStatus,
+    });
+    if (!withCert) throw new Error('certificate not saved');
+  };
+
+  const feedbackForAudit = (status: IeeeValidationResult['overallStatus']): Feedback =>
+    status === 'FAIL'
+      ? { tone: 'error', text: 'Tu PDF tiene problemas que IEEE Xplore rechazaría. Revisa el detalle, corrígelo y vuelve a subirlo.' }
+      : status === 'WARNING'
+      ? { tone: 'warning', text: 'Tu PDF quedó registrado con observaciones. Si puedes corregirlas, vuelve a subir el PDF; si no, la entrega queda registrada igual.' }
+      : { tone: 'success', text: '¡Listo! Tu PDF final cumple el formato IEEE y tu certificado de formato quedó guardado.' };
+
   // Paso 1: sube el PDF final, lo valida y genera el certificado de formato
   const handleRevisedFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -199,45 +225,46 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
 
       setManuscriptStage('Generando el certificado de formato...');
       try {
-        const certBytes = await generateIeeeFormatCertificatePdf(audit, {
-          paperId: paper.id,
-          paperTitle: paper.title,
-          authorName: authorsText,
-          authorEmail: user?.email,
-        });
-        const certName = `Certificado_Formato_IEEE_${paper.id}.pdf`;
-        const certGcs = await uploadToGcs(new Blob([certBytes], { type: 'application/pdf' }), certName);
-        const withCert = await submitRevision(paper.id, {
-          formatCertFileName: certName,
-          formatCertFileUrl: certGcs.fileUrl,
-          formatCertFileKey: certGcs.fileKey,
-          formatValidationStatus: audit.overallStatus,
-        });
-        if (!withCert) throw new Error('certificate not saved');
+        await saveFormatCertificate(audit);
       } catch (certErr) {
         console.error('Certificate error:', certErr);
         setFeedback({
           tone: 'warning',
-          text: 'Guardamos tu PDF, pero no se pudo generar el certificado de formato. Vuelve a subir el PDF para reintentarlo.',
+          text: 'Guardamos tu PDF, pero no se pudo generar el certificado de formato. Pulsa "Generar certificado" para reintentarlo.',
         });
         return;
       }
-
-      if (audit.overallStatus === 'FAIL') {
-        setFeedback({
-          tone: 'error',
-          text: 'Guardamos tu PDF, pero tiene problemas que IEEE Xplore rechazaría. Revisa el detalle, corrígelo y vuelve a subirlo.',
-        });
-      } else if (audit.overallStatus === 'WARNING') {
-        setFeedback({
-          tone: 'warning',
-          text: 'PDF final guardado con observaciones. Si puedes corregirlas, vuelve a subir el PDF; si no, la entrega queda registrada igual.',
-        });
-      } else {
-        setFeedback({ tone: 'success', text: '¡Listo! Tu PDF final cumple el formato IEEE y tu certificado de formato quedó guardado.' });
-      }
+      setFeedback(feedbackForAudit(audit.overallStatus));
     } catch (err: any) {
       setFeedback({ tone: 'error', text: err?.message || 'Error al subir el manuscrito.' });
+    } finally {
+      setManuscriptStage(null);
+    }
+  };
+
+  // Vuelve a revisar el PDF ya guardado y genera su certificado, sin volver a subirlo
+  // (para entregas sin certificado o revisadas con una versión anterior del validador)
+  const handleRecheckStoredPdf = async () => {
+    if (!paper.revisedFileKey) return;
+    setFeedback(null);
+    setValidationResult(null);
+    try {
+      setManuscriptStage('Revisando el formato IEEE...');
+      const response = await fetch(await requestDownloadUrl(paper.revisedFileKey));
+      if (!response.ok) {
+        throw new Error('No se pudo leer tu PDF guardado. Vuelve a subirlo.');
+      }
+      const audit = await validateIeeePdf(
+        new Uint8Array(await response.arrayBuffer()),
+        paper.revisedFileName || `${paper.id}.pdf`
+      );
+      setValidationResult(audit);
+      setManuscriptStage('Generando el certificado de formato...');
+      await saveFormatCertificate(audit);
+      setFeedback(feedbackForAudit(audit.overallStatus));
+    } catch (err: any) {
+      console.error('Recheck error:', err);
+      setFeedback({ tone: 'error', text: err?.message || 'No se pudo revisar tu PDF. Intenta nuevamente o vuelve a subirlo.' });
     } finally {
       setManuscriptStage(null);
     }
@@ -475,9 +502,16 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
                     </div>
                   ) : (
                     !isUploadingRevised && (
-                      <p className="text-[11px] text-amber-800 pt-1 border-t border-slate-200">
-                        Falta el certificado de formato: vuelve a subir tu PDF final y se generará automáticamente.
-                      </p>
+                      <div className="flex items-center justify-between gap-2 pt-1 border-t border-slate-200">
+                        <span className="text-[11px] text-amber-800">Falta el certificado de formato.</span>
+                        <button
+                          type="button"
+                          onClick={handleRecheckStoredPdf}
+                          className="text-[#2A9D8F] font-bold hover:underline shrink-0"
+                        >
+                          Generar certificado
+                        </button>
+                      </div>
                     )
                   )}
                 </div>
@@ -517,7 +551,16 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
                     {storedSummary.text}
                     {validationStatus !== 'PASS' && (
                       <span className="block font-normal mt-0.5">
-                        El detalle está en tu certificado de formato. Corrige y vuelve a subir el PDF si es necesario.
+                        El detalle está en tu certificado de formato. Corrige y vuelve a subir el PDF si es necesario, o{' '}
+                        <button
+                          type="button"
+                          onClick={handleRecheckStoredPdf}
+                          disabled={isUploadingRevised}
+                          className="font-bold underline disabled:opacity-50"
+                        >
+                          vuelve a revisarlo
+                        </button>
+                        .
                       </span>
                     )}
                   </p>
