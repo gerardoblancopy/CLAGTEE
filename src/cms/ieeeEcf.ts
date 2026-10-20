@@ -13,10 +13,12 @@
 
 export const IEEE_ECF_URL = 'https://ecopyright.ieee.org/ECTT/IntroPage.jsp';
 
+// Título y número tal como figuran en el portal de conferencias de IEEE
+// ("(70524) 2026 XVI Latin American Congress ..."): "Latin American" va sin guion.
 export const IEEE_ECF_PUB_TITLE =
-  '2026 XVI Latin-American Congress on Electricity Generation and Transmission (CLAGTEE)';
+  '2026 XVI Latin American Congress on Electricity Generation and Transmission (CLAGTEE)';
 
-// Conference Record Number: el Conference ID de PDF eXpress (70524X) sin la X.
+// Conference Record Number (también es el Conference ID de PDF eXpress, 70524X, sin la X).
 export const IEEE_ECF_ART_SOURCE = '70524';
 
 export const CAMERA_READY_SUPPORT_EMAIL = 'clagtee2026@clagtee.org';
