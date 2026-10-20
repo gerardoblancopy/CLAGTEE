@@ -10,7 +10,7 @@ import {
 } from '../utils/ieeePdfValidator';
 import {
   CAMERA_READY_SUPPORT_EMAIL,
-  IEEE_ECF_ENABLED,
+  IEEE_ECF_SIGN_BUTTON,
   clearEcfReturnParam,
   detectGeneratedPdf,
   formatEcfAuthorNames,
@@ -73,19 +73,17 @@ const CHECK_STYLES: Record<string, { icon: string; className: string }> = {
   fail: { icon: '✕', className: 'text-rose-600' },
 };
 
-const StepBadge: React.FC<{ done: boolean; needsFix?: boolean; paused?: boolean }> = ({ done, needsFix, paused }) => (
+const StepBadge: React.FC<{ done: boolean; needsFix?: boolean }> = ({ done, needsFix }) => (
   <span
     className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
       done
         ? 'bg-emerald-100 text-emerald-800'
-        : paused
-        ? 'bg-slate-100 text-slate-600'
         : needsFix
         ? 'bg-rose-100 text-rose-800'
         : 'bg-amber-100 text-amber-800'
     }`}
   >
-    {done ? 'Completo ✓' : paused ? 'Próximamente' : needsFix ? 'Requiere corrección' : 'Pendiente'}
+    {done ? 'Completo ✓' : needsFix ? 'Requiere corrección' : 'Pendiente'}
   </span>
 );
 
@@ -104,8 +102,8 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
   // Copyright subido con el generador que tuvo la web: IEEE no lo reconoce
   const copyrightInvalid = hasCopyright && isGeneratedEcfFileName(paper.copyrightFileName);
   const copyrightDone = hasCopyright && !copyrightInvalid;
-  // Firma en IEEE en pausa (ver IEEE_ECF_ENABLED): no hay PDF válido que subir todavía
-  const copyrightPaused = !IEEE_ECF_ENABLED && !copyrightDone;
+  // El autor firma con el enlace que IEEE le envía por correo (ver IEEE_ECF_SIGN_BUTTON)
+  const signByEmail = !IEEE_ECF_SIGN_BUTTON;
   const validationStatus = paper.formatValidationStatus || '';
   const manuscriptNeedsFix = hasRevised && validationStatus === 'FAIL';
   const manuscriptDone = hasRevised && hasCert && !manuscriptNeedsFix;
@@ -282,7 +280,9 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
       if (generated === 'fake-ecf') {
         setFeedback({
           tone: 'error',
-          text: 'Ese PDF lo generaba antes esta web y IEEE no lo reconoce. Pulsa "Firmar en IEEE (eCF)" y sube el PDF que IEEE te envíe por correo.',
+          text: signByEmail
+            ? 'Ese PDF lo generaba antes esta web y IEEE no lo reconoce. Firma con el enlace de IEEE que recibirás por correo y sube el PDF que te envíe IEEE.'
+            : 'Ese PDF lo generaba antes esta web y IEEE no lo reconoce. Pulsa "Firmar en IEEE (eCF)" y sube el PDF que IEEE te envíe por correo.',
         });
         return;
       }
@@ -347,8 +347,8 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
           <p className="text-xs text-blue-100 max-w-xl font-['Roboto']">
             {allDone
               ? '¡Entrega completa! Puedes reemplazar tus archivos hasta el plazo final.'
-              : copyrightPaused
-              ? 'Por ahora sube tu PDF final. La firma del copyright en IEEE se habilitará en los próximos días y te avisaremos por correo.'
+              : signByEmail
+              ? 'Solo 2 pasos: sube tu PDF final y firma el copyright de IEEE con el enlace que recibirás por correo.'
               : 'Solo 2 pasos: sube tu PDF final y firma el copyright en el sitio oficial de IEEE.'}
           </p>
         </div>
@@ -408,8 +408,6 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
           >
             {copyrightDone
               ? '✓ Copyright IEEE'
-              : copyrightPaused
-              ? '○ Copyright IEEE (próximamente)'
               : copyrightInvalid
               ? '✕ Copyright IEEE (no válido)'
               : '○ Copyright IEEE (pendiente)'}
@@ -569,7 +567,7 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
               <div>
                 <div className="flex items-center justify-between gap-2 mb-2">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">Paso 2 de 2</span>
-                  <StepBadge done={copyrightDone} needsFix={copyrightInvalid} paused={copyrightPaused} />
+                  <StepBadge done={copyrightDone} needsFix={copyrightInvalid} />
                 </div>
                 <h5 className="font-bold text-[#0D2C54] text-sm sm:text-base">Firma el copyright en IEEE (eCF)</h5>
                 <p className="text-xs text-slate-500 mt-1 font-['Roboto'] leading-relaxed">
@@ -584,8 +582,8 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
                   <p>
                     <span className="font-mono">{paper.copyrightFileName}</span> lo generaba antes esta web y IEEE no
                     tiene registro de él.{' '}
-                    {copyrightPaused
-                      ? 'Cuando se habilite la firma en IEEE (te avisaremos por correo), firma allí y sube el PDF que IEEE te envíe.'
+                    {signByEmail
+                      ? 'Firma con el enlace de IEEE que recibirás por correo y sube aquí el PDF firmado que te envíe IEEE.'
                       : 'Firma en IEEE con el botón de abajo y sube el PDF que IEEE te envíe por correo.'}
                   </p>
                 </div>
@@ -608,22 +606,21 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
                   </div>
                   {paper.copyrightAt && <p className="text-[10px] text-slate-400">Subido: {formatDate(paper.copyrightAt)}</p>}
                 </div>
-              ) : copyrightPaused ? (
-                <div className="p-3 bg-sky-50 border border-sky-200 rounded-xl text-xs text-sky-950 space-y-1">
-                  <p className="font-bold">La firma del copyright en IEEE se habilitará en los próximos días</p>
-                  <p className="leading-relaxed">
-                    Estamos terminando el registro de este sitio con IEEE. Te avisaremos por correo cuando puedas firmar;
-                    no necesitas hacer nada más por ahora. Mientras tanto, sube tu PDF final (paso 1).
-                  </p>
-                </div>
               ) : (
                 <>
                   <ol className="space-y-2 text-xs text-slate-700 font-['Roboto']">
-                    {[
-                      'Revisa los datos y pulsa "Firmar en IEEE". Se abrirá ecopyright.ieee.org con tu artículo ya cargado.',
-                      'Completa el formulario de IEEE. Al terminar, IEEE te envía por correo el formulario firmado en PDF y te devuelve a esta página.',
-                      'Sube aquí ese PDF.',
-                    ].map((text, idx) => (
+                    {(signByEmail
+                      ? [
+                          'Recibirás un correo con el enlace al formulario eCF oficial de IEEE para tu artículo (revisa también spam). Te avisaremos cuando se envíen los enlaces.',
+                          'Abre el enlace y firma en el sitio de IEEE.',
+                          'IEEE te enviará por correo una copia del formulario firmado en PDF: súbela aquí.',
+                        ]
+                      : [
+                          'Revisa los datos y pulsa "Firmar en IEEE". Se abrirá ecopyright.ieee.org con tu artículo ya cargado.',
+                          'Completa el formulario de IEEE. Al terminar, IEEE te envía por correo el formulario firmado en PDF y te devuelve a esta página.',
+                          'Sube aquí ese PDF.',
+                        ]
+                    ).map((text, idx) => (
                       <li key={idx} className="flex items-start gap-2">
                         <span className="w-5 h-5 rounded-full bg-[#00629B] text-white flex items-center justify-center font-bold text-[10px] shrink-0">
                           {idx + 1}
@@ -634,7 +631,9 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
                   </ol>
 
                   <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs space-y-1">
-                    <p className="text-[10px] uppercase font-bold tracking-wider text-slate-500">Datos que se enviarán a IEEE</p>
+                    <p className="text-[10px] uppercase font-bold tracking-wider text-slate-500">
+                      {signByEmail ? 'Datos de tu artículo para IEEE' : 'Datos que se enviarán a IEEE'}
+                    </p>
                     <p>
                       <strong className="text-slate-800">Artículo:</strong>{' '}
                       <span className="font-mono text-[#00629B] font-bold">{paper.id}</span> — {paper.title}
@@ -652,57 +651,58 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
                     </p>
                   </div>
 
-                  <button
-                    type="button"
-                    onClick={handleOpenEcf}
-                    disabled={isOpeningEcf}
-                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#00629B] hover:bg-[#004e7c] text-white text-xs font-bold transition-colors shadow-sm disabled:opacity-60 disabled:cursor-wait"
-                  >
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                    <span>{isOpeningEcf ? 'Abriendo IEEE...' : 'Firmar en IEEE (eCF)'}</span>
-                  </button>
+                  {!signByEmail && (
+                    <button
+                      type="button"
+                      onClick={handleOpenEcf}
+                      disabled={isOpeningEcf}
+                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#00629B] hover:bg-[#004e7c] text-white text-xs font-bold transition-colors shadow-sm disabled:opacity-60 disabled:cursor-wait"
+                    >
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                      <span>{isOpeningEcf ? 'Abriendo IEEE...' : 'Firmar en IEEE (eCF)'}</span>
+                    </button>
+                  )}
                 </>
               )}
 
-              {!copyrightPaused && (
-                <div className="mt-auto space-y-2 pt-2 border-t border-slate-100">
-                  <label
-                    className={`w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-colors ${
-                      isUploadingCopyright
-                        ? 'bg-slate-300 text-slate-600 cursor-wait'
-                        : returnedFromEcf && !copyrightDone
-                        ? 'bg-[#0D2C54] hover:bg-[#1A4B8A] text-white cursor-pointer shadow-sm'
-                        : 'bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 cursor-pointer'
-                    }`}
-                  >
-                    <input
-                      type="file"
-                      accept="application/pdf,.pdf"
-                      className="hidden"
-                      disabled={isUploadingCopyright}
-                      onChange={handleCopyrightFileChange}
-                    />
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                    </svg>
-                    <span>
-                      {isUploadingCopyright
-                        ? 'Subiendo...'
-                        : copyrightDone
-                        ? 'Reemplazar PDF del copyright'
-                        : 'Subir PDF del copyright firmado'}
-                    </span>
-                  </label>
-                  {!copyrightDone && (
-                    <p className="text-[11px] text-slate-500 text-center leading-relaxed">
-                      ¿Ya firmaste antes? Busca en tu correo el mensaje de IEEE con el formulario en PDF y súbelo aquí.
-                      Si IEEE muestra un código de error, escríbenos indicándolo.
-                    </p>
-                  )}
-                </div>
-              )}
+              <div className="mt-auto space-y-2 pt-2 border-t border-slate-100">
+                <label
+                  className={`w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-colors ${
+                    isUploadingCopyright
+                      ? 'bg-slate-300 text-slate-600 cursor-wait'
+                      : returnedFromEcf && !copyrightDone
+                      ? 'bg-[#0D2C54] hover:bg-[#1A4B8A] text-white cursor-pointer shadow-sm'
+                      : 'bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 cursor-pointer'
+                  }`}
+                >
+                  <input
+                    type="file"
+                    accept="application/pdf,.pdf"
+                    className="hidden"
+                    disabled={isUploadingCopyright}
+                    onChange={handleCopyrightFileChange}
+                  />
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                  </svg>
+                  <span>
+                    {isUploadingCopyright
+                      ? 'Subiendo...'
+                      : copyrightDone
+                      ? 'Reemplazar PDF del copyright'
+                      : 'Subir PDF del copyright firmado'}
+                  </span>
+                </label>
+                {!copyrightDone && (
+                  <p className="text-[11px] text-slate-500 text-center leading-relaxed">
+                    {signByEmail
+                      ? '¿No te llegó el enlace de IEEE? Revisa la carpeta de spam; si sigue sin llegar o tienes problemas al firmar, escríbenos.'
+                      : '¿Ya firmaste antes? Busca en tu correo el mensaje de IEEE con el formulario en PDF y súbelo aquí. Si IEEE muestra un código de error, escríbenos indicándolo.'}
+                  </p>
+                )}
+              </div>
             </div>
           </div>
 
