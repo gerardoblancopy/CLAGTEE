@@ -1,6 +1,7 @@
 import { RegistrationRecord, RegistrationStatus } from '../../types';
 import { User } from './AuthContext';
 import { Paper, PaperStatus } from './CMSDataContext';
+import { isGeneratedEcfFileName } from './ieeeEcf';
 import { normalizePaperId, resolveRegistrationPaperId } from './registrationSegments';
 
 export const paperStatusLabels: Record<PaperStatus, string> = {
@@ -186,7 +187,11 @@ export const buildPaperRow = (
     'Puntaje Promedio (1-5)': avgScore != null ? Number(avgScore.toFixed(2)) : 'Sin evaluar',
     'Versión Final Revisada': paper.revisedFileKey ? 'Subida' : 'Pendiente',
     'Certificado Formato IEEE': paper.formatCertFileKey ? 'Subido' : 'Pendiente',
-    'Copyright IEEE (eCF)': paper.copyrightFileKey ? 'Firmado / Subido' : 'Pendiente',
+    'Copyright IEEE (eCF)': !paper.copyrightFileKey
+      ? 'Pendiente'
+      : isGeneratedEcfFileName(paper.copyrightFileName)
+      ? 'No válido (generado por la web)'
+      : 'Firmado / Subido',
     'Notificación de Decisión': paper.decisionNotifiedAt ? 'Notificado' : 'Pendiente',
     'Fecha de Notificación': formatDate(paper.decisionNotifiedAt),
     'Fecha de Envío': formatDate(paper.submittedAt),

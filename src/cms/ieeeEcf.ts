@@ -11,6 +11,8 @@
 // - ArtSource es el Conference Record Number de 5 dígitos (si no: error 1002).
 // - El dominio del CMS debe estar registrado como sitio de origen (si no: 1001).
 
+import { PDFArray, PDFDocument, PDFRawStream, decodePDFRawStream } from 'pdf-lib';
+
 export const IEEE_ECF_URL = 'https://ecopyright.ieee.org/ECTT/IntroPage.jsp';
 
 // Título y número tal como figuran en el portal de conferencias de IEEE
@@ -78,6 +80,13 @@ export const buildEcfReturnUrl = (paperId: string) =>
 
 // Navega (en la misma pestaña) al eCF de IEEE con los datos precargados.
 export const openIeeeEcf = (submission: EcfSubmission) => {
+  // IEEE valida el Referer contra la URL registrada (error 1001). Por defecto el
+  // navegador solo envía el dominio a otro sitio; así envía la URL completa del CMS.
+  const referrerPolicy = document.createElement('meta');
+  referrerPolicy.name = 'referrer';
+  referrerPolicy.content = 'no-referrer-when-downgrade';
+  document.head.appendChild(referrerPolicy);
+
   const form = document.createElement('form');
   form.method = 'POST';
   form.action = IEEE_ECF_URL;
@@ -102,4 +111,57 @@ export const clearEcfReturnParam = () => {
   if (!url.searchParams.has(ECF_RETURN_PARAM)) return;
   url.searchParams.delete(ECF_RETURN_PARAM);
   window.history.replaceState(window.history.state, '', `${url.pathname}${url.search}${url.hash}`);
+};
+
+// ---------------------------------------------------------------------------
+// Copyrights generados por la propia web (retirados): IEEE no los reconoce
+// ---------------------------------------------------------------------------
+
+// Nombres que usaba el generador retirado ("IEEE_Copyright_eCF_CIE-6.pdf",
+// "IEEE_Copyright_Form_CLAGTEE_2026.pdf", con o sin " (1)" del navegador).
+// Sirven para marcar los copyrights que ya quedaron subidos con ese formato.
+const GENERATED_ECF_FILE_NAME = /IEEE_Copyright_(eCF_[A-Za-z0-9-]+|Form_CLAGTEE_2026)( ?\(\d+\))?\.pdf$/i;
+
+export const isGeneratedEcfFileName = (fileName?: string) => GENERATED_ECF_FILE_NAME.test((fileName || '').trim());
+
+export type GeneratedPdfKind = 'fake-ecf' | 'format-certificate';
+
+// Texto de las páginas de un PDF hecho con pdf-lib: sus fuentes estándar
+// escriben cada línea como <hex WinAnsi> Tj dentro de streams comprimidos.
+const extractPdfLibText = (pdf: PDFDocument) => {
+  const chunks: string[] = [];
+  const readStream = (stream: unknown) => {
+    if (!(stream instanceof PDFRawStream)) return;
+    const content = new TextDecoder('latin1').decode(decodePDFRawStream(stream).decode());
+    for (const match of content.matchAll(/<([0-9A-Fa-f\s]+)>\s*Tj/g)) {
+      const hex = match[1].replace(/\s/g, '');
+      chunks.push(String.fromCharCode(...(hex.match(/../g) || []).map((byte) => parseInt(byte, 16))));
+    }
+  };
+  pdf.getPages().forEach((page) => {
+    const contents = page.node.Contents();
+    if (contents instanceof PDFArray) {
+      contents.asArray().forEach((ref) => readStream(pdf.context.lookup(ref)));
+    } else {
+      readStream(contents);
+    }
+  });
+  return chunks.join('\n');
+};
+
+// Reconoce los PDFs que generaba esta web (formulario eCF propio o certificado
+// de formato) para que no se suban como copyright firmado en IEEE.
+export const detectGeneratedPdf = async (file: File): Promise<GeneratedPdfKind | null> => {
+  if (isGeneratedEcfFileName(file.name)) return 'fake-ecf';
+  try {
+    // updateMetadata: false conserva el Producer original del archivo
+    const pdf = await PDFDocument.load(await file.arrayBuffer(), { updateMetadata: false, ignoreEncryption: true });
+    if (!`${pdf.getProducer() || ''} ${pdf.getCreator() || ''}`.includes('pdf-lib')) return null;
+    const text = extractPdfLibText(pdf);
+    if (text.includes('IEEE ELECTRONIC COPYRIGHT FORM')) return 'fake-ecf';
+    if (text.includes('CERTIFICADO DE CONFORMIDAD')) return 'format-certificate';
+  } catch (error) {
+    console.error('No se pudo inspeccionar el PDF de copyright:', error);
+  }
+  return null;
 };

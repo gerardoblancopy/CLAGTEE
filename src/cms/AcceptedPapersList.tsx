@@ -11,6 +11,7 @@ import {
 import { normalizePaperId, resolveRegistrationPaperId } from './registrationSegments';
 import { PaperEmailModal, PaperEmailTarget } from './PaperEmailModal';
 import { DownloadLink } from './DownloadLink';
+import { isGeneratedEcfFileName } from './ieeeEcf';
 
 type PaperClassificationFilter = 'all' | PaperStatus;
 type RegistrationFilter = 'all' | 'sin-inscripcion' | 'con-inscripcion' | Exclude<RegistrationStatus, 'cancelada'>;
@@ -678,7 +679,18 @@ export const AcceptedPapersList: React.FC<AcceptedPapersListProps> = ({
                     </span>
                   ) : null}
 
-                  {paper.copyrightFileKey ? (
+                  {paper.copyrightFileKey && isGeneratedEcfFileName(paper.copyrightFileName) ? (
+                    <DownloadLink
+                      fileKey={paper.copyrightFileKey}
+                      fileName={paper.copyrightFileName}
+                      className="text-xs text-rose-800 bg-rose-50 border border-rose-200 hover:bg-rose-100 px-2 py-0.5 rounded flex items-center gap-1 font-semibold"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
+                      <span title="PDF generado por la web antes del eCF real: IEEE no lo reconoce. El autor debe firmar en IEEE.">
+                        Copyright: no válido (generado por la web)
+                      </span>
+                    </DownloadLink>
+                  ) : paper.copyrightFileKey ? (
                     <DownloadLink
                       fileKey={paper.copyrightFileKey}
                       fileName={paper.copyrightFileName}

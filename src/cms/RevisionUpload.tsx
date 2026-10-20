@@ -11,7 +11,9 @@ import {
 import {
   CAMERA_READY_SUPPORT_EMAIL,
   clearEcfReturnParam,
+  detectGeneratedPdf,
   formatEcfAuthorNames,
+  isGeneratedEcfFileName,
   openIeeeEcf,
   readEcfReturnPaperId,
 } from './ieeeEcf';
@@ -96,10 +98,13 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
   const hasRevised = Boolean(paper.revisedFileKey);
   const hasCert = Boolean(paper.formatCertFileKey);
   const hasCopyright = Boolean(paper.copyrightFileKey);
+  // Copyright subido con el generador que tuvo la web: IEEE no lo reconoce
+  const copyrightInvalid = hasCopyright && isGeneratedEcfFileName(paper.copyrightFileName);
+  const copyrightDone = hasCopyright && !copyrightInvalid;
   const validationStatus = paper.formatValidationStatus || '';
   const manuscriptNeedsFix = hasRevised && validationStatus === 'FAIL';
   const manuscriptDone = hasRevised && hasCert && !manuscriptNeedsFix;
-  const completedCount = (manuscriptDone ? 1 : 0) + (hasCopyright ? 1 : 0);
+  const completedCount = (manuscriptDone ? 1 : 0) + (copyrightDone ? 1 : 0);
   const allDone = completedCount === 2;
 
   const [isExpanded, setIsExpanded] = useState(() => !allDone || returnedFromEcf);
@@ -118,7 +123,7 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
   const [isOpeningEcf, setIsOpeningEcf] = useState(false);
 
   const [feedback, setFeedback] = useState<Feedback | null>(
-    returnedFromEcf && !hasCopyright
+    returnedFromEcf && !copyrightDone
       ? {
           tone: 'success',
           text: '¡Bienvenido de vuelta! Si completaste la firma en IEEE, revisa tu correo (también la carpeta de spam) y sube aquí el PDF del formulario que te envió IEEE.',
@@ -261,6 +266,22 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
     setFeedback(null);
     setIsUploadingCopyright(true);
     try {
+      const generated = await detectGeneratedPdf(file);
+      if (generated === 'fake-ecf') {
+        setFeedback({
+          tone: 'error',
+          text: 'Ese PDF lo generaba antes esta web y IEEE no lo reconoce. Pulsa "Firmar en IEEE (eCF)" y sube el PDF que IEEE te envíe por correo.',
+        });
+        return;
+      }
+      if (generated === 'format-certificate') {
+        setFeedback({
+          tone: 'error',
+          text: 'Ese archivo es tu certificado de formato, no el copyright. Sube el PDF que IEEE te envía por correo después de firmar.',
+        });
+        return;
+      }
+
       const gcs = await uploadToGcs(file, `copyright_ecf_${paper.id}_${file.name}`);
       const updated = await submitRevision(paper.id, {
         copyrightFileName: file.name,
@@ -364,10 +385,14 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
           </span>
           <span
             className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border font-medium ${
-              hasCopyright ? 'bg-emerald-50 text-emerald-800 border-emerald-200' : 'bg-slate-50 text-slate-600 border-slate-200'
+              copyrightDone
+                ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                : copyrightInvalid
+                ? 'bg-rose-50 text-rose-800 border-rose-200'
+                : 'bg-slate-50 text-slate-600 border-slate-200'
             }`}
           >
-            {hasCopyright ? '✓ Copyright IEEE' : '○ Copyright IEEE (pendiente)'}
+            {copyrightDone ? '✓ Copyright IEEE' : copyrightInvalid ? '✕ Copyright IEEE (no válido)' : '○ Copyright IEEE (pendiente)'}
           </span>
         </div>
       )}
@@ -518,13 +543,13 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
             {/* PASO 2: COPYRIGHT IEEE (eCF) */}
             <div
               className={`bg-white rounded-2xl border p-4 sm:p-5 shadow-sm flex flex-col gap-4 ${
-                returnedFromEcf && !hasCopyright ? 'border-[#00629B] ring-2 ring-[#00629B]/20' : 'border-slate-200'
+                returnedFromEcf && !copyrightDone ? 'border-[#00629B] ring-2 ring-[#00629B]/20' : 'border-slate-200'
               }`}
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-2">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">Paso 2 de 2</span>
-                  <StepBadge done={hasCopyright} />
+                  <StepBadge done={copyrightDone} needsFix={copyrightInvalid} />
                 </div>
                 <h5 className="font-bold text-[#0D2C54] text-sm sm:text-base">Firma el copyright en IEEE (eCF)</h5>
                 <p className="text-xs text-slate-500 mt-1 font-['Roboto'] leading-relaxed">
@@ -533,7 +558,17 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
                 </p>
               </div>
 
-              {hasCopyright ? (
+              {copyrightInvalid && (
+                <div className="p-2.5 bg-rose-50 border border-rose-200 rounded-xl text-xs text-rose-900 space-y-1">
+                  <p className="font-bold">✕ El copyright subido no es válido</p>
+                  <p>
+                    <span className="font-mono">{paper.copyrightFileName}</span> lo generaba antes esta web y IEEE no
+                    tiene registro de él. Firma en IEEE con el botón de abajo y sube el PDF que IEEE te envíe por correo.
+                  </p>
+                </div>
+              )}
+
+              {copyrightDone ? (
                 <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs space-y-1">
                   <div className="flex items-center justify-between gap-2">
                     <span className="font-mono text-slate-700 font-semibold truncate">
@@ -605,7 +640,7 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
                   className={`w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-colors ${
                     isUploadingCopyright
                       ? 'bg-slate-300 text-slate-600 cursor-wait'
-                      : returnedFromEcf && !hasCopyright
+                      : returnedFromEcf && !copyrightDone
                       ? 'bg-[#0D2C54] hover:bg-[#1A4B8A] text-white cursor-pointer shadow-sm'
                       : 'bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 cursor-pointer'
                   }`}
@@ -623,12 +658,12 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
                   <span>
                     {isUploadingCopyright
                       ? 'Subiendo...'
-                      : hasCopyright
+                      : copyrightDone
                       ? 'Reemplazar PDF del copyright'
                       : 'Subir PDF del copyright firmado'}
                   </span>
                 </label>
-                {!hasCopyright && (
+                {!copyrightDone && (
                   <p className="text-[11px] text-slate-500 text-center leading-relaxed">
                     ¿Ya firmaste antes? Busca en tu correo el mensaje de IEEE con el formulario en PDF y súbelo aquí.
                     Si IEEE muestra un código de error, escríbenos indicándolo.
