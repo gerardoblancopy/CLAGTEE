@@ -325,6 +325,7 @@ export const contentPT: Content = {
           "Preencha o formulário da IEEE. Basta que um autor assine em nome de todos os coautores.",
           "Ao terminar, a IEEE enviará por e-mail o formulário assinado em PDF e o levará de volta ao CMS. Envie esse PDF na mesma seção."
         ],
+        "pausedNotice": "Aviso: a assinatura do Copyright na IEEE será habilitada nos próximos dias. Estamos concluindo o registro do site junto à IEEE e avisaremos os autores por e-mail assim que puderem assinar. Enquanto isso, vocês podem enviar o PDF final no CMS.",
         "notice": "Somente o Copyright assinado no sistema eCF da IEEE é válido: a IEEE não aceita formulários em PDF baixados de outros sites nem preenchidos à mão. Se a IEEE mostrar um código de erro, ou se o título ou os autores do seu artigo estiverem incorretos, escreva para clagtee2026@clagtee.org antes de assinar.",
         "cmsCtaText": "Ir ao Console do Autor (CMS)"
       },

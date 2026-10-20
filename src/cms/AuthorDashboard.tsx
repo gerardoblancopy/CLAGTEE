@@ -6,6 +6,7 @@ import { Paper, useCMSData } from './CMSDataContext';
 import { DownloadLink } from './DownloadLink';
 import { RevisionUpload } from './RevisionUpload';
 import { MyRegistrationCard } from './MyRegistrationCard';
+import { IEEE_ECF_ENABLED } from './ieeeEcf';
 
 const statusStyles: Record<string, string> = {
   'pending': 'bg-yellow-100 text-yellow-700 border-yellow-200',
@@ -373,7 +374,9 @@ export const AuthorDashboard: React.FC<{
             <div className="bg-white/10 rounded-xl p-3 border border-white/10">
               <span className="text-sky-300 font-bold text-xs block mb-0.5">2. Firma el copyright en IEEE (eCF)</span>
               <p className="text-[11px] text-blue-100">
-                Un botón te lleva al sitio oficial de IEEE con tu artículo cargado. Luego sube el PDF que IEEE te envía por correo.
+                {IEEE_ECF_ENABLED
+                  ? 'Un botón te lleva al sitio oficial de IEEE con tu artículo cargado. Luego sube el PDF que IEEE te envía por correo.'
+                  : 'Se habilitará en los próximos días; te avisaremos por correo cuando puedas firmar.'}
               </p>
             </div>
           </div>

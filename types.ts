@@ -190,6 +190,7 @@ export interface IeeeFinalVersionContent {
     description: string;
     instructions: string[];
     notice?: string;
+    pausedNotice?: string;
     cmsCtaText: string;
   };
   step5: {
