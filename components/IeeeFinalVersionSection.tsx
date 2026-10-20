@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { IeeeFinalVersionContent } from '../types';
 import { IeeePdfValidatorWidget } from './IeeePdfValidatorWidget';
-import { IEEE_ECF_ENABLED } from '../src/cms/ieeeEcf';
+import { IEEE_ECF_SIGN_BUTTON } from '../src/cms/ieeeEcf';
 
 interface IeeeFinalVersionSectionProps {
   content: IeeeFinalVersionContent;
@@ -431,9 +431,9 @@ export const IeeeFinalVersionSection: React.FC<IeeeFinalVersionSectionProps> = (
               {content.step4.description}
             </p>
 
-            {!IEEE_ECF_ENABLED && content.step4.pausedNotice && (
+            {!IEEE_ECF_SIGN_BUTTON && content.step4.linksNotice && (
               <div className="border border-amber-300 bg-amber-50 rounded-xl p-4 mb-6 text-amber-900 text-xs md:text-sm font-semibold font-['Roboto'] leading-relaxed">
-                {content.step4.pausedNotice}
+                {content.step4.linksNotice}
               </div>
             )}
 

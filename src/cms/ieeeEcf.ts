@@ -10,10 +10,11 @@
 //   con la Letter of Acquisition (si no: error 1003).
 // - ArtSource es el Conference Record Number de 5 dígitos (si no: error 1002).
 // - IEEE compara el Referer con el sitio de envío registrado (si no: error 1001).
-//   Al 20/10/2026 ningún dominio nuestro lo está (se pidió en el ticket IEEE
-//   261020-000981): por eso IEEE_ECF_ENABLED está en false. Desde clagtee2026.org
-//   el envío pasa por la página puente /ecf de clagtee2026.vercel.app (EcfRelay),
-//   así funciona si IEEE registra cualquiera de los dos dominios.
+//   Para el record 70524 IEEE no registró un sitio nuestro: la oficina IPR abrió
+//   el sitio eCF de la conferencia con su eCopyright Upload Tool y los autores
+//   reciben el enlace de firma por correo (IEEE_ECF_SIGN_BUTTON = false).
+//   Si algún día se registra un dominio nuestro, el botón envía desde
+//   clagtee2026.vercel.app vía la página puente /ecf (EcfRelay).
 
 import { PDFArray, PDFDocument, PDFRawStream, decodePDFRawStream } from 'pdf-lib';
 import { apiFetch } from './api';
@@ -30,10 +31,12 @@ export const IEEE_ECF_ART_SOURCE = '70524';
 
 export const CAMERA_READY_SUPPORT_EMAIL = 'clagtee2026@clagtee.org';
 
-// Interruptor de la firma en IEEE. En pausa mientras IEEE registra nuestro dominio
-// como sitio de envío del record 70524 (ticket IEEE 261020-000981): hasta entonces
-// el eCF responde error 1001 a cualquier origen nuestro. Para reactivar: true y desplegar.
-export const IEEE_ECF_ENABLED = false;
+// Cómo firman los autores el copyright:
+// - false: con el enlace personal que reciben por correo desde el sitio eCF que
+//   IEEE gestiona (eCopyright Upload Tool); el CMS solo recibe el PDF firmado.
+// - true: con el botón "Firmar en IEEE" del CMS (requiere que IEEE registre
+//   nuestro dominio como sitio de envío; si no, el eCF responde error 1001).
+export const IEEE_ECF_SIGN_BUTTON = false;
 
 // Dominio desde el que la página puente envía al eCF, y su ruta.
 export const IEEE_ECF_REGISTERED_ORIGIN = 'https://clagtee2026.vercel.app';

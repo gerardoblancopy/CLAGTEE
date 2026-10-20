@@ -238,7 +238,7 @@ export const contentES: Content = {
           "Paso 1: Hacer mejoras a su artículo de acuerdo a las recomendaciones de los revisores.",
           "Paso 2: Formatear la versión final de su artículo de acuerdo al estilo IEEE.",
           "Paso 3: Validar la compatibilidad técnica de su PDF con el Validador Automático IEEE.",
-          "Paso 4: Firmar el Copyright de IEEE (eCF) desde el CMS.",
+          "Paso 4: Firmar el Copyright de IEEE (eCF) con el enlace que recibirá por correo.",
           "Paso 5: Subir el PDF final de su artículo en el CMS.",
           "Paso 6: Registrarse en la conferencia."
         ]
@@ -318,15 +318,15 @@ export const contentES: Content = {
       "step4": {
         "number": "Paso 4",
         "title": "Firmar el Copyright de IEEE (eCF)",
-        "description": "Para que su artículo sea publicado en IEEE Xplore, uno de los autores debe firmar la transferencia de derechos de autor en el sistema electrónico oficial de IEEE (eCF). No necesita descargar ni llenar ningún formulario: el CMS abre el eCF con los datos de su artículo ya cargados.",
+        "description": "Para que su artículo sea publicado en IEEE Xplore, uno de los autores debe transferir los derechos de autor a IEEE mediante su formulario electrónico oficial (eCF). La firma se hace directamente en el sitio de IEEE, con un enlace personal que le llegará por correo electrónico.",
         "instructions": [
-          "Ingrese a la Consola de Autor (CMS) y ubique su artículo aceptado: verá la sección 'Entrega final'.",
-          "En 'Firma el copyright en IEEE (eCF)', haga clic en 'Firmar en IEEE'. Será dirigido al sitio oficial de IEEE (ecopyright.ieee.org) con el título, los autores y el ID de su artículo precargados.",
-          "Complete el formulario de IEEE. Basta con que un autor firme en nombre de todos los coautores.",
-          "Al terminar, IEEE le enviará por correo el formulario firmado en PDF y lo devolverá al CMS. Suba ese PDF en la misma sección."
+          "Recibirá un correo con el enlace al formulario eCF oficial de IEEE para su artículo. Revise también la carpeta de spam.",
+          "Abra el enlace y complete el formulario en el sitio de IEEE. Basta con que un autor firme en nombre de todos los coautores.",
+          "Al terminar, IEEE le enviará por correo una copia del formulario firmado en PDF.",
+          "Ingrese a la Consola de Autor (CMS) y suba ese PDF en la sección 'Entrega final' de su artículo aceptado (paso 'Firma el copyright en IEEE (eCF)')."
         ],
-        "pausedNotice": "Aviso: la firma del Copyright en IEEE se habilitará en los próximos días. Estamos terminando el registro del sitio con IEEE y avisaremos por correo a los autores cuando puedan firmar. Mientras tanto, pueden subir su PDF final en el CMS.",
-        "notice": "Solo es válido el Copyright firmado en el sistema eCF de IEEE: IEEE no acepta formularios en PDF descargados de otros sitios ni completados a mano. Si IEEE muestra un código de error, o si el título o los autores de su artículo no son correctos, escríbanos a clagtee2026@clagtee.org antes de firmar.",
+        "linksNotice": "Estamos coordinando con IEEE el envío de los enlaces de firma. Avisaremos por correo a todos los autores en cuanto estén disponibles; mientras tanto, pueden subir su PDF final en el CMS.",
+        "notice": "Solo es válido el Copyright firmado en el sistema eCF de IEEE: no complete formularios en PDF descargados de otros sitios. Si no recibe el enlace, o si el título o los autores de su artículo no son correctos, escríbanos a clagtee2026@clagtee.org.",
         "cmsCtaText": "Ir a la Consola de Autor (CMS)"
       },
       "step5": {
@@ -339,7 +339,7 @@ export const contentES: Content = {
           "Verifique que NO añadió números de página ni encabezados ajenos a la plantilla oficial.",
           "Verifique que el título, abstract e Index Terms estén exclusivamente en inglés."
         ],
-        "cmsInstructions": "Ingrese a la Consola de Autor del CMS de CLAGTEE 2026 (https://www.clagtee2026.org/cms) y suba su PDF final en la sección 'Entrega final' de su artículo aceptado. El CMS revisa el formato automáticamente y genera su certificado de formato, por lo que no necesita subirlo por separado. Su entrega queda completa cuando el PDF final y el Copyright IEEE aparecen como completos; puede reemplazar los archivos hasta el plazo final.",
+        "cmsInstructions": "Ingrese a la Consola de Autor del CMS de CLAGTEE 2026 (https://www.clagtee2026.org/cms) y suba su PDF final en la sección 'Entrega final' de su artículo aceptado. El CMS revisa el formato automáticamente y genera su certificado de formato, por lo que no necesita subirlo por separado. Su entrega queda completa cuando el PDF final y el Copyright IEEE aparecen como completos; puede reemplazar los archivos hasta el plazo final. Después del congreso, el comité enviará los artículos finales a IEEE Xplore.",
         "presentationWarning": "IMPORTANTE: Es requisito indispensable que al menos uno de los autores presente la ponencia durante el congreso en Santiago de Chile. De lo contrario, el artículo no podrá ser remitido a IEEE Xplore y solo figurará en las memorias locales del CLAGTEE.",
         "cmsButtonText": "Acceder al CMS para Enviar Versión Final"
       },
