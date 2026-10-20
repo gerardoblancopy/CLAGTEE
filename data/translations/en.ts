@@ -325,6 +325,7 @@ export const contentEN: Content = {
           "Complete the IEEE form. One author can sign on behalf of all co-authors.",
           "When you finish, IEEE emails you the signed form as a PDF and sends you back to the CMS. Upload that PDF in the same section."
         ],
+        "pausedNotice": "Notice: IEEE copyright signing will be enabled in the coming days. We are completing the site registration with IEEE and will email authors as soon as they can sign. Meanwhile, you can upload your final PDF in the CMS.",
         "notice": "Only a copyright signed in the IEEE eCF system is valid: IEEE does not accept PDF forms downloaded from other sites or filled in by hand. If IEEE shows an error code, or if your paper's title or authors are wrong, write to clagtee2026@clagtee.org before signing.",
         "cmsCtaText": "Go to Author Console (CMS)"
       },
