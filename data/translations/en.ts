@@ -224,7 +224,7 @@ export const contentEN: Content = {
     },
     "ieeeFinalVersion": {
       "title": "IEEE Final Version (Camera-Ready)",
-      "subtitle": "Official guidelines for preparing, validating with IEEE PDF eXpress, signing Copyright, and submitting accepted manuscripts for publication in IEEE Xplore.",
+      "subtitle": "Official guidelines for preparing, validating and submitting the final version of accepted papers, and for signing the IEEE Copyright Form (eCF), for publication in IEEE Xplore.",
       "presentation": {
         "badge": "IEEE Xplore & SCOPUS Publication",
         "intro": [
@@ -232,14 +232,14 @@ export const contentEN: Content = {
           "For papers to be published in IEEE Xplore, they must be presented in person during the conference by at least one of the authors and strictly comply with the format and technical standards required by IEEE.",
           "It is essential to follow each of the 6 steps detailed below:"
         ],
-        "ieeeNotice": "This edition of CLAGTEE is technically co-sponsored by the IEEE Chile Section and the IEEE Chile Section CAS Chapter. Final publication in IEEE Xplore is strictly conditioned on manuscript approval by IEEE PDF eXpress, electronic copyright transfer (eCF), and in-person oral presentation at the conference.",
+        "ieeeNotice": "This edition of CLAGTEE is technically co-sponsored by the IEEE Chile Section and the IEEE Chile Section CAS Chapter. Final publication in IEEE Xplore is strictly conditioned on compliance with the IEEE format, copyright transfer signed in the official IEEE electronic system (eCF), and in-person oral presentation at the conference.",
         "deadlineNotice": "It is mandatory to complete all these requirements and submit the final version by November 1, 2026, to publish your paper in IEEE Xplore. Conference registration must be completed on schedule.",
         "stepsOverview": [
           "Step 1: Improve your paper according to reviewer recommendations.",
           "Step 2: Format the final version according to the official IEEE template.",
           "Step 3: Validate technical PDF compliance with the Automated IEEE Validator.",
-          "Step 4: Complete and sign the IEEE Copyright Form (eCF).",
-          "Step 5: Submit the approved final version via the CLAGTEE CMS.",
+          "Step 4: Sign the IEEE Copyright Form (eCF) from the CMS.",
+          "Step 5: Upload the final PDF of your paper in the CMS.",
           "Step 6: Register for the conference."
         ]
       },
@@ -317,28 +317,28 @@ export const contentEN: Content = {
       },
       "step4": {
         "number": "Step 4",
-        "title": "Complete and sign the IEEE Copyright Form (eCF)",
-        "description": "A mandatory legal requirement for your paper to be sent and indexed in IEEE Xplore is signing the transfer of copyright through the IEEE Electronic Copyright Form (eCF).",
+        "title": "Sign the IEEE Copyright Form (eCF)",
+        "description": "For your paper to be published in IEEE Xplore, one of the authors must sign the copyright transfer in IEEE's official electronic system (eCF). You do not need to download or fill in any form: the CMS opens the eCF with your paper's details already filled in.",
         "instructions": [
-          "Download the official standard IEEE Copyright Form (.PDF) directly from this page, or use our instant online eCF Digital Assistant.",
-          "You can also sign the copyright form electronically directly within the CLAGTEE 2026 Author Console (CMS).",
-          "Upon completing the signature, download and save a digital copy of the signed IEEE Copyright Form in PDF format for your records.",
-          "Attach the signed Copyright PDF in the 'Camera-Ready Delivery Center' of your accepted paper in the CMS."
+          "Log in to the Author Console (CMS) and find your accepted paper: you will see the 'Entrega final' (final submission) section.",
+          "In the 'Firma el copyright en IEEE (eCF)' step, click 'Firmar en IEEE' (Sign at IEEE). You will be taken to the official IEEE site (ecopyright.ieee.org) with your paper's title, authors and ID pre-filled.",
+          "Complete the IEEE form. One author can sign on behalf of all co-authors.",
+          "When you finish, IEEE emails you the signed form as a PDF and sends you back to the CMS. Upload that PDF in the same section."
         ],
+        "notice": "Only a copyright signed in the IEEE eCF system is valid: IEEE does not accept PDF forms downloaded from other sites or filled in by hand. If IEEE shows an error code, or if your paper's title or authors are wrong, write to clagtee2026@clagtee.org before signing.",
         "cmsCtaText": "Go to Author Console (CMS)"
       },
       "step5": {
         "number": "Step 5",
-        "title": "Upload the 3 final documents in the CMS (Camera-Ready Center)",
-        "checklistTitle": "Checklist of the 3 required documents in the CMS:",
+        "title": "Upload the final PDF in the CMS",
+        "checklistTitle": "Checklist before uploading your final PDF:",
         "checklist": [
-          "Document 1: Final revised manuscript in PDF (US Letter, 100% embedded fonts, and copyright notice in footer).",
-          "Document 2: IEEE Format Compliance Certificate (downloaded from the validator or auto-generated in the CMS).",
-          "Document 3: Digitally signed IEEE Copyright Form (eCF).",
+          "Verify that the PDF uses the IEEE template in US Letter size, with 100% of fonts embedded and the copyright notice at the bottom of the first page.",
+          "Verify that you have addressed all of the reviewers' comments.",
           "Verify that you have NOT added page numbers or headers outside the official template.",
           "Verify that title, abstract, and Index Terms are exclusively in English."
         ],
-        "cmsInstructions": "Once your files are ready, log in to the CLAGTEE 2026 Author Console (https://www.clagtee2026.org/cms), where you will find the Camera-Ready Delivery Center on your accepted paper's card to upload or update any of the 3 documents.",
+        "cmsInstructions": "Log in to the CLAGTEE 2026 Author Console (https://www.clagtee2026.org/cms) and upload your final PDF in the 'Entrega final' (final submission) section of your accepted paper. The CMS checks the format automatically and generates your format certificate, so you do not need to upload it separately. Your submission is complete when both the final PDF and the IEEE Copyright show as complete; you can replace the files until the deadline.",
         "presentationWarning": "IMPORTANT: At least one author must register and present the paper in person during the conference in Santiago, Chile. Papers not presented will not be forwarded to IEEE Xplore and will only appear in local proceedings.",
         "cmsButtonText": "Access CMS to Submit Final Version"
       },

@@ -23,6 +23,7 @@ import { PreCongressDashboard } from './src/cms/PreCongressDashboard';
 import { ParticipantDashboard } from './src/cms/ParticipantDashboard';
 import { SubmissionForm } from './src/cms/SubmissionForm';
 import { CMSDataProvider, useCMSData } from './src/cms/CMSDataContext';
+import { readEcfReturnPaperId } from './src/cms/ieeeEcf';
 import { RegistrationSection } from './src/registration/RegistrationSection';
 import { SponsorshipSection } from './src/sponsorship/SponsorshipSection';
 import { PreCongressSection } from './src/precongress/PreCongressSection';
@@ -104,7 +105,11 @@ const CMSContainer: React.FC<{
 
   React.useEffect(() => {
     if (!user) return;
-    if (user.role === 'reviewer') {
+    // Al volver del eCF de IEEE (/cms?ecf=<paperId>) se abre la lista de trabajos
+    const returningFromEcf = Boolean(readEcfReturnPaperId());
+    if (returningFromEcf && (user.role === 'author' || user.role === 'attendee')) {
+      setActiveCmsTab('submissions');
+    } else if (user.role === 'reviewer') {
       setActiveCmsTab('reviews');
     } else if (user.role === 'chair') {
       setActiveCmsTab('admin');
@@ -255,16 +260,19 @@ const AppContent: React.FC = () => {
     const handleScrollTarget = () => {
       const currentPath = window.location.pathname;
       const hash = window.location.hash;
+      // Enlaces directos a un paso de la guía (p. ej. /#ieee-paso-3 desde el CMS)
+      const stepAnchor = /^#ieee-paso-\d$/.test(hash) ? hash.slice(1) : null;
 
       if (
         currentPath === '/ieee-final-version' ||
         currentPath === '/final-version' ||
         currentPath === '/camera-ready' ||
         hash === '#version-final-ieee' ||
-        hash === '#envio'
+        hash === '#envio' ||
+        stepAnchor
       ) {
         setTimeout(() => {
-          const el = document.getElementById('version-final-ieee');
+          const el = document.getElementById(stepAnchor || 'version-final-ieee');
           if (el) {
             el.scrollIntoView({ behavior: 'smooth' });
           }
