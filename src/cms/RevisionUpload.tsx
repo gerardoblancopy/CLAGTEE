@@ -241,14 +241,21 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
   };
 
   // Paso 2a: abre el eCF oficial de IEEE con los datos del artículo
-  const handleOpenEcf = () => {
+  const handleOpenEcf = async () => {
     setIsOpeningEcf(true);
-    openIeeeEcf({
-      paperId: paper.id,
-      title: paper.title,
-      authors: paper.authors || [],
-      signerEmail: user?.email,
-    });
+    setFeedback(null);
+    try {
+      await openIeeeEcf({
+        paperId: paper.id,
+        title: paper.title,
+        authors: paper.authors || [],
+        signerEmail: user?.email,
+      });
+    } catch (err: any) {
+      setFeedback({ tone: 'error', text: err?.message || 'No se pudo abrir el formulario de IEEE.' });
+      setIsOpeningEcf(false);
+      return;
+    }
     // Si la navegación se cancela (o se vuelve con "Atrás"), el botón se reactiva
     setTimeout(() => setIsOpeningEcf(false), 5000);
   };

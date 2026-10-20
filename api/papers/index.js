@@ -1,5 +1,5 @@
 import { getFirestore, normalizePaper, seedPapersIfNeeded } from '../_lib/firestore.js';
-import { isStaffRole, requireAuth } from '../_lib/auth.js';
+import { isStaffRole, requireAuth, signEcfTicket, verifyEcfTicket } from '../_lib/auth.js';
 
 const parseBody = (req) => {
   if (!req.body) return null;
@@ -219,6 +219,74 @@ export default async function handler(req, res) {
   }
 
   if (req.method === 'POST') {
+    const body = parseBody(req);
+
+    // Copyright IEEE (eCF): el autor pide un pase para abrir el eCF desde el
+    // dominio registrado ante IEEE, y esa página lo canjea por los datos del paper.
+    if (body?.action === 'ecf-ticket' || body?.action === 'ecf-redeem') {
+      try {
+        let session = null;
+        let paperId;
+        let signerEmail;
+        if (body.action === 'ecf-ticket') {
+          session = requireAuth(req, res);
+          if (!session) return;
+          paperId = String(body.paperId || '');
+          signerEmail = String(session.email || '');
+        } else {
+          const ticket = verifyEcfTicket(body.ticket);
+          if (!ticket) {
+            res.status(401).json({ error: 'El enlace para firmar venció. Vuelve al CMS y pulsa "Firmar en IEEE" de nuevo.' });
+            return;
+          }
+          paperId = String(ticket.paperId);
+          signerEmail = String(ticket.signerEmail || '');
+        }
+
+        const snapshot = paperId ? await getFirestore().collection('papers').doc(paperId).get() : null;
+        if (!snapshot || !snapshot.exists) {
+          res.status(404).json({ error: 'Paper not found' });
+          return;
+        }
+        const current = snapshot.data();
+        if (current.status !== 'accepted') {
+          res.status(409).json({ error: 'Paper is not accepted' });
+          return;
+        }
+
+        if (session) {
+          const userEmail = signerEmail.trim().toLowerCase();
+          const isAuthor =
+            current.submitterId === session.id ||
+            (Array.isArray(current.authors) &&
+              current.authors.some((a) => a && typeof a.email === 'string' && a.email.trim().toLowerCase() === userEmail));
+          if (!isAuthor && !isStaffRole(session.role)) {
+            res.status(403).json({ error: 'Not allowed for this paper' });
+            return;
+          }
+          res.status(200).json({ ticket: signEcfTicket({ paperId, signerEmail }) });
+          return;
+        }
+
+        res.status(200).json({
+          paper: {
+            id: paperId,
+            title: String(current.title || ''),
+            authors: (Array.isArray(current.authors) ? current.authors : []).map((a) => ({
+              name: String(a?.name || ''),
+              email: String(a?.email || ''),
+            })),
+          },
+          signerEmail,
+        });
+      } catch (error) {
+        const message = error && error.message ? error.message : 'Failed to process eCF request';
+        console.error('[papers-ecf]', message);
+        res.status(500).json({ error: 'Failed to process eCF request' });
+      }
+      return;
+    }
+
     try {
       const session = requireAuth(req, res);
       if (!session) return;
@@ -227,7 +295,6 @@ export default async function handler(req, res) {
         return;
       }
 
-      const body = parseBody(req);
       const input = body?.input;
       if (!input) {
         res.status(400).json({ error: 'Missing required fields' });

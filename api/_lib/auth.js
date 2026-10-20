@@ -63,6 +63,42 @@ export const verifyToken = (token) => {
   return payload;
 };
 
+// Pase de corta duración para abrir el eCF de IEEE desde el dominio registrado
+// ante IEEE (la página /ecf de clagtee2026.vercel.app). Solo identifica un paper
+// y al firmante; no es una sesión: se firma con otro prefijo para que nunca
+// pueda usarse como token de sesión, y vence en minutos.
+const ECF_TICKET_TTL_MS = 5 * 60 * 1000;
+
+const signEcfTicketPayload = (payloadB64) =>
+  createHmac('sha256', getSecret()).update(`ecf-ticket:${payloadB64}`).digest('base64url');
+
+export const signEcfTicket = ({ paperId, signerEmail }) => {
+  const payload = { paperId, signerEmail, exp: Date.now() + ECF_TICKET_TTL_MS };
+  const payloadB64 = Buffer.from(JSON.stringify(payload), 'utf8').toString('base64url');
+  return `${payloadB64}.${signEcfTicketPayload(payloadB64)}`;
+};
+
+export const verifyEcfTicket = (ticket) => {
+  if (typeof ticket !== 'string') return null;
+  const [payloadB64, signature, ...rest] = ticket.split('.');
+  if (!payloadB64 || !signature || rest.length > 0) return null;
+
+  const expected = Buffer.from(signEcfTicketPayload(payloadB64), 'utf8');
+  const received = Buffer.from(signature, 'utf8');
+  if (expected.length !== received.length) return null;
+  if (!timingSafeEqual(expected, received)) return null;
+
+  let payload;
+  try {
+    payload = JSON.parse(Buffer.from(payloadB64, 'base64url').toString('utf8'));
+  } catch (error) {
+    return null;
+  }
+  if (!payload || !payload.paperId || !payload.exp) return null;
+  if (Date.now() > Number(payload.exp)) return null;
+  return payload;
+};
+
 export const getSession = (req) => {
   const header = req.headers?.authorization || req.headers?.Authorization || '';
   const match = /^Bearer\s+(.+)$/i.exec(String(header).trim());

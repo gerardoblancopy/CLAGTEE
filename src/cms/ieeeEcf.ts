@@ -9,9 +9,12 @@
 // - El título de la publicación debe estar registrado y coincidir EXACTAMENTE
 //   con la Letter of Acquisition (si no: error 1003).
 // - ArtSource es el Conference Record Number de 5 dígitos (si no: error 1002).
-// - El dominio del CMS debe estar registrado como sitio de origen (si no: 1001).
+// - IEEE compara el Referer con el dominio registrado (si no: error 1001). El
+//   registrado es clagtee2026.vercel.app: desde clagtee2026.org el envío pasa por
+//   la página puente /ecf de ese dominio (EcfRelay) con un pase de corta duración.
 
 import { PDFArray, PDFDocument, PDFRawStream, decodePDFRawStream } from 'pdf-lib';
+import { apiFetch } from './api';
 
 export const IEEE_ECF_URL = 'https://ecopyright.ieee.org/ECTT/IntroPage.jsp';
 
@@ -24,6 +27,13 @@ export const IEEE_ECF_PUB_TITLE =
 export const IEEE_ECF_ART_SOURCE = '70524';
 
 export const CAMERA_READY_SUPPORT_EMAIL = 'clagtee2026@clagtee.org';
+
+// Dominio registrado ante IEEE como sitio de envío, y ruta de la página puente.
+export const IEEE_ECF_REGISTERED_ORIGIN = 'https://clagtee2026.vercel.app';
+export const ECF_RELAY_PATH = '/ecf';
+
+// Dominios del sitio a los que IEEE puede devolver al autor (evita redirecciones abiertas).
+export const ECF_RETURN_ORIGINS = [IEEE_ECF_REGISTERED_ORIGIN, 'https://www.clagtee2026.org', 'https://clagtee2026.org'];
 
 // Parámetro que el CMS recibe al volver desde el eCF: /cms?ecf=<paperId>
 export const ECF_RETURN_PARAM = 'ecf';
@@ -75,23 +85,17 @@ export const buildEcfFields = (submission: EcfSubmission, returnUrl: string): Re
   rtrnurl: returnUrl,
 });
 
-export const buildEcfReturnUrl = (paperId: string) =>
-  `${window.location.origin}/cms?${ECF_RETURN_PARAM}=${encodeURIComponent(paperId)}`;
+export const buildEcfReturnUrl = (paperId: string, origin = window.location.origin) =>
+  `${origin}/cms?${ECF_RETURN_PARAM}=${encodeURIComponent(paperId)}`;
 
-// Navega (en la misma pestaña) al eCF de IEEE con los datos precargados.
-export const openIeeeEcf = (submission: EcfSubmission) => {
-  // IEEE valida el Referer contra la URL registrada (error 1001). Por defecto el
-  // navegador solo envía el dominio a otro sitio; así envía la URL completa del CMS.
-  const referrerPolicy = document.createElement('meta');
-  referrerPolicy.name = 'referrer';
-  referrerPolicy.content = 'no-referrer-when-downgrade';
-  document.head.appendChild(referrerPolicy);
-
+// Envía por POST los datos del artículo al eCF (navega en la misma pestaña).
+// El navegador manda como Referer el dominio de la página actual.
+export const submitEcfForm = (fields: Record<string, string>) => {
   const form = document.createElement('form');
   form.method = 'POST';
   form.action = IEEE_ECF_URL;
   form.acceptCharset = 'UTF-8';
-  Object.entries(buildEcfFields(submission, buildEcfReturnUrl(submission.paperId))).forEach(([name, value]) => {
+  Object.entries(fields).forEach(([name, value]) => {
     const input = document.createElement('input');
     input.type = 'hidden';
     input.name = name;
@@ -100,6 +104,27 @@ export const openIeeeEcf = (submission: EcfSubmission) => {
   });
   document.body.appendChild(form);
   form.submit();
+};
+
+// Abre el eCF de IEEE con los datos del artículo. Fuera del dominio registrado
+// pide a la API un pase de corta duración (no la sesión) y continúa en la página
+// puente de ese dominio, que lo canjea y hace el envío.
+export const openIeeeEcf = async (submission: EcfSubmission) => {
+  if (window.location.origin === IEEE_ECF_REGISTERED_ORIGIN) {
+    submitEcfForm(buildEcfFields(submission, buildEcfReturnUrl(submission.paperId)));
+    return;
+  }
+  const response = await apiFetch('/api/papers', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ action: 'ecf-ticket', paperId: submission.paperId }),
+  });
+  if (!response.ok) {
+    throw new Error('No se pudo conectar con el sistema de copyright de IEEE. Intenta nuevamente.');
+  }
+  const { ticket } = (await response.json()) as { ticket: string };
+  const handoff = new URLSearchParams({ ticket, return: window.location.origin });
+  window.location.assign(`${IEEE_ECF_REGISTERED_ORIGIN}${ECF_RELAY_PATH}#${handoff.toString()}`);
 };
 
 export const readEcfReturnPaperId = () =>
