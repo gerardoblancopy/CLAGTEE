@@ -252,8 +252,31 @@ const AppContent: React.FC = () => {
   }, []);
 
   React.useEffect(() => {
+    const handleScrollTarget = () => {
+      const currentPath = window.location.pathname;
+      const hash = window.location.hash;
+
+      if (
+        currentPath === '/ieee-final-version' ||
+        currentPath === '/final-version' ||
+        currentPath === '/camera-ready' ||
+        hash === '#version-final-ieee' ||
+        hash === '#envio'
+      ) {
+        setTimeout(() => {
+          const el = document.getElementById('version-final-ieee');
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 150);
+      }
+    };
+
+    handleScrollTarget();
+
     const handlePopState = () => {
       setView(resolveViewFromPath(window.location.pathname));
+      handleScrollTarget();
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);

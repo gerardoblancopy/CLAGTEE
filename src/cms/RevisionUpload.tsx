@@ -330,6 +330,33 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
     }
   };
 
+  // 3c. Download standard IEEE eCF template PDF for this paper
+  const handleDownloadEcfTemplate = async () => {
+    try {
+      const authorsStr = (paper.authors || []).map((a) => a.name).join(', ') || user?.name || '';
+      const pdfBytes = await generateIeeeCopyrightFormPdf({
+        paperId: paper.id,
+        paperTitle: paper.title,
+        authorsText: authorsStr,
+        signerName: user?.name || 'Autor Correspondiente',
+        signerEmail: user?.email || '',
+        copyrightType: 'standard',
+      });
+      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `IEEE_Copyright_eCF_${paper.id}.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error(err);
+      alert('Error al generar la plantilla de Copyright');
+    }
+  };
+
   // 4. Save note for review committee
   const handleSaveNote = async () => {
     setIsSavingNote(true);
@@ -732,15 +759,27 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
                   <span>{isUploadingCopyright ? 'Subiendo...' : 'Subir PDF de Copyright Firmado'}</span>
                 </label>
 
-                {/* Enlace directo al formulario oficial IEEE PDF */}
-                <div className="text-center pt-1">
+                {/* Enlaces de descarga de formulario y portal oficial */}
+                <div className="text-center pt-1 flex flex-wrap items-center justify-center gap-2">
+                  <button
+                    type="button"
+                    onClick={handleDownloadEcfTemplate}
+                    className="text-[11px] text-[#00629B] hover:underline inline-flex items-center gap-1 font-semibold"
+                    title="Descargar formulario oficial IEEE eCF en PDF para este artículo"
+                  >
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <span>Descargar Formulario Oficial IEEE (.PDF)</span>
+                  </button>
+                  <span className="text-gray-300">|</span>
                   <a
-                    href="https://www.ieee.org/content/dam/ieee-org/ieee/web/org/pubs/ecf_form.pdf"
+                    href="https://authorcenter.ieee.org/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[11px] text-[#00629B] hover:underline inline-flex items-center gap-1 font-semibold"
+                    className="text-[11px] text-gray-500 hover:text-[#00629B] hover:underline inline-flex items-center gap-1"
                   >
-                    <span>Descargar Formulario Oficial IEEE (.PDF)</span>
+                    <span>Portal IEEE Author Center</span>
                     <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>

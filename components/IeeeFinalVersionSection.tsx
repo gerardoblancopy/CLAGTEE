@@ -62,6 +62,35 @@ export const IeeeFinalVersionSection: React.FC<IeeeFinalVersionSectionProps> = (
     }
   };
 
+  const handleDownloadStandardTemplate = async () => {
+    setIsGeneratingWebEcf(true);
+    try {
+      const pdfBytes = await generateIeeeCopyrightFormPdf({
+        paperId: webEcfPaperId.trim() || 'CLAGTEE-2026',
+        paperTitle: webEcfTitle.trim() || 'CLAGTEE 2026 Accepted Conference Paper',
+        authorsText: webEcfAuthors.trim() || 'Corresponding Author and Co-authors',
+        signerName: webEcfSignerName.trim() || 'Corresponding Author',
+        signerEmail: webEcfSignerEmail.trim() || 'author@clagtee2026.org',
+        affiliation: webEcfAffiliation.trim() || undefined,
+        copyrightType: 'standard',
+      });
+      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'IEEE_Copyright_Form_CLAGTEE_2026.pdf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error(err);
+      alert('Error al generar el formulario de Copyright');
+    } finally {
+      setIsGeneratingWebEcf(false);
+    }
+  };
+
   const handleCopyCode = async () => {
     try {
       await navigator.clipboard.writeText(content.step2.copyrightNotice.code);
@@ -501,17 +530,18 @@ export const IeeeFinalVersionSection: React.FC<IeeeFinalVersionSectionProps> = (
               </div>
 
               <div className="flex flex-wrap items-center gap-3">
-                <a
-                  href="https://www.ieee.org/content/dam/ieee-org/ieee/web/org/pubs/ecf_form.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#00629B] hover:bg-[#004e7c] text-white font-bold text-xs sm:text-sm transition-all shadow-sm"
+                <button
+                  type="button"
+                  onClick={handleDownloadStandardTemplate}
+                  disabled={isGeneratingWebEcf}
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#00629B] hover:bg-[#004e7c] text-white font-bold text-xs sm:text-sm transition-all shadow-sm disabled:opacity-50"
+                  title="Genera y descarga inmediatamente el formulario estándar oficial IEEE Copyright en PDF"
                 >
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
-                  <span>Descargar Formulario Oficial IEEE eCF (.PDF)</span>
-                </a>
+                  <span>{isGeneratingWebEcf ? 'Generando PDF...' : 'Descargar Formulario Oficial IEEE eCF (.PDF)'}</span>
+                </button>
 
                 <button
                   type="button"
@@ -524,13 +554,25 @@ export const IeeeFinalVersionSection: React.FC<IeeeFinalVersionSectionProps> = (
                   <span>{showWebEcfAssistant ? 'Ocultar Asistente' : 'Generador y Firma Rápida eCF en Línea'}</span>
                 </button>
 
+                <button
+                  type="button"
+                  onClick={onNavigateCMS}
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#2A9D8F] hover:bg-[#21867a] text-white font-bold text-xs sm:text-sm transition-all shadow-sm"
+                  title="Acceder a la Consola de Autor para firmar y subir automáticamente con los datos de tu artículo"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                  </svg>
+                  <span>Firmar en Consola de Autor (CMS)</span>
+                </button>
+
                 <a
-                  href="https://www.ieee.org/publications/rights/copyright-main.html"
+                  href="https://authorcenter.ieee.org/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-600 hover:text-[#00629B] hover:underline"
                 >
-                  <span>Portal Oficial de Derechos IEEE</span>
+                  <span>Portal Oficial IEEE Author Center</span>
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
