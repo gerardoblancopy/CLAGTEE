@@ -4,6 +4,7 @@ import { UserIcon } from '../../components/icons';
 import { User, useAuth } from './AuthContext';
 import { Paper, PaperStatus, useCMSData } from './CMSDataContext';
 import { DownloadLink } from './DownloadLink';
+import { isGeneratedEcfFileName } from './ieeeEcf';
 import { exportPapersToExcel } from './exportPapersExcel';
 
 const ExcelIcon = ({ className = 'w-4 h-4' }: { className?: string }) => (
@@ -902,6 +903,9 @@ Comité Organizador CLAGTEE 2026`;
                         className="block text-xs font-bold text-[#00629B] hover:underline mt-1"
                       >
                         Descargar Copyright IEEE (eCF)
+                        {isGeneratedEcfFileName(paper.copyrightFileName) && (
+                          <span className="ml-1 text-rose-600">· no válido (generado por la web)</span>
+                        )}
                       </DownloadLink>
                     )}
                     {paper.revisionNote && (

@@ -23,7 +23,8 @@ import { PreCongressDashboard } from './src/cms/PreCongressDashboard';
 import { ParticipantDashboard } from './src/cms/ParticipantDashboard';
 import { SubmissionForm } from './src/cms/SubmissionForm';
 import { CMSDataProvider, useCMSData } from './src/cms/CMSDataContext';
-import { readEcfReturnPaperId } from './src/cms/ieeeEcf';
+import { ECF_RELAY_PATH, readEcfReturnPaperId } from './src/cms/ieeeEcf';
+import { EcfRelay } from './src/cms/EcfRelay';
 import { RegistrationSection } from './src/registration/RegistrationSection';
 import { SponsorshipSection } from './src/sponsorship/SponsorshipSection';
 import { PreCongressSection } from './src/precongress/PreCongressSection';
@@ -584,6 +585,11 @@ const AppContent: React.FC = () => {
 };
 
 const App: React.FC = () => {
+  // Página puente del eCF de IEEE (solo en el dominio registrado ante IEEE)
+  if (window.location.pathname === ECF_RELAY_PATH) {
+    return <EcfRelay />;
+  }
+
   return (
     <AuthProvider>
       <CMSDataProvider>
