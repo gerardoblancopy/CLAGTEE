@@ -339,7 +339,7 @@ export const contentEN: Content = {
           "Verify that you have NOT added page numbers or headers outside the official template.",
           "Verify that title, abstract, and Index Terms are exclusively in English."
         ],
-        "cmsInstructions": "Log in to the CLAGTEE 2026 Author Console (https://www.clagtee2026.org/cms) and upload your final PDF in the 'Entrega final' (final submission) section of your accepted paper. The CMS checks the format automatically and generates your format certificate, so you do not need to upload it separately. Your submission is complete when both the final PDF and the IEEE Copyright show as complete; you can replace the files until the deadline. After the conference, the committee will submit the final papers to IEEE Xplore.",
+        "cmsInstructions": "Log in to the CLAGTEE 2026 Author Console (https://www.clagtee2026.org/cms) confirm the English title and abstract exactly as they appear in your PDF, and upload your final PDF in the 'Entrega final' (final submission) section of your accepted paper. The CMS checks the format automatically and generates your format certificate, so you do not need to upload it separately. Your submission is complete when both the final PDF and the IEEE Copyright show as complete; you can replace the files until the deadline. After the conference, the committee will submit the final papers to IEEE Xplore.",
         "presentationWarning": "IMPORTANT: At least one author must register and present the paper in person during the conference in Santiago, Chile. Papers not presented will not be forwarded to IEEE Xplore and will only appear in local proceedings.",
         "cmsButtonText": "Access CMS to Submit Final Version"
       },

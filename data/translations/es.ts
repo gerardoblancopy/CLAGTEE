@@ -339,7 +339,7 @@ export const contentES: Content = {
           "Verifique que NO añadió números de página ni encabezados ajenos a la plantilla oficial.",
           "Verifique que el título, abstract e Index Terms estén exclusivamente en inglés."
         ],
-        "cmsInstructions": "Ingrese a la Consola de Autor del CMS de CLAGTEE 2026 (https://www.clagtee2026.org/cms) y suba su PDF final en la sección 'Entrega final' de su artículo aceptado. El CMS revisa el formato automáticamente y genera su certificado de formato, por lo que no necesita subirlo por separado. Su entrega queda completa cuando el PDF final y el Copyright IEEE aparecen como completos; puede reemplazar los archivos hasta el plazo final. Después del congreso, el comité enviará los artículos finales a IEEE Xplore.",
+        "cmsInstructions": "Ingrese a la Consola de Autor del CMS de CLAGTEE 2026 (https://www.clagtee2026.org/cms) confirme el título y el abstract en inglés tal como aparecen en su PDF y suba su PDF final en la sección 'Entrega final' de su artículo aceptado. El CMS revisa el formato automáticamente y genera su certificado de formato, por lo que no necesita subirlo por separado. Su entrega queda completa cuando el PDF final y el Copyright IEEE aparecen como completos; puede reemplazar los archivos hasta el plazo final. Después del congreso, el comité enviará los artículos finales a IEEE Xplore.",
         "presentationWarning": "IMPORTANTE: Es requisito indispensable que al menos uno de los autores presente la ponencia durante el congreso en Santiago de Chile. De lo contrario, el artículo no podrá ser remitido a IEEE Xplore y solo figurará en las memorias locales del CLAGTEE.",
         "cmsButtonText": "Acceder al CMS para Enviar Versión Final"
       },

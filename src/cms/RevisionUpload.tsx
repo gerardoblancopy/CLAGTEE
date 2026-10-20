@@ -18,6 +18,7 @@ import {
   openIeeeEcf,
   readEcfReturnPaperId,
 } from './ieeeEcf';
+import { looksNonEnglish } from '../utils/language';
 
 // Helper to upload a File or Blob directly to GCS via the signed URL endpoint
 async function uploadToGcs(fileOrBlob: File | Blob, fileName: string): Promise<{ fileKey: string; fileUrl: string }> {
@@ -52,6 +53,8 @@ async function uploadToGcs(fileOrBlob: File | Blob, fileName: string): Promise<{
 }
 
 const isPdfFile = (file: File) => file.type === 'application/pdf' || /\.pdf$/i.test(file.name);
+
+const normalizeSpaces = (value: string) => value.replace(/\s+/g, ' ').trim();
 
 type Feedback = { tone: 'success' | 'warning' | 'error'; text: string };
 
@@ -105,8 +108,13 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
   // El autor firma con el enlace que IEEE le envía por correo (ver IEEE_ECF_SIGN_BUTTON)
   const signByEmail = !IEEE_ECF_SIGN_BUTTON;
   const validationStatus = paper.formatValidationStatus || '';
+  // IEEE publica título y abstract en inglés: el autor los confirma tal como están en su PDF
+  const savedTitleEn = paper.titleEn || '';
+  const savedAbstractEn = paper.abstractEn || '';
+  const hasEnglishMeta = Boolean(savedTitleEn && savedAbstractEn);
+  const ieeeTitle = savedTitleEn || paper.title;
   const manuscriptNeedsFix = hasRevised && validationStatus === 'FAIL';
-  const manuscriptDone = hasRevised && hasCert && !manuscriptNeedsFix;
+  const manuscriptDone = hasRevised && hasCert && !manuscriptNeedsFix && hasEnglishMeta;
   const completedCount = (manuscriptDone ? 1 : 0) + (copyrightDone ? 1 : 0);
   const allDone = completedCount === 2;
 
@@ -116,6 +124,20 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
   const [note, setNote] = useState(paper.revisionNote || '');
   const [isSavingNote, setIsSavingNote] = useState(false);
   const [noteSavedFeedback, setNoteSavedFeedback] = useState(false);
+
+  // Paso 1: título y abstract en inglés (se proponen los del envío si ya están en inglés)
+  const [titleEn, setTitleEn] = useState(() => savedTitleEn || (looksNonEnglish(paper.title) ? '' : paper.title));
+  const [abstractEn, setAbstractEn] = useState(
+    () => savedAbstractEn || (looksNonEnglish(paper.abstract) ? '' : paper.abstract)
+  );
+  const [isSavingEnglish, setIsSavingEnglish] = useState(false);
+  const titleEnNonEnglish = looksNonEnglish(titleEn);
+  const abstractEnNonEnglish = looksNonEnglish(abstractEn);
+  const englishReady =
+    Boolean(normalizeSpaces(titleEn) && normalizeSpaces(abstractEn)) && !titleEnNonEnglish && !abstractEnNonEnglish;
+  const englishDirty =
+    normalizeSpaces(titleEn) !== normalizeSpaces(savedTitleEn) ||
+    normalizeSpaces(abstractEn) !== normalizeSpaces(savedAbstractEn);
 
   // Paso 1: PDF final (+ validación y certificado automáticos)
   const [manuscriptStage, setManuscriptStage] = useState<string | null>(null);
@@ -154,10 +176,10 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
   const authorsText = (paper.authors || []).map((a) => a.name).filter(Boolean).join(', ') || user?.name || '';
 
   // Genera el certificado de formato a partir de la revisión real del PDF y lo guarda
-  const saveFormatCertificate = async (audit: IeeeValidationResult) => {
+  const saveFormatCertificate = async (audit: IeeeValidationResult, title: string) => {
     const certBytes = await generateIeeeFormatCertificatePdf(audit, {
       paperId: paper.id,
-      paperTitle: paper.title,
+      paperTitle: title || paper.title,
       authorName: authorsText,
       authorEmail: user?.email,
     });
@@ -188,15 +210,20 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
       setFeedback({ tone: 'error', text: 'El manuscrito final debe ser un archivo PDF.' });
       return;
     }
+    if (!englishReady) {
+      setFeedback({ tone: 'error', text: 'Antes de subir el PDF, completa el título y el abstract en inglés.' });
+      return;
+    }
 
     setFeedback(null);
     setValidationResult(null);
+    const expectedTitle = normalizeSpaces(titleEn);
 
     try {
       setManuscriptStage('Revisando el formato IEEE...');
       let audit: IeeeValidationResult | null = null;
       try {
-        audit = await validateIeeePdf(file);
+        audit = await validateIeeePdf(file, file.name, { expectedTitle });
         setValidationResult(audit);
       } catch (valErr) {
         console.error('Validation error:', valErr);
@@ -209,11 +236,15 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
         fileUrl: gcs.fileUrl,
         fileKey: gcs.fileKey,
         revisionNote: note,
+        titleEn: expectedTitle,
+        abstractEn: normalizeSpaces(abstractEn),
         ...(audit ? { formatValidationStatus: audit.overallStatus } : {}),
       });
       if (!updated) {
         throw new Error('No se pudo guardar el manuscrito final. Intenta nuevamente.');
       }
+      setTitleEn(updated.titleEn || expectedTitle);
+      setAbstractEn(updated.abstractEn || abstractEn);
 
       if (!audit) {
         setFeedback({
@@ -225,7 +256,7 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
 
       setManuscriptStage('Generando el certificado de formato...');
       try {
-        await saveFormatCertificate(audit);
+        await saveFormatCertificate(audit, updated.titleEn || expectedTitle);
       } catch (certErr) {
         console.error('Certificate error:', certErr);
         setFeedback({
@@ -244,7 +275,7 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
 
   // Vuelve a revisar el PDF ya guardado y genera su certificado, sin volver a subirlo
   // (para entregas sin certificado o revisadas con una versión anterior del validador)
-  const handleRecheckStoredPdf = async () => {
+  const handleRecheckStoredPdf = async (expectedTitle: string = savedTitleEn) => {
     if (!paper.revisedFileKey) return;
     setFeedback(null);
     setValidationResult(null);
@@ -256,17 +287,44 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
       }
       const audit = await validateIeeePdf(
         new Uint8Array(await response.arrayBuffer()),
-        paper.revisedFileName || `${paper.id}.pdf`
+        paper.revisedFileName || `${paper.id}.pdf`,
+        { expectedTitle }
       );
       setValidationResult(audit);
       setManuscriptStage('Generando el certificado de formato...');
-      await saveFormatCertificate(audit);
+      await saveFormatCertificate(audit, expectedTitle);
       setFeedback(feedbackForAudit(audit.overallStatus));
     } catch (err: any) {
       console.error('Recheck error:', err);
       setFeedback({ tone: 'error', text: err?.message || 'No se pudo revisar tu PDF. Intenta nuevamente o vuelve a subirlo.' });
     } finally {
       setManuscriptStage(null);
+    }
+  };
+
+  // Paso 1: guarda el título y el abstract en inglés; si ya hay PDF, lo vuelve a
+  // revisar para que el certificado compare el título con el del PDF
+  const handleSaveEnglish = async () => {
+    if (!englishReady) return;
+    setIsSavingEnglish(true);
+    setFeedback(null);
+    try {
+      const updated = await submitRevision(paper.id, {
+        titleEn: normalizeSpaces(titleEn),
+        abstractEn: normalizeSpaces(abstractEn),
+      });
+      if (!updated) throw new Error('No se pudo guardar el título y el abstract. Intenta nuevamente.');
+      setTitleEn(updated.titleEn || '');
+      setAbstractEn(updated.abstractEn || '');
+      if (updated.revisedFileKey) {
+        await handleRecheckStoredPdf(updated.titleEn || normalizeSpaces(titleEn));
+      } else {
+        setFeedback({ tone: 'success', text: 'Título y abstract en inglés guardados. Ahora sube tu PDF final.' });
+      }
+    } catch (err: any) {
+      setFeedback({ tone: 'error', text: err?.message || 'No se pudo guardar el título y el abstract.' });
+    } finally {
+      setIsSavingEnglish(false);
     }
   };
 
@@ -277,7 +335,7 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
     try {
       await openIeeeEcf({
         paperId: paper.id,
-        title: paper.title,
+        title: ieeeTitle,
         authors: paper.authors || [],
         signerEmail: user?.email,
       });
@@ -375,8 +433,8 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
             {allDone
               ? '¡Entrega completa! Puedes reemplazar tus archivos hasta el plazo final.'
               : signByEmail
-              ? 'Solo 2 pasos: sube tu PDF final y firma el copyright de IEEE con el enlace que recibirás por correo.'
-              : 'Solo 2 pasos: sube tu PDF final y firma el copyright en el sitio oficial de IEEE.'}
+              ? 'Solo 2 pasos: sube tu PDF final (con título y abstract en inglés) y firma el copyright de IEEE con el enlace que recibirás por correo.'
+              : 'Solo 2 pasos: sube tu PDF final (con título y abstract en inglés) y firma el copyright en el sitio oficial de IEEE.'}
           </p>
         </div>
 
@@ -422,7 +480,13 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
                 : 'bg-slate-50 text-slate-600 border-slate-200'
             }`}
           >
-            {manuscriptDone ? '✓ PDF final' : manuscriptNeedsFix ? '✕ PDF final (requiere corrección)' : '○ PDF final (pendiente)'}
+            {manuscriptDone
+              ? '✓ PDF final'
+              : manuscriptNeedsFix
+              ? '✕ PDF final (requiere corrección)'
+              : hasRevised && !hasEnglishMeta
+              ? '○ PDF final (falta título y abstract en inglés)'
+              : '○ PDF final (pendiente)'}
           </span>
           <span
             className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border font-medium ${
@@ -472,6 +536,75 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
                 </p>
               </div>
 
+              {/* Título y abstract en inglés (los que se envían a IEEE) */}
+              <div
+                className={`rounded-xl border p-3 space-y-2.5 ${
+                  hasEnglishMeta && !englishDirty ? 'bg-slate-50 border-slate-200' : 'bg-sky-50/60 border-sky-200'
+                }`}
+              >
+                <div>
+                  <p className="text-xs font-bold text-[#0D2C54]">Título y abstract en inglés</p>
+                  <p className="text-[11px] text-slate-600 leading-relaxed mt-0.5">
+                    IEEE los publica en inglés aunque tu artículo esté en español o portugués. Cópialos tal como aparecen
+                    en tu PDF final: son los datos que enviaremos a IEEE.
+                    {hasRevised && !hasEnglishMeta && (
+                      <strong className="block text-amber-800 mt-1">Falta confirmarlos para completar este paso.</strong>
+                    )}
+                  </p>
+                </div>
+                <label className="block">
+                  <span className="text-[11px] font-semibold text-slate-700">Title</span>
+                  <input
+                    type="text"
+                    value={titleEn}
+                    onChange={(e) => setTitleEn(e.target.value)}
+                    maxLength={400}
+                    placeholder="Paper title in English"
+                    className="mt-1 w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-[#2A9D8F] focus:border-transparent outline-none"
+                  />
+                </label>
+                {titleEnNonEnglish && (
+                  <p className="text-[11px] text-rose-700 font-semibold">
+                    El título parece estar en español o portugués. IEEE lo exige en inglés.
+                  </p>
+                )}
+                <label className="block">
+                  <span className="text-[11px] font-semibold text-slate-700">Abstract</span>
+                  <textarea
+                    rows={4}
+                    value={abstractEn}
+                    onChange={(e) => setAbstractEn(e.target.value)}
+                    maxLength={5000}
+                    placeholder="Abstract in English, exactly as in your final PDF"
+                    className="mt-1 w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-[#2A9D8F] focus:border-transparent outline-none"
+                  />
+                </label>
+                {abstractEnNonEnglish && (
+                  <p className="text-[11px] text-rose-700 font-semibold">
+                    El abstract parece estar en español o portugués. IEEE lo exige en inglés.
+                  </p>
+                )}
+                <div className="flex items-center justify-between gap-2">
+                  <span className={`text-[11px] font-semibold ${hasEnglishMeta && !englishDirty ? 'text-emerald-700' : 'text-slate-500'}`}>
+                    {hasEnglishMeta && !englishDirty
+                      ? '✓ Guardados'
+                      : hasRevised
+                      ? 'Sin guardar'
+                      : 'Se guardan al subir el PDF'}
+                  </span>
+                  {(hasRevised || hasEnglishMeta) && (
+                    <button
+                      type="button"
+                      onClick={handleSaveEnglish}
+                      disabled={!englishReady || !englishDirty || isSavingEnglish || isUploadingRevised}
+                      className="px-3 py-1.5 rounded-lg bg-[#0D2C54] hover:bg-[#1A4B8A] text-white text-[11px] font-bold transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                    >
+                      {isSavingEnglish ? 'Guardando...' : 'Guardar'}
+                    </button>
+                  )}
+                </div>
+              </div>
+
               {hasRevised && (
                 <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs space-y-1.5">
                   <div className="flex items-center justify-between gap-2">
@@ -506,7 +639,7 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
                         <span className="text-[11px] text-amber-800">Falta el certificado de formato.</span>
                         <button
                           type="button"
-                          onClick={handleRecheckStoredPdf}
+                          onClick={() => handleRecheckStoredPdf()}
                           className="text-[#2A9D8F] font-bold hover:underline shrink-0"
                         >
                           Generar certificado
@@ -554,7 +687,7 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
                         El detalle está en tu certificado de formato. Corrige y vuelve a subir el PDF si es necesario, o{' '}
                         <button
                           type="button"
-                          onClick={handleRecheckStoredPdf}
+                          onClick={() => handleRecheckStoredPdf()}
                           disabled={isUploadingRevised}
                           className="font-bold underline disabled:opacity-50"
                         >
@@ -572,6 +705,8 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
                   className={`w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-colors shadow-sm ${
                     isUploadingRevised
                       ? 'bg-slate-300 text-slate-600 cursor-wait'
+                      : !englishReady
+                      ? 'bg-slate-200 text-slate-500 cursor-not-allowed'
                       : 'bg-[#0D2C54] hover:bg-[#1A4B8A] text-white cursor-pointer'
                   }`}
                 >
@@ -579,7 +714,7 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
                     type="file"
                     accept="application/pdf,.pdf"
                     className="hidden"
-                    disabled={isUploadingRevised}
+                    disabled={isUploadingRevised || !englishReady}
                     onChange={handleRevisedFileChange}
                   />
                   {isUploadingRevised ? (
@@ -591,6 +726,11 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
                   )}
                   <span>{manuscriptStage || (hasRevised ? 'Reemplazar PDF final' : 'Subir PDF final')}</span>
                 </label>
+                {!englishReady && !isUploadingRevised && (
+                  <p className="text-[11px] text-amber-800 text-center font-semibold">
+                    Completa primero el título y el abstract en inglés.
+                  </p>
+                )}
                 <p className="text-[11px] text-slate-500 text-center">
                   ¿Quieres revisarlo antes de subirlo? Usa el{' '}
                   <a href="/#ieee-paso-3" target="_blank" rel="noopener noreferrer" className="text-[#00629B] font-semibold hover:underline">
@@ -679,7 +819,12 @@ export const RevisionUpload: React.FC<{ paper: Paper }> = ({ paper }) => {
                     </p>
                     <p>
                       <strong className="text-slate-800">Artículo:</strong>{' '}
-                      <span className="font-mono text-[#00629B] font-bold">{paper.id}</span> — {paper.title}
+                      <span className="font-mono text-[#00629B] font-bold">{paper.id}</span> — {ieeeTitle}
+                      {!savedTitleEn && (
+                        <span className="block text-[11px] text-amber-800 font-semibold">
+                          Confirma el título en inglés en el Paso 1.
+                        </span>
+                      )}
                     </p>
                     <p>
                       <strong className="text-slate-800">Autores:</strong>{' '}

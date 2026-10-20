@@ -18,6 +18,7 @@
 
 import { PDFArray, PDFDocument, PDFRawStream, decodePDFRawStream } from 'pdf-lib';
 import { apiFetch } from './api';
+import { looksNonEnglish } from '../utils/language';
 
 export const IEEE_ECF_URL = 'https://ecopyright.ieee.org/ECTT/IntroPage.jsp';
 
@@ -158,6 +159,20 @@ export const clearEcfReturnParam = () => {
 const GENERATED_ECF_FILE_NAME = /IEEE_Copyright_(eCF_[A-Za-z0-9-]+|Form_CLAGTEE_2026)( ?\(\d+\))?\.pdf$/i;
 
 export const isGeneratedEcfFileName = (fileName?: string) => GENERATED_ECF_FILE_NAME.test((fileName || '').trim());
+
+// Título y abstract en inglés que el autor confirma en la entrega final (IEEE los exige en inglés)
+export type EnglishMetaStatus = 'missing' | 'check' | 'ok';
+
+export const englishMetaStatus = (paper: { titleEn?: string; abstractEn?: string }): EnglishMetaStatus => {
+  if (!paper.titleEn || !paper.abstractEn) return 'missing';
+  return looksNonEnglish(paper.titleEn) || looksNonEnglish(paper.abstractEn) ? 'check' : 'ok';
+};
+
+export const ENGLISH_META_LABELS: Record<EnglishMetaStatus, string> = {
+  missing: 'Pendiente',
+  check: 'Revisar idioma',
+  ok: 'Confirmados',
+};
 
 export type GeneratedPdfKind = 'fake-ecf' | 'format-certificate';
 

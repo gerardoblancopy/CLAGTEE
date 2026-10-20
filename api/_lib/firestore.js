@@ -154,12 +154,27 @@ export const seedUsersIfNeeded = async () => {
   await batch.commit();
 };
 
+// Restos de copiar/pegar desde BibTeX o correos: llaves y comillas sueltas
+// (p. ej. "{Identification of…" o "\"Technical and Economic…").
+export const cleanPaperTitle = (value) =>
+  String(value || '')
+    .replace(/[{}]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/^["“”«»]+|["“”«»]+$/g, '')
+    .trim();
+
 export const normalizePaper = (doc) => {
   const data = typeof doc.data === 'function' ? doc.data() : doc;
   return {
     id: data.id || doc.id || '',
-    title: data.title || '',
+    title: cleanPaperTitle(data.title),
     abstract: data.abstract || '',
+    // Título y abstract en inglés que el autor confirma en la entrega final
+    // (IEEE los exige en inglés aunque el artículo esté en español o portugués)
+    titleEn: data.titleEn || '',
+    abstractEn: data.abstractEn || '',
+    englishMetaAt: data.englishMetaAt || '',
     keywords: Array.isArray(data.keywords) ? data.keywords : [],
     authors: Array.isArray(data.authors) ? data.authors : [],
     track: data.track || '',

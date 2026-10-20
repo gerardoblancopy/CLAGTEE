@@ -1,5 +1,6 @@
 import { PDFDocument, PDFName, PDFDict, PDFArray, PDFRef, PDFFont, StandardFonts, rgb } from 'pdf-lib';
 import { extractPdfPagesText } from './pdfText';
+import { detectLanguage, LANGUAGE_NAMES, looksNonEnglish } from './language';
 
 export interface FontInfo {
   name: string;
@@ -49,9 +50,36 @@ function cleanFontName(rawName: string): string {
   return name;
 }
 
+export interface IeeeValidationOptions {
+  // Título en inglés declarado por el autor: se comprueba que coincida con el del PDF
+  expectedTitle?: string;
+}
+
+// Normaliza texto para comparar títulos: sin acentos, ligaduras, signos ni espacios
+const compactForMatch = (value: string) =>
+  value
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, '');
+
+// Abstract de la primera página: desde "Abstract" hasta "Index Terms"/"Keywords"/"Introduction"
+function extractAbstract(pageText: string): string | null {
+  let start = pageText.search(/\bAbstract\s*[—–\-:.]/i);
+  if (start < 0) start = pageText.search(/\b(Abstract|ABSTRACT)\b/);
+  if (start < 0) return null;
+  const rest = pageText.slice(start).replace(/^Abstract\s*[—–\-:.]?\s*/i, '');
+  const end = rest.search(
+    /\b(Index\s*Terms|Key\s*-?\s*words|Palabras\s+clave|Palavras[\s-]+chave|I\s*NTRODUCTION|Introduction|INTRODUCCI[OÓ]N|Introducci[oó]n|INTRODU[CÇ][AÃ]O|Introdu[cç][aã]o|(?:I|1)\.\s+[A-ZÁÉÍÓÚÇ]{4,})/
+  );
+  // Si no hay marcador de fin, basta con el comienzo: el abstract va justo después del encabezado
+  return (end > 0 ? rest.slice(0, end) : rest).trim().split(/\s+/).slice(0, 80).join(' ');
+}
+
 export async function validateIeeePdf(
   fileOrBuffer: File | ArrayBuffer | Uint8Array,
-  fileName: string = 'document.pdf'
+  fileName: string = 'document.pdf',
+  options: IeeeValidationOptions = {}
 ): Promise<IeeeValidationResult> {
   let buffer: ArrayBuffer;
   let fileSizeBytes = 0;
@@ -358,6 +386,12 @@ export async function validateIeeePdf(
     );
   }
 
+  // Check 6: Título y abstract en inglés (IEEE PSPB 8.1.1.I: en artículos en otro
+  // idioma, título y abstract deben ir en inglés)
+  const languageCheck = checkEnglishTitleAndAbstract(firstPageText, options.expectedTitle);
+  checks.push(languageCheck.check);
+  recommendations.push(...languageCheck.recommendations);
+
   // Overall status
   const hasFail = checks.some((c) => c.status === 'fail');
   const hasWarning = checks.some((c) => c.status === 'warning');
@@ -389,6 +423,100 @@ export async function validateIeeePdf(
     overallStatus,
     checks,
     recommendations,
+  };
+}
+
+function checkEnglishTitleAndAbstract(
+  pageText: string,
+  expectedTitle?: string
+): { check: IeeeValidationCheck; recommendations: string[] } {
+  const label = 'Título y Abstract en Inglés';
+  const policy = 'IEEE exige título y abstract en inglés, aunque el artículo esté escrito en español o portugués.';
+  const fix = 'Escriba un solo título y un solo abstract, ambos en inglés ("Abstract—…" e "Index Terms—…"), sin versión en español ni portugués.';
+
+  if (!pageText.trim()) {
+    return {
+      check: {
+        id: 'language',
+        label,
+        status: 'warning',
+        summary: 'No se pudo leer el texto de la primera página para revisar el idioma.',
+        details: policy,
+      },
+      recommendations: ['Verifique manualmente que el título y el abstract estén en inglés.'],
+    };
+  }
+
+  const problems: string[] = [];
+  const notes: string[] = [];
+  let status: IeeeValidationCheck['status'] = 'pass';
+
+  // Encabezados (con mayúscula y guion o dos puntos), no la palabra suelta en el texto
+  const secondAbstract = pageText.match(
+    /\b(Resumen|RESUMEN|Resumo|RESUMO|Palabras\s+[Cc]lave|PALABRAS\s+CLAVE|Palavras[\s-]+[Cc]have|PALAVRAS[\s-]+CHAVE)\s*[—–\-:.]/
+  );
+  if (secondAbstract) {
+    status = 'fail';
+    problems.push(`Se encontró "${secondAbstract[1]}": no incluya un resumen ni palabras clave en español o portugués.`);
+  }
+
+  const abstract = extractAbstract(pageText);
+  if (abstract === null) {
+    if (status === 'pass') status = 'warning';
+    problems.push('No se encontró el encabezado "Abstract" en la primera página.');
+  } else if (looksNonEnglish(abstract)) {
+    status = 'fail';
+    problems.push(`El abstract parece estar en ${LANGUAGE_NAMES[detectLanguage(abstract)]}.`);
+  } else {
+    notes.push('abstract en inglés');
+  }
+
+  // El título va al inicio de la página. Se toman tantas palabras como tiene el
+  // título esperado (8 si no se conoce) para no mezclarlo con las afiliaciones.
+  const title = (expectedTitle || '').trim();
+  const titleWords = title ? Math.min(20, Math.max(6, title.split(/\s+/).length)) : 8;
+  const abstractStart = pageText.search(/\bAbstract\b/i);
+  const pdfTitleSample = (abstractStart > 0 ? pageText.slice(0, abstractStart) : pageText)
+    .trim()
+    .split(/\s+/)
+    .slice(0, titleWords)
+    .join(' ');
+  if (title && looksNonEnglish(title)) {
+    status = 'fail';
+    problems.push(`El título indicado en el CMS parece estar en ${LANGUAGE_NAMES[detectLanguage(title)]}.`);
+  } else if (title && compactForMatch(pageText).includes(compactForMatch(title))) {
+    notes.push('título en inglés coincide con el del CMS');
+  } else if (looksNonEnglish(pdfTitleSample)) {
+    status = 'fail';
+    problems.push(`El título del PDF parece estar en ${LANGUAGE_NAMES[detectLanguage(pdfTitleSample)]}.`);
+  } else if (title) {
+    if (status === 'pass') status = 'warning';
+    problems.push('El título en inglés indicado en el CMS no coincide con el título del PDF.');
+  } else if (detectLanguage(pdfTitleSample) === 'en') {
+    notes.push('título en inglés');
+  }
+
+  if (problems.length === 0) {
+    return {
+      check: {
+        id: 'language',
+        label,
+        status: 'pass',
+        summary: `${notes.join('; ')}.`.replace(/^./, (c) => c.toUpperCase()),
+        details: title ? policy : `${policy} Verifique también que el título esté en inglés.`,
+      },
+      recommendations: [],
+    };
+  }
+
+  return {
+    check: { id: 'language', label, status, summary: problems.join(' '), details: policy },
+    recommendations: [
+      fix,
+      ...(problems.some((p) => p.includes('no coincide'))
+        ? ['Use en el CMS exactamente el mismo título en inglés que aparece en su PDF.']
+        : []),
+    ],
   };
 }
 

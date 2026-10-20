@@ -1,7 +1,7 @@
 import { RegistrationRecord, RegistrationStatus } from '../../types';
 import { User } from './AuthContext';
 import { Paper, PaperStatus } from './CMSDataContext';
-import { isGeneratedEcfFileName } from './ieeeEcf';
+import { ENGLISH_META_LABELS, englishMetaStatus, isGeneratedEcfFileName } from './ieeeEcf';
 import { normalizePaperId, resolveRegistrationPaperId } from './registrationSegments';
 
 export const paperStatusLabels: Record<PaperStatus, string> = {
@@ -163,6 +163,9 @@ export const buildPaperRow = (
   return {
     'ID Paper': paper.id,
     'Título': paper.title,
+    'Título en Inglés (IEEE)': paper.titleEn || '',
+    'Abstract en Inglés (IEEE)': paper.abstractEn || '',
+    'Título/Abstract en Inglés': paper.status === 'accepted' ? ENGLISH_META_LABELS[englishMetaStatus(paper)] : '',
     'Área Temática (Track)': paper.track || 'General',
     'Clasificación / Estado': paperStatusLabels[paper.status] || paper.status,
     'Autor Correspondiente (Quien Sometió)': correspondingAuthor.name,
