@@ -360,26 +360,20 @@ export const AuthorDashboard: React.FC<{
           </div>
 
           <p className="text-xs sm:text-sm text-emerald-100 max-w-3xl leading-relaxed font-['Roboto']">
-            Tienes <strong>{acceptedPapers.length} artículo(s) aceptado(s)</strong> para publicación en IEEE Xplore y exposición presencial en CLAGTEE 2026. En cada tarjeta de tus trabajos aceptados abajo encontrarás el <strong>Centro de Entrega Camera-Ready</strong> con los 3 documentos obligatorios:
+            Tienes <strong>{acceptedPapers.length} artículo(s) aceptado(s)</strong> para publicación en IEEE Xplore y exposición presencial en CLAGTEE 2026. En la tarjeta de cada artículo aceptado (más abajo) completa la entrega final en <strong>2 pasos</strong>, antes del 1 de noviembre:
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
-            <div className="bg-white/10 rounded-xl p-3 border border-white/10 backdrop-blur-xs">
-              <span className="text-emerald-300 font-bold text-xs block mb-0.5">1. Manuscrito Final</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <div className="bg-white/10 rounded-xl p-3 border border-white/10">
+              <span className="text-emerald-300 font-bold text-xs block mb-0.5">1. Sube tu PDF final</span>
               <p className="text-[11px] text-blue-100">
-                Con formato oficial IEEE, aviso de copyright al pie y observaciones de revisores incorporadas.
+                Con formato IEEE y las correcciones de los revisores. Revisamos el formato y generamos tu certificado automáticamente.
               </p>
             </div>
-            <div className="bg-white/10 rounded-xl p-3 border border-white/10 backdrop-blur-xs">
-              <span className="text-teal-300 font-bold text-xs block mb-0.5">2. Certificado de Formato IEEE</span>
+            <div className="bg-white/10 rounded-xl p-3 border border-white/10">
+              <span className="text-sky-300 font-bold text-xs block mb-0.5">2. Firma el copyright en IEEE (eCF)</span>
               <p className="text-[11px] text-blue-100">
-                Puedes generarlo y descargarlo automáticamente con 1 clic desde tu panel.
-              </p>
-            </div>
-            <div className="bg-white/10 rounded-xl p-3 border border-white/10 backdrop-blur-xs">
-              <span className="text-sky-300 font-bold text-xs block mb-0.5">3. Copyright IEEE (eCF)</span>
-              <p className="text-[11px] text-blue-100">
-                Firma electrónica digital integrada directamente en tu artículo o enlace al PDF oficial.
+                Un botón te lleva al sitio oficial de IEEE con tu artículo cargado. Luego sube el PDF que IEEE te envía por correo.
               </p>
             </div>
           </div>
