@@ -317,31 +317,28 @@ export const contentES: Content = {
       },
       "step4": {
         "number": "Paso 4",
-        "title": "Completar y firmar el Copyright de IEEE",
-        "description": "Un requerimiento mandatario para que su artículo sea enviado e indexado en IEEE Xplore es firmar la transferencia de derechos de autor mediante el formulario electrónico de IEEE (eCF).",
+        "title": "Completar y firmar el Copyright de IEEE (eCF)",
+        "description": "Un requerimiento legal obligatorio para que su artículo sea enviado e indexado en IEEE Xplore es firmar la transferencia de derechos de autor mediante el formulario electrónico de IEEE (eCF).",
         "instructions": [
-          "Acceda a la Consola de Autor en el CMS de CLAGTEE 2026 (https://www.clagtee2026.org/cms).",
-          "Haga clic en la opción de firma de Copyright habilitada para su artículo aceptado.",
-          "Esto le redireccionará al portal oficial de IEEE para firmar electrónicamente el Copyright Form (eCF).",
-          "Al completarlo, el sistema le ofrecerá la opción de guardar el IEEE Copyright Form en formato PDF. DEBE guardar y conservar una copia de este archivo PDF.",
-          "Al finalizar el proceso, será redireccionado de vuelta a la consola de Autor en el CMS, donde deberá adjuntar la copia del Copyright Form firmado."
+          "Descargue el formulario oficial estándar IEEE Copyright Form (.PDF) desde el enlace directo en esta página o use el Asistente Digital de eCF.",
+          "También puede realizar la firma electrónica directa dentro de la Consola de Autor (CMS) de CLAGTEE 2026.",
+          "Al completar la firma, descargue y guarde una copia digital del IEEE Copyright Form en formato PDF para su respaldo.",
+          "Adjunte el archivo PDF del Copyright firmado en la sección 'Centro de Entrega Camera-Ready' de su artículo aceptado en el CMS."
         ],
         "cmsCtaText": "Ir a la Consola de Autor (CMS)"
       },
       "step5": {
         "number": "Paso 5",
-        "title": "Enviar la versión final de su artículo (Camera-Ready)",
-        "checklistTitle": "Lista de control previa a la subida final:",
+        "title": "Subir los 3 documentos finales en el CMS (Centro Camera-Ready)",
+        "checklistTitle": "Lista de control de los 3 documentos requeridos en el CMS:",
         "checklist": [
-          "Verifique que NO añadió números de página ni encabezados ajenos a la plantilla.",
-          "Verifique que sus figuras y tablas tengan alta resolución y tipografía legible.",
-          "Verifique que utilizó el estilo IEEE para las referencias bibliográficas.",
-          "Verifique que el formato del documento sea Carta estadounidense (Letter, 8.5″ x 11″).",
-          "Verifique que el artículo posea un único título, un único abstract y una única lista de Index Terms, todos exclusivamente en inglés.",
-          "Verifique haber evaluado y validado su archivo PDF final mediante el Validador Automático de IEEE (con estado Aprobado).",
-          "Verifique tener listo el archivo PDF del IEEE Copyright Form firmado."
+          "Documento 1: Manuscrito final corregido en PDF (US Letter, fuentes 100% incrustadas y aviso de copyright en pie de página).",
+          "Documento 2: Certificado de conformidad de formato IEEE (descargado del validador o autogenerado en el CMS).",
+          "Documento 3: Formulario de Copyright IEEE (eCF) firmado digitalmente.",
+          "Verifique que NO añadió números de página ni encabezados ajenos a la plantilla oficial.",
+          "Verifique que el título, abstract e Index Terms estén exclusivamente en inglés."
         ],
-        "cmsInstructions": "Una vez verificados todos los puntos, ingrese al CMS de CLAGTEE 2026 (https://www.clagtee2026.org/cms), abra la sección de su paper aceptado y haga clic en 'Enviar Versión Final (Camera-Ready)' para adjuntar el PDF validado.",
+        "cmsInstructions": "Una vez listos los archivos, ingrese a la Consola de Autor en el CMS de CLAGTEE 2026 (https://www.clagtee2026.org/cms), donde encontrará el Centro de Entrega Camera-Ready en la tarjeta de su artículo aceptado para subir o reemplazar cualquiera de los 3 documentos.",
         "presentationWarning": "IMPORTANTE: Es requisito indispensable que al menos uno de los autores presente la ponencia durante el congreso en Santiago de Chile. De lo contrario, el artículo no podrá ser remitido a IEEE Xplore y solo figurará en las memorias locales del CLAGTEE.",
         "cmsButtonText": "Acceder al CMS para Enviar Versión Final"
       },

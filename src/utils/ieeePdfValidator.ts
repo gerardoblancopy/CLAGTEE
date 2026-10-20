@@ -1,4 +1,4 @@
-import { PDFDocument, PDFName, PDFDict, PDFArray, PDFRef } from 'pdf-lib';
+import { PDFDocument, PDFName, PDFDict, PDFArray, PDFRef, StandardFonts, rgb } from 'pdf-lib';
 
 export interface FontInfo {
   name: string;
@@ -383,3 +383,618 @@ export async function validateIeeePdf(
     recommendations,
   };
 }
+
+// ---------------------------------------------------------------------------
+// Generador del Certificado de Conformidad Técnica IEEE Xplore (PDF)
+// ---------------------------------------------------------------------------
+
+export interface FormatCertificateMeta {
+  paperId?: string;
+  paperTitle?: string;
+  authorName?: string;
+  authorEmail?: string;
+}
+
+export async function generateIeeeFormatCertificatePdf(
+  result: IeeeValidationResult,
+  meta?: FormatCertificateMeta
+): Promise<Uint8Array> {
+  const pdfDoc = await PDFDocument.create();
+  const page = pdfDoc.addPage([612, 792]); // US Letter standard: 8.5 x 11 inches
+  const { width, height } = page.getSize();
+
+  const fontRegular = await pdfDoc.embedFont(StandardFonts.Helvetica);
+  const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+  const fontMono = await pdfDoc.embedFont(StandardFonts.Courier);
+
+  // Colors
+  const primaryBlue = rgb(13 / 255, 44 / 255, 84 / 255); // #0D2C54
+  const ieeeBlue = rgb(0 / 255, 98 / 255, 155 / 255); // #00629B
+  const textDark = rgb(30 / 255, 41 / 255, 59 / 255); // #1E293B
+  const textMuted = rgb(100 / 255, 116 / 255, 139 / 255); // #64748B
+  const borderLight = rgb(226 / 255, 232 / 255, 240 / 255); // #E2E8F0
+  const passGreen = rgb(16 / 255, 185 / 255, 129 / 255); // #10B981
+  const warnAmber = rgb(245 / 255, 158 / 255, 11 / 255); // #F59E0B
+  const bgLight = rgb(248 / 255, 250 / 255, 252 / 255); // #F8FAFC
+
+  // Draw background border & top band
+  page.drawRectangle({
+    x: 24,
+    y: 24,
+    width: width - 48,
+    height: height - 48,
+    borderColor: borderLight,
+    borderWidth: 1.5,
+  });
+
+  page.drawRectangle({
+    x: 24,
+    y: height - 100,
+    width: width - 48,
+    height: 76,
+    color: primaryBlue,
+  });
+
+  // Top header text
+  page.drawText('XVI CLAGTEE 2026 — SANTIAGO, CHILE', {
+    x: 44,
+    y: height - 48,
+    size: 11,
+    font: fontBold,
+    color: rgb(1, 1, 1),
+  });
+  page.drawText(
+    'Congreso Latinoamericano de Generación y Transporte de Energía Eléctrica',
+    {
+      x: 44,
+      y: height - 64,
+      size: 9,
+      font: fontRegular,
+      color: rgb(0.85, 0.9, 0.98),
+    }
+  );
+  page.drawText('Technical Co-Sponsorship: IEEE Chile Section & CAS Chapter', {
+    x: 44,
+    y: height - 78,
+    size: 8,
+    font: fontRegular,
+    color: rgb(0.7, 0.8, 0.95),
+  });
+
+  // Title: Certificado de Conformidad
+  const certDate = new Date().toLocaleDateString('es-CL', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+  const certHash = `IEEE-CLAGTEE-${(meta?.paperId || 'DOC').replace(/[^a-zA-Z0-9]/g, '')}-${Date.now().toString(36).toUpperCase()}`;
+
+  let y = height - 128;
+  page.drawText('CERTIFICADO DE CONFORMIDAD TÉCNICA IEEE XPLORE', {
+    x: 44,
+    y,
+    size: 15,
+    font: fontBold,
+    color: primaryBlue,
+  });
+
+  y -= 16;
+  page.drawText(
+    'Comprobante oficial de validación automática de especificaciones para publicación Camera-Ready',
+    {
+      x: 44,
+      y,
+      size: 9,
+      font: fontRegular,
+      color: textMuted,
+    }
+  );
+
+  // Meta Box
+  y -= 32;
+  page.drawRectangle({
+    x: 44,
+    y: y - 76,
+    width: width - 88,
+    height: 94,
+    color: bgLight,
+    borderColor: borderLight,
+    borderWidth: 1,
+  });
+
+  const pId = meta?.paperId ? `#${meta.paperId}` : 'No especificado';
+  const pTitle = (meta?.paperTitle || result.fileName || 'Manuscrito').slice(0, 78);
+  const pAuthor = meta?.authorName || 'Autor remitente';
+
+  page.drawText(`Artículo ID: ${pId}`, { x: 56, y: y + 2, size: 9, font: fontBold, color: primaryBlue });
+  page.drawText(`Fecha emisión: ${certDate}`, { x: 360, y: y + 2, size: 8, font: fontRegular, color: textMuted });
+
+  page.drawText(`Título: ${pTitle}`, { x: 56, y: y - 16, size: 8.5, font: fontRegular, color: textDark });
+  page.drawText(`Autor(a): ${pAuthor} ${meta?.authorEmail ? `<${meta.authorEmail}>` : ''}`, {
+    x: 56,
+    y: y - 32,
+    size: 8.5,
+    font: fontRegular,
+    color: textDark,
+  });
+  page.drawText(`Archivo analizado: ${result.fileName}`, {
+    x: 56,
+    y: y - 48,
+    size: 8,
+    font: fontMono,
+    color: textMuted,
+  });
+  page.drawText(`Código de Verificación: ${certHash}`, {
+    x: 56,
+    y: y - 64,
+    size: 8,
+    font: fontMono,
+    color: ieeeBlue,
+  });
+
+  // Verdict Banner
+  y -= 102;
+  const isPass = result.overallStatus === 'PASS';
+  const isWarn = result.overallStatus === 'WARNING';
+  const verdictColor = isPass ? passGreen : isWarn ? warnAmber : rgb(0.85, 0.2, 0.2);
+
+  page.drawRectangle({
+    x: 44,
+    y: y - 36,
+    width: width - 88,
+    height: 48,
+    color: isPass ? rgb(0.93, 0.98, 0.95) : rgb(0.99, 0.97, 0.91),
+    borderColor: verdictColor,
+    borderWidth: 1.5,
+  });
+
+  page.drawText(
+    isPass
+      ? 'DICTAMEN: APROBADO — 100% CONFORME CON NORMAS IEEE XPLORE'
+      : isWarn
+      ? 'DICTAMEN: APROBADO CON OBSERVACIONES MENORES'
+      : 'DICTAMEN: REQUIERE CORRECCIONES TÉCNICAS',
+    {
+      x: 58,
+      y: y - 14,
+      size: 11,
+      font: fontBold,
+      color: verdictColor,
+    }
+  );
+
+  page.drawText(
+    isPass
+      ? 'El documento cumple todas las normas de incrustación de fuentes, formato de página y copyright para su publicación en IEEE Xplore.'
+      : 'El archivo cumple las normas esenciales de fuentes, pero revise las observaciones antes del envío definitivo.',
+    {
+      x: 58,
+      y: y - 28,
+      size: 8,
+      font: fontRegular,
+      color: textDark,
+    }
+  );
+
+  // Checks table header
+  y -= 62;
+  page.drawText('DESGLOSE DE VERIFICACIONES TÉCNICAS REALIZADAS', {
+    x: 44,
+    y,
+    size: 10,
+    font: fontBold,
+    color: primaryBlue,
+  });
+
+  y -= 16;
+  page.drawRectangle({
+    x: 44,
+    y: y - 18,
+    width: width - 88,
+    height: 22,
+    color: primaryBlue,
+  });
+  page.drawText('CRITERIO TÉCNICO', { x: 54, y: y - 12, size: 8, font: fontBold, color: rgb(1, 1, 1) });
+  page.drawText('ESTADO', { x: 230, y: y - 12, size: 8, font: fontBold, color: rgb(1, 1, 1) });
+  page.drawText('DETALLE / RESULTADO', { x: 300, y: y - 12, size: 8, font: fontBold, color: rgb(1, 1, 1) });
+
+  // Rows
+  const items = [
+    {
+      label: 'Cifrado y Seguridad',
+      status: 'CONFORME',
+      detail: 'Sin contraseñas ni restricciones de seguridad de impresión.',
+    },
+    {
+      label: 'Incrustación de Fuentes',
+      status:
+        result.embeddedFontsCount === result.totalFonts && result.totalFonts > 0
+          ? 'CONFORME (100%)'
+          : `${result.embeddedFontsCount}/${result.totalFonts} Incrustadas`,
+      detail: result.hasType3Fonts
+        ? 'Contiene fuentes Type 3 bitmap (No permitidas por IEEE)'
+        : result.unembeddedFontsCount === 0
+        ? 'Todas las fuentes están vectorizadas e incrustadas.'
+        : `Fuentes faltantes: ${result.fonts.filter((f) => !f.isEmbedded).map((f) => f.name).slice(0, 2).join(', ')}`,
+    },
+    {
+      label: 'Tamaño de Página',
+      status: result.pageSize.formatName.includes('Letter') ? 'CONFORME (Letter)' : result.pageSize.formatName,
+      detail: `Dimensiones: ${result.pageSize.widthInches}″ × ${result.pageSize.heightInches}″ (${result.pageSize.formatName})`,
+    },
+    {
+      label: 'Extensión de Páginas',
+      status: `${result.pageCount} Páginas`,
+      detail:
+        result.pageCount >= 6 && result.pageCount <= 8
+          ? 'Dentro del rango oficial de la conferencia (6 a 8 páginas).'
+          : 'Revisar si cuenta con autorización del comité para esta extensión.',
+    },
+    {
+      label: 'Aviso de Copyright IEEE',
+      status: result.hasCopyrightNotice ? 'DETECTADO' : 'NO DETECTADO',
+      detail: 'Código oficial: 979-8-3195-1521-6/26/$31.00 ©2026 IEEE al pie de la pág 1.',
+    },
+  ];
+
+  y -= 20;
+  items.forEach((item, index) => {
+    const rowBg = index % 2 === 0 ? bgLight : rgb(1, 1, 1);
+    page.drawRectangle({
+      x: 44,
+      y: y - 22,
+      width: width - 88,
+      height: 24,
+      color: rowBg,
+      borderColor: borderLight,
+      borderWidth: 0.5,
+    });
+
+    const isItemPass = item.status.includes('CONFORME') || item.status.includes('DETECTADO') || item.label.includes('Extensión');
+    const badgeColor = isItemPass ? passGreen : warnAmber;
+
+    page.drawText(item.label, { x: 54, y: y - 14, size: 8, font: fontBold, color: textDark });
+    page.drawText(item.status, { x: 230, y: y - 14, size: 8, font: fontBold, color: badgeColor });
+    page.drawText(item.detail.slice(0, 58), { x: 300, y: y - 14, size: 7.5, font: fontRegular, color: textMuted });
+
+    y -= 24;
+  });
+
+  // Fonts list preview
+  y -= 14;
+  page.drawText('FUENTES DETECTADAS EN EL DOCUMENTO:', {
+    x: 44,
+    y,
+    size: 8.5,
+    font: fontBold,
+    color: primaryBlue,
+  });
+
+  y -= 12;
+  const fontNames = result.fonts.map((f) => `${f.name} (${f.isEmbedded ? 'incrustada' : 'no incrustada'})`).join(', ');
+  const fontsSample = fontNames.length > 0 ? fontNames.slice(0, 180) + (fontNames.length > 180 ? '...' : '') : 'Sin fuentes detectadas';
+  page.drawText(fontsSample, {
+    x: 44,
+    y,
+    size: 7,
+    font: fontRegular,
+    color: textMuted,
+  });
+
+  // Bottom Notice & Signatures
+  y -= 36;
+  page.drawRectangle({
+    x: 44,
+    y: y - 48,
+    width: width - 88,
+    height: 52,
+    color: bgLight,
+    borderColor: borderLight,
+    borderWidth: 1,
+  });
+
+  page.drawText(
+    'Este certificado acredita que el manuscrito ha sido procesado mediante el motor de validación de conformidad IEEE Xplore',
+    {
+      x: 54,
+      y: y - 14,
+      size: 7.5,
+      font: fontRegular,
+      color: textMuted,
+    }
+  );
+  page.drawText(
+    'integrado de la plataforma CLAGTEE 2026. Conserve este archivo PDF y adjúntelo junto con la versión revisada y el eCF en el CMS.',
+    {
+      x: 54,
+      y: y - 26,
+      size: 7.5,
+      font: fontRegular,
+      color: textMuted,
+    }
+  );
+  page.drawText(`CLAGTEE 2026 Editorial Board • IEEE Chile Section • https://www.clagtee2026.org`, {
+    x: 54,
+    y: y - 40,
+    size: 7.5,
+    font: fontBold,
+    color: ieeeBlue,
+  });
+
+  return await pdfDoc.save();
+}
+
+// ---------------------------------------------------------------------------
+// Generador del Formulario de Copyright IEEE (eCF) Firmado Digitalmente (PDF)
+// ---------------------------------------------------------------------------
+
+export interface CopyrightFormMeta {
+  paperId: string;
+  paperTitle: string;
+  authorsText: string;
+  signerName: string;
+  signerEmail: string;
+  signerTitle?: string;
+  affiliation?: string;
+  copyrightType?: 'standard' | 'government' | 'crown' | 'eu';
+}
+
+export async function generateIeeeCopyrightFormPdf(meta: CopyrightFormMeta): Promise<Uint8Array> {
+  const pdfDoc = await PDFDocument.create();
+  const page = pdfDoc.addPage([612, 792]); // US Letter
+  const { width, height } = page.getSize();
+
+  const fontRegular = await pdfDoc.embedFont(StandardFonts.Helvetica);
+  const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+  const fontMono = await pdfDoc.embedFont(StandardFonts.Courier);
+
+  // Colors
+  const ieeeBlue = rgb(0 / 255, 98 / 255, 155 / 255); // #00629B
+  const darkNavy = rgb(13 / 255, 44 / 255, 84 / 255);
+  const textDark = rgb(30 / 255, 41 / 255, 59 / 255);
+  const textMuted = rgb(100 / 255, 116 / 255, 139 / 255);
+  const borderLight = rgb(226 / 255, 232 / 255, 240 / 255);
+  const bgLight = rgb(248 / 255, 250 / 255, 252 / 255);
+  const verifiedGreen = rgb(16 / 255, 185 / 255, 129 / 255);
+
+  // Outer border
+  page.drawRectangle({
+    x: 24,
+    y: 24,
+    width: width - 48,
+    height: height - 48,
+    borderColor: borderLight,
+    borderWidth: 1.5,
+  });
+
+  // Top IEEE band
+  page.drawRectangle({
+    x: 24,
+    y: height - 85,
+    width: width - 48,
+    height: 61,
+    color: ieeeBlue,
+  });
+
+  page.drawText('IEEE ELECTRONIC COPYRIGHT FORM (eCF)', {
+    x: 44,
+    y: height - 52,
+    size: 14,
+    font: fontBold,
+    color: rgb(1, 1, 1),
+  });
+  page.drawText('IEEE Copyright Transfer & Consent Agreement — CLAGTEE 2026', {
+    x: 44,
+    y: height - 68,
+    size: 9,
+    font: fontRegular,
+    color: rgb(0.85, 0.92, 1),
+  });
+
+  let y = height - 105;
+  const signDate = new Date().toISOString();
+  const readableDate = new Date().toLocaleDateString('es-CL', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+  const ecfHash = `eCF-IEEE-${meta.paperId.replace(/[^a-zA-Z0-9]/g, '')}-${Date.now().toString(36).toUpperCase()}`;
+
+  // Publication Details Box
+  y -= 14;
+  page.drawRectangle({
+    x: 44,
+    y: y - 110,
+    width: width - 88,
+    height: 116,
+    color: bgLight,
+    borderColor: borderLight,
+    borderWidth: 1,
+  });
+
+  page.drawText('DETALLES DE LA PUBLICACIÓN Y DEL ARTÍCULO', {
+    x: 54,
+    y: y - 4,
+    size: 9.5,
+    font: fontBold,
+    color: darkNavy,
+  });
+
+  page.drawText(`Publicación: 2026 XVI Latin-American Congress on Electricity Generation and Transmission (CLAGTEE)`, {
+    x: 54,
+    y: y - 22,
+    size: 8,
+    font: fontRegular,
+    color: textDark,
+  });
+  page.drawText(`ISBN / Part Number: 979-8-3195-1521-6 • Co-Sponsorship: IEEE Chile Section`, {
+    x: 54,
+    y: y - 36,
+    size: 8,
+    font: fontRegular,
+    color: textMuted,
+  });
+
+  page.drawText(`Identificador (Paper ID): #${meta.paperId}`, {
+    x: 54,
+    y: y - 52,
+    size: 9,
+    font: fontBold,
+    color: darkNavy,
+  });
+
+  const titleSample = meta.paperTitle.length > 80 ? meta.paperTitle.slice(0, 80) + '...' : meta.paperTitle;
+  page.drawText(`Título del artículo: ${titleSample}`, {
+    x: 54,
+    y: y - 68,
+    size: 8.5,
+    font: fontRegular,
+    color: textDark,
+  });
+
+  const authorsSample = meta.authorsText.length > 85 ? meta.authorsText.slice(0, 85) + '...' : meta.authorsText;
+  page.drawText(`Nómina de Autores: ${authorsSample}`, {
+    x: 54,
+    y: y - 84,
+    size: 8,
+    font: fontRegular,
+    color: textDark,
+  });
+
+  page.drawText(`Código de Registro eCF: ${ecfHash}`, {
+    x: 54,
+    y: y - 100,
+    size: 8,
+    font: fontMono,
+    color: ieeeBlue,
+  });
+
+  // Terms and conditions
+  y -= 138;
+  page.drawText('TÉRMINOS DE LA TRANSFERENCIA DE COPYRIGHT (IEEE COPYRIGHT POLICY):', {
+    x: 44,
+    y,
+    size: 9,
+    font: fontBold,
+    color: darkNavy,
+  });
+
+  const clauses = [
+    '1. El/la abajo firmante, en representación de todos los autores, transfiere al Institute of Electrical and Electronics Engineers, Incorporated (IEEE) todos los derechos de autor (copyright) del artículo identificado precedentemente, para su inclusión en las Actas de CLAGTEE 2026 y en la biblioteca digital IEEE Xplore.',
+    '2. Los autores conservan todos los derechos de propiedad intelectual distintos de los derechos de autor, tales como patentes y el derecho a reutilizar libremente partes o figuras del trabajo en obras futuras de su propia autoría, siempre que se cite la publicación original en IEEE.',
+    '3. Los autores garantizan que el artículo es una obra original, que no infringe derechos de terceros, que no ha sido publicado previamente en otra sede con derechos transferidos, y que todos los coautores han sido debidamente informados y han consentido esta transferencia.',
+    '4. La publicación y distribución final en IEEE Xplore queda sujeta a que al menos uno de los autores se inscriba y presente efectivamente el trabajo durante la conferencia presencial en Santiago de Chile.',
+  ];
+
+  y -= 12;
+  clauses.forEach((clause) => {
+    // Basic word wrap
+    const words = clause.split(' ');
+    let line = '';
+    words.forEach((w) => {
+      if (line.length + w.length > 95) {
+        page.drawText(line, { x: 44, y, size: 7.5, font: fontRegular, color: textDark });
+        y -= 10.5;
+        line = '   ';
+      }
+      line += (line === '   ' ? '' : ' ') + w;
+    });
+    if (line.trim()) {
+      page.drawText(line, { x: 44, y, size: 7.5, font: fontRegular, color: textDark });
+      y -= 13;
+    }
+  });
+
+  // Digital Signature Box
+  y -= 10;
+  page.drawRectangle({
+    x: 44,
+    y: y - 110,
+    width: width - 88,
+    height: 114,
+    color: rgb(0.97, 0.99, 0.98),
+    borderColor: verifiedGreen,
+    borderWidth: 1.5,
+  });
+
+  page.drawText('FIRMA ELECTRÓNICA Y CONSENTIMIENTO DIGITAL (e-Signature)', {
+    x: 54,
+    y: y - 4,
+    size: 9.5,
+    font: fontBold,
+    color: verifiedGreen,
+  });
+
+  page.drawText(`Firmado digitalmente por: ${meta.signerName}`, {
+    x: 54,
+    y: y - 24,
+    size: 11,
+    font: fontBold,
+    color: darkNavy,
+  });
+
+  page.drawText(`Correo electrónico del firmante: ${meta.signerEmail}`, {
+    x: 54,
+    y: y - 40,
+    size: 8.5,
+    font: fontRegular,
+    color: textDark,
+  });
+
+  if (meta.affiliation) {
+    page.drawText(`Afiliación institucional: ${meta.affiliation}`, {
+      x: 54,
+      y: y - 54,
+      size: 8.5,
+      font: fontRegular,
+      color: textDark,
+    });
+  }
+
+  page.drawText(`Fecha y hora de firma: ${readableDate} (${signDate})`, {
+    x: 54,
+    y: y - 70,
+    size: 8,
+    font: fontRegular,
+    color: textMuted,
+  });
+
+  page.drawText(`Estado: Consentimiento registrado electrónicamente y verificado en la plataforma CLAGTEE 2026.`, {
+    x: 54,
+    y: y - 86,
+    size: 8,
+    font: fontBold,
+    color: verifiedGreen,
+  });
+
+  page.drawText(`Hash de Integridad: ${ecfHash}`, {
+    x: 54,
+    y: y - 100,
+    size: 8,
+    font: fontMono,
+    color: textMuted,
+  });
+
+  // Footer notice
+  page.drawText('Este formulario electrónico de copyright tiene validez legal conforme a las políticas editoriales del IEEE.', {
+    x: 44,
+    y: 38,
+    size: 7.5,
+    font: fontRegular,
+    color: textMuted,
+  });
+  page.drawText('CLAGTEE 2026 Organizing Committee • IEEE Electronic Copyright Transfer System (eCF)', {
+    x: 44,
+    y: 28,
+    size: 7.5,
+    font: fontBold,
+    color: ieeeBlue,
+  });
+
+  return await pdfDoc.save();
+}
+

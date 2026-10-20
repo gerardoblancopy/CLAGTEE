@@ -39,6 +39,15 @@ export interface Paper {
   revisedFileKey?: string;
   revisedAt?: string;
   revisionNote?: string;
+  copyrightFileName?: string;
+  copyrightFileUrl?: string;
+  copyrightFileKey?: string;
+  copyrightAt?: string;
+  formatCertFileName?: string;
+  formatCertFileUrl?: string;
+  formatCertFileKey?: string;
+  formatCertAt?: string;
+  formatValidationStatus?: string;
   assignedReviewerIds: string[];
   reviews: ReviewEntry[];
   decisionNotifiedAt?: string | null;
@@ -46,10 +55,17 @@ export interface Paper {
 }
 
 export interface RevisionInput {
-  fileName: string;
+  fileName?: string;
   fileUrl?: string;
-  fileKey: string;
+  fileKey?: string;
   revisionNote?: string;
+  copyrightFileName?: string;
+  copyrightFileUrl?: string;
+  copyrightFileKey?: string;
+  formatCertFileName?: string;
+  formatCertFileUrl?: string;
+  formatCertFileKey?: string;
+  formatValidationStatus?: string;
 }
 
 export interface PaperInput {

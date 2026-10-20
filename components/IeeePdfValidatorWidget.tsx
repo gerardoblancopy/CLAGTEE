@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { validateIeeePdf, IeeeValidationResult } from '../src/utils/ieeePdfValidator';
+import { validateIeeePdf, IeeeValidationResult, generateIeeeFormatCertificatePdf } from '../src/utils/ieeePdfValidator';
 
 interface IeeePdfValidatorWidgetProps {
   onValidated?: (result: IeeeValidationResult) => void;
@@ -17,10 +17,33 @@ export const IeeePdfValidatorWidget: React.FC<IeeePdfValidatorWidgetProps> = ({
   const [result, setResult] = useState<IeeeValidationResult | null>(null);
   const [showFontsList, setShowFontsList] = useState(false);
   const [copiedGs, setCopiedGs] = useState(false);
+  const [isDownloadingCert, setIsDownloadingCert] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const gsCommand =
     'gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -dEmbedAllFonts=true -sOutputFile=fixed_embedded.pdf original.pdf';
+
+  const handleDownloadCertificate = async () => {
+    if (!result) return;
+    setIsDownloadingCert(true);
+    try {
+      const pdfBytes = await generateIeeeFormatCertificatePdf(result);
+      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Certificado_Conformidad_IEEE_${result.fileName.replace(/\.pdf$/i, '')}.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (e) {
+      console.error(e);
+      alert('Error al generar el certificado');
+    } finally {
+      setIsDownloadingCert(false);
+    }
+  };
 
   const handleCopyGs = async () => {
     try {
@@ -253,6 +276,20 @@ export const IeeePdfValidatorWidget: React.FC<IeeePdfValidatorWidgetProps> = ({
                       ? 'Las fuentes principales están incrustadas, pero verifique las observaciones de extensión o copyright a continuación.'
                       : 'IEEE Xplore podría rechazar este artículo debido a fuentes no incrustadas o restricciones de seguridad.'}
                   </p>
+
+                  <div className="mt-3 flex flex-wrap items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={handleDownloadCertificate}
+                      disabled={isDownloadingCert}
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#00629B] hover:bg-[#004e7c] text-white font-bold text-xs shadow-xs transition-colors"
+                    >
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      <span>{isDownloadingCert ? 'Generando...' : 'Descargar Certificado de Formato IEEE (.PDF)'}</span>
+                    </button>
+                  </div>
                 </div>
               </div>
 

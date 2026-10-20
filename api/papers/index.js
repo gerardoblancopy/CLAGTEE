@@ -115,35 +115,60 @@ export default async function handler(req, res) {
 
       const current = snapshot.data();
 
-      if (current.submitterId !== session.id && session.role !== 'chair') {
+      const isSubmitter = current.submitterId === session.id;
+      const userEmail = String(session.email || '').trim().toLowerCase();
+      const isAuthor = Array.isArray(current.authors) && current.authors.some(
+        (a) => a && typeof a.email === 'string' && a.email.trim().toLowerCase() === userEmail
+      );
+      if (!isSubmitter && !isAuthor && session.role !== 'chair' && session.role !== 'staff') {
         res.status(403).json({ error: 'Not allowed to edit this paper' });
         return;
       }
 
-      // Version revisada (camera-ready): solo para papers ya aceptados y solo
-      // reemplaza el PDF, nunca los metadatos evaluados por los revisores.
+      // Version revisada (camera-ready): solo para papers ya aceptados.
+      // Permite cargar manuscrito revisado, formulario de copyright IEEE (eCF)
+      // y certificado de formato IEEE, juntos o de forma independiente.
       if (action === 'revision') {
         if (current.status !== 'accepted') {
           res.status(409).json({ error: 'Paper is not accepted' });
           return;
         }
-        if (typeof input.fileKey !== 'string' || !input.fileKey.trim()) {
-          res.status(400).json({ error: 'Missing revised file' });
-          return;
+
+        const now = new Date().toISOString();
+        const updates = {
+          updatedAt: now,
+        };
+
+        if (typeof input.revisionNote === 'string') {
+          updates.revisionNote = input.revisionNote.trim();
         }
 
-        const revisedAt = new Date().toISOString();
-        await ref.set(
-          {
-            revisedFileName: String(input.fileName || '').trim(),
-            revisedFileUrl: String(input.fileUrl || '').trim(),
-            revisedFileKey: input.fileKey.trim(),
-            revisionNote: String(input.revisionNote || '').trim(),
-            revisedAt,
-            updatedAt: revisedAt,
-          },
-          { merge: true }
-        );
+        if (typeof input.fileKey === 'string' && input.fileKey.trim()) {
+          updates.revisedFileName = String(input.fileName || '').trim();
+          updates.revisedFileUrl = String(input.fileUrl || '').trim();
+          updates.revisedFileKey = input.fileKey.trim();
+          updates.revisedAt = now;
+        }
+
+        if (typeof input.copyrightFileKey === 'string' && input.copyrightFileKey.trim()) {
+          updates.copyrightFileName = String(input.copyrightFileName || '').trim();
+          updates.copyrightFileUrl = String(input.copyrightFileUrl || '').trim();
+          updates.copyrightFileKey = input.copyrightFileKey.trim();
+          updates.copyrightAt = now;
+        }
+
+        if (typeof input.formatCertFileKey === 'string' && input.formatCertFileKey.trim()) {
+          updates.formatCertFileName = String(input.formatCertFileName || '').trim();
+          updates.formatCertFileUrl = String(input.formatCertFileUrl || '').trim();
+          updates.formatCertFileKey = input.formatCertFileKey.trim();
+          updates.formatCertAt = now;
+        }
+
+        if (typeof input.formatValidationStatus === 'string' && input.formatValidationStatus.trim()) {
+          updates.formatValidationStatus = input.formatValidationStatus.trim();
+        }
+
+        await ref.set(updates, { merge: true });
 
         const revisedSnapshot = await ref.get();
         res.status(200).json({ paper: normalizePaper(revisedSnapshot) });

@@ -886,6 +886,24 @@ Comité Organizador CLAGTEE 2026`;
                         Descargar version revisada
                       </DownloadLink>
                     )}
+                    {paper.formatCertFileKey && (
+                      <DownloadLink
+                        fileKey={paper.formatCertFileKey}
+                        fileName={paper.formatCertFileName}
+                        className="block text-xs font-bold text-teal-600 hover:underline mt-1"
+                      >
+                        Descargar certificado formato IEEE
+                      </DownloadLink>
+                    )}
+                    {paper.copyrightFileKey && (
+                      <DownloadLink
+                        fileKey={paper.copyrightFileKey}
+                        fileName={paper.copyrightFileName}
+                        className="block text-xs font-bold text-[#00629B] hover:underline mt-1"
+                      >
+                        Descargar Copyright IEEE (eCF)
+                      </DownloadLink>
+                    )}
                     {paper.revisionNote && (
                       <p className="text-[11px] text-gray-500 mt-1 whitespace-pre-line">
                         Nota del autor: {paper.revisionNote}

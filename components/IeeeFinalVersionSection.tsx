@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { IeeeFinalVersionContent } from '../types';
 import { IeeePdfValidatorWidget } from './IeeePdfValidatorWidget';
+import { generateIeeeCopyrightFormPdf } from '../src/utils/ieeePdfValidator';
 
 interface IeeeFinalVersionSectionProps {
   content: IeeeFinalVersionContent;
@@ -18,6 +19,48 @@ export const IeeeFinalVersionSection: React.FC<IeeeFinalVersionSectionProps> = (
 }) => {
   const [copiedCode, setCopiedCode] = useState(false);
   const [copiedConfId, setCopiedConfId] = useState(false);
+  const [showWebEcfAssistant, setShowWebEcfAssistant] = useState(false);
+  const [webEcfPaperId, setWebEcfPaperId] = useState('');
+  const [webEcfTitle, setWebEcfTitle] = useState('');
+  const [webEcfAuthors, setWebEcfAuthors] = useState('');
+  const [webEcfSignerName, setWebEcfSignerName] = useState('');
+  const [webEcfSignerEmail, setWebEcfSignerEmail] = useState('');
+  const [webEcfAffiliation, setWebEcfAffiliation] = useState('');
+  const [isGeneratingWebEcf, setIsGeneratingWebEcf] = useState(false);
+
+  const handleGenerateWebEcf = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!webEcfPaperId.trim() || !webEcfTitle.trim() || !webEcfSignerName.trim() || !webEcfSignerEmail.trim()) {
+      alert('Por favor complete los campos obligatorios del formulario');
+      return;
+    }
+    setIsGeneratingWebEcf(true);
+    try {
+      const pdfBytes = await generateIeeeCopyrightFormPdf({
+        paperId: webEcfPaperId.trim(),
+        paperTitle: webEcfTitle.trim(),
+        authorsText: webEcfAuthors.trim() || webEcfSignerName.trim(),
+        signerName: webEcfSignerName.trim(),
+        signerEmail: webEcfSignerEmail.trim(),
+        affiliation: webEcfAffiliation.trim() || undefined,
+        copyrightType: 'standard',
+      });
+      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `IEEE_Copyright_eCF_${webEcfPaperId.trim().replace(/[^a-zA-Z0-9]/g, '')}.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error(err);
+      alert('Error al generar el formulario de Copyright');
+    } finally {
+      setIsGeneratingWebEcf(false);
+    }
+  };
 
   const handleCopyCode = async () => {
     try {
@@ -443,15 +486,162 @@ export const IeeeFinalVersionSection: React.FC<IeeeFinalVersionSectionProps> = (
               </ol>
             </div>
 
-            <button
-              onClick={onNavigateCMS}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#00629B] hover:bg-[#004e7c] text-white font-bold text-sm transition-colors shadow-sm"
-            >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              {content.step4.cmsCtaText}
-            </button>
+            {/* Direct Links and Online Assistant Box */}
+            <div className="bg-gradient-to-br from-[#F0F7FC] via-[#F8FAFC] to-sky-50/50 border border-sky-200 rounded-2xl p-5 sm:p-6 mb-6 space-y-4">
+              <div>
+                <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-[#00629B]/10 text-[#00629B] border border-[#00629B]/20">
+                  Opciones Oficiales de Copyright IEEE
+                </span>
+                <h4 className="text-base sm:text-lg font-bold text-[#0D2C54] mt-1">
+                  Acceso al Formulario y Firma de Derechos de Autor (eCF)
+                </h4>
+                <p className="text-xs text-slate-600 mt-1 font-['Roboto'] leading-relaxed">
+                  Puedes descargar el formulario oficial estándar de la IEEE, consultar las políticas en el portal de IEEE, o utilizar nuestro asistente de firma digital rápida para generar tu copia lista para subir al CMS.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <a
+                  href="https://www.ieee.org/content/dam/ieee-org/ieee/web/org/pubs/ecf_form.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#00629B] hover:bg-[#004e7c] text-white font-bold text-xs sm:text-sm transition-all shadow-sm"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  <span>Descargar Formulario Oficial IEEE eCF (.PDF)</span>
+                </a>
+
+                <button
+                  type="button"
+                  onClick={() => setShowWebEcfAssistant(!showWebEcfAssistant)}
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 border border-sky-300 text-[#00629B] font-bold text-xs sm:text-sm transition-all shadow-2xs"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                  </svg>
+                  <span>{showWebEcfAssistant ? 'Ocultar Asistente' : 'Generador y Firma Rápida eCF en Línea'}</span>
+                </button>
+
+                <a
+                  href="https://www.ieee.org/publications/rights/copyright-main.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-600 hover:text-[#00629B] hover:underline"
+                >
+                  <span>Portal Oficial de Derechos IEEE</span>
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+
+              {/* Online Assistant Drawer */}
+              {showWebEcfAssistant && (
+                <div className="mt-4 p-5 bg-white border border-sky-200 rounded-2xl shadow-xs space-y-4 animate-fade-in">
+                  <div className="border-b border-slate-100 pb-2">
+                    <h5 className="font-bold text-[#0D2C54] text-sm">
+                      Asistente Digital de Formulario IEEE Copyright (eCF)
+                    </h5>
+                    <p className="text-xs text-slate-500">
+                      Ingresa los datos de tu artículo para generar y descargar inmediatamente el formulario oficial en PDF listo para firmar o subir al CMS.
+                    </p>
+                  </div>
+
+                  <form onSubmit={handleGenerateWebEcf} className="space-y-3 text-xs">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div>
+                        <label className="block font-bold text-slate-700 mb-1">ID del Artículo *</label>
+                        <input
+                          type="text"
+                          required
+                          value={webEcfPaperId}
+                          onChange={(e) => setWebEcfPaperId(e.target.value)}
+                          placeholder="Ej: INT-6"
+                          className="w-full px-3 py-2 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#00629B] outline-none"
+                        />
+                      </div>
+                      <div>
+                        <label className="block font-bold text-slate-700 mb-1">Nombre del Firmante *</label>
+                        <input
+                          type="text"
+                          required
+                          value={webEcfSignerName}
+                          onChange={(e) => setWebEcfSignerName(e.target.value)}
+                          placeholder="Nombre y Apellido del autor remitente"
+                          className="w-full px-3 py-2 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#00629B] outline-none"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block font-bold text-slate-700 mb-1">Título del Artículo *</label>
+                      <input
+                        type="text"
+                        required
+                        value={webEcfTitle}
+                        onChange={(e) => setWebEcfTitle(e.target.value)}
+                        placeholder="Título completo en inglés tal como figura en el envío"
+                        className="w-full px-3 py-2 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#00629B] outline-none"
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div>
+                        <label className="block font-bold text-slate-700 mb-1">Nómina de Autores (separados por coma)</label>
+                        <input
+                          type="text"
+                          value={webEcfAuthors}
+                          onChange={(e) => setWebEcfAuthors(e.target.value)}
+                          placeholder="Ej: Guilherme Borges de Andrade, Alexandre Rasi Aoki"
+                          className="w-full px-3 py-2 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#00629B] outline-none"
+                        />
+                      </div>
+                      <div>
+                        <label className="block font-bold text-slate-700 mb-1">Correo Electrónico Institucional *</label>
+                        <input
+                          type="email"
+                          required
+                          value={webEcfSignerEmail}
+                          onChange={(e) => setWebEcfSignerEmail(e.target.value)}
+                          placeholder="autor@universidad.edu"
+                          className="w-full px-3 py-2 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#00629B] outline-none"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between pt-2">
+                      <span className="text-[11px] text-slate-500 italic">
+                        El PDF generado incluye el código ISBN oficial y la certificación de CLAGTEE 2026.
+                      </span>
+                      <button
+                        type="submit"
+                        disabled={isGeneratingWebEcf}
+                        className="px-5 py-2.5 rounded-xl bg-[#00629B] hover:bg-[#004e7c] text-white font-bold transition-all shadow-sm disabled:opacity-50"
+                      >
+                        {isGeneratingWebEcf ? 'Generando PDF...' : 'Generar y Descargar eCF (.PDF)'}
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              )}
+            </div>
+
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-50 border border-slate-200 rounded-2xl p-4">
+              <p className="text-xs text-slate-600 font-['Roboto']">
+                Una vez tengas tu archivo de Copyright eCF firmado, accede a la <strong>Consola de Autor (CMS)</strong> para adjuntarlo en la sección de entrega final de tu trabajo.
+              </p>
+              <button
+                onClick={onNavigateCMS}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#0D2C54] hover:bg-[#1A4B8A] text-white font-bold text-xs sm:text-sm transition-colors shadow-sm shrink-0"
+              >
+                <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                </svg>
+                {content.step4.cmsCtaText}
+              </button>
+            </div>
           </div>
 
           {/* STEP 5 */}

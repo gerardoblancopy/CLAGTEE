@@ -133,9 +133,45 @@ const PaperCard: React.FC<PaperCardProps> = ({
               fileName={paper.revisedFileName}
               className="text-purple-600 text-xs font-bold hover:underline"
             >
-              Versión Corregida
+              Versión Final
             </DownloadLink>
           ) : null}
+
+          {paper.formatCertFileKey || paper.formatCertFileUrl ? (
+            <DownloadLink
+              fileKey={paper.formatCertFileKey}
+              fileUrl={paper.formatCertFileUrl}
+              fileName={paper.formatCertFileName}
+              className="text-teal-600 text-xs font-bold hover:underline"
+            >
+              Certificado IEEE
+            </DownloadLink>
+          ) : null}
+
+          {paper.copyrightFileKey || paper.copyrightFileUrl ? (
+            <DownloadLink
+              fileKey={paper.copyrightFileKey}
+              fileUrl={paper.copyrightFileUrl}
+              fileName={paper.copyrightFileName}
+              className="text-[#00629B] text-xs font-bold hover:underline"
+            >
+              Copyright eCF
+            </DownloadLink>
+          ) : null}
+
+          {paper.reviews && paper.reviews.length > 0 && (
+            <button
+              type="button"
+              onClick={onToggleExpand}
+              className="px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-bold transition-colors flex items-center gap-1 border border-blue-200"
+              title="Consultar dictamen y recomendaciones de los revisores"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <span>{isExpanded ? 'Ocultar Revisiones' : `Ver Revisiones (${paper.reviews.length})`}</span>
+            </button>
+          )}
 
           {!isCoAuthor &&
             paper.status === 'pending' &&
@@ -167,7 +203,7 @@ const PaperCard: React.FC<PaperCardProps> = ({
         </div>
       </div>
 
-      {!isCoAuthor && paper.status === 'accepted' && <RevisionUpload paper={paper} />}
+      {paper.status === 'accepted' && <RevisionUpload paper={paper} />}
 
       {isExpanded && (
         <div className="w-full border-t border-gray-100 pt-4 text-sm text-gray-600 space-y-3">
@@ -251,6 +287,14 @@ export const AuthorDashboard: React.FC<{
     });
   }, [papers, user, normUserEmail]);
 
+  const allUserPapers = useMemo(() => {
+    return [...submittedPapers, ...coAuthoredPapers];
+  }, [submittedPapers, coAuthoredPapers]);
+
+  const acceptedPapers = useMemo(() => {
+    return allUserPapers.filter((p) => p.status === 'accepted');
+  }, [allUserPapers]);
+
   const handleWithdraw = async (paperId: string) => {
     const ok = window.confirm('¿Deseas retirar este trabajo?');
     if (!ok) return;
@@ -282,6 +326,65 @@ export const AuthorDashboard: React.FC<{
       </div>
 
       <MyRegistrationCard accountEmail={user?.email} />
+
+      {/* Banner de Guía para Autores con Artículos Aceptados */}
+      {acceptedPapers.length > 0 && (
+        <div className="bg-gradient-to-r from-emerald-900 via-[#00629B] to-[#0D2C54] rounded-3xl p-6 sm:p-8 text-white shadow-lg space-y-4 border border-emerald-500/30">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center shrink-0">
+                <svg className="w-7 h-7 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <span className="text-[10px] uppercase font-bold tracking-widest px-2.5 py-0.5 rounded-full bg-emerald-400/20 text-emerald-300 border border-emerald-400/30">
+                  ¡Artículo(s) Aceptado(s) para IEEE Xplore!
+                </span>
+                <h4 className="text-xl sm:text-2xl font-black text-white mt-1">
+                  Guía de Entrega Final Camera-Ready
+                </h4>
+              </div>
+            </div>
+            <a
+              href="/#version-final-ieee"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider transition-colors border border-white/20 shrink-0 self-start sm:self-auto"
+            >
+              <span>Ver Guía Oficial de 6 Pasos</span>
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+
+          <p className="text-xs sm:text-sm text-emerald-100 max-w-3xl leading-relaxed font-['Roboto']">
+            Tienes <strong>{acceptedPapers.length} artículo(s) aceptado(s)</strong> para publicación en IEEE Xplore y exposición presencial en CLAGTEE 2026. En cada tarjeta de tus trabajos aceptados abajo encontrarás el <strong>Centro de Entrega Camera-Ready</strong> con los 3 documentos obligatorios:
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+            <div className="bg-white/10 rounded-xl p-3 border border-white/10 backdrop-blur-xs">
+              <span className="text-emerald-300 font-bold text-xs block mb-0.5">1. Manuscrito Final</span>
+              <p className="text-[11px] text-blue-100">
+                Con formato oficial IEEE, aviso de copyright al pie y observaciones de revisores incorporadas.
+              </p>
+            </div>
+            <div className="bg-white/10 rounded-xl p-3 border border-white/10 backdrop-blur-xs">
+              <span className="text-teal-300 font-bold text-xs block mb-0.5">2. Certificado de Formato IEEE</span>
+              <p className="text-[11px] text-blue-100">
+                Puedes generarlo y descargarlo automáticamente con 1 clic desde tu panel.
+              </p>
+            </div>
+            <div className="bg-white/10 rounded-xl p-3 border border-white/10 backdrop-blur-xs">
+              <span className="text-sky-300 font-bold text-xs block mb-0.5">3. Copyright IEEE (eCF)</span>
+              <p className="text-[11px] text-blue-100">
+                Firma electrónica digital integrada directamente en tu artículo o enlace al PDF oficial.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Plantilla Oficial para la Presentación */}
       <div className="bg-gradient-to-r from-[#FFFBF5] to-[#FFF5EB] border border-amber-200 rounded-2xl p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">

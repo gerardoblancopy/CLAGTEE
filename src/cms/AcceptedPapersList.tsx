@@ -10,6 +10,7 @@ import {
 } from './exportPapersExcel';
 import { normalizePaperId, resolveRegistrationPaperId } from './registrationSegments';
 import { PaperEmailModal, PaperEmailTarget } from './PaperEmailModal';
+import { DownloadLink } from './DownloadLink';
 
 type PaperClassificationFilter = 'all' | PaperStatus;
 type RegistrationFilter = 'all' | 'sin-inscripcion' | 'con-inscripcion' | Exclude<RegistrationStatus, 'cancelada'>;
@@ -630,6 +631,67 @@ export const AcceptedPapersList: React.FC<AcceptedPapersListProps> = ({
                       <span className="text-gray-400 text-[11px] italic">Sin co-autores registrados</span>
                     )}
                   </div>
+                </div>
+
+                {/* Documentos del Paper: Original y Entregables Camera-Ready IEEE */}
+                <div className="flex flex-wrap items-center gap-2 pt-1 text-xs">
+                  {paper.fileKey && (
+                    <DownloadLink
+                      fileKey={paper.fileKey}
+                      fileName={paper.fileName}
+                      className="text-xs text-gray-600 hover:text-[#0D2C54] hover:underline flex items-center gap-1 font-medium bg-gray-50 border border-gray-200 px-2 py-0.5 rounded"
+                    >
+                      <svg className="w-3.5 h-3.5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      <span>Original</span>
+                    </DownloadLink>
+                  )}
+
+                  {paper.revisedFileKey ? (
+                    <DownloadLink
+                      fileKey={paper.revisedFileKey}
+                      fileName={paper.revisedFileName}
+                      className="text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 px-2 py-0.5 rounded flex items-center gap-1 font-semibold"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                      <span>Versión Final</span>
+                    </DownloadLink>
+                  ) : paper.status === 'accepted' ? (
+                    <span className="text-[11px] text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded font-medium">
+                      Versión Final: Pendiente
+                    </span>
+                  ) : null}
+
+                  {paper.formatCertFileKey ? (
+                    <DownloadLink
+                      fileKey={paper.formatCertFileKey}
+                      fileName={paper.formatCertFileName}
+                      className="text-xs text-teal-800 bg-teal-50 border border-teal-200 hover:bg-teal-100 px-2 py-0.5 rounded flex items-center gap-1 font-semibold"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-teal-600"></span>
+                      <span>Certificado IEEE</span>
+                    </DownloadLink>
+                  ) : paper.status === 'accepted' ? (
+                    <span className="text-[11px] text-gray-500 bg-gray-50 border border-gray-200 px-2 py-0.5 rounded">
+                      Certificado: Pendiente
+                    </span>
+                  ) : null}
+
+                  {paper.copyrightFileKey ? (
+                    <DownloadLink
+                      fileKey={paper.copyrightFileKey}
+                      fileName={paper.copyrightFileName}
+                      className="text-xs text-[#00629B] bg-sky-50 border border-sky-200 hover:bg-sky-100 px-2 py-0.5 rounded flex items-center gap-1 font-semibold"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#00629B]"></span>
+                      <span>Copyright IEEE</span>
+                    </DownloadLink>
+                  ) : paper.status === 'accepted' ? (
+                    <span className="text-[11px] text-gray-500 bg-gray-50 border border-gray-200 px-2 py-0.5 rounded">
+                      Copyright: Pendiente
+                    </span>
+                  ) : null}
                 </div>
 
                 {/* Cruce con Inscripción en CMS */}

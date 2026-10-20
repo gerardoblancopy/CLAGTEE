@@ -141,7 +141,7 @@ const PUBLIC_DOWNLOAD_PREFIX = 'Templates/';
 const STAFF_ONLY_DOWNLOAD_PREFIXES = ['comprobantes/', 'student-proofs/'];
 
 const findPaperByFileKey = async (db, fileKey) => {
-  for (const field of ['fileKey', 'revisedFileKey']) {
+  for (const field of ['fileKey', 'revisedFileKey', 'copyrightFileKey', 'formatCertFileKey']) {
     const snapshot = await db.collection('papers').where(field, '==', fileKey).limit(1).get();
     if (!snapshot.empty) return snapshot.docs[0].data();
   }

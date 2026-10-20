@@ -320,27 +320,25 @@ export const contentEN: Content = {
         "title": "Complete and sign the IEEE Copyright Form (eCF)",
         "description": "A mandatory legal requirement for your paper to be sent and indexed in IEEE Xplore is signing the transfer of copyright through the IEEE Electronic Copyright Form (eCF).",
         "instructions": [
-          "Access the Author Console in the CLAGTEE 2026 CMS (https://www.clagtee2026.org/cms).",
-          "Click on the Copyright option available for your accepted paper.",
-          "You will be redirected to the secure IEEE portal to complete the digital Electronic Copyright Form (eCF).",
-          "Upon completion, download and save a digital copy of the signed IEEE Copyright Form in PDF format.",
-          "You must keep this signed PDF copy and attach it during the final submission step in the CMS."
+          "Download the official standard IEEE Copyright Form (.PDF) directly from this page, or use our instant online eCF Digital Assistant.",
+          "You can also sign the copyright form electronically directly within the CLAGTEE 2026 Author Console (CMS).",
+          "Upon completing the signature, download and save a digital copy of the signed IEEE Copyright Form in PDF format for your records.",
+          "Attach the signed Copyright PDF in the 'Camera-Ready Delivery Center' of your accepted paper in the CMS."
         ],
         "cmsCtaText": "Go to Author Console (CMS)"
       },
       "step5": {
         "number": "Step 5",
-        "title": "Submit the final Camera-Ready version via the CMS",
-        "checklistTitle": "Pre-submission Checklist:",
+        "title": "Upload the 3 final documents in the CMS (Camera-Ready Center)",
+        "checklistTitle": "Checklist of the 3 required documents in the CMS:",
         "checklist": [
-          "Have you incorporated all reviewer comments and technical requirements?",
-          "Does the document exclude any page numbering or extra headers?",
-          "Are all figures and tables high-resolution with legible labels?",
-          "Are the title, abstract, and Index Terms strictly in English?",
-          "Has the PDF been validated and Approved by the Automated IEEE Validator?",
-          "Do you have the signed PDF copy of the IEEE Copyright Form ready?"
+          "Document 1: Final revised manuscript in PDF (US Letter, 100% embedded fonts, and copyright notice in footer).",
+          "Document 2: IEEE Format Compliance Certificate (downloaded from the validator or auto-generated in the CMS).",
+          "Document 3: Digitally signed IEEE Copyright Form (eCF).",
+          "Verify that you have NOT added page numbers or headers outside the official template.",
+          "Verify that title, abstract, and Index Terms are exclusively in English."
         ],
-        "cmsInstructions": "Once all items are verified, log in to the CLAGTEE 2026 CMS (https://www.clagtee2026.org/cms), open your accepted paper under 'My Submissions', and click 'Submit Camera-Ready Version' to attach the approved PDF.",
+        "cmsInstructions": "Once your files are ready, log in to the CLAGTEE 2026 Author Console (https://www.clagtee2026.org/cms), where you will find the Camera-Ready Delivery Center on your accepted paper's card to upload or update any of the 3 documents.",
         "presentationWarning": "IMPORTANT: At least one author must register and present the paper in person during the conference in Santiago, Chile. Papers not presented will not be forwarded to IEEE Xplore and will only appear in local proceedings.",
         "cmsButtonText": "Access CMS to Submit Final Version"
       },

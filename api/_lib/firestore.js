@@ -177,6 +177,15 @@ export const normalizePaper = (doc) => {
     revisedFileKey: data.revisedFileKey || '',
     revisedAt: data.revisedAt || '',
     revisionNote: data.revisionNote || '',
+    copyrightFileName: data.copyrightFileName || '',
+    copyrightFileUrl: data.copyrightFileUrl || '',
+    copyrightFileKey: data.copyrightFileKey || '',
+    copyrightAt: data.copyrightAt || '',
+    formatCertFileName: data.formatCertFileName || '',
+    formatCertFileUrl: data.formatCertFileUrl || '',
+    formatCertFileKey: data.formatCertFileKey || '',
+    formatCertAt: data.formatCertAt || '',
+    formatValidationStatus: data.formatValidationStatus || '',
     assignedReviewerIds: Array.isArray(data.assignedReviewerIds)
       ? data.assignedReviewerIds
       : [],
