@@ -201,12 +201,16 @@ filas = [
 
 [comite_programa]
 titulo = "Program Committee Members"
-# Formato 2019: "Apellido, Nombre" y país. Se ordena alfabéticamente al
-# imprimir. Completar con los revisores del CMS (rol reviewer).
+# Normalmente sale de la hoja "Revisores" del Excel del CMS. Esta lista solo
+# se usa si el export no trae esa hoja. Formato 2019: "Apellido, Nombre", país.
 miembros = [
   ["TODO: Apellido, Nombre", "Chile"],
 ]
 filas_por_pagina = 27
+
+# Correcciones del nombre de un revisor. Clave: nombre como está en el CMS.
+# Valor: "Apellido, Nombre". Ej.: "Diego Ruiz Mena" = "Ruiz Mena, Diego"
+[comite_programa.correcciones]
 
 [indice]
 titulo = "Index of abstracts"

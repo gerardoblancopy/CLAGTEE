@@ -133,8 +133,14 @@ común:
   `lineas_extra`, `nota_pie`).
 - `[prefacio]`: texto y firma. El texto actual es un borrador adaptado del
   prefacio 2019 con los datos 2026 del sitio: confirmarlo con el comité.
-- `[[comites]]`, `[comite_programa]`: tablas de la página xi y lista de
-  revisores (formato "Apellido, Nombre", país).
+- `[[comites]]`: tablas de la página xi.
+- Comité de Programa: sale de la hoja "Revisores (N)" del Excel del CMS
+  (revisores registrados, con trabajos asignados y evaluaciones enviadas). El
+  script arma "Apellido, Nombre" y deduce el país de la afiliación o del
+  dominio del email; lo que no pudo deducir queda en el reporte y se corrige
+  en `[comite_programa.correcciones]`. `--revisores-con-evaluaciones` deja
+  solo a quienes enviaron al menos una evaluación. Si el Excel no trae esa
+  hoja, se usa `[comite_programa].miembros` del .toml.
 - `[patrocinadores]`: logos y alto en pt.
 - `[[tracks]]`: los 13 tracks oficiales con su título en es/en/pt; el CMS
   guarda el título en español y el libro imprime el inglés.

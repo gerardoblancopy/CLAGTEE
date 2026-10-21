@@ -134,17 +134,15 @@ def convencion(autor: dict) -> str:
     return "desconocida"
 
 
-def entrada_indice(autor: dict, correcciones: dict) -> tuple[str, str]:
-    """Devuelve ("Apellido, I", motivo) para el índice de autores."""
+def dividir_nombre(autor: dict) -> tuple[str, str, str]:
+    """Devuelve (apellidos, nombres, motivo) según la convención del autor."""
     nombre = autor["nombre"]
-    if nombre in correcciones:
-        return correcciones[nombre], "corrección manual"
     if "," in nombre:
         ap, nom = [espacios(x) for x in nombre.split(",", 1)]
-        return f"{ap}, {nom[:1].upper()}", "formato 'Apellido, Nombre'"
+        return ap, nom, "formato 'Apellido, Nombre'"
     tokens = nombre.split(" ")
     if len(tokens) == 1:
-        return tokens[0], "un solo nombre"
+        return tokens[0], "", "un solo nombre"
     conv = convencion(autor)
     motivo = "último apellido"
     es_inicial = re.compile(r"^\w\.?$")
@@ -160,13 +158,19 @@ def entrada_indice(autor: dict, correcciones: dict) -> tuple[str, str]:
         motivo = "AMBIGUO: 3 palabras, se asumió nombre + 2 apellidos"
     else:
         inicio = len(tokens) - 1
-        if conv == "hispana" and len(tokens) == 3:
+        if conv in {"hispana", "desconocida"} and len(tokens) == 3:
             motivo = "AMBIGUO: 3 palabras, se asumió 2 nombres + apellido"
     while inicio > 1 and tokens[inicio - 1].lower() in PARTICULAS:
         inicio -= 1
-    apellido = " ".join(tokens[inicio:])
-    inicial = tokens[0][:1].upper()
-    return f"{apellido}, {inicial}", motivo
+    return " ".join(tokens[inicio:]), " ".join(tokens[:inicio]), motivo
+
+
+def entrada_indice(autor: dict, correcciones: dict) -> tuple[str, str]:
+    """Devuelve ("Apellido, I", motivo) para el índice de autores."""
+    if autor["nombre"] in correcciones:
+        return correcciones[autor["nombre"]], "corrección manual"
+    apellido, nombres, motivo = dividir_nombre(autor)
+    return (f"{apellido}, {nombres[:1].upper()}" if nombres else apellido), motivo
 
 
 def unir_autores(nombres: list[str], conector: str) -> str:
@@ -260,6 +264,110 @@ def leer_papers(ruta: Path) -> list[dict]:
         datos = json.loads(ruta.read_text(encoding="utf-8"))
         return datos["papers"] if isinstance(datos, dict) and "papers" in datos else datos
     sys.exit(f"Formato no soportado: {ruta.suffix} (use .xlsx, .csv o .json)")
+
+
+PAISES_TLD = {
+    "br": "Brasil", "cl": "Chile", "ar": "Argentina", "pe": "Perú", "co": "Colombia", "mx": "México",
+    "uy": "Uruguay", "py": "Paraguay", "bo": "Bolivia", "ec": "Ecuador", "ve": "Venezuela", "es": "España",
+    "pt": "Portugal", "uk": "Reino Unido", "de": "Alemania", "fr": "Francia", "it": "Italia", "no": "Noruega",
+    "cu": "Cuba", "hn": "Honduras", "cr": "Costa Rica", "in": "India", "hk": "Hong Kong", "ca": "Canadá",
+}
+PAISES_TEXTO = {
+    "brasil": "Brasil", "brazil": "Brasil", "chile": "Chile", "argentina": "Argentina", "peru": "Perú",
+    "perú": "Perú", "colombia": "Colombia", "mexico": "México", "méxico": "México", "uruguay": "Uruguay",
+    "paraguay": "Paraguay", "bolivia": "Bolivia", "ecuador": "Ecuador", "venezuela": "Venezuela",
+    "españa": "España", "spain": "España", "portugal": "Portugal", "usa": "Estados Unidos",
+    "united states": "Estados Unidos", "estados unidos": "Estados Unidos", "united kingdom": "Reino Unido",
+    "germany": "Alemania", "alemania": "Alemania", "france": "Francia", "italy": "Italia", "norway": "Noruega",
+    "canada": "Canadá", "india": "India", "cuba": "Cuba", "honduras": "Honduras",
+}
+# Siglas de instituciones frecuentes en el congreso, por si la afiliación
+# no nombra el país y el email es genérico (gmail, outlook...).
+INSTITUCIONES = {
+    "pucv": "Chile", "usach": "Chile", "utfsm": "Chile", "unab": "Chile", "uchile": "Chile", "puc": "Chile",
+    "udec": "Chile", "ufro": "Chile", "unesp": "Brasil", "usp": "Brasil", "unicamp": "Brasil", "utfpr": "Brasil",
+    "ufjf": "Brasil", "ufpr": "Brasil", "ufpa": "Brasil", "ufam": "Brasil", "ufg": "Brasil", "unifei": "Brasil",
+    "ufrj": "Brasil", "cepel": "Brasil", "unmdp": "Argentina", "utn": "Argentina", "unsj": "Argentina",
+    "conicet": "Argentina", "uba": "Argentina", "unlp": "Argentina",
+}
+
+
+def pais_de(email: str, afiliacion: str) -> str:
+    afil = (afiliacion or "").lower()
+    for clave, pais in PAISES_TEXTO.items():
+        if re.search(rf"\b{re.escape(clave)}\b", afil):
+            return pais
+    for sigla, pais in INSTITUCIONES.items():
+        if re.search(rf"\b{sigla}\b", afil):
+            return pais
+    dominio = (email or "").lower().rsplit("@", 1)[-1]
+    tld = dominio.rsplit(".", 1)[-1] if "." in dominio else ""
+    if tld in PAISES_TLD:
+        return PAISES_TLD[tld]
+    for sigla, pais in INSTITUCIONES.items():
+        if sigla in dominio.split("."):
+            return pais
+    return ""
+
+
+def leer_revisores(ruta: Path) -> list[dict] | None:
+    """Hoja "Revisores (N)" del Excel del CMS, o un CSV/XLSX con columnas
+    Nombre, Email, Afiliación. None si el archivo no trae revisores."""
+    filas: list[dict] = []
+    suf = ruta.suffix.lower()
+    if suf in {".xlsx", ".xlsm"}:
+        import openpyxl
+        wb = openpyxl.load_workbook(ruta, read_only=True, data_only=True)
+        hoja = next((h for h in wb.sheetnames if h.lower().startswith(("revisores", "reviewers"))), None)
+        if hoja is None:
+            return None
+        datos = list(wb[hoja].iter_rows(values_only=True))
+        cab = [str(c or "").strip() for c in datos[0]] if datos else []
+        filas = [dict(zip(cab, f)) for f in datos[1:] if any(v not in (None, "") for v in f)]
+    elif suf == ".csv":
+        with ruta.open(encoding="utf-8-sig", newline="") as f:
+            filas = list(csv.DictReader(f))
+    elif suf == ".json":
+        # JSON de GET /api/auth/users?role=reviewer: {"users": [...]}
+        datos = json.loads(ruta.read_text(encoding="utf-8"))
+        if not (isinstance(datos, dict) and isinstance(datos.get("users"), list)):
+            return None
+        filas = [u for u in datos["users"] if isinstance(u, dict) and u.get("role", "reviewer") == "reviewer"]
+    out = []
+    for f in filas:
+        nombre = espacios(f.get("Nombre") or f.get("name") or f.get("nombre") or "")
+        if not nombre:
+            continue
+        evals = f.get("Evaluaciones Enviadas")
+        out.append({
+            "nombre": limpiar_nombre(nombre),
+            "email": espacios(f.get("Email") or f.get("email") or ""),
+            "afiliacion": espacios(f.get("Afiliación") or f.get("affiliation") or f.get("afiliacion") or ""),
+            "evaluaciones": int(evals) if str(evals or "").strip().isdigit() else None,
+        })
+    return out
+
+
+def comite_desde_revisores(revisores: list[dict], cfg: dict, solo_con_evaluaciones: bool) -> tuple[list, list[str]]:
+    correcciones = cfg.get("comite_programa", {}).get("correcciones", {})
+    avisos = []
+    miembros = {}
+    for r in revisores:
+        if solo_con_evaluaciones and r["evaluaciones"] is not None and r["evaluaciones"] == 0:
+            continue
+        if r["nombre"] in correcciones:
+            entrada, motivo = correcciones[r["nombre"]], "corrección manual"
+        else:
+            apellido, nombres, motivo = dividir_nombre(r)
+            entrada = f"{apellido}, {nombres}" if nombres else apellido
+        pais = pais_de(r["email"], r["afiliacion"])
+        if not pais:
+            avisos.append(f"Comité de Programa: sin país para '{r['nombre']}' ({r['afiliacion'] or r['email']}).")
+        if motivo.startswith("AMBIGUO"):
+            avisos.append(f"Comité de Programa: '{r['nombre']}' -> '{entrada}' ({motivo}).")
+        miembros[clave_norm(entrada)] = [entrada, pais]
+    lista = sorted(miembros.values(), key=lambda m: clave_norm(m[0]))
+    return lista, avisos
 
 
 # ---------------------------------------------------------------------------
@@ -462,7 +570,8 @@ def construir(args, cfg: dict) -> tuple[dict, list[str], list[tuple]]:
 
 
 def escribir_reporte(salida: Path, cfg: dict, datos: dict, avisos: list[str], revision: list[tuple]) -> Path:
-    pendientes = list(buscar_todos(cfg))
+    pendientes = [p for p in buscar_todos(cfg)
+                  if not (datos.get("comite_programa") and p[0].startswith("comite_programa"))]
     lineas = ["# Reporte del Libro de Resúmenes", ""]
     e = datos["estadisticas"]
     lineas += [f"- Papers: **{e['papers']}** en **{e['tracks']}** tracks", f"- Entradas del índice de autores: {e['entradas_indice_autores']}", ""]
@@ -628,6 +737,10 @@ def main() -> None:
     ap.add_argument("--solo-datos", action="store_true", help="Genera libro.json y reporte.md sin compilar")
     ap.add_argument("--pliegos", action="store_true", help="Genera además la versión en pliegos (como el PDF 2019)")
     ap.add_argument("--vista-previa", default="", help="Páginas a exportar como PNG, p. ej. '1,3-5,27'")
+    ap.add_argument("--revisores", default="",
+                    help="Archivo con los revisores (por defecto, la hoja 'Revisores' del mismo Excel)")
+    ap.add_argument("--revisores-con-evaluaciones", action="store_true",
+                    help="Comité de Programa solo con revisores que enviaron al menos una evaluación")
     ap.add_argument("--fuentes", action="append", default=[],
                     help="Carpeta extra con fuentes (.ttf/.otf/.ttc); se puede repetir")
     args = ap.parse_args()
@@ -642,6 +755,17 @@ def main() -> None:
     salida.mkdir(parents=True, exist_ok=True)
 
     datos, avisos, revision = construir(args, cfg)
+    fuente_rev = Path(args.revisores or args.papers).expanduser()
+    revisores = leer_revisores(fuente_rev)
+    if revisores:
+        datos["comite_programa"], avisos_rev = comite_desde_revisores(revisores, cfg, args.revisores_con_evaluaciones)
+        avisos.extend(avisos_rev)
+        print(f"Comité de Programa: {len(datos['comite_programa'])} revisores del CMS ({fuente_rev.name}).")
+    elif args.revisores:
+        sys.exit(f"{fuente_rev} no trae una hoja o lista de revisores.")
+    else:
+        avisos.insert(0, "El archivo no trae la hoja 'Revisores': el Comité de Programa sale de la config "
+                         "([comite_programa].miembros). Exporte de nuevo desde el CMS para usar los revisores.")
     datos_json = salida / "libro.json"
     datos_json.write_text(json.dumps(datos, ensure_ascii=False, indent=1), encoding="utf-8")
     reporte = escribir_reporte(salida, cfg, datos, avisos, revision)

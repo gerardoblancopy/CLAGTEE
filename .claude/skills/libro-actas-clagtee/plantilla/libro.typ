@@ -328,7 +328,12 @@
 
 #{
   let cp = cfg.comite_programa
-  let miembros = cp.miembros.sorted(key: m => lower(m.at(0)))
+  // Revisores del CMS (hoja "Revisores" del export); si no vienen, la config.
+  let miembros = if data.at("comite_programa", default: ()).len() > 0 {
+    data.comite_programa
+  } else {
+    cp.miembros.sorted(key: m => lower(m.at(0)))
+  }
   let n = cp.filas_por_pagina
   let paginas = range(calc.max(1, calc.ceil(miembros.len() / n))).map(k =>
     miembros.slice(k * n, calc.min(miembros.len(), (k + 1) * n)))
