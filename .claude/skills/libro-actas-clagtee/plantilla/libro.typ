@@ -341,12 +341,17 @@
     pagebreak()
     if k == 0 { marcador(2, cp.titulo) }
     text(size: s(20pt), weight: "bold", cp.titulo)
-    salto(26.7pt, r(12pt))
-    pad(left: 25pt, {
-      set text(font: SERIF, size: r(12pt))
+    // Misma letra que las tablas de comités (en 2019 era Minion Pro 12 pt).
+    salto(26pt, s(11pt))
+    pad(left: 4pt, {
+      set text(size: s(11pt))
       set par(justify: false)
-      grid(columns: (220pt, auto), row-gutter: 16.7pt - ALTO-CAP * r(12pt),
-        ..lista.map(m => (t(m.at(0)), t(m.at(1)))).flatten())
+      if cp.at("mostrar_pais", default: true) {
+        grid(columns: (1fr, auto), column-gutter: 14pt, row-gutter: 16pt - ALTO-CAP * s(11pt),
+          ..lista.map(m => (t(m.at(0)), t(m.at(1)))).flatten())
+      } else {
+        grid(columns: 1, row-gutter: 16pt - ALTO-CAP * s(11pt), ..lista.map(m => t(m.at(0))))
+      }
     })
   }
 }

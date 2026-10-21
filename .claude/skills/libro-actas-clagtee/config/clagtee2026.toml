@@ -73,6 +73,7 @@ titulo = "Sponsors"
 logos = [
   { archivo = "public/sponsors/hendrix-marmon-dark.png", alto = 34 },
   { archivo = "public/sponsors/colegio-de-ingenieros.png", alto = 46 },
+  { archivo = "public/sponsors/desimat.png", alto = 30 },
 ]
 
 [contraportada]
@@ -84,10 +85,18 @@ logos_instituciones = [
 
 [seleccion]
 # IDs del CMS que no deben aparecer (retirados, no presentados, etc.).
-excluir = []
+# PLA-58 es el paper de prueba ("Test") que quedó aceptado en el CMS.
+excluir = ["PLA-58"]
 # "oficial": cada track conserva su número del llamado (1-13) aunque alguno
 # quede sin papers. "secuencial": se renumeran 1, 2, 3... como en 2019.
 numeracion_tracks = "oficial"
+
+[correcciones_papers]
+# Datos que faltan o están mal en el CMS, por ID. Ganan sobre el export.
+# Campos: titulo, resumen.
+"BIO-3" = { titulo = "Environmental Performance of Bioelectricity Production from Sugarcane Bagasse" }
+# Corregido también en el CMS el 21/10/2026; se puede borrar con el próximo export.
+"PLA-53" = { titulo = "Technical and Economic Feasibility Assessment of Implementing an Agrivoltaic System in a Soybean Plantation" }
 
 [publicacion]
 # Página iv ("DATA OF PUBLICATION"). En 2019 la ficha la emitió la agencia
@@ -194,9 +203,10 @@ filas = [
 ]
 
 [[comites]]
-titulo = "Conference secretary"
+titulo = "Conference secretaries"
 filas = [
-  ["TODO: Apellido, Nombre", "clagtee2026@pucv.cl"],
+  ["Carmona, María Elena", "PUCV (Chile)"],
+  ["Soto, Lisa", "PUCV (Chile)"],
 ]
 
 [comite_programa]
@@ -207,10 +217,18 @@ miembros = [
   ["TODO: Apellido, Nombre", "Chile"],
 ]
 filas_por_pagina = 27
+# true: columna de país al lado de cada nombre, como en 2019.
+mostrar_pais = false
+# Revisores del CMS que no van en el libro (nombre como está en el CMS).
+excluir = ["Hassan Sam Daliri", "Mohadese Dejagah"]
 
-# Correcciones del nombre de un revisor. Clave: nombre como está en el CMS.
-# Valor: "Apellido, Nombre". Ej.: "Diego Ruiz Mena" = "Ruiz Mena, Diego"
+# Correcciones del nombre de un revisor. Clave: nombre como está en el CMS
+# (con mayúsculas normalizadas). Valor: "Apellido, Nombre".
 [comite_programa.correcciones]
+"Jorge Ignacio Marin Niño de Zepeda" = "Marin Niño de Zepeda, Jorge Ignacio"
+
+# País de un revisor cuando no se deduce de la afiliación ni del email.
+[comite_programa.paises]
 
 [indice]
 titulo = "Index of abstracts"
@@ -223,6 +241,28 @@ titulo = "Author Index"
 # scratch/libro-actas/indice-autores.csv. Valor: "Apellido, Inicial".
 # Ej.: "Jorge Mendoza Baeza" = "Mendoza, J"
 [indice_autores.correcciones]
+# Dos apellidos (México, Perú, Cuba, Chile con email genérico)
+"Fernando Toledo Toledo" = "Toledo Toledo, F"
+"Cruz Díaz Castañeda" = "Díaz Castañeda, C"
+"Héctor Toledo Zamudio" = "Toledo Zamudio, H"
+"Manuel Lau Pacheco" = "Lau Pacheco, M"
+"Nicolás Palumbo Melillo" = "Palumbo Melillo, N"
+"Ernesto Silva González" = "Silva González, E"
+"Francisca Cardemil Pérez" = "Cardemil Pérez, F"
+"Matías Díaz Véliz" = "Díaz Véliz, M"
+"Elbis D'Espaux Shelton" = "D'Espaux Shelton, E"
+"Henrry Diaz Torres" = "Diaz Torres, H"
+"Alenys Rivero Nápoles" = "Rivero Nápoles, A"
+# Nombre compuesto + un apellido
+"Gino Leonel Furlano" = "Furlano, G"
+"Juan Pablo Méndez" = "Méndez, J"
+# Registrados con el apellido primero
+"Choque Palomino Aron" = "Choque Palomino, A"
+"Lima Choque Jesus" = "Lima Choque, J"
+"Ramos Catari Joaquin" = "Ramos Catari, J"
+"Apaza Quispe Jose Luis" = "Apaza Quispe, J"
+"Miranda Cahuana Francisco Alonso" = "Miranda Cahuana, F"
+"Rendulich Talavera Jorge Eusebio" = "Rendulich Talavera, J"
 
 # Tracks oficiales CLAGTEE 2026 (sitio web, data/translations/*.ts).
 # El CMS guarda el título en español; "es", "en" y "pt" sirven para

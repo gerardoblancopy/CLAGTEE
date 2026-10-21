@@ -141,6 +141,10 @@ común:
   en `[comite_programa.correcciones]`. `--revisores-con-evaluaciones` deja
   solo a quienes enviaron al menos una evaluación. Si el Excel no trae esa
   hoja, se usa `[comite_programa].miembros` del .toml.
+  `[comite_programa].excluir` saca revisores puntuales y
+  `mostrar_pais = false` imprime solo los nombres.
+- `[correcciones_papers]`: título o abstract por ID cuando en el CMS falta o
+  está mal (`"BIO-3" = { titulo = "..." }`); gana sobre el export.
 - `[patrocinadores]`: logos y alto en pt.
 - `[[tracks]]`: los 13 tracks oficiales con su título en es/en/pt; el CMS
   guarda el título en español y el libro imprime el inglés.

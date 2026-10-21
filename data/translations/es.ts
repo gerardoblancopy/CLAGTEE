@@ -1194,6 +1194,12 @@ export const contentES: Content = {
           "logoUrl": "/sponsors/colegio-de-ingenieros.png",
           "websiteUrl": "https://www.ingenieros.cl",
           "category": "Auspiciador Institucional · Zonal Valparaíso"
+        },
+        {
+          "name": "DESIMAT",
+          "logoUrl": "/sponsors/desimat.png",
+          "websiteUrl": "https://desimat.cl",
+          "category": "Patrocinador Industrial"
         }
       ],
       "ctaText": "¿Le interesa que su empresa u organización sea auspiciadora de CLAGTEE 2026?",

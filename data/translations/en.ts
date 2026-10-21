@@ -1194,6 +1194,12 @@ export const contentEN: Content = {
           "logoUrl": "/sponsors/colegio-de-ingenieros.png",
           "websiteUrl": "https://www.ingenieros.cl",
           "category": "Institutional Sponsor · Valparaíso Regional Council"
+        },
+        {
+          "name": "DESIMAT",
+          "logoUrl": "/sponsors/desimat.png",
+          "websiteUrl": "https://desimat.cl",
+          "category": "Industry Sponsor"
         }
       ],
       "ctaText": "Interested in showcasing your organization or company at CLAGTEE 2026?",

@@ -60,7 +60,9 @@ export const SponsorsSection: React.FC<SponsorsSectionProps> = ({ content }) => 
 
         {/* Sponsor Cards Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-14"
+          className={`grid grid-cols-1 gap-8 mx-auto mb-14 ${
+            content.list.length >= 3 ? 'md:grid-cols-3 max-w-6xl' : 'md:grid-cols-2 max-w-4xl'
+          }`}
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
