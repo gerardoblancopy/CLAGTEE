@@ -38,6 +38,9 @@ REPO_ROOT = SKILL_DIR.parents[2]
 DEFAULT_CONFIG = SKILL_DIR / "config" / "clagtee2026.toml"
 TEMPLATE = SKILL_DIR / "plantilla" / "libro.typ"
 FONTS_DIR = SKILL_DIR / "assets" / "fonts"
+# Fuentes con licencia que no se puede redistribuir (Nirmala UI, Minion Pro,
+# Modernica): se copian aquí y git las ignora.
+FONTS_LOCAL = SKILL_DIR / "assets" / "fonts-locales"
 DEFAULT_OUT = REPO_ROOT / "scratch" / "libro-actas"
 
 ACCEPTED = {"accepted", "aceptado", "aceptada"}
@@ -491,42 +494,67 @@ def rel(p: Path) -> str:
     return "/" + p.resolve().relative_to(REPO_ROOT).as_posix()
 
 
-def familias_instaladas() -> set[str] | None:
+# Variantes que el libro necesita de cada familia original (peso, estilo).
+# Sin la negrita, Typst dibujaría en regular los títulos y autores.
+VARIANTES = {
+    "sans": [(400, "normal"), (700, "normal")],
+    "serif": [(400, "normal")],
+    "display": [(700, "normal")],
+}
+
+
+def variantes_instaladas(carpetas: list[Path]) -> dict[str, set] | None:
+    """{familia en minúsculas: {(peso, estilo), ...}} visibles para Typst."""
     try:
         import typst
-        return {f.lower() for f in typst.Fonts(include_system_fonts=True, font_paths=[str(FONTS_DIR)]).families()}
+        fuentes = typst.Fonts(include_system_fonts=True, font_paths=[str(c) for c in carpetas]).fonts()
     except Exception:
-        pass
-    if shutil.which("fc-list"):
-        out = subprocess.run(["fc-list", ":", "family"], capture_output=True, text=True).stdout
-        return {f.strip().lower() for linea in out.splitlines() for f in linea.split(",")}
-    return None
-
-
-def escalas(cfg: dict) -> dict[str, str]:
-    """Factor de cuerpo por familia: 1 si está la fuente original del 2019,
-    el de la config si se usa la sustituta libre."""
-    fuentes = cfg.get("fuentes", {})
-    sustituta = fuentes.get("escala_sustituta", {})
-    instaladas = familias_instaladas()
-    out = {}
-    for tipo in ("sans", "serif", "display"):
-        original = (fuentes.get(tipo) or [""])[0].lower()
-        usa_original = instaladas is not None and original in instaladas
-        out[f"escala-{tipo}"] = "1" if usa_original else str(sustituta.get(tipo, 1))
-        print(f"  Fuente {tipo}: {'original (' + original + ')' if usa_original else 'sustituta libre, escala ' + out[f'escala-{tipo}']}")
+        return None
+    out: dict[str, set] = defaultdict(set)
+    for f in fuentes:
+        out[f.family.lower()].add((f.weight, f.style))
     return out
 
 
-def compilar(config: Path, cfg: dict, datos_json: Path, pdf: Path) -> None:
-    entradas = {"config": rel(config), "data": rel(datos_json), **escalas(cfg)}
+def elegir_fuentes(cfg: dict, carpetas: list[Path]) -> dict[str, str]:
+    """Familias y factor de cuerpo por tipo. La fuente original del 2019 se
+    usa solo si están todas sus variantes; si no, la sustituta libre con el
+    factor que iguala el ancho del texto."""
+    fuentes = cfg.get("fuentes", {})
+    sustituta = fuentes.get("escala_sustituta", {})
+    instaladas = variantes_instaladas(carpetas)
+    out = {}
+    for tipo, necesarias in VARIANTES.items():
+        lista = fuentes.get(tipo) or []
+        original = lista[0] if lista else ""
+        tiene = instaladas.get(original.lower(), set()) if instaladas is not None else set()
+        faltan = [v for v in necesarias if v not in tiene]
+        if lista and not faltan:
+            familias, escala = lista, "1"
+            print(f"  Fuente {tipo}: {original} (original)")
+        else:
+            familias, escala = lista[1:] or lista, str(sustituta.get(tipo, 1))
+            if tiene:
+                nombres = ", ".join("negrita" if peso >= 700 else "regular" for peso, _ in faltan)
+                print(f"  AVISO: {original} está instalada pero le falta: {nombres}. Se usa {familias[0]}.")
+            print(f"  Fuente {tipo}: {familias[0]} (sustituta libre, escala {escala})")
+        out[f"fuentes-{tipo}"] = "|".join(familias)
+        out[f"escala-{tipo}"] = escala
+        # Sin cursiva en la familia elegida, la plantilla inclina el texto.
+        cursiva = instaladas is not None and any(e == "italic" for _, e in instaladas.get(familias[0].lower(), set()))
+        out[f"cursiva-{tipo}"] = "1" if cursiva or instaladas is None else "0"
+    return out
+
+
+def compilar(config: Path, cfg: dict, datos_json: Path, pdf: Path, carpetas: list[Path]) -> None:
+    entradas = {"config": rel(config), "data": rel(datos_json), **elegir_fuentes(cfg, carpetas)}
     try:
         import typst
     except ImportError:
         typst = None
     if typst is not None:
         pdf_bytes, avisos = typst.compile_with_warnings(
-            str(TEMPLATE), root=str(REPO_ROOT), font_paths=[str(FONTS_DIR)], sys_inputs=entradas)
+            str(TEMPLATE), root=str(REPO_ROOT), font_paths=[str(c) for c in carpetas], sys_inputs=entradas)
         for a in avisos:
             msg = getattr(a, "message", str(a))
             if "unknown font family" not in msg:
@@ -536,7 +564,9 @@ def compilar(config: Path, cfg: dict, datos_json: Path, pdf: Path) -> None:
     cli = shutil.which("typst")
     if not cli:
         sys.exit("Falta Typst: pip install typst (o instale la CLI de typst).")
-    cmd = [cli, "compile", "--root", str(REPO_ROOT), "--font-path", str(FONTS_DIR)]
+    cmd = [cli, "compile", "--root", str(REPO_ROOT)]
+    for c in carpetas:
+        cmd += ["--font-path", str(c)]
     for k, v in entradas.items():
         cmd += ["--input", f"{k}={v}"]
     subprocess.run(cmd + [str(TEMPLATE), str(pdf)], check=True)
@@ -595,6 +625,8 @@ def main() -> None:
     ap.add_argument("--solo-datos", action="store_true", help="Genera libro.json y reporte.md sin compilar")
     ap.add_argument("--pliegos", action="store_true", help="Genera además la versión en pliegos (como el PDF 2019)")
     ap.add_argument("--vista-previa", default="", help="Páginas a exportar como PNG, p. ej. '1,3-5,27'")
+    ap.add_argument("--fuentes", action="append", default=[],
+                    help="Carpeta extra con fuentes (.ttf/.otf/.ttc); se puede repetir")
     args = ap.parse_args()
 
     config = Path(args.config).resolve()
@@ -618,7 +650,8 @@ def main() -> None:
 
     pdf = salida / f"{args.nombre}.pdf"
     print("Compilando con Typst...")
-    compilar(config, cfg, datos_json, pdf)
+    carpetas = [Path(c).expanduser().resolve() for c in args.fuentes] + [FONTS_LOCAL, FONTS_DIR]
+    compilar(config, cfg, datos_json, pdf, [c for c in carpetas if c.is_dir()])
     print(f"PDF: {pdf}")
     if args.pliegos:
         destino = salida / f"{args.nombre}_pliegos.pdf"

@@ -5,8 +5,10 @@
 // No se compila a mano: scripts/generar_libro.py le pasa por sys.inputs
 //   config  -> ruta (desde la raíz del repo) del .toml del libro
 //   data    -> ruta del libro.json generado a partir del export del CMS
-//   escala-sans / escala-serif / escala-display -> factor de cuerpo cuando
-//              se usa la fuente libre en vez de la original (ancho igualado)
+//   fuentes-sans / fuentes-serif / fuentes-display -> familias a usar
+//   escala-*   -> factor de cuerpo cuando se usa la fuente libre en vez de la
+//                 original (ancho igualado)
+//   cursiva-sans -> "0" si la familia no trae cursiva (se inclina el texto)
 // y usa la raíz del repositorio como raíz de Typst.
 
 #let cfg = toml(sys.inputs.at("config"))
@@ -40,9 +42,17 @@
 #let salto(base, cuerpo-sig) = v(base - ALTO-CAP * cuerpo-sig, weak: true)
 
 #let col(nombre) = rgb(cfg.colores.at(nombre))
-#let SANS = cfg.fuentes.sans
-#let SERIF = cfg.fuentes.serif
-#let DISPLAY = cfg.fuentes.display
+#let familias(tipo) = {
+  let clave = "fuentes-" + tipo
+  if clave in sys.inputs { sys.inputs.at(clave).split("|") } else { cfg.fuentes.at(tipo) }
+}
+#let SANS = familias("sans")
+#let SERIF = familias("serif")
+#let DISPLAY = familias("display")
+// Nirmala UI no tiene cursiva: InDesign la simulaba inclinando el texto.
+#let cursiva(x) = if sys.inputs.at("cursiva-sans", default: "1") == "1" {
+  text(style: "italic", x)
+} else { skew(ax: -11deg, x) }
 
 // Los valores pendientes ("TODO...") se imprimen en rojo.
 #let t(x) = {
@@ -241,7 +251,7 @@
 #salto(28pt, s(12pt))
 #for p in parrafos(cfg.prefacio.texto) { par(p) }
 #salto(28pt, s(12pt))
-#align(center, text(style: "italic", cfg.prefacio.firma_nombre + "\n" + cfg.prefacio.firma_cargo))
+#align(center, cursiva(cfg.prefacio.firma_nombre + "\n" + cfg.prefacio.firma_cargo))
 
 #a-impar()
 #estilo("pre")
@@ -422,7 +432,7 @@
       salto(28pt, s(14pt))
       [#metadata(it.titulo)#label(it.etiqueta)]
       block(sticky: true, width: 100%,
-        align(center, text(size: s(14pt), weight: "bold", style: "italic", upper(it.titulo))))
+        align(center, cursiva(text(size: s(14pt), weight: "bold", upper(it.titulo)))))
       despues-de-titulo = true
       continue
     }

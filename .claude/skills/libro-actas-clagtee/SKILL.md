@@ -146,10 +146,23 @@ papers traen una columna o campo `subtema`.
 
 ## Fuentes
 
-El 2019 usó Nirmala UI, Minion Pro y Modernica, que son comerciales. Si están
-instaladas en la máquina se usan tal cual; si no, se usan Open Sans, Crimson
-Text y Montserrat (incluidas) con un factor de cuerpo que iguala el ancho del
-texto al original (`[fuentes].escala_sustituta`). El script informa cuál usó.
+El 2019 usó Nirmala UI, Minion Pro y Modernica, que son comerciales y no se
+pueden subir al repo. El script busca cada familia en el sistema, en
+`assets/fonts-locales/` (ignorada por git, ver su `LEEME.md`) y en las
+carpetas pasadas con `--fuentes`. La usa solo si encuentra todas las
+variantes que el libro necesita: Nirmala UI regular **y** negrita, Minion Pro
+regular, Modernica negrita. Si falta alguna, avisa y usa Open Sans, Crimson
+Text o Montserrat (incluidas), con un factor de cuerpo que iguala el ancho
+del texto al original (`[fuentes].escala_sustituta`). Con ese factor, los
+resúmenes cortan las líneas en las mismas palabras que en 2019.
+
+Si el usuario sube las fuentes (por ejemplo, un .zip), descomprimirlas en una
+carpeta aparte y copiar los .ttf/.otf/.ttc a `assets/fonts-locales/`; al
+compilar, el script dice qué familia usó y qué variante falta. En una
+sesión nueva en la nube esa carpeta empieza vacía y hay que volver a copiarlas.
+
+Nirmala UI no tiene cursiva; la firma del prefacio y los subtemas se inclinan
+como hacía InDesign en 2019.
 
 ## Prueba rápida
 
