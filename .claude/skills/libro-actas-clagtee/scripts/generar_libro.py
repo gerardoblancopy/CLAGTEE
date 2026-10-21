@@ -115,12 +115,19 @@ def limpiar_nombre(nombre: str) -> str:
     n = espacios(nombre)
     n = TITULOS.sub("", n)
     n = GRADOS.sub("", n)
-    if n.isupper() or n.islower():
-        partes = []
-        for p in n.split(" "):
-            partes.append(p.lower() if p.lower() in PARTICULAS else p[:1].upper() + p[1:].lower())
-        n = " ".join(partes)
-    return n
+    todo_igual = n.isupper() or n.islower()
+    partes = []
+    for i, p in enumerate(n.split(" ")):
+        if p.lower() in PARTICULAS and i > 0:
+            partes.append(p.lower() if todo_igual else p)
+        elif todo_igual:
+            partes.append(p[:1].upper() + p[1:].lower())
+        elif p.islower():
+            # Palabra suelta en minúscula ("julio Jara", "De vicente").
+            partes.append(p[:1].upper() + p[1:])
+        else:
+            partes.append(p)
+    return " ".join(partes)
 
 
 def convencion(autor: dict) -> str:
@@ -146,6 +153,9 @@ def dividir_nombre(autor: dict) -> tuple[str, str, str]:
     conv = convencion(autor)
     motivo = "último apellido"
     es_inicial = re.compile(r"^\w\.?$")
+    # Inicial del segundo apellido al final ("Cristián E. Pesce G."): se omite.
+    if len(tokens) >= 3 and es_inicial.match(tokens[-1]) and not es_inicial.match(tokens[-2]):
+        tokens = tokens[:-1]
     if tokens[-1].lower() in SUFIJOS and len(tokens) >= 3:
         # "Wilson R. D. Junior" -> "Junior, W"; "Ivo Silva Junior" -> "Silva Junior, I"
         inicio = len(tokens) - 1 if es_inicial.match(tokens[-2]) else len(tokens) - 2
@@ -153,15 +163,18 @@ def dividir_nombre(autor: dict) -> tuple[str, str, str]:
     elif conv in {"hispana", "chilena"} and len(tokens) >= 4:
         inicio = len(tokens) - 2
         motivo = "dos apellidos (convención hispana)"
-    elif conv == "chilena" and len(tokens) == 3:
+    elif conv == "chilena" and len(tokens) == 3 and not es_inicial.match(tokens[1]):
         inicio = 1
         motivo = "AMBIGUO: 3 palabras, se asumió nombre + 2 apellidos"
     else:
         inicio = len(tokens) - 1
-        if conv in {"hispana", "desconocida"} and len(tokens) == 3:
+        if conv in {"hispana", "desconocida"} and len(tokens) == 3 and not es_inicial.match(tokens[1]):
             motivo = "AMBIGUO: 3 palabras, se asumió 2 nombres + apellido"
     while inicio > 1 and tokens[inicio - 1].lower() in PARTICULAS:
         inicio -= 1
+        # "Sales e Silva", "Oliveira y Paz": la conjunción une dos apellidos.
+        if tokens[inicio].lower() in {"e", "y"} and inicio > 1:
+            inicio -= 1
     return " ".join(tokens[inicio:]), " ".join(tokens[:inicio]), motivo
 
 
@@ -280,6 +293,7 @@ PAISES_TEXTO = {
     "united states": "Estados Unidos", "estados unidos": "Estados Unidos", "united kingdom": "Reino Unido",
     "germany": "Alemania", "alemania": "Alemania", "france": "Francia", "italy": "Italia", "norway": "Noruega",
     "canada": "Canadá", "india": "India", "cuba": "Cuba", "honduras": "Honduras",
+    "iran": "Irán", "irán": "Irán", "tehran": "Irán", "teherán": "Irán",
 }
 # Siglas de instituciones frecuentes en el congreso, por si la afiliación
 # no nombra el país y el email es genérico (gmail, outlook...).
@@ -294,6 +308,8 @@ INSTITUCIONES = {
 
 def pais_de(email: str, afiliacion: str) -> str:
     afil = (afiliacion or "").lower()
+    if re.search(r"universidad (de )?san sebasti[aá]n", afil):
+        return "Chile"
     for clave, pais in PAISES_TEXTO.items():
         if re.search(rf"\b{re.escape(clave)}\b", afil):
             return pais
@@ -350,6 +366,7 @@ def leer_revisores(ruta: Path) -> list[dict] | None:
 
 def comite_desde_revisores(revisores: list[dict], cfg: dict, solo_con_evaluaciones: bool) -> tuple[list, list[str]]:
     correcciones = cfg.get("comite_programa", {}).get("correcciones", {})
+    paises = cfg.get("comite_programa", {}).get("paises", {})
     avisos = []
     miembros = {}
     for r in revisores:
@@ -360,7 +377,7 @@ def comite_desde_revisores(revisores: list[dict], cfg: dict, solo_con_evaluacion
         else:
             apellido, nombres, motivo = dividir_nombre(r)
             entrada = f"{apellido}, {nombres}" if nombres else apellido
-        pais = pais_de(r["email"], r["afiliacion"])
+        pais = paises.get(r["nombre"]) or pais_de(r["email"], r["afiliacion"])
         if not pais:
             avisos.append(f"Comité de Programa: sin país para '{r['nombre']}' ({r['afiliacion'] or r['email']}).")
         if motivo.startswith("AMBIGUO"):
