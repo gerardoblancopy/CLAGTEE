@@ -84,10 +84,18 @@ logos_instituciones = [
 
 [seleccion]
 # IDs del CMS que no deben aparecer (retirados, no presentados, etc.).
-excluir = []
+# PLA-58 es el paper de prueba ("Test") que quedó aceptado en el CMS.
+excluir = ["PLA-58"]
 # "oficial": cada track conserva su número del llamado (1-13) aunque alguno
 # quede sin papers. "secuencial": se renumeran 1, 2, 3... como en 2019.
 numeracion_tracks = "oficial"
+
+[correcciones_papers]
+# Datos que faltan o están mal en el CMS, por ID. Ganan sobre el export.
+# Campos: titulo, resumen.
+"BIO-3" = { titulo = "Environmental Performance of Bioelectricity Production from Sugarcane Bagasse" }
+# Corregido también en el CMS el 21/10/2026; se puede borrar con el próximo export.
+"PLA-53" = { titulo = "Technical and Economic Feasibility Assessment of Implementing an Agrivoltaic System in a Soybean Plantation" }
 
 [publicacion]
 # Página iv ("DATA OF PUBLICATION"). En 2019 la ficha la emitió la agencia
@@ -207,11 +215,12 @@ miembros = [
   ["TODO: Apellido, Nombre", "Chile"],
 ]
 filas_por_pagina = 27
+# Revisores del CMS que no van en el libro (nombre como está en el CMS).
+excluir = ["Hassan Sam Daliri"]
 
 # Correcciones del nombre de un revisor. Clave: nombre como está en el CMS
 # (con mayúsculas normalizadas). Valor: "Apellido, Nombre".
 [comite_programa.correcciones]
-"Hassan Sam Daliri" = "Sam Daliri, Hassan"
 "Jorge Ignacio Marin Niño de Zepeda" = "Marin Niño de Zepeda, Jorge Ignacio"
 
 # País de un revisor cuando no se deduce de la afiliación ni del email.

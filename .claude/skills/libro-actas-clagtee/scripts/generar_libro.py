@@ -367,10 +367,14 @@ def leer_revisores(ruta: Path) -> list[dict] | None:
 def comite_desde_revisores(revisores: list[dict], cfg: dict, solo_con_evaluaciones: bool) -> tuple[list, list[str]]:
     correcciones = cfg.get("comite_programa", {}).get("correcciones", {})
     paises = cfg.get("comite_programa", {}).get("paises", {})
+    excluir = {clave_norm(n) for n in cfg.get("comite_programa", {}).get("excluir", [])}
     avisos = []
     miembros = {}
     for r in revisores:
         if solo_con_evaluaciones and r["evaluaciones"] is not None and r["evaluaciones"] == 0:
+            continue
+        if clave_norm(r["nombre"]) in excluir:
+            avisos.append(f"Comité de Programa: '{r['nombre']}' excluido por config ([comite_programa].excluir).")
             continue
         if r["nombre"] in correcciones:
             entrada, motivo = correcciones[r["nombre"]], "corrección manual"
@@ -465,6 +469,12 @@ def construir(args, cfg: dict) -> tuple[dict, list[str], list[tuple]]:
         else:
             titulo = titulo_or or titulo_en
             resumen = resumen_or or resumen_en
+        # Correcciones por ID en el .toml: ganan sobre lo que traiga el CMS.
+        corr = cfg.get("correcciones_papers", {}).get(pid, {})
+        if corr.get("titulo"):
+            titulo = corr["titulo"]
+        if corr.get("resumen"):
+            resumen = corr["resumen"]
         titulo = limpiar_titulo(titulo or "")
         if titulo.isupper() and len(titulo) > 20:
             avisos.append(f"{pid}: título todo en MAYÚSCULAS; conviene corregirlo en el CMS.")
