@@ -127,7 +127,8 @@ Generation, Transmission and Distribution".
   columnas Apellido, Nombre | Institución (País) o email | Cargo.
 - **Program Committee Members** (xii–xiii): título 20 pt; Minion Pro 12 pt,
   16,7 pt de interlineado, sangría 25 pt, columna de país a ~220 pt; 27 filas
-  por página; orden alfabético por apellido.
+  por página; orden alfabético por apellido. (En 2026 se usa la letra de las
+  tablas de comités, Nirmala UI 11/16, y sin columna de país.)
 
 ## Índice de resúmenes
 
