@@ -202,9 +202,10 @@ filas = [
 ]
 
 [[comites]]
-titulo = "Conference secretary"
+titulo = "Conference secretaries"
 filas = [
-  ["TODO: Apellido, Nombre", "clagtee2026@pucv.cl"],
+  ["Carmona, María Elena", "PUCV (Chile)"],
+  ["Soto, Lisa", "PUCV (Chile)"],
 ]
 
 [comite_programa]
@@ -215,8 +216,10 @@ miembros = [
   ["TODO: Apellido, Nombre", "Chile"],
 ]
 filas_por_pagina = 27
+# true: columna de país al lado de cada nombre, como en 2019.
+mostrar_pais = false
 # Revisores del CMS que no van en el libro (nombre como está en el CMS).
-excluir = ["Hassan Sam Daliri"]
+excluir = ["Hassan Sam Daliri", "Mohadese Dejagah"]
 
 # Correcciones del nombre de un revisor. Clave: nombre como está en el CMS
 # (con mayúsculas normalizadas). Valor: "Apellido, Nombre".

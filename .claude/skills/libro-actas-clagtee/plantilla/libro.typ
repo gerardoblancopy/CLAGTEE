@@ -345,8 +345,12 @@
     pad(left: 25pt, {
       set text(font: SERIF, size: r(12pt))
       set par(justify: false)
-      grid(columns: (1fr, auto), column-gutter: 8pt, row-gutter: 16.7pt - ALTO-CAP * r(12pt),
-        ..lista.map(m => (t(m.at(0)), t(m.at(1)))).flatten())
+      if cp.at("mostrar_pais", default: true) {
+        grid(columns: (1fr, auto), column-gutter: 8pt, row-gutter: 16.7pt - ALTO-CAP * r(12pt),
+          ..lista.map(m => (t(m.at(0)), t(m.at(1)))).flatten())
+      } else {
+        grid(columns: 1, row-gutter: 16.7pt - ALTO-CAP * r(12pt), ..lista.map(m => t(m.at(0))))
+      }
     })
   }
 }

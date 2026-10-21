@@ -382,7 +382,7 @@ def comite_desde_revisores(revisores: list[dict], cfg: dict, solo_con_evaluacion
             apellido, nombres, motivo = dividir_nombre(r)
             entrada = f"{apellido}, {nombres}" if nombres else apellido
         pais = paises.get(r["nombre"]) or pais_de(r["email"], r["afiliacion"])
-        if not pais:
+        if not pais and cfg.get("comite_programa", {}).get("mostrar_pais", True):
             avisos.append(f"Comité de Programa: sin país para '{r['nombre']}' ({r['afiliacion'] or r['email']}).")
         if motivo.startswith("AMBIGUO"):
             avisos.append(f"Comité de Programa: '{r['nombre']}' -> '{entrada}' ({motivo}).")
