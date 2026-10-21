@@ -45,7 +45,9 @@ El script toma solo los papers con estado aceptado. Por defecto usa el
 título y abstract **en inglés** confirmados para IEEE (`--idioma en`); si un
 paper no los tiene, cae al original y lo informa. Con `--idioma original`
 usa los del envío (como en 2019, donde había resúmenes en español y
-portugués). El Excel del CMS no trae el abstract original, solo el inglés.
+portugués). El Excel del CMS trae ambos: "Abstract (Envío Original)" y
+"Abstract en Inglés (IEEE)". Los exports anteriores a octubre de 2026 no traen
+abstracts: si el reporte lo indica, pedir un export nuevo.
 
 ### 3. Revisar datos antes de compilar
 

@@ -163,6 +163,7 @@ export const buildPaperRow = (
   return {
     'ID Paper': paper.id,
     'Título': paper.title,
+    'Abstract (Envío Original)': paper.abstract || '',
     'Título en Inglés (IEEE)': paper.titleEn || '',
     'Abstract en Inglés (IEEE)': paper.abstractEn || '',
     'Título/Abstract en Inglés': paper.status === 'accepted' ? ENGLISH_META_LABELS[englishMetaStatus(paper)] : '',

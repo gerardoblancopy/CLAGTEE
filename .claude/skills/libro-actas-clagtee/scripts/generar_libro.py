@@ -187,7 +187,7 @@ ALIAS = {
     "id": ["ID Paper", "id", "ID", "paper_id"],
     "titulo": ["Título", "Titulo", "title", "titulo"],
     "titulo_en": ["Título en Inglés (IEEE)", "titleEn", "title_en"],
-    "resumen": ["Abstract", "Resumen", "abstract", "resumen"],
+    "resumen": ["Abstract (Envío Original)", "Abstract", "Resumen", "abstract", "resumen"],
     "resumen_en": ["Abstract en Inglés (IEEE)", "abstractEn", "abstract_en"],
     "track": ["Área Temática (Track)", "track", "Track"],
     "estado": ["Clasificación / Estado", "status", "estado", "Estado"],
@@ -377,6 +377,9 @@ def construir(args, cfg: dict) -> tuple[dict, list[str], list[tuple]]:
 
     if not por_track:
         sys.exit("No hay papers aceptados en el archivo (revise la hoja o use --incluir-todos).")
+    if not any(campo(f, "resumen") or campo(f, "resumen_en") for f in filas):
+        avisos.insert(0, "EL ARCHIVO NO TRAE ABSTRACTS (ni originales ni en inglés). Exporte de nuevo "
+                         "desde el CMS: el Excel incluye 'Abstract (Envío Original)' y 'Abstract en Inglés (IEEE)'.")
 
     usadas: set = set()
     tracks_out = []
