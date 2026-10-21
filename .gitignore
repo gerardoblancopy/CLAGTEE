@@ -25,8 +25,9 @@ dist-ssr
 *.sw?
 .vercel
 
-# Local tool state
-.claude/
+# Local tool state (project skills are versioned)
+.claude/*
+!.claude/skills/
 .vercel-global-config/
 
 # Local credential notes

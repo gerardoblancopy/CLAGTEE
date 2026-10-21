@@ -1,0 +1,89 @@
+{
+  "_nota": "Datos FICTICIOS para probar la skill (mismo formato que GET /api/papers del CMS). No usar en el libro real.",
+  "papers": [
+    {
+      "id": "PLA-3",
+      "status": "accepted",
+      "track": "Planificación, Operación y Confiabilidad de Sistemas de Potencia",
+      "title": "Planificación de la expansión de la transmisión con incertidumbre renovable",
+      "titleEn": "Transmission Expansion Planning under Renewable Uncertainty Using Stochastic Programming",
+      "abstract": "Se propone un modelo estocástico de dos etapas para la expansión de la transmisión.",
+      "abstractEn": "Abstract—This paper proposes a two-stage stochastic programming model for transmission expansion planning that explicitly represents the spatial correlation of wind and solar generation. Representative operating conditions are obtained through a clustering procedure applied to hourly historical data, which reduces the computational burden without losing the extreme scenarios that drive network reinforcements. The methodology is applied to a reduced model of a Latin-American power system with high renewable penetration, and the results show that ignoring the spatial diversity of renewable resources leads to oversized and more expensive expansion plans.",
+      "authors": [
+        {"name": "Camila Andrea Rojas Fuentes", "email": "camila.rojas@ejemplo.cl", "affiliation": "Universidad de Ejemplo, Chile"},
+        {"name": "Tomás Ignacio Herrera", "email": "tomas.herrera@ejemplo.cl", "affiliation": "Universidad de Ejemplo, Chile"},
+        {"name": "Ana Paula de Souza Lima", "email": "ana.lima@exemplo.br", "affiliation": "Universidade de Exemplo, Brasil"}
+      ]
+    },
+    {
+      "id": "PLA-11",
+      "status": "accepted",
+      "track": "Planificación, Operación y Confiabilidad de Sistemas de Potencia",
+      "title": "Composite Reliability Assessment with Machine Learning Surrogates",
+      "titleEn": "Composite Reliability Assessment with Machine Learning Surrogates",
+      "abstract": "",
+      "abstractEn": "Non-sequential Monte Carlo simulation is the standard tool for composite reliability assessment, but the optimal power flow solved for each sampled state makes it computationally expensive. This work trains a neural network classifier that predicts whether a sampled state leads to load curtailment, so that the optimal power flow is solved only for uncertain states. Tests on the IEEE RTS-79 and IEEE 118-bus systems show speed-ups above ten times with errors below one percent in the expected energy not supplied.",
+      "authors": [
+        {"name": "Rafael Augusto Pereira Júnior", "email": "rafael.pereira@exemplo.br", "affiliation": "Universidade de Exemplo, Brasil"},
+        {"name": "Mariana Costa", "email": "mariana.costa@exemplo.br", "affiliation": "Universidade de Exemplo, Brasil"}
+      ]
+    },
+    {
+      "id": "INT-4",
+      "status": "accepted",
+      "track": "Integración de Energías Renovables, DER y Almacenamiento",
+      "title": "Dimensionamiento de baterías para servicios complementarios",
+      "titleEn": "",
+      "abstract": "Este trabajo presenta una metodología para dimensionar sistemas de almacenamiento en baterías destinados a la prestación de control primario de frecuencia en sistemas aislados. El problema se formula como una optimización entera mixta que minimiza el costo de inversión sujeto a restricciones dinámicas de frecuencia linealizadas. Los resultados en un sistema de prueba de la zona austral muestran que la solución propuesta reduce el desprendimiento de carga ante la pérdida de la mayor unidad generadora.",
+      "abstractEn": "",
+      "authors": [
+        {"name": "Joaquín Esteban Muñoz Pérez", "email": "joaquin.munoz@ejemplo.cl", "affiliation": "Universidad de Ejemplo, Chile"},
+        {"name": "Valentina Soto", "email": "valentina.soto@ejemplo.cl", "affiliation": "Universidad de Ejemplo, Chile"}
+      ]
+    },
+    {
+      "id": "INT-9",
+      "status": "rejected",
+      "track": "Integración de Energías Renovables, DER y Almacenamiento",
+      "title": "Paper rechazado: no debe aparecer en el libro",
+      "abstract": "No debe aparecer.",
+      "authors": [{"name": "Autor Rechazado", "email": "x@ejemplo.cl"}]
+    },
+    {
+      "id": "PLA-20",
+      "status": "accepted",
+      "track": "Plantas de Energía Alternativas y Componentes",
+      "subtema": "Solar Energy",
+      "titleEn": "Soiling Losses in Utility-Scale Photovoltaic Plants of the Atacama Desert",
+      "abstractEn": "Soiling is one of the main sources of energy loss in photovoltaic plants located in desert regions. This paper analyses two years of measurements from soiling stations installed in three utility-scale plants and proposes a cleaning schedule that maximizes the net economic benefit, considering water availability and the cost of each cleaning cycle.",
+      "authors": [
+        {"name": "Ignacio Alarcón Vega", "email": "ignacio.alarcon@ejemplo.cl", "affiliation": "Universidad de Ejemplo, Chile"}
+      ]
+    },
+    {
+      "id": "PLA-24",
+      "status": "accepted",
+      "track": "Plantas de Energía Alternativas y Componentes",
+      "subtema": "Wind Energy",
+      "title": "Avaliação do potencial eólico offshore na costa sul do Brasil",
+      "titleEn": "",
+      "abstract": "Este trabalho apresenta uma avaliação do potencial eólico offshore na costa sul do Brasil a partir de dados de reanálise e de medições em plataformas. São estimados o fator de capacidade e a produção anual de energia para três tecnologias de aerogeradores, considerando as restrições ambientais e a distância até os pontos de conexão com a rede.",
+      "authors": [
+        {"name": "Luiz Fernando dos Santos Filho", "email": "luiz.santos@exemplo.br", "affiliation": "Universidade de Exemplo, Brasil"},
+        {"name": "Beatriz Oliveira", "email": "beatriz.oliveira@exemplo.br", "affiliation": "Universidade de Exemplo, Brasil"}
+      ]
+    },
+    {
+      "id": "PLA-15",
+      "status": "accepted",
+      "track": "Plantas de Energía Alternativas y Componentes",
+      "subtema": "Solar Energy",
+      "titleEn": "Hybrid PV-Battery Microgrid for a Rural School: Techno-Economic Analysis",
+      "abstractEn": "This paper presents the techno-economic analysis of seven configurations of a hybrid photovoltaic and battery microgrid for a rural school. Each configuration is sized to the lowest net present value that meets the electrical demand, and a sensitivity analysis on tariffs shows the incentive mechanisms needed to make distributed generation competitive.",
+      "authors": [
+        {"name": "Martín José Roberts", "email": "martin.roberts@ejemplo.com.ar", "affiliation": "Universidad de Ejemplo, Argentina"},
+        {"name": "Pedro Osvaldo Prado", "email": "pedro.prado@ejemplo.com.ar", "affiliation": "Universidad de Ejemplo, Argentina"}
+      ]
+    }
+  ]
+}

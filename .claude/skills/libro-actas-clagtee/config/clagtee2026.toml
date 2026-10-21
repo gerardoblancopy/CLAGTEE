@@ -1,0 +1,302 @@
+# Configuración del Libro de Resúmenes (Book of Abstracts) — XVI CLAGTEE 2026
+#
+# Este archivo controla TODO el contenido fijo del libro (portada, páginas
+# preliminares, comités, tracks). Los resúmenes salen del export del CMS.
+#
+# Convenciones:
+#   - Los textos van en inglés, como el libro 2019.
+#   - Un valor que empieza con "TODO" se imprime resaltado en rojo en el PDF
+#     y el script lo informa como pendiente: hay que completarlo antes de la
+#     versión final.
+#   - Las rutas de imágenes son relativas a la raíz del repositorio.
+#   - Los párrafos de textos largos se separan con una línea en blanco.
+
+[libro]
+titulo = "BOOK OF ABSTRACTS"
+nombre_corto = "CLAGTEE 2026"
+edicion_romana = "XVI"
+nombre_congreso = "Latin-American Congress on Electricity Generation and Transmission"
+# Línea pequeña de la cabecera de las páginas de resúmenes (7 pt).
+titulo_corrido = "XVI Latin-American Congress on Electricity Generation and Transmission"
+# Pie de página de las páginas de resúmenes: "• PUCV 2026 •".
+pie = "PUCV 2026"
+fechas_portada = "October 28th - 30th, 2026"
+ciudad_portada = "Santiago de Chile"
+web = "www.clagtee2026.org"
+idioma = "en"
+# Formato del ID que se agrega al final de cada título: {id} = ID del CMS.
+formato_id = "(ID {id})"
+# Palabra que une los dos últimos autores ("A, B and C").
+conector_autores = "and"
+
+[portada]
+# Dos líneas bajo "CLAGTEE 2026", cortadas como en 2019.
+subtitulo = [
+  "XVI Latin-American Congress on Electricity",
+  "Generation and Transmission",
+]
+# Logo blanco de la Escuela + PUCV sobre la diagonal morada superior.
+logo_superior = ".claude/skills/libro-actas-clagtee/assets/logos/pucv-eie-blanco.png"
+# Torre del logo CLAGTEE (es la misma marca en 2019 y 2026).
+torre = ".claude/skills/libro-actas-clagtee/assets/logos/torre-clagtee.png"
+# Fila de logos institucionales al pie de la portada (izq., centro, der.).
+logos_inferiores = [
+  ".claude/skills/libro-actas-clagtee/assets/logos/pucv-color.png",
+  ".claude/skills/libro-actas-clagtee/assets/logos/unesp.png",
+  ".claude/skills/libro-actas-clagtee/assets/logos/unmdp.png",
+]
+
+[colores]
+morado = "#361e59"        # fondo diagonal de portada y triángulos
+morado_claro = "#462768"  # decoraciones (grilla de puntos, franjas)
+morado_texto = "#2f2364"  # "CLAGTEE 2026"
+azul_oscuro = "#2b367d"   # subtítulo del congreso en portada
+azul = "#355c9d"          # "BOOK OF ABSTRACTS", "Sponsors", ciudad
+morado_fecha = "#482c7a"  # fechas de portada
+gris = "#818181"          # URL de portada
+
+[fuentes]
+# Se usa la primera fuente instalada de cada lista. Las del libro 2019 eran
+# Nirmala UI, Minion Pro y Modernica (comerciales); si no están instaladas se
+# usan los equivalentes libres incluidos en assets/fonts.
+sans = ["Nirmala UI", "Open Sans"]
+serif = ["Minion Pro", "Crimson Text"]
+display = ["Modernica", "Montserrat"]
+# Factor de cuerpo para la fuente libre, de modo que el texto ocupe el mismo
+# ancho que con la original (medido sobre el PDF 2019). Solo se aplica si la
+# primera fuente de la lista no está instalada.
+escala_sustituta = { sans = 0.945, serif = 1.03, display = 0.79 }
+
+[patrocinadores]
+titulo = "Sponsors"
+# Logos en orden de aparición (página iii y contraportada). Alto en pt.
+logos = [
+  { archivo = "public/sponsors/hendrix-marmon-dark.png", alto = 34 },
+  { archivo = "public/sponsors/colegio-de-ingenieros.png", alto = 46 },
+]
+
+[contraportada]
+logos_instituciones = [
+  ".claude/skills/libro-actas-clagtee/assets/logos/unesp.png",
+  ".claude/skills/libro-actas-clagtee/assets/logos/unmdp.png",
+  ".claude/skills/libro-actas-clagtee/assets/logos/pucv-color.png",
+]
+
+[seleccion]
+# IDs del CMS que no deben aparecer (retirados, no presentados, etc.).
+excluir = []
+# "oficial": cada track conserva su número del llamado (1-13) aunque alguno
+# quede sin papers. "secuencial": se renumeran 1, 2, 3... como en 2019.
+numeracion_tracks = "oficial"
+
+[publicacion]
+# Página iv ("DATA OF PUBLICATION"). En 2019 la ficha la emitió la agencia
+# brasileña del ISBN a nombre de los editores. 979-8-3195-1521-6 es el ISBN
+# de las actas IEEE (Xplore); confirmar con el comité si el libro de
+# resúmenes usa ese u otro ISBN propio.
+titulo = "Book of Abstracts CLAGTEE 2026"
+editores = ["TODO: EDITOR 1", "TODO: EDITOR 2"]
+editorial = "Escuela de Ingeniería Eléctrica, Pontificia Universidad Católica de Valparaíso"
+isbn = "TODO: ISBN"
+lineas_extra = []
+lugar_fecha = "Santiago, October, 28th, 2026."
+# Nota al pie de la página iv. Vacío = no se imprime.
+nota_pie = ""
+
+[prefacio]
+titulo = "Preface"
+texto = """
+Located at the south extreme of South America, Chile is bordered by Argentina on the east, Peru by the north and Bolivia by the northeast. Santiago, the capital city, is located in the central zone. In Santiago will take place the 16th Latin-American Congress on Electricity Generation and Transmission (October 28th - 30th, 2026), recognized as a very important event by the community of power systems science and engineering in Latin-American countries. This congress is preceded by the 15th Latin-American Congress on Electricity Generation and Transmission, organized by the Universidad Nacional de Mar del Plata, that took place in Mar del Plata, Argentina, in November 2024.
+
+This international event has been created with the purpose of contributing with a valuable instance for sharing knowledge and experiences concerned with the operation, planning and technological developments in generation, transmission and distribution of electrical systems.
+
+The XVI CLAGTEE program includes the discussion of technical papers prepared by professionals and researchers (previously subject to the acceptance of a Review Committee), keynote lectures and panels presented by experts from industry and academia, and a pre-congress workshop on Artificial Intelligence applied to power systems. This edition is technically co-sponsored by the IEEE Chile Section. The topics covered include Power System Planning, Operation and Reliability; Renewable Energy Integration, DER and Storage; Power Electronics and Energy Conversion; Sensors, Metrology and Advanced Monitoring; Telecommunications, Digital Networks and Cybersecurity; Data Science, AI and Advanced Computing; Electricity Markets, Economics, Regulation and Energy Transition; Electrical Machines, Drives and Actuators; Conventional and Alternative Power Plants; Bioenergy and Hydrogen; and Social, Economic and Environmental Issues.
+
+We welcome all of you, in particular those coming from abroad, and we hope that these days in Santiago will be very fruitful.
+"""
+firma_nombre = "Jorge Mendoza Baeza"
+firma_cargo = "Executive Chairman"
+
+[informacion]
+# Página vii.
+fecha = "October 28-30, 2026."
+lugar = "MR. Hotel (former Hotel Neruda), Providencia, Santiago de Chile"
+web = "www.clagtee2026.org"
+contacto = [
+  "Escuela de Ingeniería Eléctrica",
+  "Facultad de Ingeniería",
+  "Pontificia Universidad Católica de Valparaíso",
+]
+vinetas = [
+  "Av. Brasil 2147, Valparaíso, Chile",
+  "Phone: (+56) 32 2273697",
+  "Email: clagtee2026@pucv.cl",
+  "Web: https://eie.pucv.cl",
+]
+
+[objetivo]
+titulo = "Objective"
+texto = """
+The growing demand for electric energy in the Latin-American countries requires a greater quality of service and efficiency in the area of techno-economic operation. This brings a constant need for improvement in the growth planning at all levels of operation of the electric energy systems. The economic and technical aspects must be taken into consideration, as well as the environmental impact of implantation of new power plants and the need to introduce new technologies, control systems and safety measures.
+
+Gradually a process of integration among the Latin-American countries has emerged, as the electric energy needs are similar, including the generation facilities, for these countries.
+"""
+
+[historia]
+titulo = "History of the congress"
+texto = """
+Considering the above mentioned points, UNESP - Universidade Estadual Paulista (Brazil), PUCV - Pontificia Universidad Católica de Valparaíso (Chile) and UNMDP - Universidad Nacional de Mar del Plata (Argentina) have joined forces in order to create a forum that permits a valuable exchange of experiences concerning the methodology for the analysis of operation, planning, and the introduction of new technologies that could contribute to the improvement of the electric energy generation and transmission systems. This has become a reality with the creation of these Latin-American congresses, which take place in the distinct cities of the Latin-American countries.
+"""
+ediciones = [
+  "The I Congress took place on October, 1993 in Viña del Mar, Chile.",
+  "The II Congress took place on November, 1995 in Mar del Plata, Argentina.",
+  "The III Congress took place on November, 1997 in Campos do Jordão, in the state of São Paulo, Brazil.",
+  "The IV Congress took place on November, 2000 in Viña del Mar, Chile.",
+  "The V Congress took place on November, 2003 in São Pedro City, State of São Paulo, Brazil.",
+  "The VI Congress was held in Mar del Plata City, Argentina, November 13 to November 17, 2005.",
+  "The VII Congress took place in Valparaíso City, Chile, October 22 to October 25, 2007.",
+  "The VIII Congress was held in Ubatuba, SP Brazil, October 18 to October 22, 2009.",
+  "The IX Congress was held in Mar del Plata City, Argentina, November 06 to November 09, 2011.",
+  "The X Congress was held in Viña del Mar, Chile, October 06 to October 09, 2013.",
+  "The XI Congress was held in São José dos Campos, Brazil, November 08 to November 11, 2015.",
+  "The XII Congress was held in Mar del Plata City, Argentina, November 12 to November 15, 2017.",
+  "The XIII Congress was held in Santiago, Chile, October 20 to October 23, 2019.",
+  "The XIV Congress was held in Rio de Janeiro, Brazil, November, 2022.",
+  "The XV Congress was held in Mar del Plata, Argentina, November, 2024.",
+  "The XVI Congress will be in Santiago, Chile, October 28 to October 30, 2026.",
+]
+
+# Página xi: tablas de comités. Cada fila es [columna 1, columna 2, columna 3].
+[[comites]]
+titulo = "Organization committee"
+filas = [
+  ["Mendoza, Jorge", "PUCV (Chile)", "Chairman"],
+  ["Roberts, Justo José", "UNMdP (Argentina)", "Co-Chairman"],
+  ["Tuna, Celso", "UNESP (Brazil)", "Co-Chairman"],
+]
+
+[[comites]]
+titulo = "Local organizing committee"
+# En 2019 la segunda columna era el email de cada miembro.
+filas = [
+  ["Farías, Gonzalo", "PUCV (Chile)"],
+  ["Vargas, Héctor", "PUCV (Chile)"],
+  ["Reusser, Carlos", "PUCV (Chile)"],
+  ["Jara, Werner", "PUCV (Chile)"],
+  ["Hermosilla, Gabriel", "PUCV (Chile)"],
+  ["Escarate, Pedro", "PUCV (Chile)"],
+  ["López, Miguel", "PUCV (Chile)"],
+  ["Blanco, Gerardo", "PUCV (Chile)"],
+  ["Okoye, Martin", "PUCV (Chile)"],
+  ["Rodriguez, Mauricio", "PUCV (Chile)"],
+  ["Leiva, Ariel", "PUCV (Chile)"],
+  ["Altamirano, Diego", "PUCV (Chile)"],
+]
+
+[[comites]]
+titulo = "Conference secretary"
+filas = [
+  ["TODO: Apellido, Nombre", "clagtee2026@pucv.cl"],
+]
+
+[comite_programa]
+titulo = "Program Committee Members"
+# Formato 2019: "Apellido, Nombre" y país. Se ordena alfabéticamente al
+# imprimir. Completar con los revisores del CMS (rol reviewer).
+miembros = [
+  ["TODO: Apellido, Nombre", "Chile"],
+]
+filas_por_pagina = 27
+
+[indice]
+titulo = "Index of abstracts"
+cabecera = "Index of Abstracts"
+
+[indice_autores]
+titulo = "Author Index"
+# Correcciones manuales de la entrada del índice de autores.
+# Clave: nombre tal como aparece en la columna nombre_cms de
+# scratch/libro-actas/indice-autores.csv. Valor: "Apellido, Inicial".
+# Ej.: "Jorge Mendoza Baeza" = "Mendoza, J"
+[indice_autores.correcciones]
+
+# Tracks oficiales CLAGTEE 2026 (sitio web, data/translations/*.ts).
+# El CMS guarda el título en español; "es", "en" y "pt" sirven para
+# reconocerlo. El libro imprime "en".
+[[tracks]]
+numero = 1
+en = "Power System Planning, Operation, and Reliability"
+es = "Planificación, Operación y Confiabilidad de Sistemas de Potencia"
+pt = "Planejamento, Operação e Confiabilidade de Sistemas de Potência"
+
+[[tracks]]
+numero = 2
+en = "Renewable Energy Integration, DER, and Storage"
+es = "Integración de Energías Renovables, DER y Almacenamiento"
+pt = "Integração de Energias Renováveis, RED e Armazenamento"
+
+[[tracks]]
+numero = 3
+en = "Power Electronics and Energy Conversion"
+es = "Electrónica de Potencia y Conversión de Energía"
+pt = "Eletrônica de Potência e Conversão de Energia"
+
+[[tracks]]
+numero = 4
+en = "Sensors, Metrology, and Advanced Monitoring"
+es = "Sensores, Metrología y Monitoreo Avanzado"
+pt = "Sensores, Metrologia e Monitoramento Avançado"
+
+[[tracks]]
+numero = 5
+en = "Telecommunications, Digital Networks, and Cybersecurity"
+es = "Telecomunicaciones, Redes Digitales y Ciberseguridad"
+pt = "Telecomunicações, Redes Digitais e Cibersegurança"
+
+[[tracks]]
+numero = 6
+en = "Data Science, AI, and Advanced Computing"
+es = "Ciencia de Datos, IA y Computación Avanzada"
+pt = "Ciência de Dados, IA e Computação Avançada"
+
+[[tracks]]
+numero = 7
+en = "Electricity Markets, Economics, Regulation, and Energy Transition"
+es = "Mercados Eléctricos, Economía, Regulación y Transición Energética"
+pt = "Mercados Elétricos, Economia, Regulação e Transição Energética"
+
+[[tracks]]
+numero = 8
+en = "Electrical Machines, Drives, and Actuators"
+es = "Máquinas Eléctricas, Drives y Accionamientos"
+pt = "Máquinas Elétricas, Drives e Acionamentos"
+
+[[tracks]]
+numero = 9
+en = "Conventional Power Plants and Components"
+es = "Plantas de Energía Convencionales y Componentes"
+pt = "Plantas de Energia Convencionais e Componentes"
+
+[[tracks]]
+numero = 10
+en = "Alternative Power Plants and Components"
+es = "Plantas de Energía Alternativas y Componentes"
+pt = "Plantas de Energia Alternativas e Componentes"
+
+[[tracks]]
+numero = 11
+en = "Bioenergy and Hydrogen"
+es = "Bioenergía e Hidrógeno"
+pt = "Bioenergia e Hidrogênio"
+
+[[tracks]]
+numero = 12
+en = "Social and Economic Issues"
+es = "Cuestiones Sociales y Económicas"
+pt = "Questões Sociais e Econômicas"
+
+[[tracks]]
+numero = 13
+en = "Environmental and Ecological Issues"
+es = "Cuestiones Ambientales y Ecológicas"
+pt = "Questões Ambientais e Ecológicas"
