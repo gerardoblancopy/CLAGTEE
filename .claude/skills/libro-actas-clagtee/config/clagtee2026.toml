@@ -203,10 +203,9 @@ filas = [
 ]
 
 [[comites]]
-titulo = "Conference secretaries"
+titulo = "Conference secretary"
 filas = [
   ["Carmona, María Elena", "PUCV (Chile)"],
-  ["Soto, Lisa", "PUCV (Chile)"],
 ]
 
 [comite_programa]
