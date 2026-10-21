@@ -884,30 +884,35 @@ export const contentEN: Content = {
           "badge": "Pre-congress",
           "typeLabel": "Workshop + Seminar",
           "title": "“Artificial Intelligence Applied to Power Systems”",
-          "tagline": "Talks, workshop challenge, and hands-on session",
+          "tagline": "Talks, hands-on session, and expert panel",
           "date": "October 27, 2026",
           "imageUrl": "/pre-congreso/precongreso-programa.jpg",
           "panelistsLabel": "Program",
           "panelists": [
             {
               "name": "Gerardo Blanco",
-              "role": "Introduction to Artificial Intelligence and Multi-Criteria Decision Making"
+              "role": "Introduction to Artificial Intelligence and Multi-Criteria Decision Making",
+              "affiliation": "15:00 – 15:15"
+            },
+            {
+              "name": "Gonzalo Farías",
+              "role": "AI Applications in Power Systems",
+              "affiliation": "15:15 – 15:30"
             },
             {
               "name": "Diego Altamirano",
-              "role": "Introduction to Transmission System Expansion Planning in Chile"
-            },
-            {
-              "name": "Emmanuel Peralta",
-              "role": "SAPERE-AUDE Project"
-            },
-            {
-              "name": "Emmanuel Peralta",
-              "role": "Workshop Challenge Presentation"
+              "role": "Introduction to Transmission System Expansion Planning in Chile",
+              "affiliation": "15:30 – 15:45"
             },
             {
               "name": "PUCV Team",
-              "role": "Hands-on session and discussion"
+              "role": "Hands-on session and discussion",
+              "affiliation": "15:45 – 16:30"
+            },
+            {
+              "name": "Deninson Fuentes, Mauricio Pereira, and Rodrigo Moreno",
+              "role": "Expert Panel. Moderator: Gerardo Blanco",
+              "affiliation": "16:30 – 18:00"
             }
           ]
         },

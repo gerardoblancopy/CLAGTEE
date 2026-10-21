@@ -884,30 +884,35 @@ export const contentES: Content = {
           "badge": "Pre Congreso",
           "typeLabel": "Workshop + Seminario",
           "title": "“Inteligencia Artificial aplicada a Sistemas Eléctricos”",
-          "tagline": "Charlas, desafío del workshop y sesión práctica",
+          "tagline": "Charlas, sesión práctica y panel de expertos",
           "date": "27 de Octubre 2026",
           "imageUrl": "/pre-congreso/precongreso-programa.jpg",
           "panelistsLabel": "Programa",
           "panelists": [
             {
               "name": "Gerardo Blanco",
-              "role": "Introducción a la Inteligencia Artificial y Toma de Decisiones Multicriterio"
+              "role": "Introducción a la Inteligencia Artificial y Toma de Decisiones Multicriterio",
+              "affiliation": "15:00 – 15:15"
+            },
+            {
+              "name": "Gonzalo Farías",
+              "role": "Aplicaciones de IA en Sistemas Eléctricos",
+              "affiliation": "15:15 – 15:30"
             },
             {
               "name": "Diego Altamirano",
-              "role": "Introducción a la Planificación Expansión del Sistema de Transmisión en Chile"
-            },
-            {
-              "name": "Emmanuel Peralta",
-              "role": "Proyecto SAPERE-AUDE"
-            },
-            {
-              "name": "Emmanuel Peralta",
-              "role": "Presentación del Desafío del Workshop"
+              "role": "Introducción a la Planificación Expansión del Sistema de Transmisión en Chile",
+              "affiliation": "15:30 – 15:45"
             },
             {
               "name": "Equipo PUCV",
-              "role": "Sesión práctica y discusión"
+              "role": "Sesión práctica y discusión",
+              "affiliation": "15:45 – 16:30"
+            },
+            {
+              "name": "Deninson Fuentes, Mauricio Pereira y Rodrigo Moreno",
+              "role": "Panel de Expertos. Modera: Gerardo Blanco",
+              "affiliation": "16:30 – 18:00"
             }
           ]
         },
