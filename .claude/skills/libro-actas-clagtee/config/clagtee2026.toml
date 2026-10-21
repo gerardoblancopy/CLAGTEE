@@ -73,6 +73,7 @@ titulo = "Sponsors"
 logos = [
   { archivo = "public/sponsors/hendrix-marmon-dark.png", alto = 34 },
   { archivo = "public/sponsors/colegio-de-ingenieros.png", alto = 46 },
+  { archivo = "public/sponsors/desimat.png", alto = 30 },
 ]
 
 [contraportada]

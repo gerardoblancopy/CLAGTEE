@@ -1194,6 +1194,12 @@ export const contentPT: Content = {
           "logoUrl": "/sponsors/colegio-de-ingenieros.png",
           "websiteUrl": "https://www.ingenieros.cl",
           "category": "Apoiador Institucional · Conselho Zonal Valparaíso"
+        },
+        {
+          "name": "DESIMAT",
+          "logoUrl": "/sponsors/desimat.png",
+          "websiteUrl": "https://desimat.cl",
+          "category": "Patrocinador Industrial"
         }
       ],
       "ctaText": "Tem interesse em apoiar ou patrocinar o XVI CLAGTEE 2026?",
