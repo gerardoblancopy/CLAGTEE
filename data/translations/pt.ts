@@ -884,30 +884,35 @@ export const contentPT: Content = {
           "badge": "Pré-congresso",
           "typeLabel": "Workshop + Seminário",
           "title": "“Inteligência Artificial aplicada a Sistemas Elétricos”",
-          "tagline": "Palestras, desafio do workshop e sessão prática",
+          "tagline": "Palestras, sessão prática e painel de especialistas",
           "date": "27 de Outubro de 2026",
           "imageUrl": "/pre-congreso/precongreso-programa.jpg",
           "panelistsLabel": "Programa",
           "panelists": [
             {
               "name": "Gerardo Blanco",
-              "role": "Introdução à Inteligência Artificial e Tomada de Decisão Multicritério"
+              "role": "Introdução à Inteligência Artificial e Tomada de Decisão Multicritério",
+              "affiliation": "15:00 – 15:15"
+            },
+            {
+              "name": "Gonzalo Farías",
+              "role": "Aplicações de IA em Sistemas Elétricos",
+              "affiliation": "15:15 – 15:30"
             },
             {
               "name": "Diego Altamirano",
-              "role": "Introdução ao Planejamento da Expansão do Sistema de Transmissão no Chile"
-            },
-            {
-              "name": "Emmanuel Peralta",
-              "role": "Projeto SAPERE-AUDE"
-            },
-            {
-              "name": "Emmanuel Peralta",
-              "role": "Apresentação do Desafio do Workshop"
+              "role": "Introdução ao Planejamento da Expansão do Sistema de Transmissão no Chile",
+              "affiliation": "15:30 – 15:45"
             },
             {
               "name": "Equipe PUCV",
-              "role": "Sessão prática e discussão"
+              "role": "Sessão prática e discussão",
+              "affiliation": "15:45 – 16:30"
+            },
+            {
+              "name": "Deninson Fuentes, Mauricio Pereira e Rodrigo Moreno",
+              "role": "Painel de Especialistas. Moderação: Gerardo Blanco",
+              "affiliation": "16:30 – 18:00"
             }
           ]
         },
