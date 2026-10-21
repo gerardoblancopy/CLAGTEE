@@ -994,6 +994,10 @@ export const contentES: Content = {
             "label": "Otro"
           }
         ],
+        "eiePucvStudent": "¿Eres alumno/a de la Escuela de Ingeniería Eléctrica PUCV (EIE-PUCV)?",
+        "needsTransport": "¿Requerirás transporte al evento?",
+        "yes": "Sí",
+        "no": "No",
         "comments": "Comentarios",
         "commentsPlaceholder": "¿Algo que debamos saber?",
         "optional": "opcional",
@@ -1004,7 +1008,17 @@ export const contentES: Content = {
         "successMessage": "Te enviamos un correo con la confirmación y los detalles de la actividad.",
         "registerAnother": "Inscribir a otra persona",
         "duplicateError": "Este correo ya está inscrito en el Pre-congreso.",
-        "genericError": "No pudimos registrar tu inscripción. Intenta nuevamente o escribe a clagtee2026@pucv.cl."
+        "genericError": "No pudimos registrar tu inscripción. Intenta nuevamente o escribe a clagtee2026@pucv.cl.",
+        "update": {
+          "badge": "Actualizar inscripción",
+          "title": "Alumno/a EIE-PUCV y transporte",
+          "description": "Para coordinar el traslado, indícanos si eres alumno/a de la EIE-PUCV y, si lo eres, si requerirás transporte al evento.",
+          "submit": "Guardar respuesta",
+          "successTitle": "¡Gracias! Guardamos tu respuesta",
+          "successMessage": "Si necesitas cambiarla, vuelve a abrir el enlace del correo.",
+          "invalidLink": "El enlace no es válido o expiró. Escríbenos a clagtee2026@pucv.cl.",
+          "backToForm": "Ir al formulario de inscripción"
+        }
       }
     },
     "speakers": {

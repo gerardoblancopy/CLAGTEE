@@ -362,6 +362,11 @@ export interface PreCongressContent {
     phone: string;
     profile: string;
     profileOptions: { value: PreCongressProfile; label: string }[];
+    /** Solo para el perfil estudiante. */
+    eiePucvStudent: string;
+    needsTransport: string;
+    yes: string;
+    no: string;
     comments: string;
     commentsPlaceholder: string;
     optional: string;
@@ -373,6 +378,17 @@ export interface PreCongressContent {
     registerAnother: string;
     duplicateError: string;
     genericError: string;
+    /** Enlace personal del correo para que los ya inscritos respondan. */
+    update: {
+      badge: string;
+      title: string;
+      description: string;
+      submit: string;
+      successTitle: string;
+      successMessage: string;
+      invalidLink: string;
+      backToForm: string;
+    };
   };
 }
 
@@ -388,6 +404,12 @@ export interface PreCongressRegistration {
   phone?: string;
   profile: PreCongressProfile;
   comments?: string;
+  /** Solo estudiantes: ausente si aún no responde (inscritos antes de la pregunta). */
+  eiePucvStudent?: boolean;
+  /** null si no es alumno EIE-PUCV. */
+  needsTransport?: boolean | null;
+  studentInfoNotifiedAt?: string;
+  studentInfoUpdatedAt?: string;
   createdAt: string;
   updatedAt: string;
 }

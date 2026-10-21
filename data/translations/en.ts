@@ -994,6 +994,10 @@ export const contentEN: Content = {
             "label": "Other"
           }
         ],
+        "eiePucvStudent": "Are you a student of the PUCV School of Electrical Engineering (EIE-PUCV)?",
+        "needsTransport": "Will you need transportation to the event?",
+        "yes": "Yes",
+        "no": "No",
         "comments": "Comments",
         "commentsPlaceholder": "Anything we should know?",
         "optional": "optional",
@@ -1004,7 +1008,17 @@ export const contentEN: Content = {
         "successMessage": "We sent you an email with the confirmation and the activity details.",
         "registerAnother": "Register another person",
         "duplicateError": "This email is already registered for the Pre-congress.",
-        "genericError": "We could not save your registration. Please try again or write to clagtee2026@pucv.cl."
+        "genericError": "We could not save your registration. Please try again or write to clagtee2026@pucv.cl.",
+        "update": {
+          "badge": "Update registration",
+          "title": "EIE-PUCV student and transportation",
+          "description": "To arrange transportation, let us know whether you are an EIE-PUCV student and, if so, whether you will need transportation to the event.",
+          "submit": "Save answer",
+          "successTitle": "Thank you! Your answer was saved",
+          "successMessage": "If you need to change it, open the link in the email again.",
+          "invalidLink": "This link is not valid or has expired. Write to us at clagtee2026@pucv.cl.",
+          "backToForm": "Go to the registration form"
+        }
       }
     },
     "speakers": {
