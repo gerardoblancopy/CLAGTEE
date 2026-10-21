@@ -1,4 +1,5 @@
 import { RegistrationRecord, RegistrationStatus } from '../../types';
+import { apiFetch } from './api';
 import { User } from './AuthContext';
 import { Paper, PaperStatus } from './CMSDataContext';
 import { ENGLISH_META_LABELS, englishMetaStatus, isGeneratedEcfFileName } from './ieeeEcf';
@@ -163,6 +164,7 @@ export const buildPaperRow = (
   return {
     'ID Paper': paper.id,
     'Título': paper.title,
+    'Abstract (Envío Original)': paper.abstract || '',
     'Título en Inglés (IEEE)': paper.titleEn || '',
     'Abstract en Inglés (IEEE)': paper.abstractEn || '',
     'Título/Abstract en Inglés': paper.status === 'accepted' ? ENGLISH_META_LABELS[englishMetaStatus(paper)] : '',
@@ -285,7 +287,36 @@ export const exportPapersToExcel = async (options: ExportPapersExcelOptions): Pr
     });
   }
 
-  // 3. Hoja de Resumen y Métricas
+  // 3. Hoja de revisores (Comité de Programa del libro de resúmenes).
+  // El staff no carga la lista de usuarios al entrar, así que se pide aquí.
+  let reviewerUsers = users.filter((u) => u.role === 'reviewer');
+  if (reviewerUsers.length === 0) {
+    try {
+      const response = await apiFetch('/api/auth/users?role=reviewer');
+      if (response.ok) {
+        const payload = (await response.json()) as { users: User[] };
+        reviewerUsers = payload.users || [];
+      }
+    } catch (err) {
+      console.warn('No se pudo cargar la lista de revisores para el Excel:', err);
+    }
+  }
+  if (reviewerUsers.length > 0) {
+    const reviewerRows = reviewerUsers
+      .map((r) => ({
+        'Nombre': r.name || '',
+        'Email': r.email || '',
+        'Afiliación': r.affiliation || '',
+        'Trabajos Asignados': allPapers.filter((p) => (p.assignedReviewerIds || []).includes(r.id)).length,
+        'Evaluaciones Enviadas': allPapers.filter((p) => (p.reviews || []).some((rev) => rev.reviewerId === r.id)).length,
+      }))
+      .sort((a, b) => a['Nombre'].localeCompare(b['Nombre'], 'es'));
+    const reviewersWs = XLSX.utils.json_to_sheet(reviewerRows);
+    applyColumnWidths(reviewersWs, reviewerRows);
+    XLSX.utils.book_append_sheet(wb, reviewersWs, sanitizeSheetName(`Revisores (${reviewerRows.length})`));
+  }
+
+  // 4. Hoja de Resumen y Métricas
   const acceptedCount = allPapers.filter((p) => p.status === 'accepted').length;
   const rejectedCount = allPapers.filter((p) => p.status === 'rejected').length;
   const underReviewCount = allPapers.filter((p) => p.status === 'under-review').length;
@@ -319,7 +350,7 @@ export const exportPapersToExcel = async (options: ExportPapersExcelOptions): Pr
   summaryWs['!cols'] = [{ wch: 35 }, { wch: 35 }];
   XLSX.utils.book_append_sheet(wb, summaryWs, 'Resumen Estadístico');
 
-  // 4. Descargar archivo en el navegador
+  // 5. Descargar archivo en el navegador
   const now = new Date();
   const dateSlug = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}_${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}`;
   

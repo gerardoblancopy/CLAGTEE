@@ -25,8 +25,12 @@ dist-ssr
 *.sw?
 .vercel
 
-# Local tool state
-.claude/
+# Local tool state (project skills are versioned)
+.claude/*
+!.claude/skills/
+# Licensed fonts for the book skill are not redistributable
+.claude/skills/libro-actas-clagtee/assets/fonts-locales/*
+!.claude/skills/libro-actas-clagtee/assets/fonts-locales/LEEME.md
 .vercel-global-config/
 
 # Local credential notes
