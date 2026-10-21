@@ -1110,7 +1110,7 @@ export const contentPT: Content = {
           "tagline": "Perspectivas regulatórias, acadêmicas e tecnológicas na evolução do setor energético",
           "date": "29 de Outubro de 2026",
           "imageUrl": "/speakers/panel-transiciones-energeticas.jpg",
-          "description": "Painel de alto nível reunindo lideranças da academia e de órgãos do setor elétrico do Chile e do Brasil para debater os desafios estratégicos, técnicos e regulatórios das transições energéticas.",
+          "description": "Painel de alto nível reunindo lideranças da academia e de órgãos do setor elétrico do Chile para debater os desafios estratégicos, técnicos e regulatórios das transições energéticas.",
           "panelists": [
             {
               "name": "Claudia Rahmann",
@@ -1126,11 +1126,6 @@ export const contentPT: Content = {
               "name": "Héctor Chávez",
               "role": "Pró-Reitor de Pós-Graduação",
               "affiliation": "Universidade de Santiago do Chile (USACH)"
-            },
-            {
-              "name": "Osvaldo Saavedra",
-              "role": "Professor Titular Eng. Elétrica UFMA, Brasil",
-              "affiliation": "Coordenador INEOF, Brasil"
             },
             {
               "name": "Felipe Feijoo",
