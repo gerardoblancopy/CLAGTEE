@@ -27,6 +27,36 @@ const CLAGTEE_FILTER_LABELS: Record<ClagteeFilter, string> = {
   'no-inscrito': 'Sin inscripción CLAGTEE',
 };
 
+type EieFilter = 'all' | 'eie' | 'transporte' | 'pendiente';
+
+const EIE_FILTER_LABELS: Record<EieFilter, string> = {
+  all: 'Todos',
+  eie: 'Alumnos EIE-PUCV',
+  transporte: 'Requieren transporte',
+  pendiente: 'PUCV sin responder',
+};
+
+const NOTIFY_BATCH_SIZE = 25;
+
+const hasStudentInfo = (a: PreCongressRegistration) => typeof a.eiePucvStudent === 'boolean';
+
+// Estudiante PUCV (por correo o institución) inscrito antes de que el
+// formulario preguntara por EIE-PUCV y transporte.
+const isPendingPucvStudent = (a: PreCongressRegistration) =>
+  a.profile === 'estudiante' &&
+  !hasStudentInfo(a) &&
+  (/pucv\.cl$/i.test(a.email.trim()) ||
+    /\bpucv\b|\beie\b|cat[oó]lica de valpara[ií]so/i.test(a.institution || ''));
+
+const matchesEieFilter = (a: PreCongressRegistration, filter: EieFilter) => {
+  if (filter === 'eie') return a.eiePucvStudent === true;
+  if (filter === 'transporte') return a.needsTransport === true;
+  if (filter === 'pendiente') return isPendingPucvStudent(a);
+  return true;
+};
+
+const yesNoLabel = (value: boolean | null | undefined) => (value === true ? 'Sí' : value === false ? 'No' : '');
+
 const formatDate = (iso: string) => {
   const date = new Date(iso);
   return Number.isNaN(date.getTime()) ? iso : date.toLocaleString('es-CL', { dateStyle: 'short', timeStyle: 'short' });
@@ -47,8 +77,11 @@ export const PreCongressDashboard: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [profileFilter, setProfileFilter] = useState<'all' | PreCongressProfile>('all');
   const [clagteeFilter, setClagteeFilter] = useState<ClagteeFilter>('all');
+  const [eieFilter, setEieFilter] = useState<EieFilter>('all');
   const [search, setSearch] = useState('');
   const [isExporting, setIsExporting] = useState(false);
+  const [notifyProgress, setNotifyProgress] = useState<{ done: number; total: number } | null>(null);
+  const [notifyResult, setNotifyResult] = useState<string | null>(null);
 
   const fetchData = useCallback(async () => {
     try {
@@ -121,19 +154,69 @@ export const PreCongressDashboard: React.FC = () => {
     [clagteeFilter, clagteeOf]
   );
 
+  const matchesProfile = useCallback(
+    (attendee: PreCongressRegistration) => profileFilter === 'all' || attendee.profile === profileFilter,
+    [profileFilter]
+  );
+
   // Cada fila de chips cuenta dentro de los demás filtros activos.
   const forProfileChips = useMemo(
-    () => attendees.filter((a) => matchesSearch(a) && matchesClagtee(a)),
-    [attendees, matchesSearch, matchesClagtee]
+    () => attendees.filter((a) => matchesSearch(a) && matchesClagtee(a) && matchesEieFilter(a, eieFilter)),
+    [attendees, matchesSearch, matchesClagtee, eieFilter]
   );
   const forClagteeChips = useMemo(
-    () => attendees.filter((a) => matchesSearch(a) && (profileFilter === 'all' || a.profile === profileFilter)),
-    [attendees, matchesSearch, profileFilter]
+    () => attendees.filter((a) => matchesSearch(a) && matchesProfile(a) && matchesEieFilter(a, eieFilter)),
+    [attendees, matchesSearch, matchesProfile, eieFilter]
   );
-  const filtered = useMemo(
-    () => forProfileChips.filter((a) => profileFilter === 'all' || a.profile === profileFilter),
-    [forProfileChips, profileFilter]
+  const forEieChips = useMemo(
+    () => attendees.filter((a) => matchesSearch(a) && matchesProfile(a) && matchesClagtee(a)),
+    [attendees, matchesSearch, matchesProfile, matchesClagtee]
   );
+  const filtered = useMemo(() => forProfileChips.filter(matchesProfile), [forProfileChips, matchesProfile]);
+
+  const pendingStudents = useMemo(() => attendees.filter(isPendingPucvStudent), [attendees]);
+
+  // Correo con enlace personal a los estudiantes PUCV que aún no responden.
+  const handleNotifyStudents = async () => {
+    const targets = pendingStudents;
+    const alreadyNotified = targets.filter((a) => a.studentInfoNotifiedAt).length;
+    const message =
+      `Se enviará un correo a ${targets.length} estudiante(s) PUCV para que indiquen si son alumnos EIE-PUCV ` +
+      'y si requieren transporte.' +
+      (alreadyNotified > 0 ? ` ${alreadyNotified} ya fueron notificados antes y recibirán un recordatorio.` : '') +
+      '\n\n¿Continuar?';
+    if (!window.confirm(message)) return;
+
+    setNotifyResult(null);
+    setNotifyProgress({ done: 0, total: targets.length });
+    let ok = 0;
+    const failed: string[] = [];
+    try {
+      for (let i = 0; i < targets.length; i += NOTIFY_BATCH_SIZE) {
+        const batch = targets.slice(i, i + NOTIFY_BATCH_SIZE);
+        const response = await apiFetch('/api/registrations', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'pre-congress-notify-students', ids: batch.map((a) => a.id) }),
+        });
+        if (!response.ok) throw new Error('notify-failed');
+        const { results } = (await response.json()) as { results: { id: string; ok: boolean; error?: string }[] };
+        results.forEach((r) => {
+          if (r.ok) ok += 1;
+          else if (r.error !== 'already-answered') failed.push(r.id);
+        });
+        setNotifyProgress({ done: Math.min(i + batch.length, targets.length), total: targets.length });
+      }
+      setNotifyResult(
+        `Correo enviado a ${ok} estudiante(s).` + (failed.length > 0 ? ` No se pudo enviar a: ${failed.join(', ')}.` : '')
+      );
+    } catch {
+      setNotifyResult(`Se interrumpió el envío después de ${ok} correo(s). Vuelva a intentarlo para los restantes.`);
+    } finally {
+      setNotifyProgress(null);
+      void fetchData();
+    }
+  };
 
   const handleExport = async () => {
     setIsExporting(true);
@@ -151,6 +234,9 @@ export const PreCongressDashboard: React.FC = () => {
           Cargo: a.position || '',
           País: a.country,
           Perfil: PROFILE_LABELS[a.profile] || a.profile,
+          'Alumno EIE-PUCV': yesNoLabel(a.eiePucvStudent),
+          'Requiere transporte': yesNoLabel(a.needsTransport),
+          'Aviso transporte enviado': a.studentInfoNotifiedAt ? formatDate(a.studentInfoNotifiedAt) : '',
           'Inscripción CLAGTEE': reg?.id || '',
           'Estado CLAGTEE': reg ? statusLabels[reg.status] : '',
           Comentarios: a.comments || '',
@@ -195,6 +281,11 @@ export const PreCongressDashboard: React.FC = () => {
               value: attendees.filter((a) => clagteeOf(a)).length,
               color: 'bg-green-100 text-green-600',
             },
+            {
+              label: 'Requieren transporte',
+              value: attendees.filter((a) => a.needsTransport === true).length,
+              color: 'bg-orange-100 text-orange-600',
+            },
           ].map((card) => (
             <div key={card.label} className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-3">
               <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${card.color}`}>
@@ -207,6 +298,38 @@ export const PreCongressDashboard: React.FC = () => {
       </div>
 
       {error && <div className="bg-red-50 border border-red-100 text-red-600 text-sm px-4 py-3 rounded-xl">{error}</div>}
+
+      {(pendingStudents.length > 0 || notifyProgress || notifyResult) && (
+        <div className="flex flex-wrap items-center justify-between gap-3 bg-amber-50 border border-amber-200 rounded-xl px-4 py-3">
+          <div className="text-sm text-amber-900">
+            {notifyProgress ? (
+              <span>
+                Enviando correos… {notifyProgress.done} de {notifyProgress.total}
+              </span>
+            ) : (
+              <>
+                {pendingStudents.length > 0 && (
+                  <p>
+                    <strong>{pendingStudents.length}</strong> estudiante(s) PUCV se inscribieron antes de la pregunta y aún no
+                    indican si son alumnos EIE-PUCV ni si requieren transporte.
+                  </p>
+                )}
+                {notifyResult && <p className="font-semibold mt-0.5">{notifyResult}</p>}
+              </>
+            )}
+          </div>
+          {pendingStudents.length > 0 && (
+            <button
+              type="button"
+              onClick={() => void handleNotifyStudents()}
+              disabled={Boolean(notifyProgress)}
+              className="px-4 py-2 bg-[#0D2C54] hover:bg-[#1a3d6b] text-white text-sm font-bold rounded-lg shadow-sm transition-colors disabled:opacity-50"
+            >
+              Notificar por correo ({pendingStudents.length})
+            </button>
+          )}
+        </div>
+      )}
 
       <div className="space-y-3">
         <div className="flex flex-wrap items-center gap-2">
@@ -227,6 +350,14 @@ export const PreCongressDashboard: React.FC = () => {
                 ? forClagteeChips.length
                 : forClagteeChips.filter((a) => (c === 'inscrito' ? Boolean(clagteeOf(a)) : !clagteeOf(a))).length}
               )
+            </button>
+          ))}
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-xs font-bold text-gray-400 uppercase w-20">EIE-PUCV</span>
+          {(Object.keys(EIE_FILTER_LABELS) as EieFilter[]).map((e) => (
+            <button key={e} type="button" onClick={() => setEieFilter(e)} className={chipClass(eieFilter === e, 'bg-[#E76F51]')}>
+              {EIE_FILTER_LABELS[e]} ({forEieChips.filter((a) => matchesEieFilter(a, e)).length})
             </button>
           ))}
         </div>
@@ -297,10 +428,29 @@ export const PreCongressDashboard: React.FC = () => {
                     )}
                   </div>
                   <div className="col-span-1 text-gray-600 truncate">{a.country}</div>
-                  <div className="col-span-1">
+                  <div className="col-span-1 space-y-1">
                     <span className={`inline-block px-2 py-0.5 rounded text-[11px] font-bold ${PROFILE_STYLES[a.profile] || PROFILE_STYLES.otro}`}>
                       {PROFILE_LABELS[a.profile] || a.profile}
                     </span>
+                    {a.eiePucvStudent === true && (
+                      <span className="block text-[11px] font-bold text-[#0D2C54]">
+                        EIE-PUCV
+                        <span className={`block font-normal ${a.needsTransport ? 'text-orange-600' : 'text-gray-400'}`}>
+                          Transporte: {yesNoLabel(a.needsTransport)}
+                        </span>
+                      </span>
+                    )}
+                    {isPendingPucvStudent(a) && (
+                      <span
+                        className="block text-[11px] font-bold text-amber-600"
+                        title={a.studentInfoNotifiedAt ? `Notificado: ${formatDate(a.studentInfoNotifiedAt)}` : 'Sin notificar'}
+                      >
+                        Sin responder
+                        <span className="block font-normal text-gray-400">
+                          {a.studentInfoNotifiedAt ? 'Notificado' : 'Sin notificar'}
+                        </span>
+                      </span>
+                    )}
                   </div>
                   <div className="col-span-2 text-xs">
                     {reg ? (
