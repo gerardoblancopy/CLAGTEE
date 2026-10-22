@@ -632,9 +632,9 @@ export const contentPT: Content = {
         "couponExhausted": "Este cupom já atingiu seu limite de usos.",
         "couponConfirmed": "Sua inscrição foi confirmada por meio de um cupom de cortesia. Não é necessário pagamento.",
         "confirmStartOver": "O pré-registro {id} será cancelado para que você possa começar de novo. Deseja continuar?",
-        "duplicateRegistration": "Já existe uma inscrição ativa ({id}) para este e-mail. Retome-a pelo link do e-mail de pré-registro ou pelo seu perfil de autor no CMS.",
+        "duplicateRegistration": "Já existe uma inscrição ativa ({id}) para esta pessoa com este e-mail. Retome-a pelo link do e-mail de pré-registro ou pelo seu perfil de autor no CMS.",
         "duplicateLinkResent": "Reenviamos o link para o seu e-mail.",
-        "duplicatePaper": "Este paper já está coberto pela inscrição {id}. Se você é coautor e vai participar, inscreva-se na categoria Geral. Se acha que é um erro, entre em contato com a organização."
+        "duplicatePaper": "Este paper já está coberto pela inscrição {id}, portanto não precisa ser pago como paper adicional. Se acha que é um erro, entre em contato com a organização."
       }
     },
     "sponsorship": {
