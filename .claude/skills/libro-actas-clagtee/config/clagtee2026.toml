@@ -209,7 +209,7 @@ titulo = "Program Committee Members"
 miembros = [
   ["TODO: Apellido, Nombre", "Chile"],
 ]
-filas_por_pagina = 28
+filas_por_pagina = 29
 # true: columna de país al lado de cada nombre, como en 2019.
 mostrar_pais = false
 # true: solo revisores con al menos una evaluación enviada en el CMS
@@ -217,7 +217,7 @@ mostrar_pais = false
 solo_con_evaluaciones = true
 # Revisores que van aunque no tengan evaluaciones en el CMS (nombre como está
 # en el CMS; no distingue tildes ni mayúsculas).
-incluir = ["Jorge Mendoza Baeza", "Werner Jara"]
+incluir = ["Jorge Mendoza Baeza", "Werner Jara", "Gonzalo Farias Castro"]
 # Revisores del CMS que no van en el libro (nombre como está en el CMS).
 excluir = ["Hassan Sam Daliri", "Mohadese Dejagah"]
 
@@ -225,6 +225,7 @@ excluir = ["Hassan Sam Daliri", "Mohadese Dejagah"]
 # (con mayúsculas normalizadas). Valor: "Apellido, Nombre".
 [comite_programa.correcciones]
 "Jorge Ignacio Marin Niño de Zepeda" = "Marin Niño de Zepeda, Jorge Ignacio"
+"Gonzalo Farias Castro" = "Farías Castro, Gonzalo"
 
 # País de un revisor cuando no se deduce de la afiliación ni del email.
 [comite_programa.paises]
