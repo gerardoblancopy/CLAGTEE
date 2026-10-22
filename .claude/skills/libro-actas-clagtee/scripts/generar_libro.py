@@ -179,9 +179,12 @@ def dividir_nombre(autor: dict) -> tuple[str, str, str]:
 
 
 def entrada_indice(autor: dict, correcciones: dict) -> tuple[str, str]:
-    """Devuelve ("Apellido, I", motivo) para el índice de autores."""
-    if autor["nombre"] in correcciones:
-        return correcciones[autor["nombre"]], "corrección manual"
+    """Devuelve ("Apellido, I", motivo) para el índice de autores. Las
+    correcciones valen sin distinguir tildes ni mayúsculas ("Andres"/"Andrés")."""
+    norm = clave_norm(autor["nombre"])
+    correccion = next((v for k, v in correcciones.items() if clave_norm(k) == norm), None)
+    if correccion:
+        return correccion, "corrección manual"
     apellido, nombres, motivo = dividir_nombre(autor)
     return (f"{apellido}, {nombres[:1].upper()}" if nombres else apellido), motivo
 
