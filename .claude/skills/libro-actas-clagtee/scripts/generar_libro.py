@@ -375,10 +375,12 @@ def comite_desde_revisores(revisores: list[dict], cfg: dict, solo_con_evaluacion
     correcciones = cfg.get("comite_programa", {}).get("correcciones", {})
     paises = cfg.get("comite_programa", {}).get("paises", {})
     excluir = {clave_norm(n) for n in cfg.get("comite_programa", {}).get("excluir", [])}
+    # Revisores que van aunque no tengan evaluaciones en el CMS.
+    incluir = {clave_norm(n) for n in cfg.get("comite_programa", {}).get("incluir", [])}
     avisos = []
     miembros = {}
     for r in revisores:
-        if solo_con_evaluaciones and r["evaluaciones"] is not None and r["evaluaciones"] == 0:
+        if solo_con_evaluaciones and r["evaluaciones"] == 0 and clave_norm(r["nombre"]) not in incluir:
             continue
         if clave_norm(r["nombre"]) in excluir:
             avisos.append(f"Comité de Programa: '{r['nombre']}' excluido por config ([comite_programa].excluir).")
@@ -394,6 +396,10 @@ def comite_desde_revisores(revisores: list[dict], cfg: dict, solo_con_evaluacion
         if motivo.startswith("AMBIGUO"):
             avisos.append(f"Comité de Programa: '{r['nombre']}' -> '{entrada}' ({motivo}).")
         miembros[clave_norm(entrada)] = [entrada, pais]
+    encontrados = {clave_norm(r["nombre"]) for r in revisores}
+    for n in cfg.get("comite_programa", {}).get("incluir", []):
+        if clave_norm(n) not in encontrados:
+            avisos.append(f"Comité de Programa: '{n}' está en [comite_programa].incluir pero no es revisor en el CMS.")
     lista = sorted(miembros.values(), key=lambda m: clave_norm(m[0]))
     return lista, avisos
 
