@@ -189,23 +189,17 @@ titulo = "Local organizing committee"
 # En 2019 la segunda columna era el email de cada miembro.
 filas = [
   ["Farías, Gonzalo", "PUCV (Chile)"],
-  ["Vargas, Héctor", "PUCV (Chile)"],
-  ["Reusser, Carlos", "PUCV (Chile)"],
   ["Jara, Werner", "PUCV (Chile)"],
   ["Hermosilla, Gabriel", "PUCV (Chile)"],
-  ["Escarate, Pedro", "PUCV (Chile)"],
-  ["López, Miguel", "PUCV (Chile)"],
   ["Blanco, Gerardo", "PUCV (Chile)"],
-  ["Okoye, Martin", "PUCV (Chile)"],
-  ["Rodriguez, Mauricio", "PUCV (Chile)"],
   ["Leiva, Ariel", "PUCV (Chile)"],
-  ["Altamirano, Diego", "PUCV (Chile)"],
 ]
 
 [[comites]]
-titulo = "Conference secretary"
+titulo = "Conference staff"
 filas = [
   ["Carmona, María Elena", "PUCV (Chile)"],
+  ["López, Antonia", "PUCV (Chile)"],
 ]
 
 [comite_programa]
