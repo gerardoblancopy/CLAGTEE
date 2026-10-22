@@ -252,6 +252,11 @@ titulo = "Author Index"
 "Elbis D'Espaux Shelton" = "D'Espaux Shelton, E"
 "Henrry Diaz Torres" = "Diaz Torres, H"
 "Alenys Rivero Nápoles" = "Rivero Nápoles, A"
+"Andrés Arturo Romero Quete" = "Romero Quete, A"
+"Edsson Frank Medina Vigoria" = "Medina Vigoria, E"
+"Elmer Pablo Tito Cari" = "Tito Cari, E"
+"Agnelo Marotta Cassula" = "Marotta Cassula, A"
+"Andrés Mendiburu Zeballos" = "Mendiburu Zeballos, A"
 # Nombre compuesto + un apellido
 "Gino Leonel Furlano" = "Furlano, G"
 "Juan Pablo Méndez" = "Méndez, J"
@@ -262,6 +267,28 @@ titulo = "Author Index"
 "Apaza Quispe Jose Luis" = "Apaza Quispe, J"
 "Miranda Cahuana Francisco Alonso" = "Miranda Cahuana, F"
 "Rendulich Talavera Jorge Eusebio" = "Rendulich Talavera, J"
+
+# ---------------------------------------------------------------------------
+# Libro del Programa (scripts/generar_programa.py, plantilla/programa.typ).
+# Horarios, salas, sesiones, chairs, plenarias, papers y presentadores salen
+# de la planilla del programa (CLAGTEE2026_Programa_vN.xlsx). Aquí va solo el
+# texto fijo; los títulos de [correcciones_papers] y los nombres de
+# [indice_autores.correcciones] también se aplican al programa.
+# ---------------------------------------------------------------------------
+[programa]
+titulo = "CONFERENCE PROGRAM"
+# Línea pequeña de la cabecera, hacia el lomo.
+titulo_corrido = "XVI CLAGTEE 2026 · Conference Program"
+contacto = "clagtee2026@pucv.cl"
+# Páginas de notas al final para que el total sea múltiplo de 4 (cuadernillo).
+multiplo_paginas = 4
+
+# Actividades que no están en la planilla (página de información general).
+[[programa.actividades]]
+titulo = "Pre-Congress: Workshop + Seminar"
+cuando = "Tuesday, October 27 · 15:00–18:00"
+donde = "Auditorio CEA PUCV · Antonio Bellet 314, Providencia"
+detalle = "“Artificial Intelligence Applied to Power Systems”: talks, hands-on session and expert panel, followed by the CLAGTEE 2026 Welcome Cocktail. Free registration at www.clagtee2026.org."
 
 # Tracks oficiales CLAGTEE 2026 (sitio web, data/translations/*.ts).
 # El CMS guarda el título en español; "es", "en" y "pt" sirven para

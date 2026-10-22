@@ -1,6 +1,6 @@
 ---
 name: libro-actas-clagtee
-description: Genera el Libro de Resúmenes / libro de actas ("Book of Abstracts") de CLAGTEE 2026 en PDF con el mismo formato y estilo del Book of Abstracts CLAGTEE 2019 (150 × 220 mm, portada morada con la torre, preliminares, índice por track, resúmenes, índice de autores y contraportada), a partir del Excel que exporta el CMS o del JSON de /api/papers. Usar cuando pidan el libro de actas, libro de resúmenes, book of abstracts o proceedings locales del congreso, o cambiar su contenido (prefacio, comités, ISBN, patrocinadores).
+description: Genera el Libro de Resúmenes / libro de actas ("Book of Abstracts") de CLAGTEE 2026 en PDF con el mismo formato y estilo del Book of Abstracts CLAGTEE 2019 (150 × 220 mm, portada morada con la torre, preliminares, índice por track, resúmenes, índice de autores y contraportada), a partir del Excel que exporta el CMS o del JSON de /api/papers; y el Libro del Programa ("Conference Program") con la misma identidad, a partir de la planilla del programa (CLAGTEE2026_Programa_vN.xlsx). Usar cuando pidan el libro de actas, libro de resúmenes, book of abstracts, proceedings locales, libro o folleto del programa del congreso, o cambiar su contenido (prefacio, comités, ISBN, patrocinadores).
 ---
 
 # Libro de Resúmenes CLAGTEE 2026 (formato 2019)
@@ -12,6 +12,10 @@ El libro se arma con tres piezas, todas dentro de esta carpeta:
 | `config/clagtee2026.toml` | Todo el contenido fijo: portada, ficha ISBN, prefacio, información, objetivo, historia, comités, patrocinadores, tracks |
 | `plantilla/libro.typ` | Plantilla Typst que replica el formato 2019 (medidas en `referencia/formato-libro-2019.md`) |
 | `scripts/generar_libro.py` | Lee los papers, los ordena y numera, arma el índice de autores, escribe un reporte y compila el PDF |
+
+`plantilla/comun.typ` tiene lo que comparten los dos libros (formato de
+página, fuentes, portada, página de patrocinadores y contraportada). El Libro
+del Programa se arma aparte: ver [Libro del Programa](#libro-del-programa).
 
 `assets/` trae las fuentes libres (Open Sans, Crimson Text, Montserrat, con su
 licencia OFL) y los logos: torre CLAGTEE, PUCV/EIE blanco, PUCV color, UNESP y
@@ -175,6 +179,44 @@ sesión nueva en la nube esa carpeta empieza vacía y hay que volver a copiarlas
 
 Nirmala UI no tiene cursiva; la firma del prefacio y los subtemas se inclinan
 como hacía InDesign en 2019.
+
+## Libro del Programa
+
+El folleto del programa ("Conference Program") usa la misma portada,
+página de patrocinadores y contraportada, con `scripts/generar_programa.py`
+y `plantilla/programa.typ`. Todo sale de la planilla del programa que arma
+la organización (`CLAGTEE2026_Programa_vN.xlsx`):
+
+- Hojas por día (`Miércoles 28`, `Jueves 29`...): una tabla por sala con
+  eventos comunes (registro, keynote, plenarias, coffee, cena, cierre),
+  sesiones (`SESSION S1A`, tracks, `Chair:`) y cada ponencia (hora, código,
+  título, presentador). Los eventos comunes se toman de la sala principal; si
+  otra sala dice algo distinto, el reporte lo avisa.
+- `Ponencias (interno)`: autores del CMS, país y estado de cada código.
+- `Programa General`: título, fechas, ciudad, sede y duración de las
+  ponencias (primeras filas).
+
+```bash
+python3 .claude/skills/libro-actas-clagtee/scripts/generar_programa.py \
+  --programa RUTA/CLAGTEE2026_Programa_v7.xlsx --pliegos --vista-previa 1-6
+```
+
+Salida en `scratch/libro-actas/programa/`: el PDF, la versión en pliegos,
+`programa.json` y `reporte-programa.md`. Revisar el reporte con el usuario:
+eventos que difieren entre salas, presentadores que no figuran entre los
+autores del CMS (se imprimen como "Presenter"), cupos vacíos, ponencias
+"por confirmar" y nombres ambiguos del índice de autores.
+
+Contenido: portada, patrocinadores, información general (más
+`[[programa.actividades]]` del .toml, p. ej. el pre-congreso), programa de un
+vistazo, keynote y plenarias, por día una grilla hora × sala y el detalle de
+cada sesión (chair, horario, título, autores con el presentador subrayado),
+tracks, índice de autores con sus sesiones (en negrita, donde presenta) y
+contraportada. Si hace falta, agrega páginas de notas para que el total sea
+múltiplo de `[programa].multiplo_paginas` (4, cuadernillo).
+
+Los títulos de `[correcciones_papers]` y los nombres de
+`[indice_autores.correcciones]` valen para los dos libros.
 
 ## Prueba rápida
 
