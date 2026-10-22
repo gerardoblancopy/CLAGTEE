@@ -357,12 +357,16 @@ def leer_revisores(ruta: Path) -> list[dict] | None:
         nombre = espacios(f.get("Nombre") or f.get("name") or f.get("nombre") or "")
         if not nombre:
             continue
-        evals = f.get("Evaluaciones Enviadas")
+        # 0 es un dato (no envió evaluaciones), no una celda vacía.
+        try:
+            evaluaciones = int(float(f.get("Evaluaciones Enviadas")))
+        except (TypeError, ValueError):
+            evaluaciones = None
         out.append({
             "nombre": limpiar_nombre(nombre),
             "email": espacios(f.get("Email") or f.get("email") or ""),
             "afiliacion": espacios(f.get("Afiliación") or f.get("affiliation") or f.get("afiliacion") or ""),
-            "evaluaciones": int(evals) if str(evals or "").strip().isdigit() else None,
+            "evaluaciones": evaluaciones,
         })
     return out
 
@@ -789,7 +793,8 @@ def main() -> None:
     fuente_rev = Path(args.revisores or args.papers).expanduser()
     revisores = leer_revisores(fuente_rev)
     if revisores:
-        datos["comite_programa"], avisos_rev = comite_desde_revisores(revisores, cfg, args.revisores_con_evaluaciones)
+        solo_con_evaluaciones = args.revisores_con_evaluaciones or cfg.get("comite_programa", {}).get("solo_con_evaluaciones", False)
+        datos["comite_programa"], avisos_rev = comite_desde_revisores(revisores, cfg, solo_con_evaluaciones)
         avisos.extend(avisos_rev)
         print(f"Comité de Programa: {len(datos['comite_programa'])} revisores del CMS ({fuente_rev.name}).")
     elif args.revisores:
