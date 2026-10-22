@@ -142,8 +142,9 @@ común:
   (revisores registrados, con trabajos asignados y evaluaciones enviadas). El
   script arma "Apellido, Nombre" y deduce el país de la afiliación o del
   dominio del email; lo que no pudo deducir queda en el reporte y se corrige
-  en `[comite_programa.correcciones]`. `--revisores-con-evaluaciones` deja
-  solo a quienes enviaron al menos una evaluación. Si el Excel no trae esa
+  en `[comite_programa.correcciones]`. `[comite_programa].solo_con_evaluaciones = true`
+  (o `--revisores-con-evaluaciones`) deja solo a quienes enviaron al menos
+  una evaluación. Si el Excel no trae esa
   hoja, se usa `[comite_programa].miembros` del .toml.
   `[comite_programa].excluir` saca revisores puntuales y
   `mostrar_pais = false` imprime solo los nombres.

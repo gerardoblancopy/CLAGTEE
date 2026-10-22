@@ -188,11 +188,11 @@ filas = [
 titulo = "Local organizing committee"
 # En 2019 la segunda columna era el email de cada miembro.
 filas = [
+  ["Leiva, Ariel", "PUCV (Chile)"],
   ["Farías, Gonzalo", "PUCV (Chile)"],
   ["Jara, Werner", "PUCV (Chile)"],
   ["Hermosilla, Gabriel", "PUCV (Chile)"],
   ["Blanco, Gerardo", "PUCV (Chile)"],
-  ["Leiva, Ariel", "PUCV (Chile)"],
 ]
 
 [[comites]]
@@ -212,6 +212,9 @@ miembros = [
 filas_por_pagina = 27
 # true: columna de país al lado de cada nombre, como en 2019.
 mostrar_pais = false
+# true: solo revisores con al menos una evaluación enviada en el CMS
+# (columna "Evaluaciones Enviadas" de la hoja "Revisores").
+solo_con_evaluaciones = true
 # Revisores del CMS que no van en el libro (nombre como está en el CMS).
 excluir = ["Hassan Sam Daliri", "Mohadese Dejagah"]
 
