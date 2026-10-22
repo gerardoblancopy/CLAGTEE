@@ -685,15 +685,16 @@ def elegir_fuentes(cfg: dict, carpetas: list[Path]) -> dict[str, str]:
     return out
 
 
-def compilar(config: Path, cfg: dict, datos_json: Path, pdf: Path, carpetas: list[Path]) -> None:
-    entradas = {"config": rel(config), "data": rel(datos_json), **elegir_fuentes(cfg, carpetas)}
+def compilar(config: Path, cfg: dict, datos_json: Path, pdf: Path, carpetas: list[Path],
+             plantilla: Path = TEMPLATE, extra: dict[str, str] | None = None) -> None:
+    entradas = {"config": rel(config), "data": rel(datos_json), **elegir_fuentes(cfg, carpetas), **(extra or {})}
     try:
         import typst
     except ImportError:
         typst = None
     if typst is not None:
         pdf_bytes, avisos = typst.compile_with_warnings(
-            str(TEMPLATE), root=str(REPO_ROOT), font_paths=[str(c) for c in carpetas], sys_inputs=entradas)
+            str(plantilla), root=str(REPO_ROOT), font_paths=[str(c) for c in carpetas], sys_inputs=entradas)
         for a in avisos:
             msg = getattr(a, "message", str(a))
             if "unknown font family" not in msg:
@@ -708,7 +709,7 @@ def compilar(config: Path, cfg: dict, datos_json: Path, pdf: Path, carpetas: lis
         cmd += ["--font-path", str(c)]
     for k, v in entradas.items():
         cmd += ["--input", f"{k}={v}"]
-    subprocess.run(cmd + [str(TEMPLATE), str(pdf)], check=True)
+    subprocess.run(cmd + [str(plantilla), str(pdf)], check=True)
 
 
 def pliegos(pdf: Path, destino: Path) -> None:

@@ -31,6 +31,8 @@ dist-ssr
 # Licensed fonts for the book skill are not redistributable
 .claude/skills/libro-actas-clagtee/assets/fonts-locales/*
 !.claude/skills/libro-actas-clagtee/assets/fonts-locales/LEEME.md
+# generar_programa.py importa generar_libro.py
+__pycache__/
 .vercel-global-config/
 
 # Local credential notes
