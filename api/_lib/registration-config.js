@@ -141,9 +141,18 @@ export const normalizeTitle = (value) =>
     .replace(/[^a-z0-9]+/g, ' ')
     .trim();
 
+// Misma persona: nombre completo igual, o igual primer nombre y primer apellido
+// ("Pablo Ignacio Santis Torrejón" y "Pablo Santis"), sin tildes ni mayúsculas.
+const firstWord = (value) => normalizeTitle(value).split(' ')[0] || '';
+const isSamePerson = (a, b) =>
+  normalizeTitle(`${a.firstName} ${a.lastName}`) === normalizeTitle(`${b.firstName} ${b.lastName}`) ||
+  (firstWord(a.firstName) === firstWord(b.firstName) && firstWord(a.lastName) === firstWord(b.lastName));
+
 /**
  * Busca una inscripción activa (no cancelada) que choque con la nueva: la misma
- * persona en una categoría principal, o el mismo paper ya cubierto por otra inscripción.
+ * persona (mismo correo y nombre) en una categoría principal, o un paper adicional
+ * para un paper que ya está cubierto. Varios autores de un mismo paper pueden
+ * inscribirse, también con un correo compartido (el autor que inscribe a sus coautores).
  * @returns {{ code: 'duplicate-registration'|'duplicate-paper', record: object } | null}
  */
 export const findDuplicateRegistration = (records, clean) => {
@@ -152,13 +161,14 @@ export const findDuplicateRegistration = (records, clean) => {
   if (PERSON_CATEGORIES.includes(clean.category)) {
     const email = lower(clean.email);
     const match = active.find(
-      (record) => PERSON_CATEGORIES.includes(record.category) && lower(record.email) === email
+      (record) =>
+        PERSON_CATEGORIES.includes(record.category) && lower(record.email) === email && isSamePerson(record, clean)
     );
     if (match) return { code: 'duplicate-registration', record: match };
   }
 
   const paperId = normalizePaperId(clean.cmsPaperId);
-  if (paperId) {
+  if (paperId && clean.category === 'paper-adicional') {
     const match = active.find((record) => normalizePaperId(record.cmsPaperId) === paperId);
     if (match) return { code: 'duplicate-paper', record: match };
   }

@@ -632,9 +632,9 @@ export const contentES: Content = {
         "couponExhausted": "Este cupón ya alcanzó su límite de usos.",
         "couponConfirmed": "Su inscripción fue confirmada mediante un cupón de cortesía. No requiere realizar pago.",
         "confirmStartOver": "Se anulará el pre-registro {id} para que pueda comenzar de nuevo. ¿Desea continuar?",
-        "duplicateRegistration": "Ya existe una inscripción activa ({id}) para este correo. Retómela desde el enlace del correo de pre-registro o desde su perfil de autor en el CMS.",
+        "duplicateRegistration": "Ya existe una inscripción activa ({id}) para esta persona con este correo. Retómela desde el enlace del correo de pre-registro o desde su perfil de autor en el CMS.",
         "duplicateLinkResent": "Le reenviamos el enlace a su correo.",
-        "duplicatePaper": "Este paper ya está cubierto por la inscripción {id}. Si usted es coautor y asistirá, inscríbase en la categoría General. Si cree que es un error, contacte a la organización."
+        "duplicatePaper": "Este paper ya está cubierto por la inscripción {id}, así que no necesita pagarlo como paper adicional. Si cree que es un error, contacte a la organización."
       }
     },
     "sponsorship": {
