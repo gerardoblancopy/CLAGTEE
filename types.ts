@@ -280,6 +280,7 @@ export interface Content {
     registration: RegistrationContent;
     sponsorship: SponsorshipContent;
     preCongress: PreCongressContent;
+    program: ProgramContent;
     speakers: {
       title: string;
       subtitle?: string;
@@ -390,6 +391,92 @@ export interface PreCongressContent {
       backToForm: string;
     };
   };
+}
+
+/** Textos de la sección Programa; los datos están en data/programa2026.json. */
+export interface ProgramContent {
+  title: string;
+  intro: string;
+  downloadPdf: string;
+  pdfUrl: string;
+  timezoneNote: string;
+  presenterNote: string;
+  searchPlaceholder: string;
+  searchResults: string;
+  noResults: string;
+  loading: string;
+  loadError: string;
+  parallelSessions: string;
+  chair: string;
+  presenter: string;
+  room: string;
+  principalRoom: string;
+  /** "{weekday}", "{day}" y "{month}" se reemplazan con los nombres de abajo. */
+  dayFormat: string;
+  weekdays: Record<string, string>;
+  months: Record<string, string>;
+  /** Nombre de los eventos comunes por clase (registro, apertura, keynote, cafe, receso, cena, cierre). */
+  events: Record<string, string>;
+  /** Traducción de frases del programa en inglés ("Plenary", "Expert Panel", "Panelists"...). */
+  phrases: Record<string, string>;
+}
+
+/** Programa generado desde la planilla con generar_programa.py --web. */
+export interface ProgramPaper {
+  inicio: string;
+  fin: string;
+  codigo?: string;
+  titulo?: string;
+  idioma?: string;
+  autores?: { nombre: string; presenta: boolean }[];
+  presentadores_extra?: string[];
+  track?: number | null;
+  vacio?: boolean;
+}
+
+export interface ProgramSession {
+  id: string;
+  dia: string;
+  dia_id: string;
+  sala: string;
+  sala_nombre: string;
+  inicio: string;
+  fin: string;
+  tracks: { numero: number; titulo: string }[];
+  chair: string;
+  papers: ProgramPaper[];
+}
+
+export interface ProgramEvent {
+  tipo: 'evento';
+  clase: string;
+  inicio: string;
+  fin: string;
+  nombre: string;
+  titulo?: string;
+  rol?: string;
+  personas?: string[];
+  lugar?: string;
+}
+
+export interface ProgramBlock {
+  tipo: 'bloque';
+  sesiones: string[];
+  inicio: string;
+  fin: string;
+}
+
+export interface ProgramDay {
+  id: string;
+  nombre: string;
+  salas: { letra: string; nombre: string; principal: boolean }[];
+  filas: (ProgramEvent | ProgramBlock)[];
+}
+
+export interface ProgramData {
+  cabecera: { ciudad: string; fechas: string; sede: string; direccion: string; duracion: string };
+  dias: ProgramDay[];
+  sesiones: Record<string, ProgramSession>;
 }
 
 /** Inscripción al Pre-congreso tal como la guarda / devuelve la API. */

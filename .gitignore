@@ -41,6 +41,8 @@ src/cms/pass.md
 # Scratch and local files
 scratch/
 *.pdf
+# Programa del congreso publicado en el sitio (lo genera generar_programa.py)
+!public/programa/*.pdf
 *.docx
 clagtee-conference/assets/revisiones.md
 node_modules
