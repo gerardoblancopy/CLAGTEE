@@ -1,3 +1,9 @@
+# CLAGTEE 2026
+
+Antes de trabajar en este repo, lee `handoff.md`: arquitectura, flujos, reglas
+de oro (límite de 12 funciones de Vercel, el proxy de `npm run dev` apunta a
+producción) y pendientes.
+
 <!-- VERCEL BEST PRACTICES START -->
 ## Best practices for developing on Vercel
 
