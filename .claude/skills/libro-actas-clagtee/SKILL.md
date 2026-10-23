@@ -220,6 +220,18 @@ múltiplo de `[programa].multiplo_paginas` (4, cuadernillo).
 Los títulos de `[correcciones_papers]` y los nombres de
 `[indice_autores.correcciones]` valen para los dos libros.
 
+El sitio publica el mismo programa (sección "Programa", `#programa`). Al
+recibir una versión nueva de la planilla, actualizar también el sitio:
+
+```bash
+python3 .claude/skills/libro-actas-clagtee/scripts/generar_programa.py \
+  --programa RUTA/CLAGTEE2026_Programa_vN.xlsx --web data/programa2026.json
+cp scratch/libro-actas/programa/CLAGTEE2026_Conference_Program.pdf public/programa/
+```
+
+`--web` escribe solo lo público: sin estado de pago o asistencia, país ni
+índice de autores.
+
 ## Prueba rápida
 
 ```bash

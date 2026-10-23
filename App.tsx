@@ -28,6 +28,7 @@ import { EcfRelay } from './src/cms/EcfRelay';
 import { RegistrationSection } from './src/registration/RegistrationSection';
 import { SponsorshipSection } from './src/sponsorship/SponsorshipSection';
 import { PreCongressSection } from './src/precongress/PreCongressSection';
+import { ProgramSection } from './src/program/ProgramSection';
 import { IeeeFinalVersionSection } from './components/IeeeFinalVersionSection';
 import { SponsorsSection } from './components/SponsorsSection';
 
@@ -341,6 +342,10 @@ const AppContent: React.FC = () => {
             </motion.div>
         </Section>
         
+        <Section id="programa" title={content.sections.program.title} className="bg-gray-100 py-16 md:py-24" contentClassName="!max-w-7xl">
+          <ProgramSection />
+        </Section>
+
         <Section id="fechas" title={content.sections.importantDates.title}>
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6"

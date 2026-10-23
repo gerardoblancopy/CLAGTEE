@@ -5,6 +5,7 @@ export const contentEN: Content = {
   "navigation": [
     { "text": "Home", "url": "#inicio" },
     { "text": "About", "url": "#acerca-de" },
+    { "text": "Program", "url": "#programa" },
     { "text": "New Dates", "url": "#fechas" },
     { "text": "Tracks", "url": "#ejes" },
     { "text": "IEEE Final Version", "url": "#version-final-ieee" },
@@ -862,6 +863,58 @@ export const contentEN: Content = {
         "standForm": "Stand Registration",
         "inquiryForm": "Sponsorship Pre-Reservation"
       }
+    },
+    "program": {
+      "title": "Conference Program",
+      "intro": "Three days of technical sessions in four rooms, a keynote lecture and three plenary expert panels. Choose a day or search by author, title or paper code.",
+      "downloadPdf": "Download program (PDF)",
+      "pdfUrl": "/programa/CLAGTEE2026_Conference_Program.pdf",
+      "timezoneNote": "Santiago de Chile time (UTC−3).",
+      "presenterNote": "The presenting author is underlined.",
+      "searchPlaceholder": "Search by author, title or code (e.g. PLA-21)",
+      "searchResults": "{n} papers found",
+      "noResults": "No papers match your search.",
+      "loading": "Loading program…",
+      "loadError": "The program could not be loaded. Download the PDF instead.",
+      "parallelSessions": "Parallel technical sessions",
+      "chair": "Chair",
+      "presenter": "Presenter",
+      "room": "Room",
+      "principalRoom": "principal",
+      "dayFormat": "{weekday}, {month} {day}",
+      "weekdays": {
+        "Monday": "Monday",
+        "Tuesday": "Tuesday",
+        "Wednesday": "Wednesday",
+        "Thursday": "Thursday",
+        "Friday": "Friday",
+        "Saturday": "Saturday",
+        "Sunday": "Sunday"
+      },
+      "months": {
+        "January": "January",
+        "February": "February",
+        "March": "March",
+        "April": "April",
+        "May": "May",
+        "June": "June",
+        "July": "July",
+        "August": "August",
+        "September": "September",
+        "October": "October",
+        "November": "November",
+        "December": "December"
+      },
+      "events": {
+        "registro": "Registration",
+        "apertura": "Opening Ceremony",
+        "keynote": "Keynote Lecture",
+        "cafe": "Coffee Break",
+        "receso": "Break",
+        "cena": "Conference Dinner",
+        "cierre": "Closing Remarks"
+      },
+      "phrases": {}
     },
     "preCongress": {
       "title": "Pre-congress",

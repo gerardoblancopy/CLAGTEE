@@ -439,6 +439,19 @@ def escribir_reporte(salida: Path, datos: dict, avisos: list[str], revision: lis
     return ruta
 
 
+def datos_web(datos: dict) -> dict:
+    """Lo que publica el sitio (sección Programa): sin estado de pago o
+    asistencia, país ni índice de autores, que son de uso interno."""
+    publicos = ("inicio", "fin", "codigo", "titulo", "idioma", "autores", "presentadores_extra", "track", "vacio")
+    sesiones = {
+        sid: {**{k: v for k, v in s.items() if k != "papers"},
+              "papers": [{k: p[k] for k in publicos if k in p} for p in s["papers"]]}
+        for sid, s in datos["sesiones"].items()
+    }
+    return {"cabecera": datos["cabecera"], "dias": datos["dias"], "sesiones": sesiones,
+            "plenarias": datos["plenarias"], "tracks": datos["tracks"]}
+
+
 def main() -> None:
     from pypdf import PdfReader
 
@@ -451,6 +464,8 @@ def main() -> None:
     ap.add_argument("--pliegos", action="store_true", help="Genera además la versión en páginas enfrentadas")
     ap.add_argument("--vista-previa", default="", help="Páginas a exportar como PNG, p. ej. '1-5,12'")
     ap.add_argument("--fuentes", action="append", default=[], help="Carpeta extra con fuentes; se puede repetir")
+    ap.add_argument("--web", default="", help="Escribe además el JSON de la sección Programa del sitio "
+                                              "(p. ej. data/programa2026.json)")
     args = ap.parse_args()
 
     config = Path(args.config).resolve()
@@ -465,6 +480,10 @@ def main() -> None:
     datos, avisos, revision = construir(args, cfg)
     datos_json = salida / "programa.json"
     datos_json.write_text(json.dumps(datos, ensure_ascii=False, indent=1), encoding="utf-8")
+    if args.web:
+        web = Path(args.web).resolve()
+        web.write_text(json.dumps(datos_web(datos), ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+        print(f"JSON del sitio: {web}")
     reporte = escribir_reporte(salida, datos, avisos, revision)
     e = datos["estadisticas"]
     print(f"Programa: {e['dias']} días, {e['sesiones']} sesiones, {e['papers']} ponencias; {len(avisos)} advertencias.")

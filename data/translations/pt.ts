@@ -5,6 +5,7 @@ export const contentPT: Content = {
   "navigation": [
     { "text": "Início", "url": "#inicio" },
     { "text": "Sobre", "url": "#acerca-de" },
+    { "text": "Programa", "url": "#programa" },
     { "text": "Novas Datas", "url": "#fechas" },
     { "text": "Eixos Temáticos", "url": "#ejes" },
     { "text": "Versão Final IEEE", "url": "#version-final-ieee" },
@@ -861,6 +862,66 @@ export const contentPT: Content = {
         "sponsorships": "Modalidades de Patrocínio",
         "standForm": "Inscrição de Estande",
         "inquiryForm": "Pré-Reserva de Patrocínio"
+      }
+    },
+    "program": {
+      "title": "Programa do Congresso",
+      "intro": "Três dias de sessões técnicas em quatro salas, uma palestra magistral e três plenárias com painéis de especialistas. Escolha o dia ou busque por autor, título ou código do artigo.",
+      "downloadPdf": "Baixar programa (PDF)",
+      "pdfUrl": "/programa/CLAGTEE2026_Conference_Program.pdf",
+      "timezoneNote": "Horário de Santiago do Chile (UTC−3).",
+      "presenterNote": "O autor que apresenta aparece sublinhado.",
+      "searchPlaceholder": "Buscar por autor, título ou código (ex. PLA-21)",
+      "searchResults": "{n} artigos encontrados",
+      "noResults": "Nenhum artigo corresponde à busca.",
+      "loading": "Carregando programa…",
+      "loadError": "Não foi possível carregar o programa. Baixe o PDF.",
+      "parallelSessions": "Sessões técnicas paralelas",
+      "chair": "Chair",
+      "presenter": "Apresenta",
+      "room": "Sala",
+      "principalRoom": "principal",
+      "dayFormat": "{weekday}, {day} de {month}",
+      "weekdays": {
+        "Monday": "Segunda-feira",
+        "Tuesday": "Terça-feira",
+        "Wednesday": "Quarta-feira",
+        "Thursday": "Quinta-feira",
+        "Friday": "Sexta-feira",
+        "Saturday": "Sábado",
+        "Sunday": "Domingo"
+      },
+      "months": {
+        "January": "janeiro",
+        "February": "fevereiro",
+        "March": "março",
+        "April": "abril",
+        "May": "maio",
+        "June": "junho",
+        "July": "julho",
+        "August": "agosto",
+        "September": "setembro",
+        "October": "outubro",
+        "November": "novembro",
+        "December": "dezembro"
+      },
+      "events": {
+        "registro": "Credenciamento",
+        "apertura": "Cerimônia de abertura",
+        "keynote": "Palestra magistral",
+        "cafe": "Coffee break",
+        "receso": "Intervalo",
+        "cena": "Jantar do congresso",
+        "cierre": "Encerramento"
+      },
+      "phrases": {
+        "Plenary": "Plenária",
+        "Special Motors Panel": "Painel de motores especiais",
+        "Expert Panel": "Painel de especialistas",
+        "Speaker": "Palestrante",
+        "Panelists": "Painelistas",
+        "Principal Room": "principal",
+        "Room": "Sala"
       }
     },
     "preCongress": {

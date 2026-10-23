@@ -49,7 +49,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
           key={code}
           onClick={() => onLanguageChange(code)}
           className={`
-            px-2.5 py-1 rounded-full font-['Montserrat'] font-bold text-[10px] xl:text-[11px] tracking-wide transition-all duration-200
+            px-2.5 py-1 rounded-full font-['Montserrat'] font-bold text-[10px] min-[1760px]:text-[11px] tracking-wide transition-all duration-200
             ${language === code
               ? 'bg-[#F4A261] text-[#0D2C54]'
               : 'text-white/80 hover:text-white hover:bg-white/10'
