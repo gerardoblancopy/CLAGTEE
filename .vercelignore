@@ -1,6 +1,8 @@
 .git
 node_modules
 *.pdf
+# Programa del congreso, descargable desde la sección Programa del sitio
+!public/programa/*.pdf
 .env*.local
 dist
 .system_generated
