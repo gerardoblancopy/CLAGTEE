@@ -24,7 +24,7 @@ import json
 import re
 import sys
 import tomllib
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 
 from generar_libro import (
@@ -253,19 +253,31 @@ def construir(args, cfg: dict) -> tuple[dict, list[str], list[tuple]]:
                "salas": [{"letra": l, "nombre": dh["salas"][l]["nombre"], "principal": l == principal} for l in letras],
                "filas": []}
 
-        # Los eventos comunes salen de la sala principal (donde ocurren); si
-        # otra sala dice algo distinto, se avisa.
-        eventos_principal = [f for f in dh["salas"][principal]["filas"] if f["tipo"] == "evento"]
+        # Cada evento común aparece repetido en la hoja de cada sala. Si las
+        # salas no coinciden (una se actualizó y las otras no), se usa el texto
+        # de la mayoría; en empate, el de la sala principal. Se avisa siempre.
+        eventos_por_sala = {l: [f for f in dh["salas"][l]["filas"] if f["tipo"] == "evento"] for l in letras}
+        eventos_principal = eventos_por_sala[principal]
         for l in letras:
-            if l == principal:
+            if len(eventos_por_sala[l]) != len(eventos_principal):
+                avisos.append(f"{nombre_dia}: la sala {l} tiene {len(eventos_por_sala[l])} eventos comunes y la "
+                              f"principal {len(eventos_principal)}.")
+        for k, ev_principal in enumerate(eventos_principal):
+            textos = [eventos_por_sala[l][k]["texto"] for l in letras if k < len(eventos_por_sala[l])]
+            votos = Counter(textos)
+            if len(votos) == 1:
                 continue
-            otros = [f for f in dh["salas"][l]["filas"] if f["tipo"] == "evento"]
-            for a, b in zip(eventos_principal, otros):
-                if a["texto"] != b["texto"]:
-                    avisos.append(f"{nombre_dia} {a['inicio']}: la hoja de la sala {l} dice «{b['texto']}» y la sala "
-                                  f"{principal} (principal) «{a['texto']}». Se usa la de la sala {principal}.")
-            if len(otros) != len(eventos_principal):
-                avisos.append(f"{nombre_dia}: la sala {l} tiene {len(otros)} eventos comunes y la principal {len(eventos_principal)}.")
+            maximo = max(votos.values())
+            ganador = ev_principal["texto"] if votos[ev_principal["texto"]] == maximo else votos.most_common(1)[0][0]
+            detalle = "; ".join(f"sala(s) {', '.join(l for l in letras if k < len(eventos_por_sala[l]) and eventos_por_sala[l][k]['texto'] == t)}: «{t}»"
+                                for t in votos)
+            avisos.append(f"{nombre_dia} {ev_principal['inicio']}: las salas no coinciden ({detalle}). Se usa «{ganador}».")
+            if ganador != ev_principal["texto"]:
+                # Es el mismo objeto que está en las filas de la sala principal.
+                fuente = next(eventos_por_sala[l][k] for l in letras
+                              if k < len(eventos_por_sala[l]) and eventos_por_sala[l][k]["texto"] == ganador)
+                ev_principal.clear()
+                ev_principal.update(fuente)
 
         # Recorre la sala principal en orden; cada sesión arma un bloque con
         # las sesiones paralelas de las demás salas.
