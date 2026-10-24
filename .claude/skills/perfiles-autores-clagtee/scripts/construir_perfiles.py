@@ -222,6 +222,11 @@ def escribir_reporte(perfiles: list[dict], avisos: list[str], con_cms: bool, rut
                        + (f", {s.get('confianza')}" if s else "") + f"): {s.get('evidencia', '')}"
                        + (f" [{s.get('url')}]({s.get('url')})" if s.get("url") else ""))
         lin.append("")
+    medias = [p for p in perfiles if (p["scholar"] or {}).get("confianza") == "media"]
+    if medias:
+        lin += ["## Confianza media (se usan, conviene confirmarlos)", ""]
+        lin += [f"- **{p['nombre']}**: [{p['scholar'].get('afiliacion') or 'perfil'}]({p['scholar'].get('url')})" for p in medias]
+        lin.append("")
     if sin_int:
         lin += ["## Sin análisis de intereses", ""] + [f"- {n}" for n in sin_int] + [""]
     if avisos:

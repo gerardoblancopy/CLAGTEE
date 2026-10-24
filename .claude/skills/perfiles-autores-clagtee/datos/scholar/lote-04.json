@@ -1,2087 +1,2087 @@
 [
- {
-  "id": "francisca-cardemil-perez",
-  "nombre": "Francisca Cardemil Pérez",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso",
-  "pais_inferido": "Chile",
-  "nota_busqueda": "Pasada 1: nombre completo en Scholar, sin resultados. Pasada 2: barras de coautores y publicaciones de Hermosilla y Blanco sin rastro de Cardemil; búsqueda web general 'Francisca Cardemil' PUCV ingeniería sin resultados; búsqueda en Google Scholar (artículos) 'Cardemil Hermosilla embeddings' sin resultados.",
-  "intereses": {
-   "temas": [
-    "fine-tuning of text embeddings for transmission project prioritization",
-    "multi-criteria prioritization of electricity transmission projects using strategic criteria",
-    "NLP support for transmission expansion planning decisions"
-   ],
-   "palabras_clave": [
-    "text embeddings",
-    "embedding fine-tuning",
-    "transmission expansion planning",
-    "project prioritization",
-    "strategic criteria",
-    "natural language processing",
-    "multi-criteria decision making"
-   ],
-   "metodos": [
-    "embedding fine-tuning",
-    "multi-criteria decision analysis"
-   ],
-   "aplicaciones": [
-    "prioritization of transmission expansion projects"
-   ],
-   "afinidad_tracks": {
-    "6": 0.9,
-    "1": 0.6,
-    "7": 0.4
-   },
-   "etapa": "desconocida",
-   "resumen": "Presenta en CLAGTEE un trabajo sobre ajuste de embeddings para priorizar proyectos de transmisión eléctrica según criterios estratégicos, junto a Gabriel Hermosilla (IA, PUCV) y Gerardo Blanco (planificación y política energética, PUCV); la afiliación PUCV se infiere de sus coautores. No tiene perfil Scholar ni otras fuentes localizables (dos búsquedas y revisión de las barras de coautores), así que la evidencia se limita a ese paper. Le interesarían sesiones de IA y procesamiento de lenguaje aplicados a la planificación de la transmisión y a la toma de decisiones de inversión.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "gabriel-hermosilla-vigneau",
-  "nombre": "Gabriel Hermosilla Vigneau",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=zGA8HWYAAAAJ",
-   "user_id": "zGA8HWYAAAAJ",
-   "nombre_perfil": "Gabriel Hermosilla",
-   "afiliacion": "Escuela de Ingeniería Eléctrica, Pontificia Universidad Católica de Valparaíso",
-   "email_verificado": "pucv.cl",
-   "intereses_scholar": [
-    "Computer Vision",
-    "Deep Learning",
-    "Thermal Face Recognition"
-   ],
-   "citas": 1158,
-   "citas_desde_2021": 739,
-   "h_index": 19,
-   "publicaciones": [
-    {
-     "titulo": "Thermal Face Recognition from Synthetic Data: FLUX.1 Kontext Image-to-Image Adaptation and Cross-Sensor Evaluation",
-     "anio": 2026,
-     "citas": 0
-    },
-    {
-     "titulo": "AsyncMultiQuery TSF-RAG: Improving Retrieval Robustness in Spanish Technical Reports for Tailings Storage Facility Physical Stability Evaluation",
-     "anio": 2026,
-     "citas": 0
-    },
-    {
-     "titulo": "Symmetry-Enhanced AI and GIS Framework Using Open Data for Simplified Physical Stability Assessment of Tailings Storage Facilities in Chile",
-     "anio": 2026,
-     "citas": 0
-    },
-    {
-     "titulo": "Deep Reinforcement Learning for Sim-to-Real Robot Navigation with a Minimal Sensor Suite for Beach-Cleaning Applications",
-     "anio": 2025,
-     "citas": 12
-    },
-    {
-     "titulo": "Automated detection of Chilean mine waste storage facilities using advanced deep learning models and Sentinel-2 satellite imagery",
-     "anio": 2025,
-     "citas": 4
-    },
-    {
-     "titulo": "Simplified physical stability assessment of Chilean mine waste storage facilities using GIS and AI: Application in the Antofagasta region",
-     "anio": 2025,
-     "citas": 2
-    },
-    {
-     "titulo": "Uncertainty Detection in Supervisor–Operator Audio Records of Real Electrical Network Operations",
-     "anio": 2023,
-     "citas": 0
-    },
-    {
-     "titulo": "Resource allocation in multicore elastic optical networks: a deep reinforcement learning approach",
-     "anio": 2023,
-     "citas": 44
-    },
-    {
-     "titulo": "Automated detection and analysis of massive mining waste deposits using Sentinel-2 satellite imagery and artificial intelligence",
-     "anio": 2023,
-     "citas": 19
-    },
-    {
-     "titulo": "Position control of a mobile robot through deep reinforcement learning",
-     "anio": 2022,
-     "citas": 43
-    },
-    {
-     "titulo": "Thermal face generation using StyleGAN",
-     "anio": 2021,
-     "citas": 37
-    },
-    {
-     "titulo": "A comparative study of thermal face recognition methods in unconstrained environments",
-     "anio": 2012,
-     "citas": 143
+  {
+    "id": "francisca-cardemil-perez",
+    "nombre": "Francisca Cardemil Pérez",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso",
+    "pais_inferido": "Chile",
+    "nota_busqueda": "Pasada 1: nombre completo en Scholar, sin resultados. Pasada 2: barras de coautores y publicaciones de Hermosilla y Blanco sin rastro de Cardemil; búsqueda web general 'Francisca Cardemil' PUCV ingeniería sin resultados; búsqueda en Google Scholar (artículos) 'Cardemil Hermosilla embeddings' sin resultados.",
+    "intereses": {
+      "temas": [
+        "fine-tuning of text embeddings for transmission project prioritization",
+        "multi-criteria prioritization of electricity transmission projects using strategic criteria",
+        "NLP support for transmission expansion planning decisions"
+      ],
+      "palabras_clave": [
+        "text embeddings",
+        "embedding fine-tuning",
+        "transmission expansion planning",
+        "project prioritization",
+        "strategic criteria",
+        "natural language processing",
+        "multi-criteria decision making"
+      ],
+      "metodos": [
+        "embedding fine-tuning",
+        "multi-criteria decision analysis"
+      ],
+      "aplicaciones": [
+        "prioritization of transmission expansion projects"
+      ],
+      "afinidad_tracks": {
+        "6": 0.9,
+        "1": 0.6,
+        "7": 0.4
+      },
+      "etapa": "desconocida",
+      "resumen": "Presenta en CLAGTEE un trabajo sobre ajuste de embeddings para priorizar proyectos de transmisión eléctrica según criterios estratégicos, junto a Gabriel Hermosilla (IA, PUCV) y Gerardo Blanco (planificación y política energética, PUCV); la afiliación PUCV se infiere de sus coautores. No tiene perfil Scholar ni otras fuentes localizables (dos búsquedas y revisión de las barras de coautores), así que la evidencia se limita a ese paper. Le interesarían sesiones de IA y procesamiento de lenguaje aplicados a la planificación de la transmisión y a la toma de decisiones de inversión.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
-   ],
-   "confianza": "alta",
-   "evidencia": "Perfil con email pucv.cl; sus publicaciones 2023-2026 incluyen a los coautores CLAGTEE Gabriel Villavicencio, Manuel Silva, Giovanni Cocca-Guardia, Gabriel Olmos y Lisa Soto (p. ej. AsyncMultiQuery TSF-RAG, misma línea que CIE-12). Firma también como 'GH Vigneau' (segundo apellido) en trabajos con Cocca-Guardia y Olmos."
   },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Escuela de Ingeniería Eléctrica, Pontificia Universidad Católica de Valparaíso",
-  "pais_inferido": "Chile",
-  "intereses": {
-   "temas": [
-    "LLMs and retrieval-augmented generation for technical and regulatory documents",
-    "AI and remote sensing for detection and stability assessment of tailings storage facilities",
-    "graph neural networks for power flow in electric power systems",
-    "physics-informed AI combined with FEM for electric potential mapping",
-    "thermal face recognition and synthetic thermal image generation",
-    "deep reinforcement learning for mobile robots and optical networks"
-   ],
-   "palabras_clave": [
-    "computer vision",
-    "deep learning",
-    "large language models",
-    "retrieval-augmented generation",
-    "embedding fine-tuning",
-    "graph neural networks",
-    "Sentinel-2",
-    "tailings storage facilities",
-    "thermal infrared imaging",
-    "generative AI",
-    "deep reinforcement learning"
-   ],
-   "metodos": [
-    "convolutional neural networks",
-    "retrieval-augmented generation and LLM fine-tuning",
-    "graph neural networks",
-    "generative adversarial networks and diffusion-based image generation",
-    "deep reinforcement learning",
-    "hybrid physics-AI modelling with FEM"
-   ],
-   "aplicaciones": [
-    "mining tailings safety in Chile",
-    "power flow estimation in electric power systems",
-    "transmission project prioritization",
-    "electric potential mapping of a Tesla coil",
-    "energy footprint of AI model training"
-   ],
-   "afinidad_tracks": {
-    "6": 1.0,
-    "1": 0.4,
-    "4": 0.3,
-    "13": 0.3,
-    "5": 0.2
-   },
-   "etapa": "investigador_senior",
-   "resumen": "Académico de la Escuela de Ingeniería Eléctrica de la PUCV especializado en visión por computador y deep learning, que lidera un grupo con proyectos de IA aplicada a minería (detección y estabilidad de depósitos de relaves con Sentinel-2, RAG para informes técnicos), a sistemas de potencia (GNN para flujo de potencia, priorización de proyectos de transmisión) y a modelación física-IA. En CLAGTEE es coautor de tres trabajos del track de ciencia de datos e IA; le interesarían sesiones de IA, LLMs y aprendizaje automático aplicado a la operación y planificación de redes.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  }
- },
- {
-  "id": "gabriel-olmos-leiva",
-  "nombre": "Gabriel Olmos Leiva",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=wezUsJ4AAAAJ",
-   "user_id": "wezUsJ4AAAAJ",
-   "nombre_perfil": "Gabriel Olmos (Gabriel Olmos Leiva)",
-   "afiliacion": "Pontificia Universidad Católica de Valparaíso",
-   "email_verificado": "pucv.cl",
-   "intereses_scholar": [
-    "Generative AI",
-    "Large Language Model",
-    "Retrieval-Augmented Generation"
-   ],
-   "citas": 11,
-   "citas_desde_2021": 11,
-   "h_index": 1,
-   "publicaciones": [
-    {
-     "titulo": "Thermal Face Recognition from Synthetic Data: FLUX.1 Kontext Image-to-Image Adaptation and Cross-Sensor Evaluation",
-     "anio": 2026,
-     "citas": 0
+  {
+    "id": "gabriel-hermosilla-vigneau",
+    "nombre": "Gabriel Hermosilla Vigneau",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=zGA8HWYAAAAJ",
+      "user_id": "zGA8HWYAAAAJ",
+      "nombre_perfil": "Gabriel Hermosilla",
+      "afiliacion": "Escuela de Ingeniería Eléctrica, Pontificia Universidad Católica de Valparaíso",
+      "email_verificado": "pucv.cl",
+      "intereses_scholar": [
+        "Computer Vision",
+        "Deep Learning",
+        "Thermal Face Recognition"
+      ],
+      "citas": 1158,
+      "citas_desde_2021": 739,
+      "h_index": 19,
+      "publicaciones": [
+        {
+          "titulo": "Thermal Face Recognition from Synthetic Data: FLUX.1 Kontext Image-to-Image Adaptation and Cross-Sensor Evaluation",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "AsyncMultiQuery TSF-RAG: Improving Retrieval Robustness in Spanish Technical Reports for Tailings Storage Facility Physical Stability Evaluation",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Symmetry-Enhanced AI and GIS Framework Using Open Data for Simplified Physical Stability Assessment of Tailings Storage Facilities in Chile",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Deep Reinforcement Learning for Sim-to-Real Robot Navigation with a Minimal Sensor Suite for Beach-Cleaning Applications",
+          "anio": 2025,
+          "citas": 12
+        },
+        {
+          "titulo": "Automated detection of Chilean mine waste storage facilities using advanced deep learning models and Sentinel-2 satellite imagery",
+          "anio": 2025,
+          "citas": 4
+        },
+        {
+          "titulo": "Simplified physical stability assessment of Chilean mine waste storage facilities using GIS and AI: Application in the Antofagasta region",
+          "anio": 2025,
+          "citas": 2
+        },
+        {
+          "titulo": "Uncertainty Detection in Supervisor–Operator Audio Records of Real Electrical Network Operations",
+          "anio": 2023,
+          "citas": 0
+        },
+        {
+          "titulo": "Resource allocation in multicore elastic optical networks: a deep reinforcement learning approach",
+          "anio": 2023,
+          "citas": 44
+        },
+        {
+          "titulo": "Automated detection and analysis of massive mining waste deposits using Sentinel-2 satellite imagery and artificial intelligence",
+          "anio": 2023,
+          "citas": 19
+        },
+        {
+          "titulo": "Position control of a mobile robot through deep reinforcement learning",
+          "anio": 2022,
+          "citas": 43
+        },
+        {
+          "titulo": "Thermal face generation using StyleGAN",
+          "anio": 2021,
+          "citas": 37
+        },
+        {
+          "titulo": "A comparative study of thermal face recognition methods in unconstrained environments",
+          "anio": 2012,
+          "citas": 143
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Perfil con email pucv.cl; sus publicaciones 2023-2026 incluyen a los coautores CLAGTEE Gabriel Villavicencio, Manuel Silva, Giovanni Cocca-Guardia, Gabriel Olmos y Lisa Soto (p. ej. AsyncMultiQuery TSF-RAG, misma línea que CIE-12). Firma también como 'GH Vigneau' (segundo apellido) en trabajos con Cocca-Guardia y Olmos."
     },
-    {
-     "titulo": "Symmetry-Enhanced AI and GIS Framework Using Open Data for Simplified Physical Stability Assessment of Tailings Storage Facilities in Chile",
-     "anio": 2026,
-     "citas": 0
-    },
-    {
-     "titulo": "AsyncMultiQuery TSF-RAG: Improving Retrieval Robustness in Spanish Technical Reports for Tailings Storage Facility Physical Stability Evaluation",
-     "anio": 2026,
-     "citas": 0
-    },
-    {
-     "titulo": "PICTOS-AI: Generating Cognitively Accessible Pictograms with Artificial Intelligence for Inclusive Visual Communication",
-     "anio": 2025,
-     "citas": 1
-    },
-    {
-     "titulo": "Assessing the Energy Impact and Carbon Footprint of AI Model Training: A Case Study Using GPU Servers",
-     "anio": 2024,
-     "citas": 1
-    },
-    {
-     "titulo": "Imitating teaching: An automated approach using large language model",
-     "anio": 2023,
-     "citas": 9
-    },
-    {
-     "titulo": "Use of LLaMA 2 7B for Fine-Tuning of Circuit Theory 1 Course",
-     "anio": null,
-     "citas": 0
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Escuela de Ingeniería Eléctrica, Pontificia Universidad Católica de Valparaíso",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "LLMs and retrieval-augmented generation for technical and regulatory documents",
+        "AI and remote sensing for detection and stability assessment of tailings storage facilities",
+        "graph neural networks for power flow in electric power systems",
+        "physics-informed AI combined with FEM for electric potential mapping",
+        "thermal face recognition and synthetic thermal image generation",
+        "deep reinforcement learning for mobile robots and optical networks"
+      ],
+      "palabras_clave": [
+        "computer vision",
+        "deep learning",
+        "large language models",
+        "retrieval-augmented generation",
+        "embedding fine-tuning",
+        "graph neural networks",
+        "Sentinel-2",
+        "tailings storage facilities",
+        "thermal infrared imaging",
+        "generative AI",
+        "deep reinforcement learning"
+      ],
+      "metodos": [
+        "convolutional neural networks",
+        "retrieval-augmented generation and LLM fine-tuning",
+        "graph neural networks",
+        "generative adversarial networks and diffusion-based image generation",
+        "deep reinforcement learning",
+        "hybrid physics-AI modelling with FEM"
+      ],
+      "aplicaciones": [
+        "mining tailings safety in Chile",
+        "power flow estimation in electric power systems",
+        "transmission project prioritization",
+        "electric potential mapping of a Tesla coil",
+        "energy footprint of AI model training"
+      ],
+      "afinidad_tracks": {
+        "6": 1.0,
+        "1": 0.4,
+        "4": 0.3,
+        "13": 0.3,
+        "5": 0.2
+      },
+      "etapa": "investigador_senior",
+      "resumen": "Académico de la Escuela de Ingeniería Eléctrica de la PUCV especializado en visión por computador y deep learning, que lidera un grupo con proyectos de IA aplicada a minería (detección y estabilidad de depósitos de relaves con Sentinel-2, RAG para informes técnicos), a sistemas de potencia (GNN para flujo de potencia, priorización de proyectos de transmisión) y a modelación física-IA. En CLAGTEE es coautor de tres trabajos del track de ciencia de datos e IA; le interesarían sesiones de IA, LLMs y aprendizaje automático aplicado a la operación y planificación de redes.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
-   ],
-   "confianza": "alta",
-   "evidencia": "El perfil declara el nombre alternativo 'Gabriel Olmos Leiva' (email pucv.cl); publica con los coautores CLAGTEE Hermosilla (GH Vigneau), Villavicencio, Cocca-Guardia, Silva y Soto, y su paper AsyncMultiQuery TSF-RAG es la misma línea RAG para minería del CIE-12."
   },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso",
-  "pais_inferido": "Chile",
-  "intereses": {
-   "temas": [
-    "retrieval-augmented generation over Spanish technical reports",
-    "fine-tuning of local open-weight LLMs for domain-specific regulations",
-    "LLM-based assistants for engineering education",
-    "generative AI for accessible visual communication",
-    "energy consumption and carbon footprint of AI training"
-   ],
-   "palabras_clave": [
-    "large language models",
-    "retrieval-augmented generation",
-    "LLM fine-tuning",
-    "LLaMA",
-    "multi-query retrieval",
-    "generative AI",
-    "tailings storage facilities",
-    "geotechnical regulations",
-    "carbon footprint",
-    "pictogram generation"
-   ],
-   "metodos": [
-    "retrieval-augmented generation",
-    "fine-tuning of local open-weight LLMs",
-    "asynchronous multi-query retrieval"
-   ],
-   "aplicaciones": [
-    "geotechnical regulation assistance in Chilean mining",
-    "tailings storage facility stability evaluation",
-    "teaching assistants for electrical engineering courses",
-    "electric potential mapping of a Tesla coil"
-   ],
-   "afinidad_tracks": {
-    "6": 1.0,
-    "4": 0.2
-   },
-   "etapa": "estudiante",
-   "resumen": "Investigador joven de la PUCV (probablemente estudiante de posgrado del grupo de Gabriel Hermosilla) centrado en IA generativa: LLMs locales con fine-tuning, RAG robusto para informes técnicos en español sobre relaves y aplicaciones educativas e inclusivas. En CLAGTEE es coautor del sistema GeoConsultor AI-MineSafe (RAG y LLMs locales para normativa geotécnica) y del marco físico-IA con FEM; le interesarían sesiones de LLMs, IA generativa y ciencia de datos aplicada al sector eléctrico.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  }
- },
- {
-  "id": "gabriel-villavicencio-arancibia",
-  "nombre": "Gabriel Villavicencio Arancibia",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso",
-  "pais_inferido": "Chile",
-  "intereses": {
-   "temas": [
-    "physical stability of tailings storage facilities",
-    "seismic failures of sand tailings dams",
-    "AI and GIS tools for tailings dam risk assessment",
-    "LLM assistants for geotechnical regulations in mining"
-   ],
-   "palabras_clave": [
-    "tailings dams",
-    "tailings storage facilities",
-    "physical stability",
-    "seismic performance",
-    "geotechnical engineering",
-    "geotechnical regulations",
-    "Chilean mining",
-    "GIS",
-    "remote sensing",
-    "retrieval-augmented generation"
-   ],
-   "metodos": [
-    "GIS-based simplified stability assessment",
-    "deep learning on satellite imagery (as co-author)",
-    "retrieval-augmented generation (as co-author)"
-   ],
-   "aplicaciones": [
-    "mine waste and tailings safety in Chile",
-    "regulatory compliance in mining"
-   ],
-   "afinidad_tracks": {
-    "6": 0.8,
-    "13": 0.5
-   },
-   "etapa": "investigador_consolidado",
-   "resumen": "Especialista en geotecnia de relaves: estabilidad física y fallas sísmicas de tranques de arena (Canadian Geotechnical Journal 2014) y, desde 2022, coautor con el grupo de Hermosilla en la PUCV de herramientas de IA, GIS y RAG para evaluar depósitos de relaves en Chile. No se encontró perfil Scholar propio tras 3 búsquedas; sus temas y la afiliación PUCV se infieren de las publicaciones que figuran en los perfiles de sus coautores. En CLAGTEE es coautor del sistema GeoConsultor AI-MineSafe; le interesarían sesiones de IA aplicada y temas ambientales de la minería y la energía.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "gerardo-blanco-bogado",
-  "nombre": "Gerardo Blanco Bogado",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=S1Tu1hEAAAAJ",
-   "user_id": "S1Tu1hEAAAAJ",
-   "nombre_perfil": "Gerardo Blanco",
-   "afiliacion": "Pontificia Universidad Católica de Valparaíso",
-   "email_verificado": "pucv.cl",
-   "intereses_scholar": [
-    "Energy Policy",
-    "Energy Planning",
-    "Energy Strategy",
-    "Geopolitics of Energy",
-    "Decision Making"
-   ],
-   "citas": 851,
-   "citas_desde_2021": 431,
-   "h_index": 14,
-   "publicaciones": [
-    {
-     "titulo": "Hedging against asset-heavy network expansion delays through rapid deployments of FACTS and BESS",
-     "anio": 2027,
-     "citas": 0
+  {
+    "id": "gabriel-olmos-leiva",
+    "nombre": "Gabriel Olmos Leiva",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=wezUsJ4AAAAJ",
+      "user_id": "wezUsJ4AAAAJ",
+      "nombre_perfil": "Gabriel Olmos (Gabriel Olmos Leiva)",
+      "afiliacion": "Pontificia Universidad Católica de Valparaíso",
+      "email_verificado": "pucv.cl",
+      "intereses_scholar": [
+        "Generative AI",
+        "Large Language Model",
+        "Retrieval-Augmented Generation"
+      ],
+      "citas": 11,
+      "citas_desde_2021": 11,
+      "h_index": 1,
+      "publicaciones": [
+        {
+          "titulo": "Thermal Face Recognition from Synthetic Data: FLUX.1 Kontext Image-to-Image Adaptation and Cross-Sensor Evaluation",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Symmetry-Enhanced AI and GIS Framework Using Open Data for Simplified Physical Stability Assessment of Tailings Storage Facilities in Chile",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "AsyncMultiQuery TSF-RAG: Improving Retrieval Robustness in Spanish Technical Reports for Tailings Storage Facility Physical Stability Evaluation",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "PICTOS-AI: Generating Cognitively Accessible Pictograms with Artificial Intelligence for Inclusive Visual Communication",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Assessing the Energy Impact and Carbon Footprint of AI Model Training: A Case Study Using GPU Servers",
+          "anio": 2024,
+          "citas": 1
+        },
+        {
+          "titulo": "Imitating teaching: An automated approach using large language model",
+          "anio": 2023,
+          "citas": 9
+        },
+        {
+          "titulo": "Use of LLaMA 2 7B for Fine-Tuning of Circuit Theory 1 Course",
+          "anio": null,
+          "citas": 0
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "El perfil declara el nombre alternativo 'Gabriel Olmos Leiva' (email pucv.cl); publica con los coautores CLAGTEE Hermosilla (GH Vigneau), Villavicencio, Cocca-Guardia, Silva y Soto, y su paper AsyncMultiQuery TSF-RAG es la misma línea RAG para minería del CIE-12."
     },
-    {
-     "titulo": "Climate urgency enables political alignment for Latin American power integration",
-     "anio": 2026,
-     "citas": 1
-    },
-    {
-     "titulo": "Quantifying the Value of Flexible Transmission in Net-Zero Power Systems: A Novel Set of Adequacy Indices using Karush-Kuhn-Tucker Multipliers",
-     "anio": 2025,
-     "citas": 0
-    },
-    {
-     "titulo": "A System Dynamics Approach to the Rebound Effect: Policy Volatility and Energy Justice in Emerging Economies",
-     "anio": 2025,
-     "citas": 0
-    },
-    {
-     "titulo": "Technology and Trends for Flexible Operation in Energy Power Systems",
-     "anio": 2024,
-     "citas": 0
-    },
-    {
-     "titulo": "Discipline and punishment in panoptical public goods games",
-     "anio": 2024,
-     "citas": 14
-    },
-    {
-     "titulo": "Stochastic dynamics of the generation expansion in renewable power systems: the Paraguayan case",
-     "anio": 2022,
-     "citas": 0
-    },
-    {
-     "titulo": "Experimental verification of smart grid control functions on international grids using a real-time simulator",
-     "anio": 2022,
-     "citas": 19
-    },
-    {
-     "titulo": "Multidimensional composite energy poverty index based on a regional average benchmark. Study case: Argentina, Brazil, Uruguay, and Paraguay",
-     "anio": 2021,
-     "citas": 5
-    },
-    {
-     "titulo": "Multi-criteria analysis of economic complexity transition in emerging economies: The case of Paraguay",
-     "anio": 2019,
-     "citas": 70
-    },
-    {
-     "titulo": "Energy transitions and emerging economies: A multi-criteria analysis of policy options for hydropower surplus utilization in Paraguay",
-     "anio": 2017,
-     "citas": 84
-    },
-    {
-     "titulo": "Real option valuation of FACTS investments based on the least square Monte Carlo method",
-     "anio": 2011,
-     "citas": 130
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "retrieval-augmented generation over Spanish technical reports",
+        "fine-tuning of local open-weight LLMs for domain-specific regulations",
+        "LLM-based assistants for engineering education",
+        "generative AI for accessible visual communication",
+        "energy consumption and carbon footprint of AI training"
+      ],
+      "palabras_clave": [
+        "large language models",
+        "retrieval-augmented generation",
+        "LLM fine-tuning",
+        "LLaMA",
+        "multi-query retrieval",
+        "generative AI",
+        "tailings storage facilities",
+        "geotechnical regulations",
+        "carbon footprint",
+        "pictogram generation"
+      ],
+      "metodos": [
+        "retrieval-augmented generation",
+        "fine-tuning of local open-weight LLMs",
+        "asynchronous multi-query retrieval"
+      ],
+      "aplicaciones": [
+        "geotechnical regulation assistance in Chilean mining",
+        "tailings storage facility stability evaluation",
+        "teaching assistants for electrical engineering courses",
+        "electric potential mapping of a Tesla coil"
+      ],
+      "afinidad_tracks": {
+        "6": 1.0,
+        "4": 0.2
+      },
+      "etapa": "estudiante",
+      "resumen": "Investigador joven de la PUCV (probablemente estudiante de posgrado del grupo de Gabriel Hermosilla) centrado en IA generativa: LLMs locales con fine-tuning, RAG robusto para informes técnicos en español sobre relaves y aplicaciones educativas e inclusivas. En CLAGTEE es coautor del sistema GeoConsultor AI-MineSafe (RAG y LLMs locales para normativa geotécnica) y del marco físico-IA con FEM; le interesarían sesiones de LLMs, IA generativa y ciencia de datos aplicada al sector eléctrico.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
-   ],
-   "confianza": "alta",
-   "evidencia": "Perfil PUCV (email pucv.cl), misma universidad que su coautor CLAGTEE Gabriel Hermosilla; investiga inversiones en transmisión bajo incertidumbre y análisis multicriterio, la misma línea del CIE-6 (priorización de proyectos de transmisión con criterios estratégicos). Su amplia producción sobre Paraguay es coherente con el apellido Bogado."
   },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso",
-  "pais_inferido": "Chile",
-  "intereses": {
-   "temas": [
-    "transmission investment under uncertainty using real options",
-    "valuing flexibility of FACTS and BESS in network expansion",
-    "energy policy and planning in emerging economies (Paraguay)",
-    "multi-criteria decision making for energy transition policy",
-    "Latin American power system integration",
-    "AI-assisted prioritization of transmission projects"
-   ],
-   "palabras_clave": [
-    "real options",
-    "transmission expansion planning",
-    "FACTS",
-    "BESS",
-    "energy policy",
-    "energy planning",
-    "multi-criteria analysis",
-    "hydropower surplus",
-    "energy poverty",
-    "regional power integration",
-    "generation expansion dynamics",
-    "public goods games"
-   ],
-   "metodos": [
-    "real option valuation (least squares Monte Carlo)",
-    "multi-criteria decision analysis (ANP)",
-    "system dynamics",
-    "game theory",
-    "long-term electricity market models"
-   ],
-   "aplicaciones": [
-    "transmission investment decisions",
-    "Paraguayan energy sector planning",
-    "Latin American electricity integration",
-    "energy transition policy in emerging economies"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "7": 0.9,
-    "6": 0.8,
-    "12": 0.5,
-    "2": 0.3
-   },
-   "etapa": "investigador_senior",
-   "resumen": "Investigador senior de la PUCV en política y planificación energética: valoración de inversiones en transmisión con opciones reales (FACTS, BESS), planificación energética multicriterio en Paraguay, pobreza energética e integración eléctrica latinoamericana. En CLAGTEE es coautor de un trabajo sobre embeddings para priorizar proyectos de transmisión; le interesarían sesiones de planificación de la transmisión, mercados y regulación, transición energética y aplicaciones de IA a la toma de decisiones.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  }
- },
- {
-  "id": "giovanni-cocca-guardia",
-  "nombre": "Giovanni Cocca Guardia",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=Te23tr8AAAAJ",
-   "user_id": "Te23tr8AAAAJ",
-   "nombre_perfil": "Giovanni Cocca-Guardia",
-   "afiliacion": "Pontificia Universidad Católica de Valparaíso",
-   "email_verificado": "mail.pucv.cl",
-   "intereses_scholar": [
-    "Remote Sensing",
-    "Generative AI",
-    "Physics AI",
-    "Graph Neural Network",
-    "Efficient Learning AI"
-   ],
-   "citas": 7,
-   "citas_desde_2021": 7,
-   "h_index": 2,
-   "publicaciones": [
-    {
-     "titulo": "Thermal Face Recognition from Synthetic Data: FLUX.1 Kontext Image-to-Image Adaptation and Cross-Sensor Evaluation",
-     "anio": 2026,
-     "citas": 0
-    },
-    {
-     "titulo": "Symmetry-Enhanced AI and GIS Framework Using Open Data for Simplified Physical Stability Assessment of Tailings Storage Facilities in Chile",
-     "anio": 2026,
-     "citas": 0
-    },
-    {
-     "titulo": "AsyncMultiQuery TSF-RAG: Improving Retrieval Robustness in Spanish Technical Reports for Tailings Storage Facility Physical Stability Evaluation",
-     "anio": 2026,
-     "citas": 0
-    },
-    {
-     "titulo": "Automated detection of Chilean mine waste storage facilities using advanced deep learning models and Sentinel-2 satellite imagery",
-     "anio": 2025,
-     "citas": 4
-    },
-    {
-     "titulo": "Simplified physical stability assessment of Chilean mine waste storage facilities using GIS and AI: Application in the Antofagasta region",
-     "anio": 2025,
-     "citas": 2
-    },
-    {
-     "titulo": "Assessing the Energy Impact and Carbon Footprint of AI Model Training: A Case Study Using GPU Servers",
-     "anio": 2024,
-     "citas": 1
-    },
-    {
-     "titulo": "Comparing Graph Neural Network and Newton-Raphson for Power Flow in Electric Power Systems",
-     "anio": 2023,
-     "citas": 0
-    },
-    {
-     "titulo": "Supervised Learning for Power Flow with Graph Transformer Network Architecture",
-     "anio": 2023,
-     "citas": 0
-    },
-    {
-     "titulo": "Topological Study and Application of Graph Neural Network for Power System",
-     "anio": 2023,
-     "citas": 0
+  {
+    "id": "gabriel-villavicencio-arancibia",
+    "nombre": "Gabriel Villavicencio Arancibia",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "physical stability of tailings storage facilities",
+        "seismic failures of sand tailings dams",
+        "AI and GIS tools for tailings dam risk assessment",
+        "LLM assistants for geotechnical regulations in mining"
+      ],
+      "palabras_clave": [
+        "tailings dams",
+        "tailings storage facilities",
+        "physical stability",
+        "seismic performance",
+        "geotechnical engineering",
+        "geotechnical regulations",
+        "Chilean mining",
+        "GIS",
+        "remote sensing",
+        "retrieval-augmented generation"
+      ],
+      "metodos": [
+        "GIS-based simplified stability assessment",
+        "deep learning on satellite imagery (as co-author)",
+        "retrieval-augmented generation (as co-author)"
+      ],
+      "aplicaciones": [
+        "mine waste and tailings safety in Chile",
+        "regulatory compliance in mining"
+      ],
+      "afinidad_tracks": {
+        "6": 0.8,
+        "13": 0.5
+      },
+      "etapa": "investigador_consolidado",
+      "resumen": "Especialista en geotecnia de relaves: estabilidad física y fallas sísmicas de tranques de arena (Canadian Geotechnical Journal 2014) y, desde 2022, coautor con el grupo de Hermosilla en la PUCV de herramientas de IA, GIS y RAG para evaluar depósitos de relaves en Chile. No se encontró perfil Scholar propio tras 3 búsquedas; sus temas y la afiliación PUCV se infieren de las publicaciones que figuran en los perfiles de sus coautores. En CLAGTEE es coautor del sistema GeoConsultor AI-MineSafe; le interesarían sesiones de IA aplicada y temas ambientales de la minería y la energía.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
-   ],
-   "confianza": "alta",
-   "evidencia": "Perfil 'Giovanni Cocca-Guardia' (variante registrada) en la PUCV; Gabriel Hermosilla y Manuel Silva Vega figuran como coautores en la barra lateral, y publica con Villavicencio, Olmos y Soto (coautores CLAGTEE)."
   },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso",
-  "pais_inferido": "Chile",
-  "intereses": {
-   "temas": [
-    "graph neural networks for power flow in electric power systems",
-    "physics-AI frameworks with FEM for electric potential mapping",
-    "remote sensing and GIS for tailings storage facility assessment",
-    "energy consumption and carbon footprint of AI model training",
-    "synthetic data for thermal face recognition"
-   ],
-   "palabras_clave": [
-    "graph neural networks",
-    "power flow",
-    "graph transformer",
-    "Newton-Raphson",
-    "physics AI",
-    "finite element method",
-    "remote sensing",
-    "Sentinel-2",
-    "generative AI",
-    "efficient learning",
-    "carbon footprint"
-   ],
-   "metodos": [
-    "graph neural networks",
-    "graph transformer networks",
-    "2D FEM coupled with AI",
-    "deep learning on satellite imagery"
-   ],
-   "aplicaciones": [
-    "power flow estimation",
-    "electric potential mapping of a Tesla coil",
-    "tailings storage facility stability in Chile",
-    "energy-efficient AI training"
-   ],
-   "afinidad_tracks": {
-    "6": 1.0,
-    "1": 0.5,
-    "4": 0.3,
-    "13": 0.2
-   },
-   "etapa": "estudiante",
-   "resumen": "Estudiante de posgrado de la PUCV (email mail.pucv.cl) del grupo de Hermosilla que trabaja en IA eficiente y física-IA: GNN y graph transformers para flujo de potencia, teledetección de depósitos de relaves y huella energética del entrenamiento de modelos (presentado en CLAGTEE 2024). Presenta en CLAGTEE el marco físico-IA con FEM 2D para mapear potencial eléctrico en una bobina de Tesla; le interesarían sesiones de IA aplicada a sistemas de potencia y de monitoreo avanzado.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  }
- },
- {
-  "id": "hernan-mella",
-  "nombre": "Hernán Mella",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=NNQ6dUYAAAAJ",
-   "user_id": "NNQ6dUYAAAAJ",
-   "nombre_perfil": "Hernán Mella",
-   "afiliacion": "Assistant Professor, School of Electrical Engineering, Pontificia Universidad Católica de Valparaíso",
-   "email_verificado": "pucv.cl",
-   "intereses_scholar": [
-    "Magnetic resonance imaging"
-   ],
-   "citas": 164,
-   "citas_desde_2021": 164,
-   "h_index": 6,
-   "publicaciones": [
-    {
-     "titulo": "Evaluating the impact of blood rheology in hemodynamic parameters by 4D flow MRI in large vessels considering the hematocrit effect",
-     "anio": 2026,
-     "citas": 16
+  {
+    "id": "gerardo-blanco-bogado",
+    "nombre": "Gerardo Blanco Bogado",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=S1Tu1hEAAAAJ",
+      "user_id": "S1Tu1hEAAAAJ",
+      "nombre_perfil": "Gerardo Blanco",
+      "afiliacion": "Pontificia Universidad Católica de Valparaíso",
+      "email_verificado": "pucv.cl",
+      "intereses_scholar": [
+        "Energy Policy",
+        "Energy Planning",
+        "Energy Strategy",
+        "Geopolitics of Energy",
+        "Decision Making"
+      ],
+      "citas": 851,
+      "citas_desde_2021": 431,
+      "h_index": 14,
+      "publicaciones": [
+        {
+          "titulo": "Hedging against asset-heavy network expansion delays through rapid deployments of FACTS and BESS",
+          "anio": 2027,
+          "citas": 0
+        },
+        {
+          "titulo": "Climate urgency enables political alignment for Latin American power integration",
+          "anio": 2026,
+          "citas": 1
+        },
+        {
+          "titulo": "Quantifying the Value of Flexible Transmission in Net-Zero Power Systems: A Novel Set of Adequacy Indices using Karush-Kuhn-Tucker Multipliers",
+          "anio": 2025,
+          "citas": 0
+        },
+        {
+          "titulo": "A System Dynamics Approach to the Rebound Effect: Policy Volatility and Energy Justice in Emerging Economies",
+          "anio": 2025,
+          "citas": 0
+        },
+        {
+          "titulo": "Technology and Trends for Flexible Operation in Energy Power Systems",
+          "anio": 2024,
+          "citas": 0
+        },
+        {
+          "titulo": "Discipline and punishment in panoptical public goods games",
+          "anio": 2024,
+          "citas": 14
+        },
+        {
+          "titulo": "Stochastic dynamics of the generation expansion in renewable power systems: the Paraguayan case",
+          "anio": 2022,
+          "citas": 0
+        },
+        {
+          "titulo": "Experimental verification of smart grid control functions on international grids using a real-time simulator",
+          "anio": 2022,
+          "citas": 19
+        },
+        {
+          "titulo": "Multidimensional composite energy poverty index based on a regional average benchmark. Study case: Argentina, Brazil, Uruguay, and Paraguay",
+          "anio": 2021,
+          "citas": 5
+        },
+        {
+          "titulo": "Multi-criteria analysis of economic complexity transition in emerging economies: The case of Paraguay",
+          "anio": 2019,
+          "citas": 70
+        },
+        {
+          "titulo": "Energy transitions and emerging economies: A multi-criteria analysis of policy options for hydropower surplus utilization in Paraguay",
+          "anio": 2017,
+          "citas": 84
+        },
+        {
+          "titulo": "Real option valuation of FACTS investments based on the least square Monte Carlo method",
+          "anio": 2011,
+          "citas": 130
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Perfil PUCV (email pucv.cl), misma universidad que su coautor CLAGTEE Gabriel Hermosilla; investiga inversiones en transmisión bajo incertidumbre y análisis multicriterio, la misma línea del CIE-6 (priorización de proyectos de transmisión con criterios estratégicos). Su amplia producción sobre Paraguay es coherente con el apellido Bogado."
     },
-    {
-     "titulo": "Unsupervised 4D Flow MRI Velocity Enhancement and Unwrapping Using Divergence-Free Neural Networks",
-     "anio": 2026,
-     "citas": 1
-    },
-    {
-     "titulo": "4D Flow MRI MATLAB Toolbox",
-     "anio": 2026,
-     "citas": 1
-    },
-    {
-     "titulo": "Prediction of peak-to-peak pressure gradient in patients with aortic coarctation using Physics-Informed Neural Networks from Magnetic Resonance Images",
-     "anio": 2026,
-     "citas": 0
-    },
-    {
-     "titulo": "Estimation of hemodynamic parameters via physics informed neural networks including hematocrit dependent rheology",
-     "anio": 2025,
-     "citas": 5
-    },
-    {
-     "titulo": "Simultaneous Acquisition of Water, Fat, and Velocity Images Using a Phase-Contrast T2*-IDEAL Method",
-     "anio": 2025,
-     "citas": 0
-    },
-    {
-     "titulo": "WarpPINN: Cine-MR image registration with physics-informed neural networks",
-     "anio": 2023,
-     "citas": 70
-    },
-    {
-     "titulo": "A hybrid PML formulation for the 2D three-field dynamic poroelastic equations",
-     "anio": 2023,
-     "citas": 4
-    },
-    {
-     "titulo": "Fully three-dimensional hemodynamic characterization of altered blood flow in bicuspid aortic valve patients with respect to aortic dilatation: a finite element approach",
-     "anio": 2022,
-     "citas": 24
-    },
-    {
-     "titulo": "Assessment of 4D flow MRI's quality by verifying its Navier–Stokes compatibility",
-     "anio": 2022,
-     "citas": 8
-    },
-    {
-     "titulo": "HARP-I: a harmonic phase interpolation method for the estimation of motion from tagged MR images",
-     "anio": 2021,
-     "citas": 14
-    },
-    {
-     "titulo": "A comprehensive comparison between shortest-path HARP refinement, SinMod, and DENSEanalysis processing tools applied to CSPAMM and DENSE images",
-     "anio": 2021,
-     "citas": 6
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "transmission investment under uncertainty using real options",
+        "valuing flexibility of FACTS and BESS in network expansion",
+        "energy policy and planning in emerging economies (Paraguay)",
+        "multi-criteria decision making for energy transition policy",
+        "Latin American power system integration",
+        "AI-assisted prioritization of transmission projects"
+      ],
+      "palabras_clave": [
+        "real options",
+        "transmission expansion planning",
+        "FACTS",
+        "BESS",
+        "energy policy",
+        "energy planning",
+        "multi-criteria analysis",
+        "hydropower surplus",
+        "energy poverty",
+        "regional power integration",
+        "generation expansion dynamics",
+        "public goods games"
+      ],
+      "metodos": [
+        "real option valuation (least squares Monte Carlo)",
+        "multi-criteria decision analysis (ANP)",
+        "system dynamics",
+        "game theory",
+        "long-term electricity market models"
+      ],
+      "aplicaciones": [
+        "transmission investment decisions",
+        "Paraguayan energy sector planning",
+        "Latin American electricity integration",
+        "energy transition policy in emerging economies"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "7": 0.9,
+        "6": 0.8,
+        "12": 0.5,
+        "2": 0.3
+      },
+      "etapa": "investigador_senior",
+      "resumen": "Investigador senior de la PUCV en política y planificación energética: valoración de inversiones en transmisión con opciones reales (FACTS, BESS), planificación energética multicriterio en Paraguay, pobreza energética e integración eléctrica latinoamericana. En CLAGTEE es coautor de un trabajo sobre embeddings para priorizar proyectos de transmisión; le interesarían sesiones de planificación de la transmisión, mercados y regulación, transición energética y aplicaciones de IA a la toma de decisiones.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
-   ],
-   "confianza": "alta",
-   "evidencia": "Profesor asistente de la Escuela de Ingeniería Eléctrica de la PUCV (email pucv.cl), la misma escuela que sus coautores CLAGTEE Hermosilla y Cocca-Guardia; su trabajo en FEM y redes neuronales informadas por la física coincide con el enfoque físico-IA con FEM 2D del CIE-10. No aparece un coautor CLAGTEE en las publicaciones visibles."
   },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Escuela de Ingeniería Eléctrica, Pontificia Universidad Católica de Valparaíso",
-  "pais_inferido": "Chile",
-  "intereses": {
-   "temas": [
-    "physics-informed neural networks for biomedical flows and image registration",
-    "hemodynamic parameter estimation from 4D flow MRI",
-    "finite element methods for cardiovascular and poroelastic problems",
-    "cardiac motion estimation from tagged MRI",
-    "physics-AI framework for electric potential mapping with 2D FEM"
-   ],
-   "palabras_clave": [
-    "physics-informed neural networks",
-    "finite element method",
-    "magnetic resonance imaging",
-    "4D flow MRI",
-    "hemodynamics",
-    "blood rheology",
-    "image registration",
-    "tagged MRI",
-    "perfectly matched layers"
-   ],
-   "metodos": [
-    "physics-informed neural networks",
-    "finite element method",
-    "harmonic phase (HARP) interpolation",
-    "perfectly matched layer formulations"
-   ],
-   "aplicaciones": [
-    "cardiovascular MRI",
-    "aortic hemodynamics",
-    "electric potential mapping of a Tesla coil"
-   ],
-   "afinidad_tracks": {
-    "6": 0.9,
-    "4": 0.5
-   },
-   "etapa": "investigador_inicial",
-   "resumen": "Profesor asistente de Ingeniería Eléctrica en la PUCV cuyo trabajo principal es la resonancia magnética cardiovascular: 4D flow MRI, hemodinámica, FEM y redes neuronales informadas por la física (PINNs). En CLAGTEE aporta ese enfoque físico-IA con FEM 2D al mapeo de potencial eléctrico de una bobina de Tesla; le interesarían sesiones de modelación física con IA, métodos numéricos y monitoreo y medición avanzados.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  }
- },
- {
-  "id": "ignacio-daniel-araya-zamorano",
-  "nombre": "Ignacio Daniel Araya Zamorano",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=wMZ5XCUAAAAJ",
-   "user_id": "wMZ5XCUAAAAJ",
-   "nombre_perfil": "Ignacio Araya",
-   "afiliacion": "Pontificia Universidad Católica de Valparaíso",
-   "email_verificado": "ucv.cl",
-   "intereses_scholar": [
-    "interval methods",
-    "global optimization",
-    "combinatorial optimization"
-   ],
-   "citas": 1050,
-   "citas_desde_2021": 486,
-   "h_index": 17,
-   "publicaciones": [
-    {
-     "titulo": "What Makes a Transformer Solve the TSP? A Component-Wise Analysis",
-     "anio": 2026,
-     "citas": 1
+  {
+    "id": "giovanni-cocca-guardia",
+    "nombre": "Giovanni Cocca Guardia",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=Te23tr8AAAAJ",
+      "user_id": "Te23tr8AAAAJ",
+      "nombre_perfil": "Giovanni Cocca-Guardia",
+      "afiliacion": "Pontificia Universidad Católica de Valparaíso",
+      "email_verificado": "mail.pucv.cl",
+      "intereses_scholar": [
+        "Remote Sensing",
+        "Generative AI",
+        "Physics AI",
+        "Graph Neural Network",
+        "Efficient Learning AI"
+      ],
+      "citas": 7,
+      "citas_desde_2021": 7,
+      "h_index": 2,
+      "publicaciones": [
+        {
+          "titulo": "Thermal Face Recognition from Synthetic Data: FLUX.1 Kontext Image-to-Image Adaptation and Cross-Sensor Evaluation",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Symmetry-Enhanced AI and GIS Framework Using Open Data for Simplified Physical Stability Assessment of Tailings Storage Facilities in Chile",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "AsyncMultiQuery TSF-RAG: Improving Retrieval Robustness in Spanish Technical Reports for Tailings Storage Facility Physical Stability Evaluation",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Automated detection of Chilean mine waste storage facilities using advanced deep learning models and Sentinel-2 satellite imagery",
+          "anio": 2025,
+          "citas": 4
+        },
+        {
+          "titulo": "Simplified physical stability assessment of Chilean mine waste storage facilities using GIS and AI: Application in the Antofagasta region",
+          "anio": 2025,
+          "citas": 2
+        },
+        {
+          "titulo": "Assessing the Energy Impact and Carbon Footprint of AI Model Training: A Case Study Using GPU Servers",
+          "anio": 2024,
+          "citas": 1
+        },
+        {
+          "titulo": "Comparing Graph Neural Network and Newton-Raphson for Power Flow in Electric Power Systems",
+          "anio": 2023,
+          "citas": 0
+        },
+        {
+          "titulo": "Supervised Learning for Power Flow with Graph Transformer Network Architecture",
+          "anio": 2023,
+          "citas": 0
+        },
+        {
+          "titulo": "Topological Study and Application of Graph Neural Network for Power System",
+          "anio": 2023,
+          "citas": 0
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Perfil 'Giovanni Cocca-Guardia' (variante registrada) en la PUCV; Gabriel Hermosilla y Manuel Silva Vega figuran como coautores en la barra lateral, y publica con Villavicencio, Olmos y Soto (coautores CLAGTEE)."
     },
-    {
-     "titulo": "Enhancing Inner Linearizations Assisted by Gradient-Based Expansion Point Optimization",
-     "anio": 2026,
-     "citas": 0
-    },
-    {
-     "titulo": "Extending interval branch-and-bound from two to few objectives in nonlinear multiobjective optimization",
-     "anio": 2025,
-     "citas": 1
-    },
-    {
-     "titulo": "Hybridizing two linear relaxation techniques in interval-based solvers",
-     "anio": 2025,
-     "citas": 2
-    },
-    {
-     "titulo": "A fill-and-reduce greedy algorithm for the container pre-marshalling problem",
-     "anio": 2023,
-     "citas": 11
-    },
-    {
-     "titulo": "Predicting student performance in computing courses based on programming behavior",
-     "anio": 2022,
-     "citas": 15
-    },
-    {
-     "titulo": "A GRASP-based scheme for the set covering problem",
-     "anio": 2021,
-     "citas": 21
-    },
-    {
-     "titulo": "A beam search algorithm for the biobjective container loading problem",
-     "anio": 2020,
-     "citas": 52
-    },
-    {
-     "titulo": "A Multi-Scale Model based on the Long Short-Term Memory for day ahead hourly wind speed forecasting",
-     "anio": 2020,
-     "citas": 38
-    },
-    {
-     "titulo": "VCS: A new heuristic function for selecting boxes in the single container loading problem",
-     "anio": 2017,
-     "citas": 65
-    },
-    {
-     "titulo": "A beam search approach to the container loading problem",
-     "anio": 2014,
-     "citas": 117
-    },
-    {
-     "titulo": "A contractor based on convex interval taylor",
-     "anio": 2012,
-     "citas": 79
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "graph neural networks for power flow in electric power systems",
+        "physics-AI frameworks with FEM for electric potential mapping",
+        "remote sensing and GIS for tailings storage facility assessment",
+        "energy consumption and carbon footprint of AI model training",
+        "synthetic data for thermal face recognition"
+      ],
+      "palabras_clave": [
+        "graph neural networks",
+        "power flow",
+        "graph transformer",
+        "Newton-Raphson",
+        "physics AI",
+        "finite element method",
+        "remote sensing",
+        "Sentinel-2",
+        "generative AI",
+        "efficient learning",
+        "carbon footprint"
+      ],
+      "metodos": [
+        "graph neural networks",
+        "graph transformer networks",
+        "2D FEM coupled with AI",
+        "deep learning on satellite imagery"
+      ],
+      "aplicaciones": [
+        "power flow estimation",
+        "electric potential mapping of a Tesla coil",
+        "tailings storage facility stability in Chile",
+        "energy-efficient AI training"
+      ],
+      "afinidad_tracks": {
+        "6": 1.0,
+        "1": 0.5,
+        "4": 0.3,
+        "13": 0.2
+      },
+      "etapa": "estudiante",
+      "resumen": "Estudiante de posgrado de la PUCV (email mail.pucv.cl) del grupo de Hermosilla que trabaja en IA eficiente y física-IA: GNN y graph transformers para flujo de potencia, teledetección de depósitos de relaves y huella energética del entrenamiento de modelos (presentado en CLAGTEE 2024). Presenta en CLAGTEE el marco físico-IA con FEM 2D para mapear potencial eléctrico en una bobina de Tesla; le interesarían sesiones de IA aplicada a sistemas de potencia y de monitoreo avanzado.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
-   ],
-   "confianza": "media",
-   "evidencia": "Los dos apellidos están verificados fuera de Scholar: una tesis de Ingeniería Informática de la PUCV (opac.pucv.cl, 'Un Algoritmo Genético para Resolver el Yard Allocation Problem en el Terminal Portuario de Arica') lo nombra 'Profesor Co-referente: Ignacio Araya Zamorano'. El perfil es el del único Ignacio Araya de la PUCV (email ucv.cl, optimización global y combinatoria), la misma universidad que Mendoza y Soto. Su línea reciente (Transformers para el TSP, LSTM para pronóstico eólico) encaja con una GNN para restauración del servicio, que es un problema combinatorio. No hay coautores CLAGTEE en sus publicaciones visibles, la barra de coautores no carga y el segundo nombre 'Daniel' no está confirmado; por eso la confianza es media y no alta."
   },
-  "otras_fuentes": [
-   {
-    "tipo": "institucional",
-    "url": "http://opac.pucv.cl/pucv_txt/Txt-6500/UCD6641_01.pdf"
-   }
-  ],
-  "afiliacion_inferida": "Escuela de Ingeniería Informática, Pontificia Universidad Católica de Valparaíso",
-  "pais_inferido": "Chile",
-  "nota_busqueda": "Pasada 1: 1 búsqueda en Scholar (candidato wMZ5XCUAAAAJ). Pasada 2: búsqueda en Scholar 'Ignacio Araya' graph neural networks distribution (solo el mismo candidato y un astrofísico, Ignacio J. Araya); búsqueda web 'Ignacio Araya Zamorano' sin resultados útiles; ORCID sin coincidencia; búsqueda de artículos en Google Scholar '\"Araya Zamorano\" Ignacio' mostró la tesis PUCV donde figura como co-referente.",
-  "intereses": {
-   "temas": [
-    "graph neural networks for service restoration in distribution systems",
-    "interval branch-and-bound methods for nonlinear global optimization",
-    "heuristics for container loading and pre-marshalling problems",
-    "neural combinatorial optimization with transformers",
-    "nonlinear multiobjective optimization",
-    "deep learning for day-ahead wind speed forecasting"
-   ],
-   "palabras_clave": [
-    "graph neural networks",
-    "service restoration",
-    "distribution network reconfiguration",
-    "interval methods",
-    "global optimization",
-    "combinatorial optimization",
-    "branch and bound",
-    "beam search",
-    "metaheuristics",
-    "transformers",
-    "wind speed forecasting",
-    "container loading problem"
-   ],
-   "metodos": [
-    "interval branch-and-bound with linear relaxations",
-    "beam search and greedy heuristics",
-    "GRASP and local search metaheuristics",
-    "graph neural networks",
-    "transformer models for routing problems",
-    "LSTM-based forecasting"
-   ],
-   "aplicaciones": [
-    "service restoration in electrical distribution networks",
-    "container loading and port logistics",
-    "day-ahead wind speed forecasting",
-    "set covering problems"
-   ],
-   "afinidad_tracks": {
-    "6": 0.9,
-    "1": 0.6,
-    "2": 0.2
-   },
-   "etapa": "investigador_senior",
-   "resumen": "Académico de Ingeniería Informática de la PUCV especializado en optimización global con métodos de intervalos y en optimización combinatoria (carga de contenedores, set covering), que en los últimos años incorpora redes neuronales a problemas combinatorios y de pronóstico (Transformers para el TSP, LSTM para viento). En CLAGTEE es coautor, con Jorge Mendoza y Lisa Soto, de un trabajo sobre redes neuronales de grafos para la restauración del servicio en distribución. Identidad con confianza media (apellidos y universidad verificados, sin coautoría directa). Le interesarían sesiones de IA y optimización aplicadas a la operación y la reconfiguración de redes.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar",
-    "otras_fuentes"
-   ]
-  }
- },
- {
-  "id": "jorge-mendoza-baeza",
-  "nombre": "Jorge Mendoza Baeza",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=oIUIZqcAAAAJ",
-   "user_id": "oIUIZqcAAAAJ",
-   "nombre_perfil": "Jorge Mendoza Baeza",
-   "afiliacion": "Escuela de Ingeniería Eléctrica, Pontificia Universidad Católica de Valparaíso",
-   "email_verificado": "pucv.cl",
-   "intereses_scholar": [
-    "Electric Power Systems",
-    "Electric Power Distribution Systems",
-    "Optimization method"
-   ],
-   "citas": 1228,
-   "citas_desde_2021": 322,
-   "h_index": 14,
-   "publicaciones": [
-    {
-     "titulo": "Preliminary Results of Physics-Informed Neural Networks for Power Forecasting in Bifacial Photovoltaic Systems",
-     "anio": 2025,
-     "citas": 1
+  {
+    "id": "hernan-mella",
+    "nombre": "Hernán Mella",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=NNQ6dUYAAAAJ",
+      "user_id": "NNQ6dUYAAAAJ",
+      "nombre_perfil": "Hernán Mella",
+      "afiliacion": "Assistant Professor, School of Electrical Engineering, Pontificia Universidad Católica de Valparaíso",
+      "email_verificado": "pucv.cl",
+      "intereses_scholar": [
+        "Magnetic resonance imaging"
+      ],
+      "citas": 164,
+      "citas_desde_2021": 164,
+      "h_index": 6,
+      "publicaciones": [
+        {
+          "titulo": "Evaluating the impact of blood rheology in hemodynamic parameters by 4D flow MRI in large vessels considering the hematocrit effect",
+          "anio": 2026,
+          "citas": 16
+        },
+        {
+          "titulo": "Unsupervised 4D Flow MRI Velocity Enhancement and Unwrapping Using Divergence-Free Neural Networks",
+          "anio": 2026,
+          "citas": 1
+        },
+        {
+          "titulo": "4D Flow MRI MATLAB Toolbox",
+          "anio": 2026,
+          "citas": 1
+        },
+        {
+          "titulo": "Prediction of peak-to-peak pressure gradient in patients with aortic coarctation using Physics-Informed Neural Networks from Magnetic Resonance Images",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Estimation of hemodynamic parameters via physics informed neural networks including hematocrit dependent rheology",
+          "anio": 2025,
+          "citas": 5
+        },
+        {
+          "titulo": "Simultaneous Acquisition of Water, Fat, and Velocity Images Using a Phase-Contrast T2*-IDEAL Method",
+          "anio": 2025,
+          "citas": 0
+        },
+        {
+          "titulo": "WarpPINN: Cine-MR image registration with physics-informed neural networks",
+          "anio": 2023,
+          "citas": 70
+        },
+        {
+          "titulo": "A hybrid PML formulation for the 2D three-field dynamic poroelastic equations",
+          "anio": 2023,
+          "citas": 4
+        },
+        {
+          "titulo": "Fully three-dimensional hemodynamic characterization of altered blood flow in bicuspid aortic valve patients with respect to aortic dilatation: a finite element approach",
+          "anio": 2022,
+          "citas": 24
+        },
+        {
+          "titulo": "Assessment of 4D flow MRI's quality by verifying its Navier–Stokes compatibility",
+          "anio": 2022,
+          "citas": 8
+        },
+        {
+          "titulo": "HARP-I: a harmonic phase interpolation method for the estimation of motion from tagged MR images",
+          "anio": 2021,
+          "citas": 14
+        },
+        {
+          "titulo": "A comprehensive comparison between shortest-path HARP refinement, SinMod, and DENSEanalysis processing tools applied to CSPAMM and DENSE images",
+          "anio": 2021,
+          "citas": 6
+        }
+      ],
+      "confianza": "media",
+      "evidencia": "Profesor asistente de la Escuela de Ingeniería Eléctrica de la PUCV (email pucv.cl), la misma escuela que sus coautores CLAGTEE Hermosilla y Cocca-Guardia; su trabajo en FEM y redes neuronales informadas por la física coincide con el enfoque físico-IA con FEM 2D del CIE-10. No aparece un coautor CLAGTEE en las publicaciones visibles. Revisión final: baja a media porque no hay coautores de CLAGTEE en sus publicaciones visibles y su línea principal es resonancia magnética cardiovascular."
     },
-    {
-     "titulo": "Methodology for Short Term Forecasting for Demand Prediction and Renewable Energy in Electrical Distribution Systems",
-     "anio": 2019,
-     "citas": 4
-    },
-    {
-     "titulo": "Simultaneous optimization of topology, distributed generation and energy storage systems in distribution networks using the MOHBB-BC algorithm",
-     "anio": 2018,
-     "citas": 5
-    },
-    {
-     "titulo": "Self-healing of electric distribution networks: A review",
-     "anio": 2018,
-     "citas": 32
-    },
-    {
-     "titulo": "Sizing and placement model of energy storage systems in an interactive simulation tool for power distribution networks",
-     "anio": 2018,
-     "citas": 1
-    },
-    {
-     "titulo": "Development and integration of a centralized service restoration model into an interactive simulation tool for power distribution networks",
-     "anio": 2017,
-     "citas": 1
-    },
-    {
-     "titulo": "Multi-fault service restoration in distribution networks considering the operating mode of distributed generation",
-     "anio": 2014,
-     "citas": 56
-    },
-    {
-     "titulo": "Low voltage distribution planning considering micro distributed generation",
-     "anio": 2013,
-     "citas": 43
-    },
-    {
-     "titulo": "Low voltage distribution optimization: Site, quantity and size of distribution transformers",
-     "anio": 2012,
-     "citas": 59
-    },
-    {
-     "titulo": "Microgenetic multiobjective reconfiguration algorithm considering power losses and reliability indices for medium voltage distribution network",
-     "anio": 2009,
-     "citas": 182
-    },
-    {
-     "titulo": "Multiobjective location of automatic voltage regulators in a radial distribution network using a micro genetic algorithm",
-     "anio": 2007,
-     "citas": 134
-    },
-    {
-     "titulo": "Minimal loss reconfiguration using genetic algorithms with restricted population and addressed operators: real application",
-     "anio": 2006,
-     "citas": 365
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Escuela de Ingeniería Eléctrica, Pontificia Universidad Católica de Valparaíso",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "physics-informed neural networks for biomedical flows and image registration",
+        "hemodynamic parameter estimation from 4D flow MRI",
+        "finite element methods for cardiovascular and poroelastic problems",
+        "cardiac motion estimation from tagged MRI",
+        "physics-AI framework for electric potential mapping with 2D FEM"
+      ],
+      "palabras_clave": [
+        "physics-informed neural networks",
+        "finite element method",
+        "magnetic resonance imaging",
+        "4D flow MRI",
+        "hemodynamics",
+        "blood rheology",
+        "image registration",
+        "tagged MRI",
+        "perfectly matched layers"
+      ],
+      "metodos": [
+        "physics-informed neural networks",
+        "finite element method",
+        "harmonic phase (HARP) interpolation",
+        "perfectly matched layer formulations"
+      ],
+      "aplicaciones": [
+        "cardiovascular MRI",
+        "aortic hemodynamics",
+        "electric potential mapping of a Tesla coil"
+      ],
+      "afinidad_tracks": {
+        "6": 0.9,
+        "4": 0.5
+      },
+      "etapa": "investigador_inicial",
+      "resumen": "Profesor asistente de Ingeniería Eléctrica en la PUCV cuyo trabajo principal es la resonancia magnética cardiovascular: 4D flow MRI, hemodinámica, FEM y redes neuronales informadas por la física (PINNs). En CLAGTEE aporta ese enfoque físico-IA con FEM 2D al mapeo de potencial eléctrico de una bobina de Tesla; le interesarían sesiones de modelación física con IA, métodos numéricos y monitoreo y medición avanzados.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
-   ],
-   "confianza": "alta",
-   "evidencia": "Perfil PUCV (email pucv.cl) con publicaciones junto a la coautora CLAGTEE Lisa Soto (modelo de restauración de servicio presentado en CLAGTEE 2017, dimensionamiento de almacenamiento) y a Hermosilla; la restauración de servicio en distribución es la misma línea del CIE-11. Ojo: el perfil mezcla trabajos de homónimos (maíz en Oaxaca, aves en Ecuador, malezas en Argentina, despacho en Paraguay), que se excluyeron; las citas totales incluyen esos trabajos."
   },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Escuela de Ingeniería Eléctrica, Pontificia Universidad Católica de Valparaíso",
-  "pais_inferido": "Chile",
-  "intereses": {
-   "temas": [
-    "distribution network reconfiguration for loss minimization and reliability",
-    "service restoration and self-healing in distribution networks with distributed generation",
-    "optimal placement of voltage regulators and distribution transformers",
-    "low-voltage distribution planning with distributed generation and energy storage",
-    "neural network methods for distribution systems and PV power forecasting"
-   ],
-   "palabras_clave": [
-    "distribution network reconfiguration",
-    "service restoration",
-    "self-healing",
-    "distributed generation",
-    "energy storage",
-    "voltage regulators",
-    "technical losses",
-    "state estimation",
-    "multiobjective optimization",
-    "genetic algorithms",
-    "graph neural networks",
-    "PV power forecasting"
-   ],
-   "metodos": [
-    "genetic and micro-genetic algorithms",
-    "multiobjective evolutionary algorithms",
-    "big bang–big crunch metaheuristic",
-    "graph neural networks",
-    "physics-informed neural networks"
-   ],
-   "aplicaciones": [
-    "medium- and low-voltage distribution networks",
-    "bifacial photovoltaic power forecasting",
-    "interactive simulation tools for distribution operation"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "6": 0.8,
-    "2": 0.5
-   },
-   "etapa": "investigador_senior",
-   "resumen": "Profesor de la Escuela de Ingeniería Eléctrica de la PUCV con larga trayectoria en sistemas de distribución: reconfiguración con algoritmos genéticos multiobjetivo, restauración de servicio y self-healing con generación distribuida, ubicación de reguladores y planificación de baja tensión. Hoy incorpora métodos de IA (GNN para restauración, PINNs para pronóstico fotovoltaico). Le interesarían sesiones de operación y confiabilidad de redes de distribución, integración de DER y aplicaciones de IA a la red.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  }
- },
- {
-  "id": "lisa-alejandra-soto-barreda",
-  "nombre": "Lisa Alejandra Soto Barreda",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso",
-  "pais_inferido": "Chile",
-  "intereses": {
-   "temas": [
-    "graph neural networks for service restoration in distribution systems",
-    "interactive simulation tools for distribution network operation",
-    "sizing and placement of energy storage in distribution networks",
-    "physics-AI electric potential mapping with FEM"
-   ],
-   "palabras_clave": [
-    "service restoration",
-    "graph neural networks",
-    "distribution systems",
-    "self-healing",
-    "energy storage sizing",
-    "interactive simulation",
-    "finite element method",
-    "synthetic thermal images"
-   ],
-   "metodos": [
-    "graph neural networks",
-    "centralized service restoration models",
-    "optimization-based energy storage placement"
-   ],
-   "aplicaciones": [
-    "distribution network operation and restoration",
-    "interactive simulation tools for distribution networks"
-   ],
-   "afinidad_tracks": {
-    "6": 0.9,
-    "1": 0.8,
-    "2": 0.3,
-    "4": 0.2
-   },
-   "etapa": "investigador_inicial",
-   "resumen": "Presenta en CLAGTEE un trabajo sobre redes neuronales de grafos para restaurar el servicio en redes de distribución y es coautora del marco físico-IA con FEM. Por publicaciones que figuran en los perfiles de sus coautores de la PUCV (Mendoza, Hermosilla) trabaja desde 2017 en modelos de restauración centralizada y almacenamiento en herramientas de simulación de distribución, y en 2026 en reconocimiento facial térmico. No se encontró perfil Scholar propio en 2 búsquedas. Le interesarían sesiones de operación y resiliencia de distribución con IA.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "manuel-silva",
-  "nombre": "Manuel Silva",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=YBoFJH8AAAAJ",
-   "user_id": "YBoFJH8AAAAJ",
-   "nombre_perfil": "Manuel Silva Vega",
-   "afiliacion": "PhD (c) EE, Pontificia Universidad Católica de Valparaíso",
-   "email_verificado": "pucv.cl",
-   "intereses_scholar": [
-    "GeoAI",
-    "Machine Learning",
-    "Remote Sensing",
-    "Computer Vision",
-    "Data Science"
-   ],
-   "citas": 37,
-   "citas_desde_2021": 37,
-   "h_index": 3,
-   "publicaciones": [
-    {
-     "titulo": "Symmetry-Enhanced AI and GIS Framework Using Open Data for Simplified Physical Stability Assessment of Tailings Storage Facilities in Chile",
-     "anio": 2026,
-     "citas": 0
+  {
+    "id": "ignacio-daniel-araya-zamorano",
+    "nombre": "Ignacio Daniel Araya Zamorano",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=wMZ5XCUAAAAJ",
+      "user_id": "wMZ5XCUAAAAJ",
+      "nombre_perfil": "Ignacio Araya",
+      "afiliacion": "Pontificia Universidad Católica de Valparaíso",
+      "email_verificado": "ucv.cl",
+      "intereses_scholar": [
+        "interval methods",
+        "global optimization",
+        "combinatorial optimization"
+      ],
+      "citas": 1050,
+      "citas_desde_2021": 486,
+      "h_index": 17,
+      "publicaciones": [
+        {
+          "titulo": "What Makes a Transformer Solve the TSP? A Component-Wise Analysis",
+          "anio": 2026,
+          "citas": 1
+        },
+        {
+          "titulo": "Enhancing Inner Linearizations Assisted by Gradient-Based Expansion Point Optimization",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Extending interval branch-and-bound from two to few objectives in nonlinear multiobjective optimization",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Hybridizing two linear relaxation techniques in interval-based solvers",
+          "anio": 2025,
+          "citas": 2
+        },
+        {
+          "titulo": "A fill-and-reduce greedy algorithm for the container pre-marshalling problem",
+          "anio": 2023,
+          "citas": 11
+        },
+        {
+          "titulo": "Predicting student performance in computing courses based on programming behavior",
+          "anio": 2022,
+          "citas": 15
+        },
+        {
+          "titulo": "A GRASP-based scheme for the set covering problem",
+          "anio": 2021,
+          "citas": 21
+        },
+        {
+          "titulo": "A beam search algorithm for the biobjective container loading problem",
+          "anio": 2020,
+          "citas": 52
+        },
+        {
+          "titulo": "A Multi-Scale Model based on the Long Short-Term Memory for day ahead hourly wind speed forecasting",
+          "anio": 2020,
+          "citas": 38
+        },
+        {
+          "titulo": "VCS: A new heuristic function for selecting boxes in the single container loading problem",
+          "anio": 2017,
+          "citas": 65
+        },
+        {
+          "titulo": "A beam search approach to the container loading problem",
+          "anio": 2014,
+          "citas": 117
+        },
+        {
+          "titulo": "A contractor based on convex interval taylor",
+          "anio": 2012,
+          "citas": 79
+        }
+      ],
+      "confianza": "media",
+      "evidencia": "Los dos apellidos están verificados fuera de Scholar: una tesis de Ingeniería Informática de la PUCV (opac.pucv.cl, 'Un Algoritmo Genético para Resolver el Yard Allocation Problem en el Terminal Portuario de Arica') lo nombra 'Profesor Co-referente: Ignacio Araya Zamorano'. El perfil es el del único Ignacio Araya de la PUCV (email ucv.cl, optimización global y combinatoria), la misma universidad que Mendoza y Soto. Su línea reciente (Transformers para el TSP, LSTM para pronóstico eólico) encaja con una GNN para restauración del servicio, que es un problema combinatorio. No hay coautores CLAGTEE en sus publicaciones visibles, la barra de coautores no carga y el segundo nombre 'Daniel' no está confirmado; por eso la confianza es media y no alta."
     },
-    {
-     "titulo": "AsyncMultiQuery TSF-RAG: Improving Retrieval Robustness in Spanish Technical Reports for Tailings Storage Facility Physical Stability Evaluation",
-     "anio": 2026,
-     "citas": 0
-    },
-    {
-     "titulo": "Automated detection of Chilean mine waste storage facilities using advanced deep learning models and sentinel-2 satellite imagery",
-     "anio": 2025,
-     "citas": 4
-    },
-    {
-     "titulo": "Simplified Physical Stability Assessment of Chilean Mine Waste Storage Facilities Using GIS and AI: Application in the Antofagasta Region",
-     "anio": 2025,
-     "citas": 2
-    },
-    {
-     "titulo": "Automated Detection and Analysis of Massive Mining Waste Deposits Using Sentinel-2 Satellite Imagery and Artificial Intelligence",
-     "anio": 2023,
-     "citas": 19
-    },
-    {
-     "titulo": "Advanced Deep Learning Techniques for High-Quality Synthetic Thermal Image Generation",
-     "anio": 2023,
-     "citas": 11
-    },
-    {
-     "titulo": "AI-Driven Geolocation of Mining Waste Deposits Using Sentinel Satellite Imagery",
-     "anio": 2023,
-     "citas": 1
+    "otras_fuentes": [
+      {
+        "tipo": "institucional",
+        "url": "http://opac.pucv.cl/pucv_txt/Txt-6500/UCD6641_01.pdf"
+      }
+    ],
+    "afiliacion_inferida": "Escuela de Ingeniería Informática, Pontificia Universidad Católica de Valparaíso",
+    "pais_inferido": "Chile",
+    "nota_busqueda": "Pasada 1: 1 búsqueda en Scholar (candidato wMZ5XCUAAAAJ). Pasada 2: búsqueda en Scholar 'Ignacio Araya' graph neural networks distribution (solo el mismo candidato y un astrofísico, Ignacio J. Araya); búsqueda web 'Ignacio Araya Zamorano' sin resultados útiles; ORCID sin coincidencia; búsqueda de artículos en Google Scholar '\"Araya Zamorano\" Ignacio' mostró la tesis PUCV donde figura como co-referente.",
+    "intereses": {
+      "temas": [
+        "graph neural networks for service restoration in distribution systems",
+        "interval branch-and-bound methods for nonlinear global optimization",
+        "heuristics for container loading and pre-marshalling problems",
+        "neural combinatorial optimization with transformers",
+        "nonlinear multiobjective optimization",
+        "deep learning for day-ahead wind speed forecasting"
+      ],
+      "palabras_clave": [
+        "graph neural networks",
+        "service restoration",
+        "distribution network reconfiguration",
+        "interval methods",
+        "global optimization",
+        "combinatorial optimization",
+        "branch and bound",
+        "beam search",
+        "metaheuristics",
+        "transformers",
+        "wind speed forecasting",
+        "container loading problem"
+      ],
+      "metodos": [
+        "interval branch-and-bound with linear relaxations",
+        "beam search and greedy heuristics",
+        "GRASP and local search metaheuristics",
+        "graph neural networks",
+        "transformer models for routing problems",
+        "LSTM-based forecasting"
+      ],
+      "aplicaciones": [
+        "service restoration in electrical distribution networks",
+        "container loading and port logistics",
+        "day-ahead wind speed forecasting",
+        "set covering problems"
+      ],
+      "afinidad_tracks": {
+        "6": 0.9,
+        "1": 0.6,
+        "2": 0.2
+      },
+      "etapa": "investigador_senior",
+      "resumen": "Académico de Ingeniería Informática de la PUCV especializado en optimización global con métodos de intervalos y en optimización combinatoria (carga de contenedores, set covering), que en los últimos años incorpora redes neuronales a problemas combinatorios y de pronóstico (Transformers para el TSP, LSTM para viento). En CLAGTEE es coautor, con Jorge Mendoza y Lisa Soto, de un trabajo sobre redes neuronales de grafos para la restauración del servicio en distribución. Identidad con confianza media (apellidos y universidad verificados, sin coautoría directa). Le interesarían sesiones de IA y optimización aplicadas a la operación y la reconfiguración de redes.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar",
+        "otras_fuentes"
+      ]
     }
-   ],
-   "confianza": "alta",
-   "evidencia": "Doctorando en Ingeniería Eléctrica de la PUCV; Gabriel Hermosilla, Giovanni Cocca-Guardia y Gabriel Olmos figuran como coautores en la barra lateral, y publica con Villavicencio (todos coautores CLAGTEE)."
   },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso",
-  "pais_inferido": "Chile",
-  "intereses": {
-   "temas": [
-    "deep learning detection of mine waste storage facilities from Sentinel-2 imagery",
-    "GeoAI and GIS for tailings physical stability assessment",
-    "retrieval-augmented generation for tailings technical reports",
-    "synthetic thermal image generation",
-    "physics-AI electric potential mapping"
-   ],
-   "palabras_clave": [
-    "GeoAI",
-    "remote sensing",
-    "Sentinel-2",
-    "computer vision",
-    "deep learning",
-    "tailings storage facilities",
-    "mine waste",
-    "GIS",
-    "synthetic data",
-    "retrieval-augmented generation"
-   ],
-   "metodos": [
-    "deep learning on satellite imagery",
-    "GIS-based spatial analysis",
-    "generative models for synthetic thermal images"
-   ],
-   "aplicaciones": [
-    "mine waste inventory in Chile",
-    "tailings physical stability assessment"
-   ],
-   "afinidad_tracks": {
-    "6": 1.0,
-    "13": 0.4,
-    "4": 0.3
-   },
-   "etapa": "estudiante",
-   "resumen": "Doctorando en Ingeniería Eléctrica en la PUCV especializado en GeoAI: detección automática de depósitos de relaves con imágenes Sentinel-2 y deep learning, evaluación simplificada de estabilidad con GIS e IA, y generación de imágenes térmicas sintéticas. En CLAGTEE es coautor de los trabajos de RAG para normativa geotécnica y de mapeo físico-IA de potencial eléctrico; le interesarían sesiones de ciencia de datos, visión por computador y teledetección aplicadas a energía y medioambiente.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  }
- },
- {
-  "id": "matias-diaz-veliz",
-  "nombre": "Matías Díaz Véliz",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso",
-  "pais_inferido": "Chile",
-  "nota_busqueda": "Pasada 1: 1 búsqueda; único candidato 'Matías Díaz' (user=-43YaJIAAAAJ, USACH, electrónica de potencia y energía eólica, h=30), descartado: tema sin relación con RAG/LLMs, sin coautores CLAGTEE y sin el apellido Véliz. Pasada 2: búsqueda en Scholar 'Matías Díaz' PUCV LLM (solo homónimos: sociólogo U. de Chile, médico argentino, químico UNLP); búsqueda web '\"Matías Díaz Véliz\"' sin resultados; búsqueda de artículos en Scholar '\"Díaz Véliz\" Matías' sin resultados pertinentes; su nombre no figura en las publicaciones de Hermosilla ni de Cocca-Guardia.",
-  "intereses": {
-   "temas": [
-    "retrieval-augmented generation over geotechnical regulations for Chilean mining",
-    "fine-tuning of local LLMs for regulatory question answering",
-    "AI assistants for mining safety and geotechnical compliance"
-   ],
-   "palabras_clave": [
-    "retrieval-augmented generation",
-    "large language models",
-    "local LLMs",
-    "fine-tuning",
-    "geotechnical regulations",
-    "mining safety",
-    "Chilean mining"
-   ],
-   "metodos": [
-    "retrieval-augmented generation",
-    "LLM fine-tuning"
-   ],
-   "aplicaciones": [
-    "regulatory compliance assistance in Chilean mining"
-   ],
-   "afinidad_tracks": {
-    "6": 1.0,
-    "13": 0.2
-   },
-   "etapa": "desconocida",
-   "resumen": "Presenta en CLAGTEE GeoConsultor AI-MineSafe, un sistema con RAG y fine-tuning de LLMs locales para consultar la normativa geotécnica de la minería chilena, con el grupo de Hermosilla, Olmos, Villavicencio y Cocca-Guardia en la PUCV (afiliación inferida de sus coautores; el grupo publica sobre RAG para informes de relaves). No tiene perfil Scholar: el único candidato (Matías Díaz, USACH, electrónica de potencia) se descartó por tema y falta de coautoría. Le interesarían sesiones de LLMs, IA generativa y ciencia de datos aplicada.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "sebastian-quinones",
-  "nombre": "Sebastian Quiñones",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso",
-  "pais_inferido": "Chile",
-  "nota_busqueda": "Pasada 1: nombre completo en Scholar, sin resultados. Pasada 2: barras de coautores de los 7 perfiles PUCV y publicaciones recientes de Hermosilla y Cocca-Guardia sin rastro de Quiñones; búsqueda en Scholar 'Sebastián Quiñones' Valparaíso eléctrica/Tesla/FEM sin resultados.",
-  "intereses": {
-   "temas": [
-    "physics-AI framework for electric potential mapping",
-    "video-assisted measurement combined with 2D FEM",
-    "electric field analysis of high-voltage Tesla coils"
-   ],
-   "palabras_clave": [
-    "physics-informed AI",
-    "finite element method",
-    "electric potential",
-    "computer vision",
-    "video analysis",
-    "Tesla coil",
-    "high voltage"
-   ],
-   "metodos": [
-    "2D FEM",
-    "video-based computer vision",
-    "hybrid physics-AI modelling"
-   ],
-   "aplicaciones": [
-    "electric potential mapping around high-voltage devices"
-   ],
-   "afinidad_tracks": {
-    "6": 0.9,
-    "4": 0.5
-   },
-   "etapa": "desconocida",
-   "resumen": "Coautor (último en la lista) en CLAGTEE del marco físico-IA que combina video y FEM 2D para mapear el potencial eléctrico de una bobina de Tesla, con Cocca-Guardia, Hermosilla, Mella, Olmos, Silva y Soto (PUCV; afiliación inferida de sus coautores). No tiene perfil Scholar ni aparece en las publicaciones de sus coautores, así que la evidencia se limita a ese paper. Le interesarían sesiones de IA aplicada, modelación física y monitoreo avanzado.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "afonso-jose-do-prado",
-  "nombre": "Afonso José do Prado",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=7DlTXqIAAAAJ",
-   "user_id": "7DlTXqIAAAAJ",
-   "nombre_perfil": "Afonso José do Prado",
-   "afiliacion": "Professor Assistente Doutor, FESJ/UNESP",
-   "email_verificado": "unesp.br",
-   "intereses_scholar": [
-    "Linhas de transmissão",
-    "fenômenos transitórios eletromagnéticos"
-   ],
-   "citas": 695,
-   "citas_desde_2021": 166,
-   "h_index": 13,
-   "publicaciones": [
-    {
-     "titulo": "Effect and behavior of lightning on composite material structures used in aircraft",
-     "anio": 2022,
-     "citas": 2
+  {
+    "id": "jorge-mendoza-baeza",
+    "nombre": "Jorge Mendoza Baeza",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=oIUIZqcAAAAJ",
+      "user_id": "oIUIZqcAAAAJ",
+      "nombre_perfil": "Jorge Mendoza Baeza",
+      "afiliacion": "Escuela de Ingeniería Eléctrica, Pontificia Universidad Católica de Valparaíso",
+      "email_verificado": "pucv.cl",
+      "intereses_scholar": [
+        "Electric Power Systems",
+        "Electric Power Distribution Systems",
+        "Optimization method"
+      ],
+      "citas": 1228,
+      "citas_desde_2021": 322,
+      "h_index": 14,
+      "publicaciones": [
+        {
+          "titulo": "Preliminary Results of Physics-Informed Neural Networks for Power Forecasting in Bifacial Photovoltaic Systems",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Methodology for Short Term Forecasting for Demand Prediction and Renewable Energy in Electrical Distribution Systems",
+          "anio": 2019,
+          "citas": 4
+        },
+        {
+          "titulo": "Simultaneous optimization of topology, distributed generation and energy storage systems in distribution networks using the MOHBB-BC algorithm",
+          "anio": 2018,
+          "citas": 5
+        },
+        {
+          "titulo": "Self-healing of electric distribution networks: A review",
+          "anio": 2018,
+          "citas": 32
+        },
+        {
+          "titulo": "Sizing and placement model of energy storage systems in an interactive simulation tool for power distribution networks",
+          "anio": 2018,
+          "citas": 1
+        },
+        {
+          "titulo": "Development and integration of a centralized service restoration model into an interactive simulation tool for power distribution networks",
+          "anio": 2017,
+          "citas": 1
+        },
+        {
+          "titulo": "Multi-fault service restoration in distribution networks considering the operating mode of distributed generation",
+          "anio": 2014,
+          "citas": 56
+        },
+        {
+          "titulo": "Low voltage distribution planning considering micro distributed generation",
+          "anio": 2013,
+          "citas": 43
+        },
+        {
+          "titulo": "Low voltage distribution optimization: Site, quantity and size of distribution transformers",
+          "anio": 2012,
+          "citas": 59
+        },
+        {
+          "titulo": "Microgenetic multiobjective reconfiguration algorithm considering power losses and reliability indices for medium voltage distribution network",
+          "anio": 2009,
+          "citas": 182
+        },
+        {
+          "titulo": "Multiobjective location of automatic voltage regulators in a radial distribution network using a micro genetic algorithm",
+          "anio": 2007,
+          "citas": 134
+        },
+        {
+          "titulo": "Minimal loss reconfiguration using genetic algorithms with restricted population and addressed operators: real application",
+          "anio": 2006,
+          "citas": 365
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Perfil PUCV (email pucv.cl) con publicaciones junto a la coautora CLAGTEE Lisa Soto (modelo de restauración de servicio presentado en CLAGTEE 2017, dimensionamiento de almacenamiento) y a Hermosilla; la restauración de servicio en distribución es la misma línea del CIE-11. Ojo: el perfil mezcla trabajos de homónimos (maíz en Oaxaca, aves en Ecuador, malezas en Argentina, despacho en Paraguay), que se excluyeron; las citas totales incluyen esos trabajos."
     },
-    {
-     "titulo": "Numerical Errors Reduction in Transient Simulations with Resistor Applications",
-     "anio": 2022,
-     "citas": 0
-    },
-    {
-     "titulo": "Sparse matrices for transient simulations with computing memory reduction",
-     "anio": 2020,
-     "citas": 5
-    },
-    {
-     "titulo": "Análise Modificada de Transitórios Eletromagnéticos em Linhas de Transmissão",
-     "anio": 2020,
-     "citas": 1
-    },
-    {
-     "titulo": "A new DSP-based physical layer encryption technique applied to passive optical networks",
-     "anio": 2018,
-     "citas": 5
-    },
-    {
-     "titulo": "Application of numeric routine for simulating transients in power line communication (PLC) Systems",
-     "anio": 2018,
-     "citas": 4
-    },
-    {
-     "titulo": "A new procedure to derive transmission-line parameters: Applications and restrictions",
-     "anio": 2005,
-     "citas": 71
-    },
-    {
-     "titulo": "Behavior of overhead transmission line parameters on the presence of ground wires",
-     "anio": 2005,
-     "citas": 66
-    },
-    {
-     "titulo": "Efficient procedure to evaluate electromagnetic transients on three-phase transmission lines",
-     "anio": 2010,
-     "citas": 54
-    },
-    {
-     "titulo": "Inclusion of the frequency effect in the lumped parameters transmission line model: State space formulation",
-     "anio": 2009,
-     "citas": 53
-    },
-    {
-     "titulo": "Proposal of a transmission line model based on lumped elements: an analytic solution",
-     "anio": 2010,
-     "citas": 27
-    },
-    {
-     "titulo": "Phase-mode transformation matrix application for transmission line and electromagnetic transient analyses",
-     "anio": 2010,
-     "citas": 25
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Escuela de Ingeniería Eléctrica, Pontificia Universidad Católica de Valparaíso",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "distribution network reconfiguration for loss minimization and reliability",
+        "service restoration and self-healing in distribution networks with distributed generation",
+        "optimal placement of voltage regulators and distribution transformers",
+        "low-voltage distribution planning with distributed generation and energy storage",
+        "neural network methods for distribution systems and PV power forecasting"
+      ],
+      "palabras_clave": [
+        "distribution network reconfiguration",
+        "service restoration",
+        "self-healing",
+        "distributed generation",
+        "energy storage",
+        "voltage regulators",
+        "technical losses",
+        "state estimation",
+        "multiobjective optimization",
+        "genetic algorithms",
+        "graph neural networks",
+        "PV power forecasting"
+      ],
+      "metodos": [
+        "genetic and micro-genetic algorithms",
+        "multiobjective evolutionary algorithms",
+        "big bang–big crunch metaheuristic",
+        "graph neural networks",
+        "physics-informed neural networks"
+      ],
+      "aplicaciones": [
+        "medium- and low-voltage distribution networks",
+        "bifacial photovoltaic power forecasting",
+        "interactive simulation tools for distribution operation"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "6": 0.8,
+        "2": 0.5
+      },
+      "etapa": "investigador_senior",
+      "resumen": "Profesor de la Escuela de Ingeniería Eléctrica de la PUCV con larga trayectoria en sistemas de distribución: reconfiguración con algoritmos genéticos multiobjetivo, restauración de servicio y self-healing con generación distribuida, ubicación de reguladores y planificación de baja tensión. Hoy incorpora métodos de IA (GNN para restauración, PINNs para pronóstico fotovoltaico). Le interesarían sesiones de operación y confiabilidad de redes de distribución, integración de DER y aplicaciones de IA a la red.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
-   ],
-   "confianza": "alta",
-   "evidencia": "Perfil con email unesp.br. Sus publicaciones incluyen a los coautores CLAGTEE Leonardo da Silva Lessa y Caio V. C. Grilo (p. ej. 'Sparse matrices for transient simulations with computing memory reduction', 2020, y trabajos de 2018-2019 sobre modelos de línea con circuitos π). Además, el perfil Scholar de D. V. Coury (USP) lista un trabajo de 2026 de Lessa, Grilo, Coury y A. J. Prado sobre protección por ondas viajeras en redes de distribución activas. La barra de coautores no cargó."
   },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Faculdade de Engenharia de São João da Boa Vista",
-  "pais_inferido": "Brasil",
-  "nota_busqueda": "Pasada 2: 1 búsqueda en Scholar por nombre completo.",
-  "intereses": {
-   "temas": [
-    "electromagnetic transient simulation of transmission lines",
-    "lumped-parameter and π-circuit transmission line models with frequency dependence",
-    "phase-mode transformation matrices for transmission line analysis",
-    "IEC 61850 protocol implementation and GOOSE cybersecurity in digital substations",
-    "fault location and traveling-wave protection in distribution networks",
-    "physical-layer encryption in passive optical networks"
-   ],
-   "palabras_clave": [
-    "transmission lines",
-    "electromagnetic transients",
-    "frequency-dependent parameters",
-    "π circuits",
-    "modal transformation",
-    "numerical oscillations",
-    "IEC 61850",
-    "GOOSE",
-    "fault location",
-    "traveling waves",
-    "power line communication"
-   ],
-   "metodos": [
-    "state-space modelling",
-    "lumped-element transmission line models",
-    "phase-mode (modal) decomposition",
-    "numerical transient simulation",
-    "impedance-based fault location",
-    "protocol emulation and performance evaluation"
-   ],
-   "aplicaciones": [
-    "transient analysis of overhead transmission lines",
-    "protection and fault location in active distribution networks",
-    "digital substation communications",
-    "lightning effects on aircraft composite structures"
-   ],
-   "afinidad_tracks": {
-    "1": 0.8,
-    "5": 0.8,
-    "4": 0.4,
-    "9": 0.2
-   },
-   "etapa": "investigador_consolidado",
-   "resumen": "Profesor de la UNESP (São João da Boa Vista) con una larga trayectoria en modelación de líneas de transmisión y simulación de transitorios electromagnéticos (modelos de parámetros concentrados, circuitos π, matrices de transformación modal), que hoy orienta trabajos con Lessa y Grilo (USP São Carlos) sobre localización de fallas, protección por ondas viajeras e IEC 61850. En CLAGTEE es el autor senior de tres trabajos: guías para IEC 61850, ciberseguridad en GOOSE y localización de fallas multi-impedancia. Le interesarían sesiones de protección y localización de fallas, transitorios y comunicaciones en subestaciones digitales.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  }
- },
- {
-  "id": "caio-vinicius-colozzo-grilo",
-  "nombre": "Caio Vinicius Colozzo Grilo",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Escola de Engenharia de São Carlos, Universidade de São Paulo (USP) (inferida de sus coautorías con Coury y Lessa)",
-  "pais_inferido": "Brasil",
-  "nota_busqueda": "Pasada 2: búsqueda en Scholar con variantes del nombre (sin resultados) y otra con nombre + São Carlos fault location (sin perfil). Sus trabajos aparecen en los perfiles de A. J. do Prado y D. V. Coury.",
-  "intereses": {
-   "temas": [
-    "traveling-wave fault location in radial distribution systems",
-    "fault detection and location in wind farm collector systems",
-    "IEC 61850 protocol emulation and GOOSE cybersecurity",
-    "electromagnetic transient simulation of transmission lines",
-    "real-time estimation of voltage signal parameters"
-   ],
-   "palabras_clave": [
-    "traveling waves",
-    "fault location",
-    "fault detection",
-    "wind farm collector lines",
-    "distribution networks",
-    "fault resistance estimation",
-    "multiple-estimation mitigation",
-    "IEC 61850",
-    "GOOSE",
-    "electromagnetic transients",
-    "multi-objective evolutionary algorithms"
-   ],
-   "metodos": [
-    "traveling-wave analysis",
-    "adaptive statistical thresholding",
-    "decision trees",
-    "multi-objective evolutionary algorithms",
-    "impedance-based fault location",
-    "transient simulation in Python"
-   ],
-   "aplicaciones": [
-    "fault location in radial distribution feeders",
-    "protection of wind farm collector networks",
-    "protection of active distribution networks",
-    "digital substations"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "5": 0.6,
-    "4": 0.5,
-    "2": 0.4
-   },
-   "etapa": "estudiante",
-   "resumen": "Investigador en formación del grupo de D. V. Coury y R. A. S. Fernandes en la USP São Carlos (afiliación inferida de sus coautorías). Es primer autor de trabajos 2026 sobre detección y localización de fallas en colectores de parques eólicos y coautor de localizadores por ondas viajeras para distribución; antes hizo simulación de transitorios en líneas con A. J. do Prado (UNESP). No tiene perfil Scholar propio: sus temas salen de las publicaciones listadas en los perfiles de do Prado y Coury. En CLAGTEE es coautor de los tres trabajos del grupo; le interesarían sesiones de protección, localización de fallas y comunicaciones en subestaciones.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "guilherme-vischi-de-andrade",
-  "nombre": "Guilherme Vischi de Andrade",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
-  "nota_busqueda": "Pasada 2: 1 búsqueda en Scholar ('Guilherme Vischi de Andrade' / 'Guilherme Vischi'), sin resultados (solo un homónimo de la UFPE).",
-  "intereses": {
-   "temas": [
-    "impedance-based fault location in distribution networks",
-    "error zoning for fault location estimates",
-    "accuracy assessment of fault location methods"
-   ],
-   "palabras_clave": [
-    "fault location",
-    "impedance-based methods",
-    "distribution networks",
-    "error zoning",
-    "power system protection"
-   ],
-   "metodos": [
-    "impedance-based multi-method fault location"
-   ],
-   "aplicaciones": [
-    "fault location in distribution networks"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "4": 0.3
-   },
-   "etapa": "desconocida",
-   "resumen": "Primer autor en CLAGTEE de una estrategia multi-método basada en impedancia, con zonificación del error, para localizar fallas en redes de distribución, junto a Lessa, Grilo (USP São Carlos) y A. J. do Prado (UNESP). No tiene perfil Scholar; como contexto de grupo, sus coautores investigan localización de fallas por ondas viajeras y transitorios en líneas. Su afiliación exacta (UNESP o USP) no está confirmada. Le interesarían sesiones de operación, protección y confiabilidad de redes de distribución.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "gustavo-da-costa-lilli",
-  "nombre": "Gustavo da Costa Lilli",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
-  "nota_busqueda": "Pasada 2: búsqueda en Scholar (variantes del nombre + IEC 61850) y búsqueda web general por nombre completo, ambas sin resultados.",
-  "intereses": {
-   "temas": [
-    "implementation and emulation of IEC 61850 protocols",
-    "performance evaluation of substation communication protocols",
-    "emulation testbeds for digital substation communications"
-   ],
-   "palabras_clave": [
-    "IEC 61850",
-    "substation automation",
-    "protocol emulation",
-    "communication performance",
-    "digital substations"
-   ],
-   "metodos": [
-    "protocol emulation and performance evaluation"
-   ],
-   "aplicaciones": [
-    "digital substations"
-   ],
-   "afinidad_tracks": {
-    "5": 0.9,
-    "1": 0.2
-   },
-   "etapa": "desconocida",
-   "resumen": "Presenta en CLAGTEE guías para implementar, emular y evaluar el desempeño de los protocolos IEC 61850, como primer autor junto a Lessa, Grilo (USP São Carlos) y A. J. do Prado (UNESP). No tiene perfil Scholar ni otras fuentes localizables; su afiliación exacta no está confirmada. Le interesarían sesiones de redes digitales, comunicaciones en subestaciones, ciberseguridad y protección.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "leonardo-da-silva-lessa",
-  "nombre": "Leonardo da Silva Lessa",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=6xnRhCsAAAAJ",
-   "user_id": "6xnRhCsAAAAJ",
-   "nombre_perfil": "Leonardo da Silva Lessa",
-   "afiliacion": "Doutorando em Engenharia Elétrica",
-   "email_verificado": "usp.br",
-   "intereses_scholar": [
-    "fault classification",
-    "fault detection",
-    "fault location"
-   ],
-   "citas": 35,
-   "citas_desde_2021": null,
-   "h_index": null,
-   "publicaciones": [
-    {
-     "titulo": "A travelling wave-based fault locator for radial distribution systems using decision trees to mitigate multiple estimations",
-     "anio": 2023,
-     "citas": 8
-    },
-    {
-     "titulo": "Fault Location in Radial Distribution Systems: Comparative Analysis for Decomposition Tools Using Traveling Waves",
-     "anio": 2023,
-     "citas": 1
+  {
+    "id": "lisa-alejandra-soto-barreda",
+    "nombre": "Lisa Alejandra Soto Barreda",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "graph neural networks for service restoration in distribution systems",
+        "interactive simulation tools for distribution network operation",
+        "sizing and placement of energy storage in distribution networks",
+        "physics-AI electric potential mapping with FEM"
+      ],
+      "palabras_clave": [
+        "service restoration",
+        "graph neural networks",
+        "distribution systems",
+        "self-healing",
+        "energy storage sizing",
+        "interactive simulation",
+        "finite element method",
+        "synthetic thermal images"
+      ],
+      "metodos": [
+        "graph neural networks",
+        "centralized service restoration models",
+        "optimization-based energy storage placement"
+      ],
+      "aplicaciones": [
+        "distribution network operation and restoration",
+        "interactive simulation tools for distribution networks"
+      ],
+      "afinidad_tracks": {
+        "6": 0.9,
+        "1": 0.8,
+        "2": 0.3,
+        "4": 0.2
+      },
+      "etapa": "investigador_inicial",
+      "resumen": "Presenta en CLAGTEE un trabajo sobre redes neuronales de grafos para restaurar el servicio en redes de distribución y es coautora del marco físico-IA con FEM. Por publicaciones que figuran en los perfiles de sus coautores de la PUCV (Mendoza, Hermosilla) trabaja desde 2017 en modelos de restauración centralizada y almacenamiento en herramientas de simulación de distribución, y en 2026 en reconocimiento facial térmico. No se encontró perfil Scholar propio en 2 búsquedas. Le interesarían sesiones de operación y resiliencia de distribución con IA.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
-   ],
-   "confianza": "alta",
-   "evidencia": "El perfil (doctorando en Ingeniería Eléctrica, email usp.br, intereses en clasificación, detección y localización de fallas) lista el paper de EPSR 2023 de L. S. Lessa, C. V. C. Grilo, A. L. Moraes, D. V. Coury y R. A. S. Fernandes: Grilo es coautor CLAGTEE y el tema es la misma línea del PLA-35. También es coautor de A. J. do Prado (2016-2020) y de Grilo y Coury en 2026 (ondas viajeras, parques eólicos). Ojo: al verificar, WebFetch devolvió 404 para el perfil (¿eliminado u oculto hace poco?); los datos (afiliación, intereses, 35 citas, dos publicaciones) vienen del índice del buscador, y no se pudieron leer las citas desde 2021 ni el h-index."
   },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Escola de Engenharia de São Carlos, Universidade de São Paulo (USP)",
-  "pais_inferido": "Brasil",
-  "nota_busqueda": "Pasada 2: 2 búsquedas en Scholar (nombre + UNESP; nombre + fault locator traveling wave). El perfil responde 404 a WebFetch; conviene revisarlo a mano.",
-  "intereses": {
-   "temas": [
-    "traveling-wave fault location in radial distribution systems",
-    "fault detection and location in wind farm collector networks",
-    "traveling-wave protection of active distribution networks",
-    "IEC 61850 protocol emulation and GOOSE cybersecurity",
-    "electromagnetic transient simulation of transmission lines"
-   ],
-   "palabras_clave": [
-    "fault location",
-    "fault classification",
-    "fault detection",
-    "traveling waves",
-    "radial distribution systems",
-    "decision trees",
-    "wind farm collector systems",
-    "fault resistance estimation",
-    "IEC 61850",
-    "GOOSE",
-    "electromagnetic transients"
-   ],
-   "metodos": [
-    "traveling-wave analysis",
-    "signal decomposition tools",
-    "decision trees",
-    "adaptive statistical thresholding",
-    "impedance-based fault location",
-    "sparse-matrix transient simulation"
-   ],
-   "aplicaciones": [
-    "fault location in distribution feeders",
-    "protection of wind farm collector lines",
-    "protection of active distribution networks",
-    "digital substations"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "5": 0.6,
-    "4": 0.5,
-    "2": 0.4
-   },
-   "etapa": "estudiante",
-   "resumen": "Doctorando en Ingeniería Eléctrica en la USP (São Carlos), en el grupo de D. V. Coury y R. A. S. Fernandes, que investiga localización y detección de fallas por ondas viajeras en redes de distribución radiales y en colectores de parques eólicos; antes trabajó con A. J. do Prado en simulación de transitorios. En CLAGTEE es coautor de los tres trabajos del grupo (IEC 61850, ciberseguridad GOOSE y localización de fallas multi-impedancia). Le interesarían sesiones de protección, localización de fallas, integración de renovables y comunicaciones en subestaciones.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "matheus-costa-ferreira",
-  "nombre": "Matheus Costa Ferreira",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
-  "nota_busqueda": "Pasada 2: búsqueda en Scholar (nombre + fault location/IEC 61850) y búsqueda web general (nombre + engenharia elétrica UNESP/USP), ambas sin resultados. Nota: en el programa figura como autor de TEL-2 y como presentador adicional (no autor) de PLA-35.",
-  "intereses": {
-   "temas": [
-    "cyberattacks and intrusion detection for IEC 61850 GOOSE messaging",
-    "impedance-based fault location with error zoning in distribution networks",
-    "cybersecurity of digital substations"
-   ],
-   "palabras_clave": [
-    "IEC 61850",
-    "GOOSE",
-    "intrusion detection systems",
-    "cyberattacks",
-    "substation cybersecurity",
-    "fault location",
-    "impedance-based methods",
-    "distribution networks"
-   ],
-   "metodos": [
-    "literature review",
-    "impedance-based multi-method fault location"
-   ],
-   "aplicaciones": [
-    "digital substation cybersecurity",
-    "fault location in distribution networks"
-   ],
-   "afinidad_tracks": {
-    "5": 0.8,
-    "1": 0.8,
-    "4": 0.3
-   },
-   "etapa": "desconocida",
-   "resumen": "Presenta en CLAGTEE dos trabajos: como primer autor, una revisión de ataques y sistemas de detección de intrusos en el protocolo GOOSE de IEC 61850, y como presentador, la estrategia multi-impedancia con zonificación del error para localizar fallas en distribución. Pertenece al grupo de A. J. do Prado (UNESP) y Lessa y Grilo (USP São Carlos). No tiene perfil Scholar ni otras fuentes localizables. Le interesarían sesiones de ciberseguridad en subestaciones y de protección y localización de fallas.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "fabio-cabral-pacheco",
-  "nombre": "Fabio Cabral Pacheco",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Instituto Federal de Santa Catarina (IFSC) (probable, por su coautor Rafael Nilson Rodrigues)",
-  "pais_inferido": "Brasil",
-  "nota_busqueda": "Pasada 2: 2 búsquedas en Scholar (variantes del nombre + IFSC; nombre + IFSC energia), sin resultados.",
-  "intereses": {
-   "temas": [
-    "revenue meters as a wide-area frequency observation layer",
-    "metrological characterisation of energy meters for frequency measurement",
-    "analysis of the 14 October 2025 Brazilian blackout",
-    "real-time energy management systems for public institutions"
-   ],
-   "palabras_clave": [
-    "revenue meters",
-    "frequency measurement",
-    "wide-area monitoring",
-    "metrology",
-    "blackout analysis",
-    "Brazilian interconnected system",
-    "power system frequency"
-   ],
-   "metodos": [
-    "metrological characterisation",
-    "event analysis from metering data"
-   ],
-   "aplicaciones": [
-    "wide-area frequency monitoring",
-    "post-event blackout analysis",
-    "energy monitoring in Brazilian federal institutes"
-   ],
-   "afinidad_tracks": {
-    "4": 1.0,
-    "1": 0.6
-   },
-   "etapa": "desconocida",
-   "resumen": "Coautor en CLAGTEE del estudio sobre medidores de facturación como capa de observación de frecuencia de área amplia (ocho puntos de medición en Brasil y apagón del 14 de octubre de 2025), presentado por Rafael Nilson Rodrigues (IFSC). Firma también con Rodrigues, Massuyama y Avelino un trabajo de 2024 sobre un sistema de gestión energética en tiempo real para los institutos federales brasileños. No tiene perfil Scholar; la afiliación IFSC es probable por su coautoría con Rodrigues, sin confirmar. Le interesarían sesiones de medición y monitoreo avanzado, eventos del sistema y gestión energética.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "fabio-schmitt-avelino",
-  "nombre": "Fabio Schmitt Avelino",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Instituto Federal de Santa Catarina (IFSC) (probable, por su coautor Rafael Nilson Rodrigues)",
-  "pais_inferido": "Brasil",
-  "nota_busqueda": "Pasada 2: 2 búsquedas en Scholar (combinada con Rodrigues; variantes del nombre), sin resultados.",
-  "intereses": {
-   "temas": [
-    "revenue meters as a wide-area frequency observation layer",
-    "metrological characterisation of energy meters for frequency measurement",
-    "analysis of the 14 October 2025 Brazilian blackout",
-    "real-time energy management systems for public institutions"
-   ],
-   "palabras_clave": [
-    "revenue meters",
-    "frequency measurement",
-    "wide-area monitoring",
-    "metrology",
-    "blackout analysis",
-    "Brazilian interconnected system",
-    "power system frequency"
-   ],
-   "metodos": [
-    "metrological characterisation",
-    "event analysis from metering data"
-   ],
-   "aplicaciones": [
-    "wide-area frequency monitoring",
-    "post-event blackout analysis",
-    "energy monitoring in Brazilian federal institutes"
-   ],
-   "afinidad_tracks": {
-    "4": 1.0,
-    "1": 0.6
-   },
-   "etapa": "desconocida",
-   "resumen": "Coautor en CLAGTEE del estudio sobre medidores de facturación como capa de observación de frecuencia de área amplia (ocho puntos de medición en Brasil y apagón del 14 de octubre de 2025), presentado por Rafael Nilson Rodrigues (IFSC). Firma también con Rodrigues, Massuyama y Pacheco un trabajo de 2024 sobre un sistema de gestión energética en tiempo real para los institutos federales brasileños. No tiene perfil Scholar; la afiliación IFSC es probable por su coautoría con Rodrigues, sin confirmar. Le interesarían sesiones de medición y monitoreo avanzado, eventos del sistema y gestión energética.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "gabriel-antonio-massuyama",
-  "nombre": "Gabriel Antônio Massuyama",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Instituto Federal de Santa Catarina (IFSC) (probable, por su coautor Rafael Nilson Rodrigues)",
-  "pais_inferido": "Brasil",
-  "nota_busqueda": "Pasada 2: 3 búsquedas en Scholar ('Massuyama'; variantes del nombre; nombre + IFSC), sin perfil propio. Sus trabajos aparecen en el perfil de Rafael Nilson Rodrigues.",
-  "intereses": {
-   "temas": [
-    "revenue meters as a wide-area frequency observation layer",
-    "phasor measurement unit prototypes for Brazilian and Chilean grids",
-    "machine learning for energy efficiency of large consumers",
-    "real-time energy management systems for public institutions",
-    "analysis of the 14 October 2025 Brazilian blackout"
-   ],
-   "palabras_clave": [
-    "revenue meters",
-    "frequency measurement",
-    "phasor measurement unit",
-    "wide-area monitoring",
-    "metrology",
-    "blackout analysis",
-    "energy management systems",
-    "energy efficiency",
-    "machine learning"
-   ],
-   "metodos": [
-    "metrological characterisation",
-    "phasor estimation",
-    "machine learning",
-    "event analysis from metering data"
-   ],
-   "aplicaciones": [
-    "wide-area frequency monitoring",
-    "post-event blackout analysis",
-    "energy monitoring in Brazilian federal institutes",
-    "PMUs for deep tunnels"
-   ],
-   "afinidad_tracks": {
-    "4": 1.0,
-    "1": 0.6,
-    "6": 0.3
-   },
-   "etapa": "desconocida",
-   "resumen": "Primer autor en CLAGTEE del estudio sobre medidores de facturación como capa de observación de frecuencia de área amplia (ocho puntos de medición en Brasil y apagón del 14 de octubre de 2025), con Rafael Nilson Rodrigues (IFSC). No tiene perfil Scholar propio, pero en el de Rodrigues figura como coautor de prototipos de PMU para los sistemas brasileño y chileno (2019-2020), de aprendizaje automático para eficiencia energética (2019) y de un sistema de gestión energética para los institutos federales (2024). Afiliación IFSC probable, sin confirmar. Le interesarían sesiones de medición fasorial, monitoreo y eventos del sistema.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "rafael-nilson-rodrigues",
-  "nombre": "Rafael Nilson Rodrigues",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=uMTzSd0AAAAJ",
-   "user_id": "uMTzSd0AAAAJ",
-   "nombre_perfil": "Rafael Nilson Rodrigues",
-   "afiliacion": "Federal Institute of Santa Catarina",
-   "email_verificado": "ifsc.edu.br",
-   "intereses_scholar": [],
-   "citas": 210,
-   "citas_desde_2021": 92,
-   "h_index": 8,
-   "publicaciones": [
-    {
-     "titulo": "Large-Scale Implementation of a Real-Time Energy Management System for the Brazilian Federal Institutes of Technological Education",
-     "anio": 2024,
-     "citas": 0
+  {
+    "id": "manuel-silva",
+    "nombre": "Manuel Silva",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=YBoFJH8AAAAJ",
+      "user_id": "YBoFJH8AAAAJ",
+      "nombre_perfil": "Manuel Silva Vega",
+      "afiliacion": "PhD (c) EE, Pontificia Universidad Católica de Valparaíso",
+      "email_verificado": "pucv.cl",
+      "intereses_scholar": [
+        "GeoAI",
+        "Machine Learning",
+        "Remote Sensing",
+        "Computer Vision",
+        "Data Science"
+      ],
+      "citas": 37,
+      "citas_desde_2021": 37,
+      "h_index": 3,
+      "publicaciones": [
+        {
+          "titulo": "Symmetry-Enhanced AI and GIS Framework Using Open Data for Simplified Physical Stability Assessment of Tailings Storage Facilities in Chile",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "AsyncMultiQuery TSF-RAG: Improving Retrieval Robustness in Spanish Technical Reports for Tailings Storage Facility Physical Stability Evaluation",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Automated detection of Chilean mine waste storage facilities using advanced deep learning models and sentinel-2 satellite imagery",
+          "anio": 2025,
+          "citas": 4
+        },
+        {
+          "titulo": "Simplified Physical Stability Assessment of Chilean Mine Waste Storage Facilities Using GIS and AI: Application in the Antofagasta Region",
+          "anio": 2025,
+          "citas": 2
+        },
+        {
+          "titulo": "Automated Detection and Analysis of Massive Mining Waste Deposits Using Sentinel-2 Satellite Imagery and Artificial Intelligence",
+          "anio": 2023,
+          "citas": 19
+        },
+        {
+          "titulo": "Advanced Deep Learning Techniques for High-Quality Synthetic Thermal Image Generation",
+          "anio": 2023,
+          "citas": 11
+        },
+        {
+          "titulo": "AI-Driven Geolocation of Mining Waste Deposits Using Sentinel Satellite Imagery",
+          "anio": 2023,
+          "citas": 1
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Doctorando en Ingeniería Eléctrica de la PUCV; Gabriel Hermosilla, Giovanni Cocca-Guardia y Gabriel Olmos figuran como coautores en la barra lateral, y publica con Villavicencio (todos coautores CLAGTEE)."
     },
-    {
-     "titulo": "Short-and long-term forecasting for building energy consumption considering IPMVP recommendations, WEO and COP27 scenarios",
-     "anio": 2023,
-     "citas": 31
-    },
-    {
-     "titulo": "Análise elétrica de impedimentos programados de sistemas elétricos utilizando fluxo de potência e Rough Sets",
-     "anio": 2023,
-     "citas": 0
-    },
-    {
-     "titulo": "A hybrid VLC-RF portable phasor measurement unit for deep tunnels",
-     "anio": 2020,
-     "citas": 22
-    },
-    {
-     "titulo": "Modeling of energy management systems using artificial intelligence",
-     "anio": 2020,
-     "citas": 5
-    },
-    {
-     "titulo": "Unsupervised machine learning in industrial applications: a case study in iron mining",
-     "anio": 2020,
-     "citas": 4
-    },
-    {
-     "titulo": "Development of a phasor measurement unit prototype applied to Brazilian and Chilean electrical systems",
-     "anio": 2019,
-     "citas": 0
-    },
-    {
-     "titulo": "Machine Learning Applied to Energy Efficiency of Large Consumers",
-     "anio": 2019,
-     "citas": 0
-    },
-    {
-     "titulo": "A Phasor Measurement Unit based on discrete fourier transform using digital signal processor",
-     "anio": 2016,
-     "citas": 15
-    },
-    {
-     "titulo": "A low cost prototype of a Phasor Measurement Unit using Digital Signal Processor",
-     "anio": 2016,
-     "citas": 10
-    },
-    {
-     "titulo": "Solving the hydrothermal scheduling problem considering network constraints",
-     "anio": 2012,
-     "citas": 43
-    },
-    {
-     "titulo": "Solving the Short‐Term Scheduling Problem of Hydrothermal Systems via Lagrangian Relaxation and Augmented Lagrangian",
-     "anio": 2012,
-     "citas": 34
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "deep learning detection of mine waste storage facilities from Sentinel-2 imagery",
+        "GeoAI and GIS for tailings physical stability assessment",
+        "retrieval-augmented generation for tailings technical reports",
+        "synthetic thermal image generation",
+        "physics-AI electric potential mapping"
+      ],
+      "palabras_clave": [
+        "GeoAI",
+        "remote sensing",
+        "Sentinel-2",
+        "computer vision",
+        "deep learning",
+        "tailings storage facilities",
+        "mine waste",
+        "GIS",
+        "synthetic data",
+        "retrieval-augmented generation"
+      ],
+      "metodos": [
+        "deep learning on satellite imagery",
+        "GIS-based spatial analysis",
+        "generative models for synthetic thermal images"
+      ],
+      "aplicaciones": [
+        "mine waste inventory in Chile",
+        "tailings physical stability assessment"
+      ],
+      "afinidad_tracks": {
+        "6": 1.0,
+        "13": 0.4,
+        "4": 0.3
+      },
+      "etapa": "estudiante",
+      "resumen": "Doctorando en Ingeniería Eléctrica en la PUCV especializado en GeoAI: detección automática de depósitos de relaves con imágenes Sentinel-2 y deep learning, evaluación simplificada de estabilidad con GIS e IA, y generación de imágenes térmicas sintéticas. En CLAGTEE es coautor de los trabajos de RAG para normativa geotécnica y de mapeo físico-IA de potencial eléctrico; le interesarían sesiones de ciencia de datos, visión por computador y teledetección aplicadas a energía y medioambiente.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
-   ],
-   "confianza": "alta",
-   "evidencia": "Perfil con email ifsc.edu.br. Sus publicaciones incluyen a los tres coautores CLAGTEE: G. A. Massuyama, F. S. Avelino y F. C. Pacheco firman con él 'Large-Scale Implementation of a Real-Time Energy Management System for the Brazilian Federal Institutes of Technological Education' (2024). Con Massuyama tiene además trabajos sobre prototipos de PMU (2019-2020), la misma línea de medición del SEN-12. La barra de coautores está vacía."
   },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Instituto Federal de Santa Catarina (IFSC)",
-  "pais_inferido": "Brasil",
-  "nota_busqueda": "Pasada 2: 1 búsqueda en Scholar (nombre completo, combinada con Fabio Schmitt Avelino).",
-  "intereses": {
-   "temas": [
-    "phasor measurement units and wide-area frequency monitoring",
-    "revenue meters as a frequency observation layer during grid disturbances",
-    "real-time energy monitoring and management systems for public institutions",
-    "machine learning for energy efficiency and building consumption forecasting",
-    "short-term hydrothermal scheduling via Lagrangian relaxation"
-   ],
-   "palabras_clave": [
-    "phasor measurement unit",
-    "synchrophasors",
-    "frequency measurement",
-    "revenue meters",
-    "wide-area monitoring",
-    "blackout analysis",
-    "energy management systems",
-    "energy efficiency",
-    "building energy forecasting",
-    "hydrothermal scheduling",
-    "Lagrangian relaxation",
-    "machine learning"
-   ],
-   "metodos": [
-    "DFT-based phasor estimation on DSP",
-    "metrological characterisation of meters",
-    "Lagrangian relaxation and augmented Lagrangian",
-    "supervised and unsupervised machine learning",
-    "power flow analysis with rough sets"
-   ],
-   "aplicaciones": [
-    "frequency observation of the Brazilian grid during the 14 October 2025 blackout",
-    "energy monitoring in Brazilian federal institutes",
-    "energy efficiency in large consumers and mining",
-    "short-term operation planning of hydrothermal systems",
-    "portable PMUs for deep tunnels"
-   ],
-   "afinidad_tracks": {
-    "4": 1.0,
-    "1": 0.6,
-    "6": 0.4,
-    "7": 0.3
-   },
-   "etapa": "investigador_consolidado",
-   "resumen": "Profesor del Instituto Federal de Santa Catarina que trabaja en medición fasorial (prototipos de PMU de bajo costo, PMU híbrida VLC-RF para túneles), sistemas de gestión y monitoreo energético a gran escala en los institutos federales y aprendizaje automático para eficiencia energética; su doctorado fue en programación hidrotérmica con relajación lagrangeana y tiene vínculos con Chile (Codelco, sistema eléctrico chileno). En CLAGTEE presenta el estudio sobre medidores de facturación como capa de observación de frecuencia durante el apagón brasileño del 14 de octubre de 2025. Le interesarían sesiones de medición y monitoreo, estabilidad y eventos del sistema, y eficiencia energética con datos.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
+  {
+    "id": "matias-diaz-veliz",
+    "nombre": "Matías Díaz Véliz",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso",
+    "pais_inferido": "Chile",
+    "nota_busqueda": "Pasada 1: 1 búsqueda; único candidato 'Matías Díaz' (user=-43YaJIAAAAJ, USACH, electrónica de potencia y energía eólica, h=30), descartado: tema sin relación con RAG/LLMs, sin coautores CLAGTEE y sin el apellido Véliz. Pasada 2: búsqueda en Scholar 'Matías Díaz' PUCV LLM (solo homónimos: sociólogo U. de Chile, médico argentino, químico UNLP); búsqueda web '\"Matías Díaz Véliz\"' sin resultados; búsqueda de artículos en Scholar '\"Díaz Véliz\" Matías' sin resultados pertinentes; su nombre no figura en las publicaciones de Hermosilla ni de Cocca-Guardia.",
+    "intereses": {
+      "temas": [
+        "retrieval-augmented generation over geotechnical regulations for Chilean mining",
+        "fine-tuning of local LLMs for regulatory question answering",
+        "AI assistants for mining safety and geotechnical compliance"
+      ],
+      "palabras_clave": [
+        "retrieval-augmented generation",
+        "large language models",
+        "local LLMs",
+        "fine-tuning",
+        "geotechnical regulations",
+        "mining safety",
+        "Chilean mining"
+      ],
+      "metodos": [
+        "retrieval-augmented generation",
+        "LLM fine-tuning"
+      ],
+      "aplicaciones": [
+        "regulatory compliance assistance in Chilean mining"
+      ],
+      "afinidad_tracks": {
+        "6": 1.0,
+        "13": 0.2
+      },
+      "etapa": "desconocida",
+      "resumen": "Presenta en CLAGTEE GeoConsultor AI-MineSafe, un sistema con RAG y fine-tuning de LLMs locales para consultar la normativa geotécnica de la minería chilena, con el grupo de Hermosilla, Olmos, Villavicencio y Cocca-Guardia en la PUCV (afiliación inferida de sus coautores; el grupo publica sobre RAG para informes de relaves). No tiene perfil Scholar: el único candidato (Matías Díaz, USACH, electrónica de potencia) se descartó por tema y falta de coautoría. Le interesarían sesiones de LLMs, IA generativa y ciencia de datos aplicada.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "sebastian-quinones",
+    "nombre": "Sebastian Quiñones",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso",
+    "pais_inferido": "Chile",
+    "nota_busqueda": "Pasada 1: nombre completo en Scholar, sin resultados. Pasada 2: barras de coautores de los 7 perfiles PUCV y publicaciones recientes de Hermosilla y Cocca-Guardia sin rastro de Quiñones; búsqueda en Scholar 'Sebastián Quiñones' Valparaíso eléctrica/Tesla/FEM sin resultados.",
+    "intereses": {
+      "temas": [
+        "physics-AI framework for electric potential mapping",
+        "video-assisted measurement combined with 2D FEM",
+        "electric field analysis of high-voltage Tesla coils"
+      ],
+      "palabras_clave": [
+        "physics-informed AI",
+        "finite element method",
+        "electric potential",
+        "computer vision",
+        "video analysis",
+        "Tesla coil",
+        "high voltage"
+      ],
+      "metodos": [
+        "2D FEM",
+        "video-based computer vision",
+        "hybrid physics-AI modelling"
+      ],
+      "aplicaciones": [
+        "electric potential mapping around high-voltage devices"
+      ],
+      "afinidad_tracks": {
+        "6": 0.9,
+        "4": 0.5
+      },
+      "etapa": "desconocida",
+      "resumen": "Coautor (último en la lista) en CLAGTEE del marco físico-IA que combina video y FEM 2D para mapear el potencial eléctrico de una bobina de Tesla, con Cocca-Guardia, Hermosilla, Mella, Olmos, Silva y Soto (PUCV; afiliación inferida de sus coautores). No tiene perfil Scholar ni aparece en las publicaciones de sus coautores, así que la evidencia se limita a ese paper. Le interesarían sesiones de IA aplicada, modelación física y monitoreo avanzado.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "afonso-jose-do-prado",
+    "nombre": "Afonso José do Prado",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=7DlTXqIAAAAJ",
+      "user_id": "7DlTXqIAAAAJ",
+      "nombre_perfil": "Afonso José do Prado",
+      "afiliacion": "Professor Assistente Doutor, FESJ/UNESP",
+      "email_verificado": "unesp.br",
+      "intereses_scholar": [
+        "Linhas de transmissão",
+        "fenômenos transitórios eletromagnéticos"
+      ],
+      "citas": 695,
+      "citas_desde_2021": 166,
+      "h_index": 13,
+      "publicaciones": [
+        {
+          "titulo": "Effect and behavior of lightning on composite material structures used in aircraft",
+          "anio": 2022,
+          "citas": 2
+        },
+        {
+          "titulo": "Numerical Errors Reduction in Transient Simulations with Resistor Applications",
+          "anio": 2022,
+          "citas": 0
+        },
+        {
+          "titulo": "Sparse matrices for transient simulations with computing memory reduction",
+          "anio": 2020,
+          "citas": 5
+        },
+        {
+          "titulo": "Análise Modificada de Transitórios Eletromagnéticos em Linhas de Transmissão",
+          "anio": 2020,
+          "citas": 1
+        },
+        {
+          "titulo": "A new DSP-based physical layer encryption technique applied to passive optical networks",
+          "anio": 2018,
+          "citas": 5
+        },
+        {
+          "titulo": "Application of numeric routine for simulating transients in power line communication (PLC) Systems",
+          "anio": 2018,
+          "citas": 4
+        },
+        {
+          "titulo": "A new procedure to derive transmission-line parameters: Applications and restrictions",
+          "anio": 2005,
+          "citas": 71
+        },
+        {
+          "titulo": "Behavior of overhead transmission line parameters on the presence of ground wires",
+          "anio": 2005,
+          "citas": 66
+        },
+        {
+          "titulo": "Efficient procedure to evaluate electromagnetic transients on three-phase transmission lines",
+          "anio": 2010,
+          "citas": 54
+        },
+        {
+          "titulo": "Inclusion of the frequency effect in the lumped parameters transmission line model: State space formulation",
+          "anio": 2009,
+          "citas": 53
+        },
+        {
+          "titulo": "Proposal of a transmission line model based on lumped elements: an analytic solution",
+          "anio": 2010,
+          "citas": 27
+        },
+        {
+          "titulo": "Phase-mode transformation matrix application for transmission line and electromagnetic transient analyses",
+          "anio": 2010,
+          "citas": 25
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Perfil con email unesp.br. Sus publicaciones incluyen a los coautores CLAGTEE Leonardo da Silva Lessa y Caio V. C. Grilo (p. ej. 'Sparse matrices for transient simulations with computing memory reduction', 2020, y trabajos de 2018-2019 sobre modelos de línea con circuitos π). Además, el perfil Scholar de D. V. Coury (USP) lista un trabajo de 2026 de Lessa, Grilo, Coury y A. J. Prado sobre protección por ondas viajeras en redes de distribución activas. La barra de coautores no cargó."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Faculdade de Engenharia de São João da Boa Vista",
+    "pais_inferido": "Brasil",
+    "nota_busqueda": "Pasada 2: 1 búsqueda en Scholar por nombre completo.",
+    "intereses": {
+      "temas": [
+        "electromagnetic transient simulation of transmission lines",
+        "lumped-parameter and π-circuit transmission line models with frequency dependence",
+        "phase-mode transformation matrices for transmission line analysis",
+        "IEC 61850 protocol implementation and GOOSE cybersecurity in digital substations",
+        "fault location and traveling-wave protection in distribution networks",
+        "physical-layer encryption in passive optical networks"
+      ],
+      "palabras_clave": [
+        "transmission lines",
+        "electromagnetic transients",
+        "frequency-dependent parameters",
+        "π circuits",
+        "modal transformation",
+        "numerical oscillations",
+        "IEC 61850",
+        "GOOSE",
+        "fault location",
+        "traveling waves",
+        "power line communication"
+      ],
+      "metodos": [
+        "state-space modelling",
+        "lumped-element transmission line models",
+        "phase-mode (modal) decomposition",
+        "numerical transient simulation",
+        "impedance-based fault location",
+        "protocol emulation and performance evaluation"
+      ],
+      "aplicaciones": [
+        "transient analysis of overhead transmission lines",
+        "protection and fault location in active distribution networks",
+        "digital substation communications",
+        "lightning effects on aircraft composite structures"
+      ],
+      "afinidad_tracks": {
+        "1": 0.8,
+        "5": 0.8,
+        "4": 0.4,
+        "9": 0.2
+      },
+      "etapa": "investigador_consolidado",
+      "resumen": "Profesor de la UNESP (São João da Boa Vista) con una larga trayectoria en modelación de líneas de transmisión y simulación de transitorios electromagnéticos (modelos de parámetros concentrados, circuitos π, matrices de transformación modal), que hoy orienta trabajos con Lessa y Grilo (USP São Carlos) sobre localización de fallas, protección por ondas viajeras e IEC 61850. En CLAGTEE es el autor senior de tres trabajos: guías para IEC 61850, ciberseguridad en GOOSE y localización de fallas multi-impedancia. Le interesarían sesiones de protección y localización de fallas, transitorios y comunicaciones en subestaciones digitales.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    }
+  },
+  {
+    "id": "caio-vinicius-colozzo-grilo",
+    "nombre": "Caio Vinicius Colozzo Grilo",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Escola de Engenharia de São Carlos, Universidade de São Paulo (USP) (inferida de sus coautorías con Coury y Lessa)",
+    "pais_inferido": "Brasil",
+    "nota_busqueda": "Pasada 2: búsqueda en Scholar con variantes del nombre (sin resultados) y otra con nombre + São Carlos fault location (sin perfil). Sus trabajos aparecen en los perfiles de A. J. do Prado y D. V. Coury.",
+    "intereses": {
+      "temas": [
+        "traveling-wave fault location in radial distribution systems",
+        "fault detection and location in wind farm collector systems",
+        "IEC 61850 protocol emulation and GOOSE cybersecurity",
+        "electromagnetic transient simulation of transmission lines",
+        "real-time estimation of voltage signal parameters"
+      ],
+      "palabras_clave": [
+        "traveling waves",
+        "fault location",
+        "fault detection",
+        "wind farm collector lines",
+        "distribution networks",
+        "fault resistance estimation",
+        "multiple-estimation mitigation",
+        "IEC 61850",
+        "GOOSE",
+        "electromagnetic transients",
+        "multi-objective evolutionary algorithms"
+      ],
+      "metodos": [
+        "traveling-wave analysis",
+        "adaptive statistical thresholding",
+        "decision trees",
+        "multi-objective evolutionary algorithms",
+        "impedance-based fault location",
+        "transient simulation in Python"
+      ],
+      "aplicaciones": [
+        "fault location in radial distribution feeders",
+        "protection of wind farm collector networks",
+        "protection of active distribution networks",
+        "digital substations"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "5": 0.6,
+        "4": 0.5,
+        "2": 0.4
+      },
+      "etapa": "estudiante",
+      "resumen": "Investigador en formación del grupo de D. V. Coury y R. A. S. Fernandes en la USP São Carlos (afiliación inferida de sus coautorías). Es primer autor de trabajos 2026 sobre detección y localización de fallas en colectores de parques eólicos y coautor de localizadores por ondas viajeras para distribución; antes hizo simulación de transitorios en líneas con A. J. do Prado (UNESP). No tiene perfil Scholar propio: sus temas salen de las publicaciones listadas en los perfiles de do Prado y Coury. En CLAGTEE es coautor de los tres trabajos del grupo; le interesarían sesiones de protección, localización de fallas y comunicaciones en subestaciones.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "guilherme-vischi-de-andrade",
+    "nombre": "Guilherme Vischi de Andrade",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "nota_busqueda": "Pasada 2: 1 búsqueda en Scholar ('Guilherme Vischi de Andrade' / 'Guilherme Vischi'), sin resultados (solo un homónimo de la UFPE).",
+    "intereses": {
+      "temas": [
+        "impedance-based fault location in distribution networks",
+        "error zoning for fault location estimates",
+        "accuracy assessment of fault location methods"
+      ],
+      "palabras_clave": [
+        "fault location",
+        "impedance-based methods",
+        "distribution networks",
+        "error zoning",
+        "power system protection"
+      ],
+      "metodos": [
+        "impedance-based multi-method fault location"
+      ],
+      "aplicaciones": [
+        "fault location in distribution networks"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "4": 0.3
+      },
+      "etapa": "desconocida",
+      "resumen": "Primer autor en CLAGTEE de una estrategia multi-método basada en impedancia, con zonificación del error, para localizar fallas en redes de distribución, junto a Lessa, Grilo (USP São Carlos) y A. J. do Prado (UNESP). No tiene perfil Scholar; como contexto de grupo, sus coautores investigan localización de fallas por ondas viajeras y transitorios en líneas. Su afiliación exacta (UNESP o USP) no está confirmada. Le interesarían sesiones de operación, protección y confiabilidad de redes de distribución.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "gustavo-da-costa-lilli",
+    "nombre": "Gustavo da Costa Lilli",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "nota_busqueda": "Pasada 2: búsqueda en Scholar (variantes del nombre + IEC 61850) y búsqueda web general por nombre completo, ambas sin resultados.",
+    "intereses": {
+      "temas": [
+        "implementation and emulation of IEC 61850 protocols",
+        "performance evaluation of substation communication protocols",
+        "emulation testbeds for digital substation communications"
+      ],
+      "palabras_clave": [
+        "IEC 61850",
+        "substation automation",
+        "protocol emulation",
+        "communication performance",
+        "digital substations"
+      ],
+      "metodos": [
+        "protocol emulation and performance evaluation"
+      ],
+      "aplicaciones": [
+        "digital substations"
+      ],
+      "afinidad_tracks": {
+        "5": 0.9,
+        "1": 0.2
+      },
+      "etapa": "desconocida",
+      "resumen": "Presenta en CLAGTEE guías para implementar, emular y evaluar el desempeño de los protocolos IEC 61850, como primer autor junto a Lessa, Grilo (USP São Carlos) y A. J. do Prado (UNESP). No tiene perfil Scholar ni otras fuentes localizables; su afiliación exacta no está confirmada. Le interesarían sesiones de redes digitales, comunicaciones en subestaciones, ciberseguridad y protección.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "leonardo-da-silva-lessa",
+    "nombre": "Leonardo da Silva Lessa",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=6xnRhCsAAAAJ",
+      "user_id": "6xnRhCsAAAAJ",
+      "nombre_perfil": "Leonardo da Silva Lessa",
+      "afiliacion": "Doutorando em Engenharia Elétrica",
+      "email_verificado": "usp.br",
+      "intereses_scholar": [
+        "fault classification",
+        "fault detection",
+        "fault location"
+      ],
+      "citas": 35,
+      "citas_desde_2021": null,
+      "h_index": null,
+      "publicaciones": [
+        {
+          "titulo": "A travelling wave-based fault locator for radial distribution systems using decision trees to mitigate multiple estimations",
+          "anio": 2023,
+          "citas": 8
+        },
+        {
+          "titulo": "Fault Location in Radial Distribution Systems: Comparative Analysis for Decomposition Tools Using Traveling Waves",
+          "anio": 2023,
+          "citas": 1
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "El perfil (doctorando en Ingeniería Eléctrica, email usp.br, intereses en clasificación, detección y localización de fallas) lista el paper de EPSR 2023 de L. S. Lessa, C. V. C. Grilo, A. L. Moraes, D. V. Coury y R. A. S. Fernandes: Grilo es coautor CLAGTEE y el tema es la misma línea del PLA-35. También es coautor de A. J. do Prado (2016-2020) y de Grilo y Coury en 2026 (ondas viajeras, parques eólicos). Ojo: al verificar, WebFetch devolvió 404 para el perfil (¿eliminado u oculto hace poco?); los datos (afiliación, intereses, 35 citas, dos publicaciones) vienen del índice del buscador, y no se pudieron leer las citas desde 2021 ni el h-index."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Escola de Engenharia de São Carlos, Universidade de São Paulo (USP)",
+    "pais_inferido": "Brasil",
+    "nota_busqueda": "Pasada 2: 2 búsquedas en Scholar (nombre + UNESP; nombre + fault locator traveling wave). El perfil responde 404 a WebFetch; conviene revisarlo a mano.",
+    "intereses": {
+      "temas": [
+        "traveling-wave fault location in radial distribution systems",
+        "fault detection and location in wind farm collector networks",
+        "traveling-wave protection of active distribution networks",
+        "IEC 61850 protocol emulation and GOOSE cybersecurity",
+        "electromagnetic transient simulation of transmission lines"
+      ],
+      "palabras_clave": [
+        "fault location",
+        "fault classification",
+        "fault detection",
+        "traveling waves",
+        "radial distribution systems",
+        "decision trees",
+        "wind farm collector systems",
+        "fault resistance estimation",
+        "IEC 61850",
+        "GOOSE",
+        "electromagnetic transients"
+      ],
+      "metodos": [
+        "traveling-wave analysis",
+        "signal decomposition tools",
+        "decision trees",
+        "adaptive statistical thresholding",
+        "impedance-based fault location",
+        "sparse-matrix transient simulation"
+      ],
+      "aplicaciones": [
+        "fault location in distribution feeders",
+        "protection of wind farm collector lines",
+        "protection of active distribution networks",
+        "digital substations"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "5": 0.6,
+        "4": 0.5,
+        "2": 0.4
+      },
+      "etapa": "estudiante",
+      "resumen": "Doctorando en Ingeniería Eléctrica en la USP (São Carlos), en el grupo de D. V. Coury y R. A. S. Fernandes, que investiga localización y detección de fallas por ondas viajeras en redes de distribución radiales y en colectores de parques eólicos; antes trabajó con A. J. do Prado en simulación de transitorios. En CLAGTEE es coautor de los tres trabajos del grupo (IEC 61850, ciberseguridad GOOSE y localización de fallas multi-impedancia). Le interesarían sesiones de protección, localización de fallas, integración de renovables y comunicaciones en subestaciones.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "matheus-costa-ferreira",
+    "nombre": "Matheus Costa Ferreira",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "nota_busqueda": "Pasada 2: búsqueda en Scholar (nombre + fault location/IEC 61850) y búsqueda web general (nombre + engenharia elétrica UNESP/USP), ambas sin resultados. Nota: en el programa figura como autor de TEL-2 y como presentador adicional (no autor) de PLA-35.",
+    "intereses": {
+      "temas": [
+        "cyberattacks and intrusion detection for IEC 61850 GOOSE messaging",
+        "impedance-based fault location with error zoning in distribution networks",
+        "cybersecurity of digital substations"
+      ],
+      "palabras_clave": [
+        "IEC 61850",
+        "GOOSE",
+        "intrusion detection systems",
+        "cyberattacks",
+        "substation cybersecurity",
+        "fault location",
+        "impedance-based methods",
+        "distribution networks"
+      ],
+      "metodos": [
+        "literature review",
+        "impedance-based multi-method fault location"
+      ],
+      "aplicaciones": [
+        "digital substation cybersecurity",
+        "fault location in distribution networks"
+      ],
+      "afinidad_tracks": {
+        "5": 0.8,
+        "1": 0.8,
+        "4": 0.3
+      },
+      "etapa": "desconocida",
+      "resumen": "Presenta en CLAGTEE dos trabajos: como primer autor, una revisión de ataques y sistemas de detección de intrusos en el protocolo GOOSE de IEC 61850, y como presentador, la estrategia multi-impedancia con zonificación del error para localizar fallas en distribución. Pertenece al grupo de A. J. do Prado (UNESP) y Lessa y Grilo (USP São Carlos). No tiene perfil Scholar ni otras fuentes localizables. Le interesarían sesiones de ciberseguridad en subestaciones y de protección y localización de fallas.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "fabio-cabral-pacheco",
+    "nombre": "Fabio Cabral Pacheco",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Instituto Federal de Santa Catarina (IFSC) (probable, por su coautor Rafael Nilson Rodrigues)",
+    "pais_inferido": "Brasil",
+    "nota_busqueda": "Pasada 2: 2 búsquedas en Scholar (variantes del nombre + IFSC; nombre + IFSC energia), sin resultados.",
+    "intereses": {
+      "temas": [
+        "revenue meters as a wide-area frequency observation layer",
+        "metrological characterisation of energy meters for frequency measurement",
+        "analysis of the 14 October 2025 Brazilian blackout",
+        "real-time energy management systems for public institutions"
+      ],
+      "palabras_clave": [
+        "revenue meters",
+        "frequency measurement",
+        "wide-area monitoring",
+        "metrology",
+        "blackout analysis",
+        "Brazilian interconnected system",
+        "power system frequency"
+      ],
+      "metodos": [
+        "metrological characterisation",
+        "event analysis from metering data"
+      ],
+      "aplicaciones": [
+        "wide-area frequency monitoring",
+        "post-event blackout analysis",
+        "energy monitoring in Brazilian federal institutes"
+      ],
+      "afinidad_tracks": {
+        "4": 1.0,
+        "1": 0.6
+      },
+      "etapa": "desconocida",
+      "resumen": "Coautor en CLAGTEE del estudio sobre medidores de facturación como capa de observación de frecuencia de área amplia (ocho puntos de medición en Brasil y apagón del 14 de octubre de 2025), presentado por Rafael Nilson Rodrigues (IFSC). Firma también con Rodrigues, Massuyama y Avelino un trabajo de 2024 sobre un sistema de gestión energética en tiempo real para los institutos federales brasileños. No tiene perfil Scholar; la afiliación IFSC es probable por su coautoría con Rodrigues, sin confirmar. Le interesarían sesiones de medición y monitoreo avanzado, eventos del sistema y gestión energética.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "fabio-schmitt-avelino",
+    "nombre": "Fabio Schmitt Avelino",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Instituto Federal de Santa Catarina (IFSC) (probable, por su coautor Rafael Nilson Rodrigues)",
+    "pais_inferido": "Brasil",
+    "nota_busqueda": "Pasada 2: 2 búsquedas en Scholar (combinada con Rodrigues; variantes del nombre), sin resultados.",
+    "intereses": {
+      "temas": [
+        "revenue meters as a wide-area frequency observation layer",
+        "metrological characterisation of energy meters for frequency measurement",
+        "analysis of the 14 October 2025 Brazilian blackout",
+        "real-time energy management systems for public institutions"
+      ],
+      "palabras_clave": [
+        "revenue meters",
+        "frequency measurement",
+        "wide-area monitoring",
+        "metrology",
+        "blackout analysis",
+        "Brazilian interconnected system",
+        "power system frequency"
+      ],
+      "metodos": [
+        "metrological characterisation",
+        "event analysis from metering data"
+      ],
+      "aplicaciones": [
+        "wide-area frequency monitoring",
+        "post-event blackout analysis",
+        "energy monitoring in Brazilian federal institutes"
+      ],
+      "afinidad_tracks": {
+        "4": 1.0,
+        "1": 0.6
+      },
+      "etapa": "desconocida",
+      "resumen": "Coautor en CLAGTEE del estudio sobre medidores de facturación como capa de observación de frecuencia de área amplia (ocho puntos de medición en Brasil y apagón del 14 de octubre de 2025), presentado por Rafael Nilson Rodrigues (IFSC). Firma también con Rodrigues, Massuyama y Pacheco un trabajo de 2024 sobre un sistema de gestión energética en tiempo real para los institutos federales brasileños. No tiene perfil Scholar; la afiliación IFSC es probable por su coautoría con Rodrigues, sin confirmar. Le interesarían sesiones de medición y monitoreo avanzado, eventos del sistema y gestión energética.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "gabriel-antonio-massuyama",
+    "nombre": "Gabriel Antônio Massuyama",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Instituto Federal de Santa Catarina (IFSC) (probable, por su coautor Rafael Nilson Rodrigues)",
+    "pais_inferido": "Brasil",
+    "nota_busqueda": "Pasada 2: 3 búsquedas en Scholar ('Massuyama'; variantes del nombre; nombre + IFSC), sin perfil propio. Sus trabajos aparecen en el perfil de Rafael Nilson Rodrigues.",
+    "intereses": {
+      "temas": [
+        "revenue meters as a wide-area frequency observation layer",
+        "phasor measurement unit prototypes for Brazilian and Chilean grids",
+        "machine learning for energy efficiency of large consumers",
+        "real-time energy management systems for public institutions",
+        "analysis of the 14 October 2025 Brazilian blackout"
+      ],
+      "palabras_clave": [
+        "revenue meters",
+        "frequency measurement",
+        "phasor measurement unit",
+        "wide-area monitoring",
+        "metrology",
+        "blackout analysis",
+        "energy management systems",
+        "energy efficiency",
+        "machine learning"
+      ],
+      "metodos": [
+        "metrological characterisation",
+        "phasor estimation",
+        "machine learning",
+        "event analysis from metering data"
+      ],
+      "aplicaciones": [
+        "wide-area frequency monitoring",
+        "post-event blackout analysis",
+        "energy monitoring in Brazilian federal institutes",
+        "PMUs for deep tunnels"
+      ],
+      "afinidad_tracks": {
+        "4": 1.0,
+        "1": 0.6,
+        "6": 0.3
+      },
+      "etapa": "desconocida",
+      "resumen": "Primer autor en CLAGTEE del estudio sobre medidores de facturación como capa de observación de frecuencia de área amplia (ocho puntos de medición en Brasil y apagón del 14 de octubre de 2025), con Rafael Nilson Rodrigues (IFSC). No tiene perfil Scholar propio, pero en el de Rodrigues figura como coautor de prototipos de PMU para los sistemas brasileño y chileno (2019-2020), de aprendizaje automático para eficiencia energética (2019) y de un sistema de gestión energética para los institutos federales (2024). Afiliación IFSC probable, sin confirmar. Le interesarían sesiones de medición fasorial, monitoreo y eventos del sistema.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "rafael-nilson-rodrigues",
+    "nombre": "Rafael Nilson Rodrigues",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=uMTzSd0AAAAJ",
+      "user_id": "uMTzSd0AAAAJ",
+      "nombre_perfil": "Rafael Nilson Rodrigues",
+      "afiliacion": "Federal Institute of Santa Catarina",
+      "email_verificado": "ifsc.edu.br",
+      "intereses_scholar": [],
+      "citas": 210,
+      "citas_desde_2021": 92,
+      "h_index": 8,
+      "publicaciones": [
+        {
+          "titulo": "Large-Scale Implementation of a Real-Time Energy Management System for the Brazilian Federal Institutes of Technological Education",
+          "anio": 2024,
+          "citas": 0
+        },
+        {
+          "titulo": "Short-and long-term forecasting for building energy consumption considering IPMVP recommendations, WEO and COP27 scenarios",
+          "anio": 2023,
+          "citas": 31
+        },
+        {
+          "titulo": "Análise elétrica de impedimentos programados de sistemas elétricos utilizando fluxo de potência e Rough Sets",
+          "anio": 2023,
+          "citas": 0
+        },
+        {
+          "titulo": "A hybrid VLC-RF portable phasor measurement unit for deep tunnels",
+          "anio": 2020,
+          "citas": 22
+        },
+        {
+          "titulo": "Modeling of energy management systems using artificial intelligence",
+          "anio": 2020,
+          "citas": 5
+        },
+        {
+          "titulo": "Unsupervised machine learning in industrial applications: a case study in iron mining",
+          "anio": 2020,
+          "citas": 4
+        },
+        {
+          "titulo": "Development of a phasor measurement unit prototype applied to Brazilian and Chilean electrical systems",
+          "anio": 2019,
+          "citas": 0
+        },
+        {
+          "titulo": "Machine Learning Applied to Energy Efficiency of Large Consumers",
+          "anio": 2019,
+          "citas": 0
+        },
+        {
+          "titulo": "A Phasor Measurement Unit based on discrete fourier transform using digital signal processor",
+          "anio": 2016,
+          "citas": 15
+        },
+        {
+          "titulo": "A low cost prototype of a Phasor Measurement Unit using Digital Signal Processor",
+          "anio": 2016,
+          "citas": 10
+        },
+        {
+          "titulo": "Solving the hydrothermal scheduling problem considering network constraints",
+          "anio": 2012,
+          "citas": 43
+        },
+        {
+          "titulo": "Solving the Short‐Term Scheduling Problem of Hydrothermal Systems via Lagrangian Relaxation and Augmented Lagrangian",
+          "anio": 2012,
+          "citas": 34
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Perfil con email ifsc.edu.br. Sus publicaciones incluyen a los tres coautores CLAGTEE: G. A. Massuyama, F. S. Avelino y F. C. Pacheco firman con él 'Large-Scale Implementation of a Real-Time Energy Management System for the Brazilian Federal Institutes of Technological Education' (2024). Con Massuyama tiene además trabajos sobre prototipos de PMU (2019-2020), la misma línea de medición del SEN-12. La barra de coautores está vacía."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Instituto Federal de Santa Catarina (IFSC)",
+    "pais_inferido": "Brasil",
+    "nota_busqueda": "Pasada 2: 1 búsqueda en Scholar (nombre completo, combinada con Fabio Schmitt Avelino).",
+    "intereses": {
+      "temas": [
+        "phasor measurement units and wide-area frequency monitoring",
+        "revenue meters as a frequency observation layer during grid disturbances",
+        "real-time energy monitoring and management systems for public institutions",
+        "machine learning for energy efficiency and building consumption forecasting",
+        "short-term hydrothermal scheduling via Lagrangian relaxation"
+      ],
+      "palabras_clave": [
+        "phasor measurement unit",
+        "synchrophasors",
+        "frequency measurement",
+        "revenue meters",
+        "wide-area monitoring",
+        "blackout analysis",
+        "energy management systems",
+        "energy efficiency",
+        "building energy forecasting",
+        "hydrothermal scheduling",
+        "Lagrangian relaxation",
+        "machine learning"
+      ],
+      "metodos": [
+        "DFT-based phasor estimation on DSP",
+        "metrological characterisation of meters",
+        "Lagrangian relaxation and augmented Lagrangian",
+        "supervised and unsupervised machine learning",
+        "power flow analysis with rough sets"
+      ],
+      "aplicaciones": [
+        "frequency observation of the Brazilian grid during the 14 October 2025 blackout",
+        "energy monitoring in Brazilian federal institutes",
+        "energy efficiency in large consumers and mining",
+        "short-term operation planning of hydrothermal systems",
+        "portable PMUs for deep tunnels"
+      ],
+      "afinidad_tracks": {
+        "4": 1.0,
+        "1": 0.6,
+        "6": 0.4,
+        "7": 0.3
+      },
+      "etapa": "investigador_consolidado",
+      "resumen": "Profesor del Instituto Federal de Santa Catarina que trabaja en medición fasorial (prototipos de PMU de bajo costo, PMU híbrida VLC-RF para túneles), sistemas de gestión y monitoreo energético a gran escala en los institutos federales y aprendizaje automático para eficiencia energética; su doctorado fue en programación hidrotérmica con relajación lagrangeana y tiene vínculos con Chile (Codelco, sistema eléctrico chileno). En CLAGTEE presenta el estudio sobre medidores de facturación como capa de observación de frecuencia durante el apagón brasileño del 14 de octubre de 2025. Le interesarían sesiones de medición y monitoreo, estabilidad y eventos del sistema, y eficiencia energética con datos.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    }
+  },
+  {
+    "id": "leandro-javier-schiel",
+    "nombre": "Leandro Javier Schiel",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "nota_busqueda": "Pasada 2: búsqueda en Scholar 'Leandro Schiel' (solo homónimos de apellido), búsqueda web general nombre + energía y búsqueda web con los tres apellidos del paper y el tema, todas sin resultados.",
+    "intereses": {
+      "temas": [
+        "energy efficiency of residential heating systems",
+        "rational use of household heating",
+        "impact of residential heating on the energy transition"
+      ],
+      "palabras_clave": [
+        "energy efficiency",
+        "residential heating",
+        "space heating",
+        "rational use of energy",
+        "households",
+        "energy consumption",
+        "energy transition"
+      ],
+      "metodos": [],
+      "aplicaciones": [
+        "residential heating",
+        "household energy efficiency policy"
+      ],
+      "afinidad_tracks": {
+        "7": 0.9,
+        "12": 0.6,
+        "13": 0.3
+      },
+      "etapa": "desconocida",
+      "resumen": "Presenta en CLAGTEE un estudio sobre la eficiencia energética y el uso racional de la calefacción en los hogares y su impacto en la transición energética, con Leonardo Casteras y Pablo D'Angona. Ni él ni sus coautores tienen perfil Scholar u otras fuentes localizables, y su afiliación y país no se pudieron determinar; el perfil se basa solo en el título del paper. Le interesarían sesiones de transición energética, eficiencia y demanda residencial, y aspectos sociales de la energía.",
+      "base": [
+        "papers_clagtee"
+      ]
+    }
+  },
+  {
+    "id": "leonardo-casteras",
+    "nombre": "Leonardo Casteras",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "nota_busqueda": "Pasada 2: búsqueda en Scholar 'Leonardo Casteras' energía y búsqueda web con los tres apellidos del paper y el tema, sin resultados.",
+    "intereses": {
+      "temas": [
+        "energy efficiency of residential heating systems",
+        "rational use of household heating",
+        "impact of residential heating on the energy transition"
+      ],
+      "palabras_clave": [
+        "energy efficiency",
+        "residential heating",
+        "space heating",
+        "rational use of energy",
+        "households",
+        "energy consumption",
+        "energy transition"
+      ],
+      "metodos": [],
+      "aplicaciones": [
+        "residential heating",
+        "household energy efficiency policy"
+      ],
+      "afinidad_tracks": {
+        "7": 0.9,
+        "12": 0.6,
+        "13": 0.3
+      },
+      "etapa": "desconocida",
+      "resumen": "Coautor en CLAGTEE de un estudio sobre la eficiencia energética y el uso racional de la calefacción en los hogares y su impacto en la transición energética, presentado por Leandro Javier Schiel. Sin perfil Scholar ni otras fuentes (tampoco sus coautores), y sin afiliación conocida; el perfil se basa solo en ese título. Le interesarían sesiones de transición energética, eficiencia y demanda residencial.",
+      "base": [
+        "papers_clagtee"
+      ]
+    }
+  },
+  {
+    "id": "pablo-d-angona",
+    "nombre": "Pablo D’Angona",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "nota_busqueda": "Pasada 2: búsqueda en Scholar \"Pablo D'Angona\" y búsqueda web con los tres apellidos del paper y el tema, sin resultados.",
+    "intereses": {
+      "temas": [
+        "energy efficiency of residential heating systems",
+        "rational use of household heating",
+        "impact of residential heating on the energy transition"
+      ],
+      "palabras_clave": [
+        "energy efficiency",
+        "residential heating",
+        "space heating",
+        "rational use of energy",
+        "households",
+        "energy consumption",
+        "energy transition"
+      ],
+      "metodos": [],
+      "aplicaciones": [
+        "residential heating",
+        "household energy efficiency policy"
+      ],
+      "afinidad_tracks": {
+        "7": 0.9,
+        "12": 0.6,
+        "13": 0.3
+      },
+      "etapa": "desconocida",
+      "resumen": "Coautor en CLAGTEE de un estudio sobre la eficiencia energética y el uso racional de la calefacción en los hogares y su impacto en la transición energética, presentado por Leandro Javier Schiel. Sin perfil Scholar ni otras fuentes (tampoco sus coautores), y sin afiliación conocida; el perfil se basa solo en ese título. Le interesarían sesiones de transición energética, eficiencia y demanda residencial.",
+      "base": [
+        "papers_clagtee"
+      ]
+    }
+  },
+  {
+    "id": "nestor-alexis-bernal-salinas",
+    "nombre": "Nestor Alexis Bernal Salinas",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "nota_busqueda": "Pasada 2: búsqueda en Scholar 'Nestor Bernal' Salinas (solo otros Salinas), búsqueda web general por variantes del nombre y búsqueda web con apellidos + tema del paper, todas sin resultados.",
+    "intereses": {
+      "temas": [
+        "critical backup power systems for life-support continuity",
+        "modular lithium-ion battery backup architectures",
+        "prototype design of backup power for medical equipment"
+      ],
+      "palabras_clave": [
+        "backup power system",
+        "lithium-ion batteries",
+        "modular architecture",
+        "life-support equipment",
+        "power continuity",
+        "battery energy storage",
+        "prototype design"
+      ],
+      "metodos": [
+        "prototype design and testing",
+        "modular architecture design"
+      ],
+      "aplicaciones": [
+        "power continuity for life-support and medical equipment"
+      ],
+      "afinidad_tracks": {
+        "3": 0.9,
+        "2": 0.4
+      },
+      "etapa": "desconocida",
+      "resumen": "Presenta en CLAGTEE, como único autor, el diseño de un prototipo de respaldo crítico para la continuidad de equipos de soporte vital, con arquitectura modular y baterías de ion-litio. No tiene perfil Scholar ni otras fuentes localizables, y su afiliación y país no se pudieron determinar; el perfil se basa solo en el título del paper. Le interesarían sesiones de electrónica de potencia, conversión de energía y almacenamiento en baterías.",
+      "base": [
+        "papers_clagtee"
+      ]
+    }
   }
- },
- {
-  "id": "leandro-javier-schiel",
-  "nombre": "Leandro Javier Schiel",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
-  "nota_busqueda": "Pasada 2: búsqueda en Scholar 'Leandro Schiel' (solo homónimos de apellido), búsqueda web general nombre + energía y búsqueda web con los tres apellidos del paper y el tema, todas sin resultados.",
-  "intereses": {
-   "temas": [
-    "energy efficiency of residential heating systems",
-    "rational use of household heating",
-    "impact of residential heating on the energy transition"
-   ],
-   "palabras_clave": [
-    "energy efficiency",
-    "residential heating",
-    "space heating",
-    "rational use of energy",
-    "households",
-    "energy consumption",
-    "energy transition"
-   ],
-   "metodos": [],
-   "aplicaciones": [
-    "residential heating",
-    "household energy efficiency policy"
-   ],
-   "afinidad_tracks": {
-    "7": 0.9,
-    "12": 0.6,
-    "13": 0.3
-   },
-   "etapa": "desconocida",
-   "resumen": "Presenta en CLAGTEE un estudio sobre la eficiencia energética y el uso racional de la calefacción en los hogares y su impacto en la transición energética, con Leonardo Casteras y Pablo D'Angona. Ni él ni sus coautores tienen perfil Scholar u otras fuentes localizables, y su afiliación y país no se pudieron determinar; el perfil se basa solo en el título del paper. Le interesarían sesiones de transición energética, eficiencia y demanda residencial, y aspectos sociales de la energía.",
-   "base": [
-    "papers_clagtee"
-   ]
-  }
- },
- {
-  "id": "leonardo-casteras",
-  "nombre": "Leonardo Casteras",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
-  "nota_busqueda": "Pasada 2: búsqueda en Scholar 'Leonardo Casteras' energía y búsqueda web con los tres apellidos del paper y el tema, sin resultados.",
-  "intereses": {
-   "temas": [
-    "energy efficiency of residential heating systems",
-    "rational use of household heating",
-    "impact of residential heating on the energy transition"
-   ],
-   "palabras_clave": [
-    "energy efficiency",
-    "residential heating",
-    "space heating",
-    "rational use of energy",
-    "households",
-    "energy consumption",
-    "energy transition"
-   ],
-   "metodos": [],
-   "aplicaciones": [
-    "residential heating",
-    "household energy efficiency policy"
-   ],
-   "afinidad_tracks": {
-    "7": 0.9,
-    "12": 0.6,
-    "13": 0.3
-   },
-   "etapa": "desconocida",
-   "resumen": "Coautor en CLAGTEE de un estudio sobre la eficiencia energética y el uso racional de la calefacción en los hogares y su impacto en la transición energética, presentado por Leandro Javier Schiel. Sin perfil Scholar ni otras fuentes (tampoco sus coautores), y sin afiliación conocida; el perfil se basa solo en ese título. Le interesarían sesiones de transición energética, eficiencia y demanda residencial.",
-   "base": [
-    "papers_clagtee"
-   ]
-  }
- },
- {
-  "id": "pablo-d-angona",
-  "nombre": "Pablo D’Angona",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
-  "nota_busqueda": "Pasada 2: búsqueda en Scholar \"Pablo D'Angona\" y búsqueda web con los tres apellidos del paper y el tema, sin resultados.",
-  "intereses": {
-   "temas": [
-    "energy efficiency of residential heating systems",
-    "rational use of household heating",
-    "impact of residential heating on the energy transition"
-   ],
-   "palabras_clave": [
-    "energy efficiency",
-    "residential heating",
-    "space heating",
-    "rational use of energy",
-    "households",
-    "energy consumption",
-    "energy transition"
-   ],
-   "metodos": [],
-   "aplicaciones": [
-    "residential heating",
-    "household energy efficiency policy"
-   ],
-   "afinidad_tracks": {
-    "7": 0.9,
-    "12": 0.6,
-    "13": 0.3
-   },
-   "etapa": "desconocida",
-   "resumen": "Coautor en CLAGTEE de un estudio sobre la eficiencia energética y el uso racional de la calefacción en los hogares y su impacto en la transición energética, presentado por Leandro Javier Schiel. Sin perfil Scholar ni otras fuentes (tampoco sus coautores), y sin afiliación conocida; el perfil se basa solo en ese título. Le interesarían sesiones de transición energética, eficiencia y demanda residencial.",
-   "base": [
-    "papers_clagtee"
-   ]
-  }
- },
- {
-  "id": "nestor-alexis-bernal-salinas",
-  "nombre": "Nestor Alexis Bernal Salinas",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
-  "nota_busqueda": "Pasada 2: búsqueda en Scholar 'Nestor Bernal' Salinas (solo otros Salinas), búsqueda web general por variantes del nombre y búsqueda web con apellidos + tema del paper, todas sin resultados.",
-  "intereses": {
-   "temas": [
-    "critical backup power systems for life-support continuity",
-    "modular lithium-ion battery backup architectures",
-    "prototype design of backup power for medical equipment"
-   ],
-   "palabras_clave": [
-    "backup power system",
-    "lithium-ion batteries",
-    "modular architecture",
-    "life-support equipment",
-    "power continuity",
-    "battery energy storage",
-    "prototype design"
-   ],
-   "metodos": [
-    "prototype design and testing",
-    "modular architecture design"
-   ],
-   "aplicaciones": [
-    "power continuity for life-support and medical equipment"
-   ],
-   "afinidad_tracks": {
-    "3": 0.9,
-    "2": 0.4
-   },
-   "etapa": "desconocida",
-   "resumen": "Presenta en CLAGTEE, como único autor, el diseño de un prototipo de respaldo crítico para la continuidad de equipos de soporte vital, con arquitectura modular y baterías de ion-litio. No tiene perfil Scholar ni otras fuentes localizables, y su afiliación y país no se pudieron determinar; el perfil se basa solo en el título del paper. Le interesarían sesiones de electrónica de potencia, conversión de energía y almacenamiento en baterías.",
-   "base": [
-    "papers_clagtee"
-   ]
-  }
- }
 ]

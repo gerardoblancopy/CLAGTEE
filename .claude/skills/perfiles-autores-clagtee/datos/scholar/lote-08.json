@@ -1,1926 +1,1926 @@
 [
- {
-  "id": "alfredo-silie-leon",
-  "nombre": "Alfredo Silie León",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidade Federal do Amazonas (UFAM), Manaus",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "robust control of DC microgrids under polytopic uncertainties",
-    "experimental evaluation of linear controllers for DC-DC converters",
-    "DC microgrid architectures for isolated Amazon communities"
-   ],
-   "palabras_clave": [
-    "DC microgrid",
-    "robust control",
-    "polytopic uncertainty",
-    "cost of non-robustness",
-    "linear controllers",
-    "DC-DC converters",
-    "isolated communities",
-    "off-grid electrification"
-   ],
-   "metodos": [
-    "polytopic robust control design",
-    "experimental validation"
-   ],
-   "aplicaciones": [
-    "off-grid DC microgrids for isolated communities in the Amazon"
-   ],
-   "afinidad_tracks": {
-    "3": 0.9,
-    "2": 0.7,
-    "12": 0.2
-   },
-   "etapa": "desconocida",
-   "resumen": "Sin perfil de Google Scholar (3 búsquedas en Scholar y 1 web general sin resultado). En CLAGTEE es coautor de un trabajo experimental sobre el costo de la no robustez de controladores lineales para microrredes CC con incertidumbre politópica, del grupo UFAM de Medeiros y Sales e Silva; en los perfiles de esos coautores figura como primer autor (A León / AS León) de un trabajo SBAI/SBSE 2025 sobre arquitectura de microrred CC para comunidades aisladas del Amazonas, lo que sugiere un estudiante de posgrado. Le interesarían sesiones de control de convertidores, microrredes CC y electrificación aislada.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "antonio-barbosa-neto",
-  "nombre": "Antônio Barbosa Neto",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidade Federal do Amazonas (UFAM), Manaus",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "adaptive overcurrent protection in distribution networks with high PV penetration",
-    "relay pickup setting strategies based on pre-fault currents",
-    "protection impacts of electric vehicle charging"
-   ],
-   "palabras_clave": [
-    "adaptive protection",
-    "fixed pickup",
-    "overcurrent relays",
-    "relay operating time",
-    "pre-fault current",
-    "photovoltaic distributed generation",
-    "electric vehicles",
-    "distribution networks"
-   ],
-   "metodos": [
-    "comparative simulation of protection schemes"
-   ],
-   "aplicaciones": [
-    "distribution feeders with high PVDG and EV penetration"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "1": 0.7,
-    "4": 0.2
-   },
-   "etapa": "desconocida",
-   "resumen": "Sin perfil de Google Scholar (3 búsquedas en Scholar y 1 web general sin resultado). Presenta en CLAGTEE una comparación entre estrategias de protección adaptativa y de pickup fijo, basadas en corrientes de prefalla y tiempos de operación de relés, para escenarios con alta penetración de GD fotovoltaica y vehículos eléctricos; sus coautores de la UFAM trabajan en capacidad de hospedaje FV-VE (Sales e Silva) y en integración HIL de relés (Ayres). La evidencia se limita al título del paper; le interesarían sesiones de protección de redes de distribución activas e integración de GD y VE.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "florindo-antonio-de-carvalho-ayres-junior",
-  "nombre": "Florindo Antonio de Carvalho Ayres Júnior",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=iVZNgHYAAAAJ",
-   "user_id": "iVZNgHYAAAAJ",
-   "nombre_perfil": "Florindo Antonio de Carvalho Ayres Júnior",
-   "afiliacion": "Universidade Federal do Amazonas",
-   "email_verificado": "ufam.edu.br",
-   "intereses_scholar": [
-    "Controle Fracionário",
-    "Sistemas Elétricos de Potência",
-    "Controle Robusto"
-   ],
-   "citas": 311,
-   "citas_desde_2021": 290,
-   "h_index": 8,
-   "publicaciones": [
-    {
-     "titulo": "Digital twin applications: A survey of recent advances and challenges",
-     "anio": 2022,
-     "citas": 128
-    },
-    {
-     "titulo": "A Fractional Order Power System Stabilizer Applied on a Small-Scale Generation System",
-     "anio": 2018,
-     "citas": 27
-    },
-    {
-     "titulo": "Fractional Order Pole Placement for a buck converter based on commensurable transfer function",
-     "anio": 2020,
-     "citas": 18
-    },
-    {
-     "titulo": "Fractional-order robust control design under parametric uncertain approach",
-     "anio": 2024,
-     "citas": 14
-    },
-    {
-     "titulo": "Experimental implementation of hydraulic turbine dynamics and a fractional order speed governor controller on a small-scale power system",
-     "anio": 2024,
-     "citas": 13
-    },
-    {
-     "titulo": "Comparative study of control strategies for stabilization and performance improvement of DC microgrids with a CPL connected",
-     "anio": 2020,
-     "citas": 12
-    },
-    {
-     "titulo": "Fractional-order identification system based on Sundaresan's technique",
-     "anio": 2024,
-     "citas": 8
-    },
-    {
-     "titulo": "Probabilistic operational costs assessment of combined PV–PEV connections in LV distribution networks",
-     "anio": 2023,
-     "citas": 7
-    },
-    {
-     "titulo": "Development of a hybrid Fractional-Order Fuzzy-PID controller applied to a DC-DC buck converter",
-     "anio": 2025,
-     "citas": 4
-    },
-    {
-     "titulo": "Stability evaluation of a multi-stage converter system considering a CPL connected",
-     "anio": 2024,
-     "citas": 3
-    },
-    {
-     "titulo": "Estudo Probabilístico da Capacidade de Hospedagem de Eletropostos em Sistemas de Subtransmissão Sob Critérios Operativos da Margem Estabilidade de Tensão",
-     "anio": 2024,
-     "citas": 0
-    },
-    {
-     "titulo": "Integração Hardware-in-the-Loop entre a Plataforma OPAL-RT e o Relé SEL-321",
-     "anio": 2026,
-     "citas": 0
+  {
+    "id": "alfredo-silie-leon",
+    "nombre": "Alfredo Silie León",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do Amazonas (UFAM), Manaus",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "robust control of DC microgrids under polytopic uncertainties",
+        "experimental evaluation of linear controllers for DC-DC converters",
+        "DC microgrid architectures for isolated Amazon communities"
+      ],
+      "palabras_clave": [
+        "DC microgrid",
+        "robust control",
+        "polytopic uncertainty",
+        "cost of non-robustness",
+        "linear controllers",
+        "DC-DC converters",
+        "isolated communities",
+        "off-grid electrification"
+      ],
+      "metodos": [
+        "polytopic robust control design",
+        "experimental validation"
+      ],
+      "aplicaciones": [
+        "off-grid DC microgrids for isolated communities in the Amazon"
+      ],
+      "afinidad_tracks": {
+        "3": 0.9,
+        "2": 0.7,
+        "12": 0.2
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Google Scholar (3 búsquedas en Scholar y 1 web general sin resultado). En CLAGTEE es coautor de un trabajo experimental sobre el costo de la no robustez de controladores lineales para microrredes CC con incertidumbre politópica, del grupo UFAM de Medeiros y Sales e Silva; en los perfiles de esos coautores figura como primer autor (A León / AS León) de un trabajo SBAI/SBSE 2025 sobre arquitectura de microrred CC para comunidades aisladas del Amazonas, lo que sugiere un estudiante de posgrado. Le interesarían sesiones de control de convertidores, microrredes CC y electrificación aislada.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
-   ],
-   "confianza": "alta",
-   "evidencia": "Coautores de CLAGTEE en el perfil: Luiz Eduardo Sales e Silva figura en sus publicaciones (PV–PEV en redes BT, PLL en FV, capacidad de hospedaje de electrolineras); Iury Bessa y Renan Medeiros (UFAM) aparecen como coautores en la barra lateral. Trabajo reciente sobre relés de protección (HIL OPAL-RT con SEL-321), coherente con INT-21. Existe otro perfil 'Florindo Ayres' (Universidade Federal do Pará, user=0tlh3cYAAAAJ) listado entre los coautores de Iury Bessa, probablemente un perfil antiguo de la misma persona; no se revisó."
   },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidade Federal do Amazonas (UFAM), Manaus",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "fractional-order control of power systems and power converters",
-    "adaptive protection of distribution networks with PV and EV",
-    "robust control under parametric uncertainty",
-    "power system stabilizers and speed governors on small-scale generation systems",
-    "hardware-in-the-loop testing of protection relays",
-    "DC microgrid stability with constant power loads"
-   ],
-   "palabras_clave": [
-    "fractional-order control",
-    "robust control",
-    "power system stabilizer",
-    "electromechanical oscillation damping",
-    "DC-DC buck converter",
-    "constant power load",
-    "DC microgrid",
-    "adaptive protection",
-    "overcurrent relays",
-    "hardware-in-the-loop",
-    "OPAL-RT",
-    "digital twin"
-   ],
-   "metodos": [
-    "fractional-order pole placement",
-    "fractional-order system identification",
-    "LMI-based robust control",
-    "fuzzy-PID control",
-    "hardware-in-the-loop simulation"
-   ],
-   "aplicaciones": [
-    "small-scale hydro generation test benches",
-    "DC-DC converters",
-    "distribution feeders with high PVDG and EV penetration",
-    "industrial process digitalization"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "1": 0.7,
-    "3": 0.6,
-    "9": 0.3,
-    "6": 0.3,
-    "4": 0.2
-   },
-   "etapa": "investigador_consolidado",
-   "resumen": "Profesor de la UFAM especializado en control fraccionario y robusto aplicado a sistemas eléctricos de potencia (estabilizadores, reguladores de velocidad de turbinas) y a convertidores CC-CC y microrredes CC; recientemente trabaja en integración hardware-in-the-loop de relés de protección (OPAL-RT con SEL-321). En CLAGTEE es coautor de la comparación entre protección adaptativa y de pickup fijo con alta penetración FV y VE. Le interesarían sesiones de protección de redes activas, control de convertidores y estabilidad.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
+  {
+    "id": "antonio-barbosa-neto",
+    "nombre": "Antônio Barbosa Neto",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do Amazonas (UFAM), Manaus",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "adaptive overcurrent protection in distribution networks with high PV penetration",
+        "relay pickup setting strategies based on pre-fault currents",
+        "protection impacts of electric vehicle charging"
+      ],
+      "palabras_clave": [
+        "adaptive protection",
+        "fixed pickup",
+        "overcurrent relays",
+        "relay operating time",
+        "pre-fault current",
+        "photovoltaic distributed generation",
+        "electric vehicles",
+        "distribution networks"
+      ],
+      "metodos": [
+        "comparative simulation of protection schemes"
+      ],
+      "aplicaciones": [
+        "distribution feeders with high PVDG and EV penetration"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.7,
+        "4": 0.2
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Google Scholar (3 búsquedas en Scholar y 1 web general sin resultado). Presenta en CLAGTEE una comparación entre estrategias de protección adaptativa y de pickup fijo, basadas en corrientes de prefalla y tiempos de operación de relés, para escenarios con alta penetración de GD fotovoltaica y vehículos eléctricos; sus coautores de la UFAM trabajan en capacidad de hospedaje FV-VE (Sales e Silva) y en integración HIL de relés (Ayres). La evidencia se limita al título del paper; le interesarían sesiones de protección de redes de distribución activas e integración de GD y VE.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "florindo-antonio-de-carvalho-ayres-junior",
+    "nombre": "Florindo Antonio de Carvalho Ayres Júnior",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=iVZNgHYAAAAJ",
+      "user_id": "iVZNgHYAAAAJ",
+      "nombre_perfil": "Florindo Antonio de Carvalho Ayres Júnior",
+      "afiliacion": "Universidade Federal do Amazonas",
+      "email_verificado": "ufam.edu.br",
+      "intereses_scholar": [
+        "Controle Fracionário",
+        "Sistemas Elétricos de Potência",
+        "Controle Robusto"
+      ],
+      "citas": 311,
+      "citas_desde_2021": 290,
+      "h_index": 8,
+      "publicaciones": [
+        {
+          "titulo": "Digital twin applications: A survey of recent advances and challenges",
+          "anio": 2022,
+          "citas": 128
+        },
+        {
+          "titulo": "A Fractional Order Power System Stabilizer Applied on a Small-Scale Generation System",
+          "anio": 2018,
+          "citas": 27
+        },
+        {
+          "titulo": "Fractional Order Pole Placement for a buck converter based on commensurable transfer function",
+          "anio": 2020,
+          "citas": 18
+        },
+        {
+          "titulo": "Fractional-order robust control design under parametric uncertain approach",
+          "anio": 2024,
+          "citas": 14
+        },
+        {
+          "titulo": "Experimental implementation of hydraulic turbine dynamics and a fractional order speed governor controller on a small-scale power system",
+          "anio": 2024,
+          "citas": 13
+        },
+        {
+          "titulo": "Comparative study of control strategies for stabilization and performance improvement of DC microgrids with a CPL connected",
+          "anio": 2020,
+          "citas": 12
+        },
+        {
+          "titulo": "Fractional-order identification system based on Sundaresan's technique",
+          "anio": 2024,
+          "citas": 8
+        },
+        {
+          "titulo": "Probabilistic operational costs assessment of combined PV–PEV connections in LV distribution networks",
+          "anio": 2023,
+          "citas": 7
+        },
+        {
+          "titulo": "Development of a hybrid Fractional-Order Fuzzy-PID controller applied to a DC-DC buck converter",
+          "anio": 2025,
+          "citas": 4
+        },
+        {
+          "titulo": "Stability evaluation of a multi-stage converter system considering a CPL connected",
+          "anio": 2024,
+          "citas": 3
+        },
+        {
+          "titulo": "Estudo Probabilístico da Capacidade de Hospedagem de Eletropostos em Sistemas de Subtransmissão Sob Critérios Operativos da Margem Estabilidade de Tensão",
+          "anio": 2024,
+          "citas": 0
+        },
+        {
+          "titulo": "Integração Hardware-in-the-Loop entre a Plataforma OPAL-RT e o Relé SEL-321",
+          "anio": 2026,
+          "citas": 0
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Coautores de CLAGTEE en el perfil: Luiz Eduardo Sales e Silva figura en sus publicaciones (PV–PEV en redes BT, PLL en FV, capacidad de hospedaje de electrolineras); Iury Bessa y Renan Medeiros (UFAM) aparecen como coautores en la barra lateral. Trabajo reciente sobre relés de protección (HIL OPAL-RT con SEL-321), coherente con INT-21. Existe otro perfil 'Florindo Ayres' (Universidade Federal do Pará, user=0tlh3cYAAAAJ) listado entre los coautores de Iury Bessa, probablemente un perfil antiguo de la misma persona; no se revisó."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do Amazonas (UFAM), Manaus",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "fractional-order control of power systems and power converters",
+        "adaptive protection of distribution networks with PV and EV",
+        "robust control under parametric uncertainty",
+        "power system stabilizers and speed governors on small-scale generation systems",
+        "hardware-in-the-loop testing of protection relays",
+        "DC microgrid stability with constant power loads"
+      ],
+      "palabras_clave": [
+        "fractional-order control",
+        "robust control",
+        "power system stabilizer",
+        "electromechanical oscillation damping",
+        "DC-DC buck converter",
+        "constant power load",
+        "DC microgrid",
+        "adaptive protection",
+        "overcurrent relays",
+        "hardware-in-the-loop",
+        "OPAL-RT",
+        "digital twin"
+      ],
+      "metodos": [
+        "fractional-order pole placement",
+        "fractional-order system identification",
+        "LMI-based robust control",
+        "fuzzy-PID control",
+        "hardware-in-the-loop simulation"
+      ],
+      "aplicaciones": [
+        "small-scale hydro generation test benches",
+        "DC-DC converters",
+        "distribution feeders with high PVDG and EV penetration",
+        "industrial process digitalization"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.7,
+        "3": 0.6,
+        "9": 0.3,
+        "6": 0.3,
+        "4": 0.2
+      },
+      "etapa": "investigador_consolidado",
+      "resumen": "Profesor de la UFAM especializado en control fraccionario y robusto aplicado a sistemas eléctricos de potencia (estabilizadores, reguladores de velocidad de turbinas) y a convertidores CC-CC y microrredes CC; recientemente trabaja en integración hardware-in-the-loop de relés de protección (OPAL-RT con SEL-321). En CLAGTEE es coautor de la comparación entre protección adaptativa y de pickup fijo con alta penetración FV y VE. Le interesarían sesiones de protección de redes activas, control de convertidores y estabilidad.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    }
+  },
+  {
+    "id": "iury-valente-de-bessa",
+    "nombre": "Iury Valente de Bessa",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=_bZFb1EAAAAJ",
+      "user_id": "_bZFb1EAAAAJ",
+      "nombre_perfil": "Iury Bessa",
+      "afiliacion": "Assistant Professor at Federal University of Amazonas",
+      "email_verificado": "ufam.edu.br",
+      "intereses_scholar": [
+        "Control Theory",
+        "Fault Diagnosis",
+        "Fault Tolerant Control",
+        "Learning-based Control",
+        "Cyber-physical Systems"
+      ],
+      "citas": 1543,
+      "citas_desde_2021": 1190,
+      "h_index": 23,
+      "publicaciones": [
+        {
+          "titulo": "Digital twin applications: A survey of recent advances and challenges",
+          "anio": 2022,
+          "citas": 128
+        },
+        {
+          "titulo": "Data-driven fault detection and isolation scheme for a wind turbine benchmark",
+          "anio": 2016,
+          "citas": 97
+        },
+        {
+          "titulo": "Fault tolerant control for linear parameter varying systems: An improved robust virtual actuator and sensor approach",
+          "anio": 2020,
+          "citas": 70
+        },
+        {
+          "titulo": "TS fuzzy reconfiguration blocks for fault tolerant control of nonlinear systems",
+          "anio": 2020,
+          "citas": 47
+        },
+        {
+          "titulo": "Dual-rate control framework with safe watermarking against deception attacks",
+          "anio": 2022,
+          "citas": 41
+        },
+        {
+          "titulo": "Dynamic event-triggered gain-scheduling control of discrete-time quasi-LPV systems",
+          "anio": 2022,
+          "citas": 39
+        },
+        {
+          "titulo": "A switching approach to event-triggered control systems under denial-of-service attacks",
+          "anio": 2023,
+          "citas": 36
+        },
+        {
+          "titulo": "Counterexample guided neural network quantization refinement",
+          "anio": 2023,
+          "citas": 28
+        },
+        {
+          "titulo": "Systematic LMI approaches to design multivariable sliding mode controllers for uncertain systems",
+          "anio": 2026,
+          "citas": 4
+        },
+        {
+          "titulo": "Handling Asynchronous Scheduling Functions in Periodic Event-Triggered Gain-Scheduled Control With Guaranteed Polytopic Inclusion",
+          "anio": 2026,
+          "citas": 4
+        },
+        {
+          "titulo": "A Pragmatic Event-Triggered Nonlinear MPC",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Analysis and Prediction of Lithium-Ion Battery Degradation in Equatorial Environments Using a Hybrid Approach",
+          "anio": 2025,
+          "citas": 0
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Firma como 'IV de Bessa' / 'I Bessa' (UFAM, email ufam.edu.br). El coautor de CLAGTEE Luiz Eduardo Sales e Silva figura en su lista de coautores y comparten publicaciones (degradación de baterías Li-ion 2025, herramienta BDGD para RDBTs, ciberataques en redes con DER); Renan Medeiros y Florindo Ayres también son coautores. Ojo: Isaías Valente de Bessa (doctorando UFSC, user=MxjY7nwAAAAJ) también firma 'IV de Bessa' y publica sobre microrredes CC con el mismo grupo; es otra persona."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do Amazonas (UFAM), Manaus",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "fault diagnosis and fault-tolerant control",
+        "event-triggered and data-driven control",
+        "security of cyber-physical systems against deception and DoS attacks",
+        "learning-based predictive energy management in DC microgrids",
+        "experimental platforms for EV and PV integration in DC microgrids"
+      ],
+      "palabras_clave": [
+        "fault-tolerant control",
+        "fault detection and isolation",
+        "event-triggered control",
+        "LPV systems",
+        "Takagi-Sugeno fuzzy systems",
+        "cyber-physical systems",
+        "deception attacks",
+        "model predictive control",
+        "LSTM",
+        "DC microgrid",
+        "battery degradation",
+        "digital twin"
+      ],
+      "metodos": [
+        "LMI-based control design",
+        "data-driven control",
+        "evolving fuzzy models",
+        "LSTM-MPC",
+        "hyperparameter tuning with Optuna",
+        "formal verification of digital controllers"
+      ],
+      "aplicaciones": [
+        "hybrid DC microgrids with PV and EV",
+        "wind turbine fault diagnosis",
+        "industrial cyber-physical systems",
+        "lithium-ion battery prognostics"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "6": 0.7,
+        "5": 0.5,
+        "3": 0.5,
+        "4": 0.4,
+        "1": 0.3
+      },
+      "etapa": "investigador_consolidado",
+      "resumen": "Profesor de la UFAM en teoría de control (h=23): control tolerante a fallas, diagnóstico de fallas, control disparado por eventos, control basado en datos y aprendizaje, y seguridad de sistemas ciberfísicos frente a ataques. En CLAGTEE es coautor de una plataforma experimental de microrred CC con VE y FV y de una gestión energética predictiva LSTM-MPC ajustada con Optuna. Le interesarían sesiones de IA y control aplicados a microrredes, ciberseguridad de redes y monitoreo y diagnóstico.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    }
+  },
+  {
+    "id": "luiz-eduardo-sales-e-silva",
+    "nombre": "Luiz Eduardo Sales e Silva",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=XK92TZsAAAAJ",
+      "user_id": "XK92TZsAAAAJ",
+      "nombre_perfil": "Luiz Eduardo Sales e Silva",
+      "afiliacion": "Professor of Electrical Engineering, Federal University of Amazonas (UFAM)",
+      "email_verificado": "ufam.edu.br",
+      "intereses_scholar": [
+        "Electric Power Systems",
+        "Distributed Generation",
+        "Smart Grids",
+        "Pattern Recognition",
+        "Control and Automation"
+      ],
+      "citas": 138,
+      "citas_desde_2021": 136,
+      "h_index": 7,
+      "publicaciones": [
+        {
+          "titulo": "Combined PV-PEV Hosting Capacity Analysis in Low-Voltage Distribution Networks",
+          "anio": 2022,
+          "citas": 37
+        },
+        {
+          "titulo": "An Enhanced Voltage Control Method for Fair Active Power Curtailment of Rooftop PV Systems in LV Distribution Networks",
+          "anio": 2024,
+          "citas": 17
+        },
+        {
+          "titulo": "Fractional-Order Robust Control Design under parametric uncertain approach",
+          "anio": 2024,
+          "citas": 14
+        },
+        {
+          "titulo": "Mitigating Voltage Drop and Excessive Step-Voltage Regulator Tap Operation in Distribution Networks Due to Electric Vehicle Fast Charging",
+          "anio": 2024,
+          "citas": 14
+        },
+        {
+          "titulo": "Experimental implementation of hydraulic turbine dynamics and a fractional order speed governor controller on a small-scale power system",
+          "anio": 2024,
+          "citas": 13
+        },
+        {
+          "titulo": "Enabling Technologies of Industry 4.0 for the Modernization of an Industrial Process",
+          "anio": 2025,
+          "citas": 7
+        },
+        {
+          "titulo": "Probabilistic operational costs assessment of combined PV–PEV connections in LV distribution networks",
+          "anio": 2023,
+          "citas": 7
+        },
+        {
+          "titulo": "Comparative Study of Control Methodologies and PLL Topologies to Enhance the Performance of the Synchronization of Grid-Tied PV System",
+          "anio": 2021,
+          "citas": 7
+        },
+        {
+          "titulo": "Robust control methodology applied in inverted pendulum system considering polytopic uncertainty",
+          "anio": 2025,
+          "citas": 2
+        },
+        {
+          "titulo": "Analysis and Prediction of Lithium-Ion Battery Degradation in Equatorial Environments Using a Hybrid Approach",
+          "anio": 2025,
+          "citas": 0
+        },
+        {
+          "titulo": "Desenvolvimento de uma Arquitetura de Microrrede para Solução Energética Sustentável de Comunidades Isoladas no Amazonas",
+          "anio": 2025,
+          "citas": 0
+        },
+        {
+          "titulo": "Estudo Probabilístico da Capacidade de Hospedagem de Eletropostos em Sistemas de Subtransmissão Sob Critérios Operativos da Margem de Estabilidade de Tensão",
+          "anio": 2024,
+          "citas": 0
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Los coautores de CLAGTEE Renan Medeiros, Iury Bessa y Florindo Ayres figuran en muchas de sus publicaciones, y en su lista también aparecen A León (Alfredo Silie León, microrred para comunidades aisladas del Amazonas, 2025) y MH Mota (Matheus de Holanda Mota, electrolineras en subtransmisión, 2024). Iury Bessa lo lista como coautor. Publica sobre FV y VE en redes de BT, la misma línea que INT-21/INT-23."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do Amazonas (UFAM), Manaus",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "hosting capacity of combined PV and EV in LV distribution networks",
+        "voltage control and fair active power curtailment of rooftop PV",
+        "probabilistic assessment of utility operational costs under PV-EV operation",
+        "DC microgrids for isolated Amazon communities with second-life batteries",
+        "predictive energy management in hybrid DC microgrids",
+        "EV charging station hosting capacity in subtransmission systems"
+      ],
+      "palabras_clave": [
+        "hosting capacity",
+        "rooftop PV",
+        "plug-in electric vehicles",
+        "LV distribution networks",
+        "volt-VAr control",
+        "active power curtailment",
+        "probabilistic analysis",
+        "DC microgrid",
+        "second-life batteries",
+        "adaptive protection",
+        "LSTM-MPC",
+        "off-grid communities"
+      ],
+      "metodos": [
+        "Monte Carlo probabilistic simulation",
+        "sensitivity-based voltage control",
+        "BDGD-based network modeling",
+        "LSTM-MPC",
+        "robust control"
+      ],
+      "aplicaciones": [
+        "Brazilian LV distribution feeders",
+        "off-grid indigenous communities in the Amazon",
+        "EV charging infrastructure",
+        "utility cost assessment"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.7,
+        "3": 0.5,
+        "6": 0.4,
+        "12": 0.3,
+        "7": 0.2
+      },
+      "etapa": "investigador_consolidado",
+      "resumen": "Profesor de Ingeniería Eléctrica de la UFAM; investiga con enfoque probabilístico la integración de FV y VE en redes de distribución de BT (capacidad de hospedaje, control de tensión, costos para la distribuidora) y, más recientemente, microrredes CC para comunidades aisladas del Amazonas. Firma los cinco papers del grupo UFAM en CLAGTEE (protección adaptativa, control robusto y plataforma experimental de microrredes CC, baterías de segunda vida, gestión predictiva LSTM-MPC). Le interesarían sesiones de integración de GD y VE, microrredes y planificación de distribución.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    }
+  },
+  {
+    "id": "matheus-de-holanda-mota",
+    "nombre": "Matheus de Holanda Mota",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do Amazonas (UFAM), Manaus",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "robust control of DC microgrids under polytopic uncertainties",
+        "experimental DC microgrid platforms with EV and PV",
+        "coordinated voltage regulation in off-grid DC microgrids with second-life batteries",
+        "LSTM-MPC predictive energy management",
+        "EV charging station hosting capacity under voltage stability criteria"
+      ],
+      "palabras_clave": [
+        "DC microgrid",
+        "electric vehicles",
+        "photovoltaic generation",
+        "second-life batteries",
+        "voltage regulation",
+        "model predictive control",
+        "LSTM",
+        "Optuna",
+        "robust control",
+        "polytopic uncertainty",
+        "off-grid communities",
+        "hosting capacity"
+      ],
+      "metodos": [
+        "LSTM-MPC",
+        "hyperparameter tuning with Optuna",
+        "robust linear control",
+        "experimental validation"
+      ],
+      "aplicaciones": [
+        "off-grid DC microgrid for the Tenharim Marmelos community",
+        "EV and PV integration in DC microgrids"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "3": 0.7,
+        "6": 0.5,
+        "12": 0.2
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Google Scholar (3 búsquedas en Scholar y 1 web general sin resultado). Presenta los cuatro trabajos del grupo UFAM en CLAGTEE, todos sobre microrredes CC: control robusto bajo incertidumbre politópica, plataforma experimental con VE y FV, regulación de tensión con baterías de segunda vida para la comunidad Tenharim Marmelos y gestión predictiva LSTM-MPC. En los perfiles de sus coautores figura (MH Mota) en un estudio CBA 2024 sobre capacidad de hospedaje de electrolineras en subtransmisión. Probablemente estudiante de posgrado; le interesarían sesiones de microrredes, almacenamiento y control predictivo.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "renan-landau-paiva-de-medeiros",
+    "nombre": "Renan Landau Paiva de Medeiros",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=42JtK7oAAAAJ",
+      "user_id": "42JtK7oAAAAJ",
+      "nombre_perfil": "Renan Landau Paiva de Medeiros",
+      "afiliacion": "Professor of Electrical Engineering at UFAM",
+      "email_verificado": "ufam.edu.br",
+      "intereses_scholar": [
+        "Applied control"
+      ],
+      "citas": 748,
+      "citas_desde_2021": 645,
+      "h_index": 15,
+      "publicaciones": [
+        {
+          "titulo": "Digital twin applications: A survey of recent advances and challenges",
+          "anio": 2022,
+          "citas": 128
+        },
+        {
+          "titulo": "Interval robust controller to minimize oscillations effects caused by constant power load in a DC multi-converter buck-buck system",
+          "anio": 2019,
+          "citas": 63
+        },
+        {
+          "titulo": "Novel robust methodology for controller design aiming to ensure DC microgrid stability under CPL power variation",
+          "anio": 2019,
+          "citas": 58
+        },
+        {
+          "titulo": "Robust control of interconnected power electronic converters to enhance performance in DC distribution systems: A case of study",
+          "anio": 2020,
+          "citas": 55
+        },
+        {
+          "titulo": "Development of a novel methodology to retrofit legacy systems in the context of industry 4.0",
+          "anio": 2023,
+          "citas": 34
+        },
+        {
+          "titulo": "Development of a novel retrofit framework considering Industry 4.0 concepts: a case study of a modular production system",
+          "anio": 2025,
+          "citas": 23
+        },
+        {
+          "titulo": "Design and experimental assessment of a robust voltage control for DC-DC converters considering components parametric uncertainties",
+          "anio": 2020,
+          "citas": 19
+        },
+        {
+          "titulo": "An enhanced voltage control method for fair active power curtailment of rooftop PV systems in LV distribution networks",
+          "anio": 2024,
+          "citas": 17
+        },
+        {
+          "titulo": "Fractional-order robust control design under parametric uncertain approach",
+          "anio": 2024,
+          "citas": 14
+        },
+        {
+          "titulo": "Comparative study of control strategies for stabilization and performance improvement of DC microgrids with a CPL connected",
+          "anio": 2020,
+          "citas": 12
+        },
+        {
+          "titulo": "Robust control methodology applied in inverted pendulum system considering polytopic uncertainty",
+          "anio": 2026,
+          "citas": 2
+        },
+        {
+          "titulo": "Avaliação de uma Arquitetura de Microrrede CC como Solução Energética Sustentável para Comunidades Isoladas no Amazonas.",
+          "anio": 2025,
+          "citas": 0
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "En su perfil figuran como coautores Florindo Ayres e Iury Bessa (UFAM), comparte publicaciones con Luiz Eduardo Sales e Silva y aparece el trabajo 2025 de AS León (Alfredo Silie León, coautor de ELE-3) sobre microrred CC para comunidades aisladas del Amazonas. Su línea principal es el control robusto de convertidores y microrredes CC bajo incertidumbre paramétrica y politópica, la misma de ELE-3."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do Amazonas (UFAM), Manaus",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "robust control of DC-DC converters and DC microgrids with constant power loads",
+        "control design under polytopic and parametric uncertainty",
+        "digital twins and Industry 4.0 retrofit of legacy systems",
+        "fractional-order control of power and generation systems",
+        "DC microgrid architectures for isolated Amazon communities"
+      ],
+      "palabras_clave": [
+        "robust control",
+        "DC microgrid",
+        "constant power load",
+        "DC-DC converters",
+        "polytopic uncertainty",
+        "interval robust control",
+        "dual active bridge",
+        "digital twin",
+        "Industry 4.0",
+        "fractional-order control",
+        "fault detection"
+      ],
+      "metodos": [
+        "parametric robust control design",
+        "LMI-based control",
+        "fractional-order control",
+        "type-2 fuzzy fault detection"
+      ],
+      "aplicaciones": [
+        "DC distribution systems",
+        "off-grid DC microgrids in the Amazon",
+        "industrial process modernization",
+        "small-scale power system test benches"
+      ],
+      "afinidad_tracks": {
+        "3": 0.9,
+        "2": 0.7,
+        "6": 0.4,
+        "1": 0.3,
+        "5": 0.2,
+        "8": 0.2
+      },
+      "etapa": "investigador_consolidado",
+      "resumen": "Profesor de Ingeniería Eléctrica de la UFAM en control aplicado (h=15): control robusto de convertidores CC-CC y microrredes CC con cargas de potencia constante bajo incertidumbre paramétrica, además de gemelos digitales e Industria 4.0. En CLAGTEE es coautor de la evaluación experimental del costo de la no robustez en controladores lineales para microrredes CC con incertidumbre politópica. Le interesarían sesiones de electrónica de potencia, microrredes CC y control.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    }
+  },
+  {
+    "id": "vitor-bacuri-torres",
+    "nombre": "Vitor Bacuri Torres",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do Amazonas (UFAM), Manaus",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "coordinated voltage regulation in off-grid DC microgrids",
+        "integration of PV and second-life batteries",
+        "electrification of isolated indigenous communities in the Amazon"
+      ],
+      "palabras_clave": [
+        "DC microgrid",
+        "off-grid",
+        "voltage regulation",
+        "photovoltaic generation",
+        "second-life batteries",
+        "isolated communities",
+        "energy access"
+      ],
+      "metodos": [
+        "coordinated voltage control"
+      ],
+      "aplicaciones": [
+        "off-grid DC microgrid for the Tenharim Marmelos community"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "3": 0.5,
+        "12": 0.3
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Google Scholar (3 búsquedas en Scholar y 1 web general sin resultado). Coautor en CLAGTEE de un trabajo del grupo UFAM (Sales e Silva, Mota) sobre regulación coordinada de tensión en una microrred CC aislada con FV y baterías de segunda vida para la comunidad Tenharim Marmelos. La evidencia se limita a ese título; le interesarían sesiones de microrredes, almacenamiento y electrificación rural.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "esteban-a-baez",
+    "nombre": "Esteban A. Baez",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Argentina",
+    "intereses": {
+      "temas": [
+        "technical feasibility of EV charging infrastructure in the Córdoba city grid",
+        "voltage vulnerability assessment of provincial interconnected systems",
+        "impact of electric mobility on urban distribution networks"
+      ],
+      "palabras_clave": [
+        "electric vehicle charging",
+        "charging infrastructure",
+        "distribution network",
+        "voltage vulnerability",
+        "grid planning",
+        "Córdoba"
+      ],
+      "metodos": [],
+      "aplicaciones": [
+        "Córdoba city power grid (Argentina)"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "2": 0.5
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Google Scholar (1 búsqueda sin resultado). Coautor en CLAGTEE de la factibilidad técnica de infraestructura de carga de VE en la red de la ciudad de Córdoba; en el perfil Scholar de su coautor J. I. Amaya (UTN-FRC, CKEQsdYAAAAJ, sin barra de coautores) figura (EA Baez) en una metodología de vulnerabilidad de tensión del sistema interconectado provincial de Córdoba. Le interesarían sesiones de planificación de redes y movilidad eléctrica.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "1 búsqueda en Scholar (primera pasada) sin resultado; el perfil de J. I. Amaya no tiene barra de coautores. No se repitió en la segunda pasada."
+  },
+  {
+    "id": "franco-gaston-martini",
+    "nombre": "Franco Gastón Martini",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Probablemente UTN Facultad Regional Córdoba (grupo de Amaya y Bragagnolo)",
+    "pais_inferido": "Argentina",
+    "intereses": {
+      "temas": [
+        "correlation between climate variables and residential electricity consumption",
+        "predictor variable selection for LSTM and SARIMA load forecasting",
+        "weather-sensitive residential electricity demand modeling"
+      ],
+      "palabras_clave": [
+        "load forecasting",
+        "residential consumption",
+        "climate variables",
+        "correlation analysis",
+        "feature selection",
+        "LSTM",
+        "SARIMA"
+      ],
+      "metodos": [
+        "LSTM",
+        "SARIMA",
+        "correlation analysis"
+      ],
+      "aplicaciones": [
+        "residential-area consumers of an electric utility"
+      ],
+      "afinidad_tracks": {
+        "6": 0.9,
+        "1": 0.4
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Google Scholar (2 búsquedas sin resultado). Coautor en CLAGTEE, con Amaya y Bragagnolo (grupo de Córdoba), de un análisis de correlación entre variables climáticas y consumo eléctrico residencial para seleccionar predictores de modelos LSTM y SARIMA; el grupo publica también pronóstico de consumo residencial con random forests (IEEE Latin America Transactions 2026). Perfil basado en ese título y en el contexto del grupo; le interesarían sesiones de pronóstico de demanda e IA aplicada.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Búsquedas en Scholar: primera pasada 1 sin resultado; segunda pasada 'Franco Gastón Martini' sin resultado."
+  },
+  {
+    "id": "juan-ignacio-amaya",
+    "nombre": "Juan Ignacio Amaya",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=CKEQsdYAAAAJ",
+      "user_id": "CKEQsdYAAAAJ",
+      "nombre_perfil": "Juan Ignacio Amaya",
+      "afiliacion": "UTN-FRC",
+      "email_verificado": "frc.utn.edu.ar",
+      "intereses_scholar": [
+        "Power systems"
+      ],
+      "citas": 2,
+      "citas_desde_2021": 2,
+      "h_index": 1,
+      "publicaciones": [
+        {
+          "titulo": "Residential Energy Consumption Forecasting in Electric Utilities: An Approach Based on Random Forests and Time Series",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Analysis of the Impact of Electric Mobility on a Medium Voltage Distribution Network: A Case Study of the Cerro De Las Rosas Feeder",
+          "anio": 2025,
+          "citas": 0
+        },
+        {
+          "titulo": "Management of the Electrical and Thermal Demand of a Social Housing in Argentina",
+          "anio": 2024,
+          "citas": 1
+        },
+        {
+          "titulo": "Estudio térmico de la vivienda pampeana sur iy gestión de su demanda eléctrica incluyendo el control de los aires acondicionados",
+          "anio": 2023,
+          "citas": 1
+        },
+        {
+          "titulo": "An automatism for contingency awareness and remediation for power system",
+          "anio": 2023,
+          "citas": 0
+        },
+        {
+          "titulo": "Detailed Simulation Model of a Rural Isolated Microgrid with Energy Storage and Hybrid Generation",
+          "anio": null,
+          "citas": 0
+        },
+        {
+          "titulo": "Methodology for Evaluating Voltage Vulnerability. Study Case: Provincial Interconnected System of Córdoba.",
+          "anio": null,
+          "citas": 0
+        },
+        {
+          "titulo": "Generación distribuida y autoconsumo. Análisis del impacto en el retorno económico",
+          "anio": null,
+          "citas": 0
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Los coautores de CLAGTEE Sergio N. Bragagnolo (6 de 8 publicaciones) y Esteban A. Baez figuran en sus publicaciones; publica sobre movilidad eléctrica en alimentadores de MT de Córdoba (misma línea que PLA-29) y pronóstico de consumo residencial (misma línea que CIE-9). El perfil no tiene coautores enlazados."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidad Tecnológica Nacional, Facultad Regional Córdoba (UTN-FRC)",
+    "pais_inferido": "Argentina",
+    "intereses": {
+      "temas": [
+        "technical feasibility of EV charging infrastructure in urban distribution grids",
+        "correlation of climate variables with residential electricity consumption",
+        "residential load forecasting with LSTM, SARIMA and random forests",
+        "contingency awareness and remedial automation in power systems",
+        "voltage vulnerability assessment of provincial interconnected systems",
+        "electrical and thermal demand management in social housing"
+      ],
+      "palabras_clave": [
+        "electric vehicle charging",
+        "electric mobility",
+        "medium voltage feeder",
+        "load forecasting",
+        "LSTM",
+        "SARIMA",
+        "random forest",
+        "climate variables",
+        "contingency analysis",
+        "voltage vulnerability",
+        "demand management",
+        "distributed generation"
+      ],
+      "metodos": [
+        "LSTM",
+        "SARIMA",
+        "random forests",
+        "correlation analysis",
+        "power flow simulation"
+      ],
+      "aplicaciones": [
+        "Córdoba city power grid (Argentina)",
+        "residential consumers",
+        "rural isolated microgrids",
+        "social housing"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "6": 0.8,
+        "2": 0.5,
+        "7": 0.2,
+        "12": 0.2
+      },
+      "etapa": "investigador_inicial",
+      "resumen": "Investigador de la UTN Facultad Regional Córdoba en sistemas de potencia, con publicaciones desde 2023 sobre automatismos ante contingencias, vulnerabilidad de tensión, impacto de la movilidad eléctrica en alimentadores de MT y pronóstico de consumo residencial. En CLAGTEE presenta la factibilidad técnica de la infraestructura de carga de VE en la red de Córdoba y la selección de variables climáticas para modelos LSTM/SARIMA. Le interesarían sesiones de planificación de distribución, movilidad eléctrica y pronóstico de demanda con IA.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    }
+  },
+  {
+    "id": "martin-sombeck",
+    "nombre": "Martín Sombeck",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Probablemente UTN Facultad Regional Córdoba (grupo de Amaya y Bragagnolo)",
+    "pais_inferido": "Argentina",
+    "intereses": {
+      "temas": [
+        "technical feasibility of EV charging infrastructure in urban distribution grids",
+        "impact of EV charging on the Córdoba city power grid",
+        "distribution network capacity assessment for electric mobility"
+      ],
+      "palabras_clave": [
+        "electric vehicle charging",
+        "charging infrastructure",
+        "distribution network",
+        "urban grid",
+        "network capacity",
+        "Córdoba"
+      ],
+      "metodos": [],
+      "aplicaciones": [
+        "Córdoba city power grid (Argentina)"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "2": 0.5
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Google Scholar (1 búsqueda sin resultado). Coautor en CLAGTEE de la factibilidad técnica de infraestructura de carga de VE en la red de la ciudad de Córdoba (grupo de Amaya y Bragagnolo, que también estudia el impacto de la movilidad eléctrica en alimentadores de MT de Córdoba). Perfil basado solo en ese título y el contexto del grupo; le interesarían sesiones de planificación de redes de distribución y movilidad eléctrica.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "1 búsqueda en Scholar ('Martín Sombeck') sin resultado."
+  },
+  {
+    "id": "sergio-nicolas-bragagnolo",
+    "nombre": "Sergio Nicolás Bragagnolo",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidad Tecnológica Nacional, Facultad Regional Córdoba (UTN-FRC)",
+    "pais_inferido": "Argentina",
+    "intereses": {
+      "temas": [
+        "technical feasibility of EV charging infrastructure in urban distribution grids",
+        "climate-driven residential load forecasting",
+        "residential electrical and thermal demand management including air-conditioning control",
+        "rural isolated microgrids with storage and hybrid generation",
+        "voltage vulnerability assessment of provincial interconnected systems"
+      ],
+      "palabras_clave": [
+        "electric vehicle charging",
+        "electric mobility",
+        "load forecasting",
+        "LSTM",
+        "SARIMA",
+        "climate variables",
+        "demand management",
+        "social housing",
+        "isolated microgrid",
+        "energy storage",
+        "voltage vulnerability",
+        "distributed generation"
+      ],
+      "metodos": [
+        "LSTM",
+        "SARIMA",
+        "random forests",
+        "simulation modeling"
+      ],
+      "aplicaciones": [
+        "Córdoba city power grid (Argentina)",
+        "residential consumers and social housing",
+        "rural isolated microgrids"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "6": 0.8,
+        "2": 0.5,
+        "7": 0.2,
+        "12": 0.2
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Google Scholar (4 búsquedas sin resultado en dos pasadas). Coautor de los dos trabajos del grupo de Córdoba en CLAGTEE (carga de VE en la red de Córdoba; variables climáticas para LSTM/SARIMA). En el perfil Scholar de su coautor J. I. Amaya (UTN-FRC, CKEQsdYAAAAJ, sin barra de coautores) figura en 6 de 8 trabajos (a veces como 'SN Braganolo'): gestión de demanda eléctrica y térmica en vivienda social, microrredes rurales aisladas, vulnerabilidad de tensión, movilidad eléctrica en MT y pronóstico de consumo residencial; parece el investigador senior del grupo. Le interesarían sesiones de planificación de distribución, movilidad eléctrica y pronóstico de demanda.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Búsquedas en Scholar: primera pasada 2 sin resultado; segunda pasada 'Sergio Nicolás Bragagnolo' y 'Bragagnolo UTN Córdoba microgrid energy demand Schierloh' sin resultado. Firma también como 'SN Braganolo' en algunos trabajos."
+  },
+  {
+    "id": "tomas-l-suppo",
+    "nombre": "Tomás L. Suppo",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Probablemente UTN Facultad Regional Córdoba (grupo de Amaya y Bragagnolo)",
+    "pais_inferido": "Argentina",
+    "intereses": {
+      "temas": [
+        "technical feasibility of EV charging infrastructure in urban distribution grids",
+        "impact of EV charging on the Córdoba city power grid",
+        "distribution network capacity assessment for electric mobility"
+      ],
+      "palabras_clave": [
+        "electric vehicle charging",
+        "charging infrastructure",
+        "distribution network",
+        "urban grid",
+        "network capacity",
+        "Córdoba"
+      ],
+      "metodos": [],
+      "aplicaciones": [
+        "Córdoba city power grid (Argentina)"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "2": 0.5
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Google Scholar (1 búsqueda sin resultado). Coautor en CLAGTEE de la factibilidad técnica de infraestructura de carga de VE en la red de la ciudad de Córdoba (grupo de Amaya y Bragagnolo, que también estudia el impacto de la movilidad eléctrica en alimentadores de MT de Córdoba). Perfil basado solo en ese título y el contexto del grupo; le interesarían sesiones de planificación de redes de distribución y movilidad eléctrica.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "1 búsqueda en Scholar ('Tomás Suppo') sin resultado."
+  },
+  {
+    "id": "ana-carolina-chaves",
+    "nombre": "Ana Carolina Chaves",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=9hnJ2KgAAAAJ",
+      "user_id": "9hnJ2KgAAAAJ",
+      "nombre_perfil": "Ana Carolina Chaves Catolico",
+      "afiliacion": "Unknown affiliation",
+      "email_verificado": "gesel.ie.ufrj.br",
+      "intereses_scholar": [
+        "Energia",
+        "Meio Ambiente",
+        "Transição Energética"
+      ],
+      "citas": 220,
+      "citas_desde_2021": 211,
+      "h_index": 5,
+      "publicaciones": [
+        {
+          "titulo": "Cooling Down the World Oceans and the Earth",
+          "anio": 2025,
+          "citas": 0
+        },
+        {
+          "titulo": "BACIA HIDROGRÁFICA DOS RIOS TOCANTINS E ARAGUAIA: ÍNDICE SINTÉTICO DE DIFERENÇAS SOCIOESPACIAIS",
+          "anio": 2024,
+          "citas": 0
+        },
+        {
+          "titulo": "Efeitos sociais da implementação da usina hidrelétrica de Lajeado: reassentamentos do Córrego do Prata e Pinheirópolis Rural",
+          "anio": 2024,
+          "citas": 0
+        },
+        {
+          "titulo": "Uma análise da participação dos royalties da mineração nos orçamentos anuais de 2019 e 2020 nos maiores municípios mineradores do Brasil",
+          "anio": 2024,
+          "citas": 1
+        },
+        {
+          "titulo": "Contributions to the Development of a Hydrogen Economy in Brazil",
+          "anio": 2022,
+          "citas": 0
+        },
+        {
+          "titulo": "Hydrogen economy development in Brazil: An analysis of stakeholders' perception",
+          "anio": 2022,
+          "citas": 106
+        },
+        {
+          "titulo": "Socioeconomic impacts of large hydroelectric power plants in Brazil: A synthetic control assessment of Estreito hydropower plant",
+          "anio": 2021,
+          "citas": 56
+        },
+        {
+          "titulo": "Determinants of the economic performance of Brazilian electricity distributors",
+          "anio": 2021,
+          "citas": 15
+        },
+        {
+          "titulo": "O papel do hidrogênio na transição energética mundial e seus desdobramentos no sistema energético brasileiro",
+          "anio": 2021,
+          "citas": 5
+        },
+        {
+          "titulo": "O estado, a regulação e a questão ambiental no setor elétrico brasileiro: uma análise sobre os megaprojetos de Lajeado e Estreito",
+          "anio": 2021,
+          "citas": 4
+        },
+        {
+          "titulo": "Características e funcionalidades das usinas hidrelétricas reversíveis",
+          "anio": 2018,
+          "citas": 3
+        },
+        {
+          "titulo": "As perdas não técnicas no setor de distribuição brasileiro: uma abordagem regulatória",
+          "anio": null,
+          "citas": 3
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Firma como A.C. Chaves; email verificado del GESEL-UFRJ. El coautor de CLAGTEE R. Brandão figura con ella en 'Características e funcionalidades das usinas hidrelétricas reversíveis' (2018, misma línea que la revisión INT-20 sobre centrales de bombeo) y en 'Determinants of the economic performance of Brazilian electricity distributors' (2021). Perfil hallado en la barra de coautores de Florian Pradelle (PUC-Rio); sin barra de coautores propia."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Grupo de Estudos do Setor Elétrico (GESEL), Universidade Federal do Rio de Janeiro (UFRJ)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "technical, economic, regulatory and environmental assessment of pumped storage hydropower",
+        "socioeconomic and social impacts of large hydropower plants in Brazil",
+        "hydrogen economy and energy transition in Brazil",
+        "regulation and economic performance of Brazilian electricity distributors",
+        "environmental regulation of power sector megaprojects"
+      ],
+      "palabras_clave": [
+        "pumped storage hydropower",
+        "usinas hidrelétricas reversíveis",
+        "hydropower",
+        "resettlement",
+        "synthetic control",
+        "green hydrogen",
+        "energy transition",
+        "electricity distribution",
+        "non-technical losses",
+        "regulatory effectiveness",
+        "environmental regulation",
+        "Tocantins-Araguaia basin"
+      ],
+      "metodos": [
+        "literature review",
+        "synthetic control method",
+        "stakeholder perception survey",
+        "regulatory analysis"
+      ],
+      "aplicaciones": [
+        "Brazilian electricity sector",
+        "Lajeado and Estreito hydropower plants",
+        "hydrogen economy in Brazil",
+        "long-duration storage for renewable integration"
+      ],
+      "afinidad_tracks": {
+        "2": 0.8,
+        "7": 0.8,
+        "12": 0.7,
+        "13": 0.7,
+        "11": 0.5,
+        "9": 0.4
+      },
+      "etapa": "investigador_inicial",
+      "resumen": "Investigadora del GESEL-UFRJ en energía, medio ambiente y transición energética: impactos socioeconómicos de grandes hidroeléctricas (Lajeado, Estreito), economía del hidrógeno en Brasil, regulación de distribuidoras y, con R. Brandão y N. Castro, características de las centrales hidroeléctricas reversibles. En CLAGTEE es coautora de una revisión técnica, económica, regulatoria y ambiental del almacenamiento por bombeo. Le interesarían sesiones de almacenamiento, regulación, transición energética y aspectos socioambientales.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    },
+    "nota_busqueda": "1 búsqueda en Scholar ('Ana Carolina Chaves pumped storage hydropower') llevó al perfil de F. Pradelle, cuya barra de coautores enlaza el suyo."
+  },
+  {
+    "id": "cristina-rosa",
+    "nombre": "Cristina Rosa",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Probablemente GESEL-UFRJ (grupo de la coautora A. C. Chaves)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "pumped storage hydropower",
+        "technical and economic assessment of large-scale energy storage",
+        "regulatory frameworks for energy storage",
+        "environmental aspects of pumped hydro"
+      ],
+      "palabras_clave": [
+        "pumped storage hydropower",
+        "energy storage",
+        "hydropower",
+        "storage regulation",
+        "storage economics",
+        "environmental impact",
+        "review"
+      ],
+      "metodos": [
+        "literature review"
+      ],
+      "aplicaciones": [
+        "long-duration storage for renewable integration"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "7": 0.6,
+        "9": 0.4,
+        "13": 0.4
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Google Scholar (1 búsqueda sin resultado). Coautora en CLAGTEE de una revisión sobre centrales hidroeléctricas de bombeo desde perspectivas técnica, económica, regulatoria y ambiental; el grupo (A. C. Chaves, R. Brandão) pertenece al GESEL-UFRJ, que estudia regulación del sector eléctrico, hidroeléctricas reversibles y transición energética. Perfil basado en ese título y el contexto del grupo; le interesarían sesiones de almacenamiento, regulación y transición energética.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "1 búsqueda en Scholar ('Cristina Rosa GESEL setor elétrico') sin resultado; no figura en los perfiles de A. C. Chaves ni de F. Pradelle."
+  },
+  {
+    "id": "katarina-ferreira",
+    "nombre": "Katarina Ferreira",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Probablemente GESEL-UFRJ (grupo de la coautora A. C. Chaves)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "pumped storage hydropower",
+        "technical and economic assessment of large-scale energy storage",
+        "regulatory frameworks for energy storage",
+        "environmental aspects of pumped hydro"
+      ],
+      "palabras_clave": [
+        "pumped storage hydropower",
+        "energy storage",
+        "hydropower",
+        "storage regulation",
+        "storage economics",
+        "environmental impact",
+        "review"
+      ],
+      "metodos": [
+        "literature review"
+      ],
+      "aplicaciones": [
+        "long-duration storage for renewable integration"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "7": 0.6,
+        "9": 0.4,
+        "13": 0.4
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Google Scholar ni otras fuentes (1 búsqueda en Scholar y 1 web general sin resultado). Presenta en CLAGTEE una revisión sobre centrales hidroeléctricas de bombeo desde perspectivas técnica, económica, regulatoria y ambiental; el grupo (A. C. Chaves, R. Brandão) pertenece al GESEL-UFRJ, que estudia regulación del sector eléctrico, hidroeléctricas reversibles y transición energética. Perfil basado en ese título y el contexto del grupo; le interesarían sesiones de almacenamiento, regulación y transición energética.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "1 búsqueda en Scholar ('Katarina Ferreira energia elétrica armazenamento') y 1 web general ('Katarina Ferreira' GESEL UFRJ) sin resultado; solo aparecen homónimas 'Catarina Ferreira'."
+  },
+  {
+    "id": "paulo-giovane",
+    "nombre": "Paulo Giovane",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Probablemente GESEL-UFRJ (grupo de la coautora A. C. Chaves)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "pumped storage hydropower",
+        "technical and economic assessment of large-scale energy storage",
+        "regulatory frameworks for energy storage",
+        "environmental aspects of pumped hydro"
+      ],
+      "palabras_clave": [
+        "pumped storage hydropower",
+        "energy storage",
+        "hydropower",
+        "storage regulation",
+        "storage economics",
+        "environmental impact",
+        "review"
+      ],
+      "metodos": [
+        "literature review"
+      ],
+      "aplicaciones": [
+        "long-duration storage for renewable integration"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "7": 0.6,
+        "9": 0.4,
+        "13": 0.4
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Google Scholar (1 búsqueda sin resultado; el nombre parece incompleto). Coautor en CLAGTEE de una revisión sobre centrales hidroeléctricas de bombeo desde perspectivas técnica, económica, regulatoria y ambiental; el grupo (A. C. Chaves, R. Brandão) pertenece al GESEL-UFRJ. Perfil basado en ese título y el contexto del grupo; le interesarían sesiones de almacenamiento, regulación y transición energética.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "1 búsqueda en Scholar ('Paulo Giovane energia hidrelétrica') sin resultado; 'Giovane' puede ser un segundo nombre y el apellido completo no se conoce."
+  },
+  {
+    "id": "roberto-brandao",
+    "nombre": "Roberto Brandão",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Grupo de Estudos do Setor Elétrico (GESEL), Universidade Federal do Rio de Janeiro (UFRJ) (inferida por sus coautores)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "pumped storage hydropower: technical, economic, regulatory and environmental perspectives",
+        "characteristics and services of reversible hydropower plants",
+        "economic performance and regulation of Brazilian electricity distributors",
+        "large-scale storage for renewable integration in Brazil"
+      ],
+      "palabras_clave": [
+        "pumped storage hydropower",
+        "usinas hidrelétricas reversíveis",
+        "energy storage",
+        "storage regulation",
+        "storage economics",
+        "electricity distribution",
+        "utility performance",
+        "Brazilian power sector"
+      ],
+      "metodos": [
+        "literature review",
+        "regulatory and economic analysis"
+      ],
+      "aplicaciones": [
+        "Brazilian electricity sector",
+        "long-duration storage for renewable integration"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "7": 0.8,
+        "9": 0.4,
+        "13": 0.4
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Google Scholar (3 búsquedas sin resultado). En el perfil Scholar de su coautora A. C. Chaves (GESEL-UFRJ) figura R. Brandão como coautor de un texto sobre usinas hidrelétricas reversíveis (2018) y de un estudio sobre el desempeño económico de las distribuidoras brasileñas (2021). En CLAGTEE firma último (posición de senior) la revisión técnica, económica, regulatoria y ambiental sobre centrales de bombeo. Le interesarían sesiones de almacenamiento, mercados y regulación del sector eléctrico.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "3 búsquedas en Scholar sin perfil propio ('Roberto Brandão GESEL UFRJ', '\"R Brandão\" pumped storage hydropower Brazil', '\"Roberto Brandão\" Tolmasquim Castro electricity distributors'); los perfiles de M. Tolmasquim y A. C. Chaves no tienen barra de coautores."
+  },
+  {
+    "id": "carlos-eugenio-sauer-ayala",
+    "nombre": "Carlos Eugenio Sauer Ayala",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Probablemente ANDE (Administración Nacional de Electricidad), Paraguay (por el tema del paper)",
+    "pais_inferido": "Paraguay",
+    "intereses": {
+      "temas": [
+        "battery electric vehicle routing optimization",
+        "maintenance logistics for utility substations",
+        "fleet electrification in power utilities"
+      ],
+      "palabras_clave": [
+        "electric vehicle routing problem",
+        "battery electric vehicles",
+        "substation maintenance",
+        "route optimization",
+        "fleet electrification",
+        "ANDE"
+      ],
+      "metodos": [
+        "vehicle routing optimization"
+      ],
+      "aplicaciones": [
+        "maintenance crews for ANDE substations (Paraguay)"
+      ],
+      "afinidad_tracks": {
+        "6": 0.9,
+        "1": 0.4,
+        "2": 0.3
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Google Scholar (1 búsqueda sin resultado); ningún autor del grupo tiene perfil. Coautor en CLAGTEE de la optimización de rutas de vehículos eléctricos a batería para el mantenimiento de subestaciones de la ANDE (Paraguay), lo que sugiere vínculo con la empresa. Perfil basado solo en ese título; le interesarían sesiones de optimización, IA aplicada a la operación de empresas eléctricas y electromovilidad.",
+      "base": [
+        "papers_clagtee"
+      ]
+    },
+    "nota_busqueda": "1 búsqueda en Scholar ('Carlos Sauer Ayala Paraguay') sin resultado."
+  },
+  {
+    "id": "david-rodrigo-franco-leon",
+    "nombre": "David Rodrigo Franco León",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Probablemente ANDE (Administración Nacional de Electricidad), Paraguay (por el tema del paper)",
+    "pais_inferido": "Paraguay",
+    "intereses": {
+      "temas": [
+        "battery electric vehicle routing optimization",
+        "maintenance logistics for utility substations",
+        "fleet electrification in power utilities"
+      ],
+      "palabras_clave": [
+        "electric vehicle routing problem",
+        "battery electric vehicles",
+        "substation maintenance",
+        "route optimization",
+        "fleet electrification",
+        "ANDE"
+      ],
+      "metodos": [
+        "vehicle routing optimization"
+      ],
+      "aplicaciones": [
+        "maintenance crews for ANDE substations (Paraguay)"
+      ],
+      "afinidad_tracks": {
+        "6": 0.9,
+        "1": 0.4,
+        "2": 0.3
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Google Scholar (1 búsqueda sin resultado); ningún autor del grupo tiene perfil. Coautor en CLAGTEE de la optimización de rutas de vehículos eléctricos a batería para el mantenimiento de subestaciones de la ANDE (Paraguay), lo que sugiere vínculo con la empresa. Perfil basado solo en ese título; le interesarían sesiones de optimización, IA aplicada a la operación de empresas eléctricas y electromovilidad.",
+      "base": [
+        "papers_clagtee"
+      ]
+    },
+    "nota_busqueda": "1 búsqueda en Scholar ('David Rodrigo Franco León ingeniería eléctrica Paraguay') sin resultado."
+  },
+  {
+    "id": "leandro-jose-delfin-britos-invernizzi",
+    "nombre": "Leandro José Delfín Britos Invernizzi",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Probablemente ANDE (Administración Nacional de Electricidad), Paraguay (por el tema del paper)",
+    "pais_inferido": "Paraguay",
+    "intereses": {
+      "temas": [
+        "battery electric vehicle routing optimization",
+        "maintenance logistics for utility substations",
+        "fleet electrification in power utilities"
+      ],
+      "palabras_clave": [
+        "electric vehicle routing problem",
+        "battery electric vehicles",
+        "substation maintenance",
+        "route optimization",
+        "fleet electrification",
+        "ANDE"
+      ],
+      "metodos": [
+        "vehicle routing optimization"
+      ],
+      "aplicaciones": [
+        "maintenance crews for ANDE substations (Paraguay)"
+      ],
+      "afinidad_tracks": {
+        "6": 0.9,
+        "1": 0.4,
+        "2": 0.3
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Google Scholar (1 búsqueda en Scholar y 1 web general sin resultado); ningún autor del grupo tiene perfil. Presenta en CLAGTEE la optimización de rutas de vehículos eléctricos a batería para el mantenimiento de subestaciones de la ANDE (Paraguay), lo que sugiere vínculo con la empresa. Perfil basado solo en ese título; le interesarían sesiones de optimización, IA aplicada a la operación de empresas eléctricas y electromovilidad.",
+      "base": [
+        "papers_clagtee"
+      ]
+    },
+    "nota_busqueda": "1 búsqueda en Scholar ('Leandro Britos Invernizzi') y 1 web general ('Britos Invernizzi' ANDE Paraguay) sin resultado."
+  },
+  {
+    "id": "gonzalo-alberto-farias-castro",
+    "nombre": "Gonzalo Alberto Farias Castro",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=4cGeq0AAAAAJ",
+      "user_id": "4cGeq0AAAAAJ",
+      "nombre_perfil": "Gonzalo Farias",
+      "afiliacion": "Pontificia Universidad Catolica de Valparaiso, UNED, CIEMAT",
+      "email_verificado": "ucv.cl",
+      "intereses_scholar": [
+        "Machine Learning",
+        "Automatic Control"
+      ],
+      "citas": 3156,
+      "citas_desde_2021": 1662,
+      "h_index": 33,
+      "publicaciones": [
+        {
+          "titulo": "A data-driven approach to estimate plasma density in TJ-II stellarator",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Preliminary Results of Physics-Informed Neural Networks for Power Forecasting in Bifacial Photovoltaic Systems",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Cooperative formation control of a multi-agent Khepera IV mobile robots system using deep reinforcement learning",
+          "anio": 2025,
+          "citas": 6
+        },
+        {
+          "titulo": "Deep reinforcement learning applied to a spherical robot for target tracking",
+          "anio": 2025,
+          "citas": 4
+        },
+        {
+          "titulo": "Enhancing photovoltaic power predictions with deep physical chain model",
+          "anio": 2024,
+          "citas": 4
+        },
+        {
+          "titulo": "Comparative Analysis of Deep Learning Methods for Fault Avoidance and Predicting Demand in Electrical Distribution",
+          "anio": 2024,
+          "citas": 2
+        },
+        {
+          "titulo": "Explainable anomaly detection in spacecraft telemetry",
+          "anio": 2024,
+          "citas": 96
+        },
+        {
+          "titulo": "Automated food weight and content estimation using computer vision and AI algorithms",
+          "anio": 2024,
+          "citas": 22
+        },
+        {
+          "titulo": "Development and control of a real spherical robot",
+          "anio": 2023,
+          "citas": 19
+        },
+        {
+          "titulo": "Fall detection and activity recognition using human skeleton features",
+          "anio": 2021,
+          "citas": 235
+        },
+        {
+          "titulo": "Developing a remote laboratory for engineering education",
+          "anio": 2011,
+          "citas": 213
+        },
+        {
+          "titulo": "Development of a web-based control laboratory for automation technicians: The three-tank system",
+          "anio": 2008,
+          "citas": 232
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "La coautora de CLAGTEE Karla Schröder Silva (PUCV) firma con él 'Preliminary Results of Physics-Informed Neural Networks for Power Forecasting in Bifacial Photovoltaic Systems' (2025, misma línea que INT-27) y 'Comparative Analysis of Deep Learning Methods for Fault Avoidance and Predicting Demand in Electrical Distribution' (2024), y él figura en la barra de coautores de ella; el buscador mostró la variante 'Farias Castro' en una de sus publicaciones. Su perfil no tiene barra de coautores."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso (PUCV), Escuela de Ingeniería Eléctrica",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "very short-term photovoltaic power forecasting during ramp events using circumsolar information",
+        "physics-informed and deep physical-chain models for PV power prediction",
+        "deep learning for demand prediction and fault avoidance in distribution networks",
+        "deep reinforcement learning for control of mobile and spherical robots",
+        "explainable anomaly detection and data-driven estimation in complex systems",
+        "remote and virtual control laboratories for engineering education"
+      ],
+      "palabras_clave": [
+        "PV power forecasting",
+        "very short-term forecasting",
+        "ramp events",
+        "circumsolar region",
+        "bifacial photovoltaics",
+        "physics-informed neural networks",
+        "deep learning",
+        "reinforcement learning",
+        "anomaly detection",
+        "demand forecasting",
+        "automatic control",
+        "remote laboratories"
+      ],
+      "metodos": [
+        "physics-informed neural networks",
+        "deep learning",
+        "deep reinforcement learning",
+        "explainable AI",
+        "computer vision"
+      ],
+      "aplicaciones": [
+        "PV plant operation and grid integration",
+        "electrical distribution demand forecasting",
+        "mobile robotics",
+        "fusion plasma diagnostics (TJ-II)",
+        "spacecraft telemetry"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "6": 0.9,
+        "1": 0.3,
+        "4": 0.2
+      },
+      "etapa": "investigador_senior",
+      "resumen": "Investigador senior de la PUCV (vinculado también a UNED y CIEMAT) en machine learning y control automático, con trabajos muy citados en laboratorios remotos, detección de caídas y detección explicable de anomalías, y una línea reciente de pronóstico de potencia fotovoltaica con redes informadas por la física y predicción de demanda en distribución. En CLAGTEE presenta el uso de información circunsolar para el pronóstico de muy corto plazo de potencia FV en eventos de rampa. Le interesarían sesiones de integración de renovables, pronóstico con IA y ciencia de datos aplicada a sistemas eléctricos.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    },
+    "nota_busqueda": "3 búsquedas en Scholar y 1 web general; perfil hallado con '\"Gonzalo Farías Castro\" OR \"Gonzalo A. Farías\" solar'."
+  },
+  {
+    "id": "karla-ivette-schroder-silva",
+    "nombre": "Karla Ivette Schroder Silva",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=uZcTkPMAAAAJ",
+      "user_id": "uZcTkPMAAAAJ",
+      "nombre_perfil": "Karla Schröder Silva",
+      "afiliacion": "Pontificia Universidad Católica de Valparaíso",
+      "email_verificado": "pucv.cl",
+      "intereses_scholar": [],
+      "citas": 56,
+      "citas_desde_2021": 56,
+      "h_index": 3,
+      "publicaciones": [
+        {
+          "titulo": "Preliminary Results of Physics-Informed Neural Networks for Power Forecasting in Bifacial Photovoltaic Systems",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Spherical Robot Control: Classical and Intelligent Approaches",
+          "anio": 2025,
+          "citas": 0
+        },
+        {
+          "titulo": "Comparative Analysis of Deep Learning Methods for Fault Avoidance and Predicting Demand in Electrical Distribution",
+          "anio": 2024,
+          "citas": 2
+        },
+        {
+          "titulo": "Rl-based sim2real enhancements for autonomous beach-cleaning agents",
+          "anio": 2024,
+          "citas": 4
+        },
+        {
+          "titulo": "Development and control of a real spherical robot",
+          "anio": 2023,
+          "citas": 19
+        },
+        {
+          "titulo": "Modeling and control of a spherical robot in the CoppeliaSim simulator",
+          "anio": 2022,
+          "citas": 30
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "El coautor de CLAGTEE Gonzalo Farias (PUCV, 4cGeq0AAAAAJ) está en su barra de coautores y firma con ella un trabajo de pronóstico de potencia FV con redes informadas por la física (2025), misma línea que INT-27. Perfil hallado en la barra de coautores de Gonzalo Garcia-Garreton."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso (PUCV)",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "very short-term photovoltaic power forecasting during ramp events using circumsolar information",
+        "physics-informed neural networks for bifacial PV power forecasting",
+        "deep learning for demand prediction and fault avoidance in electrical distribution",
+        "modeling and control of spherical robots",
+        "reinforcement learning sim2real transfer for autonomous agents"
+      ],
+      "palabras_clave": [
+        "PV power forecasting",
+        "very short-term forecasting",
+        "ramp events",
+        "circumsolar region",
+        "bifacial photovoltaics",
+        "physics-informed neural networks",
+        "deep learning",
+        "demand forecasting",
+        "fault avoidance",
+        "spherical robot",
+        "reinforcement learning"
+      ],
+      "metodos": [
+        "physics-informed neural networks",
+        "deep learning",
+        "reinforcement learning",
+        "robot control and simulation"
+      ],
+      "aplicaciones": [
+        "PV plant operation and grid integration",
+        "electrical distribution networks",
+        "mobile robotics"
+      ],
+      "afinidad_tracks": {
+        "6": 0.9,
+        "2": 0.8,
+        "1": 0.4
+      },
+      "etapa": "investigador_inicial",
+      "resumen": "Investigadora joven de la PUCV (publica desde 2022, h-index 3), del grupo de Gonzalo Farias: comenzó en modelado y control de robots esféricos y aprendizaje por refuerzo, y desde 2024 trabaja en aprendizaje profundo aplicado a sistemas eléctricos (predicción de demanda y fallas en distribución, pronóstico de potencia FV bifacial con redes informadas por la física). En CLAGTEE es coautora del trabajo sobre información circunsolar para pronóstico FV de muy corto plazo en rampas. Le interesarían sesiones de pronóstico renovable e IA aplicada.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    },
+    "nota_busqueda": "2 búsquedas en Scholar; la segunda ('\"Karla Schröder\" PUCV deep learning forecasting') mostró el perfil de G. Garcia-Garreton, cuya barra de coautores enlaza el suyo."
+  },
+  {
+    "id": "zhao-xu",
+    "nombre": "Zhao Xu",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=6MgXqkkAAAAJ",
+      "user_id": "6MgXqkkAAAAJ",
+      "nombre_perfil": "Zhao Xu",
+      "afiliacion": "Professor, The Hong Kong Polytechnic University",
+      "email_verificado": "polyu.edu.hk",
+      "intereses_scholar": [
+        "power system",
+        "smart grid",
+        "wind energy",
+        "solar energy"
+      ],
+      "citas": 19980,
+      "citas_desde_2021": 11317,
+      "h_index": 71,
+      "publicaciones": [
+        {
+          "titulo": "A hybrid convolutional-LLM paradigm for robust wind power forecasting in data-scarce regimes",
+          "anio": 2026,
+          "citas": 7
+        },
+        {
+          "titulo": "Advancing climate-adaptive operation and planning for renewable-rich energy systems",
+          "anio": 2026,
+          "citas": 7
+        },
+        {
+          "titulo": "A Two-Stage LSTM-Based Day-Ahead Photovoltaic Power Forecasting Model with Weather-Semantics-Guided Correction",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Equilibrium-Based Electricity-Computation Collaborative Scheduling for Data Centers Integrated with Seawater Pumped Storage Hydropower",
+          "anio": 2026,
+          "citas": 13
+        },
+        {
+          "titulo": "Toward Climate-Adaptive Low-Carbon Power System Planning: A Multistage Stochastic Framework Considering Climate Uncertainties",
+          "anio": 2026,
+          "citas": 9
+        },
+        {
+          "titulo": "Power management and control for flexible traction substation in railway hub integrated with ESS, PV, and EV",
+          "anio": 2026,
+          "citas": 8
+        },
+        {
+          "titulo": "Physics-informed data-driven topology identification in power distribution networks with adversarial robustness enhancement",
+          "anio": 2026,
+          "citas": 4
+        },
+        {
+          "titulo": "Toward AI-pervasive electric energy systems: Concept, framework, vulnerability, and visions",
+          "anio": 2026,
+          "citas": 4
+        },
+        {
+          "titulo": "Towards cost-optimal joint electricity-computation management: A novel predict-then-optimize framework",
+          "anio": 2026,
+          "citas": 2
+        }
+      ],
+      "confianza": "baja",
+      "evidencia": "Único candidato temáticamente coherente (pronóstico solar y eólico, smart grid) entre muchos homónimos, pero sin evidencia directa: en sus 100 publicaciones más recientes y en su barra de 20 coautores no aparecen Farias ni Schröder, y los perfiles de G. Farias y K. Schröder Silva (PUCV) no tienen coautores ni publicaciones con ningún Xu. Una búsqueda web de 'Zhao Xu' con PUCV tampoco lo vinculó. Revisar a mano (puede ser otra persona, p. ej. un estudiante o visitante en la PUCV)."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "very short-term photovoltaic power forecasting",
+        "forecasting of PV ramp events",
+        "use of circumsolar sky information for solar forecasting"
+      ],
+      "palabras_clave": [
+        "PV power forecasting",
+        "very short-term forecasting",
+        "ramp events",
+        "circumsolar region",
+        "solar variability",
+        "nowcasting"
+      ],
+      "metodos": [],
+      "aplicaciones": [
+        "PV plant operation and grid integration"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "6": 0.6
+      },
+      "etapa": "desconocida",
+      "resumen": "Perfil Scholar solo con confianza baja (Zhao Xu, Hong Kong Polytechnic University, sin vínculo verificado con sus coautores de la PUCV), por lo que no se usa para los intereses. Coautor en CLAGTEE, con Gonzalo Farias y Karla Schröder Silva (PUCV, Chile), de un trabajo sobre información circunsolar para el pronóstico de muy corto plazo de potencia fotovoltaica durante eventos de rampa; el grupo trabaja también en pronóstico FV con redes informadas por la física. Le interesarían sesiones de integración de renovables y pronóstico con IA.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "2 búsquedas (Scholar '\"Farias Castro\" \"Zhao Xu\" photovoltaic' y web general 'Zhao Xu' PUCV photovoltaic forecasting); candidato PolyU leído completo sin vínculo con los coautores."
+  },
+  {
+    "id": "bianca-de-souza",
+    "nombre": "Bianca de Souza",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "judicialization of the Brazilian electricity sector",
+        "the judiciary as an indirect regulator",
+        "regulatory security and legal uncertainty in power sector regulation"
+      ],
+      "palabras_clave": [
+        "judicialization",
+        "regulatory security",
+        "electricity regulation",
+        "Brazilian power sector",
+        "legal uncertainty",
+        "institutional framework"
+      ],
+      "metodos": [],
+      "aplicaciones": [
+        "Brazilian electricity sector governance"
+      ],
+      "afinidad_tracks": {
+        "7": 0.9,
+        "12": 0.4
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Google Scholar ni otras fuentes (1 búsqueda en Scholar y 1 web general sin resultado; nombre muy común). Presenta en CLAGTEE (en portugués) un trabajo sobre el Poder Judicial como regulador indirecto, la judicialización y la seguridad regulatoria del sector eléctrico brasileño. Perfil basado solo en ese título; le interesarían sesiones de regulación, mercados y transición energética.",
+      "base": [
+        "papers_clagtee"
+      ]
+    },
+    "nota_busqueda": "1 búsqueda en Scholar ('Bianca de Souza setor elétrico regulação judicialização') y 1 web general ('Bianca de Souza' 'Dorel Soares Ramos') sin resultado; nombre muy común."
+  },
+  {
+    "id": "dorel-soares-ramos",
+    "nombre": "Dorel Soares Ramos",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "judicialization of the Brazilian electricity sector",
+        "the judiciary as an indirect regulator",
+        "regulatory security and legal uncertainty in power sector regulation"
+      ],
+      "palabras_clave": [
+        "judicialization",
+        "regulatory security",
+        "electricity regulation",
+        "Brazilian power sector",
+        "legal uncertainty",
+        "institutional framework"
+      ],
+      "metodos": [],
+      "aplicaciones": [
+        "Brazilian electricity sector governance"
+      ],
+      "afinidad_tracks": {
+        "7": 0.9,
+        "12": 0.4
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Google Scholar (2 búsquedas sin resultado). Coautor en CLAGTEE (en portugués) de un trabajo sobre el Poder Judicial como regulador indirecto, la judicialización y la seguridad regulatoria del sector eléctrico brasileño; firma como coautor senior de Bianca de Souza. Posible vínculo con la Escola Politécnica da USP, no verificado en esta pasada. Le interesarían sesiones de regulación, mercados y transición energética.",
+      "base": [
+        "papers_clagtee"
+      ]
+    },
+    "nota_busqueda": "2 búsquedas en Scholar ('Dorel Soares Ramos' y '\"Dorel Ramos\" OR \"DS Ramos\" Escola Politécnica USP electricity market regulation') sin resultado. Posiblemente docente de la Escola Politécnica da USP (no verificado)."
   }
- },
- {
-  "id": "iury-valente-de-bessa",
-  "nombre": "Iury Valente de Bessa",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=_bZFb1EAAAAJ",
-   "user_id": "_bZFb1EAAAAJ",
-   "nombre_perfil": "Iury Bessa",
-   "afiliacion": "Assistant Professor at Federal University of Amazonas",
-   "email_verificado": "ufam.edu.br",
-   "intereses_scholar": [
-    "Control Theory",
-    "Fault Diagnosis",
-    "Fault Tolerant Control",
-    "Learning-based Control",
-    "Cyber-physical Systems"
-   ],
-   "citas": 1543,
-   "citas_desde_2021": 1190,
-   "h_index": 23,
-   "publicaciones": [
-    {
-     "titulo": "Digital twin applications: A survey of recent advances and challenges",
-     "anio": 2022,
-     "citas": 128
-    },
-    {
-     "titulo": "Data-driven fault detection and isolation scheme for a wind turbine benchmark",
-     "anio": 2016,
-     "citas": 97
-    },
-    {
-     "titulo": "Fault tolerant control for linear parameter varying systems: An improved robust virtual actuator and sensor approach",
-     "anio": 2020,
-     "citas": 70
-    },
-    {
-     "titulo": "TS fuzzy reconfiguration blocks for fault tolerant control of nonlinear systems",
-     "anio": 2020,
-     "citas": 47
-    },
-    {
-     "titulo": "Dual-rate control framework with safe watermarking against deception attacks",
-     "anio": 2022,
-     "citas": 41
-    },
-    {
-     "titulo": "Dynamic event-triggered gain-scheduling control of discrete-time quasi-LPV systems",
-     "anio": 2022,
-     "citas": 39
-    },
-    {
-     "titulo": "A switching approach to event-triggered control systems under denial-of-service attacks",
-     "anio": 2023,
-     "citas": 36
-    },
-    {
-     "titulo": "Counterexample guided neural network quantization refinement",
-     "anio": 2023,
-     "citas": 28
-    },
-    {
-     "titulo": "Systematic LMI approaches to design multivariable sliding mode controllers for uncertain systems",
-     "anio": 2026,
-     "citas": 4
-    },
-    {
-     "titulo": "Handling Asynchronous Scheduling Functions in Periodic Event-Triggered Gain-Scheduled Control With Guaranteed Polytopic Inclusion",
-     "anio": 2026,
-     "citas": 4
-    },
-    {
-     "titulo": "A Pragmatic Event-Triggered Nonlinear MPC",
-     "anio": 2026,
-     "citas": 0
-    },
-    {
-     "titulo": "Analysis and Prediction of Lithium-Ion Battery Degradation in Equatorial Environments Using a Hybrid Approach",
-     "anio": 2025,
-     "citas": 0
-    }
-   ],
-   "confianza": "alta",
-   "evidencia": "Firma como 'IV de Bessa' / 'I Bessa' (UFAM, email ufam.edu.br). El coautor de CLAGTEE Luiz Eduardo Sales e Silva figura en su lista de coautores y comparten publicaciones (degradación de baterías Li-ion 2025, herramienta BDGD para RDBTs, ciberataques en redes con DER); Renan Medeiros y Florindo Ayres también son coautores. Ojo: Isaías Valente de Bessa (doctorando UFSC, user=MxjY7nwAAAAJ) también firma 'IV de Bessa' y publica sobre microrredes CC con el mismo grupo; es otra persona."
-  },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidade Federal do Amazonas (UFAM), Manaus",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "fault diagnosis and fault-tolerant control",
-    "event-triggered and data-driven control",
-    "security of cyber-physical systems against deception and DoS attacks",
-    "learning-based predictive energy management in DC microgrids",
-    "experimental platforms for EV and PV integration in DC microgrids"
-   ],
-   "palabras_clave": [
-    "fault-tolerant control",
-    "fault detection and isolation",
-    "event-triggered control",
-    "LPV systems",
-    "Takagi-Sugeno fuzzy systems",
-    "cyber-physical systems",
-    "deception attacks",
-    "model predictive control",
-    "LSTM",
-    "DC microgrid",
-    "battery degradation",
-    "digital twin"
-   ],
-   "metodos": [
-    "LMI-based control design",
-    "data-driven control",
-    "evolving fuzzy models",
-    "LSTM-MPC",
-    "hyperparameter tuning with Optuna",
-    "formal verification of digital controllers"
-   ],
-   "aplicaciones": [
-    "hybrid DC microgrids with PV and EV",
-    "wind turbine fault diagnosis",
-    "industrial cyber-physical systems",
-    "lithium-ion battery prognostics"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "6": 0.7,
-    "5": 0.5,
-    "3": 0.5,
-    "4": 0.4,
-    "1": 0.3
-   },
-   "etapa": "investigador_consolidado",
-   "resumen": "Profesor de la UFAM en teoría de control (h=23): control tolerante a fallas, diagnóstico de fallas, control disparado por eventos, control basado en datos y aprendizaje, y seguridad de sistemas ciberfísicos frente a ataques. En CLAGTEE es coautor de una plataforma experimental de microrred CC con VE y FV y de una gestión energética predictiva LSTM-MPC ajustada con Optuna. Le interesarían sesiones de IA y control aplicados a microrredes, ciberseguridad de redes y monitoreo y diagnóstico.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  }
- },
- {
-  "id": "luiz-eduardo-sales-e-silva",
-  "nombre": "Luiz Eduardo Sales e Silva",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=XK92TZsAAAAJ",
-   "user_id": "XK92TZsAAAAJ",
-   "nombre_perfil": "Luiz Eduardo Sales e Silva",
-   "afiliacion": "Professor of Electrical Engineering, Federal University of Amazonas (UFAM)",
-   "email_verificado": "ufam.edu.br",
-   "intereses_scholar": [
-    "Electric Power Systems",
-    "Distributed Generation",
-    "Smart Grids",
-    "Pattern Recognition",
-    "Control and Automation"
-   ],
-   "citas": 138,
-   "citas_desde_2021": 136,
-   "h_index": 7,
-   "publicaciones": [
-    {
-     "titulo": "Combined PV-PEV Hosting Capacity Analysis in Low-Voltage Distribution Networks",
-     "anio": 2022,
-     "citas": 37
-    },
-    {
-     "titulo": "An Enhanced Voltage Control Method for Fair Active Power Curtailment of Rooftop PV Systems in LV Distribution Networks",
-     "anio": 2024,
-     "citas": 17
-    },
-    {
-     "titulo": "Fractional-Order Robust Control Design under parametric uncertain approach",
-     "anio": 2024,
-     "citas": 14
-    },
-    {
-     "titulo": "Mitigating Voltage Drop and Excessive Step-Voltage Regulator Tap Operation in Distribution Networks Due to Electric Vehicle Fast Charging",
-     "anio": 2024,
-     "citas": 14
-    },
-    {
-     "titulo": "Experimental implementation of hydraulic turbine dynamics and a fractional order speed governor controller on a small-scale power system",
-     "anio": 2024,
-     "citas": 13
-    },
-    {
-     "titulo": "Enabling Technologies of Industry 4.0 for the Modernization of an Industrial Process",
-     "anio": 2025,
-     "citas": 7
-    },
-    {
-     "titulo": "Probabilistic operational costs assessment of combined PV–PEV connections in LV distribution networks",
-     "anio": 2023,
-     "citas": 7
-    },
-    {
-     "titulo": "Comparative Study of Control Methodologies and PLL Topologies to Enhance the Performance of the Synchronization of Grid-Tied PV System",
-     "anio": 2021,
-     "citas": 7
-    },
-    {
-     "titulo": "Robust control methodology applied in inverted pendulum system considering polytopic uncertainty",
-     "anio": 2025,
-     "citas": 2
-    },
-    {
-     "titulo": "Analysis and Prediction of Lithium-Ion Battery Degradation in Equatorial Environments Using a Hybrid Approach",
-     "anio": 2025,
-     "citas": 0
-    },
-    {
-     "titulo": "Desenvolvimento de uma Arquitetura de Microrrede para Solução Energética Sustentável de Comunidades Isoladas no Amazonas",
-     "anio": 2025,
-     "citas": 0
-    },
-    {
-     "titulo": "Estudo Probabilístico da Capacidade de Hospedagem de Eletropostos em Sistemas de Subtransmissão Sob Critérios Operativos da Margem de Estabilidade de Tensão",
-     "anio": 2024,
-     "citas": 0
-    }
-   ],
-   "confianza": "alta",
-   "evidencia": "Los coautores de CLAGTEE Renan Medeiros, Iury Bessa y Florindo Ayres figuran en muchas de sus publicaciones, y en su lista también aparecen A León (Alfredo Silie León, microrred para comunidades aisladas del Amazonas, 2025) y MH Mota (Matheus de Holanda Mota, electrolineras en subtransmisión, 2024). Iury Bessa lo lista como coautor. Publica sobre FV y VE en redes de BT, la misma línea que INT-21/INT-23."
-  },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidade Federal do Amazonas (UFAM), Manaus",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "hosting capacity of combined PV and EV in LV distribution networks",
-    "voltage control and fair active power curtailment of rooftop PV",
-    "probabilistic assessment of utility operational costs under PV-EV operation",
-    "DC microgrids for isolated Amazon communities with second-life batteries",
-    "predictive energy management in hybrid DC microgrids",
-    "EV charging station hosting capacity in subtransmission systems"
-   ],
-   "palabras_clave": [
-    "hosting capacity",
-    "rooftop PV",
-    "plug-in electric vehicles",
-    "LV distribution networks",
-    "volt-VAr control",
-    "active power curtailment",
-    "probabilistic analysis",
-    "DC microgrid",
-    "second-life batteries",
-    "adaptive protection",
-    "LSTM-MPC",
-    "off-grid communities"
-   ],
-   "metodos": [
-    "Monte Carlo probabilistic simulation",
-    "sensitivity-based voltage control",
-    "BDGD-based network modeling",
-    "LSTM-MPC",
-    "robust control"
-   ],
-   "aplicaciones": [
-    "Brazilian LV distribution feeders",
-    "off-grid indigenous communities in the Amazon",
-    "EV charging infrastructure",
-    "utility cost assessment"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "1": 0.7,
-    "3": 0.5,
-    "6": 0.4,
-    "12": 0.3,
-    "7": 0.2
-   },
-   "etapa": "investigador_consolidado",
-   "resumen": "Profesor de Ingeniería Eléctrica de la UFAM; investiga con enfoque probabilístico la integración de FV y VE en redes de distribución de BT (capacidad de hospedaje, control de tensión, costos para la distribuidora) y, más recientemente, microrredes CC para comunidades aisladas del Amazonas. Firma los cinco papers del grupo UFAM en CLAGTEE (protección adaptativa, control robusto y plataforma experimental de microrredes CC, baterías de segunda vida, gestión predictiva LSTM-MPC). Le interesarían sesiones de integración de GD y VE, microrredes y planificación de distribución.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  }
- },
- {
-  "id": "matheus-de-holanda-mota",
-  "nombre": "Matheus de Holanda Mota",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidade Federal do Amazonas (UFAM), Manaus",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "robust control of DC microgrids under polytopic uncertainties",
-    "experimental DC microgrid platforms with EV and PV",
-    "coordinated voltage regulation in off-grid DC microgrids with second-life batteries",
-    "LSTM-MPC predictive energy management",
-    "EV charging station hosting capacity under voltage stability criteria"
-   ],
-   "palabras_clave": [
-    "DC microgrid",
-    "electric vehicles",
-    "photovoltaic generation",
-    "second-life batteries",
-    "voltage regulation",
-    "model predictive control",
-    "LSTM",
-    "Optuna",
-    "robust control",
-    "polytopic uncertainty",
-    "off-grid communities",
-    "hosting capacity"
-   ],
-   "metodos": [
-    "LSTM-MPC",
-    "hyperparameter tuning with Optuna",
-    "robust linear control",
-    "experimental validation"
-   ],
-   "aplicaciones": [
-    "off-grid DC microgrid for the Tenharim Marmelos community",
-    "EV and PV integration in DC microgrids"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "3": 0.7,
-    "6": 0.5,
-    "12": 0.2
-   },
-   "etapa": "desconocida",
-   "resumen": "Sin perfil de Google Scholar (3 búsquedas en Scholar y 1 web general sin resultado). Presenta los cuatro trabajos del grupo UFAM en CLAGTEE, todos sobre microrredes CC: control robusto bajo incertidumbre politópica, plataforma experimental con VE y FV, regulación de tensión con baterías de segunda vida para la comunidad Tenharim Marmelos y gestión predictiva LSTM-MPC. En los perfiles de sus coautores figura (MH Mota) en un estudio CBA 2024 sobre capacidad de hospedaje de electrolineras en subtransmisión. Probablemente estudiante de posgrado; le interesarían sesiones de microrredes, almacenamiento y control predictivo.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "renan-landau-paiva-de-medeiros",
-  "nombre": "Renan Landau Paiva de Medeiros",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=42JtK7oAAAAJ",
-   "user_id": "42JtK7oAAAAJ",
-   "nombre_perfil": "Renan Landau Paiva de Medeiros",
-   "afiliacion": "Professor of Electrical Engineering at UFAM",
-   "email_verificado": "ufam.edu.br",
-   "intereses_scholar": [
-    "Applied control"
-   ],
-   "citas": 748,
-   "citas_desde_2021": 645,
-   "h_index": 15,
-   "publicaciones": [
-    {
-     "titulo": "Digital twin applications: A survey of recent advances and challenges",
-     "anio": 2022,
-     "citas": 128
-    },
-    {
-     "titulo": "Interval robust controller to minimize oscillations effects caused by constant power load in a DC multi-converter buck-buck system",
-     "anio": 2019,
-     "citas": 63
-    },
-    {
-     "titulo": "Novel robust methodology for controller design aiming to ensure DC microgrid stability under CPL power variation",
-     "anio": 2019,
-     "citas": 58
-    },
-    {
-     "titulo": "Robust control of interconnected power electronic converters to enhance performance in DC distribution systems: A case of study",
-     "anio": 2020,
-     "citas": 55
-    },
-    {
-     "titulo": "Development of a novel methodology to retrofit legacy systems in the context of industry 4.0",
-     "anio": 2023,
-     "citas": 34
-    },
-    {
-     "titulo": "Development of a novel retrofit framework considering Industry 4.0 concepts: a case study of a modular production system",
-     "anio": 2025,
-     "citas": 23
-    },
-    {
-     "titulo": "Design and experimental assessment of a robust voltage control for DC-DC converters considering components parametric uncertainties",
-     "anio": 2020,
-     "citas": 19
-    },
-    {
-     "titulo": "An enhanced voltage control method for fair active power curtailment of rooftop PV systems in LV distribution networks",
-     "anio": 2024,
-     "citas": 17
-    },
-    {
-     "titulo": "Fractional-order robust control design under parametric uncertain approach",
-     "anio": 2024,
-     "citas": 14
-    },
-    {
-     "titulo": "Comparative study of control strategies for stabilization and performance improvement of DC microgrids with a CPL connected",
-     "anio": 2020,
-     "citas": 12
-    },
-    {
-     "titulo": "Robust control methodology applied in inverted pendulum system considering polytopic uncertainty",
-     "anio": 2026,
-     "citas": 2
-    },
-    {
-     "titulo": "Avaliação de uma Arquitetura de Microrrede CC como Solução Energética Sustentável para Comunidades Isoladas no Amazonas.",
-     "anio": 2025,
-     "citas": 0
-    }
-   ],
-   "confianza": "alta",
-   "evidencia": "En su perfil figuran como coautores Florindo Ayres e Iury Bessa (UFAM), comparte publicaciones con Luiz Eduardo Sales e Silva y aparece el trabajo 2025 de AS León (Alfredo Silie León, coautor de ELE-3) sobre microrred CC para comunidades aisladas del Amazonas. Su línea principal es el control robusto de convertidores y microrredes CC bajo incertidumbre paramétrica y politópica, la misma de ELE-3."
-  },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidade Federal do Amazonas (UFAM), Manaus",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "robust control of DC-DC converters and DC microgrids with constant power loads",
-    "control design under polytopic and parametric uncertainty",
-    "digital twins and Industry 4.0 retrofit of legacy systems",
-    "fractional-order control of power and generation systems",
-    "DC microgrid architectures for isolated Amazon communities"
-   ],
-   "palabras_clave": [
-    "robust control",
-    "DC microgrid",
-    "constant power load",
-    "DC-DC converters",
-    "polytopic uncertainty",
-    "interval robust control",
-    "dual active bridge",
-    "digital twin",
-    "Industry 4.0",
-    "fractional-order control",
-    "fault detection"
-   ],
-   "metodos": [
-    "parametric robust control design",
-    "LMI-based control",
-    "fractional-order control",
-    "type-2 fuzzy fault detection"
-   ],
-   "aplicaciones": [
-    "DC distribution systems",
-    "off-grid DC microgrids in the Amazon",
-    "industrial process modernization",
-    "small-scale power system test benches"
-   ],
-   "afinidad_tracks": {
-    "3": 0.9,
-    "2": 0.7,
-    "6": 0.4,
-    "1": 0.3,
-    "5": 0.2,
-    "8": 0.2
-   },
-   "etapa": "investigador_consolidado",
-   "resumen": "Profesor de Ingeniería Eléctrica de la UFAM en control aplicado (h=15): control robusto de convertidores CC-CC y microrredes CC con cargas de potencia constante bajo incertidumbre paramétrica, además de gemelos digitales e Industria 4.0. En CLAGTEE es coautor de la evaluación experimental del costo de la no robustez en controladores lineales para microrredes CC con incertidumbre politópica. Le interesarían sesiones de electrónica de potencia, microrredes CC y control.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  }
- },
- {
-  "id": "vitor-bacuri-torres",
-  "nombre": "Vitor Bacuri Torres",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidade Federal do Amazonas (UFAM), Manaus",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "coordinated voltage regulation in off-grid DC microgrids",
-    "integration of PV and second-life batteries",
-    "electrification of isolated indigenous communities in the Amazon"
-   ],
-   "palabras_clave": [
-    "DC microgrid",
-    "off-grid",
-    "voltage regulation",
-    "photovoltaic generation",
-    "second-life batteries",
-    "isolated communities",
-    "energy access"
-   ],
-   "metodos": [
-    "coordinated voltage control"
-   ],
-   "aplicaciones": [
-    "off-grid DC microgrid for the Tenharim Marmelos community"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "3": 0.5,
-    "12": 0.3
-   },
-   "etapa": "desconocida",
-   "resumen": "Sin perfil de Google Scholar (3 búsquedas en Scholar y 1 web general sin resultado). Coautor en CLAGTEE de un trabajo del grupo UFAM (Sales e Silva, Mota) sobre regulación coordinada de tensión en una microrred CC aislada con FV y baterías de segunda vida para la comunidad Tenharim Marmelos. La evidencia se limita a ese título; le interesarían sesiones de microrredes, almacenamiento y electrificación rural.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "esteban-a-baez",
-  "nombre": "Esteban A. Baez",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "Argentina",
-  "intereses": {
-   "temas": [
-    "technical feasibility of EV charging infrastructure in the Córdoba city grid",
-    "voltage vulnerability assessment of provincial interconnected systems",
-    "impact of electric mobility on urban distribution networks"
-   ],
-   "palabras_clave": [
-    "electric vehicle charging",
-    "charging infrastructure",
-    "distribution network",
-    "voltage vulnerability",
-    "grid planning",
-    "Córdoba"
-   ],
-   "metodos": [],
-   "aplicaciones": [
-    "Córdoba city power grid (Argentina)"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "2": 0.5
-   },
-   "etapa": "desconocida",
-   "resumen": "Sin perfil de Google Scholar (1 búsqueda sin resultado). Coautor en CLAGTEE de la factibilidad técnica de infraestructura de carga de VE en la red de la ciudad de Córdoba; en el perfil Scholar de su coautor J. I. Amaya (UTN-FRC, CKEQsdYAAAAJ, sin barra de coautores) figura (EA Baez) en una metodología de vulnerabilidad de tensión del sistema interconectado provincial de Córdoba. Le interesarían sesiones de planificación de redes y movilidad eléctrica.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "1 búsqueda en Scholar (primera pasada) sin resultado; el perfil de J. I. Amaya no tiene barra de coautores. No se repitió en la segunda pasada."
- },
- {
-  "id": "franco-gaston-martini",
-  "nombre": "Franco Gastón Martini",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Probablemente UTN Facultad Regional Córdoba (grupo de Amaya y Bragagnolo)",
-  "pais_inferido": "Argentina",
-  "intereses": {
-   "temas": [
-    "correlation between climate variables and residential electricity consumption",
-    "predictor variable selection for LSTM and SARIMA load forecasting",
-    "weather-sensitive residential electricity demand modeling"
-   ],
-   "palabras_clave": [
-    "load forecasting",
-    "residential consumption",
-    "climate variables",
-    "correlation analysis",
-    "feature selection",
-    "LSTM",
-    "SARIMA"
-   ],
-   "metodos": [
-    "LSTM",
-    "SARIMA",
-    "correlation analysis"
-   ],
-   "aplicaciones": [
-    "residential-area consumers of an electric utility"
-   ],
-   "afinidad_tracks": {
-    "6": 0.9,
-    "1": 0.4
-   },
-   "etapa": "desconocida",
-   "resumen": "Sin perfil de Google Scholar (2 búsquedas sin resultado). Coautor en CLAGTEE, con Amaya y Bragagnolo (grupo de Córdoba), de un análisis de correlación entre variables climáticas y consumo eléctrico residencial para seleccionar predictores de modelos LSTM y SARIMA; el grupo publica también pronóstico de consumo residencial con random forests (IEEE Latin America Transactions 2026). Perfil basado en ese título y en el contexto del grupo; le interesarían sesiones de pronóstico de demanda e IA aplicada.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "Búsquedas en Scholar: primera pasada 1 sin resultado; segunda pasada 'Franco Gastón Martini' sin resultado."
- },
- {
-  "id": "juan-ignacio-amaya",
-  "nombre": "Juan Ignacio Amaya",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=CKEQsdYAAAAJ",
-   "user_id": "CKEQsdYAAAAJ",
-   "nombre_perfil": "Juan Ignacio Amaya",
-   "afiliacion": "UTN-FRC",
-   "email_verificado": "frc.utn.edu.ar",
-   "intereses_scholar": [
-    "Power systems"
-   ],
-   "citas": 2,
-   "citas_desde_2021": 2,
-   "h_index": 1,
-   "publicaciones": [
-    {
-     "titulo": "Residential Energy Consumption Forecasting in Electric Utilities: An Approach Based on Random Forests and Time Series",
-     "anio": 2026,
-     "citas": 0
-    },
-    {
-     "titulo": "Analysis of the Impact of Electric Mobility on a Medium Voltage Distribution Network: A Case Study of the Cerro De Las Rosas Feeder",
-     "anio": 2025,
-     "citas": 0
-    },
-    {
-     "titulo": "Management of the Electrical and Thermal Demand of a Social Housing in Argentina",
-     "anio": 2024,
-     "citas": 1
-    },
-    {
-     "titulo": "Estudio térmico de la vivienda pampeana sur iy gestión de su demanda eléctrica incluyendo el control de los aires acondicionados",
-     "anio": 2023,
-     "citas": 1
-    },
-    {
-     "titulo": "An automatism for contingency awareness and remediation for power system",
-     "anio": 2023,
-     "citas": 0
-    },
-    {
-     "titulo": "Detailed Simulation Model of a Rural Isolated Microgrid with Energy Storage and Hybrid Generation",
-     "anio": null,
-     "citas": 0
-    },
-    {
-     "titulo": "Methodology for Evaluating Voltage Vulnerability. Study Case: Provincial Interconnected System of Córdoba.",
-     "anio": null,
-     "citas": 0
-    },
-    {
-     "titulo": "Generación distribuida y autoconsumo. Análisis del impacto en el retorno económico",
-     "anio": null,
-     "citas": 0
-    }
-   ],
-   "confianza": "alta",
-   "evidencia": "Los coautores de CLAGTEE Sergio N. Bragagnolo (6 de 8 publicaciones) y Esteban A. Baez figuran en sus publicaciones; publica sobre movilidad eléctrica en alimentadores de MT de Córdoba (misma línea que PLA-29) y pronóstico de consumo residencial (misma línea que CIE-9). El perfil no tiene coautores enlazados."
-  },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidad Tecnológica Nacional, Facultad Regional Córdoba (UTN-FRC)",
-  "pais_inferido": "Argentina",
-  "intereses": {
-   "temas": [
-    "technical feasibility of EV charging infrastructure in urban distribution grids",
-    "correlation of climate variables with residential electricity consumption",
-    "residential load forecasting with LSTM, SARIMA and random forests",
-    "contingency awareness and remedial automation in power systems",
-    "voltage vulnerability assessment of provincial interconnected systems",
-    "electrical and thermal demand management in social housing"
-   ],
-   "palabras_clave": [
-    "electric vehicle charging",
-    "electric mobility",
-    "medium voltage feeder",
-    "load forecasting",
-    "LSTM",
-    "SARIMA",
-    "random forest",
-    "climate variables",
-    "contingency analysis",
-    "voltage vulnerability",
-    "demand management",
-    "distributed generation"
-   ],
-   "metodos": [
-    "LSTM",
-    "SARIMA",
-    "random forests",
-    "correlation analysis",
-    "power flow simulation"
-   ],
-   "aplicaciones": [
-    "Córdoba city power grid (Argentina)",
-    "residential consumers",
-    "rural isolated microgrids",
-    "social housing"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "6": 0.8,
-    "2": 0.5,
-    "7": 0.2,
-    "12": 0.2
-   },
-   "etapa": "investigador_inicial",
-   "resumen": "Investigador de la UTN Facultad Regional Córdoba en sistemas de potencia, con publicaciones desde 2023 sobre automatismos ante contingencias, vulnerabilidad de tensión, impacto de la movilidad eléctrica en alimentadores de MT y pronóstico de consumo residencial. En CLAGTEE presenta la factibilidad técnica de la infraestructura de carga de VE en la red de Córdoba y la selección de variables climáticas para modelos LSTM/SARIMA. Le interesarían sesiones de planificación de distribución, movilidad eléctrica y pronóstico de demanda con IA.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  }
- },
- {
-  "id": "martin-sombeck",
-  "nombre": "Martín Sombeck",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Probablemente UTN Facultad Regional Córdoba (grupo de Amaya y Bragagnolo)",
-  "pais_inferido": "Argentina",
-  "intereses": {
-   "temas": [
-    "technical feasibility of EV charging infrastructure in urban distribution grids",
-    "impact of EV charging on the Córdoba city power grid",
-    "distribution network capacity assessment for electric mobility"
-   ],
-   "palabras_clave": [
-    "electric vehicle charging",
-    "charging infrastructure",
-    "distribution network",
-    "urban grid",
-    "network capacity",
-    "Córdoba"
-   ],
-   "metodos": [],
-   "aplicaciones": [
-    "Córdoba city power grid (Argentina)"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "2": 0.5
-   },
-   "etapa": "desconocida",
-   "resumen": "Sin perfil de Google Scholar (1 búsqueda sin resultado). Coautor en CLAGTEE de la factibilidad técnica de infraestructura de carga de VE en la red de la ciudad de Córdoba (grupo de Amaya y Bragagnolo, que también estudia el impacto de la movilidad eléctrica en alimentadores de MT de Córdoba). Perfil basado solo en ese título y el contexto del grupo; le interesarían sesiones de planificación de redes de distribución y movilidad eléctrica.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "1 búsqueda en Scholar ('Martín Sombeck') sin resultado."
- },
- {
-  "id": "sergio-nicolas-bragagnolo",
-  "nombre": "Sergio Nicolás Bragagnolo",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidad Tecnológica Nacional, Facultad Regional Córdoba (UTN-FRC)",
-  "pais_inferido": "Argentina",
-  "intereses": {
-   "temas": [
-    "technical feasibility of EV charging infrastructure in urban distribution grids",
-    "climate-driven residential load forecasting",
-    "residential electrical and thermal demand management including air-conditioning control",
-    "rural isolated microgrids with storage and hybrid generation",
-    "voltage vulnerability assessment of provincial interconnected systems"
-   ],
-   "palabras_clave": [
-    "electric vehicle charging",
-    "electric mobility",
-    "load forecasting",
-    "LSTM",
-    "SARIMA",
-    "climate variables",
-    "demand management",
-    "social housing",
-    "isolated microgrid",
-    "energy storage",
-    "voltage vulnerability",
-    "distributed generation"
-   ],
-   "metodos": [
-    "LSTM",
-    "SARIMA",
-    "random forests",
-    "simulation modeling"
-   ],
-   "aplicaciones": [
-    "Córdoba city power grid (Argentina)",
-    "residential consumers and social housing",
-    "rural isolated microgrids"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "6": 0.8,
-    "2": 0.5,
-    "7": 0.2,
-    "12": 0.2
-   },
-   "etapa": "desconocida",
-   "resumen": "Sin perfil de Google Scholar (4 búsquedas sin resultado en dos pasadas). Coautor de los dos trabajos del grupo de Córdoba en CLAGTEE (carga de VE en la red de Córdoba; variables climáticas para LSTM/SARIMA). En el perfil Scholar de su coautor J. I. Amaya (UTN-FRC, CKEQsdYAAAAJ, sin barra de coautores) figura en 6 de 8 trabajos (a veces como 'SN Braganolo'): gestión de demanda eléctrica y térmica en vivienda social, microrredes rurales aisladas, vulnerabilidad de tensión, movilidad eléctrica en MT y pronóstico de consumo residencial; parece el investigador senior del grupo. Le interesarían sesiones de planificación de distribución, movilidad eléctrica y pronóstico de demanda.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "Búsquedas en Scholar: primera pasada 2 sin resultado; segunda pasada 'Sergio Nicolás Bragagnolo' y 'Bragagnolo UTN Córdoba microgrid energy demand Schierloh' sin resultado. Firma también como 'SN Braganolo' en algunos trabajos."
- },
- {
-  "id": "tomas-l-suppo",
-  "nombre": "Tomás L. Suppo",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Probablemente UTN Facultad Regional Córdoba (grupo de Amaya y Bragagnolo)",
-  "pais_inferido": "Argentina",
-  "intereses": {
-   "temas": [
-    "technical feasibility of EV charging infrastructure in urban distribution grids",
-    "impact of EV charging on the Córdoba city power grid",
-    "distribution network capacity assessment for electric mobility"
-   ],
-   "palabras_clave": [
-    "electric vehicle charging",
-    "charging infrastructure",
-    "distribution network",
-    "urban grid",
-    "network capacity",
-    "Córdoba"
-   ],
-   "metodos": [],
-   "aplicaciones": [
-    "Córdoba city power grid (Argentina)"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "2": 0.5
-   },
-   "etapa": "desconocida",
-   "resumen": "Sin perfil de Google Scholar (1 búsqueda sin resultado). Coautor en CLAGTEE de la factibilidad técnica de infraestructura de carga de VE en la red de la ciudad de Córdoba (grupo de Amaya y Bragagnolo, que también estudia el impacto de la movilidad eléctrica en alimentadores de MT de Córdoba). Perfil basado solo en ese título y el contexto del grupo; le interesarían sesiones de planificación de redes de distribución y movilidad eléctrica.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "1 búsqueda en Scholar ('Tomás Suppo') sin resultado."
- },
- {
-  "id": "ana-carolina-chaves",
-  "nombre": "Ana Carolina Chaves",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=9hnJ2KgAAAAJ",
-   "user_id": "9hnJ2KgAAAAJ",
-   "nombre_perfil": "Ana Carolina Chaves Catolico",
-   "afiliacion": "Unknown affiliation",
-   "email_verificado": "gesel.ie.ufrj.br",
-   "intereses_scholar": [
-    "Energia",
-    "Meio Ambiente",
-    "Transição Energética"
-   ],
-   "citas": 220,
-   "citas_desde_2021": 211,
-   "h_index": 5,
-   "publicaciones": [
-    {
-     "titulo": "Cooling Down the World Oceans and the Earth",
-     "anio": 2025,
-     "citas": 0
-    },
-    {
-     "titulo": "BACIA HIDROGRÁFICA DOS RIOS TOCANTINS E ARAGUAIA: ÍNDICE SINTÉTICO DE DIFERENÇAS SOCIOESPACIAIS",
-     "anio": 2024,
-     "citas": 0
-    },
-    {
-     "titulo": "Efeitos sociais da implementação da usina hidrelétrica de Lajeado: reassentamentos do Córrego do Prata e Pinheirópolis Rural",
-     "anio": 2024,
-     "citas": 0
-    },
-    {
-     "titulo": "Uma análise da participação dos royalties da mineração nos orçamentos anuais de 2019 e 2020 nos maiores municípios mineradores do Brasil",
-     "anio": 2024,
-     "citas": 1
-    },
-    {
-     "titulo": "Contributions to the Development of a Hydrogen Economy in Brazil",
-     "anio": 2022,
-     "citas": 0
-    },
-    {
-     "titulo": "Hydrogen economy development in Brazil: An analysis of stakeholders' perception",
-     "anio": 2022,
-     "citas": 106
-    },
-    {
-     "titulo": "Socioeconomic impacts of large hydroelectric power plants in Brazil: A synthetic control assessment of Estreito hydropower plant",
-     "anio": 2021,
-     "citas": 56
-    },
-    {
-     "titulo": "Determinants of the economic performance of Brazilian electricity distributors",
-     "anio": 2021,
-     "citas": 15
-    },
-    {
-     "titulo": "O papel do hidrogênio na transição energética mundial e seus desdobramentos no sistema energético brasileiro",
-     "anio": 2021,
-     "citas": 5
-    },
-    {
-     "titulo": "O estado, a regulação e a questão ambiental no setor elétrico brasileiro: uma análise sobre os megaprojetos de Lajeado e Estreito",
-     "anio": 2021,
-     "citas": 4
-    },
-    {
-     "titulo": "Características e funcionalidades das usinas hidrelétricas reversíveis",
-     "anio": 2018,
-     "citas": 3
-    },
-    {
-     "titulo": "As perdas não técnicas no setor de distribuição brasileiro: uma abordagem regulatória",
-     "anio": null,
-     "citas": 3
-    }
-   ],
-   "confianza": "alta",
-   "evidencia": "Firma como A.C. Chaves; email verificado del GESEL-UFRJ. El coautor de CLAGTEE R. Brandão figura con ella en 'Características e funcionalidades das usinas hidrelétricas reversíveis' (2018, misma línea que la revisión INT-20 sobre centrales de bombeo) y en 'Determinants of the economic performance of Brazilian electricity distributors' (2021). Perfil hallado en la barra de coautores de Florian Pradelle (PUC-Rio); sin barra de coautores propia."
-  },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Grupo de Estudos do Setor Elétrico (GESEL), Universidade Federal do Rio de Janeiro (UFRJ)",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "technical, economic, regulatory and environmental assessment of pumped storage hydropower",
-    "socioeconomic and social impacts of large hydropower plants in Brazil",
-    "hydrogen economy and energy transition in Brazil",
-    "regulation and economic performance of Brazilian electricity distributors",
-    "environmental regulation of power sector megaprojects"
-   ],
-   "palabras_clave": [
-    "pumped storage hydropower",
-    "usinas hidrelétricas reversíveis",
-    "hydropower",
-    "resettlement",
-    "synthetic control",
-    "green hydrogen",
-    "energy transition",
-    "electricity distribution",
-    "non-technical losses",
-    "regulatory effectiveness",
-    "environmental regulation",
-    "Tocantins-Araguaia basin"
-   ],
-   "metodos": [
-    "literature review",
-    "synthetic control method",
-    "stakeholder perception survey",
-    "regulatory analysis"
-   ],
-   "aplicaciones": [
-    "Brazilian electricity sector",
-    "Lajeado and Estreito hydropower plants",
-    "hydrogen economy in Brazil",
-    "long-duration storage for renewable integration"
-   ],
-   "afinidad_tracks": {
-    "2": 0.8,
-    "7": 0.8,
-    "12": 0.7,
-    "13": 0.7,
-    "11": 0.5,
-    "9": 0.4
-   },
-   "etapa": "investigador_inicial",
-   "resumen": "Investigadora del GESEL-UFRJ en energía, medio ambiente y transición energética: impactos socioeconómicos de grandes hidroeléctricas (Lajeado, Estreito), economía del hidrógeno en Brasil, regulación de distribuidoras y, con R. Brandão y N. Castro, características de las centrales hidroeléctricas reversibles. En CLAGTEE es coautora de una revisión técnica, económica, regulatoria y ambiental del almacenamiento por bombeo. Le interesarían sesiones de almacenamiento, regulación, transición energética y aspectos socioambientales.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  },
-  "nota_busqueda": "1 búsqueda en Scholar ('Ana Carolina Chaves pumped storage hydropower') llevó al perfil de F. Pradelle, cuya barra de coautores enlaza el suyo."
- },
- {
-  "id": "cristina-rosa",
-  "nombre": "Cristina Rosa",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Probablemente GESEL-UFRJ (grupo de la coautora A. C. Chaves)",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "pumped storage hydropower",
-    "technical and economic assessment of large-scale energy storage",
-    "regulatory frameworks for energy storage",
-    "environmental aspects of pumped hydro"
-   ],
-   "palabras_clave": [
-    "pumped storage hydropower",
-    "energy storage",
-    "hydropower",
-    "storage regulation",
-    "storage economics",
-    "environmental impact",
-    "review"
-   ],
-   "metodos": [
-    "literature review"
-   ],
-   "aplicaciones": [
-    "long-duration storage for renewable integration"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "7": 0.6,
-    "9": 0.4,
-    "13": 0.4
-   },
-   "etapa": "desconocida",
-   "resumen": "Sin perfil de Google Scholar (1 búsqueda sin resultado). Coautora en CLAGTEE de una revisión sobre centrales hidroeléctricas de bombeo desde perspectivas técnica, económica, regulatoria y ambiental; el grupo (A. C. Chaves, R. Brandão) pertenece al GESEL-UFRJ, que estudia regulación del sector eléctrico, hidroeléctricas reversibles y transición energética. Perfil basado en ese título y el contexto del grupo; le interesarían sesiones de almacenamiento, regulación y transición energética.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "1 búsqueda en Scholar ('Cristina Rosa GESEL setor elétrico') sin resultado; no figura en los perfiles de A. C. Chaves ni de F. Pradelle."
- },
- {
-  "id": "katarina-ferreira",
-  "nombre": "Katarina Ferreira",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Probablemente GESEL-UFRJ (grupo de la coautora A. C. Chaves)",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "pumped storage hydropower",
-    "technical and economic assessment of large-scale energy storage",
-    "regulatory frameworks for energy storage",
-    "environmental aspects of pumped hydro"
-   ],
-   "palabras_clave": [
-    "pumped storage hydropower",
-    "energy storage",
-    "hydropower",
-    "storage regulation",
-    "storage economics",
-    "environmental impact",
-    "review"
-   ],
-   "metodos": [
-    "literature review"
-   ],
-   "aplicaciones": [
-    "long-duration storage for renewable integration"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "7": 0.6,
-    "9": 0.4,
-    "13": 0.4
-   },
-   "etapa": "desconocida",
-   "resumen": "Sin perfil de Google Scholar ni otras fuentes (1 búsqueda en Scholar y 1 web general sin resultado). Presenta en CLAGTEE una revisión sobre centrales hidroeléctricas de bombeo desde perspectivas técnica, económica, regulatoria y ambiental; el grupo (A. C. Chaves, R. Brandão) pertenece al GESEL-UFRJ, que estudia regulación del sector eléctrico, hidroeléctricas reversibles y transición energética. Perfil basado en ese título y el contexto del grupo; le interesarían sesiones de almacenamiento, regulación y transición energética.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "1 búsqueda en Scholar ('Katarina Ferreira energia elétrica armazenamento') y 1 web general ('Katarina Ferreira' GESEL UFRJ) sin resultado; solo aparecen homónimas 'Catarina Ferreira'."
- },
- {
-  "id": "paulo-giovane",
-  "nombre": "Paulo Giovane",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Probablemente GESEL-UFRJ (grupo de la coautora A. C. Chaves)",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "pumped storage hydropower",
-    "technical and economic assessment of large-scale energy storage",
-    "regulatory frameworks for energy storage",
-    "environmental aspects of pumped hydro"
-   ],
-   "palabras_clave": [
-    "pumped storage hydropower",
-    "energy storage",
-    "hydropower",
-    "storage regulation",
-    "storage economics",
-    "environmental impact",
-    "review"
-   ],
-   "metodos": [
-    "literature review"
-   ],
-   "aplicaciones": [
-    "long-duration storage for renewable integration"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "7": 0.6,
-    "9": 0.4,
-    "13": 0.4
-   },
-   "etapa": "desconocida",
-   "resumen": "Sin perfil de Google Scholar (1 búsqueda sin resultado; el nombre parece incompleto). Coautor en CLAGTEE de una revisión sobre centrales hidroeléctricas de bombeo desde perspectivas técnica, económica, regulatoria y ambiental; el grupo (A. C. Chaves, R. Brandão) pertenece al GESEL-UFRJ. Perfil basado en ese título y el contexto del grupo; le interesarían sesiones de almacenamiento, regulación y transición energética.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "1 búsqueda en Scholar ('Paulo Giovane energia hidrelétrica') sin resultado; 'Giovane' puede ser un segundo nombre y el apellido completo no se conoce."
- },
- {
-  "id": "roberto-brandao",
-  "nombre": "Roberto Brandão",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Grupo de Estudos do Setor Elétrico (GESEL), Universidade Federal do Rio de Janeiro (UFRJ) (inferida por sus coautores)",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "pumped storage hydropower: technical, economic, regulatory and environmental perspectives",
-    "characteristics and services of reversible hydropower plants",
-    "economic performance and regulation of Brazilian electricity distributors",
-    "large-scale storage for renewable integration in Brazil"
-   ],
-   "palabras_clave": [
-    "pumped storage hydropower",
-    "usinas hidrelétricas reversíveis",
-    "energy storage",
-    "storage regulation",
-    "storage economics",
-    "electricity distribution",
-    "utility performance",
-    "Brazilian power sector"
-   ],
-   "metodos": [
-    "literature review",
-    "regulatory and economic analysis"
-   ],
-   "aplicaciones": [
-    "Brazilian electricity sector",
-    "long-duration storage for renewable integration"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "7": 0.8,
-    "9": 0.4,
-    "13": 0.4
-   },
-   "etapa": "desconocida",
-   "resumen": "Sin perfil de Google Scholar (3 búsquedas sin resultado). En el perfil Scholar de su coautora A. C. Chaves (GESEL-UFRJ) figura R. Brandão como coautor de un texto sobre usinas hidrelétricas reversíveis (2018) y de un estudio sobre el desempeño económico de las distribuidoras brasileñas (2021). En CLAGTEE firma último (posición de senior) la revisión técnica, económica, regulatoria y ambiental sobre centrales de bombeo. Le interesarían sesiones de almacenamiento, mercados y regulación del sector eléctrico.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "3 búsquedas en Scholar sin perfil propio ('Roberto Brandão GESEL UFRJ', '\"R Brandão\" pumped storage hydropower Brazil', '\"Roberto Brandão\" Tolmasquim Castro electricity distributors'); los perfiles de M. Tolmasquim y A. C. Chaves no tienen barra de coautores."
- },
- {
-  "id": "carlos-eugenio-sauer-ayala",
-  "nombre": "Carlos Eugenio Sauer Ayala",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Probablemente ANDE (Administración Nacional de Electricidad), Paraguay (por el tema del paper)",
-  "pais_inferido": "Paraguay",
-  "intereses": {
-   "temas": [
-    "battery electric vehicle routing optimization",
-    "maintenance logistics for utility substations",
-    "fleet electrification in power utilities"
-   ],
-   "palabras_clave": [
-    "electric vehicle routing problem",
-    "battery electric vehicles",
-    "substation maintenance",
-    "route optimization",
-    "fleet electrification",
-    "ANDE"
-   ],
-   "metodos": [
-    "vehicle routing optimization"
-   ],
-   "aplicaciones": [
-    "maintenance crews for ANDE substations (Paraguay)"
-   ],
-   "afinidad_tracks": {
-    "6": 0.9,
-    "1": 0.4,
-    "2": 0.3
-   },
-   "etapa": "desconocida",
-   "resumen": "Sin perfil de Google Scholar (1 búsqueda sin resultado); ningún autor del grupo tiene perfil. Coautor en CLAGTEE de la optimización de rutas de vehículos eléctricos a batería para el mantenimiento de subestaciones de la ANDE (Paraguay), lo que sugiere vínculo con la empresa. Perfil basado solo en ese título; le interesarían sesiones de optimización, IA aplicada a la operación de empresas eléctricas y electromovilidad.",
-   "base": [
-    "papers_clagtee"
-   ]
-  },
-  "nota_busqueda": "1 búsqueda en Scholar ('Carlos Sauer Ayala Paraguay') sin resultado."
- },
- {
-  "id": "david-rodrigo-franco-leon",
-  "nombre": "David Rodrigo Franco León",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Probablemente ANDE (Administración Nacional de Electricidad), Paraguay (por el tema del paper)",
-  "pais_inferido": "Paraguay",
-  "intereses": {
-   "temas": [
-    "battery electric vehicle routing optimization",
-    "maintenance logistics for utility substations",
-    "fleet electrification in power utilities"
-   ],
-   "palabras_clave": [
-    "electric vehicle routing problem",
-    "battery electric vehicles",
-    "substation maintenance",
-    "route optimization",
-    "fleet electrification",
-    "ANDE"
-   ],
-   "metodos": [
-    "vehicle routing optimization"
-   ],
-   "aplicaciones": [
-    "maintenance crews for ANDE substations (Paraguay)"
-   ],
-   "afinidad_tracks": {
-    "6": 0.9,
-    "1": 0.4,
-    "2": 0.3
-   },
-   "etapa": "desconocida",
-   "resumen": "Sin perfil de Google Scholar (1 búsqueda sin resultado); ningún autor del grupo tiene perfil. Coautor en CLAGTEE de la optimización de rutas de vehículos eléctricos a batería para el mantenimiento de subestaciones de la ANDE (Paraguay), lo que sugiere vínculo con la empresa. Perfil basado solo en ese título; le interesarían sesiones de optimización, IA aplicada a la operación de empresas eléctricas y electromovilidad.",
-   "base": [
-    "papers_clagtee"
-   ]
-  },
-  "nota_busqueda": "1 búsqueda en Scholar ('David Rodrigo Franco León ingeniería eléctrica Paraguay') sin resultado."
- },
- {
-  "id": "leandro-jose-delfin-britos-invernizzi",
-  "nombre": "Leandro José Delfín Britos Invernizzi",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Probablemente ANDE (Administración Nacional de Electricidad), Paraguay (por el tema del paper)",
-  "pais_inferido": "Paraguay",
-  "intereses": {
-   "temas": [
-    "battery electric vehicle routing optimization",
-    "maintenance logistics for utility substations",
-    "fleet electrification in power utilities"
-   ],
-   "palabras_clave": [
-    "electric vehicle routing problem",
-    "battery electric vehicles",
-    "substation maintenance",
-    "route optimization",
-    "fleet electrification",
-    "ANDE"
-   ],
-   "metodos": [
-    "vehicle routing optimization"
-   ],
-   "aplicaciones": [
-    "maintenance crews for ANDE substations (Paraguay)"
-   ],
-   "afinidad_tracks": {
-    "6": 0.9,
-    "1": 0.4,
-    "2": 0.3
-   },
-   "etapa": "desconocida",
-   "resumen": "Sin perfil de Google Scholar (1 búsqueda en Scholar y 1 web general sin resultado); ningún autor del grupo tiene perfil. Presenta en CLAGTEE la optimización de rutas de vehículos eléctricos a batería para el mantenimiento de subestaciones de la ANDE (Paraguay), lo que sugiere vínculo con la empresa. Perfil basado solo en ese título; le interesarían sesiones de optimización, IA aplicada a la operación de empresas eléctricas y electromovilidad.",
-   "base": [
-    "papers_clagtee"
-   ]
-  },
-  "nota_busqueda": "1 búsqueda en Scholar ('Leandro Britos Invernizzi') y 1 web general ('Britos Invernizzi' ANDE Paraguay) sin resultado."
- },
- {
-  "id": "gonzalo-alberto-farias-castro",
-  "nombre": "Gonzalo Alberto Farias Castro",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=4cGeq0AAAAAJ",
-   "user_id": "4cGeq0AAAAAJ",
-   "nombre_perfil": "Gonzalo Farias",
-   "afiliacion": "Pontificia Universidad Catolica de Valparaiso, UNED, CIEMAT",
-   "email_verificado": "ucv.cl",
-   "intereses_scholar": [
-    "Machine Learning",
-    "Automatic Control"
-   ],
-   "citas": 3156,
-   "citas_desde_2021": 1662,
-   "h_index": 33,
-   "publicaciones": [
-    {
-     "titulo": "A data-driven approach to estimate plasma density in TJ-II stellarator",
-     "anio": 2026,
-     "citas": 0
-    },
-    {
-     "titulo": "Preliminary Results of Physics-Informed Neural Networks for Power Forecasting in Bifacial Photovoltaic Systems",
-     "anio": 2025,
-     "citas": 1
-    },
-    {
-     "titulo": "Cooperative formation control of a multi-agent Khepera IV mobile robots system using deep reinforcement learning",
-     "anio": 2025,
-     "citas": 6
-    },
-    {
-     "titulo": "Deep reinforcement learning applied to a spherical robot for target tracking",
-     "anio": 2025,
-     "citas": 4
-    },
-    {
-     "titulo": "Enhancing photovoltaic power predictions with deep physical chain model",
-     "anio": 2024,
-     "citas": 4
-    },
-    {
-     "titulo": "Comparative Analysis of Deep Learning Methods for Fault Avoidance and Predicting Demand in Electrical Distribution",
-     "anio": 2024,
-     "citas": 2
-    },
-    {
-     "titulo": "Explainable anomaly detection in spacecraft telemetry",
-     "anio": 2024,
-     "citas": 96
-    },
-    {
-     "titulo": "Automated food weight and content estimation using computer vision and AI algorithms",
-     "anio": 2024,
-     "citas": 22
-    },
-    {
-     "titulo": "Development and control of a real spherical robot",
-     "anio": 2023,
-     "citas": 19
-    },
-    {
-     "titulo": "Fall detection and activity recognition using human skeleton features",
-     "anio": 2021,
-     "citas": 235
-    },
-    {
-     "titulo": "Developing a remote laboratory for engineering education",
-     "anio": 2011,
-     "citas": 213
-    },
-    {
-     "titulo": "Development of a web-based control laboratory for automation technicians: The three-tank system",
-     "anio": 2008,
-     "citas": 232
-    }
-   ],
-   "confianza": "alta",
-   "evidencia": "La coautora de CLAGTEE Karla Schröder Silva (PUCV) firma con él 'Preliminary Results of Physics-Informed Neural Networks for Power Forecasting in Bifacial Photovoltaic Systems' (2025, misma línea que INT-27) y 'Comparative Analysis of Deep Learning Methods for Fault Avoidance and Predicting Demand in Electrical Distribution' (2024), y él figura en la barra de coautores de ella; el buscador mostró la variante 'Farias Castro' en una de sus publicaciones. Su perfil no tiene barra de coautores."
-  },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso (PUCV), Escuela de Ingeniería Eléctrica",
-  "pais_inferido": "Chile",
-  "intereses": {
-   "temas": [
-    "very short-term photovoltaic power forecasting during ramp events using circumsolar information",
-    "physics-informed and deep physical-chain models for PV power prediction",
-    "deep learning for demand prediction and fault avoidance in distribution networks",
-    "deep reinforcement learning for control of mobile and spherical robots",
-    "explainable anomaly detection and data-driven estimation in complex systems",
-    "remote and virtual control laboratories for engineering education"
-   ],
-   "palabras_clave": [
-    "PV power forecasting",
-    "very short-term forecasting",
-    "ramp events",
-    "circumsolar region",
-    "bifacial photovoltaics",
-    "physics-informed neural networks",
-    "deep learning",
-    "reinforcement learning",
-    "anomaly detection",
-    "demand forecasting",
-    "automatic control",
-    "remote laboratories"
-   ],
-   "metodos": [
-    "physics-informed neural networks",
-    "deep learning",
-    "deep reinforcement learning",
-    "explainable AI",
-    "computer vision"
-   ],
-   "aplicaciones": [
-    "PV plant operation and grid integration",
-    "electrical distribution demand forecasting",
-    "mobile robotics",
-    "fusion plasma diagnostics (TJ-II)",
-    "spacecraft telemetry"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "6": 0.9,
-    "1": 0.3,
-    "4": 0.2
-   },
-   "etapa": "investigador_senior",
-   "resumen": "Investigador senior de la PUCV (vinculado también a UNED y CIEMAT) en machine learning y control automático, con trabajos muy citados en laboratorios remotos, detección de caídas y detección explicable de anomalías, y una línea reciente de pronóstico de potencia fotovoltaica con redes informadas por la física y predicción de demanda en distribución. En CLAGTEE presenta el uso de información circunsolar para el pronóstico de muy corto plazo de potencia FV en eventos de rampa. Le interesarían sesiones de integración de renovables, pronóstico con IA y ciencia de datos aplicada a sistemas eléctricos.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  },
-  "nota_busqueda": "3 búsquedas en Scholar y 1 web general; perfil hallado con '\"Gonzalo Farías Castro\" OR \"Gonzalo A. Farías\" solar'."
- },
- {
-  "id": "karla-ivette-schroder-silva",
-  "nombre": "Karla Ivette Schroder Silva",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=uZcTkPMAAAAJ",
-   "user_id": "uZcTkPMAAAAJ",
-   "nombre_perfil": "Karla Schröder Silva",
-   "afiliacion": "Pontificia Universidad Católica de Valparaíso",
-   "email_verificado": "pucv.cl",
-   "intereses_scholar": [],
-   "citas": 56,
-   "citas_desde_2021": 56,
-   "h_index": 3,
-   "publicaciones": [
-    {
-     "titulo": "Preliminary Results of Physics-Informed Neural Networks for Power Forecasting in Bifacial Photovoltaic Systems",
-     "anio": 2025,
-     "citas": 1
-    },
-    {
-     "titulo": "Spherical Robot Control: Classical and Intelligent Approaches",
-     "anio": 2025,
-     "citas": 0
-    },
-    {
-     "titulo": "Comparative Analysis of Deep Learning Methods for Fault Avoidance and Predicting Demand in Electrical Distribution",
-     "anio": 2024,
-     "citas": 2
-    },
-    {
-     "titulo": "Rl-based sim2real enhancements for autonomous beach-cleaning agents",
-     "anio": 2024,
-     "citas": 4
-    },
-    {
-     "titulo": "Development and control of a real spherical robot",
-     "anio": 2023,
-     "citas": 19
-    },
-    {
-     "titulo": "Modeling and control of a spherical robot in the CoppeliaSim simulator",
-     "anio": 2022,
-     "citas": 30
-    }
-   ],
-   "confianza": "alta",
-   "evidencia": "El coautor de CLAGTEE Gonzalo Farias (PUCV, 4cGeq0AAAAAJ) está en su barra de coautores y firma con ella un trabajo de pronóstico de potencia FV con redes informadas por la física (2025), misma línea que INT-27. Perfil hallado en la barra de coautores de Gonzalo Garcia-Garreton."
-  },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso (PUCV)",
-  "pais_inferido": "Chile",
-  "intereses": {
-   "temas": [
-    "very short-term photovoltaic power forecasting during ramp events using circumsolar information",
-    "physics-informed neural networks for bifacial PV power forecasting",
-    "deep learning for demand prediction and fault avoidance in electrical distribution",
-    "modeling and control of spherical robots",
-    "reinforcement learning sim2real transfer for autonomous agents"
-   ],
-   "palabras_clave": [
-    "PV power forecasting",
-    "very short-term forecasting",
-    "ramp events",
-    "circumsolar region",
-    "bifacial photovoltaics",
-    "physics-informed neural networks",
-    "deep learning",
-    "demand forecasting",
-    "fault avoidance",
-    "spherical robot",
-    "reinforcement learning"
-   ],
-   "metodos": [
-    "physics-informed neural networks",
-    "deep learning",
-    "reinforcement learning",
-    "robot control and simulation"
-   ],
-   "aplicaciones": [
-    "PV plant operation and grid integration",
-    "electrical distribution networks",
-    "mobile robotics"
-   ],
-   "afinidad_tracks": {
-    "6": 0.9,
-    "2": 0.8,
-    "1": 0.4
-   },
-   "etapa": "investigador_inicial",
-   "resumen": "Investigadora joven de la PUCV (publica desde 2022, h-index 3), del grupo de Gonzalo Farias: comenzó en modelado y control de robots esféricos y aprendizaje por refuerzo, y desde 2024 trabaja en aprendizaje profundo aplicado a sistemas eléctricos (predicción de demanda y fallas en distribución, pronóstico de potencia FV bifacial con redes informadas por la física). En CLAGTEE es coautora del trabajo sobre información circunsolar para pronóstico FV de muy corto plazo en rampas. Le interesarían sesiones de pronóstico renovable e IA aplicada.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  },
-  "nota_busqueda": "2 búsquedas en Scholar; la segunda ('\"Karla Schröder\" PUCV deep learning forecasting') mostró el perfil de G. Garcia-Garreton, cuya barra de coautores enlaza el suyo."
- },
- {
-  "id": "zhao-xu",
-  "nombre": "Zhao Xu",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=6MgXqkkAAAAJ",
-   "user_id": "6MgXqkkAAAAJ",
-   "nombre_perfil": "Zhao Xu",
-   "afiliacion": "Professor, The Hong Kong Polytechnic University",
-   "email_verificado": "polyu.edu.hk",
-   "intereses_scholar": [
-    "power system",
-    "smart grid",
-    "wind energy",
-    "solar energy"
-   ],
-   "citas": 19980,
-   "citas_desde_2021": 11317,
-   "h_index": 71,
-   "publicaciones": [
-    {
-     "titulo": "A hybrid convolutional-LLM paradigm for robust wind power forecasting in data-scarce regimes",
-     "anio": 2026,
-     "citas": 7
-    },
-    {
-     "titulo": "Advancing climate-adaptive operation and planning for renewable-rich energy systems",
-     "anio": 2026,
-     "citas": 7
-    },
-    {
-     "titulo": "A Two-Stage LSTM-Based Day-Ahead Photovoltaic Power Forecasting Model with Weather-Semantics-Guided Correction",
-     "anio": 2026,
-     "citas": 0
-    },
-    {
-     "titulo": "Equilibrium-Based Electricity-Computation Collaborative Scheduling for Data Centers Integrated with Seawater Pumped Storage Hydropower",
-     "anio": 2026,
-     "citas": 13
-    },
-    {
-     "titulo": "Toward Climate-Adaptive Low-Carbon Power System Planning: A Multistage Stochastic Framework Considering Climate Uncertainties",
-     "anio": 2026,
-     "citas": 9
-    },
-    {
-     "titulo": "Power management and control for flexible traction substation in railway hub integrated with ESS, PV, and EV",
-     "anio": 2026,
-     "citas": 8
-    },
-    {
-     "titulo": "Physics-informed data-driven topology identification in power distribution networks with adversarial robustness enhancement",
-     "anio": 2026,
-     "citas": 4
-    },
-    {
-     "titulo": "Toward AI-pervasive electric energy systems: Concept, framework, vulnerability, and visions",
-     "anio": 2026,
-     "citas": 4
-    },
-    {
-     "titulo": "Towards cost-optimal joint electricity-computation management: A novel predict-then-optimize framework",
-     "anio": 2026,
-     "citas": 2
-    }
-   ],
-   "confianza": "baja",
-   "evidencia": "Único candidato temáticamente coherente (pronóstico solar y eólico, smart grid) entre muchos homónimos, pero sin evidencia directa: en sus 100 publicaciones más recientes y en su barra de 20 coautores no aparecen Farias ni Schröder, y los perfiles de G. Farias y K. Schröder Silva (PUCV) no tienen coautores ni publicaciones con ningún Xu. Una búsqueda web de 'Zhao Xu' con PUCV tampoco lo vinculó. Revisar a mano (puede ser otra persona, p. ej. un estudiante o visitante en la PUCV)."
-  },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
-  "intereses": {
-   "temas": [
-    "very short-term photovoltaic power forecasting",
-    "forecasting of PV ramp events",
-    "use of circumsolar sky information for solar forecasting"
-   ],
-   "palabras_clave": [
-    "PV power forecasting",
-    "very short-term forecasting",
-    "ramp events",
-    "circumsolar region",
-    "solar variability",
-    "nowcasting"
-   ],
-   "metodos": [],
-   "aplicaciones": [
-    "PV plant operation and grid integration"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "6": 0.6
-   },
-   "etapa": "desconocida",
-   "resumen": "Perfil Scholar solo con confianza baja (Zhao Xu, Hong Kong Polytechnic University, sin vínculo verificado con sus coautores de la PUCV), por lo que no se usa para los intereses. Coautor en CLAGTEE, con Gonzalo Farias y Karla Schröder Silva (PUCV, Chile), de un trabajo sobre información circunsolar para el pronóstico de muy corto plazo de potencia fotovoltaica durante eventos de rampa; el grupo trabaja también en pronóstico FV con redes informadas por la física. Le interesarían sesiones de integración de renovables y pronóstico con IA.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "2 búsquedas (Scholar '\"Farias Castro\" \"Zhao Xu\" photovoltaic' y web general 'Zhao Xu' PUCV photovoltaic forecasting); candidato PolyU leído completo sin vínculo con los coautores."
- },
- {
-  "id": "bianca-de-souza",
-  "nombre": "Bianca de Souza",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "judicialization of the Brazilian electricity sector",
-    "the judiciary as an indirect regulator",
-    "regulatory security and legal uncertainty in power sector regulation"
-   ],
-   "palabras_clave": [
-    "judicialization",
-    "regulatory security",
-    "electricity regulation",
-    "Brazilian power sector",
-    "legal uncertainty",
-    "institutional framework"
-   ],
-   "metodos": [],
-   "aplicaciones": [
-    "Brazilian electricity sector governance"
-   ],
-   "afinidad_tracks": {
-    "7": 0.9,
-    "12": 0.4
-   },
-   "etapa": "desconocida",
-   "resumen": "Sin perfil de Google Scholar ni otras fuentes (1 búsqueda en Scholar y 1 web general sin resultado; nombre muy común). Presenta en CLAGTEE (en portugués) un trabajo sobre el Poder Judicial como regulador indirecto, la judicialización y la seguridad regulatoria del sector eléctrico brasileño. Perfil basado solo en ese título; le interesarían sesiones de regulación, mercados y transición energética.",
-   "base": [
-    "papers_clagtee"
-   ]
-  },
-  "nota_busqueda": "1 búsqueda en Scholar ('Bianca de Souza setor elétrico regulação judicialização') y 1 web general ('Bianca de Souza' 'Dorel Soares Ramos') sin resultado; nombre muy común."
- },
- {
-  "id": "dorel-soares-ramos",
-  "nombre": "Dorel Soares Ramos",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "judicialization of the Brazilian electricity sector",
-    "the judiciary as an indirect regulator",
-    "regulatory security and legal uncertainty in power sector regulation"
-   ],
-   "palabras_clave": [
-    "judicialization",
-    "regulatory security",
-    "electricity regulation",
-    "Brazilian power sector",
-    "legal uncertainty",
-    "institutional framework"
-   ],
-   "metodos": [],
-   "aplicaciones": [
-    "Brazilian electricity sector governance"
-   ],
-   "afinidad_tracks": {
-    "7": 0.9,
-    "12": 0.4
-   },
-   "etapa": "desconocida",
-   "resumen": "Sin perfil de Google Scholar (2 búsquedas sin resultado). Coautor en CLAGTEE (en portugués) de un trabajo sobre el Poder Judicial como regulador indirecto, la judicialización y la seguridad regulatoria del sector eléctrico brasileño; firma como coautor senior de Bianca de Souza. Posible vínculo con la Escola Politécnica da USP, no verificado en esta pasada. Le interesarían sesiones de regulación, mercados y transición energética.",
-   "base": [
-    "papers_clagtee"
-   ]
-  },
-  "nota_busqueda": "2 búsquedas en Scholar ('Dorel Soares Ramos' y '\"Dorel Ramos\" OR \"DS Ramos\" Escola Politécnica USP electricity market regulation') sin resultado. Posiblemente docente de la Escola Politécnica da USP (no verificado)."
- }
 ]

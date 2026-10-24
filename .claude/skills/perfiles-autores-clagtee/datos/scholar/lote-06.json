@@ -1,1849 +1,1849 @@
 [
- {
-  "id": "agnelo-marotta-cassula",
-  "nombre": "Agnelo Marotta Cassula",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=G1QqDQsAAAAJ",
-   "user_id": "G1QqDQsAAAAJ",
-   "nombre_perfil": "Agnelo Marotta Cassula",
-   "afiliacion": "Professor de Engenharia Elétrica, UNESP - Universidade Estadual Paulista",
-   "email_verificado": "unesp.br",
-   "intereses_scholar": [
-    "Confiabilidade de Sistemas Elétricos",
-    "Fontes Renováveis",
-    "Smart Grid"
-   ],
-   "citas": 737,
-   "citas_desde_2021": 350,
-   "h_index": 11,
-   "publicaciones": [
-    {
-     "titulo": "Multicriteria Framework for Risk Assessment of Power Transformers",
-     "anio": 2025,
-     "citas": 4
+  {
+    "id": "agnelo-marotta-cassula",
+    "nombre": "Agnelo Marotta Cassula",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=G1QqDQsAAAAJ",
+      "user_id": "G1QqDQsAAAAJ",
+      "nombre_perfil": "Agnelo Marotta Cassula",
+      "afiliacion": "Professor de Engenharia Elétrica, UNESP - Universidade Estadual Paulista",
+      "email_verificado": "unesp.br",
+      "intereses_scholar": [
+        "Confiabilidade de Sistemas Elétricos",
+        "Fontes Renováveis",
+        "Smart Grid"
+      ],
+      "citas": 737,
+      "citas_desde_2021": 350,
+      "h_index": 11,
+      "publicaciones": [
+        {
+          "titulo": "Multicriteria Framework for Risk Assessment of Power Transformers",
+          "anio": 2025,
+          "citas": 4
+        },
+        {
+          "titulo": "An assessment of energy efficient motors application by scenarios evaluation",
+          "anio": 2020,
+          "citas": 11
+        },
+        {
+          "titulo": "Robust multi-objective optimization of a renewable based hybrid power system",
+          "anio": 2018,
+          "citas": 126
+        },
+        {
+          "titulo": "Assessment of photovoltaic performance models for system simulation",
+          "anio": 2017,
+          "citas": 125
+        },
+        {
+          "titulo": "Gatoolbox: a matlab-based genetic algorithm toolbox for function optimization",
+          "anio": 2017,
+          "citas": 22
+        },
+        {
+          "titulo": "Assessment of dry residual biomass potential for use as alternative energy source in the party of General Pueyrredón, Argentina",
+          "anio": 2015,
+          "citas": 148
+        },
+        {
+          "titulo": "Simulation and validation of photovoltaic system performance models",
+          "anio": 2015,
+          "citas": 14
+        },
+        {
+          "titulo": "Non-technical losses in Brazil: subsidies for implementation of smart-grid",
+          "anio": 2014,
+          "citas": 7
+        },
+        {
+          "titulo": "Chronological Monte Carlo-based assessment of distribution system reliability",
+          "anio": 2006,
+          "citas": 37
+        },
+        {
+          "titulo": "Analytical and Monte Carlo approaches to evaluate probability distributions of interruption duration",
+          "anio": 2005,
+          "citas": 62
+        },
+        {
+          "titulo": "Integrated reliability evaluation of generation, transmission and distribution systems",
+          "anio": 2002,
+          "citas": 65
+        },
+        {
+          "titulo": "Optimum load shedding strategies in distribution systems",
+          "anio": 2001,
+          "citas": 28
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Figura como coautor en los perfiles de Justo José Roberts y Andres Z. Mendiburu (coautores de PLA-57); comparte con ellos papers sobre sistemas híbridos renovables y modelos de desempeño FV."
     },
-    {
-     "titulo": "An assessment of energy efficient motors application by scenarios evaluation",
-     "anio": 2020,
-     "citas": 11
-    },
-    {
-     "titulo": "Robust multi-objective optimization of a renewable based hybrid power system",
-     "anio": 2018,
-     "citas": 126
-    },
-    {
-     "titulo": "Assessment of photovoltaic performance models for system simulation",
-     "anio": 2017,
-     "citas": 125
-    },
-    {
-     "titulo": "Gatoolbox: a matlab-based genetic algorithm toolbox for function optimization",
-     "anio": 2017,
-     "citas": 22
-    },
-    {
-     "titulo": "Assessment of dry residual biomass potential for use as alternative energy source in the party of General Pueyrredón, Argentina",
-     "anio": 2015,
-     "citas": 148
-    },
-    {
-     "titulo": "Simulation and validation of photovoltaic system performance models",
-     "anio": 2015,
-     "citas": 14
-    },
-    {
-     "titulo": "Non-technical losses in Brazil: subsidies for implementation of smart-grid",
-     "anio": 2014,
-     "citas": 7
-    },
-    {
-     "titulo": "Chronological Monte Carlo-based assessment of distribution system reliability",
-     "anio": 2006,
-     "citas": 37
-    },
-    {
-     "titulo": "Analytical and Monte Carlo approaches to evaluate probability distributions of interruption duration",
-     "anio": 2005,
-     "citas": 62
-    },
-    {
-     "titulo": "Integrated reliability evaluation of generation, transmission and distribution systems",
-     "anio": 2002,
-     "citas": 65
-    },
-    {
-     "titulo": "Optimum load shedding strategies in distribution systems",
-     "anio": 2001,
-     "citas": 28
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "composite generation-transmission-distribution reliability evaluation",
+        "chronological Monte Carlo reliability assessment of distribution systems",
+        "multi-objective sizing of hybrid renewable power systems",
+        "techno-economic assessment of residential photovoltaic systems",
+        "risk assessment of power transformers"
+      ],
+      "palabras_clave": [
+        "power system reliability",
+        "Monte Carlo simulation",
+        "distribution system reliability",
+        "interruption duration indices",
+        "load shedding",
+        "hybrid renewable systems",
+        "photovoltaic systems",
+        "smart grid",
+        "non-technical losses",
+        "power transformers"
+      ],
+      "metodos": [
+        "chronological Monte Carlo simulation",
+        "analytical reliability models",
+        "multi-objective optimization",
+        "genetic algorithms",
+        "multicriteria decision analysis"
+      ],
+      "aplicaciones": [
+        "distribution network reliability planning",
+        "residential PV systems in Argentina",
+        "isolated solar-wind-diesel hybrid systems",
+        "power transformer asset management"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "2": 0.8,
+        "7": 0.3
+      },
+      "etapa": "investigador_senior",
+      "resumen": "Profesor de Ingeniería Eléctrica de la UNESP con larga trayectoria en confiabilidad de sistemas eléctricos (evaluación integrada generación-transmisión-distribución y simulación Monte Carlo cronológica) y, más recientemente, en optimización de sistemas híbridos renovables junto a J. J. Roberts. En CLAGTEE es coautor de una comparación técnico-económica de sistemas FV residenciales; le interesarían sesiones de confiabilidad, planificación de distribución e integración de FV y almacenamiento.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
-   ],
-   "confianza": "alta",
-   "evidencia": "Figura como coautor en los perfiles de Justo José Roberts y Andres Z. Mendiburu (coautores de PLA-57); comparte con ellos papers sobre sistemas híbridos renovables y modelos de desempeño FV."
   },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidade Estadual Paulista (UNESP)",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "composite generation-transmission-distribution reliability evaluation",
-    "chronological Monte Carlo reliability assessment of distribution systems",
-    "multi-objective sizing of hybrid renewable power systems",
-    "techno-economic assessment of residential photovoltaic systems",
-    "risk assessment of power transformers"
-   ],
-   "palabras_clave": [
-    "power system reliability",
-    "Monte Carlo simulation",
-    "distribution system reliability",
-    "interruption duration indices",
-    "load shedding",
-    "hybrid renewable systems",
-    "photovoltaic systems",
-    "smart grid",
-    "non-technical losses",
-    "power transformers"
-   ],
-   "metodos": [
-    "chronological Monte Carlo simulation",
-    "analytical reliability models",
-    "multi-objective optimization",
-    "genetic algorithms",
-    "multicriteria decision analysis"
-   ],
-   "aplicaciones": [
-    "distribution network reliability planning",
-    "residential PV systems in Argentina",
-    "isolated solar-wind-diesel hybrid systems",
-    "power transformer asset management"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "2": 0.8,
-    "7": 0.3
-   },
-   "etapa": "investigador_senior",
-   "resumen": "Profesor de Ingeniería Eléctrica de la UNESP con larga trayectoria en confiabilidad de sistemas eléctricos (evaluación integrada generación-transmisión-distribución y simulación Monte Carlo cronológica) y, más recientemente, en optimización de sistemas híbridos renovables junto a J. J. Roberts. En CLAGTEE es coautor de una comparación técnico-económica de sistemas FV residenciales; le interesarían sesiones de confiabilidad, planificación de distribución e integración de FV y almacenamiento.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  }
- },
- {
-  "id": "andres-mendiburu-zeballos",
-  "nombre": "Andrés Mendiburu Zeballos",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=DQ3YXTwAAAAJ",
-   "user_id": "DQ3YXTwAAAAJ",
-   "nombre_perfil": "Andres Z. Mendiburu",
-   "afiliacion": "Professor, Federal University of Rio Grande do Sul",
-   "email_verificado": "ufrgs.br",
-   "intereses_scholar": [
-    "Combustion",
-    "Gasification",
-    "Absorption refrigeration"
-   ],
-   "citas": 1777,
-   "citas_desde_2021": 1335,
-   "h_index": 21,
-   "publicaciones": [
-    {
-     "titulo": "Experimental assessment and modeling of solar air heater with V shape roughness on absorber plate",
-     "anio": 2023,
-     "citas": 59
+  {
+    "id": "andres-mendiburu-zeballos",
+    "nombre": "Andrés Mendiburu Zeballos",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=DQ3YXTwAAAAJ",
+      "user_id": "DQ3YXTwAAAAJ",
+      "nombre_perfil": "Andres Z. Mendiburu",
+      "afiliacion": "Professor, Federal University of Rio Grande do Sul",
+      "email_verificado": "ufrgs.br",
+      "intereses_scholar": [
+        "Combustion",
+        "Gasification",
+        "Absorption refrigeration"
+      ],
+      "citas": 1777,
+      "citas_desde_2021": 1335,
+      "h_index": 21,
+      "publicaciones": [
+        {
+          "titulo": "Experimental assessment and modeling of solar air heater with V shape roughness on absorber plate",
+          "anio": 2023,
+          "citas": 59
+        },
+        {
+          "titulo": "Flammability limits: a comprehensive review of theory, experiments, and estimation methods",
+          "anio": 2023,
+          "citas": 56
+        },
+        {
+          "titulo": "Theoretical model for flat plate solar collectors operating with nanofluids: Case study for Porto Alegre, Brazil",
+          "anio": 2023,
+          "citas": 40
+        },
+        {
+          "titulo": "Thermodynamic modelling for absorption refrigeration cycles powered by solar energy and a case study for Porto Alegre, Brazil",
+          "anio": 2023,
+          "citas": 33
+        },
+        {
+          "titulo": "Ethanol as a renewable biofuel: Combustion characteristics and application in engines",
+          "anio": 2022,
+          "citas": 200
+        },
+        {
+          "titulo": "Difficulties on the determination of the flammability limits of fuel mixtures by the Law of Le Chatelier",
+          "anio": 2020,
+          "citas": 57
+        },
+        {
+          "titulo": "Energetic analysis of reheating furnaces in the combustion of coke oven gas, Linz-Donawitz gas and blast furnace gas in the steel industry",
+          "anio": 2020,
+          "citas": 53
+        },
+        {
+          "titulo": "Robust multi-objective optimization of a renewable based hybrid power system",
+          "anio": 2018,
+          "citas": 126
+        },
+        {
+          "titulo": "Assessment of photovoltaic performance models for system simulation",
+          "anio": 2017,
+          "citas": 125
+        },
+        {
+          "titulo": "Thermochemical equilibrium modeling of biomass downdraft gasifier: Stoichiometric models",
+          "anio": 2014,
+          "citas": 147
+        },
+        {
+          "titulo": "Thermochemical equilibrium modeling of a biomass downdraft gasifier: Constrained and unconstrained non-stoichiometric models",
+          "anio": 2014,
+          "citas": 98
+        },
+        {
+          "titulo": "Flammability limits: a review with emphasis on ethanol for aeronautical applications and description of the experimental procedure",
+          "anio": 2012,
+          "citas": 113
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Coautores de PLA-57 Justo José Roberts y Agnelo Marotta Cassula figuran en su lista de coautores; en sus publicaciones aparece como 'AAM Zevallos' (Andrés A. Mendiburu Zevallos) junto a Roberts y Cassula."
     },
-    {
-     "titulo": "Flammability limits: a comprehensive review of theory, experiments, and estimation methods",
-     "anio": 2023,
-     "citas": 56
-    },
-    {
-     "titulo": "Theoretical model for flat plate solar collectors operating with nanofluids: Case study for Porto Alegre, Brazil",
-     "anio": 2023,
-     "citas": 40
-    },
-    {
-     "titulo": "Thermodynamic modelling for absorption refrigeration cycles powered by solar energy and a case study for Porto Alegre, Brazil",
-     "anio": 2023,
-     "citas": 33
-    },
-    {
-     "titulo": "Ethanol as a renewable biofuel: Combustion characteristics and application in engines",
-     "anio": 2022,
-     "citas": 200
-    },
-    {
-     "titulo": "Difficulties on the determination of the flammability limits of fuel mixtures by the Law of Le Chatelier",
-     "anio": 2020,
-     "citas": 57
-    },
-    {
-     "titulo": "Energetic analysis of reheating furnaces in the combustion of coke oven gas, Linz-Donawitz gas and blast furnace gas in the steel industry",
-     "anio": 2020,
-     "citas": 53
-    },
-    {
-     "titulo": "Robust multi-objective optimization of a renewable based hybrid power system",
-     "anio": 2018,
-     "citas": 126
-    },
-    {
-     "titulo": "Assessment of photovoltaic performance models for system simulation",
-     "anio": 2017,
-     "citas": 125
-    },
-    {
-     "titulo": "Thermochemical equilibrium modeling of biomass downdraft gasifier: Stoichiometric models",
-     "anio": 2014,
-     "citas": 147
-    },
-    {
-     "titulo": "Thermochemical equilibrium modeling of a biomass downdraft gasifier: Constrained and unconstrained non-stoichiometric models",
-     "anio": 2014,
-     "citas": 98
-    },
-    {
-     "titulo": "Flammability limits: a review with emphasis on ethanol for aeronautical applications and description of the experimental procedure",
-     "anio": 2012,
-     "citas": 113
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do Rio Grande do Sul (UFRGS)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "thermochemical equilibrium modeling of biomass downdraft gasifiers",
+        "flammability limits of fuels and fuel mixtures",
+        "ethanol and biofuel combustion in engines",
+        "solar-driven absorption refrigeration cycles",
+        "flat-plate solar collectors with nanofluids",
+        "techno-economic assessment of residential photovoltaic systems"
+      ],
+      "palabras_clave": [
+        "combustion",
+        "gasification",
+        "absorption refrigeration",
+        "flammability limits",
+        "ethanol",
+        "biomass",
+        "solar thermal collectors",
+        "nanofluids",
+        "hybrid renewable systems",
+        "photovoltaic systems"
+      ],
+      "metodos": [
+        "thermochemical equilibrium modeling",
+        "thermodynamic cycle modeling",
+        "experimental flammability measurements",
+        "multi-objective optimization"
+      ],
+      "aplicaciones": [
+        "downdraft gasifiers for distributed power generation",
+        "solar cooling in southern Brazil",
+        "biofuels for engines and aeronautics",
+        "residential PV systems in Argentina"
+      ],
+      "afinidad_tracks": {
+        "11": 0.8,
+        "1": 0.7,
+        "2": 0.6,
+        "10": 0.6,
+        "9": 0.4
+      },
+      "etapa": "investigador_consolidado",
+      "resumen": "Profesor de la UFRGS especializado en combustión, gasificación de biomasa, límites de inflamabilidad y refrigeración por absorción solar, con colaboraciones con J. J. Roberts en sistemas híbridos renovables y modelos FV. En CLAGTEE es coautor de la comparación técnico-económica de sistemas FV residenciales en Mar del Plata; le interesarían sesiones de bioenergía e hidrógeno, centrales alternativas (solar térmica) y evaluación técnico-económica de renovables.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
-   ],
-   "confianza": "alta",
-   "evidencia": "Coautores de PLA-57 Justo José Roberts y Agnelo Marotta Cassula figuran en su lista de coautores; en sus publicaciones aparece como 'AAM Zevallos' (Andrés A. Mendiburu Zevallos) junto a Roberts y Cassula."
   },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidade Federal do Rio Grande do Sul (UFRGS)",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "thermochemical equilibrium modeling of biomass downdraft gasifiers",
-    "flammability limits of fuels and fuel mixtures",
-    "ethanol and biofuel combustion in engines",
-    "solar-driven absorption refrigeration cycles",
-    "flat-plate solar collectors with nanofluids",
-    "techno-economic assessment of residential photovoltaic systems"
-   ],
-   "palabras_clave": [
-    "combustion",
-    "gasification",
-    "absorption refrigeration",
-    "flammability limits",
-    "ethanol",
-    "biomass",
-    "solar thermal collectors",
-    "nanofluids",
-    "hybrid renewable systems",
-    "photovoltaic systems"
-   ],
-   "metodos": [
-    "thermochemical equilibrium modeling",
-    "thermodynamic cycle modeling",
-    "experimental flammability measurements",
-    "multi-objective optimization"
-   ],
-   "aplicaciones": [
-    "downdraft gasifiers for distributed power generation",
-    "solar cooling in southern Brazil",
-    "biofuels for engines and aeronautics",
-    "residential PV systems in Argentina"
-   ],
-   "afinidad_tracks": {
-    "11": 0.8,
-    "1": 0.7,
-    "2": 0.6,
-    "10": 0.6,
-    "9": 0.4
-   },
-   "etapa": "investigador_consolidado",
-   "resumen": "Profesor de la UFRGS especializado en combustión, gasificación de biomasa, límites de inflamabilidad y refrigeración por absorción solar, con colaboraciones con J. J. Roberts en sistemas híbridos renovables y modelos FV. En CLAGTEE es coautor de la comparación técnico-económica de sistemas FV residenciales en Mar del Plata; le interesarían sesiones de bioenergía e hidrógeno, centrales alternativas (solar térmica) y evaluación técnico-económica de renovables.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  }
- },
- {
-  "id": "ezequiel-leonardi",
-  "nombre": "Ezequiel Leonardi",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidad Nacional de Mar del Plata (probable, por el grupo de J. J. Roberts)",
-  "pais_inferido": "Argentina",
-  "intereses": {
-   "temas": [
-    "techno-economic comparison of on-grid and hybrid residential photovoltaic systems",
-    "residential battery storage combined with PV",
-    "distributed solar generation in Argentina"
-   ],
-   "palabras_clave": [
-    "residential photovoltaics",
-    "on-grid PV",
-    "hybrid PV systems",
-    "battery storage",
-    "techno-economic analysis",
-    "distributed generation"
-   ],
-   "metodos": [
-    "techno-economic analysis"
-   ],
-   "aplicaciones": [
-    "residential PV systems in Mar del Plata, Argentina"
-   ],
-   "afinidad_tracks": {
-    "1": 0.8,
-    "2": 0.8,
-    "7": 0.3
-   },
-   "etapa": "desconocida",
-   "resumen": "No se encontró perfil académico (Scholar ni búsqueda web general); su única referencia es el paper PLA-57 sobre la comparación técnico-económica de sistemas FV residenciales on-grid e híbridos en Mar del Plata, en el grupo de J. J. Roberts (UNMdP). Evidencia escasa: le interesarían sesiones de FV residencial, almacenamiento y evaluación económica de generación distribuida.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "gustavo-belliski",
-  "nombre": "Gustavo Belliski",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidad Nacional de Mar del Plata (probable, por el grupo de J. J. Roberts)",
-  "pais_inferido": "Argentina",
-  "intereses": {
-   "temas": [
-    "techno-economic comparison of on-grid and hybrid residential photovoltaic systems",
-    "residential battery storage combined with PV",
-    "distributed solar generation in Argentina"
-   ],
-   "palabras_clave": [
-    "residential photovoltaics",
-    "on-grid PV",
-    "hybrid PV systems",
-    "battery storage",
-    "techno-economic analysis",
-    "distributed generation"
-   ],
-   "metodos": [
-    "techno-economic analysis"
-   ],
-   "aplicaciones": [
-    "residential PV systems in Mar del Plata, Argentina"
-   ],
-   "afinidad_tracks": {
-    "1": 0.8,
-    "2": 0.8,
-    "7": 0.3
-   },
-   "etapa": "desconocida",
-   "resumen": "No se encontró perfil académico (Scholar ni búsqueda web general); su única referencia es el paper PLA-57 sobre la comparación técnico-económica de sistemas FV residenciales on-grid e híbridos en Mar del Plata, en el grupo de J. J. Roberts (UNMdP). Evidencia escasa: le interesarían sesiones de FV residencial, almacenamiento y evaluación económica de generación distribuida.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "joaquine-isreal-sanchez",
-  "nombre": "Joaquine Isreal Sánchez",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidad Nacional de Mar del Plata (probable, por el grupo de J. J. Roberts)",
-  "pais_inferido": "Argentina",
-  "intereses": {
-   "temas": [
-    "techno-economic comparison of on-grid and hybrid residential photovoltaic systems",
-    "residential battery storage combined with PV",
-    "distributed solar generation in Argentina"
-   ],
-   "palabras_clave": [
-    "residential photovoltaics",
-    "on-grid PV",
-    "hybrid PV systems",
-    "battery storage",
-    "techno-economic analysis",
-    "distributed generation"
-   ],
-   "metodos": [
-    "techno-economic analysis"
-   ],
-   "aplicaciones": [
-    "residential PV systems in Mar del Plata, Argentina"
-   ],
-   "afinidad_tracks": {
-    "1": 0.8,
-    "2": 0.8,
-    "7": 0.3
-   },
-   "etapa": "desconocida",
-   "resumen": "No se encontró perfil académico (Scholar ni búsqueda web general); su única referencia es el paper PLA-57 sobre la comparación técnico-económica de sistemas FV residenciales on-grid e híbridos en Mar del Plata, en el grupo de J. J. Roberts (UNMdP). Evidencia escasa: le interesarían sesiones de FV residencial, almacenamiento y evaluación económica de generación distribuida.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "juan-francisco-calo",
-  "nombre": "Juan Francisco Calo",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidad Nacional de Mar del Plata (probable, por el grupo de J. J. Roberts)",
-  "pais_inferido": "Argentina",
-  "intereses": {
-   "temas": [
-    "techno-economic comparison of on-grid and hybrid residential photovoltaic systems",
-    "residential battery storage combined with PV",
-    "distributed solar generation in Argentina"
-   ],
-   "palabras_clave": [
-    "residential photovoltaics",
-    "on-grid PV",
-    "hybrid PV systems",
-    "battery storage",
-    "techno-economic analysis",
-    "distributed generation"
-   ],
-   "metodos": [
-    "techno-economic analysis"
-   ],
-   "aplicaciones": [
-    "residential PV systems in Mar del Plata, Argentina"
-   ],
-   "afinidad_tracks": {
-    "1": 0.8,
-    "2": 0.8,
-    "7": 0.3
-   },
-   "etapa": "desconocida",
-   "resumen": "No se encontró perfil académico (Scholar ni búsqueda web general); su única referencia es el paper PLA-57 sobre la comparación técnico-económica de sistemas FV residenciales on-grid e híbridos en Mar del Plata, en el grupo de J. J. Roberts (UNMdP). Evidencia escasa: le interesarían sesiones de FV residencial, almacenamiento y evaluación económica de generación distribuida.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "justo-jose-roberts",
-  "nombre": "Justo José Roberts",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=7ExKJ8EAAAAJ",
-   "user_id": "7ExKJ8EAAAAJ",
-   "nombre_perfil": "Justo José Roberts",
-   "afiliacion": "Professor/Researcher, National University of Mar del Plata (UNMdP)",
-   "email_verificado": "fi.mdp.edu.ar",
-   "intereses_scholar": [
-    "Computer Simulation and Optimization",
-    "Energy Systems",
-    "Distributed Generation",
-    "Renewable Energy",
-    "Enery Managament"
-   ],
-   "citas": 990,
-   "citas_desde_2021": 707,
-   "h_index": 13,
-   "publicaciones": [
-    {
-     "titulo": "Solar heat for industrial processes in Brazil: Sectoral potential, barriers, and integration strategies",
-     "anio": 2027,
-     "citas": 0
-    },
-    {
-     "titulo": "Examination of the theoretical model for flat-plate solar collectors and integration with solar radiation decomposition/transposition models",
-     "anio": 2023,
-     "citas": 3
-    },
-    {
-     "titulo": "Thermodynamic modelling for absorption refrigeration cycles powered by solar energy and a case study for Porto Alegre, Brazil",
-     "anio": 2023,
-     "citas": 33
-    },
-    {
-     "titulo": "Theoretical model for flat plate solar collectors operating with nanofluids: Case study for Porto Alegre, Brazil",
-     "anio": 2023,
-     "citas": 40
-    },
-    {
-     "titulo": "Ethanol as a renewable biofuel: Combustion characteristics and application in engines",
-     "anio": 2022,
-     "citas": 200
-    },
-    {
-     "titulo": "Biodiesel in South American countries: A review on policies, stages of development and imminent competition with hydrotreated vegetable oil",
-     "anio": 2022,
-     "citas": 70
-    },
-    {
-     "titulo": "Calculation of the shading factors for solar modules with matlab",
-     "anio": 2021,
-     "citas": 29
-    },
-    {
-     "titulo": "Renewable Energy-based Electricity Supply System for a School",
-     "anio": 2019,
-     "citas": 0
-    },
-    {
-     "titulo": "Robust multi-objective optimization of a renewable based hybrid power system",
-     "anio": 2018,
-     "citas": 126
-    },
-    {
-     "titulo": "Assessment of photovoltaic performance models for system simulation",
-     "anio": 2017,
-     "citas": 125
-    },
-    {
-     "titulo": "Gatoolbox: a matlab-based genetic algorithm toolbox for function optimization",
-     "anio": 2017,
-     "citas": 22
-    },
-    {
-     "titulo": "Assessment of dry residual biomass potential for use as alternative energy source in the party of General Pueyrredón, Argentina",
-     "anio": 2015,
-     "citas": 147
+  {
+    "id": "ezequiel-leonardi",
+    "nombre": "Ezequiel Leonardi",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidad Nacional de Mar del Plata (probable, por el grupo de J. J. Roberts)",
+    "pais_inferido": "Argentina",
+    "intereses": {
+      "temas": [
+        "techno-economic comparison of on-grid and hybrid residential photovoltaic systems",
+        "residential battery storage combined with PV",
+        "distributed solar generation in Argentina"
+      ],
+      "palabras_clave": [
+        "residential photovoltaics",
+        "on-grid PV",
+        "hybrid PV systems",
+        "battery storage",
+        "techno-economic analysis",
+        "distributed generation"
+      ],
+      "metodos": [
+        "techno-economic analysis"
+      ],
+      "aplicaciones": [
+        "residential PV systems in Mar del Plata, Argentina"
+      ],
+      "afinidad_tracks": {
+        "1": 0.8,
+        "2": 0.8,
+        "7": 0.3
+      },
+      "etapa": "desconocida",
+      "resumen": "No se encontró perfil académico (Scholar ni búsqueda web general); su única referencia es el paper PLA-57 sobre la comparación técnico-económica de sistemas FV residenciales on-grid e híbridos en Mar del Plata, en el grupo de J. J. Roberts (UNMdP). Evidencia escasa: le interesarían sesiones de FV residencial, almacenamiento y evaluación económica de generación distribuida.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
-   ],
-   "confianza": "alta",
-   "evidencia": "Coautores de PLA-57 Agnelo Marotta Cassula y Andres Z. Mendiburu figuran en su lista de coautores; investigador de la UNMdP (Mar del Plata) con trabajos previos sobre modelos de desempeño FV y sistemas híbridos, misma línea que PLA-57."
   },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidad Nacional de Mar del Plata (UNMdP)",
-  "pais_inferido": "Argentina",
-  "intereses": {
-   "temas": [
-    "techno-economic and multi-objective sizing of hybrid renewable power systems",
-    "photovoltaic performance modeling and shading analysis",
-    "deep learning forecasting of PV generation",
-    "model predictive control for energy storage trading",
-    "solar thermal collectors and solar heat for industrial processes",
-    "biomass energy potential assessment"
-   ],
-   "palabras_clave": [
-    "hybrid renewable systems",
-    "photovoltaic systems",
-    "PV forecasting",
-    "LSTM",
-    "attention mechanism",
-    "energy storage",
-    "model predictive control",
-    "genetic algorithms",
-    "distributed generation",
-    "solar thermal",
-    "biomass",
-    "techno-economic analysis"
-   ],
-   "metodos": [
-    "multi-objective optimization",
-    "genetic algorithms",
-    "model predictive control",
-    "LSTM neural networks with attention",
-    "PV performance simulation"
-   ],
-   "aplicaciones": [
-    "residential PV systems in Mar del Plata",
-    "energy storage trading/arbitrage",
-    "isolated rural hybrid systems",
-    "solar heat for industrial processes",
-    "renewable supply for schools"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "1": 0.7,
-    "6": 0.6,
-    "7": 0.5,
-    "10": 0.4,
-    "11": 0.4
-   },
-   "etapa": "investigador_consolidado",
-   "resumen": "Profesor-investigador de la UNMdP que trabaja en simulación y optimización de sistemas energéticos: dimensionamiento de sistemas híbridos renovables, modelos de desempeño FV, solar térmica y potencial de biomasa. En CLAGTEE presenta tres trabajos (evaluación técnico-económica de FV residencial, MPC para trading con almacenamiento y pronóstico FV con LSTM y atención); le interesarían sesiones de integración renovable y almacenamiento, IA aplicada a pronóstico y mercados de energía.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  }
- },
- {
-  "id": "leticia-maria-seijas",
-  "nombre": "Leticia María Seijas",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidad Nacional de Mar del Plata (inferida por el coautor S. A. González, ICYTE)",
-  "pais_inferido": "Argentina",
-  "intereses": {
-   "temas": [
-    "deep learning forecasting of photovoltaic power generation",
-    "attention-based LSTM networks for energy time series",
-    "PV plant output estimation"
-   ],
-   "palabras_clave": [
-    "PV forecasting",
-    "LSTM",
-    "attention mechanism",
-    "deep learning",
-    "time series forecasting",
-    "photovoltaic plants"
-   ],
-   "metodos": [
-    "LSTM neural networks",
-    "attention mechanisms",
-    "deep learning"
-   ],
-   "aplicaciones": [
-    "photovoltaic plant power forecasting"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "6": 0.8
-   },
-   "etapa": "desconocida",
-   "resumen": "No se encontró perfil de Google Scholar (dos búsquedas sin resultado y no figura en la barra de coautores de S. A. González). Por su paper PLA-6 y por 'A Predictive Deep Learning Model to Estimate the Power Generated by a Photovoltaic Plant' (ARGENCON 2024, en el perfil de su coautor S. A. González, ICYTE-UNMdP), trabaja en pronóstico de generación FV con aprendizaje profundo (LSTM con atención); le interesarían sesiones de IA aplicada e integración de renovables.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "Scholar: nombre completo (1ª pasada) y 'Leticia Seijas neural networks' (2ª pasada), sin resultados. Se leyó la barra de coautores de S. A. González (anAlT-AAAAAJ): no aparece."
- },
- {
-  "id": "sergio-alejandro-gonzalez",
-  "nombre": "Sergio Alejandro Gonzalez",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=anAlT-AAAAAJ",
-   "user_id": "anAlT-AAAAAJ",
-   "nombre_perfil": "Sergio Alejandro González",
-   "afiliacion": "ICYTE - Instituto de Investigaciones Científicas y Tecnológicas en Electrónica, Universidad Nacional de Mar del Plata",
-   "email_verificado": "ieee.org",
-   "intereses_scholar": [],
-   "citas": 2128,
-   "citas_desde_2021": 897,
-   "h_index": 24,
-   "publicaciones": [
-    {
-     "titulo": "A Predictive Deep Learning Model to Estimate the Power Generated by a Photovoltaic Plant",
-     "anio": 2024,
-     "citas": 0
-    },
-    {
-     "titulo": "Experimental Implementation of a Fast Direct Digital Power Control Strategy for Single-phase DAB Converters",
-     "anio": 2024,
-     "citas": 0
-    },
-    {
-     "titulo": "Photovoltaic generation forecasting using convolutional and recurrent neural networks",
-     "anio": 2023,
-     "citas": 38
-    },
-    {
-     "titulo": "Control de balance mediante 3LBR en Sistema de Generación Distribuida",
-     "anio": 2022,
-     "citas": 0
-    },
-    {
-     "titulo": "Inverter-side current control of grid-connected voltage source inverters with LCL filter based on generalized predictive control",
-     "anio": 2018,
-     "citas": 112
-    },
-    {
-     "titulo": "Generalized Predictive Current Control (GPCC) for Grid-Tie Three-Phase Inverters",
-     "anio": 2016,
-     "citas": 130
-    },
-    {
-     "titulo": "Robust predictive control of grid-tied converters based on direct power control",
-     "anio": 2013,
-     "citas": 88
-    },
-    {
-     "titulo": "Repetitive control with adaptive sampling frequency for wind power generation systems",
-     "anio": 2013,
-     "citas": 88
-    },
-    {
-     "titulo": "Calculation-delay tolerant predictive current controller for three-phase inverters",
-     "anio": 2013,
-     "citas": 80
-    },
-    {
-     "titulo": "Adaptive dead-time compensation for grid-connected PWM inverters of single-stage PV systems",
-     "anio": 2012,
-     "citas": 229
-    },
-    {
-     "titulo": "A robust predictive current control for three-phase grid-connected inverters",
-     "anio": 2009,
-     "citas": 278
-    },
-    {
-     "titulo": "Harmonic computation technique suitable for active power filters",
-     "anio": 2007,
-     "citas": 138
+  {
+    "id": "gustavo-belliski",
+    "nombre": "Gustavo Belliski",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidad Nacional de Mar del Plata (probable, por el grupo de J. J. Roberts)",
+    "pais_inferido": "Argentina",
+    "intereses": {
+      "temas": [
+        "techno-economic comparison of on-grid and hybrid residential photovoltaic systems",
+        "residential battery storage combined with PV",
+        "distributed solar generation in Argentina"
+      ],
+      "palabras_clave": [
+        "residential photovoltaics",
+        "on-grid PV",
+        "hybrid PV systems",
+        "battery storage",
+        "techno-economic analysis",
+        "distributed generation"
+      ],
+      "metodos": [
+        "techno-economic analysis"
+      ],
+      "aplicaciones": [
+        "residential PV systems in Mar del Plata, Argentina"
+      ],
+      "afinidad_tracks": {
+        "1": 0.8,
+        "2": 0.8,
+        "7": 0.3
+      },
+      "etapa": "desconocida",
+      "resumen": "No se encontró perfil académico (Scholar ni búsqueda web general); su única referencia es el paper PLA-57 sobre la comparación técnico-económica de sistemas FV residenciales on-grid e híbridos en Mar del Plata, en el grupo de J. J. Roberts (UNMdP). Evidencia escasa: le interesarían sesiones de FV residencial, almacenamiento y evaluación económica de generación distribuida.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
-   ],
-   "confianza": "alta",
-   "evidencia": "El perfil (ICYTE, UNMdP; coautores de fi.mdp.edu.ar) lista 'A Predictive Deep Learning Model to Estimate the Power Generated by a Photovoltaic Plant' (LM Seijas, SA González, ARGENCON 2024) con su coautora de CLAGTEE Leticia M. Seijas, misma línea que PLA-6, y trabajos de control predictivo de convertidores afines a INT-3. Ojo: el perfil mezcla publicaciones de homónimos (estudios queer, historia de Chile, biología vegetal), por lo que citas y h-index están inflados; la lista de publicaciones aquí solo incluye las propias."
   },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "ICYTE (UNMdP-CONICET), Universidad Nacional de Mar del Plata",
-  "pais_inferido": "Argentina",
-  "intereses": {
-   "temas": [
-    "predictive current control of grid-tied three-phase inverters",
-    "generalized predictive control for LCL-filtered converters",
-    "model predictive control for energy storage trading",
-    "deep learning forecasting of PV generation",
-    "digital control of dual active bridge converters",
-    "converter control for wind and PV generation"
-   ],
-   "palabras_clave": [
-    "predictive control",
-    "grid-connected inverters",
-    "LCL filter",
-    "dead-time compensation",
-    "repetitive control",
-    "active power filters",
-    "PV forecasting",
-    "LSTM",
-    "energy storage",
-    "dual active bridge",
-    "distributed generation"
-   ],
-   "metodos": [
-    "model predictive control",
-    "generalized predictive control",
-    "repetitive control",
-    "digital control implementation on DSP/FPGA",
-    "convolutional and recurrent neural networks",
-    "LSTM with attention"
-   ],
-   "aplicaciones": [
-    "grid-tied PV inverters",
-    "wind power generation systems",
-    "battery energy storage trading",
-    "PV plant output forecasting",
-    "DC-DC converters for distributed generation"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "3": 0.8,
-    "6": 0.6,
-    "7": 0.4
-   },
-   "etapa": "investigador_senior",
-   "resumen": "Investigador del ICYTE (UNMdP) con larga trayectoria en control predictivo de inversores conectados a red, filtros activos y convertidores para generación eólica y FV, y una línea reciente en pronóstico de generación FV con redes neuronales. En CLAGTEE es coautor de MPC para trading con almacenamiento y de pronóstico FV con LSTM y atención; le interesarían sesiones de electrónica de potencia, integración de renovables y almacenamiento, e IA aplicada.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  }
- },
- {
-  "id": "camilo-villegas",
-  "nombre": "Camilo Villegas",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Posiblemente Universidad de La Frontera (UFRO), Temuco (por el coautor C. E. Pesce G.)",
-  "pais_inferido": "Chile",
-  "intereses": {
-   "temas": [
-    "commutation failures in LCC-HVDC links under AC faults",
-    "AC/DC interaction in parallel HVDC and 500 kV AC corridors",
-    "fault response of the Kimal–Lo Aguirre HVDC link"
-   ],
-   "palabras_clave": [
-    "HVDC",
-    "LCC",
-    "commutation failure",
-    "three-phase faults",
-    "500 kV AC transmission",
-    "AC/DC interaction",
-    "Kimal–Lo Aguirre"
-   ],
-   "metodos": [],
-   "aplicaciones": [
-    "Kimal–Lo Aguirre HVDC-LCC link",
-    "Chilean 500 kV transmission system"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "3": 0.5
-   },
-   "etapa": "desconocida",
-   "resumen": "No se encontró perfil de Google Scholar. Su paper PLA-44 estudia las fallas de conmutación del enlace HVDC-LCC Kimal–Lo Aguirre ante fallas trifásicas en la línea de 500 kV en paralelo; el coautor C. E. Pesce G. (UFRO) trabaja en HVDC y aislación en alta tensión. Evidencia limitada al título del paper; le interesarían sesiones de HVDC, transmisión, estabilidad y operación del sistema.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "Scholar: 'Camilo Villegas electrical engineering power systems'; solo apareció Juan Camilo Villegas (ecohidrología, U. de Antioquia), descartado."
- },
- {
-  "id": "cristian-e-pesce-g",
-  "nombre": "Cristián E. Pesce G.",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [
-   {
-    "tipo": "institucional",
-    "url": "https://inele.ufro.cl/cpesce.html"
-   }
-  ],
-  "afiliacion_inferida": "Universidad de La Frontera (UFRO), Temuco – Departamento de Ingeniería Eléctrica, Facultad de Ingeniería y Ciencias",
-  "pais_inferido": "Chile",
-  "intereses": {
-   "temas": [
-    "commutation failures in LCC-HVDC links under AC faults",
-    "faults in overhead HVDC transmission lines (Kimal–Lo Aguirre case study)",
-    "DC-DC converters for HVDC transmission systems",
-    "condition assessment of high-voltage insulators",
-    "power converters for renewable energy"
-   ],
-   "palabras_clave": [
-    "HVDC",
-    "LCC",
-    "commutation failure",
-    "Kimal–Lo Aguirre",
-    "three-phase faults",
-    "500 kV AC transmission",
-    "overhead HVDC lines",
-    "DC-DC converters",
-    "high-voltage insulation",
-    "silicone-coated insulators",
-    "power electronics"
-   ],
-   "metodos": [
-    "impedance-based insulator condition assessment"
-   ],
-   "aplicaciones": [
-    "Kimal–Lo Aguirre HVDC-LCC link",
-    "high-voltage insulators with silicone coating",
-    "converters for renewable generation"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "3": 0.7,
-    "4": 0.4,
-    "2": 0.3
-   },
-   "etapa": "investigador_consolidado",
-   "resumen": "Profesor-investigador de la UFRO (doctor en Ingeniería Eléctrica por la U. de Concepción) que trabaja en HVDC, convertidores DC-DC para transmisión HVDC, aislación en alta tensión y electrónica de potencia para renovables; en 2025 fue coautor de un estudio de fallas en líneas aéreas HVDC sobre el caso Kimal–Lo Aguirre (IEEE CHILECON) y de un trabajo en IEEE Access sobre la condición de aisladores recubiertos de silicona. Presenta PLA-44; le interesarían sesiones de HVDC, transmisión, electrónica de potencia y monitoreo de equipos de alta tensión. Etapa inferida del cargo (sin métricas de citas).",
-   "base": [
-    "papers_clagtee",
-    "otras_fuentes"
-   ]
-  },
-  "nota_busqueda": "Scholar: 'Cristián Pesce HVDC power systems Chile' y 'Cristian Pesce Universidad de La Frontera', sin perfil. Búsqueda web general halló su página institucional en UFRO (la página no respondió a WebFetch: HTTP 503; datos tomados del resultado de búsqueda)."
- },
- {
-  "id": "eduardo-richard",
-  "nombre": "Eduardo Richard",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Posiblemente Universidad de La Frontera (UFRO), Temuco (por el coautor C. E. Pesce G.)",
-  "pais_inferido": "Chile",
-  "intereses": {
-   "temas": [
-    "commutation failures in LCC-HVDC links under AC faults",
-    "AC/DC interaction in parallel HVDC and 500 kV AC corridors",
-    "fault response of the Kimal–Lo Aguirre HVDC link"
-   ],
-   "palabras_clave": [
-    "HVDC",
-    "LCC",
-    "commutation failure",
-    "three-phase faults",
-    "500 kV AC transmission",
-    "AC/DC interaction",
-    "Kimal–Lo Aguirre"
-   ],
-   "metodos": [],
-   "aplicaciones": [
-    "Kimal–Lo Aguirre HVDC-LCC link",
-    "Chilean 500 kV transmission system"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "3": 0.5
-   },
-   "etapa": "desconocida",
-   "resumen": "No se encontró perfil de Google Scholar. Su paper PLA-44 estudia las fallas de conmutación del enlace HVDC-LCC Kimal–Lo Aguirre ante fallas trifásicas en la línea de 500 kV en paralelo; el coautor C. E. Pesce G. (UFRO) trabaja en HVDC y aislación en alta tensión. Evidencia limitada al título del paper; le interesarían sesiones de HVDC, transmisión, estabilidad y operación del sistema.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "Scholar: 'Eduardo Richard power systems transmission Chile'; sin candidatos (solo Eduardo Perez-Richet, economista, descartado)."
- },
- {
-  "id": "felipe-gonzalez",
-  "nombre": "Felipe Gonzalez",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Posiblemente Universidad de La Frontera (UFRO), Temuco (por el coautor C. E. Pesce G.)",
-  "pais_inferido": "Chile",
-  "intereses": {
-   "temas": [
-    "commutation failures in LCC-HVDC links under AC faults",
-    "AC/DC interaction in parallel HVDC and 500 kV AC corridors",
-    "fault response of the Kimal–Lo Aguirre HVDC link"
-   ],
-   "palabras_clave": [
-    "HVDC",
-    "LCC",
-    "commutation failure",
-    "three-phase faults",
-    "500 kV AC transmission",
-    "AC/DC interaction",
-    "Kimal–Lo Aguirre"
-   ],
-   "metodos": [],
-   "aplicaciones": [
-    "Kimal–Lo Aguirre HVDC-LCC link",
-    "Chilean 500 kV transmission system"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "3": 0.5
-   },
-   "etapa": "desconocida",
-   "resumen": "No se encontró perfil de Google Scholar. Su paper PLA-44 estudia las fallas de conmutación del enlace HVDC-LCC Kimal–Lo Aguirre ante fallas trifásicas en la línea de 500 kV en paralelo; el coautor C. E. Pesce G. (UFRO) trabaja en HVDC y aislación en alta tensión. Evidencia limitada al título del paper; le interesarían sesiones de HVDC, transmisión, estabilidad y operación del sistema.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "Scholar: 'Felipe Gonzalez HVDC power system Chile'; nombre muy común, ningún candidato en HVDC/transmisión (Felipe Gonzalez Venegas trabaja en VE y redes de distribución en Europa/ACER; no hay evidencia que lo vincule)."
- },
- {
-  "id": "gabriel-olguin",
-  "nombre": "Gabriel Olguin",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Posiblemente Universidad de La Frontera (UFRO), Temuco (por el coautor C. E. Pesce G.)",
-  "pais_inferido": "Chile",
-  "intereses": {
-   "temas": [
-    "commutation failures in LCC-HVDC links under AC faults",
-    "AC/DC interaction in parallel HVDC and 500 kV AC corridors",
-    "fault response of the Kimal–Lo Aguirre HVDC link"
-   ],
-   "palabras_clave": [
-    "HVDC",
-    "LCC",
-    "commutation failure",
-    "three-phase faults",
-    "500 kV AC transmission",
-    "AC/DC interaction",
-    "Kimal–Lo Aguirre"
-   ],
-   "metodos": [],
-   "aplicaciones": [
-    "Kimal–Lo Aguirre HVDC-LCC link",
-    "Chilean 500 kV transmission system"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "3": 0.5
-   },
-   "etapa": "desconocida",
-   "resumen": "No se encontró perfil de Google Scholar. Su paper PLA-44 estudia las fallas de conmutación del enlace HVDC-LCC Kimal–Lo Aguirre ante fallas trifásicas en la línea de 500 kV en paralelo; el coautor C. E. Pesce G. (UFRO) trabaja en HVDC y aislación en alta tensión. Evidencia limitada al título del paper; le interesarían sesiones de HVDC, transmisión, estabilidad y operación del sistema.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "Scholar: 'Gabriel Olguin Google Scholar' (solo Gabriel J. Olguín-Orellana, farmacología UdeC, descartado) y 'Gabriel Olguín voltage dip power quality' (sin resultados). Búsqueda web general del paper tampoco lo ubicó."
- },
- {
-  "id": "rodrigo-villalobos",
-  "nombre": "Rodrigo Villalobos",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Posiblemente Universidad de La Frontera (UFRO), Temuco (por el coautor C. E. Pesce G.)",
-  "pais_inferido": "Chile",
-  "intereses": {
-   "temas": [
-    "commutation failures in LCC-HVDC links under AC faults",
-    "AC/DC interaction in parallel HVDC and 500 kV AC corridors",
-    "fault response of the Kimal–Lo Aguirre HVDC link"
-   ],
-   "palabras_clave": [
-    "HVDC",
-    "LCC",
-    "commutation failure",
-    "three-phase faults",
-    "500 kV AC transmission",
-    "AC/DC interaction",
-    "Kimal–Lo Aguirre"
-   ],
-   "metodos": [],
-   "aplicaciones": [
-    "Kimal–Lo Aguirre HVDC-LCC link",
-    "Chilean 500 kV transmission system"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "3": 0.5
-   },
-   "etapa": "desconocida",
-   "resumen": "No se encontró perfil de Google Scholar. Su paper PLA-44 estudia las fallas de conmutación del enlace HVDC-LCC Kimal–Lo Aguirre ante fallas trifásicas en la línea de 500 kV en paralelo; el coautor C. E. Pesce G. (UFRO) trabaja en HVDC y aislación en alta tensión. Evidencia limitada al título del paper; le interesarían sesiones de HVDC, transmisión, estabilidad y operación del sistema.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "Scholar: 'Rodrigo Villalobos power systems HVDC Chile'; el único Rodrigo Villalobos (JWeu3bMAAAAJ) es de KAUST, ecología de arrecifes, descartado."
- },
- {
-  "id": "felipe-martins-maranhao-da-silva",
-  "nombre": "Felipe Martins Maranhão da Silva",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Probablemente Instituto Federal de Pernambuco (IFPE) (por el coautor R. M. R. Barros)",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "battery energy storage providing ancillary services in distribution feeders",
-    "high photovoltaic penetration in real distribution feeders",
-    "impacts of electric vehicle charging on distribution systems",
-    "optimal allocation of DER for load support during contingencies"
-   ],
-   "palabras_clave": [
-    "BESS",
-    "ancillary services",
-    "distribution feeders",
-    "high PV penetration",
-    "electric vehicles",
-    "EV charging",
-    "distribution system analysis",
-    "DER allocation",
-    "grid reliability"
-   ],
-   "metodos": [],
-   "aplicaciones": [
-    "real distribution feeders with high PV penetration",
-    "distribution networks with growing EV adoption"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "1": 0.6,
-    "7": 0.2
-   },
-   "etapa": "desconocida",
-   "resumen": "No se encontró perfil de Google Scholar. Presenta INT-30 (impactos del aumento de vehículos eléctricos en la distribución) y es coautor de INT-19 (BESS con servicios auxiliares en alimentadores reales con alta penetración FV). Es probablemente el 'F Silva' de 'Enhancing grid reliability: optimal allocation of DER for load support during contingencies' (IET, 2024) junto a R. M. R. Barros (no confirmado). Como contexto de grupo, su coautor R. M. R. Barros (IFPE) investiga sistemas de distribución, pérdidas no técnicas y DER. Le interesarían sesiones de almacenamiento, movilidad eléctrica y operación de redes de distribución con recursos distribuidos.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "Scholar: nombre completo y 'Felipe Maranhão distribution system electric vehicle IFPE'; web general: nombre completo entre comillas (solo un futbolista homónimo). No figura en la barra de coautores de R. M. R. Barros (nwmX8RcAAAAJ); posible coautor 'F Silva' en una publicación de Barros de 2024."
- },
- {
-  "id": "jason-valentin-moreira",
-  "nombre": "Jason Valentin Moreira",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Probablemente Instituto Federal de Pernambuco (IFPE) (por el coautor R. M. R. Barros)",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "impacts of electric vehicle charging on distribution systems",
-    "distribution network planning under growing EV penetration",
-    "operation of distribution feeders with distributed energy resources"
-   ],
-   "palabras_clave": [
-    "electric vehicles",
-    "EV charging",
-    "distribution systems",
-    "EV penetration",
-    "distribution system analysis"
-   ],
-   "metodos": [],
-   "aplicaciones": [
-    "distribution networks with growing EV adoption"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "1": 0.6
-   },
-   "etapa": "desconocida",
-   "resumen": "No se encontró perfil de Google Scholar. Su paper INT-30 estudia los impactos del aumento de la penetración de vehículos eléctricos en el sistema de distribución. Como contexto de grupo, su coautor R. M. R. Barros (IFPE) investiga sistemas de distribución, pérdidas no técnicas y DER. Evidencia limitada al título del paper; le interesarían sesiones de movilidad eléctrica, recursos distribuidos y planificación de redes de distribución.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "Scholar: 'Jason Valentin Moreira'; sin candidatos (Jason Valentine, nanofotónica, descartado). No figura en la barra de coautores de R. M. R. Barros."
- },
- {
-  "id": "matheus-alves-ruiz",
-  "nombre": "Matheus Alves Ruiz",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Probablemente Instituto Federal de Pernambuco (IFPE) (por el coautor R. M. R. Barros)",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "battery energy storage providing ancillary services in distribution feeders",
-    "high photovoltaic penetration in real distribution feeders",
-    "operation of distribution feeders with distributed energy resources"
-   ],
-   "palabras_clave": [
-    "BESS",
-    "ancillary services",
-    "distribution feeders",
-    "high PV penetration",
-    "battery storage",
-    "distribution system analysis"
-   ],
-   "metodos": [],
-   "aplicaciones": [
-    "real distribution feeders with high PV penetration"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "1": 0.6,
-    "7": 0.2
-   },
-   "etapa": "desconocida",
-   "resumen": "No se encontró perfil de Google Scholar. Presenta INT-19, sobre BESS que prestan servicios auxiliares en alimentadores de distribución reales con alta penetración fotovoltaica. Como contexto de grupo, su coautor R. M. R. Barros (IFPE) investiga sistemas de distribución, pérdidas no técnicas y DER. Evidencia limitada al título del paper; le interesarían sesiones de almacenamiento, integración de recursos distribuidos y operación de redes de distribución.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "Scholar: 'Matheus Alves Ruiz' y 'Matheus Ruiz BESS photovoltaic distribution feeders'; web general: nombre completo entre comillas. Sin candidatos (solo homónimos parciales de otras áreas). No figura en la barra de coautores de R. M. R. Barros."
- },
- {
-  "id": "rafael-mendonca-rocha-barros",
-  "nombre": "Rafael Mendonça Rocha Barros",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=nwmX8RcAAAAJ",
-   "user_id": "nwmX8RcAAAAJ",
-   "nombre_perfil": "Rafael Mendonça Rocha Barros",
-   "afiliacion": "Instituto Federal de Pernambuco (IFPE)",
-   "email_verificado": "garanhuns.ifpe.edu.br",
-   "intereses_scholar": [
-    "Power Distribution Systems",
-    "Multiphysics Simulations",
-    "A.I.",
-    "4.0 Industry",
-    "High Voltage"
-   ],
-   "citas": 146,
-   "citas_desde_2021": 104,
-   "h_index": 6,
-   "publicaciones": [
-    {
-     "titulo": "Causal inference-inspired analysis applied to non-technical loss characterization in distribution power systems",
-     "anio": 2026,
-     "citas": 0
-    },
-    {
-     "titulo": "DesagregaGD: uma ferramenta computacional para desagregação da curva de carga em redes com geração distribuída",
-     "anio": 2026,
-     "citas": 0
-    },
-    {
-     "titulo": "Characterization of non-technical loss in consumers of the electric distribution system",
-     "anio": 2025,
-     "citas": 1
-    },
-    {
-     "titulo": "Enhancing grid reliability: optimal allocation of DER for load support during contingencies",
-     "anio": 2024,
-     "citas": 2
-    },
-    {
-     "titulo": "Gestão da Perda Não Técnica de Energia Elétrica",
-     "anio": 2023,
-     "citas": 0
-    },
-    {
-     "titulo": "Evaluation of classifiers for non-technical loss identification in electric power systems",
-     "anio": 2021,
-     "citas": 23
-    },
-    {
-     "titulo": "Maximizing the financial return of non-technical loss management in power distribution systems",
-     "anio": 2021,
-     "citas": 11
-    },
-    {
-     "titulo": "Contribution of inrush current to mechanical failure of power transformers windings",
-     "anio": 2019,
-     "citas": 35
-    },
-    {
-     "titulo": "Use of ANN for identification of consumers with irregular electrical installations",
-     "anio": 2018,
-     "citas": 6
-    },
-    {
-     "titulo": "Mathematical modeling of transformers based on the frequency response of magnetizing parameters",
-     "anio": 2016,
-     "citas": 20
-    },
-    {
-     "titulo": "A new approach for optimal design of corona ring",
-     "anio": 2016,
-     "citas": 7
-    },
-    {
-     "titulo": "Thermal behavior analysis of ZnO polymeric surge arrester using the finite elements method",
-     "anio": 2014,
-     "citas": 21
+  {
+    "id": "joaquine-isreal-sanchez",
+    "nombre": "Joaquine Isreal Sánchez",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidad Nacional de Mar del Plata (probable, por el grupo de J. J. Roberts)",
+    "pais_inferido": "Argentina",
+    "intereses": {
+      "temas": [
+        "techno-economic comparison of on-grid and hybrid residential photovoltaic systems",
+        "residential battery storage combined with PV",
+        "distributed solar generation in Argentina"
+      ],
+      "palabras_clave": [
+        "residential photovoltaics",
+        "on-grid PV",
+        "hybrid PV systems",
+        "battery storage",
+        "techno-economic analysis",
+        "distributed generation"
+      ],
+      "metodos": [
+        "techno-economic analysis"
+      ],
+      "aplicaciones": [
+        "residential PV systems in Mar del Plata, Argentina"
+      ],
+      "afinidad_tracks": {
+        "1": 0.8,
+        "2": 0.8,
+        "7": 0.3
+      },
+      "etapa": "desconocida",
+      "resumen": "No se encontró perfil académico (Scholar ni búsqueda web general); su única referencia es el paper PLA-57 sobre la comparación técnico-económica de sistemas FV residenciales on-grid e híbridos en Mar del Plata, en el grupo de J. J. Roberts (UNMdP). Evidencia escasa: le interesarían sesiones de FV residencial, almacenamiento y evaluación económica de generación distribuida.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
-   ],
-   "confianza": "alta",
-   "evidencia": "Nombre completo idéntico (cuatro partes) y perfil en sistemas de distribución (IFPE Garanhuns, Brasil). Publica 'Enhancing grid reliability: optimal allocation of DER for load support during contingencies' (IET CP882, 2024) con 'F Silva', probablemente su coautor de CLAGTEE Felipe Martins Maranhão da Silva (no confirmado); misma línea de DER en alimentadores de distribución que INT-19/INT-30. Ningún otro coautor de CLAGTEE figura en el perfil."
   },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Instituto Federal de Pernambuco (IFPE), campus Garanhuns",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "non-technical loss detection and management in distribution systems",
-    "battery energy storage providing ancillary services in feeders with high PV penetration",
-    "impacts of electric vehicle penetration on distribution systems",
-    "optimal allocation of DER for load support during contingencies",
-    "load curve disaggregation in networks with distributed generation",
-    "multiphysics simulation of high-voltage equipment (transformer inrush, surge arresters, corona rings)"
-   ],
-   "palabras_clave": [
-    "non-technical losses",
-    "distribution systems",
-    "machine learning classifiers",
-    "causal inference",
-    "BESS",
-    "ancillary services",
-    "high PV penetration",
-    "electric vehicles",
-    "DER allocation",
-    "load disaggregation",
-    "transformer inrush current",
-    "finite element method"
-   ],
-   "metodos": [
-    "machine learning classifiers and artificial neural networks",
-    "causal inference analysis",
-    "finite element multiphysics simulation",
-    "optimal DER allocation"
-   ],
-   "aplicaciones": [
-    "non-technical loss management in Brazilian distribution utilities",
-    "real distribution feeders with high PV penetration",
-    "distribution networks with growing EV adoption",
-    "power transformers and high-voltage insulation"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "1": 0.7,
-    "6": 0.5,
-    "7": 0.3,
-    "9": 0.3
-   },
-   "etapa": "investigador_consolidado",
-   "resumen": "Profesor del IFPE (doctorado en la UFCG, 2021) que investiga pérdidas no técnicas en distribución con aprendizaje automático e inferencia causal, integración de DER en alimentadores y, antes, simulación multifísica de equipos de alta tensión. En CLAGTEE es coautor de BESS con servicios auxiliares en alimentadores con alta penetración FV y de impactos de vehículos eléctricos en distribución; le interesarían sesiones de distribución con recursos distribuidos, almacenamiento, movilidad eléctrica e IA aplicada a redes.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  }
- },
- {
-  "id": "elizete-maria-lourenco",
-  "nombre": "Elizete Maria Lourenço",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=qSL4-0QAAAAJ",
-   "user_id": "qSL4-0QAAAAJ",
-   "nombre_perfil": "Elizete Maria Lourenço",
-   "afiliacion": "Professor at Federal University of Paraná, Curitiba, Brazil",
-   "email_verificado": "ufpr.br",
-   "intereses_scholar": [
-    "Electric Power Systems"
-   ],
-   "citas": 991,
-   "citas_desde_2021": 359,
-   "h_index": 18,
-   "publicaciones": [
-    {
-     "titulo": "Power distribution system state estimation",
-     "anio": 2023,
-     "citas": 26
-    },
-    {
-     "titulo": "Fast-decoupled power flow method for integrated analysis of transmission and distribution systems",
-     "anio": 2021,
-     "citas": 41
-    },
-    {
-     "titulo": "Novel approach to power system state estimation for transmission and distribution systems",
-     "anio": 2019,
-     "citas": 19
-    },
-    {
-     "titulo": "Extended fast decoupled power flow for reconfiguration networks in distribution systems",
-     "anio": 2018,
-     "citas": 39
-    },
-    {
-     "titulo": "Topology error and bad data processing in generalized state estimation",
-     "anio": 2014,
-     "citas": 83
-    },
-    {
-     "titulo": "Fast decoupled power flow to emerging distribution systems via complex pu normalization",
-     "anio": 2014,
-     "citas": 75
-    },
-    {
-     "titulo": "Modeling ferroresonance phenomena with a flux-current Jiles-Atherton hysteresis approach",
-     "anio": 2013,
-     "citas": 44
-    },
-    {
-     "titulo": "Unified load flow analysis for emerging distribution systems",
-     "anio": 2010,
-     "citas": 19
-    },
-    {
-     "titulo": "Steady-state solution for power networks modeled at bus section level",
-     "anio": 2009,
-     "citas": 32
-    },
-    {
-     "titulo": "A topology error identification method directly based on collinearity tests",
-     "anio": 2006,
-     "citas": 80
-    },
-    {
-     "titulo": "Bayesian-based hypothesis testing for topology error identification in generalized state estimation",
-     "anio": 2004,
-     "citas": 139
-    },
-    {
-     "titulo": "Power system topological observability analysis including switching branches",
-     "anio": 2002,
-     "citas": 57
+  {
+    "id": "juan-francisco-calo",
+    "nombre": "Juan Francisco Calo",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidad Nacional de Mar del Plata (probable, por el grupo de J. J. Roberts)",
+    "pais_inferido": "Argentina",
+    "intereses": {
+      "temas": [
+        "techno-economic comparison of on-grid and hybrid residential photovoltaic systems",
+        "residential battery storage combined with PV",
+        "distributed solar generation in Argentina"
+      ],
+      "palabras_clave": [
+        "residential photovoltaics",
+        "on-grid PV",
+        "hybrid PV systems",
+        "battery storage",
+        "techno-economic analysis",
+        "distributed generation"
+      ],
+      "metodos": [
+        "techno-economic analysis"
+      ],
+      "aplicaciones": [
+        "residential PV systems in Mar del Plata, Argentina"
+      ],
+      "afinidad_tracks": {
+        "1": 0.8,
+        "2": 0.8,
+        "7": 0.3
+      },
+      "etapa": "desconocida",
+      "resumen": "No se encontró perfil académico (Scholar ni búsqueda web general); su única referencia es el paper PLA-57 sobre la comparación técnico-económica de sistemas FV residenciales on-grid e híbridos en Mar del Plata, en el grupo de J. J. Roberts (UNMdP). Evidencia escasa: le interesarían sesiones de FV residencial, almacenamiento y evaluación económica de generación distribuida.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
-   ],
-   "confianza": "alta",
-   "evidencia": "Su coautor de PLA-26 Odilon Luís Tortelli (UFPR) figura en la barra de coautores y firma varias publicaciones con ella (flujo de potencia desacoplado rápido para redes de distribución y análisis integrado T&D), misma línea que PLA-26."
   },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidade Federal do Paraná (UFPR), Curitiba",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "generalized power system state estimation with topology error identification",
-    "distribution system state estimation",
-    "fast decoupled power flow for emerging distribution and integrated T&D networks",
-    "linearized AC power flow for very short-term identification of voltage problems",
-    "bad data processing and observability analysis"
-   ],
-   "palabras_clave": [
-    "state estimation",
-    "topology error identification",
-    "bad data processing",
-    "observability analysis",
-    "fast decoupled power flow",
-    "complex per-unit normalization",
-    "distribution system state estimation",
-    "transmission and distribution integration",
-    "linearized power flow",
-    "voltage violations",
-    "network reconfiguration"
-   ],
-   "metodos": [
-    "weighted least squares state estimation",
-    "Bayesian and geometric hypothesis testing",
-    "fast decoupled power flow",
-    "complex per-unit normalization",
-    "linearized AC power flow"
-   ],
-   "aplicaciones": [
-    "real-time monitoring of transmission and distribution networks",
-    "active distribution systems with distributed generation",
-    "very short-term operation of power systems"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "4": 0.7,
-    "2": 0.3
-   },
-   "etapa": "investigador_senior",
-   "resumen": "Profesora de la UFPR con larga trayectoria en estimación de estado de sistemas de potencia (errores de topología, datos erróneos, observabilidad) y en flujo de potencia desacoplado rápido para redes de distribución y análisis integrado transmisión-distribución; autora de un libro sobre estimación de estado en distribución (IET, 2023). En CLAGTEE es coautora de un flujo de potencia AC linealizado para detectar problemas de tensión en el muy corto plazo; le interesarían sesiones de operación de sistemas, estimación de estado, monitoreo y redes de distribución activas.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  }
- },
- {
-  "id": "ewerlyn-ane-perussolo-guelbert",
-  "nombre": "Ewerlyn Ane Perússolo Guelbert",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Probablemente Universidade Federal do Paraná (UFPR) (por los coautores E. M. Lourenço y O. L. Tortelli)",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "linearized AC power flow models",
-    "very short-term identification of voltage problems",
-    "voltage security assessment in real-time operation"
-   ],
-   "palabras_clave": [
-    "linearized power flow",
-    "AC power flow",
-    "voltage violations",
-    "very short-term operation",
-    "power system operation",
-    "voltage control"
-   ],
-   "metodos": [
-    "linearized AC power flow",
-    "fast decoupled power flow"
-   ],
-   "aplicaciones": [
-    "very short-term operation of power systems"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "4": 0.3
-   },
-   "etapa": "desconocida",
-   "resumen": "No se encontró perfil de Google Scholar. Presenta PLA-26, que propone un flujo de potencia AC linealizado para identificar problemas de tensión en el muy corto plazo. Como contexto de grupo, sus coautores E. M. Lourenço y O. L. Tortelli (UFPR) trabajan en estimación de estado y flujo de potencia desacoplado rápido para redes de distribución y análisis integrado T&D. Evidencia limitada al título del paper; le interesarían sesiones de operación de sistemas, flujo de potencia y control de tensión.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "Scholar: nombre completo (sin resultados) y 'Ewerlyn Guelbert power flow UFPR'; web general: nombre completo / 'Ewerlyn Guelbert' UFPR. Sin resultados. No figura en las barras de coautores de Lourenço ni de Tortelli."
- },
- {
-  "id": "odilon-luis-tortelli",
-  "nombre": "Odilon Luís Tortelli",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=mo3sY6sAAAAJ",
-   "user_id": "mo3sY6sAAAAJ",
-   "nombre_perfil": "Odilon Luis Tortelli",
-   "afiliacion": "Professor de Engenharia Elétrica, Universidade Federal do Paraná",
-   "email_verificado": "ufpr.br",
-   "intereses_scholar": [
-    "Sistemas de Potência"
-   ],
-   "citas": 300,
-   "citas_desde_2021": 81,
-   "h_index": 8,
-   "publicaciones": [
-    {
-     "titulo": "Fast-decoupled distribution system state estimation",
-     "anio": 2022,
-     "citas": 3
+  {
+    "id": "justo-jose-roberts",
+    "nombre": "Justo José Roberts",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=7ExKJ8EAAAAJ",
+      "user_id": "7ExKJ8EAAAAJ",
+      "nombre_perfil": "Justo José Roberts",
+      "afiliacion": "Professor/Researcher, National University of Mar del Plata (UNMdP)",
+      "email_verificado": "fi.mdp.edu.ar",
+      "intereses_scholar": [
+        "Computer Simulation and Optimization",
+        "Energy Systems",
+        "Distributed Generation",
+        "Renewable Energy",
+        "Enery Managament"
+      ],
+      "citas": 990,
+      "citas_desde_2021": 707,
+      "h_index": 13,
+      "publicaciones": [
+        {
+          "titulo": "Solar heat for industrial processes in Brazil: Sectoral potential, barriers, and integration strategies",
+          "anio": 2027,
+          "citas": 0
+        },
+        {
+          "titulo": "Examination of the theoretical model for flat-plate solar collectors and integration with solar radiation decomposition/transposition models",
+          "anio": 2023,
+          "citas": 3
+        },
+        {
+          "titulo": "Thermodynamic modelling for absorption refrigeration cycles powered by solar energy and a case study for Porto Alegre, Brazil",
+          "anio": 2023,
+          "citas": 33
+        },
+        {
+          "titulo": "Theoretical model for flat plate solar collectors operating with nanofluids: Case study for Porto Alegre, Brazil",
+          "anio": 2023,
+          "citas": 40
+        },
+        {
+          "titulo": "Ethanol as a renewable biofuel: Combustion characteristics and application in engines",
+          "anio": 2022,
+          "citas": 200
+        },
+        {
+          "titulo": "Biodiesel in South American countries: A review on policies, stages of development and imminent competition with hydrotreated vegetable oil",
+          "anio": 2022,
+          "citas": 70
+        },
+        {
+          "titulo": "Calculation of the shading factors for solar modules with matlab",
+          "anio": 2021,
+          "citas": 29
+        },
+        {
+          "titulo": "Renewable Energy-based Electricity Supply System for a School",
+          "anio": 2019,
+          "citas": 0
+        },
+        {
+          "titulo": "Robust multi-objective optimization of a renewable based hybrid power system",
+          "anio": 2018,
+          "citas": 126
+        },
+        {
+          "titulo": "Assessment of photovoltaic performance models for system simulation",
+          "anio": 2017,
+          "citas": 125
+        },
+        {
+          "titulo": "Gatoolbox: a matlab-based genetic algorithm toolbox for function optimization",
+          "anio": 2017,
+          "citas": 22
+        },
+        {
+          "titulo": "Assessment of dry residual biomass potential for use as alternative energy source in the party of General Pueyrredón, Argentina",
+          "anio": 2015,
+          "citas": 147
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Coautores de PLA-57 Agnelo Marotta Cassula y Andres Z. Mendiburu figuran en su lista de coautores; investigador de la UNMdP (Mar del Plata) con trabajos previos sobre modelos de desempeño FV y sistemas híbridos, misma línea que PLA-57."
     },
-    {
-     "titulo": "Operação ótima de uma Microgrid Conectada à Rede Elétrica utilizando Controle Preditivo e Modelo de Previsão baseado em Redes Neurais para Peak Shaving",
-     "anio": 2021,
-     "citas": 2
-    },
-    {
-     "titulo": "State Estimation of Power Systems With TCSCs Using the Linearized WLS Algorithm",
-     "anio": 2019,
-     "citas": 2
-    },
-    {
-     "titulo": "D-SVC controller analysis in active distribution systems operation",
-     "anio": 2019,
-     "citas": 1
-    },
-    {
-     "titulo": "Three phase fast decoupled power flow for emerging distribution systems",
-     "anio": 2015,
-     "citas": 8
-    },
-    {
-     "titulo": "A reconfiguration analysis tool for distribution networks using fast decoupled power flow",
-     "anio": 2015,
-     "citas": 6
-    },
-    {
-     "titulo": "Fast decoupled power flow to emerging distribution systems via complex pu normalization",
-     "anio": 2014,
-     "citas": 75
-    },
-    {
-     "titulo": "Complex normalization to perform power flow analysis in emerging distribution systems",
-     "anio": 2012,
-     "citas": 9
-    },
-    {
-     "titulo": "TCPST allocation using optimal power flow and Genetic Algorithms",
-     "anio": 2011,
-     "citas": 22
-    },
-    {
-     "titulo": "Power flow analysis for interconnected T&D networks with meshed topology",
-     "anio": 2011,
-     "citas": 10
-    },
-    {
-     "titulo": "Unified load flow analysis for emerging distribution systems",
-     "anio": 2010,
-     "citas": 19
-    },
-    {
-     "titulo": "Inclusion of a high voltage DC-voltage source converter model in a Newton–Raphson power flow algorithm",
-     "anio": 2003,
-     "citas": 105
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidad Nacional de Mar del Plata (UNMdP)",
+    "pais_inferido": "Argentina",
+    "intereses": {
+      "temas": [
+        "techno-economic and multi-objective sizing of hybrid renewable power systems",
+        "photovoltaic performance modeling and shading analysis",
+        "deep learning forecasting of PV generation",
+        "model predictive control for energy storage trading",
+        "solar thermal collectors and solar heat for industrial processes",
+        "biomass energy potential assessment"
+      ],
+      "palabras_clave": [
+        "hybrid renewable systems",
+        "photovoltaic systems",
+        "PV forecasting",
+        "LSTM",
+        "attention mechanism",
+        "energy storage",
+        "model predictive control",
+        "genetic algorithms",
+        "distributed generation",
+        "solar thermal",
+        "biomass",
+        "techno-economic analysis"
+      ],
+      "metodos": [
+        "multi-objective optimization",
+        "genetic algorithms",
+        "model predictive control",
+        "LSTM neural networks with attention",
+        "PV performance simulation"
+      ],
+      "aplicaciones": [
+        "residential PV systems in Mar del Plata",
+        "energy storage trading/arbitrage",
+        "isolated rural hybrid systems",
+        "solar heat for industrial processes",
+        "renewable supply for schools"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.7,
+        "6": 0.6,
+        "7": 0.5,
+        "10": 0.4,
+        "11": 0.4
+      },
+      "etapa": "investigador_consolidado",
+      "resumen": "Profesor-investigador de la UNMdP que trabaja en simulación y optimización de sistemas energéticos: dimensionamiento de sistemas híbridos renovables, modelos de desempeño FV, solar térmica y potencial de biomasa. En CLAGTEE presenta tres trabajos (evaluación técnico-económica de FV residencial, MPC para trading con almacenamiento y pronóstico FV con LSTM y atención); le interesarían sesiones de integración renovable y almacenamiento, IA aplicada a pronóstico y mercados de energía.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
-   ],
-   "confianza": "alta",
-   "evidencia": "Su coautora de PLA-26 Elizete Maria Lourenço (UFPR) es el único coautor en su barra y firma con él varias publicaciones sobre flujo de potencia para redes de distribución, misma línea que PLA-26."
   },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidade Federal do Paraná (UFPR), Curitiba",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "fast decoupled power flow for emerging distribution systems",
-    "modeling of FACTS and VSC-HVDC devices in power flow",
-    "power flow for interconnected transmission and distribution networks",
-    "state estimation with FACTS devices and in distribution systems",
-    "linearized AC power flow for very short-term identification of voltage problems",
-    "optimal operation of grid-connected microgrids"
-   ],
-   "palabras_clave": [
-    "fast decoupled power flow",
-    "complex per-unit normalization",
-    "FACTS",
-    "TCSC",
-    "TCPST",
-    "VSC-HVDC",
-    "optimal power flow",
-    "distribution network reconfiguration",
-    "state estimation",
-    "linearized power flow",
-    "microgrids",
-    "peak shaving"
-   ],
-   "metodos": [
-    "Newton-Raphson power flow",
-    "fast decoupled power flow",
-    "optimal power flow with genetic algorithms",
-    "linearized weighted least squares",
-    "model predictive control"
-   ],
-   "aplicaciones": [
-    "emerging and active distribution systems",
-    "FACTS allocation in transmission networks",
-    "interconnected T&D networks",
-    "very short-term operation of power systems"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "3": 0.4,
-    "2": 0.3,
-    "4": 0.3
-   },
-   "etapa": "investigador_senior",
-   "resumen": "Profesor de la UFPR con trayectoria desde los años 90 en flujo de potencia (modelos de FACTS y VSC-HVDC en Newton-Raphson, flujo desacoplado rápido con normalización compleja para redes de distribución emergentes y análisis integrado T&D) y estimación de estado. En CLAGTEE es coautor del flujo de potencia AC linealizado para identificar problemas de tensión en el muy corto plazo; le interesarían sesiones de operación y planificación de sistemas, flujo de potencia, FACTS y redes de distribución activas.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
-  }
- },
- {
-  "id": "vitor-samuel-ruppel-ferreira",
-  "nombre": "Vitor Samuel Ruppel Ferreira",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Probablemente Universidade Federal do Paraná (UFPR) (por los coautores E. M. Lourenço y O. L. Tortelli)",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "linearized AC power flow models",
-    "very short-term identification of voltage problems",
-    "voltage security assessment in real-time operation"
-   ],
-   "palabras_clave": [
-    "linearized power flow",
-    "AC power flow",
-    "voltage violations",
-    "very short-term operation",
-    "power system operation",
-    "voltage control"
-   ],
-   "metodos": [
-    "linearized AC power flow",
-    "fast decoupled power flow"
-   ],
-   "aplicaciones": [
-    "very short-term operation of power systems"
-   ],
-   "afinidad_tracks": {
-    "1": 0.9,
-    "4": 0.3
-   },
-   "etapa": "desconocida",
-   "resumen": "No se encontró perfil de Google Scholar. Es coautor de PLA-26, que propone un flujo de potencia AC linealizado para identificar problemas de tensión en el muy corto plazo. Como contexto de grupo, sus coautores E. M. Lourenço y O. L. Tortelli (UFPR) trabajan en estimación de estado y flujo de potencia desacoplado rápido para redes de distribución y análisis integrado T&D. Evidencia limitada al título del paper; le interesarían sesiones de operación de sistemas, flujo de potencia y control de tensión.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
+  {
+    "id": "leticia-maria-seijas",
+    "nombre": "Leticia María Seijas",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidad Nacional de Mar del Plata (inferida por el coautor S. A. González, ICYTE)",
+    "pais_inferido": "Argentina",
+    "intereses": {
+      "temas": [
+        "deep learning forecasting of photovoltaic power generation",
+        "attention-based LSTM networks for energy time series",
+        "PV plant output estimation"
+      ],
+      "palabras_clave": [
+        "PV forecasting",
+        "LSTM",
+        "attention mechanism",
+        "deep learning",
+        "time series forecasting",
+        "photovoltaic plants"
+      ],
+      "metodos": [
+        "LSTM neural networks",
+        "attention mechanisms",
+        "deep learning"
+      ],
+      "aplicaciones": [
+        "photovoltaic plant power forecasting"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "6": 0.8
+      },
+      "etapa": "desconocida",
+      "resumen": "No se encontró perfil de Google Scholar (dos búsquedas sin resultado y no figura en la barra de coautores de S. A. González). Por su paper PLA-6 y por 'A Predictive Deep Learning Model to Estimate the Power Generated by a Photovoltaic Plant' (ARGENCON 2024, en el perfil de su coautor S. A. González, ICYTE-UNMdP), trabaja en pronóstico de generación FV con aprendizaje profundo (LSTM con atención); le interesarían sesiones de IA aplicada e integración de renovables.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Scholar: nombre completo (1ª pasada) y 'Leticia Seijas neural networks' (2ª pasada), sin resultados. Se leyó la barra de coautores de S. A. González (anAlT-AAAAAJ): no aparece."
   },
-  "nota_busqueda": "Scholar: 'Vitor Samuel Ruppel Ferreira'; sin candidatos (solo homónimos parciales de otras áreas). No figura en las barras de coautores de Lourenço ni de Tortelli."
- },
- {
-  "id": "ahda-pionkoski-grilo-pavani",
-  "nombre": "Ahda Pionkoski Grilo Pavani",
-  "busqueda": "encontrado",
-  "scholar": {
-   "url": "https://scholar.google.com/citations?user=oaWImQkAAAAJ",
-   "user_id": "oaWImQkAAAAJ",
-   "nombre_perfil": "Ahda Pavani",
-   "afiliacion": "Universidade Federal do ABC",
-   "email_verificado": "ufabc.edu.br",
-   "intereses_scholar": [
-    "sistemas de potência",
-    "geração eólica",
-    "geração distribuída",
-    "redes de distribuição"
-   ],
-   "citas": 1253,
-   "citas_desde_2021": 764,
-   "h_index": 17,
-   "publicaciones": [
-    {
-     "titulo": "Avaliação de Modos de Oscilações Críticos em Pontos de Conexão de Geração Conectada por Conversores",
-     "anio": 2026,
-     "citas": 0
+  {
+    "id": "sergio-alejandro-gonzalez",
+    "nombre": "Sergio Alejandro Gonzalez",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=anAlT-AAAAAJ",
+      "user_id": "anAlT-AAAAAJ",
+      "nombre_perfil": "Sergio Alejandro González",
+      "afiliacion": "ICYTE - Instituto de Investigaciones Científicas y Tecnológicas en Electrónica, Universidad Nacional de Mar del Plata",
+      "email_verificado": "ieee.org",
+      "intereses_scholar": [],
+      "citas": 2128,
+      "citas_desde_2021": 897,
+      "h_index": 24,
+      "publicaciones": [
+        {
+          "titulo": "A Predictive Deep Learning Model to Estimate the Power Generated by a Photovoltaic Plant",
+          "anio": 2024,
+          "citas": 0
+        },
+        {
+          "titulo": "Experimental Implementation of a Fast Direct Digital Power Control Strategy for Single-phase DAB Converters",
+          "anio": 2024,
+          "citas": 0
+        },
+        {
+          "titulo": "Photovoltaic generation forecasting using convolutional and recurrent neural networks",
+          "anio": 2023,
+          "citas": 38
+        },
+        {
+          "titulo": "Control de balance mediante 3LBR en Sistema de Generación Distribuida",
+          "anio": 2022,
+          "citas": 0
+        },
+        {
+          "titulo": "Inverter-side current control of grid-connected voltage source inverters with LCL filter based on generalized predictive control",
+          "anio": 2018,
+          "citas": 112
+        },
+        {
+          "titulo": "Generalized Predictive Current Control (GPCC) for Grid-Tie Three-Phase Inverters",
+          "anio": 2016,
+          "citas": 130
+        },
+        {
+          "titulo": "Robust predictive control of grid-tied converters based on direct power control",
+          "anio": 2013,
+          "citas": 88
+        },
+        {
+          "titulo": "Repetitive control with adaptive sampling frequency for wind power generation systems",
+          "anio": 2013,
+          "citas": 88
+        },
+        {
+          "titulo": "Calculation-delay tolerant predictive current controller for three-phase inverters",
+          "anio": 2013,
+          "citas": 80
+        },
+        {
+          "titulo": "Adaptive dead-time compensation for grid-connected PWM inverters of single-stage PV systems",
+          "anio": 2012,
+          "citas": 229
+        },
+        {
+          "titulo": "A robust predictive current control for three-phase grid-connected inverters",
+          "anio": 2009,
+          "citas": 278
+        },
+        {
+          "titulo": "Harmonic computation technique suitable for active power filters",
+          "anio": 2007,
+          "citas": 138
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "El perfil (ICYTE, UNMdP; coautores de fi.mdp.edu.ar) lista 'A Predictive Deep Learning Model to Estimate the Power Generated by a Photovoltaic Plant' (LM Seijas, SA González, ARGENCON 2024) con su coautora de CLAGTEE Leticia M. Seijas, misma línea que PLA-6, y trabajos de control predictivo de convertidores afines a INT-3. Ojo: el perfil mezcla publicaciones de homónimos (estudios queer, historia de Chile, biología vegetal), por lo que citas y h-index están inflados; la lista de publicaciones aquí solo incluye las propias."
     },
-    {
-     "titulo": "Cluster-Based Approach to Estimate Equivalent Dynamic Load Responses",
-     "anio": 2025,
-     "citas": 0
-    },
-    {
-     "titulo": "A probabilistic approach to voltage security assessment with high penetration of renewable generation",
-     "anio": 2025,
-     "citas": 7
-    },
-    {
-     "titulo": "Short-Term Voltage Stability Analysis Considering the Mandatory Disconnection of Distributed Energy Resources",
-     "anio": 2025,
-     "citas": 1
-    },
-    {
-     "titulo": "Examination of EMT-type impedance scanning techniques for small signal stability assessment of inverter based resources",
-     "anio": 2025,
-     "citas": 13
-    },
-    {
-     "titulo": "Comprehensive full-scale converter wind park initialization for electromagnetic transient studies",
-     "anio": 2025,
-     "citas": 5
-    },
-    {
-     "titulo": "Microgrid modeling for stability analysis",
-     "anio": 2023,
-     "citas": 87
-    },
-    {
-     "titulo": "Short circuit network equivalents of systems with inverter-based resources",
-     "anio": 2021,
-     "citas": 36
-    },
-    {
-     "titulo": "Unbalance compensation control in microgrids based on the unbalance profile",
-     "anio": 2021,
-     "citas": 17
-    },
-    {
-     "titulo": "Combined control of DFIG-based wind turbine and battery energy storage system for frequency response in microgrids",
-     "anio": 2020,
-     "citas": 63
-    },
-    {
-     "titulo": "Primary frequency response of microgrid using doubly fed induction generator with finite control set model predictive control plus droop control and storage system",
-     "anio": 2020,
-     "citas": 54
-    },
-    {
-     "titulo": "A new artificial neural network based method for islanding detection of distributed generators",
-     "anio": 2016,
-     "citas": 129
+    "otras_fuentes": [],
+    "afiliacion_inferida": "ICYTE (UNMdP-CONICET), Universidad Nacional de Mar del Plata",
+    "pais_inferido": "Argentina",
+    "intereses": {
+      "temas": [
+        "predictive current control of grid-tied three-phase inverters",
+        "generalized predictive control for LCL-filtered converters",
+        "model predictive control for energy storage trading",
+        "deep learning forecasting of PV generation",
+        "digital control of dual active bridge converters",
+        "converter control for wind and PV generation"
+      ],
+      "palabras_clave": [
+        "predictive control",
+        "grid-connected inverters",
+        "LCL filter",
+        "dead-time compensation",
+        "repetitive control",
+        "active power filters",
+        "PV forecasting",
+        "LSTM",
+        "energy storage",
+        "dual active bridge",
+        "distributed generation"
+      ],
+      "metodos": [
+        "model predictive control",
+        "generalized predictive control",
+        "repetitive control",
+        "digital control implementation on DSP/FPGA",
+        "convolutional and recurrent neural networks",
+        "LSTM with attention"
+      ],
+      "aplicaciones": [
+        "grid-tied PV inverters",
+        "wind power generation systems",
+        "battery energy storage trading",
+        "PV plant output forecasting",
+        "DC-DC converters for distributed generation"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "3": 0.8,
+        "6": 0.6,
+        "7": 0.4
+      },
+      "etapa": "investigador_senior",
+      "resumen": "Investigador del ICYTE (UNMdP) con larga trayectoria en control predictivo de inversores conectados a red, filtros activos y convertidores para generación eólica y FV, y una línea reciente en pronóstico de generación FV con redes neuronales. En CLAGTEE es coautor de MPC para trading con almacenamiento y de pronóstico FV con LSTM y atención; le interesarían sesiones de electrónica de potencia, integración de renovables y almacenamiento, e IA aplicada.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
-   ],
-   "confianza": "alta",
-   "evidencia": "Sus coautores de INT-34 João Vitor Silva Colombo y Thamilly Rodrigues Mota firman con ella 'Cluster-Based Approach to Estimate Equivalent Dynamic Load Responses' (IEEE INDUSCON 2025, JVS Colombo, TR Mota, APG Pavani, RA Ramos); Colombo también figura en un trabajo del CBA 2026. Perfil publicado como 'Ahda P. Grilo Pavani' / 'AP Grilo'."
   },
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Universidade Federal do ABC (UFABC), Santo André",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "stability of power systems with inverter-based resources and wind generation",
-    "modeling and stability analysis of microgrids and active distribution networks",
-    "voltage security assessment under high renewable penetration",
-    "dynamic load equivalents and modeling of distribution resources for ancillary services",
-    "islanding detection and protection of distributed generators",
-    "EMT modeling and initialization of wind and PV parks"
-   ],
-   "palabras_clave": [
-    "inverter-based resources",
-    "DFIG",
-    "wind parks",
-    "microgrids",
-    "voltage stability",
-    "frequency response",
-    "islanding detection",
-    "dynamic load equivalents",
-    "EMT simulation",
-    "impedance-based stability",
-    "distributed generation",
-    "ancillary services"
-   ],
-   "metodos": [
-    "electromagnetic transient simulation and model initialization",
-    "impedance scanning and small-signal stability analysis",
-    "probabilistic voltage security assessment",
-    "artificial neural networks for islanding detection",
-    "clustering-based dynamic equivalents"
-   ],
-   "aplicaciones": [
-    "DFIG and full-converter wind parks",
-    "microgrids with storage",
-    "active distribution networks providing ancillary services",
-    "Brazilian interconnected power system"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "1": 0.8,
-    "3": 0.6,
-    "8": 0.3,
-    "6": 0.3
-   },
-   "etapa": "investigador_senior",
-   "resumen": "Profesora de la UFABC con amplia trayectoria en estabilidad de sistemas con generación eólica y recursos basados en inversores, microrredes, protección anti-isla de generación distribuida y, recientemente, modelado EMT de parques eólicos/FV y seguridad de tensión con alta penetración renovable. En CLAGTEE es coautora del modelado de recursos de redes de distribución activas para servicios auxiliares; le interesarían sesiones de integración de renovables y DER, estabilidad, electrónica de potencia conectada a red y operación de redes activas.",
-   "base": [
-    "papers_clagtee",
-    "google_scholar"
-   ]
+  {
+    "id": "camilo-villegas",
+    "nombre": "Camilo Villegas",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Posiblemente Universidad de La Frontera (UFRO), Temuco (por el coautor C. E. Pesce G.)",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "commutation failures in LCC-HVDC links under AC faults",
+        "AC/DC interaction in parallel HVDC and 500 kV AC corridors",
+        "fault response of the Kimal–Lo Aguirre HVDC link"
+      ],
+      "palabras_clave": [
+        "HVDC",
+        "LCC",
+        "commutation failure",
+        "three-phase faults",
+        "500 kV AC transmission",
+        "AC/DC interaction",
+        "Kimal–Lo Aguirre"
+      ],
+      "metodos": [],
+      "aplicaciones": [
+        "Kimal–Lo Aguirre HVDC-LCC link",
+        "Chilean 500 kV transmission system"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "3": 0.5
+      },
+      "etapa": "desconocida",
+      "resumen": "No se encontró perfil de Google Scholar. Su paper PLA-44 estudia las fallas de conmutación del enlace HVDC-LCC Kimal–Lo Aguirre ante fallas trifásicas en la línea de 500 kV en paralelo; el coautor C. E. Pesce G. (UFRO) trabaja en HVDC y aislación en alta tensión. Evidencia limitada al título del paper; le interesarían sesiones de HVDC, transmisión, estabilidad y operación del sistema.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Scholar: 'Camilo Villegas electrical engineering power systems'; solo apareció Juan Camilo Villegas (ecohidrología, U. de Antioquia), descartado."
+  },
+  {
+    "id": "cristian-e-pesce-g",
+    "nombre": "Cristián E. Pesce G.",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [
+      {
+        "tipo": "institucional",
+        "url": "https://inele.ufro.cl/cpesce.html"
+      }
+    ],
+    "afiliacion_inferida": "Universidad de La Frontera (UFRO), Temuco – Departamento de Ingeniería Eléctrica, Facultad de Ingeniería y Ciencias",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "commutation failures in LCC-HVDC links under AC faults",
+        "faults in overhead HVDC transmission lines (Kimal–Lo Aguirre case study)",
+        "DC-DC converters for HVDC transmission systems",
+        "condition assessment of high-voltage insulators",
+        "power converters for renewable energy"
+      ],
+      "palabras_clave": [
+        "HVDC",
+        "LCC",
+        "commutation failure",
+        "Kimal–Lo Aguirre",
+        "three-phase faults",
+        "500 kV AC transmission",
+        "overhead HVDC lines",
+        "DC-DC converters",
+        "high-voltage insulation",
+        "silicone-coated insulators",
+        "power electronics"
+      ],
+      "metodos": [
+        "impedance-based insulator condition assessment"
+      ],
+      "aplicaciones": [
+        "Kimal–Lo Aguirre HVDC-LCC link",
+        "high-voltage insulators with silicone coating",
+        "converters for renewable generation"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "3": 0.7,
+        "4": 0.4,
+        "2": 0.3
+      },
+      "etapa": "investigador_consolidado",
+      "resumen": "Profesor-investigador de la UFRO (doctor en Ingeniería Eléctrica por la U. de Concepción) que trabaja en HVDC, convertidores DC-DC para transmisión HVDC, aislación en alta tensión y electrónica de potencia para renovables; en 2025 fue coautor de un estudio de fallas en líneas aéreas HVDC sobre el caso Kimal–Lo Aguirre (IEEE CHILECON) y de un trabajo en IEEE Access sobre la condición de aisladores recubiertos de silicona. Presenta PLA-44; le interesarían sesiones de HVDC, transmisión, electrónica de potencia y monitoreo de equipos de alta tensión. Etapa inferida del cargo (sin métricas de citas).",
+      "base": [
+        "papers_clagtee",
+        "otras_fuentes"
+      ]
+    },
+    "nota_busqueda": "Scholar: 'Cristián Pesce HVDC power systems Chile' y 'Cristian Pesce Universidad de La Frontera', sin perfil. Búsqueda web general halló su página institucional en UFRO (la página no respondió a WebFetch: HTTP 503; datos tomados del resultado de búsqueda)."
+  },
+  {
+    "id": "eduardo-richard",
+    "nombre": "Eduardo Richard",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Posiblemente Universidad de La Frontera (UFRO), Temuco (por el coautor C. E. Pesce G.)",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "commutation failures in LCC-HVDC links under AC faults",
+        "AC/DC interaction in parallel HVDC and 500 kV AC corridors",
+        "fault response of the Kimal–Lo Aguirre HVDC link"
+      ],
+      "palabras_clave": [
+        "HVDC",
+        "LCC",
+        "commutation failure",
+        "three-phase faults",
+        "500 kV AC transmission",
+        "AC/DC interaction",
+        "Kimal–Lo Aguirre"
+      ],
+      "metodos": [],
+      "aplicaciones": [
+        "Kimal–Lo Aguirre HVDC-LCC link",
+        "Chilean 500 kV transmission system"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "3": 0.5
+      },
+      "etapa": "desconocida",
+      "resumen": "No se encontró perfil de Google Scholar. Su paper PLA-44 estudia las fallas de conmutación del enlace HVDC-LCC Kimal–Lo Aguirre ante fallas trifásicas en la línea de 500 kV en paralelo; el coautor C. E. Pesce G. (UFRO) trabaja en HVDC y aislación en alta tensión. Evidencia limitada al título del paper; le interesarían sesiones de HVDC, transmisión, estabilidad y operación del sistema.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Scholar: 'Eduardo Richard power systems transmission Chile'; sin candidatos (solo Eduardo Perez-Richet, economista, descartado)."
+  },
+  {
+    "id": "felipe-gonzalez",
+    "nombre": "Felipe Gonzalez",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Posiblemente Universidad de La Frontera (UFRO), Temuco (por el coautor C. E. Pesce G.)",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "commutation failures in LCC-HVDC links under AC faults",
+        "AC/DC interaction in parallel HVDC and 500 kV AC corridors",
+        "fault response of the Kimal–Lo Aguirre HVDC link"
+      ],
+      "palabras_clave": [
+        "HVDC",
+        "LCC",
+        "commutation failure",
+        "three-phase faults",
+        "500 kV AC transmission",
+        "AC/DC interaction",
+        "Kimal–Lo Aguirre"
+      ],
+      "metodos": [],
+      "aplicaciones": [
+        "Kimal–Lo Aguirre HVDC-LCC link",
+        "Chilean 500 kV transmission system"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "3": 0.5
+      },
+      "etapa": "desconocida",
+      "resumen": "No se encontró perfil de Google Scholar. Su paper PLA-44 estudia las fallas de conmutación del enlace HVDC-LCC Kimal–Lo Aguirre ante fallas trifásicas en la línea de 500 kV en paralelo; el coautor C. E. Pesce G. (UFRO) trabaja en HVDC y aislación en alta tensión. Evidencia limitada al título del paper; le interesarían sesiones de HVDC, transmisión, estabilidad y operación del sistema.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Scholar: 'Felipe Gonzalez HVDC power system Chile'; nombre muy común, ningún candidato en HVDC/transmisión (Felipe Gonzalez Venegas trabaja en VE y redes de distribución en Europa/ACER; no hay evidencia que lo vincule)."
+  },
+  {
+    "id": "gabriel-olguin",
+    "nombre": "Gabriel Olguin",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Posiblemente Universidad de La Frontera (UFRO), Temuco (por el coautor C. E. Pesce G.)",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "commutation failures in LCC-HVDC links under AC faults",
+        "AC/DC interaction in parallel HVDC and 500 kV AC corridors",
+        "fault response of the Kimal–Lo Aguirre HVDC link"
+      ],
+      "palabras_clave": [
+        "HVDC",
+        "LCC",
+        "commutation failure",
+        "three-phase faults",
+        "500 kV AC transmission",
+        "AC/DC interaction",
+        "Kimal–Lo Aguirre"
+      ],
+      "metodos": [],
+      "aplicaciones": [
+        "Kimal–Lo Aguirre HVDC-LCC link",
+        "Chilean 500 kV transmission system"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "3": 0.5
+      },
+      "etapa": "desconocida",
+      "resumen": "No se encontró perfil de Google Scholar. Su paper PLA-44 estudia las fallas de conmutación del enlace HVDC-LCC Kimal–Lo Aguirre ante fallas trifásicas en la línea de 500 kV en paralelo; el coautor C. E. Pesce G. (UFRO) trabaja en HVDC y aislación en alta tensión. Evidencia limitada al título del paper; le interesarían sesiones de HVDC, transmisión, estabilidad y operación del sistema.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Scholar: 'Gabriel Olguin Google Scholar' (solo Gabriel J. Olguín-Orellana, farmacología UdeC, descartado) y 'Gabriel Olguín voltage dip power quality' (sin resultados). Búsqueda web general del paper tampoco lo ubicó."
+  },
+  {
+    "id": "rodrigo-villalobos",
+    "nombre": "Rodrigo Villalobos",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Posiblemente Universidad de La Frontera (UFRO), Temuco (por el coautor C. E. Pesce G.)",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "commutation failures in LCC-HVDC links under AC faults",
+        "AC/DC interaction in parallel HVDC and 500 kV AC corridors",
+        "fault response of the Kimal–Lo Aguirre HVDC link"
+      ],
+      "palabras_clave": [
+        "HVDC",
+        "LCC",
+        "commutation failure",
+        "three-phase faults",
+        "500 kV AC transmission",
+        "AC/DC interaction",
+        "Kimal–Lo Aguirre"
+      ],
+      "metodos": [],
+      "aplicaciones": [
+        "Kimal–Lo Aguirre HVDC-LCC link",
+        "Chilean 500 kV transmission system"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "3": 0.5
+      },
+      "etapa": "desconocida",
+      "resumen": "No se encontró perfil de Google Scholar. Su paper PLA-44 estudia las fallas de conmutación del enlace HVDC-LCC Kimal–Lo Aguirre ante fallas trifásicas en la línea de 500 kV en paralelo; el coautor C. E. Pesce G. (UFRO) trabaja en HVDC y aislación en alta tensión. Evidencia limitada al título del paper; le interesarían sesiones de HVDC, transmisión, estabilidad y operación del sistema.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Scholar: 'Rodrigo Villalobos power systems HVDC Chile'; el único Rodrigo Villalobos (JWeu3bMAAAAJ) es de KAUST, ecología de arrecifes, descartado."
+  },
+  {
+    "id": "felipe-martins-maranhao-da-silva",
+    "nombre": "Felipe Martins Maranhão da Silva",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Probablemente Instituto Federal de Pernambuco (IFPE) (por el coautor R. M. R. Barros)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "battery energy storage providing ancillary services in distribution feeders",
+        "high photovoltaic penetration in real distribution feeders",
+        "impacts of electric vehicle charging on distribution systems",
+        "optimal allocation of DER for load support during contingencies"
+      ],
+      "palabras_clave": [
+        "BESS",
+        "ancillary services",
+        "distribution feeders",
+        "high PV penetration",
+        "electric vehicles",
+        "EV charging",
+        "distribution system analysis",
+        "DER allocation",
+        "grid reliability"
+      ],
+      "metodos": [],
+      "aplicaciones": [
+        "real distribution feeders with high PV penetration",
+        "distribution networks with growing EV adoption"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.6,
+        "7": 0.2
+      },
+      "etapa": "desconocida",
+      "resumen": "No se encontró perfil de Google Scholar. Presenta INT-30 (impactos del aumento de vehículos eléctricos en la distribución) y es coautor de INT-19 (BESS con servicios auxiliares en alimentadores reales con alta penetración FV). Es probablemente el 'F Silva' de 'Enhancing grid reliability: optimal allocation of DER for load support during contingencies' (IET, 2024) junto a R. M. R. Barros (no confirmado). Como contexto de grupo, su coautor R. M. R. Barros (IFPE) investiga sistemas de distribución, pérdidas no técnicas y DER. Le interesarían sesiones de almacenamiento, movilidad eléctrica y operación de redes de distribución con recursos distribuidos.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Scholar: nombre completo y 'Felipe Maranhão distribution system electric vehicle IFPE'; web general: nombre completo entre comillas (solo un futbolista homónimo). No figura en la barra de coautores de R. M. R. Barros (nwmX8RcAAAAJ); posible coautor 'F Silva' en una publicación de Barros de 2024."
+  },
+  {
+    "id": "jason-valentin-moreira",
+    "nombre": "Jason Valentin Moreira",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Probablemente Instituto Federal de Pernambuco (IFPE) (por el coautor R. M. R. Barros)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "impacts of electric vehicle charging on distribution systems",
+        "distribution network planning under growing EV penetration",
+        "operation of distribution feeders with distributed energy resources"
+      ],
+      "palabras_clave": [
+        "electric vehicles",
+        "EV charging",
+        "distribution systems",
+        "EV penetration",
+        "distribution system analysis"
+      ],
+      "metodos": [],
+      "aplicaciones": [
+        "distribution networks with growing EV adoption"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.6
+      },
+      "etapa": "desconocida",
+      "resumen": "No se encontró perfil de Google Scholar. Su paper INT-30 estudia los impactos del aumento de la penetración de vehículos eléctricos en el sistema de distribución. Como contexto de grupo, su coautor R. M. R. Barros (IFPE) investiga sistemas de distribución, pérdidas no técnicas y DER. Evidencia limitada al título del paper; le interesarían sesiones de movilidad eléctrica, recursos distribuidos y planificación de redes de distribución.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Scholar: 'Jason Valentin Moreira'; sin candidatos (Jason Valentine, nanofotónica, descartado). No figura en la barra de coautores de R. M. R. Barros."
+  },
+  {
+    "id": "matheus-alves-ruiz",
+    "nombre": "Matheus Alves Ruiz",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Probablemente Instituto Federal de Pernambuco (IFPE) (por el coautor R. M. R. Barros)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "battery energy storage providing ancillary services in distribution feeders",
+        "high photovoltaic penetration in real distribution feeders",
+        "operation of distribution feeders with distributed energy resources"
+      ],
+      "palabras_clave": [
+        "BESS",
+        "ancillary services",
+        "distribution feeders",
+        "high PV penetration",
+        "battery storage",
+        "distribution system analysis"
+      ],
+      "metodos": [],
+      "aplicaciones": [
+        "real distribution feeders with high PV penetration"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.6,
+        "7": 0.2
+      },
+      "etapa": "desconocida",
+      "resumen": "No se encontró perfil de Google Scholar. Presenta INT-19, sobre BESS que prestan servicios auxiliares en alimentadores de distribución reales con alta penetración fotovoltaica. Como contexto de grupo, su coautor R. M. R. Barros (IFPE) investiga sistemas de distribución, pérdidas no técnicas y DER. Evidencia limitada al título del paper; le interesarían sesiones de almacenamiento, integración de recursos distribuidos y operación de redes de distribución.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Scholar: 'Matheus Alves Ruiz' y 'Matheus Ruiz BESS photovoltaic distribution feeders'; web general: nombre completo entre comillas. Sin candidatos (solo homónimos parciales de otras áreas). No figura en la barra de coautores de R. M. R. Barros."
+  },
+  {
+    "id": "rafael-mendonca-rocha-barros",
+    "nombre": "Rafael Mendonça Rocha Barros",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=nwmX8RcAAAAJ",
+      "user_id": "nwmX8RcAAAAJ",
+      "nombre_perfil": "Rafael Mendonça Rocha Barros",
+      "afiliacion": "Instituto Federal de Pernambuco (IFPE)",
+      "email_verificado": "garanhuns.ifpe.edu.br",
+      "intereses_scholar": [
+        "Power Distribution Systems",
+        "Multiphysics Simulations",
+        "A.I.",
+        "4.0 Industry",
+        "High Voltage"
+      ],
+      "citas": 146,
+      "citas_desde_2021": 104,
+      "h_index": 6,
+      "publicaciones": [
+        {
+          "titulo": "Causal inference-inspired analysis applied to non-technical loss characterization in distribution power systems",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "DesagregaGD: uma ferramenta computacional para desagregação da curva de carga em redes com geração distribuída",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Characterization of non-technical loss in consumers of the electric distribution system",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Enhancing grid reliability: optimal allocation of DER for load support during contingencies",
+          "anio": 2024,
+          "citas": 2
+        },
+        {
+          "titulo": "Gestão da Perda Não Técnica de Energia Elétrica",
+          "anio": 2023,
+          "citas": 0
+        },
+        {
+          "titulo": "Evaluation of classifiers for non-technical loss identification in electric power systems",
+          "anio": 2021,
+          "citas": 23
+        },
+        {
+          "titulo": "Maximizing the financial return of non-technical loss management in power distribution systems",
+          "anio": 2021,
+          "citas": 11
+        },
+        {
+          "titulo": "Contribution of inrush current to mechanical failure of power transformers windings",
+          "anio": 2019,
+          "citas": 35
+        },
+        {
+          "titulo": "Use of ANN for identification of consumers with irregular electrical installations",
+          "anio": 2018,
+          "citas": 6
+        },
+        {
+          "titulo": "Mathematical modeling of transformers based on the frequency response of magnetizing parameters",
+          "anio": 2016,
+          "citas": 20
+        },
+        {
+          "titulo": "A new approach for optimal design of corona ring",
+          "anio": 2016,
+          "citas": 7
+        },
+        {
+          "titulo": "Thermal behavior analysis of ZnO polymeric surge arrester using the finite elements method",
+          "anio": 2014,
+          "citas": 21
+        }
+      ],
+      "confianza": "media",
+      "evidencia": "Nombre completo idéntico (cuatro partes) y perfil en sistemas de distribución (IFPE Garanhuns, Brasil). Publica 'Enhancing grid reliability: optimal allocation of DER for load support during contingencies' (IET CP882, 2024) con 'F Silva', probablemente su coautor de CLAGTEE Felipe Martins Maranhão da Silva (no confirmado); misma línea de DER en alimentadores de distribución que INT-19/INT-30. Ningún otro coautor de CLAGTEE figura en el perfil. Revisión final: baja a media porque ningún coautor de CLAGTEE aparece confirmado en el perfil."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Instituto Federal de Pernambuco (IFPE), campus Garanhuns",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "non-technical loss detection and management in distribution systems",
+        "battery energy storage providing ancillary services in feeders with high PV penetration",
+        "impacts of electric vehicle penetration on distribution systems",
+        "optimal allocation of DER for load support during contingencies",
+        "load curve disaggregation in networks with distributed generation",
+        "multiphysics simulation of high-voltage equipment (transformer inrush, surge arresters, corona rings)"
+      ],
+      "palabras_clave": [
+        "non-technical losses",
+        "distribution systems",
+        "machine learning classifiers",
+        "causal inference",
+        "BESS",
+        "ancillary services",
+        "high PV penetration",
+        "electric vehicles",
+        "DER allocation",
+        "load disaggregation",
+        "transformer inrush current",
+        "finite element method"
+      ],
+      "metodos": [
+        "machine learning classifiers and artificial neural networks",
+        "causal inference analysis",
+        "finite element multiphysics simulation",
+        "optimal DER allocation"
+      ],
+      "aplicaciones": [
+        "non-technical loss management in Brazilian distribution utilities",
+        "real distribution feeders with high PV penetration",
+        "distribution networks with growing EV adoption",
+        "power transformers and high-voltage insulation"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.7,
+        "6": 0.5,
+        "7": 0.3,
+        "9": 0.3
+      },
+      "etapa": "investigador_consolidado",
+      "resumen": "Profesor del IFPE (doctorado en la UFCG, 2021) que investiga pérdidas no técnicas en distribución con aprendizaje automático e inferencia causal, integración de DER en alimentadores y, antes, simulación multifísica de equipos de alta tensión. En CLAGTEE es coautor de BESS con servicios auxiliares en alimentadores con alta penetración FV y de impactos de vehículos eléctricos en distribución; le interesarían sesiones de distribución con recursos distribuidos, almacenamiento, movilidad eléctrica e IA aplicada a redes.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    }
+  },
+  {
+    "id": "elizete-maria-lourenco",
+    "nombre": "Elizete Maria Lourenço",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=qSL4-0QAAAAJ",
+      "user_id": "qSL4-0QAAAAJ",
+      "nombre_perfil": "Elizete Maria Lourenço",
+      "afiliacion": "Professor at Federal University of Paraná, Curitiba, Brazil",
+      "email_verificado": "ufpr.br",
+      "intereses_scholar": [
+        "Electric Power Systems"
+      ],
+      "citas": 991,
+      "citas_desde_2021": 359,
+      "h_index": 18,
+      "publicaciones": [
+        {
+          "titulo": "Power distribution system state estimation",
+          "anio": 2023,
+          "citas": 26
+        },
+        {
+          "titulo": "Fast-decoupled power flow method for integrated analysis of transmission and distribution systems",
+          "anio": 2021,
+          "citas": 41
+        },
+        {
+          "titulo": "Novel approach to power system state estimation for transmission and distribution systems",
+          "anio": 2019,
+          "citas": 19
+        },
+        {
+          "titulo": "Extended fast decoupled power flow for reconfiguration networks in distribution systems",
+          "anio": 2018,
+          "citas": 39
+        },
+        {
+          "titulo": "Topology error and bad data processing in generalized state estimation",
+          "anio": 2014,
+          "citas": 83
+        },
+        {
+          "titulo": "Fast decoupled power flow to emerging distribution systems via complex pu normalization",
+          "anio": 2014,
+          "citas": 75
+        },
+        {
+          "titulo": "Modeling ferroresonance phenomena with a flux-current Jiles-Atherton hysteresis approach",
+          "anio": 2013,
+          "citas": 44
+        },
+        {
+          "titulo": "Unified load flow analysis for emerging distribution systems",
+          "anio": 2010,
+          "citas": 19
+        },
+        {
+          "titulo": "Steady-state solution for power networks modeled at bus section level",
+          "anio": 2009,
+          "citas": 32
+        },
+        {
+          "titulo": "A topology error identification method directly based on collinearity tests",
+          "anio": 2006,
+          "citas": 80
+        },
+        {
+          "titulo": "Bayesian-based hypothesis testing for topology error identification in generalized state estimation",
+          "anio": 2004,
+          "citas": 139
+        },
+        {
+          "titulo": "Power system topological observability analysis including switching branches",
+          "anio": 2002,
+          "citas": 57
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Su coautor de PLA-26 Odilon Luís Tortelli (UFPR) figura en la barra de coautores y firma varias publicaciones con ella (flujo de potencia desacoplado rápido para redes de distribución y análisis integrado T&D), misma línea que PLA-26."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do Paraná (UFPR), Curitiba",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "generalized power system state estimation with topology error identification",
+        "distribution system state estimation",
+        "fast decoupled power flow for emerging distribution and integrated T&D networks",
+        "linearized AC power flow for very short-term identification of voltage problems",
+        "bad data processing and observability analysis"
+      ],
+      "palabras_clave": [
+        "state estimation",
+        "topology error identification",
+        "bad data processing",
+        "observability analysis",
+        "fast decoupled power flow",
+        "complex per-unit normalization",
+        "distribution system state estimation",
+        "transmission and distribution integration",
+        "linearized power flow",
+        "voltage violations",
+        "network reconfiguration"
+      ],
+      "metodos": [
+        "weighted least squares state estimation",
+        "Bayesian and geometric hypothesis testing",
+        "fast decoupled power flow",
+        "complex per-unit normalization",
+        "linearized AC power flow"
+      ],
+      "aplicaciones": [
+        "real-time monitoring of transmission and distribution networks",
+        "active distribution systems with distributed generation",
+        "very short-term operation of power systems"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "4": 0.7,
+        "2": 0.3
+      },
+      "etapa": "investigador_senior",
+      "resumen": "Profesora de la UFPR con larga trayectoria en estimación de estado de sistemas de potencia (errores de topología, datos erróneos, observabilidad) y en flujo de potencia desacoplado rápido para redes de distribución y análisis integrado transmisión-distribución; autora de un libro sobre estimación de estado en distribución (IET, 2023). En CLAGTEE es coautora de un flujo de potencia AC linealizado para detectar problemas de tensión en el muy corto plazo; le interesarían sesiones de operación de sistemas, estimación de estado, monitoreo y redes de distribución activas.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    }
+  },
+  {
+    "id": "ewerlyn-ane-perussolo-guelbert",
+    "nombre": "Ewerlyn Ane Perússolo Guelbert",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Probablemente Universidade Federal do Paraná (UFPR) (por los coautores E. M. Lourenço y O. L. Tortelli)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "linearized AC power flow models",
+        "very short-term identification of voltage problems",
+        "voltage security assessment in real-time operation"
+      ],
+      "palabras_clave": [
+        "linearized power flow",
+        "AC power flow",
+        "voltage violations",
+        "very short-term operation",
+        "power system operation",
+        "voltage control"
+      ],
+      "metodos": [
+        "linearized AC power flow",
+        "fast decoupled power flow"
+      ],
+      "aplicaciones": [
+        "very short-term operation of power systems"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "4": 0.3
+      },
+      "etapa": "desconocida",
+      "resumen": "No se encontró perfil de Google Scholar. Presenta PLA-26, que propone un flujo de potencia AC linealizado para identificar problemas de tensión en el muy corto plazo. Como contexto de grupo, sus coautores E. M. Lourenço y O. L. Tortelli (UFPR) trabajan en estimación de estado y flujo de potencia desacoplado rápido para redes de distribución y análisis integrado T&D. Evidencia limitada al título del paper; le interesarían sesiones de operación de sistemas, flujo de potencia y control de tensión.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Scholar: nombre completo (sin resultados) y 'Ewerlyn Guelbert power flow UFPR'; web general: nombre completo / 'Ewerlyn Guelbert' UFPR. Sin resultados. No figura en las barras de coautores de Lourenço ni de Tortelli."
+  },
+  {
+    "id": "odilon-luis-tortelli",
+    "nombre": "Odilon Luís Tortelli",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=mo3sY6sAAAAJ",
+      "user_id": "mo3sY6sAAAAJ",
+      "nombre_perfil": "Odilon Luis Tortelli",
+      "afiliacion": "Professor de Engenharia Elétrica, Universidade Federal do Paraná",
+      "email_verificado": "ufpr.br",
+      "intereses_scholar": [
+        "Sistemas de Potência"
+      ],
+      "citas": 300,
+      "citas_desde_2021": 81,
+      "h_index": 8,
+      "publicaciones": [
+        {
+          "titulo": "Fast-decoupled distribution system state estimation",
+          "anio": 2022,
+          "citas": 3
+        },
+        {
+          "titulo": "Operação ótima de uma Microgrid Conectada à Rede Elétrica utilizando Controle Preditivo e Modelo de Previsão baseado em Redes Neurais para Peak Shaving",
+          "anio": 2021,
+          "citas": 2
+        },
+        {
+          "titulo": "State Estimation of Power Systems With TCSCs Using the Linearized WLS Algorithm",
+          "anio": 2019,
+          "citas": 2
+        },
+        {
+          "titulo": "D-SVC controller analysis in active distribution systems operation",
+          "anio": 2019,
+          "citas": 1
+        },
+        {
+          "titulo": "Three phase fast decoupled power flow for emerging distribution systems",
+          "anio": 2015,
+          "citas": 8
+        },
+        {
+          "titulo": "A reconfiguration analysis tool for distribution networks using fast decoupled power flow",
+          "anio": 2015,
+          "citas": 6
+        },
+        {
+          "titulo": "Fast decoupled power flow to emerging distribution systems via complex pu normalization",
+          "anio": 2014,
+          "citas": 75
+        },
+        {
+          "titulo": "Complex normalization to perform power flow analysis in emerging distribution systems",
+          "anio": 2012,
+          "citas": 9
+        },
+        {
+          "titulo": "TCPST allocation using optimal power flow and Genetic Algorithms",
+          "anio": 2011,
+          "citas": 22
+        },
+        {
+          "titulo": "Power flow analysis for interconnected T&D networks with meshed topology",
+          "anio": 2011,
+          "citas": 10
+        },
+        {
+          "titulo": "Unified load flow analysis for emerging distribution systems",
+          "anio": 2010,
+          "citas": 19
+        },
+        {
+          "titulo": "Inclusion of a high voltage DC-voltage source converter model in a Newton–Raphson power flow algorithm",
+          "anio": 2003,
+          "citas": 105
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Su coautora de PLA-26 Elizete Maria Lourenço (UFPR) es el único coautor en su barra y firma con él varias publicaciones sobre flujo de potencia para redes de distribución, misma línea que PLA-26."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do Paraná (UFPR), Curitiba",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "fast decoupled power flow for emerging distribution systems",
+        "modeling of FACTS and VSC-HVDC devices in power flow",
+        "power flow for interconnected transmission and distribution networks",
+        "state estimation with FACTS devices and in distribution systems",
+        "linearized AC power flow for very short-term identification of voltage problems",
+        "optimal operation of grid-connected microgrids"
+      ],
+      "palabras_clave": [
+        "fast decoupled power flow",
+        "complex per-unit normalization",
+        "FACTS",
+        "TCSC",
+        "TCPST",
+        "VSC-HVDC",
+        "optimal power flow",
+        "distribution network reconfiguration",
+        "state estimation",
+        "linearized power flow",
+        "microgrids",
+        "peak shaving"
+      ],
+      "metodos": [
+        "Newton-Raphson power flow",
+        "fast decoupled power flow",
+        "optimal power flow with genetic algorithms",
+        "linearized weighted least squares",
+        "model predictive control"
+      ],
+      "aplicaciones": [
+        "emerging and active distribution systems",
+        "FACTS allocation in transmission networks",
+        "interconnected T&D networks",
+        "very short-term operation of power systems"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "3": 0.4,
+        "2": 0.3,
+        "4": 0.3
+      },
+      "etapa": "investigador_senior",
+      "resumen": "Profesor de la UFPR con trayectoria desde los años 90 en flujo de potencia (modelos de FACTS y VSC-HVDC en Newton-Raphson, flujo desacoplado rápido con normalización compleja para redes de distribución emergentes y análisis integrado T&D) y estimación de estado. En CLAGTEE es coautor del flujo de potencia AC linealizado para identificar problemas de tensión en el muy corto plazo; le interesarían sesiones de operación y planificación de sistemas, flujo de potencia, FACTS y redes de distribución activas.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    }
+  },
+  {
+    "id": "vitor-samuel-ruppel-ferreira",
+    "nombre": "Vitor Samuel Ruppel Ferreira",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Probablemente Universidade Federal do Paraná (UFPR) (por los coautores E. M. Lourenço y O. L. Tortelli)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "linearized AC power flow models",
+        "very short-term identification of voltage problems",
+        "voltage security assessment in real-time operation"
+      ],
+      "palabras_clave": [
+        "linearized power flow",
+        "AC power flow",
+        "voltage violations",
+        "very short-term operation",
+        "power system operation",
+        "voltage control"
+      ],
+      "metodos": [
+        "linearized AC power flow",
+        "fast decoupled power flow"
+      ],
+      "aplicaciones": [
+        "very short-term operation of power systems"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "4": 0.3
+      },
+      "etapa": "desconocida",
+      "resumen": "No se encontró perfil de Google Scholar. Es coautor de PLA-26, que propone un flujo de potencia AC linealizado para identificar problemas de tensión en el muy corto plazo. Como contexto de grupo, sus coautores E. M. Lourenço y O. L. Tortelli (UFPR) trabajan en estimación de estado y flujo de potencia desacoplado rápido para redes de distribución y análisis integrado T&D. Evidencia limitada al título del paper; le interesarían sesiones de operación de sistemas, flujo de potencia y control de tensión.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Scholar: 'Vitor Samuel Ruppel Ferreira'; sin candidatos (solo homónimos parciales de otras áreas). No figura en las barras de coautores de Lourenço ni de Tortelli."
+  },
+  {
+    "id": "ahda-pionkoski-grilo-pavani",
+    "nombre": "Ahda Pionkoski Grilo Pavani",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=oaWImQkAAAAJ",
+      "user_id": "oaWImQkAAAAJ",
+      "nombre_perfil": "Ahda Pavani",
+      "afiliacion": "Universidade Federal do ABC",
+      "email_verificado": "ufabc.edu.br",
+      "intereses_scholar": [
+        "sistemas de potência",
+        "geração eólica",
+        "geração distribuída",
+        "redes de distribuição"
+      ],
+      "citas": 1253,
+      "citas_desde_2021": 764,
+      "h_index": 17,
+      "publicaciones": [
+        {
+          "titulo": "Avaliação de Modos de Oscilações Críticos em Pontos de Conexão de Geração Conectada por Conversores",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Cluster-Based Approach to Estimate Equivalent Dynamic Load Responses",
+          "anio": 2025,
+          "citas": 0
+        },
+        {
+          "titulo": "A probabilistic approach to voltage security assessment with high penetration of renewable generation",
+          "anio": 2025,
+          "citas": 7
+        },
+        {
+          "titulo": "Short-Term Voltage Stability Analysis Considering the Mandatory Disconnection of Distributed Energy Resources",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Examination of EMT-type impedance scanning techniques for small signal stability assessment of inverter based resources",
+          "anio": 2025,
+          "citas": 13
+        },
+        {
+          "titulo": "Comprehensive full-scale converter wind park initialization for electromagnetic transient studies",
+          "anio": 2025,
+          "citas": 5
+        },
+        {
+          "titulo": "Microgrid modeling for stability analysis",
+          "anio": 2023,
+          "citas": 87
+        },
+        {
+          "titulo": "Short circuit network equivalents of systems with inverter-based resources",
+          "anio": 2021,
+          "citas": 36
+        },
+        {
+          "titulo": "Unbalance compensation control in microgrids based on the unbalance profile",
+          "anio": 2021,
+          "citas": 17
+        },
+        {
+          "titulo": "Combined control of DFIG-based wind turbine and battery energy storage system for frequency response in microgrids",
+          "anio": 2020,
+          "citas": 63
+        },
+        {
+          "titulo": "Primary frequency response of microgrid using doubly fed induction generator with finite control set model predictive control plus droop control and storage system",
+          "anio": 2020,
+          "citas": 54
+        },
+        {
+          "titulo": "A new artificial neural network based method for islanding detection of distributed generators",
+          "anio": 2016,
+          "citas": 129
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Sus coautores de INT-34 João Vitor Silva Colombo y Thamilly Rodrigues Mota firman con ella 'Cluster-Based Approach to Estimate Equivalent Dynamic Load Responses' (IEEE INDUSCON 2025, JVS Colombo, TR Mota, APG Pavani, RA Ramos); Colombo también figura en un trabajo del CBA 2026. Perfil publicado como 'Ahda P. Grilo Pavani' / 'AP Grilo'."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do ABC (UFABC), Santo André",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "stability of power systems with inverter-based resources and wind generation",
+        "modeling and stability analysis of microgrids and active distribution networks",
+        "voltage security assessment under high renewable penetration",
+        "dynamic load equivalents and modeling of distribution resources for ancillary services",
+        "islanding detection and protection of distributed generators",
+        "EMT modeling and initialization of wind and PV parks"
+      ],
+      "palabras_clave": [
+        "inverter-based resources",
+        "DFIG",
+        "wind parks",
+        "microgrids",
+        "voltage stability",
+        "frequency response",
+        "islanding detection",
+        "dynamic load equivalents",
+        "EMT simulation",
+        "impedance-based stability",
+        "distributed generation",
+        "ancillary services"
+      ],
+      "metodos": [
+        "electromagnetic transient simulation and model initialization",
+        "impedance scanning and small-signal stability analysis",
+        "probabilistic voltage security assessment",
+        "artificial neural networks for islanding detection",
+        "clustering-based dynamic equivalents"
+      ],
+      "aplicaciones": [
+        "DFIG and full-converter wind parks",
+        "microgrids with storage",
+        "active distribution networks providing ancillary services",
+        "Brazilian interconnected power system"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.8,
+        "3": 0.6,
+        "8": 0.3,
+        "6": 0.3
+      },
+      "etapa": "investigador_senior",
+      "resumen": "Profesora de la UFABC con amplia trayectoria en estabilidad de sistemas con generación eólica y recursos basados en inversores, microrredes, protección anti-isla de generación distribuida y, recientemente, modelado EMT de parques eólicos/FV y seguridad de tensión con alta penetración renovable. En CLAGTEE es coautora del modelado de recursos de redes de distribución activas para servicios auxiliares; le interesarían sesiones de integración de renovables y DER, estabilidad, electrónica de potencia conectada a red y operación de redes activas.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    }
+  },
+  {
+    "id": "joao-vitor-silva-colombo",
+    "nombre": "João Vitor Silva Colombo",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Probablemente Universidade Federal do ABC (UFABC) (por la coautora A. P. Grilo Pavani)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "modeling of active distribution network resources",
+        "ancillary services from distributed energy resources",
+        "equivalent dynamic load response estimation",
+        "critical oscillation modes at connection points of converter-based generation"
+      ],
+      "palabras_clave": [
+        "active distribution networks",
+        "ancillary services",
+        "distributed energy resources",
+        "DER modeling",
+        "dynamic load equivalents",
+        "clustering",
+        "converter-interfaced generation",
+        "oscillation modes"
+      ],
+      "metodos": [
+        "clustering-based dynamic equivalents",
+        "modal analysis"
+      ],
+      "aplicaciones": [
+        "ancillary service provision from active distribution networks",
+        "grid connection points of converter-based generation"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.7,
+        "3": 0.3,
+        "7": 0.2
+      },
+      "etapa": "estudiante",
+      "resumen": "No se encontró perfil de Google Scholar. Además de INT-34 (modelado de recursos de redes de distribución activas para servicios auxiliares), en el perfil de su coautora A. P. Grilo Pavani figura como coautor de 'Cluster-Based Approach to Estimate Equivalent Dynamic Load Responses' (INDUSCON 2025) y de un trabajo sobre modos de oscilación críticos en puntos de conexión de generación con convertidores (CBA 2026); probablemente estudiante de posgrado en la UFABC. Como contexto de grupo, su coautora A. P. Grilo Pavani (UFABC) investiga estabilidad con recursos basados en inversores, microrredes y generación distribuida. Le interesarían sesiones de DER, servicios auxiliares y estabilidad de redes con convertidores.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Scholar: 'João Vitor Silva Colombo'; sin candidatos. Aparece como 'JVS Colombo' en publicaciones del perfil de A. P. Grilo Pavani (que no muestra barra de coautores)."
+  },
+  {
+    "id": "thamilly-rodrigues-mota",
+    "nombre": "Thamilly Rodrigues Mota",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Probablemente Universidade Federal do ABC (UFABC) (por la coautora A. P. Grilo Pavani)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "modeling of active distribution network resources",
+        "ancillary services from distributed energy resources",
+        "equivalent dynamic load response estimation"
+      ],
+      "palabras_clave": [
+        "active distribution networks",
+        "ancillary services",
+        "distributed energy resources",
+        "DER modeling",
+        "dynamic load equivalents",
+        "clustering",
+        "load modeling"
+      ],
+      "metodos": [
+        "clustering-based dynamic equivalents"
+      ],
+      "aplicaciones": [
+        "ancillary service provision from active distribution networks"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.7,
+        "7": 0.2
+      },
+      "etapa": "estudiante",
+      "resumen": "No se encontró perfil de Google Scholar. Presenta INT-34 (modelado de recursos de redes de distribución activas para servicios auxiliares) y, en el perfil de su coautora A. P. Grilo Pavani, figura como coautora de 'Cluster-Based Approach to Estimate Equivalent Dynamic Load Responses' (INDUSCON 2025); probablemente estudiante de posgrado en la UFABC. Como contexto de grupo, su coautora A. P. Grilo Pavani (UFABC) investiga estabilidad con recursos basados en inversores, microrredes y generación distribuida. Le interesarían sesiones de DER, servicios auxiliares, modelado de cargas y operación de redes de distribución activas.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Scholar: 'Thamilly Rodrigues Mota' y 'Thamilly Mota UFABC power systems'; web general: nombre completo entre comillas. Sin resultados. Aparece como 'TR Mota' en una publicación del perfil de A. P. Grilo Pavani."
   }
- },
- {
-  "id": "joao-vitor-silva-colombo",
-  "nombre": "João Vitor Silva Colombo",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Probablemente Universidade Federal do ABC (UFABC) (por la coautora A. P. Grilo Pavani)",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "modeling of active distribution network resources",
-    "ancillary services from distributed energy resources",
-    "equivalent dynamic load response estimation",
-    "critical oscillation modes at connection points of converter-based generation"
-   ],
-   "palabras_clave": [
-    "active distribution networks",
-    "ancillary services",
-    "distributed energy resources",
-    "DER modeling",
-    "dynamic load equivalents",
-    "clustering",
-    "converter-interfaced generation",
-    "oscillation modes"
-   ],
-   "metodos": [
-    "clustering-based dynamic equivalents",
-    "modal analysis"
-   ],
-   "aplicaciones": [
-    "ancillary service provision from active distribution networks",
-    "grid connection points of converter-based generation"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "1": 0.7,
-    "3": 0.3,
-    "7": 0.2
-   },
-   "etapa": "estudiante",
-   "resumen": "No se encontró perfil de Google Scholar. Además de INT-34 (modelado de recursos de redes de distribución activas para servicios auxiliares), en el perfil de su coautora A. P. Grilo Pavani figura como coautor de 'Cluster-Based Approach to Estimate Equivalent Dynamic Load Responses' (INDUSCON 2025) y de un trabajo sobre modos de oscilación críticos en puntos de conexión de generación con convertidores (CBA 2026); probablemente estudiante de posgrado en la UFABC. Como contexto de grupo, su coautora A. P. Grilo Pavani (UFABC) investiga estabilidad con recursos basados en inversores, microrredes y generación distribuida. Le interesarían sesiones de DER, servicios auxiliares y estabilidad de redes con convertidores.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "Scholar: 'João Vitor Silva Colombo'; sin candidatos. Aparece como 'JVS Colombo' en publicaciones del perfil de A. P. Grilo Pavani (que no muestra barra de coautores)."
- },
- {
-  "id": "thamilly-rodrigues-mota",
-  "nombre": "Thamilly Rodrigues Mota",
-  "busqueda": "sin_perfil",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "Probablemente Universidade Federal do ABC (UFABC) (por la coautora A. P. Grilo Pavani)",
-  "pais_inferido": "Brasil",
-  "intereses": {
-   "temas": [
-    "modeling of active distribution network resources",
-    "ancillary services from distributed energy resources",
-    "equivalent dynamic load response estimation"
-   ],
-   "palabras_clave": [
-    "active distribution networks",
-    "ancillary services",
-    "distributed energy resources",
-    "DER modeling",
-    "dynamic load equivalents",
-    "clustering",
-    "load modeling"
-   ],
-   "metodos": [
-    "clustering-based dynamic equivalents"
-   ],
-   "aplicaciones": [
-    "ancillary service provision from active distribution networks"
-   ],
-   "afinidad_tracks": {
-    "2": 0.9,
-    "1": 0.7,
-    "7": 0.2
-   },
-   "etapa": "estudiante",
-   "resumen": "No se encontró perfil de Google Scholar. Presenta INT-34 (modelado de recursos de redes de distribución activas para servicios auxiliares) y, en el perfil de su coautora A. P. Grilo Pavani, figura como coautora de 'Cluster-Based Approach to Estimate Equivalent Dynamic Load Responses' (INDUSCON 2025); probablemente estudiante de posgrado en la UFABC. Como contexto de grupo, su coautora A. P. Grilo Pavani (UFABC) investiga estabilidad con recursos basados en inversores, microrredes y generación distribuida. Le interesarían sesiones de DER, servicios auxiliares, modelado de cargas y operación de redes de distribución activas.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  },
-  "nota_busqueda": "Scholar: 'Thamilly Rodrigues Mota' y 'Thamilly Mota UFABC power systems'; web general: nombre completo entre comillas. Sin resultados. Aparece como 'TR Mota' en una publicación del perfil de A. P. Grilo Pavani."
- }
 ]

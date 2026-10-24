@@ -5,7 +5,10 @@
     "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [
-      {"tipo": "institucional", "url": "https://www2.ufjf.br/ppee/?p=13332"}
+      {
+        "tipo": "institucional",
+        "url": "https://www2.ufjf.br/ppee/?p=13332"
+      }
     ],
     "afiliacion_inferida": "Universidade Federal de Juiz de Fora (UFJF), PPEE",
     "pais_inferido": "Brasil",
@@ -15,14 +18,37 @@
         "long-term BESS planning considering battery degradation",
         "offshore wind farm layout optimization under different wake effect models"
       ],
-      "palabras_clave": ["battery energy storage", "battery bank allocation", "heuristic equation", "artificial intelligence", "battery degradation", "offshore wind", "wake effect", "wind farm layout"],
-      "metodos": ["AI-based heuristic equations", "metaheuristic optimization"],
-      "aplicaciones": ["distribution networks with battery banks", "offshore wind farms in Brazil"],
-      "afinidad_tracks": {"2": 1.0, "1": 0.6, "6": 0.5, "10": 0.4},
+      "palabras_clave": [
+        "battery energy storage",
+        "battery bank allocation",
+        "heuristic equation",
+        "artificial intelligence",
+        "battery degradation",
+        "offshore wind",
+        "wake effect",
+        "wind farm layout"
+      ],
+      "metodos": [
+        "AI-based heuristic equations",
+        "metaheuristic optimization"
+      ],
+      "aplicaciones": [
+        "distribution networks with battery banks",
+        "offshore wind farms in Brazil"
+      ],
+      "afinidad_tracks": {
+        "2": 1.0,
+        "1": 0.6,
+        "6": 0.5,
+        "10": 0.4
+      },
       "etapa": "estudiante",
-      "resumen": "Estudiante de posgrado de la UFJF (defendió su maestría en 2024 sobre el layout de parques eólicos offshore con distintos modelos de wake effect, orientada por Ivo Chaves da Silva Junior). En CLAGTEE presenta la asignación de bancos de baterías con una heurística basada en IA, y en el grupo trabaja también la degradación de baterías en la planificación de BESS. Le interesarían sesiones de almacenamiento, integración de renovables y eólica offshore."
-      ,
-      "base": ["papers_clagtee", "otras_fuentes", "grupo_coautores"]
+      "resumen": "Estudiante de posgrado de la UFJF (defendió su maestría en 2024 sobre el layout de parques eólicos offshore con distintos modelos de wake effect, orientada por Ivo Chaves da Silva Junior). En CLAGTEE presenta la asignación de bancos de baterías con una heurística basada en IA, y en el grupo trabaja también la degradación de baterías en la planificación de BESS. Le interesarían sesiones de almacenamiento, integración de renovables y eólica offshore.",
+      "base": [
+        "papers_clagtee",
+        "otras_fuentes",
+        "grupo_coautores"
+      ]
     }
   },
   {
@@ -35,23 +61,74 @@
       "nombre_perfil": "Edimar José de Oliveira",
       "afiliacion": "Federal University of Juiz de Fora",
       "email_verificado": "ufjf.edu.br",
-      "intereses_scholar": ["Power System", "optimization"],
+      "intereses_scholar": [
+        "Power System",
+        "optimization"
+      ],
       "citas": 2709,
       "citas_desde_2021": 1032,
       "h_index": 28,
       "publicaciones": [
-        {"titulo": "Stochastic sizing and siting of grid-scale energy storage under network-constrained hydrothermal unit commitment", "anio": 2026, "citas": 0},
-        {"titulo": "HELM/TMP-Based Remote Voltage Control Framework for Modern Power Systems", "anio": 2026, "citas": 0},
-        {"titulo": "Estimação de Wind Curtailment via Redes Neurais Artificiais", "anio": 2026, "citas": 0},
-        {"titulo": "Hybrid optimization for profit-based unit commitment in uncertain renewable scenarios", "anio": 2026, "citas": 0},
-        {"titulo": "Multi-Stage Probabilistic Transmission Expansion Planning Under Generation Uncertainty and N-1 Security Using the Pack-Based Grey Wolf Optimizer", "anio": 2026, "citas": 1},
-        {"titulo": "Market-Driven Transmission and Storage Co-Planning Expansion to Mitigate Market Power", "anio": 2026, "citas": 1},
-        {"titulo": "A novel recursive methodology for power flow analysis based on the holomorphic embedding method using the total multiplication of polynomials", "anio": 2025, "citas": 2},
-        {"titulo": "A novel framework for co-expansion planning of transmission lines and energy storage devices considering unit commitment", "anio": 2025, "citas": 3},
-        {"titulo": "Transmission expansion planning based on Pareto dominance considering load variation and wind power", "anio": 2024, "citas": 6},
-        {"titulo": "Optimal reconfiguration and capacitor allocation in radial distribution systems for energy losses minimization", "anio": 2010, "citas": 197},
-        {"titulo": "Transmission system expansion planning using a sigmoid function to handle integer investment variables", "anio": 2005, "citas": 140},
-        {"titulo": "A heuristic constructive algorithm for capacitor placement on distribution systems", "anio": 2008, "citas": 137}
+        {
+          "titulo": "Stochastic sizing and siting of grid-scale energy storage under network-constrained hydrothermal unit commitment",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "HELM/TMP-Based Remote Voltage Control Framework for Modern Power Systems",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Estimação de Wind Curtailment via Redes Neurais Artificiais",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Hybrid optimization for profit-based unit commitment in uncertain renewable scenarios",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Multi-Stage Probabilistic Transmission Expansion Planning Under Generation Uncertainty and N-1 Security Using the Pack-Based Grey Wolf Optimizer",
+          "anio": 2026,
+          "citas": 1
+        },
+        {
+          "titulo": "Market-Driven Transmission and Storage Co-Planning Expansion to Mitigate Market Power",
+          "anio": 2026,
+          "citas": 1
+        },
+        {
+          "titulo": "A novel recursive methodology for power flow analysis based on the holomorphic embedding method using the total multiplication of polynomials",
+          "anio": 2025,
+          "citas": 2
+        },
+        {
+          "titulo": "A novel framework for co-expansion planning of transmission lines and energy storage devices considering unit commitment",
+          "anio": 2025,
+          "citas": 3
+        },
+        {
+          "titulo": "Transmission expansion planning based on Pareto dominance considering load variation and wind power",
+          "anio": 2024,
+          "citas": 6
+        },
+        {
+          "titulo": "Optimal reconfiguration and capacitor allocation in radial distribution systems for energy losses minimization",
+          "anio": 2010,
+          "citas": 197
+        },
+        {
+          "titulo": "Transmission system expansion planning using a sigmoid function to handle integer investment variables",
+          "anio": 2005,
+          "citas": 140
+        },
+        {
+          "titulo": "A heuristic constructive algorithm for capacitor placement on distribution systems",
+          "anio": 2008,
+          "citas": 137
+        }
       ],
       "confianza": "alta",
       "evidencia": "Ivo Chaves da Silva Junior (coautor de INT-16) es su primer coautor listado en Scholar; publica con Leonardo Willer de Oliveira, LS Nepomuceno, GRS Lima, LG Silva y L Braga (coautores CLAGTEE), incluidos los papers HELM/TMP (línea de PLA-5/PLA-42) y 'Estimação de Wind Curtailment via Redes Neurais Artificiais' (línea de PLA-25)."
@@ -68,14 +145,47 @@
         "wind curtailment estimation with machine learning",
         "distribution network reconfiguration and capacitor/battery allocation"
       ],
-      "palabras_clave": ["holomorphic embedding", "HELM", "probabilistic power flow", "area interchange control", "transmission expansion planning", "energy storage siting and sizing", "unit commitment", "wind curtailment", "optimal power flow", "distribution system reconfiguration", "capacitor allocation", "FACTS allocation"],
-      "metodos": ["holomorphic embedding load flow method (HELM/TMP)", "metaheuristics (grey wolf, bat-inspired, genetic algorithms)", "interior point optimal power flow", "stochastic optimization", "histogram-based gradient boosting", "artificial neural networks"],
-      "aplicaciones": ["Brazilian interconnected transmission system", "distribution systems with distributed generation", "grid-scale battery energy storage", "wind power integration", "hydrothermal power systems"],
-      "afinidad_tracks": {"1": 1.0, "2": 0.7, "6": 0.5, "7": 0.3},
+      "palabras_clave": [
+        "holomorphic embedding",
+        "HELM",
+        "probabilistic power flow",
+        "area interchange control",
+        "transmission expansion planning",
+        "energy storage siting and sizing",
+        "unit commitment",
+        "wind curtailment",
+        "optimal power flow",
+        "distribution system reconfiguration",
+        "capacitor allocation",
+        "FACTS allocation"
+      ],
+      "metodos": [
+        "holomorphic embedding load flow method (HELM/TMP)",
+        "metaheuristics (grey wolf, bat-inspired, genetic algorithms)",
+        "interior point optimal power flow",
+        "stochastic optimization",
+        "histogram-based gradient boosting",
+        "artificial neural networks"
+      ],
+      "aplicaciones": [
+        "Brazilian interconnected transmission system",
+        "distribution systems with distributed generation",
+        "grid-scale battery energy storage",
+        "wind power integration",
+        "hydrothermal power systems"
+      ],
+      "afinidad_tracks": {
+        "1": 1.0,
+        "2": 0.7,
+        "6": 0.5,
+        "7": 0.3
+      },
       "etapa": "investigador_senior",
-      "resumen": "Profesor de la UFJF con larga trayectoria (desde fines de los 90) en optimización de sistemas de potencia: planificación de la expansión de transmisión, flujo de potencia óptimo, reconfiguración y asignación de capacitores/GD en distribución. Hoy lidera trabajos sobre el método HELM/TMP para flujo de potencia y control de tensión/intercambio, co-planificación de transmisión y almacenamiento con unit commitment y estimación de curtailment eólico con ML. Le interesarían sesiones de planificación y operación, almacenamiento e integración de renovables, y aplicaciones de IA a la red."
-      ,
-      "base": ["papers_clagtee", "google_scholar"]
+      "resumen": "Profesor de la UFJF con larga trayectoria (desde fines de los 90) en optimización de sistemas de potencia: planificación de la expansión de transmisión, flujo de potencia óptimo, reconfiguración y asignación de capacitores/GD en distribución. Hoy lidera trabajos sobre el método HELM/TMP para flujo de potencia y control de tensión/intercambio, co-planificación de transmisión y almacenamiento con unit commitment y estimación de curtailment eólico con ML. Le interesarían sesiones de planificación y operación, almacenamiento e integración de renovables, y aplicaciones de IA a la red.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
   },
   {
@@ -94,14 +204,38 @@
         "area interchange control in modern power systems",
         "sensitivity indices for thermal unit commitment"
       ],
-      "palabras_clave": ["holomorphic embedding", "HELM", "total multiplication of polynomials", "power flow", "probabilistic power flow", "voltage control", "tap-changing transformer", "area interchange control", "unit commitment", "energy storage operation"],
-      "metodos": ["holomorphic embedding load flow method (HELM/TMP)", "recursive power series power flow", "sensitivity indices"],
-      "aplicaciones": ["distribution systems", "interconnected transmission systems", "Brazilian South-Southeast equivalent system"],
-      "afinidad_tracks": {"1": 1.0, "2": 0.4},
+      "palabras_clave": [
+        "holomorphic embedding",
+        "HELM",
+        "total multiplication of polynomials",
+        "power flow",
+        "probabilistic power flow",
+        "voltage control",
+        "tap-changing transformer",
+        "area interchange control",
+        "unit commitment",
+        "energy storage operation"
+      ],
+      "metodos": [
+        "holomorphic embedding load flow method (HELM/TMP)",
+        "recursive power series power flow",
+        "sensitivity indices"
+      ],
+      "aplicaciones": [
+        "distribution systems",
+        "interconnected transmission systems",
+        "Brazilian South-Southeast equivalent system"
+      ],
+      "afinidad_tracks": {
+        "1": 1.0,
+        "2": 0.4
+      },
       "etapa": "estudiante",
-      "resumen": "Probablemente doctorando de la UFJF en el grupo de Edimar José de Oliveira y Leonardo Willer de Oliveira (sin perfil Scholar propio; datos tomados de los perfiles de sus coautores). Es primer autor de una serie de trabajos sobre el método HELM/TMP para flujo de potencia, control de tensión con transformadores y control remoto de tensión (IEEE Access 2025, IEEE OAJPE 2026), y presenta en CLAGTEE PLA-5 y PLA-42. Le interesarían sesiones de análisis de redes, flujo de potencia y operación de sistemas."
-      ,
-      "base": ["papers_clagtee", "grupo_coautores"]
+      "resumen": "Probablemente doctorando de la UFJF en el grupo de Edimar José de Oliveira y Leonardo Willer de Oliveira (sin perfil Scholar propio; datos tomados de los perfiles de sus coautores). Es primer autor de una serie de trabajos sobre el método HELM/TMP para flujo de potencia, control de tensión con transformadores y control remoto de tensión (IEEE Access 2025, IEEE OAJPE 2026), y presenta en CLAGTEE PLA-5 y PLA-42. Le interesarían sesiones de análisis de redes, flujo de potencia y operación de sistemas.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   },
   {
@@ -114,23 +248,73 @@
       "nombre_perfil": "Ivo Chaves da Silva Junior",
       "afiliacion": "Universidade Federal de Juiz de Fora",
       "email_verificado": "ufjf.edu.br",
-      "intereses_scholar": ["Otimização (Geração-Transmissão-Distribuição de Energia Elétrica)"],
+      "intereses_scholar": [
+        "Otimização (Geração-Transmissão-Distribuição de Energia Elétrica)"
+      ],
       "citas": 2250,
       "citas_desde_2021": 1045,
       "h_index": 24,
       "publicaciones": [
-        {"titulo": "Impacto da Degradação de Baterias no Planejamento de Longo Prazo de BESS", "anio": 2026, "citas": 0},
-        {"titulo": "Hybrid optimization for profit-based unit commitment in uncertain renewable scenarios", "anio": 2026, "citas": 0},
-        {"titulo": "Power Flow-based Estimation of Short-Circuit Currents from Inverter-based Resources", "anio": 2026, "citas": 2},
-        {"titulo": "Multiobjective heuristic algorithm for phase swapping in unbalanced distribution networks", "anio": 2025, "citas": 1},
-        {"titulo": "Cabling Optimization in Wind Power Plants, Enhancing the Cable Type-Based Formulation", "anio": 2025, "citas": 2},
-        {"titulo": "Impact of different wake effect modeling in offshore wind farms licensing in Brazil", "anio": 2024, "citas": 0},
-        {"titulo": "A self-started predictor–corrector method for calculating the Lambert W function within the scope of the photovoltaic single diode model", "anio": 2024, "citas": 10},
-        {"titulo": "A survey on the parameter extraction problem of the photovoltaic single diode model from a current–voltage curve", "anio": 2023, "citas": 37},
-        {"titulo": "Optimal distributed generation allocation in unbalanced radial distribution networks via empirical discrete metaheuristic and steepest descent method", "anio": 2021, "citas": 39},
-        {"titulo": "Parameter extraction of photovoltaic models using an enhanced Lévy flight bat algorithm", "anio": 2020, "citas": 119},
-        {"titulo": "Optimal reconfiguration and capacitor allocation in radial distribution systems for energy losses minimization", "anio": 2010, "citas": 197},
-        {"titulo": "Transmission system expansion planning using a sigmoid function to handle integer investment variables", "anio": 2005, "citas": 140}
+        {
+          "titulo": "Impacto da Degradação de Baterias no Planejamento de Longo Prazo de BESS",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Hybrid optimization for profit-based unit commitment in uncertain renewable scenarios",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Power Flow-based Estimation of Short-Circuit Currents from Inverter-based Resources",
+          "anio": 2026,
+          "citas": 2
+        },
+        {
+          "titulo": "Multiobjective heuristic algorithm for phase swapping in unbalanced distribution networks",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Cabling Optimization in Wind Power Plants, Enhancing the Cable Type-Based Formulation",
+          "anio": 2025,
+          "citas": 2
+        },
+        {
+          "titulo": "Impact of different wake effect modeling in offshore wind farms licensing in Brazil",
+          "anio": 2024,
+          "citas": 0
+        },
+        {
+          "titulo": "A self-started predictor–corrector method for calculating the Lambert W function within the scope of the photovoltaic single diode model",
+          "anio": 2024,
+          "citas": 10
+        },
+        {
+          "titulo": "A survey on the parameter extraction problem of the photovoltaic single diode model from a current–voltage curve",
+          "anio": 2023,
+          "citas": 37
+        },
+        {
+          "titulo": "Optimal distributed generation allocation in unbalanced radial distribution networks via empirical discrete metaheuristic and steepest descent method",
+          "anio": 2021,
+          "citas": 39
+        },
+        {
+          "titulo": "Parameter extraction of photovoltaic models using an enhanced Lévy flight bat algorithm",
+          "anio": 2020,
+          "citas": 119
+        },
+        {
+          "titulo": "Optimal reconfiguration and capacitor allocation in radial distribution systems for energy losses minimization",
+          "anio": 2010,
+          "citas": 197
+        },
+        {
+          "titulo": "Transmission system expansion planning using a sigmoid function to handle integer investment variables",
+          "anio": 2005,
+          "citas": 140
+        }
       ],
       "confianza": "alta",
       "evidencia": "Figura como coautor en el perfil de Edimar José de Oliveira (coautor de INT-16); publica con A Mendonça y T Cruz (coautores de INT-16) sobre degradación de baterías en planificación de BESS (CBA 2026) y wake effect en parques eólicos offshore (CBA 2024)."
@@ -147,14 +331,48 @@
         "hydrothermal operation planning and streamflow forecasting",
         "transmission expansion planning and unit commitment"
       ],
-      "palabras_clave": ["battery energy storage", "battery degradation", "distributed generation allocation", "phase swapping", "voltage unbalance", "photovoltaic single diode model", "wake effect", "offshore wind", "wind farm cabling", "hydrothermal scheduling", "unit commitment", "transmission expansion planning"],
-      "metodos": ["metaheuristics (bat algorithm, particle swarm optimization, genetic algorithms)", "heuristic constructive algorithms", "multi-objective optimization", "stochastic dynamic programming", "AI-based heuristics", "evolving Gaussian forecasting models"],
-      "aplicaciones": ["unbalanced distribution networks", "grid-scale battery storage", "offshore wind farms in Brazil", "PV modules", "Brazilian hydrothermal system"],
-      "afinidad_tracks": {"2": 1.0, "1": 0.9, "6": 0.5, "9": 0.3, "10": 0.3},
+      "palabras_clave": [
+        "battery energy storage",
+        "battery degradation",
+        "distributed generation allocation",
+        "phase swapping",
+        "voltage unbalance",
+        "photovoltaic single diode model",
+        "wake effect",
+        "offshore wind",
+        "wind farm cabling",
+        "hydrothermal scheduling",
+        "unit commitment",
+        "transmission expansion planning"
+      ],
+      "metodos": [
+        "metaheuristics (bat algorithm, particle swarm optimization, genetic algorithms)",
+        "heuristic constructive algorithms",
+        "multi-objective optimization",
+        "stochastic dynamic programming",
+        "AI-based heuristics",
+        "evolving Gaussian forecasting models"
+      ],
+      "aplicaciones": [
+        "unbalanced distribution networks",
+        "grid-scale battery storage",
+        "offshore wind farms in Brazil",
+        "PV modules",
+        "Brazilian hydrothermal system"
+      ],
+      "afinidad_tracks": {
+        "2": 1.0,
+        "1": 0.9,
+        "6": 0.5,
+        "9": 0.3,
+        "10": 0.3
+      },
       "etapa": "investigador_consolidado",
-      "resumen": "Profesor de la UFJF que investiga optimización de generación, transmisión y distribución: asignación de GD, capacitores y baterías en redes de distribución, extracción de parámetros de modelos fotovoltaicos, planificación hidrotérmica y diseño de parques eólicos offshore. En CLAGTEE es coautor de la asignación de bancos de baterías con heurística basada en IA. Le interesarían sesiones de almacenamiento, GD y renovables, planificación de redes y técnicas de optimización/IA."
-      ,
-      "base": ["papers_clagtee", "google_scholar"]
+      "resumen": "Profesor de la UFJF que investiga optimización de generación, transmisión y distribución: asignación de GD, capacitores y baterías en redes de distribución, extracción de parámetros de modelos fotovoltaicos, planificación hidrotérmica y diseño de parques eólicos offshore. En CLAGTEE es coautor de la asignación de bancos de baterías con heurística basada en IA. Le interesarían sesiones de almacenamiento, GD y renovables, planificación de redes y técnicas de optimización/IA.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
   },
   {
@@ -171,14 +389,38 @@
         "diagnosis of operational bottlenecks under wind penetration using dual variables",
         "neural network identification of switch status in distribution systems"
       ],
-      "palabras_clave": ["wind curtailment", "gradient boosting", "dual variables", "partial least squares", "wind penetration", "operational bottlenecks", "artificial neural networks", "switch state identification", "distribution systems"],
-      "metodos": ["histogram-based gradient boosting", "partial least squares (PLS)", "dual variable sensitivity analysis", "artificial neural networks"],
-      "aplicaciones": ["Brazilian South-Southeast equivalent system", "distribution networks"],
-      "afinidad_tracks": {"1": 0.9, "6": 0.7, "2": 0.6},
+      "palabras_clave": [
+        "wind curtailment",
+        "gradient boosting",
+        "dual variables",
+        "partial least squares",
+        "wind penetration",
+        "operational bottlenecks",
+        "artificial neural networks",
+        "switch state identification",
+        "distribution systems"
+      ],
+      "metodos": [
+        "histogram-based gradient boosting",
+        "partial least squares (PLS)",
+        "dual variable sensitivity analysis",
+        "artificial neural networks"
+      ],
+      "aplicaciones": [
+        "Brazilian South-Southeast equivalent system",
+        "distribution networks"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "6": 0.7,
+        "2": 0.6
+      },
       "etapa": "estudiante",
-      "resumen": "Probablemente estudiante de posgrado de la UFJF en el grupo de Edimar José de Oliveira (sin perfil Scholar: el único homónimo es un historiador; datos tomados del perfil de sus coautores). Trabaja en el diagnóstico de cuellos de botella operativos frente a la penetración eólica con variables duales y PLS, en la identificación del estado de llaves en distribución con redes neuronales y, en CLAGTEE, en la estimación de curtailment eólico con gradient boosting. Le interesarían sesiones de integración eólica, operación y ciencia de datos aplicada."
-      ,
-      "base": ["papers_clagtee", "grupo_coautores"]
+      "resumen": "Probablemente estudiante de posgrado de la UFJF en el grupo de Edimar José de Oliveira (sin perfil Scholar: el único homónimo es un historiador; datos tomados del perfil de sus coautores). Trabaja en el diagnóstico de cuellos de botella operativos frente a la penetración eólica con variables duales y PLS, en la identificación del estado de llaves en distribución con redes neuronales y, en CLAGTEE, en la estimación de curtailment eólico con gradient boosting. Le interesarían sesiones de integración eólica, operación y ciencia de datos aplicada.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   },
   {
@@ -191,23 +433,76 @@
       "nombre_perfil": "Leonardo Willer de Oliveira",
       "afiliacion": "Professor de Engenharia Elétrica, Universidade Federal de Juiz de Fora (UFJF)",
       "email_verificado": "ufjf.br",
-      "intereses_scholar": ["engenharia elétrica", "sistemas elétricos de potência", "otimização", "RIBIERSE-CYTED"],
+      "intereses_scholar": [
+        "engenharia elétrica",
+        "sistemas elétricos de potência",
+        "otimização",
+        "RIBIERSE-CYTED"
+      ],
       "citas": 2273,
       "citas_desde_2021": 1444,
       "h_index": 24,
       "publicaciones": [
-        {"titulo": "Stochastic sizing and siting of grid-scale energy storage under network-constrained hydrothermal unit commitment", "anio": 2026, "citas": 0},
-        {"titulo": "HELM/TMP-Based Remote Voltage Control Framework for Modern Power Systems", "anio": 2026, "citas": 0},
-        {"titulo": "Stochastic Multi-Objective Optimization for Grid-Scale Energy Storage Sizing and Siting", "anio": 2026, "citas": 0},
-        {"titulo": "Flexibility optimization from distributed storage resources under stochastic uncertainties", "anio": 2026, "citas": 2},
-        {"titulo": "Market-Driven Transmission and Storage Co-Planning Expansion to Mitigate Market Power", "anio": 2026, "citas": 1},
-        {"titulo": "Enhanced Semi-Empirical Modeling of Lithium-Ion Battery Aging for Bess Applications", "anio": 2025, "citas": 1},
-        {"titulo": "Voltage Control via Tap-Changing Transformer Using the Holomorphic Embedding Load Flow Method Based on Total Multiplication of Polynomials", "anio": 2025, "citas": 1},
-        {"titulo": "Optimal siting and sizing of distributed energy resources in a Smart Campus", "anio": 2023, "citas": 46},
-        {"titulo": "Generating realistic load profiles in smart grids: An approach based on nonlinear independent component estimation (NICE) and convolutional layers", "anio": 2023, "citas": 32},
-        {"titulo": "Integrated prosumers–DSO approach applied in peer-to-peer energy and reserve tradings considering network constraints", "anio": 2022, "citas": 56},
-        {"titulo": "Innovative business models as drivers for prosumers integration-Enablers and barriers", "anio": 2021, "citas": 166},
-        {"titulo": "Optimal reconfiguration and capacitor allocation in radial distribution systems for energy losses minimization", "anio": 2010, "citas": 197}
+        {
+          "titulo": "Stochastic sizing and siting of grid-scale energy storage under network-constrained hydrothermal unit commitment",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "HELM/TMP-Based Remote Voltage Control Framework for Modern Power Systems",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Stochastic Multi-Objective Optimization for Grid-Scale Energy Storage Sizing and Siting",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Flexibility optimization from distributed storage resources under stochastic uncertainties",
+          "anio": 2026,
+          "citas": 2
+        },
+        {
+          "titulo": "Market-Driven Transmission and Storage Co-Planning Expansion to Mitigate Market Power",
+          "anio": 2026,
+          "citas": 1
+        },
+        {
+          "titulo": "Enhanced Semi-Empirical Modeling of Lithium-Ion Battery Aging for Bess Applications",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Voltage Control via Tap-Changing Transformer Using the Holomorphic Embedding Load Flow Method Based on Total Multiplication of Polynomials",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Optimal siting and sizing of distributed energy resources in a Smart Campus",
+          "anio": 2023,
+          "citas": 46
+        },
+        {
+          "titulo": "Generating realistic load profiles in smart grids: An approach based on nonlinear independent component estimation (NICE) and convolutional layers",
+          "anio": 2023,
+          "citas": 32
+        },
+        {
+          "titulo": "Integrated prosumers–DSO approach applied in peer-to-peer energy and reserve tradings considering network constraints",
+          "anio": 2022,
+          "citas": 56
+        },
+        {
+          "titulo": "Innovative business models as drivers for prosumers integration-Enablers and barriers",
+          "anio": 2021,
+          "citas": 166
+        },
+        {
+          "titulo": "Optimal reconfiguration and capacitor allocation in radial distribution systems for energy losses minimization",
+          "anio": 2010,
+          "citas": 197
+        }
       ],
       "confianza": "alta",
       "evidencia": "Publica con Edimar José de Oliveira, GRS Lima, LS Nepomuceno, LG Silva y L Braga (coautores CLAGTEE), incluidos los papers HELM/TMP (línea de PLA-5/PLA-42) y la estimación de wind curtailment (línea de PLA-25); afiliación UFJF con email verificado."
@@ -224,14 +519,48 @@
         "transmission and storage co-expansion planning with renewables",
         "wind curtailment estimation with machine learning"
       ],
-      "palabras_clave": ["prosumers", "peer-to-peer trading", "battery energy storage systems", "battery aging", "flexibility", "holomorphic embedding", "probabilistic power flow", "distribution system reconfiguration", "distributed energy resources", "transmission expansion planning", "smart grids", "wind curtailment"],
-      "metodos": ["stochastic optimization", "multi-objective optimization", "metaheuristics (artificial immune systems, genetic algorithms)", "mixed-integer linear programming", "deep generative models for load profiles", "holomorphic embedding load flow method (HELM/TMP)"],
-      "aplicaciones": ["distribution networks with prosumers", "smart campus microgrids", "grid-scale BESS", "electric vehicle charging in isolated microgrids", "Brazilian power sector regulation"],
-      "afinidad_tracks": {"1": 1.0, "2": 0.8, "7": 0.6, "6": 0.5, "11": 0.2},
+      "palabras_clave": [
+        "prosumers",
+        "peer-to-peer trading",
+        "battery energy storage systems",
+        "battery aging",
+        "flexibility",
+        "holomorphic embedding",
+        "probabilistic power flow",
+        "distribution system reconfiguration",
+        "distributed energy resources",
+        "transmission expansion planning",
+        "smart grids",
+        "wind curtailment"
+      ],
+      "metodos": [
+        "stochastic optimization",
+        "multi-objective optimization",
+        "metaheuristics (artificial immune systems, genetic algorithms)",
+        "mixed-integer linear programming",
+        "deep generative models for load profiles",
+        "holomorphic embedding load flow method (HELM/TMP)"
+      ],
+      "aplicaciones": [
+        "distribution networks with prosumers",
+        "smart campus microgrids",
+        "grid-scale BESS",
+        "electric vehicle charging in isolated microgrids",
+        "Brazilian power sector regulation"
+      ],
+      "afinidad_tracks": {
+        "1": 1.0,
+        "2": 0.8,
+        "7": 0.6,
+        "6": 0.5,
+        "11": 0.2
+      },
       "etapa": "investigador_consolidado",
-      "resumen": "Profesor de Ingeniería Eléctrica de la UFJF dedicado a optimización de sistemas de potencia: reconfiguración y asignación de recursos en distribución, integración de prosumidores y mercados P2P, y dimensionamiento y operación de almacenamiento bajo incertidumbre. Coautor de los trabajos del grupo sobre HELM/TMP y curtailment eólico presentados en CLAGTEE. Le interesarían sesiones de planificación y operación, almacenamiento/DER, mercados centrados en el consumidor y aplicaciones de IA."
-      ,
-      "base": ["papers_clagtee", "google_scholar"]
+      "resumen": "Profesor de Ingeniería Eléctrica de la UFJF dedicado a optimización de sistemas de potencia: reconfiguración y asignación de recursos en distribución, integración de prosumidores y mercados P2P, y dimensionamiento y operación de almacenamiento bajo incertidumbre. Coautor de los trabajos del grupo sobre HELM/TMP y curtailment eólico presentados en CLAGTEE. Le interesarían sesiones de planificación y operación, almacenamiento/DER, mercados centrados en el consumidor y aplicaciones de IA.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
   },
   {
@@ -248,14 +577,32 @@
         "gradient boosting and neural network models for curtailment prediction",
         "data-driven analysis of wind generation constraints in power system operation"
       ],
-      "palabras_clave": ["wind curtailment", "histogram-based gradient boosting", "gradient boosting", "artificial neural networks", "wind power", "machine learning"],
-      "metodos": ["histogram-based gradient boosting", "artificial neural networks"],
-      "aplicaciones": ["wind generation curtailment in power systems"],
-      "afinidad_tracks": {"1": 0.9, "6": 0.8, "2": 0.7},
+      "palabras_clave": [
+        "wind curtailment",
+        "histogram-based gradient boosting",
+        "gradient boosting",
+        "artificial neural networks",
+        "wind power",
+        "machine learning"
+      ],
+      "metodos": [
+        "histogram-based gradient boosting",
+        "artificial neural networks"
+      ],
+      "aplicaciones": [
+        "wind generation curtailment in power systems"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "6": 0.8,
+        "2": 0.7
+      },
       "etapa": "estudiante",
-      "resumen": "Probablemente estudiante de la UFJF en el grupo de Edimar José de Oliveira y Leonardo Willer de Oliveira (sin perfil Scholar; evidencia escasa). Presenta en CLAGTEE la estimación de curtailment eólico con gradient boosting y es primer autor de un trabajo afín con redes neuronales (CBA 2026). Le interesarían sesiones de integración eólica, operación y ciencia de datos aplicada a sistemas de potencia."
-      ,
-      "base": ["papers_clagtee", "grupo_coautores"]
+      "resumen": "Probablemente estudiante de la UFJF en el grupo de Edimar José de Oliveira y Leonardo Willer de Oliveira (sin perfil Scholar; evidencia escasa). Presenta en CLAGTEE la estimación de curtailment eólico con gradient boosting y es primer autor de un trabajo afín con redes neuronales (CBA 2026). Le interesarían sesiones de integración eólica, operación y ciencia de datos aplicada a sistemas de potencia.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   },
   {
@@ -264,8 +611,14 @@
     "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [
-      {"tipo": "institucional", "url": "https://www2.ufjf.br/ppee/?p=12604"},
-      {"tipo": "institucional", "url": "https://www2.ufjf.br/ppee/?p=14381"}
+      {
+        "tipo": "institucional",
+        "url": "https://www2.ufjf.br/ppee/?p=12604"
+      },
+      {
+        "tipo": "institucional",
+        "url": "https://www2.ufjf.br/ppee/?p=14381"
+      }
     ],
     "afiliacion_inferida": "Universidade Federal de Juiz de Fora (UFJF), PPEE (doctorado)",
     "pais_inferido": "Brasil",
@@ -277,14 +630,44 @@
         "market power mitigation through expansion planning",
         "wind curtailment estimation with machine learning"
       ],
-      "palabras_clave": ["energy storage", "unit commitment", "profit-based unit commitment", "transmission expansion planning", "market power", "hydrothermal systems", "stochastic optimization", "multi-objective optimization", "N-1 security", "renewable uncertainty", "wind curtailment"],
-      "metodos": ["stochastic programming", "multi-objective optimization", "metaheuristics (modified genetic algorithm, grey wolf optimizer)", "hybrid optimization", "machine learning (gradient boosting, neural networks)"],
-      "aplicaciones": ["wholesale electricity markets", "hydrothermal power systems", "transmission networks with high renewable penetration"],
-      "afinidad_tracks": {"1": 1.0, "7": 0.7, "2": 0.6, "6": 0.4},
+      "palabras_clave": [
+        "energy storage",
+        "unit commitment",
+        "profit-based unit commitment",
+        "transmission expansion planning",
+        "market power",
+        "hydrothermal systems",
+        "stochastic optimization",
+        "multi-objective optimization",
+        "N-1 security",
+        "renewable uncertainty",
+        "wind curtailment"
+      ],
+      "metodos": [
+        "stochastic programming",
+        "multi-objective optimization",
+        "metaheuristics (modified genetic algorithm, grey wolf optimizer)",
+        "hybrid optimization",
+        "machine learning (gradient boosting, neural networks)"
+      ],
+      "aplicaciones": [
+        "wholesale electricity markets",
+        "hydrothermal power systems",
+        "transmission networks with high renewable penetration"
+      ],
+      "afinidad_tracks": {
+        "1": 1.0,
+        "7": 0.7,
+        "2": 0.6,
+        "6": 0.4
+      },
       "etapa": "estudiante",
-      "resumen": "Doctorando de la UFJF (maestría en 2023 sobre metaheurísticas en mercados mayoristas; calificación doctoral en 2026), orientado por Edimar José de Oliveira y Leonardo Willer de Oliveira. Primer autor de varios trabajos recientes sobre dimensionamiento y ubicación de almacenamiento, co-planificación de transmisión y almacenamiento y unit commitment basado en beneficio (datos tomados de los perfiles de sus orientadores; el único perfil Scholar homónimo es de medicina). Le interesarían sesiones de planificación, almacenamiento y mercados eléctricos."
-      ,
-      "base": ["papers_clagtee", "otras_fuentes", "grupo_coautores"]
+      "resumen": "Doctorando de la UFJF (maestría en 2023 sobre metaheurísticas en mercados mayoristas; calificación doctoral en 2026), orientado por Edimar José de Oliveira y Leonardo Willer de Oliveira. Primer autor de varios trabajos recientes sobre dimensionamiento y ubicación de almacenamiento, co-planificación de transmisión y almacenamiento y unit commitment basado en beneficio (datos tomados de los perfiles de sus orientadores; el único perfil Scholar homónimo es de medicina). Le interesarían sesiones de planificación, almacenamiento y mercados eléctricos.",
+      "base": [
+        "papers_clagtee",
+        "otras_fuentes",
+        "grupo_coautores"
+      ]
     }
   },
   {
@@ -301,14 +684,34 @@
         "long-term BESS planning considering battery degradation",
         "wake effect modeling in offshore wind farm licensing"
       ],
-      "palabras_clave": ["battery energy storage", "battery bank allocation", "battery degradation", "artificial intelligence", "offshore wind", "wake effect", "wind farm licensing"],
-      "metodos": ["AI-based heuristic equations"],
-      "aplicaciones": ["distribution networks with battery banks", "offshore wind farms in Brazil"],
-      "afinidad_tracks": {"2": 1.0, "1": 0.5, "6": 0.4, "10": 0.3},
+      "palabras_clave": [
+        "battery energy storage",
+        "battery bank allocation",
+        "battery degradation",
+        "artificial intelligence",
+        "offshore wind",
+        "wake effect",
+        "wind farm licensing"
+      ],
+      "metodos": [
+        "AI-based heuristic equations"
+      ],
+      "aplicaciones": [
+        "distribution networks with battery banks",
+        "offshore wind farms in Brazil"
+      ],
+      "afinidad_tracks": {
+        "2": 1.0,
+        "1": 0.5,
+        "6": 0.4,
+        "10": 0.3
+      },
       "etapa": "desconocida",
-      "resumen": "Sin perfil Scholar ni otras fuentes; aparece como coautor junto a Adriana Oliveira de Mendonça e Ivo Chaves da Silva Junior (UFJF) en trabajos sobre wake effect en el licenciamiento de parques eólicos offshore en Brasil y degradación de baterías en la planificación de BESS. En CLAGTEE es coautor de la asignación de bancos de baterías con heurística basada en IA. Evidencia escasa; le interesarían sesiones de almacenamiento y renovables."
-      ,
-      "base": ["papers_clagtee", "grupo_coautores"]
+      "resumen": "Sin perfil Scholar ni otras fuentes; aparece como coautor junto a Adriana Oliveira de Mendonça e Ivo Chaves da Silva Junior (UFJF) en trabajos sobre wake effect en el licenciamiento de parques eólicos offshore en Brasil y degradación de baterías en la planificación de BESS. En CLAGTEE es coautor de la asignación de bancos de baterías con heurística basada en IA. Evidencia escasa; le interesarían sesiones de almacenamiento y renovables.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   },
   {

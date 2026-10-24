@@ -56,6 +56,13 @@ Un agente por lote (corren en paralelo), cada uno con las instrucciones de
   CLAGTEE y del grupo de sus coautores.
 - OpenAlex y Semantic Scholar sirven poco desde la nube: la IP compartida
   agota la cuota gratuita (429).
+- **Cupo de WebSearch:** unas 200 búsquedas por turno, compartidas por todos
+  los agentes lanzados en ese turno. Con 11 agentes a la vez la primera
+  pasada se cortó a un tercio. Lanzar por tandas, dándole a cada agente un
+  presupuesto explícito cuya suma no pase de ~190 (en 2026: lotes 01-05 con
+  37 cada uno y, en el turno siguiente, 06-11 con 31), y aprovechar la barra
+  de coautores de los perfiles ya verificados, que se lee con WebFetch sin
+  gastar cupo. Ver "Pasadas siguientes" en `instrucciones-busqueda.md`.
 
 Para rehacer un autor puntual, editar su objeto en el lote correspondiente o
 pedirle a un agente solo ese `id`.
@@ -80,6 +87,11 @@ Cada perfil de `perfiles-autores.json` trae:
 - `intereses`: temas, palabras clave, métodos y aplicaciones (en inglés, como
   los títulos del programa), `afinidad_tracks` (0-1 por track oficial),
   `etapa` (estudiante ... investigador senior) y un `resumen` en español.
+
+Estado al 24-oct-2026: 299 personas; 98 con Scholar usable (86 alta, 12
+media), 3 dudosos (confianza baja o ambiguo, no se usan) y 198 sin perfil,
+con intereses sacados de sus papers y del grupo de coautores. Sin abstracts
+todavía.
 
 ## Sumar los abstracts después
 
