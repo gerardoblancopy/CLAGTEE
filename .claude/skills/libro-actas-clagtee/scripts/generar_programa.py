@@ -328,6 +328,8 @@ def construir(args, cfg: dict) -> tuple[dict, list[str], list[tuple]]:
                                                   key=lambda x: minutos(x[0]))]})
         dias.append(dia)
 
+    agregar_ponencias(cfg, sesiones, ponencias, correcciones_papers, tracks_cfg, avisos)
+
     # Tracks: en qué sesiones aparece cada uno.
     tracks = []
     for n, titulo in sorted(tracks_cfg.items()):
@@ -390,6 +392,39 @@ def construir(args, cfg: dict) -> tuple[dict, list[str], list[tuple]]:
                                                for x in p["presentadores"]})},
     }
     return datos, avisos, revision
+
+
+def agregar_ponencias(cfg: dict, sesiones: dict, ponencias: dict, correcciones: dict,
+                      tracks_cfg: dict, avisos: list[str]) -> None:
+    """[[programa.agregados]]: ponencias que la organización suma a un cupo
+    libre después de la última planilla (título y autores de "Ponencias
+    (interno)" o de la misma entrada). Si la planilla ya la trae, se ignora."""
+    programados = {p.get("codigo") for s in sesiones.values() for p in s["papers"]}
+    for ag in cfg.get("programa", {}).get("agregados", []):
+        cod, sid, inicio = ag["codigo"], ag["sesion"], ag["inicio"]
+        if cod in programados:
+            avisos.append(f"{cod} ya está en la planilla; se ignora su entrada en [[programa.agregados]].")
+            continue
+        ses = sesiones.get(sid)
+        k = next((i for i, p in enumerate(ses["papers"]) if p["inicio"] == inicio), None) if ses else None
+        if k is None or not ses["papers"][k].get("vacio"):
+            avisos.append(f"[[programa.agregados]] {cod}: la sesión {sid} no tiene un cupo libre a las {inicio}.")
+            continue
+        slot = {"inicio": inicio, "fin": ses["papers"][k]["fin"], "codigo": cod,
+                "titulo": ag.get("titulo", ""), "presentador": ag.get("presentador", "")}
+        reg = dict(ponencias.get(cod, {}))
+        if ag.get("autores"):
+            reg["Autores (CMS)"] = "; ".join(ag["autores"])
+        paper = armar_paper(slot, {cod: reg}, correcciones, avisos)
+        paper["estado"] = ""  # la planilla aún lo marca sin inscripción
+        ses["papers"][k] = paper
+        ses["fin"] = max((p["fin"] for p in ses["papers"] if not p.get("vacio")), key=minutos)
+        if paper["track"] and paper["track"] not in [t["numero"] for t in ses["tracks"]]:
+            ses["tracks"].append({"numero": paper["track"], "titulo": tracks_cfg.get(paper["track"], f"Track {paper['track']}")})
+        programados.add(cod)
+        avisos[:] = [a for a in avisos if not (a.startswith(f"Sesión {sid} ") and a.endswith(f" {inicio}: cupo vacío."))]
+        avisos.append(f"{cod} agregado en {sid} a las {inicio} ([[programa.agregados]])"
+                      + ("" if paper["presentadores"] else "; sin presentador indicado") + ".")
 
 
 def armar_paper(slot: dict, ponencias: dict, correcciones: dict, avisos: list[str]) -> dict:
