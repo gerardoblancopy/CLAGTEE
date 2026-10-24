@@ -471,10 +471,10 @@
  {
   "id": "regina-francielle-silva-paulino",
   "nombre": "Regina Franciélle Silva Paulino",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
-  "afiliacion_inferida": "Universidade Estadual Paulista (UNESP) (inferida de coautores)",
+  "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Guaratinguetá (inferida de coautores)",
   "pais_inferido": "Brasil",
   "intereses": {
    "temas": [
@@ -515,106 +515,107 @@
     "9": 0.5
    },
    "etapa": "investigador_inicial",
-   "resumen": "Búsqueda de Google Scholar incompleta (dos búsquedas sin resultado; la tercera no se pudo hacer porque se agotó el cupo de WebSearch de la sesión); sus publicaciones como R.F.S. Paulino figuran en el perfil de José Luz Silveira (gasificación por plasma de residuos biomédicos en Energy 2020 y 2022, biohidrógeno, gasificación de bagazo y coque). Presenta en CLAGTEE la gasificación por plasma integrada a turbina a gas; le interesarían sesiones de plantas alternativas, waste-to-energy e hidrógeno.",
+   "resumen": "Sin perfil de Google Scholar localizable (cuatro búsquedas en Scholar y una general sin resultado). Sus trabajos como R.F.S. Paulino figuran en el perfil de José Luz Silveira (gasificación por plasma de residuos biomédicos para generar electricidad en motores, Energy 2020, 87 citas; biohidrógeno, gasificación de bagazo y coque). Presenta en CLAGTEE la gasificación por plasma integrada a turbina a gas; le interesarían sesiones de plantas alternativas, waste-to-energy e hidrógeno.",
    "base": [
     "papers_clagtee",
     "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Pasada 2: Scholar 'Regina Franciélle Silva Paulino' y 'Regina Paulino plasma gasification biomedical waste UNESP' (solo aparece el perfil de Silveira); web general con el nombre completo sin resultados. El perfil de Silveira no tiene barra de coautores."
  },
  {
   "id": "artur-jorge-de-jesus-goncalves",
   "nombre": "Artur Jorge de Jesus Gonçalves",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
-  "intereses": {
-   "temas": [
-    "life cycle assessment of bioelectricity from sugarcane bagasse",
-    "comparison of bagasse combustion and biomass-integrated gasification combined cycle (BIG-GT)",
-    "environmental performance of the Brazilian sugar-energy sector"
-   ],
-   "palabras_clave": [
-    "sugarcane bagasse",
-    "bioelectricity",
-    "life cycle assessment",
-    "BIG-GT",
-    "biomass gasification",
-    "cogeneration",
-    "environmental impact",
-    "sugar-energy sector"
-   ],
-   "metodos": [
-    "process-based life cycle assessment",
-    "thermodynamic modeling",
-    "life cycle inventory"
-   ],
-   "aplicaciones": [
-    "sugarcane mills cogeneration",
-    "bioelectricity export to the grid"
-   ],
-   "afinidad_tracks": {
-    "11": 0.9,
-    "13": 0.7,
-    "10": 0.5,
-    "12": 0.2
-   },
-   "etapa": "desconocida",
-   "resumen": "Búsqueda de Google Scholar incompleta (dos búsquedas sin resultado; la tercera no se pudo hacer porque se agotó el cupo de WebSearch de la sesión); El paper CLAGTEE corresponde a la línea publicada como 'Process-based life cycle assessment of bioelectricity from sugarcane bagasse: A comparison of combustion and gasification systems' (Science of The Total Environment, 2026), que figura en el perfil de Helton José Alves. Le interesarían sesiones de bioenergía, evaluación ambiental y plantas alternativas.",
-   "base": [
-    "papers_clagtee",
-    "grupo_coautores"
-   ]
-  }
- },
- {
-  "id": "fabiana-de-oliveira-ramos",
-  "nombre": "Fabiana de Oliveira Ramos",
-  "busqueda": "pendiente",
-  "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "",
+  "afiliacion_inferida": "Grupo CEFET/RJ–UFPR (inferida de coautores; no confirmada)",
   "pais_inferido": "Brasil",
   "intereses": {
    "temas": [
     "life cycle assessment of bioelectricity from sugarcane bagasse",
-    "comparison of bagasse combustion and biomass-integrated gasification combined cycle (BIG-GT)",
-    "environmental performance of the Brazilian sugar-energy sector"
+    "environmental comparison of bagasse combustion and gasification",
+    "sustainability assessment of bioenergy systems"
    ],
    "palabras_clave": [
+    "life cycle assessment",
     "sugarcane bagasse",
     "bioelectricity",
-    "life cycle assessment",
-    "BIG-GT",
-    "biomass gasification",
-    "cogeneration",
-    "environmental impact",
-    "sugar-energy sector"
+    "combustion",
+    "gasification",
+    "environmental impacts",
+    "bioenergy"
    ],
    "metodos": [
-    "process-based life cycle assessment",
-    "thermodynamic modeling",
-    "life cycle inventory"
+    "process-based life cycle assessment"
    ],
    "aplicaciones": [
-    "sugarcane mills cogeneration",
-    "bioelectricity export to the grid"
+    "sugar-energy sector",
+    "biomass power plants"
    ],
    "afinidad_tracks": {
     "11": 0.9,
-    "13": 0.7,
-    "10": 0.5,
-    "12": 0.2
+    "13": 0.8,
+    "10": 0.4
    },
-   "etapa": "investigador_inicial",
-   "resumen": "Búsqueda de Google Scholar incompleta (dos búsquedas sin resultado; la tercera no se pudo hacer porque se agotó el cupo de WebSearch de la sesión); Es primera autora del artículo de ACV de bioelectricidad de bagazo (combustión vs. gasificación BIG-GT, Sci. Total Environ. 2026) con Helton J. Alves y Ronney Boloy, que presenta en CLAGTEE. Le interesarían sesiones de bioenergía, evaluación ambiental y plantas alternativas.",
+   "etapa": "desconocida",
+   "resumen": "Sin perfil de Google Scholar. Coautor del ACV de bioelectricidad de bagazo de caña (combustión vs. gasificación), publicado en Sci. Total Environ. 2026 con el grupo de Ronney Boloy (CEFET/RJ) y Helton Alves (UFPR); en el perfil de Boloy aparece también un 'A Gonçalves' en un trabajo de compras públicas sostenibles, sin poder confirmar que sea la misma persona. Le interesarían sesiones de bioenergía y temas ambientales. Evidencia limitada.",
    "base": [
     "papers_clagtee",
     "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Pasada 2: Scholar 'Artur Jorge de Jesus Gonçalves' sin coincidencias; no figura en las barras de coautores de Boloy ni de Alves."
+ },
+ {
+  "id": "fabiana-de-oliveira-ramos",
+  "nombre": "Fabiana de Oliveira Ramos",
+  "busqueda": "sin_perfil",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "Centro Federal de Educação Tecnológica Celso Suckow da Fonseca (CEFET/RJ) (inferida de coautores)",
+  "pais_inferido": "Brasil",
+  "intereses": {
+   "temas": [
+    "life cycle assessment of bioelectricity from sugarcane bagasse",
+    "combustion versus gasification of bagasse for power",
+    "low-carbon hydrogen",
+    "data exchange in the energy sector"
+   ],
+   "palabras_clave": [
+    "life cycle assessment",
+    "sugarcane bagasse",
+    "bioelectricity",
+    "gasification",
+    "combustion",
+    "low-carbon hydrogen",
+    "bibliometric analysis",
+    "environmental impacts"
+   ],
+   "metodos": [
+    "process-based life cycle assessment",
+    "systematic literature review",
+    "bibliometric analysis"
+   ],
+   "aplicaciones": [
+    "sugar-energy sector",
+    "biomass power plants",
+    "hydrogen economy"
+   ],
+   "afinidad_tracks": {
+    "11": 1.0,
+    "13": 0.8,
+    "10": 0.4,
+    "7": 0.3
+   },
+   "etapa": "investigador_inicial",
+   "resumen": "Sin perfil de Google Scholar. En el perfil de su coautor Ronney Boloy (CEFET/RJ) figura como primera autora del ACV de bioelectricidad de bagazo (combustión vs. gasificación, Sci. Total Environ. 2026) y de una revisión bibliométrica sobre hidrógeno de bajo carbono (2026). Presenta BIO-3 en CLAGTEE; le interesarían sesiones de bioenergía e hidrógeno y temas ambientales.",
+   "base": [
+    "papers_clagtee",
+    "grupo_coautores"
+   ]
+  },
+  "nota_busqueda": "Pasada 2: Scholar 'Fabiana de Oliveira Ramos CEFET/RJ' y '\"Fabiana de Oliveira Ramos\" hidrogênio bioeletricidade' sin coincidencias; web general con CEFET-RJ tampoco (un enlace a BrCris no cargó)."
  },
  {
   "id": "helton-jose-alves",
@@ -756,135 +757,120 @@
  {
   "id": "jose-ramon-copa-rey",
   "nombre": "José Ramón Copa Rey",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
+  "afiliacion_inferida": "Vinculado a UNESP Guaratinguetá y CEFET/RJ por coautorías (inferida; no confirmada)",
+  "pais_inferido": "Brasil",
   "intereses": {
    "temas": [
-    "sugarcane bagasse gasification for power generation (BIG-GT, plasma, supercritical water)",
-    "syngas use in internal combustion engines",
-    "life cycle assessment of bioelectricity from sugarcane bagasse",
-    "hydrogen and electricity co-production from biomass"
+    "biomass gasification syngas for internal combustion engines",
+    "techno-economic assessment of biomass power",
+    "life cycle assessment of bioelectricity from sugarcane bagasse"
    ],
    "palabras_clave": [
-    "sugarcane bagasse",
-    "gasification",
-    "plasma gasification",
-    "supercritical water gasification",
     "syngas",
-    "combined cycle",
+    "biomass gasification",
     "internal combustion engine",
-    "bioelectricity",
+    "techno-economic assessment",
+    "sugarcane bagasse",
     "life cycle assessment",
-    "hydrogen"
+    "bioelectricity"
    ],
    "metodos": [
-    "thermodynamic modeling",
-    "energy and exergy analysis",
-    "techno-economic assessment",
+    "techno-economic analysis",
     "life cycle assessment"
    ],
    "aplicaciones": [
-    "sugarcane mills",
-    "biomass-fired distributed generation"
+    "biomass-fired distributed generation",
+    "sugar-energy sector"
    ],
    "afinidad_tracks": {
     "11": 0.9,
-    "10": 0.8,
-    "13": 0.6,
-    "9": 0.4
+    "10": 0.7,
+    "13": 0.6
    },
-   "etapa": "investigador_consolidado",
-   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); sus trabajos como J.R. Copa / J.R. Copa-Rey aparecen en los perfiles de José Luz Silveira y Helton José Alves (gasificación de bagazo por plasma y en agua supercrítica, syngas en motores, ciclo combinado en ingenios, 2015-2026). El paper CLAGTEE corresponde a la línea publicada como 'Process-based life cycle assessment of bioelectricity from sugarcane bagasse: A comparison of combustion and gasification systems' (Science of The Total Environment, 2026), que figura en el perfil de Helton José Alves.",
+   "etapa": "investigador_inicial",
+   "resumen": "Sin perfil de Google Scholar. Como 'JR Copa' es primer autor de un análisis tecnoeconómico del uso de syngas de biomasa en motores de combustión interna (Energies 2020, 56 citas) con Tuna, Silveira y Boloy, y coautor del ACV de bioelectricidad de bagazo de BIO-3. Le interesarían sesiones de bioenergía, gasificación y plantas alternativas.",
    "base": [
     "papers_clagtee",
     "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Pasada 2: Scholar 'José Ramón Copa Rey' sin coincidencias (solo homónimos parciales)."
  },
  {
   "id": "lais-fabiana-serafini",
   "nombre": "Laís Fabiana Serafini",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
+  "afiliacion_inferida": "Grupo CEFET/RJ–UFPR (inferida de coautores; no confirmada)",
   "pais_inferido": "Brasil",
   "intereses": {
    "temas": [
     "life cycle assessment of bioelectricity from sugarcane bagasse",
-    "comparison of bagasse combustion and biomass-integrated gasification combined cycle (BIG-GT)",
-    "environmental performance of the Brazilian sugar-energy sector"
+    "environmental comparison of bagasse combustion and gasification"
    ],
    "palabras_clave": [
+    "life cycle assessment",
     "sugarcane bagasse",
     "bioelectricity",
-    "life cycle assessment",
-    "BIG-GT",
-    "biomass gasification",
-    "cogeneration",
-    "environmental impact",
-    "sugar-energy sector"
+    "gasification",
+    "combustion",
+    "environmental impacts"
    ],
    "metodos": [
-    "process-based life cycle assessment",
-    "thermodynamic modeling",
-    "life cycle inventory"
+    "process-based life cycle assessment"
    ],
    "aplicaciones": [
-    "sugarcane mills cogeneration",
-    "bioelectricity export to the grid"
+    "sugar-energy sector"
    ],
    "afinidad_tracks": {
     "11": 0.9,
-    "13": 0.7,
-    "10": 0.5,
-    "12": 0.2
+    "13": 0.8,
+    "10": 0.4
    },
    "etapa": "desconocida",
-   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado en su paper CLAGTEE. El paper CLAGTEE corresponde a la línea publicada como 'Process-based life cycle assessment of bioelectricity from sugarcane bagasse: A comparison of combustion and gasification systems' (Science of The Total Environment, 2026), que figura en el perfil de Helton José Alves. Le interesarían sesiones de bioenergía y evaluación ambiental.",
+   "resumen": "Sin perfil de Google Scholar. Solo se conoce su coautoría en el ACV de bioelectricidad de bagazo de caña (Sci. Total Environ. 2026, grupo de Boloy y Alves). Le interesarían sesiones de bioenergía y temas ambientales. Evidencia muy limitada.",
    "base": [
     "papers_clagtee",
     "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Pasada 2: Scholar 'Laís Fabiana Serafini' sin coincidencias."
  },
  {
   "id": "mylena-kellyn-de-paula-rosetti",
   "nombre": "Mylena Kellyn de Paula Rosetti",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
+  "afiliacion_inferida": "Universidade Federal do Paraná (UFPR) / UTFPR (inferida de coautores)",
   "pais_inferido": "Brasil",
   "intereses": {
    "temas": [
-    "biogas upgrading and H2S removal with ionized air/ozone",
-    "lignocellulosic biomass pretreatment for methane enhancement",
+    "pretreatment of lignocellulosic biomass for methane enhancement",
+    "anaerobic digestion and biogas production",
     "life cycle assessment of bioelectricity from sugarcane bagasse"
    ],
    "palabras_clave": [
+    "lignocellulosic biomass",
+    "pretreatment",
+    "lignin reduction",
     "biogas",
-    "hydrogen sulfide removal",
-    "ozone",
-    "ionized air",
-    "anaerobic digestion",
-    "lignin",
-    "lignocellulosic biomass pretreatment",
     "methane yield",
+    "anaerobic digestion",
     "sugarcane bagasse",
     "life cycle assessment"
    ],
    "metodos": [
-    "laboratory experimentation",
     "systematic literature review",
     "life cycle assessment"
    ],
    "aplicaciones": [
     "biogas plants",
-    "sugar-energy sector"
+    "agro-industrial residues"
    ],
    "afinidad_tracks": {
     "11": 1.0,
@@ -892,632 +878,1431 @@
     "10": 0.4
    },
    "etapa": "investigador_inicial",
-   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); sus artículos recientes (remoción de H2S del biogás con aire ionizado, 2025; pretratamientos de biomasa lignocelulósica para aumentar metano, 2026) figuran en el perfil de Helton José Alves. Coautora del ACV de bioelectricidad de bagazo en CLAGTEE; le interesarían sesiones de bioenergía y temas ambientales.",
+   "resumen": "Sin perfil de Google Scholar. En los perfiles de Helton Alves y Ronney Boloy figura como primera autora de una revisión sistemática sobre pretratamientos de biomasa lignocelulósica para aumentar la producción de metano (Biomass and Bioenergy 2026) y como coautora del ACV de BIO-3. Le interesarían sesiones de bioenergía, biogás e hidrógeno.",
    "base": [
     "papers_clagtee",
     "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Pasada 2: Scholar 'Mylena Kellyn de Paula Rosetti' sin coincidencias."
  },
  {
   "id": "ronney-arismel-mancebo-boloy",
   "nombre": "Ronney Arismel Mancebo Boloy",
-  "busqueda": "pendiente",
-  "scholar": null,
+  "busqueda": "encontrado",
+  "scholar": {
+   "url": "https://scholar.google.com/citations?user=0jWxbUcAAAAJ",
+   "user_id": "0jWxbUcAAAAJ",
+   "nombre_perfil": "Ronney Arismel Mancebo Boloy",
+   "afiliacion": "Profesor/Researcher, Federal Centre of Technological Education Rio de Janeiro (CEFET/RJ)",
+   "email_verificado": "cefet-rj.br",
+   "intereses_scholar": [
+    "Bioenergy",
+    "Biofuels",
+    "Renewable Energy",
+    "Environmental Impacts (LCA)",
+    "Economic Analysis (LCC)"
+   ],
+   "citas": 983,
+   "citas_desde_2021": 783,
+   "h_index": 16,
+   "publicaciones": [
+    {
+     "titulo": "Process-based life cycle assessment of bioelectricity from sugarcane bagasse: A comparison of combustion and gasification systems",
+     "anio": 2026,
+     "citas": 0
+    },
+    {
+     "titulo": "Technology roadmap of low-carbon hydrogen: Trends for risk management strategies",
+     "anio": 2025,
+     "citas": 6
+    },
+    {
+     "titulo": "Lifecycle assessment and environmental impacts of hybrid electric vehicles fuelled by bioethanol and biogas",
+     "anio": 2025,
+     "citas": 22
+    },
+    {
+     "titulo": "Electric vehicle adoption in Brazil: Economical analysis and roadmap",
+     "anio": 2024,
+     "citas": 29
+    },
+    {
+     "titulo": "Techno-economic analysis and eco-efficiency indicators of a biomass-solar hybrid renewable energy system for João Pinheiro City",
+     "anio": 2024,
+     "citas": 23
+    },
+    {
+     "titulo": "Techno-economic feasibility analysis of biogas-solar photovoltaic hybrid system for bioenergy generation: A case study in the municipality of Boa Esperança (Pará, Brazil)",
+     "anio": 2024,
+     "citas": 18
+    },
+    {
+     "titulo": "Electric vehicle supply chain management: A bibliometric and systematic review",
+     "anio": 2023,
+     "citas": 59
+    },
+    {
+     "titulo": "Brazil and the world market in the development of technologies for the production of second-generation ethanol",
+     "anio": 2023,
+     "citas": 42
+    },
+    {
+     "titulo": "Waste-to-energy technologies towards circular economy: A systematic literature review and bibliometric analysis",
+     "anio": 2021,
+     "citas": 177
+    },
+    {
+     "titulo": "Techno-economic assessment of the use of syngas generated from biomass to feed an internal combustion engine",
+     "anio": 2020,
+     "citas": 56
+    },
+    {
+     "titulo": "Biogas steam reformer for hydrogen production: Evaluation of the reformer prototype and catalysts",
+     "anio": 2018,
+     "citas": 49
+    },
+    {
+     "titulo": "Ecological impacts from syngas burning in internal combustion engine: Technical and economic aspects",
+     "anio": 2011,
+     "citas": 87
+    }
+   ],
+   "confianza": "alta",
+   "evidencia": "Su perfil lista el ACV de bioelectricidad de bagazo (Sci. Total Environ. 2026) firmado por F. de Oliveira Ramos, A.J. de Jesus Gonçalves, L.F. Serafini, J.R.C. Rey y otros (paper BIO-3) y la revisión de M.K. de Paula Rosetti con H.J. Alves; además J.R. Copa es primer autor de un paper suyo de 2020. Coautores en la barra: José Luz Silveira y Celso Tuna (UNESP)."
+  },
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
+  "afiliacion_inferida": "Centro Federal de Educação Tecnológica Celso Suckow da Fonseca (CEFET/RJ)",
   "pais_inferido": "Brasil",
   "intereses": {
    "temas": [
-    "life cycle assessment of bioelectricity from sugarcane bagasse",
-    "syngas combustion in internal combustion engines",
-    "hydrogen production by biogas steam reforming",
-    "biomass gasification hydrodynamics (CFD)",
-    "thermoeconomic analysis of hydrogen in biodiesel plants"
+    "life cycle assessment of bioenergy and bioelectricity",
+    "waste-to-energy and circular economy",
+    "syngas and biogas use for power generation",
+    "low-carbon hydrogen roadmaps",
+    "electric and hybrid vehicles fuelled by biofuels",
+    "hybrid biomass/biogas-solar systems"
    ],
    "palabras_clave": [
-    "sugarcane bagasse",
-    "bioelectricity",
+    "bioenergy",
+    "biofuels",
     "life cycle assessment",
+    "life cycle costing",
+    "waste-to-energy",
     "syngas",
-    "gasification",
-    "biogas steam reforming",
-    "hydrogen",
-    "thermoeconomics",
-    "ecological efficiency",
-    "biodiesel"
+    "biogas",
+    "sugarcane bagasse",
+    "second-generation ethanol",
+    "low-carbon hydrogen",
+    "electric vehicles",
+    "hybrid renewable systems"
    ],
    "metodos": [
-    "thermoeconomic analysis",
     "life cycle assessment",
-    "CFD simulation",
-    "ecological efficiency assessment"
+    "techno-economic analysis",
+    "eco-efficiency indicators",
+    "systematic literature review and bibliometrics",
+    "technology roadmapping"
    ],
    "aplicaciones": [
-    "sugarcane mills",
-    "biodiesel plants",
-    "distributed generation with syngas engines"
+    "sugar-energy sector",
+    "municipal solid waste",
+    "biogas from agro-industrial wastewater",
+    "electric mobility in Brazil",
+    "biogas-solar hybrid systems in Pará (Amazon region)"
    ],
    "afinidad_tracks": {
-    "11": 0.9,
-    "10": 0.7,
-    "13": 0.7,
-    "9": 0.4
+    "11": 1.0,
+    "13": 0.8,
+    "10": 0.6,
+    "7": 0.4,
+    "2": 0.3,
+    "12": 0.2
    },
    "etapa": "investigador_consolidado",
-   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); sus trabajos como R.A.M. Boloy figuran en el perfil de José Luz Silveira desde 2011 (syngas en motores, reformado de biogás para hidrógeno, gasificación de biomasa) y el ACV de bioelectricidad de bagazo en el de Helton José Alves. Le interesarían sesiones de bioenergía e hidrógeno, plantas alternativas y evaluación ambiental.",
+   "resumen": "Profesor e investigador del CEFET/RJ (h-index 16) dedicado a bioenergía y biocombustibles con enfoque de ACV y análisis económico: waste-to-energy, syngas y biogás para generación, hidrógeno de bajo carbono y movilidad eléctrica con biocombustibles. En CLAGTEE coautora el ACV de bioelectricidad de bagazo; le interesarían sesiones de bioenergía e hidrógeno, temas ambientales, plantas alternativas y transición energética.",
    "base": [
     "papers_clagtee",
-    "grupo_coautores"
+    "google_scholar"
    ]
   }
  },
  {
   "id": "andre-luiz-veiga-gimenes",
   "nombre": "André Luiz Veiga Gimenes",
-  "busqueda": "pendiente",
-  "scholar": null,
+  "busqueda": "encontrado",
+  "scholar": {
+   "url": "https://scholar.google.com/citations?user=hXmnJVoAAAAJ",
+   "user_id": "hXmnJVoAAAAJ",
+   "nombre_perfil": "André Luiz Veiga Gimenes",
+   "afiliacion": "Coordenador do Grupo de Energia do Departamento de Engenharia de Energia e Automação Elétricas, Escola Politécnica da USP",
+   "email_verificado": "pea.usp.br",
+   "intereses_scholar": [
+    "Energia: eficiência, gestão, armazenamento e geração renovável"
+   ],
+   "citas": 815,
+   "citas_desde_2021": 569,
+   "h_index": 12,
+   "publicaciones": [
+    {
+     "titulo": "A INFRAESTRUTURA ENERGÉTICA DE RORAIMA: DESAFIOS E CENÁRIOS DA INTEGRAÇÃO REGIONAL",
+     "anio": 2026,
+     "citas": 0
+    },
+    {
+     "titulo": "BESS competitiveness for expansion of firm energy in the Brazilian electric sector",
+     "anio": 2026,
+     "citas": 0
+    },
+    {
+     "titulo": "Development and application of sustainable assessment of full potentials in distributed energy resources with storage behind the meter",
+     "anio": 2026,
+     "citas": 0
+    },
+    {
+     "titulo": "Future Challenges for Electrical Systems Stability",
+     "anio": 2025,
+     "citas": 0
+    },
+    {
+     "titulo": "Application of BIM technology in the design of photovoltaic solar plants: methodology and case study",
+     "anio": 2025,
+     "citas": 0
+    },
+    {
+     "titulo": "Field-driven multi-criteria sustainability assessment of last-mile rural electrification in Brazil",
+     "anio": 2024,
+     "citas": 15
+    },
+    {
+     "titulo": "What are the key strategies for a successful and fair energy transition for all? Multi-criteria assessment of isolated case studies in São Paulo",
+     "anio": 2024,
+     "citas": 12
+    },
+    {
+     "titulo": "Women, equality, and energy access: Emerging lessons for last-mile rural electrification in Brazil",
+     "anio": 2023,
+     "citas": 39
+    },
+    {
+     "titulo": "Last-mile rural electrification: Lessons learned from universalization programs in Brazil and Venezuela",
+     "anio": 2022,
+     "citas": 36
+    },
+    {
+     "titulo": "Enhancing developing countries' transition to a low-carbon electricity sector",
+     "anio": 2021,
+     "citas": 103
+    },
+    {
+     "titulo": "Economic feasibility of battery energy storage systems for replacing peak power plants for commercial consumers under energy time of use tariffs",
+     "anio": 2020,
+     "citas": 99
+    },
+    {
+     "titulo": "Assessment of photovoltaic distributed generation–Issues of grid connected systems through the consumer side applied to a case study of Brazil",
+     "anio": 2017,
+     "citas": 58
+    }
+   ],
+   "confianza": "alta",
+   "evidencia": "Encontrado en la barra de coautores de Stefania Gomes Relva (sin gastar búsqueda). Su perfil tiene decenas de publicaciones con M.E.M. Udaeta, coautor de PLA-17, en el mismo grupo GEPEA/PEA-USP; publica sobre electrificación rural de última milla y comunidades aisladas, la línea de PLA-17."
+  },
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
+  "afiliacion_inferida": "Escola Politécnica da Universidade de São Paulo (EPUSP), Departamento de Engenharia de Energia e Automação Elétricas",
+  "pais_inferido": "Brasil",
   "intereses": {
    "temas": [
-    "multi-objective optimization of off-grid hybrid power systems",
-    "electricity supply for critical infrastructures in isolated Amazon communities",
-    "reliability, cost and emissions trade-offs in isolated systems"
+    "integrated energy resources planning",
+    "last-mile rural electrification and isolated systems",
+    "battery energy storage economics",
+    "photovoltaic distributed generation",
+    "energy infrastructure of the Amazon region (Roraima)",
+    "low-carbon electricity transition in developing countries"
    ],
    "palabras_clave": [
-    "off-grid systems",
-    "hybrid microgrids",
-    "tri-objective optimization",
-    "critical infrastructure",
-    "Amazon",
+    "integrated resource planning",
+    "energy efficiency",
+    "battery energy storage",
+    "BESS",
+    "photovoltaic generation",
+    "distributed energy resources",
+    "rural electrification",
     "isolated systems",
-    "reliability",
-    "energy storage",
-    "renewable energy"
+    "Roraima",
+    "energy transition",
+    "firm energy",
+    "multi-criteria assessment"
    ],
    "metodos": [
+    "multi-criteria assessment",
+    "economic feasibility analysis",
+    "full potentials computing and valuation",
+    "scenario analysis",
     "multi-objective optimization"
    ],
    "aplicaciones": [
-    "isolated communities in the Amazon",
-    "critical infrastructure (health, water, communications)"
+    "off-grid communities in the Amazon",
+    "Brazilian electricity sector planning",
+    "behind-the-meter storage",
+    "PV power plants"
    ],
    "afinidad_tracks": {
     "1": 0.9,
-    "2": 0.7,
-    "12": 0.3,
-    "7": 0.3
+    "2": 0.8,
+    "7": 0.6,
+    "12": 0.5,
+    "13": 0.3
    },
-   "etapa": "desconocida",
-   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (optimización triobjetivo de sistemas aislados para infraestructura crítica en la Amazonía). Le interesarían sesiones de planificación y confiabilidad, microrredes aisladas y renovables con almacenamiento.",
+   "etapa": "investigador_consolidado",
+   "resumen": "Coordinador del Grupo de Energía del PEA-USP (h-index 12); investiga planeamiento integrado de recursos, almacenamiento, generación fotovoltaica distribuida y electrificación rural de última milla, con casos de sistemas aislados y de la infraestructura energética de Roraima. En CLAGTEE coautora la optimización triobjetivo de infraestructuras críticas aisladas en la Amazonía; le interesarían sesiones de planificación, integración de ERNC y almacenamiento, y transición energética.",
    "base": [
-    "papers_clagtee"
+    "papers_clagtee",
+    "google_scholar"
    ]
   }
  },
  {
   "id": "giovanni-manassero-junior",
   "nombre": "Giovanni Manassero Junior",
-  "busqueda": "pendiente",
-  "scholar": null,
+  "busqueda": "encontrado",
+  "scholar": {
+   "url": "https://scholar.google.com/citations?user=ZjVV3XgAAAAJ",
+   "user_id": "ZjVV3XgAAAAJ",
+   "nombre_perfil": "Giovanni Manassero Junior",
+   "afiliacion": "Professor of Electrical Engineering, Universidade de São Paulo",
+   "email_verificado": "usp.br",
+   "intereses_scholar": [
+    "power system protection",
+    "smart grids",
+    "power system simulation",
+    "microgrids",
+    "electrical automation"
+   ],
+   "citas": 869,
+   "citas_desde_2021": 532,
+   "h_index": 14,
+   "publicaciones": [
+    {
+     "titulo": "A resilience-aware methodology to support data center optimal allocation considering the transmission grid's…",
+     "anio": 2026,
+     "citas": 4
+    },
+    {
+     "titulo": "Air-Core Dry-Type Shunt Reactor: Modeling and Inter-Turn Fault Detection",
+     "anio": 2026,
+     "citas": 0
+    },
+    {
+     "titulo": "A novel IEC 61850-based centralized line differential protection scheme",
+     "anio": 2025,
+     "citas": 4
+    },
+    {
+     "titulo": "Descriptor: Transmission Line Protection in Energy Transition Scenarios Dataset (TREnSET)",
+     "anio": 2025,
+     "citas": 0
+    },
+    {
+     "titulo": "Comparative evaluation of conventional and advanced HVAC line protection algorithms: a case study",
+     "anio": 2025,
+     "citas": 1
+    },
+    {
+     "titulo": "Bridging Industry 4.0 and power systems: A conceptual framework",
+     "anio": 2024,
+     "citas": 1
+    },
+    {
+     "titulo": "Performance of the pattern search direct search method for load estimation in distribution grids",
+     "anio": 2024,
+     "citas": 2
+    },
+    {
+     "titulo": "From conventional to smart substations: A classification model",
+     "anio": 2024,
+     "citas": 77
+    },
+    {
+     "titulo": "Analysis of demand response and photovoltaic distributed generation as resources for power utility planning",
+     "anio": 2018,
+     "citas": 86
+    },
+    {
+     "titulo": "Heuristic method for fault location in distribution feeders with the presence of distributed generation",
+     "anio": 2016,
+     "citas": 48
+    },
+    {
+     "titulo": "Fault-location system for multiterminal transmission lines",
+     "anio": 2010,
+     "citas": 65
+    },
+    {
+     "titulo": "Automated fault location system for primary distribution networks",
+     "anio": 2005,
+     "citas": 168
+    }
+   ],
+   "confianza": "alta",
+   "evidencia": "Su perfil lista 'Analysis of demand response and photovoltaic distributed generation as resources for power utility planning' (Applied Energy 2018; MS Viana, GM Junior, MEM Udaeta) y un paper de UPEC 2018 con M.E.M. Udaeta, coautor de PLA-17; mismo departamento PEA-USP que Gimenes."
+  },
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
+  "afiliacion_inferida": "Escola Politécnica da Universidade de São Paulo (EPUSP), Departamento de Engenharia de Energia e Automação Elétricas",
+  "pais_inferido": "Brasil",
   "intereses": {
    "temas": [
-    "multi-objective optimization of off-grid hybrid power systems",
-    "electricity supply for critical infrastructures in isolated Amazon communities",
-    "reliability, cost and emissions trade-offs in isolated systems"
+    "transmission line protection and fault location",
+    "IEC 61850 digital substations",
+    "resilience-aware planning of critical loads on the transmission grid",
+    "fault detection in shunt reactors",
+    "load estimation in distribution grids",
+    "demand response and PV in utility planning"
    ],
    "palabras_clave": [
-    "off-grid systems",
-    "hybrid microgrids",
-    "tri-objective optimization",
-    "critical infrastructure",
-    "Amazon",
-    "isolated systems",
-    "reliability",
-    "energy storage",
-    "renewable energy"
+    "power system protection",
+    "fault location",
+    "IEC 61850",
+    "digital substation",
+    "line differential protection",
+    "resilience",
+    "data centers",
+    "shunt reactor",
+    "load estimation",
+    "microgrids",
+    "smart grids",
+    "demand response"
    ],
    "metodos": [
-    "multi-objective optimization"
+    "signal processing for protection",
+    "machine learning (XGBoost)",
+    "dynamic time warping",
+    "direct search optimization",
+    "digital twins",
+    "electromagnetic transient simulation"
    ],
    "aplicaciones": [
-    "isolated communities in the Amazon",
-    "critical infrastructure (health, water, communications)"
+    "transmission networks",
+    "distribution feeders with DG",
+    "substation automation",
+    "critical infrastructure siting (data centers)"
    ],
    "afinidad_tracks": {
-    "1": 0.9,
-    "2": 0.7,
-    "12": 0.3,
-    "7": 0.3
+    "1": 1.0,
+    "4": 0.6,
+    "5": 0.4,
+    "2": 0.4,
+    "6": 0.3
    },
-   "etapa": "desconocida",
-   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (optimización triobjetivo de sistemas aislados para infraestructura crítica en la Amazonía). Le interesarían sesiones de planificación y confiabilidad, microrredes aisladas y renovables con almacenamiento.",
+   "etapa": "investigador_consolidado",
+   "resumen": "Profesor de Ingeniería Eléctrica de la USP (h-index 14) especializado en protección y localización de fallas en líneas de transmisión y distribución, subestaciones digitales IEC 61850 y, recientemente, planificación consciente de la resiliencia para cargas críticas. En CLAGTEE coautora la optimización triobjetivo de infraestructuras críticas aisladas en la Amazonía; le interesarían sesiones de planificación y confiabilidad, protección, monitoreo y redes digitales.",
    "base": [
-    "papers_clagtee"
+    "papers_clagtee",
+    "google_scholar"
    ]
   }
  },
  {
   "id": "guilherme-scholl-roballo",
   "nombre": "Guilherme Scholl Roballo",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
+  "afiliacion_inferida": "Universidade de São Paulo (USP), Escola Politécnica (inferida de coautores)",
+  "pais_inferido": "Brasil",
   "intereses": {
    "temas": [
-    "multi-objective optimization of off-grid hybrid power systems",
-    "electricity supply for critical infrastructures in isolated Amazon communities",
-    "reliability, cost and emissions trade-offs in isolated systems"
+    "multi-objective optimization of off-grid power systems",
+    "energy supply for critical infrastructures in isolated Amazon communities",
+    "resilient hybrid microgrids"
    ],
    "palabras_clave": [
-    "off-grid systems",
-    "hybrid microgrids",
     "tri-objective optimization",
+    "off-grid systems",
     "critical infrastructure",
     "Amazon",
-    "isolated systems",
-    "reliability",
-    "energy storage",
-    "renewable energy"
+    "hybrid microgrids",
+    "resilience",
+    "renewable energy",
+    "energy access"
    ],
    "metodos": [
     "multi-objective optimization"
    ],
    "aplicaciones": [
-    "isolated communities in the Amazon",
-    "critical infrastructure (health, water, communications)"
+    "isolated communities in the Brazilian Amazon",
+    "hospitals and critical loads off-grid"
    ],
    "afinidad_tracks": {
     "1": 0.9,
-    "2": 0.7,
-    "12": 0.3,
+    "2": 0.8,
+    "12": 0.4,
     "7": 0.3
    },
    "etapa": "desconocida",
-   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (optimización triobjetivo de sistemas aislados para infraestructura crítica en la Amazonía). Le interesarían sesiones de planificación y confiabilidad, microrredes aisladas y renovables con almacenamiento.",
+   "resumen": "Sin perfil de Google Scholar ni otras fuentes localizables. Presenta en CLAGTEE la optimización triobjetivo de infraestructuras críticas aisladas en la Amazonía, con Gimenes, Udaeta y Manassero (PEA-USP), cuyo grupo trabaja planeamiento integrado de recursos, electrificación rural y resiliencia. Le interesarían sesiones de planificación, microrredes aisladas e integración de renovables. Evidencia limitada.",
    "base": [
-    "papers_clagtee"
+    "papers_clagtee",
+    "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Pasada 2: Scholar 'Guilherme Scholl Roballo' y 'Guilherme Roballo USP energia otimização' sin coincidencias; web general '\"Guilherme Scholl Roballo\"' sin resultados. No figura en las barras de coautores de Gimenes ni Manassero."
  },
  {
   "id": "miguel-edgar-morales-udaeta",
   "nombre": "Miguel Edgar Morales Udaeta",
-  "busqueda": "pendiente",
-  "scholar": null,
+  "busqueda": "encontrado",
+  "scholar": {
+   "url": "https://scholar.google.com/citations?user=xyGjcrQAAAAJ",
+   "user_id": "xyGjcrQAAAAJ",
+   "nombre_perfil": "Miguel Edgar Morales Udaeta",
+   "afiliacion": "Professor, programa de pós-graduação, EPUSP (según el resultado de búsqueda)",
+   "email_verificado": "",
+   "intereses_scholar": [
+    "Planejamento Energético",
+    "Produção, Transporte e Uso da Energia Elétrica",
+    "Energia",
+    "Meio Ambiente e Desenvolvimento Sustentável"
+   ],
+   "citas": null,
+   "citas_desde_2021": null,
+   "h_index": null,
+   "publicaciones": [
+    {
+     "titulo": "A INFRAESTRUTURA ENERGÉTICA DE RORAIMA: DESAFIOS E CENÁRIOS DA INTEGRAÇÃO REGIONAL",
+     "anio": 2026,
+     "citas": 0
+    },
+    {
+     "titulo": "BESS competitiveness for expansion of firm energy in the Brazilian electric sector",
+     "anio": 2026,
+     "citas": 0
+    },
+    {
+     "titulo": "Development and application of sustainable assessment of full potentials in distributed energy resources with storage behind the meter",
+     "anio": 2026,
+     "citas": 0
+    },
+    {
+     "titulo": "Future Challenges for Electrical Systems Stability",
+     "anio": 2025,
+     "citas": 0
+    },
+    {
+     "titulo": "What are the key strategies for a successful and fair energy transition for all? Multi-criteria assessment of isolated case studies in São Paulo",
+     "anio": 2024,
+     "citas": 12
+    },
+    {
+     "titulo": "Women, equality, and energy access: Emerging lessons for last-mile rural electrification in Brazil",
+     "anio": 2023,
+     "citas": 39
+    },
+    {
+     "titulo": "Enhancing developing countries' transition to a low-carbon electricity sector",
+     "anio": 2021,
+     "citas": 103
+    },
+    {
+     "titulo": "Economic feasibility of battery energy storage systems for replacing peak power plants for commercial consumers under energy time of use tariffs",
+     "anio": 2020,
+     "citas": 99
+    },
+    {
+     "titulo": "Analysis of demand response and photovoltaic distributed generation as resources for power utility planning",
+     "anio": 2018,
+     "citas": 86
+    },
+    {
+     "titulo": "Assessment of photovoltaic distributed generation–Issues of grid connected systems through the consumer side applied to a case study of Brazil",
+     "anio": 2017,
+     "citas": 58
+    },
+    {
+     "titulo": "Integrated Energy Resources Planning for the Electricity Sector: Targeting Sustainable Development",
+     "anio": 2015,
+     "citas": 10
+    }
+   ],
+   "confianza": "media",
+   "evidencia": "El perfil aparece en WebSearch (nombre exacto, profesor de la EPUSP, email verificado de la universidad, intereses en planejamento energético), pero WebFetch devolvió HTTP 404 en cuatro intentos, así que no se pudo leer ni verificar directamente; citas y h-index quedan en null. Las publicaciones listadas se tomaron de los perfiles verificados de sus coautores Gimenes y Manassero (coautores de PLA-17), donde figura como MEM Udaeta, y las citas son las que muestran esos perfiles. Por la identidad (nombre único, mismo grupo) sería alta; queda en media porque el perfil no se pudo leer."
+  },
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
+  "afiliacion_inferida": "Escola Politécnica da Universidade de São Paulo (EPUSP), GEPEA / Departamento de Engenharia de Energia e Automação Elétricas",
+  "pais_inferido": "Brasil",
   "intereses": {
    "temas": [
-    "multi-objective optimization of off-grid hybrid power systems",
-    "electricity supply for critical infrastructures in isolated Amazon communities",
-    "reliability, cost and emissions trade-offs in isolated systems"
+    "integrated energy resources planning for sustainable development",
+    "last-mile rural electrification and fair energy transition",
+    "distributed energy resources and storage behind the meter",
+    "demand response and PV in utility planning",
+    "energy infrastructure of the Amazon region (Roraima)",
+    "green hydrogen in the Brazilian power system"
    ],
    "palabras_clave": [
-    "off-grid systems",
-    "hybrid microgrids",
-    "tri-objective optimization",
-    "critical infrastructure",
-    "Amazon",
+    "integrated resource planning",
+    "energy planning",
+    "sustainable development",
+    "full potentials",
+    "distributed energy resources",
+    "battery energy storage",
+    "photovoltaic generation",
+    "demand response",
+    "rural electrification",
     "isolated systems",
-    "reliability",
-    "energy storage",
-    "renewable energy"
+    "green hydrogen",
+    "energy transition"
    ],
    "metodos": [
+    "integrated resource planning (IRP)",
+    "computing and valuation of full potentials",
+    "multi-criteria assessment",
+    "economic feasibility analysis",
     "multi-objective optimization"
    ],
    "aplicaciones": [
-    "isolated communities in the Amazon",
-    "critical infrastructure (health, water, communications)"
+    "off-grid communities in the Amazon",
+    "Brazilian electricity sector planning",
+    "behind-the-meter storage",
+    "utility planning with DER"
    ],
    "afinidad_tracks": {
     "1": 0.9,
+    "7": 0.7,
     "2": 0.7,
-    "12": 0.3,
-    "7": 0.3
+    "12": 0.5,
+    "13": 0.4,
+    "11": 0.2
    },
-   "etapa": "desconocida",
-   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (optimización triobjetivo de sistemas aislados para infraestructura crítica en la Amazonía). Le interesarían sesiones de planificación y confiabilidad, microrredes aisladas y renovables con almacenamiento.",
+   "etapa": "investigador_senior",
+   "resumen": "Profesor de la EPUSP (GEPEA), doctor desde 1997 en planeamiento integrado de recursos energéticos; trabaja planeamiento energético sostenible, recursos distribuidos con almacenamiento, respuesta de demanda, electrificación rural de última milla y la infraestructura energética de Roraima. En CLAGTEE coautora la optimización triobjetivo de infraestructuras críticas aisladas en la Amazonía; le interesarían sesiones de planificación, mercados y transición energética, e integración de ERNC.",
    "base": [
-    "papers_clagtee"
+    "papers_clagtee",
+    "google_scholar",
+    "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Pasada 2: una búsqueda en Scholar ('Miguel Edgar Morales Udaeta') dio el perfil xyGjcrQAAAAJ; WebFetch respondió 404 con hl=en, hl=pt-BR, sin hl y en list_works. Revisar a mano si el perfil sigue público."
  },
  {
   "id": "christian-a-rojas",
   "nombre": "Christian A. Rojas",
-  "busqueda": "pendiente",
-  "scholar": null,
+  "busqueda": "encontrado",
+  "scholar": {
+   "url": "https://scholar.google.com/citations?user=U1_r_C4AAAAJ",
+   "user_id": "U1_r_C4AAAAJ",
+   "nombre_perfil": "Christian A. Rojas",
+   "afiliacion": "Universidad Tecnica Federico Santa Maria",
+   "email_verificado": "ieee.org",
+   "intereses_scholar": [
+    "Dual Active Bridge",
+    "EV Chargers",
+    "DC-DC",
+    "Microelectronics",
+    "Model Predictive Control"
+   ],
+   "citas": 7189,
+   "citas_desde_2021": 3249,
+   "h_index": 34,
+   "publicaciones": [
+    {
+     "titulo": "Design of a PI-Controller ASIC for a Multilevel Converter Using High-Level Synthesis and LibreLane",
+     "anio": 2026,
+     "citas": 0
+    },
+    {
+     "titulo": "Testbed for Custom Open-Source Power Management Integrated Circuit in Harsh Space Environments",
+     "anio": 2026,
+     "citas": 0
+    },
+    {
+     "titulo": "Systematic Design of a PVT-Robust CMOS Time-Based-Controlled DC-DC Converter Using Open-Source Tools",
+     "anio": 2025,
+     "citas": 0
+    },
+    {
+     "titulo": "Tapeout-Oriented Strategies for Teaching Analog/Mixed-Signal IC Design and Implementation in Electrical Engineering Education",
+     "anio": 2025,
+     "citas": 0
+    },
+    {
+     "titulo": "Towards Full Integration of a Three-Level Flying Capacitor Converter Control in a Mixed-Signal ASIC",
+     "anio": 2025,
+     "citas": 0
+    },
+    {
+     "titulo": "Reconfigurable Full and Partial Power Processing GaN-FET-based T-type DAB DC-DC Converter",
+     "anio": 2025,
+     "citas": 9
+    },
+    {
+     "titulo": "Extended Period Control Approach FCS-MPC for Three Phase NPC Power Converters",
+     "anio": 2025,
+     "citas": 18
+    },
+    {
+     "titulo": "On the Experimental Verification of Electrothermal Modeling of GaN-HEMT-based DC-DC Converters",
+     "anio": 2025,
+     "citas": 10
+    },
+    {
+     "titulo": "State of the art of finite control set model predictive control in power electronics",
+     "anio": 2013,
+     "citas": 2309
+    },
+    {
+     "titulo": "Predictive Torque and Flux Control Without Weighting Factors",
+     "anio": 2013,
+     "citas": 503
+    },
+    {
+     "titulo": "High-performance control strategies for electrical drives: An experimental assessment",
+     "anio": 2012,
+     "citas": 635
+    },
+    {
+     "titulo": "Current control for an indirect matrix converter with filter resonance mitigation",
+     "anio": 2012,
+     "citas": 184
+    }
+   ],
+   "confianza": "alta",
+   "evidencia": "Jorge Marín (PUCV), coautor de SEN-7, figura en su barra de coautores; además el perfil lista papers con D. Arévalos y F. Donoso (otros coautores de SEN-7) sobre diseño de ASIC/CMOS con herramientas abiertas."
+  },
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
+  "afiliacion_inferida": "Universidad Técnica Federico Santa María (UTFSM)",
+  "pais_inferido": "Chile",
   "intereses": {
    "temas": [
-    "highly-digital custom sensor integrated circuits",
-    "sensor interfaces for IoT-driven smart industry",
-    "low-power mixed-signal IC design for monitoring"
+    "model predictive control of power converters and drives",
+    "dual active bridge and partial power DC-DC converters",
+    "EV chargers and vehicle-integrated PV",
+    "open-source integrated circuit design for power management",
+    "mixed-signal ASIC implementation of converter control"
    ],
    "palabras_clave": [
-    "custom integrated circuits",
-    "digital sensor interface",
-    "IoT",
-    "smart industry",
-    "Industry 4.0",
-    "ASIC design",
-    "sensors",
-    "condition monitoring"
+    "model predictive control",
+    "FCS-MPC",
+    "dual active bridge",
+    "partial power processing",
+    "DC-DC converters",
+    "GaN",
+    "EV chargers",
+    "multilevel converters",
+    "matrix converters",
+    "ASIC",
+    "open-source PDK",
+    "microelectronics"
    ],
    "metodos": [
-    "integrated circuit design"
+    "finite control set MPC",
+    "electrothermal modeling",
+    "high-level synthesis",
+    "CMOS IC design",
+    "experimental validation"
    ],
    "aplicaciones": [
-    "industrial IoT monitoring"
+    "EV charging",
+    "photovoltaic systems",
+    "electric drives",
+    "power management ICs",
+    "space electronics"
    ],
    "afinidad_tracks": {
-    "4": 0.9,
-    "5": 0.4,
-    "6": 0.2
+    "3": 1.0,
+    "8": 0.6,
+    "4": 0.6,
+    "2": 0.5
    },
-   "etapa": "desconocida",
-   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (circuitos integrados de sensores altamente digitales para industria inteligente con IoT). Le interesarían sesiones de sensores y monitoreo, IoT y redes digitales.",
+   "etapa": "investigador_senior",
+   "resumen": "Investigador de la UTFSM con trayectoria destacada en control predictivo de convertidores y accionamientos (h-index 34, más de 7.000 citas) que hoy trabaja convertidores DAB de potencia parcial, cargadores de VE y diseño de circuitos integrados con herramientas abiertas para gestión de potencia. En CLAGTEE coautora el diseño de ICs de sensores altamente digitales para IoT; le interesarían sesiones de electrónica de potencia, sensores y monitoreo, máquinas y accionamientos e integración de ERNC.",
    "base": [
-    "papers_clagtee"
+    "papers_clagtee",
+    "google_scholar"
    ]
   }
  },
  {
   "id": "daniel-arevalos",
   "nombre": "Daniel Arevalos",
-  "busqueda": "pendiente",
-  "scholar": null,
+  "busqueda": "encontrado",
+  "scholar": {
+   "url": "https://scholar.google.com/citations?user=geAUawoAAAAJ",
+   "user_id": "geAUawoAAAAJ",
+   "nombre_perfil": "Daniel Arevalos Ortiz",
+   "afiliacion": "Researcher, Munich University of Applied Science",
+   "email_verificado": "hm.edu",
+   "intereses_scholar": [
+    "Integrated Circuits",
+    "Systems on Chip",
+    "Mixed Signal integrated circuits"
+   ],
+   "citas": 12,
+   "citas_desde_2021": 12,
+   "h_index": 3,
+   "publicaciones": [
+    {
+     "titulo": "Systematic Design of a PVT-Robust CMOS Time-Based-Controlled DC-DC Converter Using Open-Source Tools",
+     "anio": 2025,
+     "citas": 0
+    },
+    {
+     "titulo": "A Topology-Independent and Scalable Methodology for Automated LDO Design Using Open PDKs",
+     "anio": 2025,
+     "citas": 4
+    },
+    {
+     "titulo": "Tapeout-Oriented Strategies for Teaching Analog/Mixed-Signal IC Design and Implementation in Electrical Engineering Education",
+     "anio": 2025,
+     "citas": 0
+    },
+    {
+     "titulo": "Leveraging Lookup Tables for Efficient LDO Design Exploration using Open-Source CAD Tools and IHP-Open130-G2 PDK",
+     "anio": 2024,
+     "citas": 3
+    },
+    {
+     "titulo": "Thin gate oxide cmos dc-dc buck converter with floating gate drivers",
+     "anio": 2024,
+     "citas": 1
+    },
+    {
+     "titulo": "Design and automated layout generation of a pmic core in skywater 130nm open-source technology",
+     "anio": 2024,
+     "citas": 4
+    }
+   ],
+   "confianza": "alta",
+   "evidencia": "Todas sus publicaciones son con Jorge Marín y Christian A. Rojas, coautores de SEN-7 (LDO y DC-DC CMOS con PDK abiertos)."
+  },
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
+  "afiliacion_inferida": "Munich University of Applied Sciences (Hochschule München); colabora con PUCV y UTFSM",
+  "pais_inferido": "Alemania",
   "intereses": {
    "temas": [
-    "highly-digital custom sensor integrated circuits",
-    "sensor interfaces for IoT-driven smart industry",
-    "low-power mixed-signal IC design for monitoring"
+    "automated LDO regulator design with open PDKs",
+    "CMOS DC-DC converters and power management ICs",
+    "open-source analog/mixed-signal IC design flows",
+    "IC design education with tapeouts"
    ],
    "palabras_clave": [
-    "custom integrated circuits",
-    "digital sensor interface",
-    "IoT",
-    "smart industry",
-    "Industry 4.0",
-    "ASIC design",
-    "sensors",
-    "condition monitoring"
+    "LDO",
+    "open-source PDK",
+    "SKY130",
+    "IHP-Open130",
+    "CMOS",
+    "DC-DC buck converter",
+    "PMIC",
+    "mixed-signal IC",
+    "lookup tables",
+    "automated layout"
    ],
    "metodos": [
-    "integrated circuit design"
+    "gm/ID lookup-table design",
+    "automated analog layout generation",
+    "open-source CAD flows"
    ],
    "aplicaciones": [
-    "industrial IoT monitoring"
+    "power management ICs",
+    "IoT sensor nodes",
+    "engineering education"
    ],
    "afinidad_tracks": {
-    "4": 0.9,
-    "5": 0.4,
-    "6": 0.2
+    "4": 0.8,
+    "3": 0.8,
+    "5": 0.3
    },
-   "etapa": "desconocida",
-   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (circuitos integrados de sensores altamente digitales para industria inteligente con IoT). Le interesarían sesiones de sensores y monitoreo, IoT y redes digitales.",
+   "etapa": "investigador_inicial",
+   "resumen": "Investigador joven en la Hochschule München (h-index 3) que diseña reguladores LDO y convertidores DC-DC CMOS con PDK y herramientas abiertas, en colaboración con Marín (PUCV) y Rojas (UTFSM). En CLAGTEE coautora el diseño de ICs de sensores altamente digitales para IoT; le interesarían sesiones de sensores y monitoreo, electrónica de potencia y redes digitales.",
    "base": [
-    "papers_clagtee"
+    "papers_clagtee",
+    "google_scholar"
    ]
   }
  },
  {
   "id": "francisca-donoso",
   "nombre": "Francisca Donoso",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
+  "afiliacion_inferida": "Universidad Técnica Federico Santa María (UTFSM) (inferida de coautores)",
+  "pais_inferido": "Chile",
   "intereses": {
    "temas": [
-    "highly-digital custom sensor integrated circuits",
-    "sensor interfaces for IoT-driven smart industry",
-    "low-power mixed-signal IC design for monitoring"
+    "ASIC implementation of power converter controllers",
+    "high-level synthesis of digital control",
+    "custom digital sensor integrated circuits for IoT"
    ],
    "palabras_clave": [
-    "custom integrated circuits",
-    "digital sensor interface",
-    "IoT",
-    "smart industry",
-    "Industry 4.0",
-    "ASIC design",
-    "sensors",
-    "condition monitoring"
+    "ASIC",
+    "high-level synthesis",
+    "PI controller",
+    "HDL",
+    "LibreLane",
+    "multilevel converter",
+    "digital IC design",
+    "IoT sensors"
    ],
    "metodos": [
-    "integrated circuit design"
+    "high-level synthesis",
+    "open-source digital IC flow"
    ],
    "aplicaciones": [
-    "industrial IoT monitoring"
+    "power converter control",
+    "smart industry IoT"
    ],
    "afinidad_tracks": {
-    "4": 0.9,
-    "5": 0.4,
-    "6": 0.2
+    "4": 0.8,
+    "3": 0.7,
+    "5": 0.3
    },
-   "etapa": "desconocida",
-   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (circuitos integrados de sensores altamente digitales para industria inteligente con IoT). Le interesarían sesiones de sensores y monitoreo, IoT y redes digitales.",
+   "etapa": "investigador_inicial",
+   "resumen": "Sin perfil de Google Scholar. En los perfiles de Rojas y Marín figura como primera autora de trabajos sobre la migración de un controlador PI a ASIC mediante síntesis de alto nivel (VLSI-SoC 2025, LASCAS 2026), con G. Carvajal. En CLAGTEE coautora el diseño de ICs de sensores altamente digitales para IoT; le interesarían sesiones de sensores, electrónica de potencia y sistemas digitales.",
    "base": [
-    "papers_clagtee"
+    "papers_clagtee",
+    "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Pasada 2: Scholar 'Francisca Donoso ASIC high-level synthesis PI controller' sin coincidencias; no figura en las barras de coautores de Rojas ni Marín."
  },
  {
   "id": "jorge-marin",
   "nombre": "Jorge Marin",
-  "busqueda": "pendiente",
-  "scholar": null,
+  "busqueda": "encontrado",
+  "scholar": {
+   "url": "https://scholar.google.com/citations?user=n8Rgy2EAAAAJ",
+   "user_id": "n8Rgy2EAAAAJ",
+   "nombre_perfil": "Jorge Marin",
+   "afiliacion": "Pontificia Universidad Católica de Valparaíso",
+   "email_verificado": "pucv.cl",
+   "intereses_scholar": [
+    "analog and mixed-signal integrated circuit design"
+   ],
+   "citas": 198,
+   "citas_desde_2021": 150,
+   "h_index": 8,
+   "publicaciones": [
+    {
+     "titulo": "Testbed for Custom Open-Source Power Management Integrated Circuit in Harsh Space Environments",
+     "anio": 2026,
+     "citas": 0
+    },
+    {
+     "titulo": "Design of a PI-Controller ASIC for a Multilevel Converter Using High-Level Synthesis and LibreLane",
+     "anio": 2026,
+     "citas": 0
+    },
+    {
+     "titulo": "CANELOS, Bringing Together the Chilean IC Design Community [Chapters]",
+     "anio": 2025,
+     "citas": 0
+    },
+    {
+     "titulo": "Systematic Design of a PVT-Robust CMOS Time-Based-Controlled DC-DC Converter Using Open-Source Tools",
+     "anio": 2025,
+     "citas": 0
+    },
+    {
+     "titulo": "PVT-Robust Analog Control Stage for Buck DC-DC Converters in Open-Source SKY130",
+     "anio": 2025,
+     "citas": 0
+    },
+    {
+     "titulo": "Hardware-Centric IoT Education for Agrifood Applications",
+     "anio": 2025,
+     "citas": 0
+    },
+    {
+     "titulo": "Tapeout-Oriented Strategies for Teaching Analog/Mixed-Signal IC Design and Implementation in Electrical Engineering Education",
+     "anio": 2025,
+     "citas": 0
+    },
+    {
+     "titulo": "Design Exploration of CMOS Building Blocks for Time-Based-Controlled DC-DC Converters Using Open-Source PDK and Tools",
+     "anio": 2025,
+     "citas": 2
+    },
+    {
+     "titulo": "A Topology-Independent and Scalable Methodology for Automated LDO Design Using Open PDKs",
+     "anio": 2025,
+     "citas": 4
+    },
+    {
+     "titulo": "Open-Source Multilevel Converter Power IC Design and Test",
+     "anio": 2024,
+     "citas": 15
+    },
+    {
+     "titulo": "Analysis and Design of an SiC CMOS Three-Channel DC-DC Synchronous Buck Converter for High-Temperature Applications",
+     "anio": 2024,
+     "citas": 9
+    },
+    {
+     "titulo": "SiC CMOS Gate Driver for High-Temperature Aerospace Applications",
+     "anio": 2024,
+     "citas": 3
+    }
+   ],
+   "confianza": "alta",
+   "evidencia": "Encontrado en la barra de coautores de Christian A. Rojas (sin gastar búsqueda); sus publicaciones son con C.A. Rojas, D. Arévalos y F. Donoso, los tres coautores de SEN-7."
+  },
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
+  "afiliacion_inferida": "Pontificia Universidad Católica de Valparaíso (PUCV)",
+  "pais_inferido": "Chile",
   "intereses": {
    "temas": [
-    "highly-digital custom sensor integrated circuits",
-    "sensor interfaces for IoT-driven smart industry",
-    "low-power mixed-signal IC design for monitoring"
+    "open-source analog and mixed-signal IC design",
+    "CMOS and SiC power management integrated circuits",
+    "time-based-controlled DC-DC converters",
+    "IoT hardware for agrifood applications",
+    "IC design education and the Chilean IC community"
    ],
    "palabras_clave": [
-    "custom integrated circuits",
-    "digital sensor interface",
+    "mixed-signal IC",
+    "open-source PDK",
+    "SKY130",
+    "PMIC",
+    "DC-DC converter",
+    "LDO",
+    "SiC CMOS",
+    "gate driver",
+    "ASIC",
     "IoT",
-    "smart industry",
-    "Industry 4.0",
-    "ASIC design",
-    "sensors",
-    "condition monitoring"
+    "tapeout",
+    "harsh environments"
    ],
    "metodos": [
-    "integrated circuit design"
+    "CMOS IC design",
+    "automated layout generation",
+    "PVT-robust design",
+    "open-source EDA flows",
+    "hardware testing"
    ],
    "aplicaciones": [
-    "industrial IoT monitoring"
+    "power management for IoT and sensors",
+    "aerospace and high-temperature electronics",
+    "multilevel power converters",
+    "agrifood IoT"
    ],
    "afinidad_tracks": {
     "4": 0.9,
+    "3": 0.8,
     "5": 0.4,
     "6": 0.2
    },
-   "etapa": "desconocida",
-   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (circuitos integrados de sensores altamente digitales para industria inteligente con IoT). Le interesarían sesiones de sensores y monitoreo, IoT y redes digitales. Además es chair de la sesión S4A.",
+   "etapa": "investigador_inicial",
+   "resumen": "Académico de la PUCV (h-index 8) dedicado al diseño de circuitos integrados analógicos y de señal mixta con PDK abiertos: PMIC, convertidores DC-DC CMOS y SiC, LDO y educación en diseño de IC e IoT. Presenta en CLAGTEE el diseño de ICs de sensores altamente digitales para IoT y modera la sesión S4A; le interesarían sesiones de sensores y monitoreo, electrónica de potencia y telecomunicaciones/IoT.",
    "base": [
-    "papers_clagtee"
+    "papers_clagtee",
+    "google_scholar"
    ]
   }
  },
  {
   "id": "clodomiro-unsihuay-vila",
   "nombre": "Clodomiro Unsihuay-Vila",
-  "busqueda": "pendiente",
-  "scholar": null,
+  "busqueda": "encontrado",
+  "scholar": {
+   "url": "https://scholar.google.com/citations?user=Lfsk97QAAAAJ",
+   "user_id": "Lfsk97QAAAAJ",
+   "nombre_perfil": "Clodomiro Unsihuay-Vila",
+   "afiliacion": "Universidade Federal do Paraná (UFPR)",
+   "email_verificado": "ufpr.br",
+   "intereses_scholar": [
+    "Energy and Power Systems",
+    "Microgrids",
+    "Renewable Energy",
+    "Smart Grids",
+    "Electrical/Gas Operation and Expansion Planning"
+   ],
+   "citas": 1753,
+   "citas_desde_2021": 687,
+   "h_index": 17,
+   "publicaciones": [
+    {
+     "titulo": "Fair Dynamic Operating Envelopes using Distributed Multi-Period Optimal Power Flow and Jain Index for Active Distribution Networks",
+     "anio": 2026,
+     "citas": 0
+    },
+    {
+     "titulo": "Day-ahead Coordination of Virtual Power Plants within Active Distribution Networks using Deterministic Bi-Level Optimization",
+     "anio": 2026,
+     "citas": 0
+    },
+    {
+     "titulo": "Flexibility-Oriented Multi-Period Optimal Power Flow for Smart Transformer-Based Meshed Hybrid AC/DC Microgrids",
+     "anio": 2026,
+     "citas": 0
+    },
+    {
+     "titulo": "Dynamic Robust Generation and Transmission Expansion Planning Incorporating Novel Inter-Area Virtual Transmission Lines and Unit Commitment Ramping Constraints",
+     "anio": 2026,
+     "citas": 2
+    },
+    {
+     "titulo": "Review on virtual power plants/virtual aggregators: Concepts, applications, prospects and operation strategies",
+     "anio": 2025,
+     "citas": 128
+    },
+    {
+     "titulo": "Transmission and generation expansion planning considering virtual power lines/plants, distributed energy injection and demand response flexibility from TSO-DSO interface",
+     "anio": 2025,
+     "citas": 12
+    },
+    {
+     "titulo": "A data-driven distributionally robust expansion planning model for ADNs with multi-microgrids considering energy trading strategy based on game theory",
+     "anio": 2024,
+     "citas": 6
+    },
+    {
+     "titulo": "Coordinated operation and expansion planning for multiple microgrids and active distribution networks under uncertainties",
+     "anio": 2021,
+     "citas": 67
+    },
+    {
+     "titulo": "Multistage expansion planning of generation and interconnections with sustainable energy development criteria: A multiobjective model",
+     "anio": 2011,
+     "citas": 114
+    },
+    {
+     "titulo": "A model to long-term, multiarea, multistage, and integrated expansion planning of electricity and natural gas systems",
+     "anio": 2010,
+     "citas": 314
+    },
+    {
+     "titulo": "Modeling the integrated natural gas and electricity optimal power flow",
+     "anio": 2007,
+     "citas": 260
+    },
+    {
+     "titulo": "Efficient evolutionary strategy optimisation procedure to solve the nonconvex economic dispatch problem with generator constraints",
+     "anio": 2005,
+     "citas": 287
+    }
+   ],
+   "confianza": "alta",
+   "evidencia": "Su perfil lista el propio paper INT-18 (arXiv 2026, PS Quessongo, D Gebbran, C Unsihuay-Vila) y la revisión de VPP con D. Gebbran (RSER 2025)."
+  },
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
+  "afiliacion_inferida": "Universidade Federal do Paraná (UFPR)",
+  "pais_inferido": "Brasil",
   "intereses": {
    "temas": [
-    "fair dynamic operating envelopes for DER in active distribution networks",
-    "distributed multi-period optimal power flow",
-    "fairness metrics (Jain index) in DER export/import allocation"
+    "dynamic operating envelopes and fairness in active distribution networks",
+    "multi-period and distributed optimal power flow",
+    "virtual power plants and aggregators",
+    "generation and transmission expansion planning under uncertainty",
+    "smart-transformer-based hybrid AC/DC microgrids",
+    "integrated electricity and natural gas planning"
    ],
    "palabras_clave": [
     "dynamic operating envelopes",
-    "fairness",
-    "Jain index",
-    "distributed optimization",
-    "multi-period optimal power flow",
+    "Jain fairness index",
+    "distributed optimal power flow",
+    "multi-period OPF",
     "active distribution networks",
-    "DER integration",
-    "prosumers"
+    "virtual power plants",
+    "TSO-DSO interface",
+    "expansion planning",
+    "robust optimization",
+    "hybrid AC/DC microgrids",
+    "smart transformer",
+    "electricity-gas integration"
    ],
    "metodos": [
-    "distributed optimal power flow",
-    "multi-period optimization"
+    "distributed optimization",
+    "bi-level optimization",
+    "distributionally robust optimization",
+    "robust optimization",
+    "mixed-integer programming",
+    "evolutionary algorithms"
    ],
    "aplicaciones": [
-    "DSO management of rooftop PV and DER",
-    "active distribution network operation"
+    "distribution networks with high DER penetration",
+    "microgrid operation",
+    "Brazilian generation and transmission planning",
+    "integrated gas-electric systems"
    ],
    "afinidad_tracks": {
-    "2": 0.9,
-    "1": 0.7,
-    "7": 0.3
+    "2": 1.0,
+    "1": 0.9,
+    "7": 0.5,
+    "3": 0.3
    },
-   "etapa": "desconocida",
-   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (envolventes operativas dinámicas justas con OPF multiperíodo distribuido e índice de Jain). Le interesarían sesiones de integración de DER, operación de redes de distribución activas y regulación de la distribución.",
+   "etapa": "investigador_senior",
+   "resumen": "Profesor de la UFPR (h-index 17) con trayectoria en planificación integrada de expansión eléctrica y de gas, que hoy trabaja OPF multiperiodo y distribuido, envolventes operativas dinámicas justas, plantas virtuales y microrredes híbridas AC/DC. Presenta en CLAGTEE las envolventes operativas dinámicas justas con OPF distribuido; le interesarían sesiones de integración de DER y almacenamiento, planificación y operación, y mercados.",
    "base": [
-    "papers_clagtee"
+    "papers_clagtee",
+    "google_scholar"
    ]
   }
  },
  {
   "id": "daniel-gebbran",
   "nombre": "Daniel Gebbran",
-  "busqueda": "pendiente",
-  "scholar": null,
+  "busqueda": "encontrado",
+  "scholar": {
+   "url": "https://scholar.google.com/citations?user=3591GdoAAAAJ",
+   "user_id": "3591GdoAAAAJ",
+   "nombre_perfil": "Daniel Gebbran",
+   "afiliacion": "Director, BESS Optimization at Caerus Commodities",
+   "email_verificado": "caeruscommodities.com",
+   "intereses_scholar": [
+    "Optimization",
+    "Energy Operations Research",
+    "Smart Grids",
+    "Integration of Renewables",
+    "Power System"
+   ],
+   "citas": 911,
+   "citas_desde_2021": 890,
+   "h_index": 10,
+   "publicaciones": [
+    {
+     "titulo": "Review on Virtual Power Plants/Virtual Aggregators: Concepts, applications, prospects and operation strategies",
+     "anio": 2025,
+     "citas": 128
+    },
+    {
+     "titulo": "Surrogate-assisted combinatorial optimization of ev fast charging stations",
+     "anio": 2023,
+     "citas": 33
+    },
+    {
+     "titulo": "Micro-flexibility: Challenges for power system modeling and control",
+     "anio": 2023,
+     "citas": 30
+    },
+    {
+     "titulo": "Optimal day-ahead scheduling of fast EV charging station with multi-stage battery degradation model",
+     "anio": 2023,
+     "citas": 27
+    },
+    {
+     "titulo": "Clearing and Pricing for Network-Aware Local Flexibility Markets using Distributed Optimization",
+     "anio": 2023,
+     "citas": 4
+    },
+    {
+     "titulo": "Adoption of Local Peer-to-Peer Energy Markets: Technical and Economical Perspectives for Utilities",
+     "anio": 2023,
+     "citas": 7
+    },
+    {
+     "titulo": "Multiperiod DER coordination using ADMM-based three-block distributed AC optimal power flow considering inverter volt-var control",
+     "anio": 2022,
+     "citas": 46
+    },
+    {
+     "titulo": "Cloud and edge computing for smart management of power electronic converter fleets: A key connective fabric to enable the green transition",
+     "anio": 2022,
+     "citas": 29
+    },
+    {
+     "titulo": "BESS Optimal Sizing and Scheduling for Energy Arbitrage and Frequency Containment Reserve via Dual-Loop Optimization",
+     "anio": 2022,
+     "citas": 13
+    },
+    {
+     "titulo": "Fair Coordination of Distributed Energy Resources with Volt-Var Control and PV Curtailment",
+     "anio": 2021,
+     "citas": 144
+    },
+    {
+     "titulo": "Towards a transactive energy system for integration of distributed energy resources: home energy management, distributed optimal power flow, and peer-to-peer energy trading",
+     "anio": 2020,
+     "citas": 387
+    },
+    {
+     "titulo": "Practical Considerations of DER Coordination with Distributed Optimal Power Flow",
+     "anio": 2020,
+     "citas": 18
+    }
+   ],
+   "confianza": "alta",
+   "evidencia": "Clodomiro Unsihuay-Vila (coautor de INT-18) figura en su barra de coautores y firma con él la revisión de VPP (RSER 2025); el perfil de Unsihuay-Vila lista el paper INT-18 con Gebbran."
+  },
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
+  "afiliacion_inferida": "Caerus Commodities (industria); vínculo académico previo con University of Sydney, DTU y UFPR",
   "pais_inferido": "",
   "intereses": {
    "temas": [
-    "fair dynamic operating envelopes for DER in active distribution networks",
-    "distributed multi-period optimal power flow",
-    "fairness metrics (Jain index) in DER export/import allocation"
+    "DER coordination via distributed optimal power flow",
+    "fairness in PV curtailment and volt-var control",
+    "virtual power plants and local flexibility markets",
+    "BESS optimization for arbitrage and ancillary services",
+    "EV fast-charging scheduling with battery degradation",
+    "transactive energy and peer-to-peer trading"
    ],
    "palabras_clave": [
-    "dynamic operating envelopes",
+    "distributed optimal power flow",
+    "ADMM",
+    "DER coordination",
     "fairness",
-    "Jain index",
-    "distributed optimization",
-    "multi-period optimal power flow",
-    "active distribution networks",
-    "DER integration",
-    "prosumers"
+    "PV curtailment",
+    "volt-var control",
+    "virtual power plants",
+    "BESS",
+    "energy arbitrage",
+    "EV fast charging",
+    "peer-to-peer energy trading",
+    "flexibility markets"
    ],
    "metodos": [
-    "distributed optimal power flow",
-    "multi-period optimization"
+    "ADMM-based distributed optimization",
+    "multi-period AC OPF",
+    "mixed-integer optimization",
+    "surrogate-assisted optimization",
+    "edge computing prototypes"
    ],
    "aplicaciones": [
-    "DSO management of rooftop PV and DER",
-    "active distribution network operation"
+    "low-voltage distribution networks with rooftop PV",
+    "battery storage trading",
+    "EV charging stations",
+    "power electronic converter fleets"
    ],
    "afinidad_tracks": {
-    "2": 0.9,
+    "2": 1.0,
     "1": 0.7,
-    "7": 0.3
+    "7": 0.7,
+    "6": 0.4,
+    "3": 0.3
    },
-   "etapa": "desconocida",
-   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (envolventes operativas dinámicas justas con OPF multiperíodo distribuido e índice de Jain). Le interesarían sesiones de integración de DER, operación de redes de distribución activas y regulación de la distribución.",
+   "etapa": "industria",
+   "resumen": "Investigador en optimización de sistemas de potencia (h-index 10) que hoy dirige la optimización de BESS en Caerus Commodities; su trabajo académico abarca OPF distribuido (ADMM) para coordinar DER con criterios de equidad, plantas virtuales, mercados de flexibilidad y carga rápida de VE. En CLAGTEE coautora las envolventes operativas dinámicas justas; le interesarían sesiones de integración de DER y almacenamiento, mercados y operación de redes.",
    "base": [
-    "papers_clagtee"
+    "papers_clagtee",
+    "google_scholar"
    ]
   }
  },
  {
   "id": "pedro-salomao-quessongo",
   "nombre": "Pedro Salomão Quessongo",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
+  "afiliacion_inferida": "Universidade Federal do Paraná (UFPR) (inferida de coautores)",
+  "pais_inferido": "Brasil",
   "intereses": {
    "temas": [
-    "fair dynamic operating envelopes for DER in active distribution networks",
+    "fair dynamic operating envelopes for DER",
     "distributed multi-period optimal power flow",
-    "fairness metrics (Jain index) in DER export/import allocation"
+    "fairness metrics in active distribution networks"
    ],
    "palabras_clave": [
     "dynamic operating envelopes",
-    "fairness",
-    "Jain index",
-    "distributed optimization",
-    "multi-period optimal power flow",
+    "Jain fairness index",
+    "distributed optimal power flow",
+    "multi-period OPF",
     "active distribution networks",
-    "DER integration",
-    "prosumers"
+    "distributed energy resources",
+    "hosting capacity"
    ],
    "metodos": [
-    "distributed optimal power flow",
-    "multi-period optimization"
+    "distributed optimization",
+    "multi-period optimal power flow"
    ],
    "aplicaciones": [
-    "DSO management of rooftop PV and DER",
-    "active distribution network operation"
+    "distribution networks with rooftop PV and DER export limits"
    ],
    "afinidad_tracks": {
-    "2": 0.9,
+    "2": 1.0,
     "1": 0.7,
     "7": 0.3
    },
-   "etapa": "desconocida",
-   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (envolventes operativas dinámicas justas con OPF multiperíodo distribuido e índice de Jain). Le interesarían sesiones de integración de DER, operación de redes de distribución activas y regulación de la distribución.",
+   "etapa": "investigador_inicial",
+   "resumen": "Sin perfil de Google Scholar. Es primer autor del preprint INT-18 (arXiv 2026) sobre envolventes operativas dinámicas justas con OPF distribuido multiperiodo e índice de Jain, con Unsihuay-Vila (UFPR) y Gebbran. Le interesarían sesiones de integración de DER, operación de redes de distribución activas y flexibilidad.",
    "base": [
-    "papers_clagtee"
+    "papers_clagtee",
+    "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Pasada 2: Scholar 'Pedro Salomão Quessongo' sin resultados; no figura en las barras de coautores de Unsihuay-Vila ni Gebbran."
  },
  {
   "id": "alberto-delrosso",
   "nombre": "Alberto Delrosso",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
   "afiliacion_inferida": "",
   "pais_inferido": "",
   "intereses": {
    "temas": [
-    "transmission expansion planning co-optimized with dynamic line rating",
-    "power grid expansion under uncertainty",
-    "grid-enhancing technologies for transmission capacity"
+    "transmission expansion planning with dynamic line rating",
+    "co-optimization of grid expansion and DLR under uncertainty"
    ],
    "palabras_clave": [
-    "transmission expansion planning",
     "dynamic line rating",
     "DLR",
+    "transmission expansion planning",
     "co-optimization",
     "uncertainty",
     "grid-enhancing technologies",
-    "transmission congestion",
-    "renewable integration"
+    "overhead lines"
    ],
    "metodos": [
     "co-optimization",
-    "optimization under uncertainty"
+    "stochastic optimization"
    ],
    "aplicaciones": [
-    "transmission network planning"
+    "transmission networks"
    ],
    "afinidad_tracks": {
-    "1": 0.9,
+    "1": 1.0,
     "4": 0.4,
-    "2": 0.3,
-    "7": 0.2
+    "2": 0.3
    },
    "etapa": "desconocida",
-   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (expansión óptima de la red asistida por DLR, co-optimización bajo incertidumbre). Le interesarían sesiones de planificación de transmisión, monitoreo de líneas e integración de renovables.",
+   "resumen": "Sin perfil de Google Scholar. Solo se conoce su coautoría en PLA-51 (expansión óptima de la red asistida por DLR, co-optimización bajo incertidumbre). Le interesarían sesiones de planificación de transmisión, tecnologías que aumentan la capacidad de red y monitoreo de líneas. Evidencia muy limitada.",
    "base": [
     "papers_clagtee"
    ]
-  }
+  },
+  "nota_busqueda": "Pasada 2: Scholar 'Alberto Delrosso' sin coincidencias; web general 'Anello Delrosso Dynamic Line Rating' sin resultados sobre ellos."
  },
  {
   "id": "mariano-tomas-anello",
   "nombre": "Mariano Tomás Anello",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
   "afiliacion_inferida": "",
   "pais_inferido": "",
   "intereses": {
    "temas": [
-    "transmission expansion planning co-optimized with dynamic line rating",
-    "power grid expansion under uncertainty",
-    "grid-enhancing technologies for transmission capacity"
+    "transmission expansion planning with dynamic line rating",
+    "co-optimization of grid expansion and DLR under uncertainty"
    ],
    "palabras_clave": [
-    "transmission expansion planning",
     "dynamic line rating",
     "DLR",
+    "transmission expansion planning",
     "co-optimization",
     "uncertainty",
     "grid-enhancing technologies",
-    "transmission congestion",
-    "renewable integration"
+    "overhead lines"
    ],
    "metodos": [
     "co-optimization",
-    "optimization under uncertainty"
+    "stochastic optimization"
    ],
    "aplicaciones": [
-    "transmission network planning"
+    "transmission networks"
    ],
    "afinidad_tracks": {
-    "1": 0.9,
+    "1": 1.0,
     "4": 0.4,
-    "2": 0.3,
-    "7": 0.2
+    "2": 0.3
    },
    "etapa": "desconocida",
-   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (expansión óptima de la red asistida por DLR, co-optimización bajo incertidumbre). Le interesarían sesiones de planificación de transmisión, monitoreo de líneas e integración de renovables.",
+   "resumen": "Sin perfil de Google Scholar ni otras fuentes localizables. Presenta en CLAGTEE PLA-51, expansión óptima de la red asistida por DLR mediante co-optimización bajo incertidumbre. Le interesarían sesiones de planificación de transmisión, tecnologías que aumentan la capacidad de red y monitoreo de líneas. Evidencia muy limitada.",
    "base": [
     "papers_clagtee"
    ]
-  }
+  },
+  "nota_busqueda": "Pasada 2: Scholar 'Mariano Anello dynamic line rating transmission expansion' y '\"Mariano Tomás Anello\" OR \"Mariano T. Anello\"' sin coincidencias; web general 'Anello Delrosso Dynamic Line Rating' sin resultados sobre ellos."
  }
 ]
