@@ -1,0 +1,1523 @@
+[
+ {
+  "id": "celso-eduardo-tuna",
+  "nombre": "Celso Eduardo Tuna",
+  "busqueda": "sin_perfil",
+  "scholar": null,
+  "otras_fuentes": [
+   {
+    "tipo": "institucional",
+    "url": "https://portaldocentes.unesp.br/portaldocentes/docentes/191290"
+   },
+   {
+    "tipo": "institucional",
+    "url": "https://bv.fapesp.br/en/pesquisador/666222/"
+   }
+  ],
+  "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Faculdade de Engenharia e Ciências de Guaratinguetá, Departamento de Química e Energia",
+  "pais_inferido": "Brasil",
+  "intereses": {
+   "temas": [
+    "green hydrogen production for steel industry decarbonization",
+    "thermoeconomic optimization of cogeneration (CHP) systems",
+    "hydrogen production from biogas and ethanol steam reforming",
+    "biomass and waste gasification for power generation",
+    "ecological efficiency of power generation systems",
+    "energy auditing and energy conservation"
+   ],
+   "palabras_clave": [
+    "green hydrogen",
+    "steel industry",
+    "thermoeconomics",
+    "exergy analysis",
+    "cogeneration",
+    "biogas steam reforming",
+    "gasification",
+    "syngas",
+    "ecological efficiency",
+    "CO2 emissions",
+    "energy auditing",
+    "bioenergy"
+   ],
+   "metodos": [
+    "thermoeconomic analysis",
+    "energy and exergy analysis",
+    "techno-economic assessment",
+    "ecological efficiency assessment"
+   ],
+   "aplicaciones": [
+    "green steel production",
+    "combined heat and power plants",
+    "sugarcane industry",
+    "hydrogen production plants",
+    "waste-to-energy systems"
+   ],
+   "afinidad_tracks": {
+    "11": 0.9,
+    "10": 0.6,
+    "9": 0.5,
+    "13": 0.5,
+    "7": 0.4,
+    "2": 0.3
+   },
+   "etapa": "investigador_consolidado",
+   "resumen": "Profesor asociado de UNESP Guaratinguetá (becario de productividad CNPq, coordinador del laboratorio de IPBEN), trabaja en termoeconomía, cogeneración, exergía y bioenergía, con muchas publicaciones junto a José Luz Silveira sobre producción de hidrógeno y gasificación. En CLAGTEE firma el análisis económico y ambiental del hidrógeno verde en la siderurgia; le interesarían las sesiones de hidrógeno, bioenergía, plantas alternativas y evaluación económica-ambiental de la transición energética.",
+   "base": [
+    "papers_clagtee",
+    "otras_fuentes",
+    "grupo_coautores"
+   ]
+  }
+ },
+ {
+  "id": "charle-correia",
+  "nombre": "Charle Correia",
+  "busqueda": "sin_perfil",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "Brasil",
+  "intereses": {
+   "temas": [
+    "energy recovery from Brazil nut shell residues",
+    "biomass residue combustion and gasification for power generation",
+    "valorization of Amazonian agro-extractive residues"
+   ],
+   "palabras_clave": [
+    "Brazil nut shell",
+    "Bertholletia excelsa",
+    "biomass residues",
+    "bioenergy",
+    "energy generation",
+    "gasification",
+    "combustion",
+    "waste-to-energy",
+    "Amazon"
+   ],
+   "metodos": [],
+   "aplicaciones": [
+    "biomass power generation in the Amazon region",
+    "agro-industrial residue valorization"
+   ],
+   "afinidad_tracks": {
+    "10": 0.9,
+    "11": 0.7,
+    "13": 0.4,
+    "9": 0.3
+   },
+   "etapa": "desconocida",
+   "resumen": "Sin perfil académico encontrado; presenta en CLAGTEE el uso de la cáscara de castaña de Brasil para generación de energía, junto al grupo de José Luz Silveira (UNESP, termoeconomía y gasificación). La evidencia es solo el título del paper; le interesarían sesiones de biomasa, plantas alternativas y aprovechamiento energético de residuos.",
+   "base": [
+    "papers_clagtee",
+    "grupo_coautores"
+   ]
+  }
+ },
+ {
+  "id": "eloy-esteves-gasparin",
+  "nombre": "Eloy Esteves Gasparin",
+  "busqueda": "encontrado",
+  "scholar": {
+   "url": "https://scholar.google.com/citations?user=CV95ufkAAAAJ",
+   "user_id": "CV95ufkAAAAJ",
+   "nombre_perfil": "Eloy Esteves Gasparin",
+   "afiliacion": "Ph.D. in Mechanical Engineering, São Paulo State University (Unesp)",
+   "email_verificado": "unesp.br",
+   "intereses_scholar": [
+    "Computational Fluid Dynamics",
+    "Centrifugal Compressor",
+    "Sensitivity Analysis",
+    "Supercritical CO2",
+    "Parametric Optimization"
+   ],
+   "citas": 130,
+   "citas_desde_2021": 130,
+   "h_index": 6,
+   "publicaciones": [
+    {
+     "titulo": "Parametric optimization applied to design a high-performance vaneless-diffuser for CO2 centrifugal compressor",
+     "anio": 2024,
+     "citas": 7
+    },
+    {
+     "titulo": "Modal analysis and structural optimization of integrated bladed disks and centrifugal compressor impellers",
+     "anio": 2024,
+     "citas": 11
+    },
+    {
+     "titulo": "High-dimensional CFD optimization of a low-flow coefficient S–CO2 centrifugal compressor for enhanced oil recovery systems",
+     "anio": 2023,
+     "citas": 21
+    },
+    {
+     "titulo": "Constrained optimization of s-CO2 compression train system through 1D approach under a new gas-like behavior constraint",
+     "anio": 2023,
+     "citas": 12
+    },
+    {
+     "titulo": "Sensitivity analysis and optimization of centrifugal compressors train working with supercritical CO2",
+     "anio": 2023,
+     "citas": 0
+    },
+    {
+     "titulo": "Screening analysis and unconstrained optimization of a small-scale vertical axis wind turbine",
+     "anio": 2022,
+     "citas": 36
+    },
+    {
+     "titulo": "Computational Investigation of Centrifugal Compressors Operating with Air and Supercritical CO2",
+     "anio": 2022,
+     "citas": 0
+    },
+    {
+     "titulo": "Sensitivity analysis and optimization of a CO2 centrifugal compressor impeller with a vaneless diffuser",
+     "anio": 2021,
+     "citas": 40
+    },
+    {
+     "titulo": "Sensitivity analysis based on Morris screening method for blade design of a centrifugal compressor",
+     "anio": 2019,
+     "citas": 2
+    },
+    {
+     "titulo": "Influência da distância da água na eficiência de conversão de energia em sistemas fotovoltaicos flutuantes",
+     "anio": 2017,
+     "citas": 1
+    }
+   ],
+   "confianza": "media",
+   "evidencia": "Nombre poco común que coincide exacto; doctor en Ingeniería Mecánica por UNESP (email unesp.br), la misma universidad del coautor José Luz Silveira, y trabaja en ingeniería térmica y energía. Sin evidencia directa: ningún coautor de CLAGTEE figura en el perfil y sus publicaciones (compresores de CO2 supercrítico, CFD, turbina eólica, FV flotante) no tratan de biomasa."
+  },
+  "otras_fuentes": [],
+  "afiliacion_inferida": "Universidade Estadual Paulista (UNESP)",
+  "pais_inferido": "Brasil",
+  "intereses": {
+   "temas": [
+    "energy generation from Brazil nut shell biomass",
+    "CFD optimization of supercritical CO2 centrifugal compressors",
+    "sensitivity analysis and parametric optimization of turbomachinery",
+    "small-scale vertical axis wind turbine design",
+    "energy conversion efficiency of floating photovoltaic systems"
+   ],
+   "palabras_clave": [
+    "computational fluid dynamics",
+    "centrifugal compressor",
+    "supercritical CO2",
+    "vaneless diffuser",
+    "sensitivity analysis",
+    "parametric optimization",
+    "vertical axis wind turbine",
+    "floating photovoltaics",
+    "Brazil nut shell",
+    "biomass energy"
+   ],
+   "metodos": [
+    "CFD simulation",
+    "Morris screening sensitivity analysis",
+    "design of experiments (fractional factorial)",
+    "1D compressor modeling",
+    "structural modal analysis"
+   ],
+   "aplicaciones": [
+    "sCO2 compression trains for enhanced oil recovery",
+    "small wind turbines",
+    "floating PV plants",
+    "biomass power generation"
+   ],
+   "afinidad_tracks": {
+    "10": 0.9,
+    "9": 0.6,
+    "2": 0.4,
+    "11": 0.4
+   },
+   "etapa": "investigador_inicial",
+   "resumen": "Doctor en Ingeniería Mecánica (UNESP) especializado en CFD y optimización de compresores centrífugos de CO2 supercrítico, con trabajos en turbinas eólicas pequeñas y FV flotante. En CLAGTEE coautora el uso de cáscara de castaña de Brasil para generación; le interesarían sesiones de plantas alternativas, componentes de centrales térmicas/turbomáquinas y biomasa.",
+   "base": [
+    "papers_clagtee",
+    "google_scholar"
+   ]
+  }
+ },
+ {
+  "id": "jose-luz-silveira",
+  "nombre": "José Luz Silveira",
+  "busqueda": "encontrado",
+  "scholar": {
+   "url": "https://scholar.google.com/citations?user=_3XX1IoAAAAJ",
+   "user_id": "_3XX1IoAAAAJ",
+   "nombre_perfil": "José Luz Silveira",
+   "afiliacion": "São Paulo State University - UNESP - FEG - Energy Department",
+   "email_verificado": "feg.unesp.br",
+   "intereses_scholar": [
+    "Termoeconomia",
+    "Termodinâmica",
+    "Gaseificação",
+    "Hidrogênio",
+    "Células de combustível"
+   ],
+   "citas": 5607,
+   "citas_desde_2021": 2777,
+   "h_index": 44,
+   "publicaciones": [
+    {
+     "titulo": "Unlocking the potential of sugarcane bagasse: a comprehensive analysis for advanced energy conversion",
+     "anio": 2025,
+     "citas": 28
+    },
+    {
+     "titulo": "Plasma gasification of biomedical waste: Energetic and exergetic aspect",
+     "anio": 2024,
+     "citas": 3
+    },
+    {
+     "titulo": "Thermodynamic analysis of biomedical waste plasma gasification",
+     "anio": 2022,
+     "citas": 37
+    },
+    {
+     "titulo": "Technical and economic aspects of coke gasification in the petroleum refining industry",
+     "anio": 2022,
+     "citas": 17
+    },
+    {
+     "titulo": "A review of waste management in Brazil and Portugal: Waste-to-energy as pathway for sustainable development",
+     "anio": 2021,
+     "citas": 87
+    },
+    {
+     "titulo": "Exergoenvironmental assessment of hydrogen water footprint via steam reforming in Brazil",
+     "anio": 2021,
+     "citas": 42
+    },
+    {
+     "titulo": "Educational electrolyzer prototype: Improving engineering students' knowledge in renewable energies",
+     "anio": 2021,
+     "citas": 10
+    },
+    {
+     "titulo": "The use of syngas from biomedical waste plasma gasification systems for electricity production in internal combustion: Thermodynamic and economic issues",
+     "anio": 2020,
+     "citas": 87
+    },
+    {
+     "titulo": "Techno-economic assessment of the use of syngas generated from biomass to feed an internal combustion engine",
+     "anio": 2020,
+     "citas": 56
+    },
+    {
+     "titulo": "Solar-powered Hydrogen Refueling Stations: A techno-economic analysis",
+     "anio": 2020,
+     "citas": 142
+    },
+    {
+     "titulo": "Hydrogen production by biogas steam reforming: a technical, economic and ecological analysis",
+     "anio": 2013,
+     "citas": 277
+    },
+    {
+     "titulo": "Thermoeconomic analysis method for optimization of combined heat and power systems. Part I",
+     "anio": 2003,
+     "citas": 290
+    }
+   ],
+   "confianza": "alta",
+   "evidencia": "Los coautores de CLAGTEE Celso Eduardo Tuna (C.E. Tuna), Regina F. S. Paulino (R.F.S. Paulino), Lucas de Almeida Rezende y Ronney A. M. Boloy aparecen en sus publicaciones; publica sobre gasificación por plasma de residuos biomédicos con generación eléctrica (misma línea que PLA-49) e hidrógeno verde (BIO-1)."
+  },
+  "otras_fuentes": [],
+  "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Faculdade de Engenharia e Ciências de Guaratinguetá, Departamento de Energia",
+  "pais_inferido": "Brasil",
+  "intereses": {
+   "temas": [
+    "green hydrogen production: technical, economic and ecological analysis",
+    "plasma gasification of biomedical waste for power generation",
+    "biomass and agro-residue gasification for electricity (sugarcane bagasse, nut shells)",
+    "thermoeconomic optimization of cogeneration and CHP systems",
+    "ecological efficiency of thermal power plants",
+    "waste-to-energy pathways"
+   ],
+   "palabras_clave": [
+    "green hydrogen",
+    "thermoeconomics",
+    "exergy analysis",
+    "plasma gasification",
+    "biomedical waste",
+    "syngas",
+    "gas turbine",
+    "internal combustion engines",
+    "cogeneration",
+    "biogas steam reforming",
+    "fuel cells",
+    "ecological efficiency"
+   ],
+   "metodos": [
+    "thermoeconomic analysis",
+    "energy and exergy analysis",
+    "techno-economic assessment",
+    "ecological efficiency and environmental impact assessment",
+    "thermochemical equilibrium modeling"
+   ],
+   "aplicaciones": [
+    "steel industry decarbonization",
+    "sugarcane industry",
+    "healthcare waste treatment",
+    "hydrogen refueling stations",
+    "distributed generation with syngas engines"
+   ],
+   "afinidad_tracks": {
+    "10": 0.9,
+    "11": 0.9,
+    "9": 0.6,
+    "13": 0.6,
+    "7": 0.4,
+    "2": 0.3
+   },
+   "etapa": "investigador_senior",
+   "resumen": "Profesor del Departamento de Energía de UNESP Guaratinguetá (h-index 44), referente en termoeconomía, gasificación, hidrógeno y celdas de combustible. En CLAGTEE firma tres papers (cáscara de castaña, gasificación por plasma de residuos biomédicos con turbina a gas e hidrógeno verde en siderurgia); le interesarían las sesiones de bioenergía e hidrógeno, plantas alternativas y convencionales, y evaluación ambiental.",
+   "base": [
+    "papers_clagtee",
+    "google_scholar"
+   ]
+  }
+ },
+ {
+  "id": "lucas-de-almeida-rezende",
+  "nombre": "Lucas de Almeida Rezende",
+  "busqueda": "sin_perfil",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Guaratinguetá (inferida de coautores)",
+  "pais_inferido": "Brasil",
+  "intereses": {
+   "temas": [
+    "green hydrogen production for steel industry decarbonization",
+    "economic and environmental assessment of hydrogen",
+    "water electrolysis and renewable energy education"
+   ],
+   "palabras_clave": [
+    "green hydrogen",
+    "steel industry",
+    "electrolysis",
+    "electrolyzer",
+    "decarbonization",
+    "economic analysis",
+    "environmental analysis",
+    "CO2 emissions",
+    "renewable energy education"
+   ],
+   "metodos": [
+    "economic feasibility analysis",
+    "environmental impact assessment"
+   ],
+   "aplicaciones": [
+    "green steel production",
+    "engineering education in renewable energy"
+   ],
+   "afinidad_tracks": {
+    "11": 0.9,
+    "13": 0.5,
+    "7": 0.4,
+    "2": 0.3
+   },
+   "etapa": "investigador_inicial",
+   "resumen": "Sin perfil de Scholar; figura como primer autor de un prototipo educativo de electrolizador (Int. J. Hydrogen Energy 2021) con José Luz Silveira y Celso Tuna (UNESP). Presenta en CLAGTEE el análisis económico y ambiental del hidrógeno verde en la siderurgia; le interesarían sesiones de hidrógeno, descarbonización industrial y economía de la transición. Evidencia limitada.",
+   "base": [
+    "papers_clagtee",
+    "grupo_coautores"
+   ]
+  }
+ },
+ {
+  "id": "mateus-maia-fabro",
+  "nombre": "Mateus Maia Fabro",
+  "busqueda": "sin_perfil",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "Brasil",
+  "intereses": {
+   "temas": [
+    "energy recovery from Brazil nut shell residues",
+    "biomass residue combustion and gasification for power generation",
+    "valorization of Amazonian agro-extractive residues"
+   ],
+   "palabras_clave": [
+    "Brazil nut shell",
+    "biomass residues",
+    "bioenergy",
+    "energy generation",
+    "gasification",
+    "combustion",
+    "waste-to-energy",
+    "Amazon"
+   ],
+   "metodos": [],
+   "aplicaciones": [
+    "biomass power generation in the Amazon region"
+   ],
+   "afinidad_tracks": {
+    "10": 0.9,
+    "11": 0.7,
+    "13": 0.4,
+    "9": 0.3
+   },
+   "etapa": "desconocida",
+   "resumen": "Sin perfil académico encontrado; coautor del paper sobre cáscara de castaña de Brasil para generación de energía con el grupo de José Luz Silveira (UNESP). La evidencia es solo el título del paper; le interesarían sesiones de biomasa y plantas alternativas.",
+   "base": [
+    "papers_clagtee",
+    "grupo_coautores"
+   ]
+  }
+ },
+ {
+  "id": "regina-francielle-silva-paulino",
+  "nombre": "Regina Franciélle Silva Paulino",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "Universidade Estadual Paulista (UNESP) (inferida de coautores)",
+  "pais_inferido": "Brasil",
+  "intereses": {
+   "temas": [
+    "plasma gasification of biomedical waste for power generation",
+    "syngas use in gas turbines and internal combustion engines",
+    "biohydrogen production from landfills and sugarcane industry",
+    "sugarcane bagasse and petroleum coke gasification",
+    "waste-to-energy in Brazil"
+   ],
+   "palabras_clave": [
+    "plasma gasification",
+    "biomedical waste",
+    "syngas",
+    "gas turbine",
+    "internal combustion engine",
+    "biohydrogen",
+    "sanitary landfills",
+    "bagasse gasification",
+    "coke gasification",
+    "exergy analysis",
+    "economic analysis"
+   ],
+   "metodos": [
+    "thermodynamic modeling",
+    "energy and exergy analysis",
+    "techno-economic assessment"
+   ],
+   "aplicaciones": [
+    "healthcare waste treatment",
+    "sugarcane industry",
+    "petroleum refining",
+    "landfill biogas"
+   ],
+   "afinidad_tracks": {
+    "10": 1.0,
+    "11": 0.7,
+    "13": 0.6,
+    "9": 0.5
+   },
+   "etapa": "investigador_inicial",
+   "resumen": "Búsqueda de Google Scholar incompleta (dos búsquedas sin resultado; la tercera no se pudo hacer porque se agotó el cupo de WebSearch de la sesión); sus publicaciones como R.F.S. Paulino figuran en el perfil de José Luz Silveira (gasificación por plasma de residuos biomédicos en Energy 2020 y 2022, biohidrógeno, gasificación de bagazo y coque). Presenta en CLAGTEE la gasificación por plasma integrada a turbina a gas; le interesarían sesiones de plantas alternativas, waste-to-energy e hidrógeno.",
+   "base": [
+    "papers_clagtee",
+    "grupo_coautores"
+   ]
+  }
+ },
+ {
+  "id": "artur-jorge-de-jesus-goncalves",
+  "nombre": "Artur Jorge de Jesus Gonçalves",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "life cycle assessment of bioelectricity from sugarcane bagasse",
+    "comparison of bagasse combustion and biomass-integrated gasification combined cycle (BIG-GT)",
+    "environmental performance of the Brazilian sugar-energy sector"
+   ],
+   "palabras_clave": [
+    "sugarcane bagasse",
+    "bioelectricity",
+    "life cycle assessment",
+    "BIG-GT",
+    "biomass gasification",
+    "cogeneration",
+    "environmental impact",
+    "sugar-energy sector"
+   ],
+   "metodos": [
+    "process-based life cycle assessment",
+    "thermodynamic modeling",
+    "life cycle inventory"
+   ],
+   "aplicaciones": [
+    "sugarcane mills cogeneration",
+    "bioelectricity export to the grid"
+   ],
+   "afinidad_tracks": {
+    "11": 0.9,
+    "13": 0.7,
+    "10": 0.5,
+    "12": 0.2
+   },
+   "etapa": "desconocida",
+   "resumen": "Búsqueda de Google Scholar incompleta (dos búsquedas sin resultado; la tercera no se pudo hacer porque se agotó el cupo de WebSearch de la sesión); El paper CLAGTEE corresponde a la línea publicada como 'Process-based life cycle assessment of bioelectricity from sugarcane bagasse: A comparison of combustion and gasification systems' (Science of The Total Environment, 2026), que figura en el perfil de Helton José Alves. Le interesarían sesiones de bioenergía, evaluación ambiental y plantas alternativas.",
+   "base": [
+    "papers_clagtee",
+    "grupo_coautores"
+   ]
+  }
+ },
+ {
+  "id": "fabiana-de-oliveira-ramos",
+  "nombre": "Fabiana de Oliveira Ramos",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "Brasil",
+  "intereses": {
+   "temas": [
+    "life cycle assessment of bioelectricity from sugarcane bagasse",
+    "comparison of bagasse combustion and biomass-integrated gasification combined cycle (BIG-GT)",
+    "environmental performance of the Brazilian sugar-energy sector"
+   ],
+   "palabras_clave": [
+    "sugarcane bagasse",
+    "bioelectricity",
+    "life cycle assessment",
+    "BIG-GT",
+    "biomass gasification",
+    "cogeneration",
+    "environmental impact",
+    "sugar-energy sector"
+   ],
+   "metodos": [
+    "process-based life cycle assessment",
+    "thermodynamic modeling",
+    "life cycle inventory"
+   ],
+   "aplicaciones": [
+    "sugarcane mills cogeneration",
+    "bioelectricity export to the grid"
+   ],
+   "afinidad_tracks": {
+    "11": 0.9,
+    "13": 0.7,
+    "10": 0.5,
+    "12": 0.2
+   },
+   "etapa": "investigador_inicial",
+   "resumen": "Búsqueda de Google Scholar incompleta (dos búsquedas sin resultado; la tercera no se pudo hacer porque se agotó el cupo de WebSearch de la sesión); Es primera autora del artículo de ACV de bioelectricidad de bagazo (combustión vs. gasificación BIG-GT, Sci. Total Environ. 2026) con Helton J. Alves y Ronney Boloy, que presenta en CLAGTEE. Le interesarían sesiones de bioenergía, evaluación ambiental y plantas alternativas.",
+   "base": [
+    "papers_clagtee",
+    "grupo_coautores"
+   ]
+  }
+ },
+ {
+  "id": "helton-jose-alves",
+  "nombre": "Helton José Alves",
+  "busqueda": "encontrado",
+  "scholar": {
+   "url": "https://scholar.google.com/citations?user=l61yoX4AAAAJ",
+   "user_id": "l61yoX4AAAAJ",
+   "nombre_perfil": "Helton José Alves",
+   "afiliacion": "Professor de Química dos Materiais e Bioenergia, Universidade Federal do Paraná (UFPR)",
+   "email_verificado": "ufpr.br",
+   "intereses_scholar": [
+    "Materiais",
+    "Catálise",
+    "Biocombustíveis"
+   ],
+   "citas": 4476,
+   "citas_desde_2021": 3089,
+   "h_index": 33,
+   "publicaciones": [
+    {
+     "titulo": "Process-based life cycle assessment of bioelectricity from sugarcane bagasse: A comparison of combustion and gasification systems",
+     "anio": 2026,
+     "citas": 0
+    },
+    {
+     "titulo": "Mechanistic insights into lignin reduction and methane enhancement: A systematic review of pretreatment technologies for lignocellulosic biomass (2005–2025)",
+     "anio": 2026,
+     "citas": 0
+    },
+    {
+     "titulo": "An integrated experimental and simulation study on hydrogen production from UASB biogas via dry reforming at pilot scale",
+     "anio": 2026,
+     "citas": 0
+    },
+    {
+     "titulo": "Application of Ionized Air to Reduce Hydrogen Sulfide Concentration in Biogas",
+     "anio": 2025,
+     "citas": 0
+    },
+    {
+     "titulo": "Evaluation of reaction conditions in the dry reforming process using a Ni/MCM-41 catalyst for syngas production",
+     "anio": 2025,
+     "citas": 4
+    },
+    {
+     "titulo": "Two-Stage anaerobic digestion in agroindustrial waste treatment: A review",
+     "anio": 2021,
+     "citas": 297
+    },
+    {
+     "titulo": "Dry reforming of methane over Ni/MgO–Al2O3 catalysts: thermodynamic equilibrium analysis and experimental application",
+     "anio": 2020,
+     "citas": 64
+    },
+    {
+     "titulo": "Improvement of biohydrogen production from brewery wastewater: evaluation of inocula, support and reactor",
+     "anio": 2020,
+     "citas": 54
+    },
+    {
+     "titulo": "Hydrogen production in the electrolysis of water in Brazil, a review",
+     "anio": 2017,
+     "citas": 291
+    },
+    {
+     "titulo": "Treatment of brewery wastewater and its use for biological production of methane and hydrogen",
+     "anio": 2017,
+     "citas": 149
+    },
+    {
+     "titulo": "Overview of glycerol reforming for hydrogen production",
+     "anio": 2016,
+     "citas": 311
+    },
+    {
+     "titulo": "Overview of hydrogen production technologies from biogas and the applications in fuel cells",
+     "anio": 2013,
+     "citas": 577
+    }
+   ],
+   "confianza": "alta",
+   "evidencia": "Su perfil lista 'Process-based life cycle assessment of bioelectricity from sugarcane bagasse: A comparison of combustion and gasification systems' (Sci. Total Environ. 2026), firmado por los siete autores de BIO-3 (Ramos, Gonçalves, Serafini, Copa Rey, Rosetti, Alves, Boloy); además Mylena K. de Paula Rosetti es coautora en sus trabajos de biogás."
+  },
+  "otras_fuentes": [],
+  "afiliacion_inferida": "Universidade Federal do Paraná (UFPR)",
+  "pais_inferido": "Brasil",
+  "intereses": {
+   "temas": [
+    "hydrogen and syngas production via biogas dry reforming",
+    "Ni-based catalysts for biogas reforming and CO2 methanation",
+    "anaerobic digestion of agro-industrial waste and biohydrogen",
+    "biogas upgrading (H2S and CO2 removal)",
+    "life cycle assessment of bioelectricity from sugarcane bagasse",
+    "PEM fuel cells for backup power"
+   ],
+   "palabras_clave": [
+    "biogas",
+    "dry reforming",
+    "hydrogen production",
+    "syngas",
+    "Ni/MCM-41 catalysts",
+    "anaerobic digestion",
+    "biohydrogen",
+    "biogas upgrading",
+    "sugarcane bagasse",
+    "life cycle assessment",
+    "fuel cells",
+    "biofuels"
+   ],
+   "metodos": [
+    "heterogeneous catalysis experiments",
+    "thermodynamic equilibrium analysis",
+    "pilot-scale experimentation",
+    "process simulation",
+    "life cycle assessment",
+    "adsorption modeling"
+   ],
+   "aplicaciones": [
+    "wastewater treatment plants (UASB biogas)",
+    "agro-industrial waste treatment",
+    "sugar-energy sector",
+    "off-grid backup power with fuel cells"
+   ],
+   "afinidad_tracks": {
+    "11": 1.0,
+    "13": 0.6,
+    "10": 0.5,
+    "2": 0.3
+   },
+   "etapa": "investigador_senior",
+   "resumen": "Profesor de Química de Materiales y Bioenergía en la UFPR (h-index 33), dirige trabajos de producción de hidrógeno y syngas por reformado seco de biogás, catalizadores, digestión anaerobia y purificación de biogás. En CLAGTEE coautora el ACV de bioelectricidad de bagazo; le interesarían sesiones de bioenergía e hidrógeno, plantas alternativas y temas ambientales.",
+   "base": [
+    "papers_clagtee",
+    "google_scholar"
+   ]
+  }
+ },
+ {
+  "id": "jose-ramon-copa-rey",
+  "nombre": "José Ramón Copa Rey",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "sugarcane bagasse gasification for power generation (BIG-GT, plasma, supercritical water)",
+    "syngas use in internal combustion engines",
+    "life cycle assessment of bioelectricity from sugarcane bagasse",
+    "hydrogen and electricity co-production from biomass"
+   ],
+   "palabras_clave": [
+    "sugarcane bagasse",
+    "gasification",
+    "plasma gasification",
+    "supercritical water gasification",
+    "syngas",
+    "combined cycle",
+    "internal combustion engine",
+    "bioelectricity",
+    "life cycle assessment",
+    "hydrogen"
+   ],
+   "metodos": [
+    "thermodynamic modeling",
+    "energy and exergy analysis",
+    "techno-economic assessment",
+    "life cycle assessment"
+   ],
+   "aplicaciones": [
+    "sugarcane mills",
+    "biomass-fired distributed generation"
+   ],
+   "afinidad_tracks": {
+    "11": 0.9,
+    "10": 0.8,
+    "13": 0.6,
+    "9": 0.4
+   },
+   "etapa": "investigador_consolidado",
+   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); sus trabajos como J.R. Copa / J.R. Copa-Rey aparecen en los perfiles de José Luz Silveira y Helton José Alves (gasificación de bagazo por plasma y en agua supercrítica, syngas en motores, ciclo combinado en ingenios, 2015-2026). El paper CLAGTEE corresponde a la línea publicada como 'Process-based life cycle assessment of bioelectricity from sugarcane bagasse: A comparison of combustion and gasification systems' (Science of The Total Environment, 2026), que figura en el perfil de Helton José Alves.",
+   "base": [
+    "papers_clagtee",
+    "grupo_coautores"
+   ]
+  }
+ },
+ {
+  "id": "lais-fabiana-serafini",
+  "nombre": "Laís Fabiana Serafini",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "Brasil",
+  "intereses": {
+   "temas": [
+    "life cycle assessment of bioelectricity from sugarcane bagasse",
+    "comparison of bagasse combustion and biomass-integrated gasification combined cycle (BIG-GT)",
+    "environmental performance of the Brazilian sugar-energy sector"
+   ],
+   "palabras_clave": [
+    "sugarcane bagasse",
+    "bioelectricity",
+    "life cycle assessment",
+    "BIG-GT",
+    "biomass gasification",
+    "cogeneration",
+    "environmental impact",
+    "sugar-energy sector"
+   ],
+   "metodos": [
+    "process-based life cycle assessment",
+    "thermodynamic modeling",
+    "life cycle inventory"
+   ],
+   "aplicaciones": [
+    "sugarcane mills cogeneration",
+    "bioelectricity export to the grid"
+   ],
+   "afinidad_tracks": {
+    "11": 0.9,
+    "13": 0.7,
+    "10": 0.5,
+    "12": 0.2
+   },
+   "etapa": "desconocida",
+   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado en su paper CLAGTEE. El paper CLAGTEE corresponde a la línea publicada como 'Process-based life cycle assessment of bioelectricity from sugarcane bagasse: A comparison of combustion and gasification systems' (Science of The Total Environment, 2026), que figura en el perfil de Helton José Alves. Le interesarían sesiones de bioenergía y evaluación ambiental.",
+   "base": [
+    "papers_clagtee",
+    "grupo_coautores"
+   ]
+  }
+ },
+ {
+  "id": "mylena-kellyn-de-paula-rosetti",
+  "nombre": "Mylena Kellyn de Paula Rosetti",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "Brasil",
+  "intereses": {
+   "temas": [
+    "biogas upgrading and H2S removal with ionized air/ozone",
+    "lignocellulosic biomass pretreatment for methane enhancement",
+    "life cycle assessment of bioelectricity from sugarcane bagasse"
+   ],
+   "palabras_clave": [
+    "biogas",
+    "hydrogen sulfide removal",
+    "ozone",
+    "ionized air",
+    "anaerobic digestion",
+    "lignin",
+    "lignocellulosic biomass pretreatment",
+    "methane yield",
+    "sugarcane bagasse",
+    "life cycle assessment"
+   ],
+   "metodos": [
+    "laboratory experimentation",
+    "systematic literature review",
+    "life cycle assessment"
+   ],
+   "aplicaciones": [
+    "biogas plants",
+    "sugar-energy sector"
+   ],
+   "afinidad_tracks": {
+    "11": 1.0,
+    "13": 0.6,
+    "10": 0.4
+   },
+   "etapa": "investigador_inicial",
+   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); sus artículos recientes (remoción de H2S del biogás con aire ionizado, 2025; pretratamientos de biomasa lignocelulósica para aumentar metano, 2026) figuran en el perfil de Helton José Alves. Coautora del ACV de bioelectricidad de bagazo en CLAGTEE; le interesarían sesiones de bioenergía y temas ambientales.",
+   "base": [
+    "papers_clagtee",
+    "grupo_coautores"
+   ]
+  }
+ },
+ {
+  "id": "ronney-arismel-mancebo-boloy",
+  "nombre": "Ronney Arismel Mancebo Boloy",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "Brasil",
+  "intereses": {
+   "temas": [
+    "life cycle assessment of bioelectricity from sugarcane bagasse",
+    "syngas combustion in internal combustion engines",
+    "hydrogen production by biogas steam reforming",
+    "biomass gasification hydrodynamics (CFD)",
+    "thermoeconomic analysis of hydrogen in biodiesel plants"
+   ],
+   "palabras_clave": [
+    "sugarcane bagasse",
+    "bioelectricity",
+    "life cycle assessment",
+    "syngas",
+    "gasification",
+    "biogas steam reforming",
+    "hydrogen",
+    "thermoeconomics",
+    "ecological efficiency",
+    "biodiesel"
+   ],
+   "metodos": [
+    "thermoeconomic analysis",
+    "life cycle assessment",
+    "CFD simulation",
+    "ecological efficiency assessment"
+   ],
+   "aplicaciones": [
+    "sugarcane mills",
+    "biodiesel plants",
+    "distributed generation with syngas engines"
+   ],
+   "afinidad_tracks": {
+    "11": 0.9,
+    "10": 0.7,
+    "13": 0.7,
+    "9": 0.4
+   },
+   "etapa": "investigador_consolidado",
+   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); sus trabajos como R.A.M. Boloy figuran en el perfil de José Luz Silveira desde 2011 (syngas en motores, reformado de biogás para hidrógeno, gasificación de biomasa) y el ACV de bioelectricidad de bagazo en el de Helton José Alves. Le interesarían sesiones de bioenergía e hidrógeno, plantas alternativas y evaluación ambiental.",
+   "base": [
+    "papers_clagtee",
+    "grupo_coautores"
+   ]
+  }
+ },
+ {
+  "id": "andre-luiz-veiga-gimenes",
+  "nombre": "André Luiz Veiga Gimenes",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "multi-objective optimization of off-grid hybrid power systems",
+    "electricity supply for critical infrastructures in isolated Amazon communities",
+    "reliability, cost and emissions trade-offs in isolated systems"
+   ],
+   "palabras_clave": [
+    "off-grid systems",
+    "hybrid microgrids",
+    "tri-objective optimization",
+    "critical infrastructure",
+    "Amazon",
+    "isolated systems",
+    "reliability",
+    "energy storage",
+    "renewable energy"
+   ],
+   "metodos": [
+    "multi-objective optimization"
+   ],
+   "aplicaciones": [
+    "isolated communities in the Amazon",
+    "critical infrastructure (health, water, communications)"
+   ],
+   "afinidad_tracks": {
+    "1": 0.9,
+    "2": 0.7,
+    "12": 0.3,
+    "7": 0.3
+   },
+   "etapa": "desconocida",
+   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (optimización triobjetivo de sistemas aislados para infraestructura crítica en la Amazonía). Le interesarían sesiones de planificación y confiabilidad, microrredes aisladas y renovables con almacenamiento.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "giovanni-manassero-junior",
+  "nombre": "Giovanni Manassero Junior",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "multi-objective optimization of off-grid hybrid power systems",
+    "electricity supply for critical infrastructures in isolated Amazon communities",
+    "reliability, cost and emissions trade-offs in isolated systems"
+   ],
+   "palabras_clave": [
+    "off-grid systems",
+    "hybrid microgrids",
+    "tri-objective optimization",
+    "critical infrastructure",
+    "Amazon",
+    "isolated systems",
+    "reliability",
+    "energy storage",
+    "renewable energy"
+   ],
+   "metodos": [
+    "multi-objective optimization"
+   ],
+   "aplicaciones": [
+    "isolated communities in the Amazon",
+    "critical infrastructure (health, water, communications)"
+   ],
+   "afinidad_tracks": {
+    "1": 0.9,
+    "2": 0.7,
+    "12": 0.3,
+    "7": 0.3
+   },
+   "etapa": "desconocida",
+   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (optimización triobjetivo de sistemas aislados para infraestructura crítica en la Amazonía). Le interesarían sesiones de planificación y confiabilidad, microrredes aisladas y renovables con almacenamiento.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "guilherme-scholl-roballo",
+  "nombre": "Guilherme Scholl Roballo",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "multi-objective optimization of off-grid hybrid power systems",
+    "electricity supply for critical infrastructures in isolated Amazon communities",
+    "reliability, cost and emissions trade-offs in isolated systems"
+   ],
+   "palabras_clave": [
+    "off-grid systems",
+    "hybrid microgrids",
+    "tri-objective optimization",
+    "critical infrastructure",
+    "Amazon",
+    "isolated systems",
+    "reliability",
+    "energy storage",
+    "renewable energy"
+   ],
+   "metodos": [
+    "multi-objective optimization"
+   ],
+   "aplicaciones": [
+    "isolated communities in the Amazon",
+    "critical infrastructure (health, water, communications)"
+   ],
+   "afinidad_tracks": {
+    "1": 0.9,
+    "2": 0.7,
+    "12": 0.3,
+    "7": 0.3
+   },
+   "etapa": "desconocida",
+   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (optimización triobjetivo de sistemas aislados para infraestructura crítica en la Amazonía). Le interesarían sesiones de planificación y confiabilidad, microrredes aisladas y renovables con almacenamiento.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "miguel-edgar-morales-udaeta",
+  "nombre": "Miguel Edgar Morales Udaeta",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "multi-objective optimization of off-grid hybrid power systems",
+    "electricity supply for critical infrastructures in isolated Amazon communities",
+    "reliability, cost and emissions trade-offs in isolated systems"
+   ],
+   "palabras_clave": [
+    "off-grid systems",
+    "hybrid microgrids",
+    "tri-objective optimization",
+    "critical infrastructure",
+    "Amazon",
+    "isolated systems",
+    "reliability",
+    "energy storage",
+    "renewable energy"
+   ],
+   "metodos": [
+    "multi-objective optimization"
+   ],
+   "aplicaciones": [
+    "isolated communities in the Amazon",
+    "critical infrastructure (health, water, communications)"
+   ],
+   "afinidad_tracks": {
+    "1": 0.9,
+    "2": 0.7,
+    "12": 0.3,
+    "7": 0.3
+   },
+   "etapa": "desconocida",
+   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (optimización triobjetivo de sistemas aislados para infraestructura crítica en la Amazonía). Le interesarían sesiones de planificación y confiabilidad, microrredes aisladas y renovables con almacenamiento.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "christian-a-rojas",
+  "nombre": "Christian A. Rojas",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "highly-digital custom sensor integrated circuits",
+    "sensor interfaces for IoT-driven smart industry",
+    "low-power mixed-signal IC design for monitoring"
+   ],
+   "palabras_clave": [
+    "custom integrated circuits",
+    "digital sensor interface",
+    "IoT",
+    "smart industry",
+    "Industry 4.0",
+    "ASIC design",
+    "sensors",
+    "condition monitoring"
+   ],
+   "metodos": [
+    "integrated circuit design"
+   ],
+   "aplicaciones": [
+    "industrial IoT monitoring"
+   ],
+   "afinidad_tracks": {
+    "4": 0.9,
+    "5": 0.4,
+    "6": 0.2
+   },
+   "etapa": "desconocida",
+   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (circuitos integrados de sensores altamente digitales para industria inteligente con IoT). Le interesarían sesiones de sensores y monitoreo, IoT y redes digitales.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "daniel-arevalos",
+  "nombre": "Daniel Arevalos",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "highly-digital custom sensor integrated circuits",
+    "sensor interfaces for IoT-driven smart industry",
+    "low-power mixed-signal IC design for monitoring"
+   ],
+   "palabras_clave": [
+    "custom integrated circuits",
+    "digital sensor interface",
+    "IoT",
+    "smart industry",
+    "Industry 4.0",
+    "ASIC design",
+    "sensors",
+    "condition monitoring"
+   ],
+   "metodos": [
+    "integrated circuit design"
+   ],
+   "aplicaciones": [
+    "industrial IoT monitoring"
+   ],
+   "afinidad_tracks": {
+    "4": 0.9,
+    "5": 0.4,
+    "6": 0.2
+   },
+   "etapa": "desconocida",
+   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (circuitos integrados de sensores altamente digitales para industria inteligente con IoT). Le interesarían sesiones de sensores y monitoreo, IoT y redes digitales.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "francisca-donoso",
+  "nombre": "Francisca Donoso",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "highly-digital custom sensor integrated circuits",
+    "sensor interfaces for IoT-driven smart industry",
+    "low-power mixed-signal IC design for monitoring"
+   ],
+   "palabras_clave": [
+    "custom integrated circuits",
+    "digital sensor interface",
+    "IoT",
+    "smart industry",
+    "Industry 4.0",
+    "ASIC design",
+    "sensors",
+    "condition monitoring"
+   ],
+   "metodos": [
+    "integrated circuit design"
+   ],
+   "aplicaciones": [
+    "industrial IoT monitoring"
+   ],
+   "afinidad_tracks": {
+    "4": 0.9,
+    "5": 0.4,
+    "6": 0.2
+   },
+   "etapa": "desconocida",
+   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (circuitos integrados de sensores altamente digitales para industria inteligente con IoT). Le interesarían sesiones de sensores y monitoreo, IoT y redes digitales.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "jorge-marin",
+  "nombre": "Jorge Marin",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "highly-digital custom sensor integrated circuits",
+    "sensor interfaces for IoT-driven smart industry",
+    "low-power mixed-signal IC design for monitoring"
+   ],
+   "palabras_clave": [
+    "custom integrated circuits",
+    "digital sensor interface",
+    "IoT",
+    "smart industry",
+    "Industry 4.0",
+    "ASIC design",
+    "sensors",
+    "condition monitoring"
+   ],
+   "metodos": [
+    "integrated circuit design"
+   ],
+   "aplicaciones": [
+    "industrial IoT monitoring"
+   ],
+   "afinidad_tracks": {
+    "4": 0.9,
+    "5": 0.4,
+    "6": 0.2
+   },
+   "etapa": "desconocida",
+   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (circuitos integrados de sensores altamente digitales para industria inteligente con IoT). Le interesarían sesiones de sensores y monitoreo, IoT y redes digitales. Además es chair de la sesión S4A.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "clodomiro-unsihuay-vila",
+  "nombre": "Clodomiro Unsihuay-Vila",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "fair dynamic operating envelopes for DER in active distribution networks",
+    "distributed multi-period optimal power flow",
+    "fairness metrics (Jain index) in DER export/import allocation"
+   ],
+   "palabras_clave": [
+    "dynamic operating envelopes",
+    "fairness",
+    "Jain index",
+    "distributed optimization",
+    "multi-period optimal power flow",
+    "active distribution networks",
+    "DER integration",
+    "prosumers"
+   ],
+   "metodos": [
+    "distributed optimal power flow",
+    "multi-period optimization"
+   ],
+   "aplicaciones": [
+    "DSO management of rooftop PV and DER",
+    "active distribution network operation"
+   ],
+   "afinidad_tracks": {
+    "2": 0.9,
+    "1": 0.7,
+    "7": 0.3
+   },
+   "etapa": "desconocida",
+   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (envolventes operativas dinámicas justas con OPF multiperíodo distribuido e índice de Jain). Le interesarían sesiones de integración de DER, operación de redes de distribución activas y regulación de la distribución.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "daniel-gebbran",
+  "nombre": "Daniel Gebbran",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "fair dynamic operating envelopes for DER in active distribution networks",
+    "distributed multi-period optimal power flow",
+    "fairness metrics (Jain index) in DER export/import allocation"
+   ],
+   "palabras_clave": [
+    "dynamic operating envelopes",
+    "fairness",
+    "Jain index",
+    "distributed optimization",
+    "multi-period optimal power flow",
+    "active distribution networks",
+    "DER integration",
+    "prosumers"
+   ],
+   "metodos": [
+    "distributed optimal power flow",
+    "multi-period optimization"
+   ],
+   "aplicaciones": [
+    "DSO management of rooftop PV and DER",
+    "active distribution network operation"
+   ],
+   "afinidad_tracks": {
+    "2": 0.9,
+    "1": 0.7,
+    "7": 0.3
+   },
+   "etapa": "desconocida",
+   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (envolventes operativas dinámicas justas con OPF multiperíodo distribuido e índice de Jain). Le interesarían sesiones de integración de DER, operación de redes de distribución activas y regulación de la distribución.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "pedro-salomao-quessongo",
+  "nombre": "Pedro Salomão Quessongo",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "fair dynamic operating envelopes for DER in active distribution networks",
+    "distributed multi-period optimal power flow",
+    "fairness metrics (Jain index) in DER export/import allocation"
+   ],
+   "palabras_clave": [
+    "dynamic operating envelopes",
+    "fairness",
+    "Jain index",
+    "distributed optimization",
+    "multi-period optimal power flow",
+    "active distribution networks",
+    "DER integration",
+    "prosumers"
+   ],
+   "metodos": [
+    "distributed optimal power flow",
+    "multi-period optimization"
+   ],
+   "aplicaciones": [
+    "DSO management of rooftop PV and DER",
+    "active distribution network operation"
+   ],
+   "afinidad_tracks": {
+    "2": 0.9,
+    "1": 0.7,
+    "7": 0.3
+   },
+   "etapa": "desconocida",
+   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (envolventes operativas dinámicas justas con OPF multiperíodo distribuido e índice de Jain). Le interesarían sesiones de integración de DER, operación de redes de distribución activas y regulación de la distribución.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "alberto-delrosso",
+  "nombre": "Alberto Delrosso",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "transmission expansion planning co-optimized with dynamic line rating",
+    "power grid expansion under uncertainty",
+    "grid-enhancing technologies for transmission capacity"
+   ],
+   "palabras_clave": [
+    "transmission expansion planning",
+    "dynamic line rating",
+    "DLR",
+    "co-optimization",
+    "uncertainty",
+    "grid-enhancing technologies",
+    "transmission congestion",
+    "renewable integration"
+   ],
+   "metodos": [
+    "co-optimization",
+    "optimization under uncertainty"
+   ],
+   "aplicaciones": [
+    "transmission network planning"
+   ],
+   "afinidad_tracks": {
+    "1": 0.9,
+    "4": 0.4,
+    "2": 0.3,
+    "7": 0.2
+   },
+   "etapa": "desconocida",
+   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (expansión óptima de la red asistida por DLR, co-optimización bajo incertidumbre). Le interesarían sesiones de planificación de transmisión, monitoreo de líneas e integración de renovables.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "mariano-tomas-anello",
+  "nombre": "Mariano Tomás Anello",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "transmission expansion planning co-optimized with dynamic line rating",
+    "power grid expansion under uncertainty",
+    "grid-enhancing technologies for transmission capacity"
+   ],
+   "palabras_clave": [
+    "transmission expansion planning",
+    "dynamic line rating",
+    "DLR",
+    "co-optimization",
+    "uncertainty",
+    "grid-enhancing technologies",
+    "transmission congestion",
+    "renewable integration"
+   ],
+   "metodos": [
+    "co-optimization",
+    "optimization under uncertainty"
+   ],
+   "aplicaciones": [
+    "transmission network planning"
+   ],
+   "afinidad_tracks": {
+    "1": 0.9,
+    "4": 0.4,
+    "2": 0.3,
+    "7": 0.2
+   },
+   "etapa": "desconocida",
+   "resumen": "Búsqueda de Google Scholar pendiente (se agotó el cupo de WebSearch de la sesión antes de llegar a este autor); perfil basado solo en el título de su paper CLAGTEE (expansión óptima de la red asistida por DLR, co-optimización bajo incertidumbre). Le interesarían sesiones de planificación de transmisión, monitoreo de líneas e integración de renovables.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ }
+]
