@@ -29,10 +29,16 @@
       "aplicaciones": [
         "medium-voltage distribution feeders with distributed generation"
       ],
-      "afinidad_tracks": {"2": 0.9, "1": 0.6},
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.6
+      },
       "etapa": "desconocida",
       "resumen": "Sin perfil de Scholar ni otras fuentes. Presenta INT-25 sobre la operación óptima de reguladores de tensión en redes de distribución activas y desbalanceadas, con el grupo de la Universidad Técnica Federico Santa María (Saltos-Rodríguez, Espín-Sarzosa, Álvarez-Malebrán), de donde se infieren afiliación y país; probablemente estudiante o tesista. Evidencia escasa: le interesarían sesiones de control de tensión, integración de DER y flujo de potencia en distribución.",
-      "base": ["papers_clagtee", "grupo_coautores"]
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   },
   {
@@ -65,10 +71,16 @@
       "aplicaciones": [
         "medium-voltage distribution feeders with distributed generation"
       ],
-      "afinidad_tracks": {"2": 0.9, "1": 0.6},
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.6
+      },
       "etapa": "desconocida",
       "resumen": "Sin perfil de Scholar (el único Daniel Aliaga en Scholar es Daniel G. Aliaga, de computación gráfica en Purdue, otra persona). Presenta INT-25 sobre la operación óptima de reguladores de tensión en redes de distribución activas y desbalanceadas, con el grupo de la Universidad Técnica Federico Santa María, de donde se infieren afiliación y país; probablemente estudiante o tesista. Evidencia escasa: le interesarían sesiones de control de tensión, integración de DER y flujo de potencia en distribución.",
-      "base": ["papers_clagtee", "grupo_coautores"]
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   },
   {
@@ -81,19 +93,57 @@
       "nombre_perfil": "Danny Espín-Sarzosa",
       "afiliacion": "Professor, Universidad Técnica Federico Santa María",
       "email_verificado": "usm.cl",
-      "intereses_scholar": ["Microgrids", "Energy management", "Load modeling", "Distributed generation", "Small-scale productive processes"],
+      "intereses_scholar": [
+        "Microgrids",
+        "Energy management",
+        "Load modeling",
+        "Distributed generation",
+        "Small-scale productive processes"
+      ],
       "citas": 199,
       "citas_desde_2021": 181,
       "h_index": 5,
       "publicaciones": [
-        {"titulo": "Multi-objective energy management for modern distribution power systems considering industrial flexibility mechanisms", "anio": 2022, "citas": 19},
-        {"titulo": "Integration of Small Productive Processes Into an Energy Management System for Microgrids", "anio": 2022, "citas": 5},
-        {"titulo": "Modeling of small productive solar processes and their integration into an energy management system for a microgrid", "anio": 2022, "citas": 0},
-        {"titulo": "Modeling of small productive processes for the operation of a microgrid", "anio": 2021, "citas": 9},
-        {"titulo": "Energy management systems for microgrids: Main existing trends in centralized control architectures", "anio": 2020, "citas": 160},
-        {"titulo": "Control possibilities for community microgrids considering small production processes and its benefits to the whole system", "anio": 2020, "citas": 1},
-        {"titulo": "Incorporation of productive solar solutions for communities into microgrid energy management systems", "anio": 2019, "citas": 5},
-        {"titulo": "Impact of battery aging model in an energy management system for an isolated solar microgrid", "anio": 2019, "citas": 0}
+        {
+          "titulo": "Multi-objective energy management for modern distribution power systems considering industrial flexibility mechanisms",
+          "anio": 2022,
+          "citas": 19
+        },
+        {
+          "titulo": "Integration of Small Productive Processes Into an Energy Management System for Microgrids",
+          "anio": 2022,
+          "citas": 5
+        },
+        {
+          "titulo": "Modeling of small productive solar processes and their integration into an energy management system for a microgrid",
+          "anio": 2022,
+          "citas": 0
+        },
+        {
+          "titulo": "Modeling of small productive processes for the operation of a microgrid",
+          "anio": 2021,
+          "citas": 9
+        },
+        {
+          "titulo": "Energy management systems for microgrids: Main existing trends in centralized control architectures",
+          "anio": 2020,
+          "citas": 160
+        },
+        {
+          "titulo": "Control possibilities for community microgrids considering small production processes and its benefits to the whole system",
+          "anio": 2020,
+          "citas": 1
+        },
+        {
+          "titulo": "Incorporation of productive solar solutions for communities into microgrid energy management systems",
+          "anio": 2019,
+          "citas": 5
+        },
+        {
+          "titulo": "Impact of battery aging model in an energy management system for an isolated solar microgrid",
+          "anio": 2019,
+          "citas": 0
+        }
       ],
       "confianza": "alta",
       "evidencia": "Nombre poco común e idéntico; perfil en la USM (usm.cl), la misma institución de sus coautores CLAGTEE Saltos-Rodríguez y Álvarez-Malebrán, en cuyos perfiles figura como coautor (Renewable Energy 2025 sobre Ecuador; IEEE PESGM 2025 sobre planificación de transmisión). Su línea de microrredes y EMS coincide con PLA-52 (microrredes aisladas)."
@@ -135,10 +185,18 @@
         "industrial flexibility in distribution systems",
         "Ecuadorian and Chilean power systems"
       ],
-      "afinidad_tracks": {"1": 0.9, "2": 0.9, "12": 0.3, "7": 0.2},
+      "afinidad_tracks": {
+        "1": 0.9,
+        "2": 0.9,
+        "12": 0.3,
+        "7": 0.2
+      },
       "etapa": "investigador_inicial",
       "resumen": "Profesor de la Universidad Técnica Federico Santa María, doctorado en la Universidad de Chile (2022) con una tesis sobre sistemas de gestión de energía (EMS) para microrredes que integran pequeños procesos productivos solares. Coautor de INT-25 (reguladores de tensión en redes desbalanceadas) y PLA-52 (planificación multiobjetivo de microrredes aisladas con el nexo agua-energía-alimentos). Le interesarían sesiones sobre microrredes, EMS, flexibilidad de la demanda, planificación con DER y almacenamiento, y electrificación rural.",
-      "base": ["papers_clagtee", "google_scholar"]
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
   },
   {
@@ -171,10 +229,16 @@
       "aplicaciones": [
         "medium-voltage distribution feeders with distributed generation"
       ],
-      "afinidad_tracks": {"2": 0.9, "1": 0.6},
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.6
+      },
       "etapa": "desconocida",
       "resumen": "Sin perfil de Scholar ni otras fuentes. Coautor de INT-25 sobre la operación óptima de reguladores de tensión en redes de distribución activas y desbalanceadas, con el grupo de la Universidad Técnica Federico Santa María, de donde se infieren afiliación y país; podría ser estudiante o venir de la industria. Evidencia escasa: le interesarían sesiones de control de tensión, integración de DER y operación de redes de distribución.",
-      "base": ["papers_clagtee", "grupo_coautores"]
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   },
   {
@@ -208,10 +272,18 @@
         "isolated rural communities",
         "off-grid microgrids with water pumping and agricultural loads"
       ],
-      "afinidad_tracks": {"1": 0.9, "2": 0.7, "12": 0.3, "13": 0.2},
+      "afinidad_tracks": {
+        "1": 0.9,
+        "2": 0.7,
+        "12": 0.3,
+        "13": 0.2
+      },
       "etapa": "desconocida",
       "resumen": "Sin perfil de Scholar ni otras fuentes. Presenta PLA-52, un marco de planificación multiobjetivo para microrredes aisladas que integra el nexo agua-energía-alimentos, con el grupo de la Universidad Técnica Federico Santa María (Espín-Sarzosa, Saltos-Rodríguez, Álvarez-Malebrán), de donde se infieren afiliación y país; probablemente estudiante o tesista. Evidencia escasa: le interesarían sesiones de microrredes, planificación con renovables y almacenamiento, y electrificación rural.",
-      "base": ["papers_clagtee", "grupo_coautores"]
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   },
   {
@@ -245,10 +317,18 @@
         "isolated rural communities",
         "off-grid microgrids with water pumping and agricultural loads"
       ],
-      "afinidad_tracks": {"1": 0.9, "2": 0.7, "12": 0.3, "13": 0.2},
+      "afinidad_tracks": {
+        "1": 0.9,
+        "2": 0.7,
+        "12": 0.3,
+        "13": 0.2
+      },
       "etapa": "desconocida",
       "resumen": "Sin perfil de Scholar ni otras fuentes (los Méndez que aparecen en Scholar son otras personas). Coautor de PLA-52 sobre planificación multiobjetivo de microrredes aisladas con el nexo agua-energía-alimentos, con el grupo de la Universidad Técnica Federico Santa María, de donde se infieren afiliación y país. Evidencia escasa: le interesarían sesiones de microrredes, planificación con renovables y almacenamiento, y electrificación rural.",
-      "base": ["papers_clagtee", "grupo_coautores"]
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   },
   {
@@ -261,23 +341,75 @@
       "nombre_perfil": "Miguel Angel Saltos Rodriguez",
       "afiliacion": "Universidad Técnica Federico Santa María",
       "email_verificado": "usm.cl",
-      "intereses_scholar": ["Microredes", "Energías renovables", "Sistemas eléctricos de potencia"],
+      "intereses_scholar": [
+        "Microredes",
+        "Energías renovables",
+        "Sistemas eléctricos de potencia"
+      ],
       "citas": 112,
       "citas_desde_2021": 112,
       "h_index": 6,
       "publicaciones": [
-        {"titulo": "Deploying renewable energy sources and energy storage systems for achieving low-carbon emissions targets in hydro-dominated power systems: A case study of Ecuador", "anio": 2025, "citas": 26},
-        {"titulo": "Dimensionamiento óptimo de sistemas fotovoltaicos y baterías en entornos residenciales para reducir la dependencia de la infraestructura eléctrica centralizada", "anio": 2025, "citas": 4},
-        {"titulo": "Assessing the impact of distributed generation on power distribution systems", "anio": 2023, "citas": 3},
-        {"titulo": "Linear Three-Phase Power Flow for Unbalanced Power Distribution Systems with Distributed Generation and Approximating Distribution Losses", "anio": 2023, "citas": 0},
-        {"titulo": "Comparative Analysis of Linearized AC Power Flow Models for Power Distribution Systems", "anio": 2023, "citas": 0},
-        {"titulo": "Planificación Óptima de Recursos Energéticos Distribuidos para Mejorar la Resiliencia de Sistemas de Distribución de Energía Eléctrica frente a Desastres Naturales: Caso en Lahares Volcánicos", "anio": 2022, "citas": 15},
-        {"titulo": "Practical Framework for Optimal Planning of Isolated Rural Microgrids", "anio": 2022, "citas": 7},
-        {"titulo": "Optimizing resource and restoration scheduling for power distribution systems after a natural hazard: A case study with volcanic lahars", "anio": 2022, "citas": 5},
-        {"titulo": "Practical Framework for Optimal Planning of Microgrids for Production Processes", "anio": 2022, "citas": 2},
-        {"titulo": "Resilience assessment in electric power systems against volcanic eruptions: Case on lahars occurrence", "anio": 2021, "citas": 11},
-        {"titulo": "Optimal Planning of VAR Compensator for Voltage Regulation Enhancement on Power Distribution Systems Against Volcanic Eruptions Events", "anio": 2021, "citas": 9},
-        {"titulo": "Distributed Generation for Resilience Enhancement on Power Distribution System Against Lahars Occurrence After a Volcanic Eruption", "anio": 2021, "citas": 8}
+        {
+          "titulo": "Deploying renewable energy sources and energy storage systems for achieving low-carbon emissions targets in hydro-dominated power systems: A case study of Ecuador",
+          "anio": 2025,
+          "citas": 26
+        },
+        {
+          "titulo": "Dimensionamiento óptimo de sistemas fotovoltaicos y baterías en entornos residenciales para reducir la dependencia de la infraestructura eléctrica centralizada",
+          "anio": 2025,
+          "citas": 4
+        },
+        {
+          "titulo": "Assessing the impact of distributed generation on power distribution systems",
+          "anio": 2023,
+          "citas": 3
+        },
+        {
+          "titulo": "Linear Three-Phase Power Flow for Unbalanced Power Distribution Systems with Distributed Generation and Approximating Distribution Losses",
+          "anio": 2023,
+          "citas": 0
+        },
+        {
+          "titulo": "Comparative Analysis of Linearized AC Power Flow Models for Power Distribution Systems",
+          "anio": 2023,
+          "citas": 0
+        },
+        {
+          "titulo": "Planificación Óptima de Recursos Energéticos Distribuidos para Mejorar la Resiliencia de Sistemas de Distribución de Energía Eléctrica frente a Desastres Naturales: Caso en Lahares Volcánicos",
+          "anio": 2022,
+          "citas": 15
+        },
+        {
+          "titulo": "Practical Framework for Optimal Planning of Isolated Rural Microgrids",
+          "anio": 2022,
+          "citas": 7
+        },
+        {
+          "titulo": "Optimizing resource and restoration scheduling for power distribution systems after a natural hazard: A case study with volcanic lahars",
+          "anio": 2022,
+          "citas": 5
+        },
+        {
+          "titulo": "Practical Framework for Optimal Planning of Microgrids for Production Processes",
+          "anio": 2022,
+          "citas": 2
+        },
+        {
+          "titulo": "Resilience assessment in electric power systems against volcanic eruptions: Case on lahars occurrence",
+          "anio": 2021,
+          "citas": 11
+        },
+        {
+          "titulo": "Optimal Planning of VAR Compensator for Voltage Regulation Enhancement on Power Distribution Systems Against Volcanic Eruptions Events",
+          "anio": 2021,
+          "citas": 9
+        },
+        {
+          "titulo": "Distributed Generation for Resilience Enhancement on Power Distribution System Against Lahars Occurrence After a Volcanic Eruption",
+          "anio": 2021,
+          "citas": 8
+        }
       ],
       "confianza": "alta",
       "evidencia": "El perfil indica también el nombre M. Saltos-Rodríguez; su coautor CLAGTEE Danny Espín-Sarzosa firma con él el artículo de Renewable Energy 2025 listado en el perfil. Mismo dominio (usm.cl) que Espín-Sarzosa y Álvarez-Malebrán; publica sobre microrredes rurales aisladas y flujo de potencia trifásico desbalanceado, en línea con PLA-52 e INT-25."
@@ -320,10 +452,18 @@
         "residential PV and battery sizing",
         "hydro-dominated national power systems"
       ],
-      "afinidad_tracks": {"1": 0.9, "2": 0.9, "7": 0.3, "12": 0.2},
+      "afinidad_tracks": {
+        "1": 0.9,
+        "2": 0.9,
+        "7": 0.3,
+        "12": 0.2
+      },
       "etapa": "investigador_inicial",
       "resumen": "Investigador de la Universidad Técnica Federico Santa María, con trayectoria previa en Ecuador (coautores de la ESPE). Trabaja en la resiliencia de redes de distribución frente a desastres naturales (lahares, ceniza volcánica, sismos), en la planificación de DER y BESS, en flujos de potencia trifásicos linealizados y en microrredes rurales aisladas; es coautor de INT-25 y PLA-52. Le interesarían sesiones de resiliencia, planificación de distribución con DER, microrredes y descarbonización con renovables y almacenamiento.",
-      "base": ["papers_clagtee", "google_scholar"]
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
   },
   {
@@ -336,23 +476,74 @@
       "nombre_perfil": "Ricardo Alvarez-Malebrán",
       "afiliacion": "Universidad Técnica Federico Santa María",
       "email_verificado": "usm.cl",
-      "intereses_scholar": ["Power system planning", "Artificial intelligence applications"],
+      "intereses_scholar": [
+        "Power system planning",
+        "Artificial intelligence applications"
+      ],
       "citas": 740,
       "citas_desde_2021": 489,
       "h_index": 13,
       "publicaciones": [
-        {"titulo": "Hedging against asset-heavy network expansion delays through rapid deployments of FACTS and BESS", "anio": 2027, "citas": 0},
-        {"titulo": "Towards Resilient Transmission Grids: Enhancing Stochastic Transmission Planning Through Deep Uncertainty Sources Considerations", "anio": 2025, "citas": 0},
-        {"titulo": "Artificial intelligence techniques for dynamic security assessments-a survey", "anio": 2024, "citas": 20},
-        {"titulo": "Optimal sizing and allocation of Battery Energy Storage for improving voltage robustness", "anio": 2024, "citas": 0},
-        {"titulo": "Identification and design of special protection schemes for the energy transition", "anio": 2024, "citas": 7},
-        {"titulo": "Review of wide-area controllers for supporting power system stability", "anio": 2023, "citas": 38},
-        {"titulo": "Determination of control requirements to impose on CIG for ensuring frequency stability of low inertia power systems", "anio": 2022, "citas": 39},
-        {"titulo": "The role of fast frequency response of energy storage systems and renewables for ensuring frequency stability in future low-inertia power systems", "anio": 2021, "citas": 60},
-        {"titulo": "Multi-year stochastic transmission network expansion planning considering line uprating", "anio": 2021, "citas": 12},
-        {"titulo": "Practical framework for frequency stability studies in power systems with renewable energy sources", "anio": 2020, "citas": 70},
-        {"titulo": "A novel meta-heuristic model for the multi-year transmission network expansion planning", "anio": 2019, "citas": 39},
-        {"titulo": "Optimal allocation and capacity of energy storage systems in a future European power system with 100% renewable energy generation", "anio": 2014, "citas": 185}
+        {
+          "titulo": "Hedging against asset-heavy network expansion delays through rapid deployments of FACTS and BESS",
+          "anio": 2027,
+          "citas": 0
+        },
+        {
+          "titulo": "Towards Resilient Transmission Grids: Enhancing Stochastic Transmission Planning Through Deep Uncertainty Sources Considerations",
+          "anio": 2025,
+          "citas": 0
+        },
+        {
+          "titulo": "Artificial intelligence techniques for dynamic security assessments-a survey",
+          "anio": 2024,
+          "citas": 20
+        },
+        {
+          "titulo": "Optimal sizing and allocation of Battery Energy Storage for improving voltage robustness",
+          "anio": 2024,
+          "citas": 0
+        },
+        {
+          "titulo": "Identification and design of special protection schemes for the energy transition",
+          "anio": 2024,
+          "citas": 7
+        },
+        {
+          "titulo": "Review of wide-area controllers for supporting power system stability",
+          "anio": 2023,
+          "citas": 38
+        },
+        {
+          "titulo": "Determination of control requirements to impose on CIG for ensuring frequency stability of low inertia power systems",
+          "anio": 2022,
+          "citas": 39
+        },
+        {
+          "titulo": "The role of fast frequency response of energy storage systems and renewables for ensuring frequency stability in future low-inertia power systems",
+          "anio": 2021,
+          "citas": 60
+        },
+        {
+          "titulo": "Multi-year stochastic transmission network expansion planning considering line uprating",
+          "anio": 2021,
+          "citas": 12
+        },
+        {
+          "titulo": "Practical framework for frequency stability studies in power systems with renewable energy sources",
+          "anio": 2020,
+          "citas": 70
+        },
+        {
+          "titulo": "A novel meta-heuristic model for the multi-year transmission network expansion planning",
+          "anio": 2019,
+          "citas": 39
+        },
+        {
+          "titulo": "Optimal allocation and capacity of energy storage systems in a future European power system with 100% renewable energy generation",
+          "anio": 2014,
+          "citas": 185
+        }
       ],
       "confianza": "alta",
       "evidencia": "Su coautor CLAGTEE Danny Espín-Sarzosa firma con él 'Towards Resilient Transmission Grids...' (IEEE PESGM 2025), listado en el perfil. Mismo dominio usm.cl que Espín-Sarzosa y Saltos-Rodríguez, y coautores compartidos con ellos (D. Ortiz-Villalba, R. Palma-Behnke, F. Valencia). Variante del nombre: Ricardo Alvarez-Malebrán."
@@ -396,10 +587,1426 @@
         "low-inertia grids with high PV and wind shares",
         "unbalanced distribution networks and isolated microgrids"
       ],
-      "afinidad_tracks": {"1": 0.9, "2": 0.8, "6": 0.5, "7": 0.3, "3": 0.2},
+      "afinidad_tracks": {
+        "1": 0.9,
+        "2": 0.8,
+        "6": 0.5,
+        "7": 0.3,
+        "3": 0.2
+      },
       "etapa": "investigador_consolidado",
       "resumen": "Académico de la Universidad Técnica Federico Santa María (h-index 13) especializado en planificación de sistemas de potencia: expansión estocástica de la transmisión, estabilidad de frecuencia en sistemas de baja inercia, dimensionamiento de almacenamiento y aplicaciones de inteligencia artificial a la evaluación de seguridad dinámica. En CLAGTEE es coautor de INT-25 (reguladores de tensión) y PLA-52 (microrredes aisladas). Le interesarían sesiones de planificación y operación, integración de renovables y almacenamiento, estabilidad y IA aplicada a sistemas eléctricos.",
-      "base": ["papers_clagtee", "google_scholar"]
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    }
+  },
+  {
+    "id": "fabiano-borges-da-silva",
+    "nombre": "Fabiano Borges da Silva",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Bauru",
+    "pais_inferido": "Brasil",
+    "nota_busqueda": "Búsquedas en scholar.google.com: 'Fabiano Borges da Silva UNESP Bauru' y 'Fabiano Borges da Silva evolutionary algorithm convergence'; sin perfil. No figura en las barras de coautores de Nepomuceno, Soler, Balbo ni Baptista. Sus papers aparecen en el perfil de Nepomuceno como FB da Silva.",
+    "intereses": {
+      "temas": [
+        "evolutionary and swarm metaheuristics for nonconvex economic dispatch",
+        "convergence analysis of evolutionary algorithms",
+        "network-constrained economic dispatch"
+      ],
+      "palabras_clave": [
+        "particle swarm optimization",
+        "genetic algorithms",
+        "nonconvex economic dispatch",
+        "convergence rate",
+        "Lipschitz continuous functions",
+        "valve-point effects",
+        "metaheuristics"
+      ],
+      "metodos": [
+        "multi-strategy group PSO",
+        "adaptive evolutionary algorithms with convergence proofs",
+        "directed genetic algorithms"
+      ],
+      "aplicaciones": [
+        "economic dispatch of thermal generating units"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "6": 0.5,
+        "7": 0.2
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Scholar. Coautor de PLA-16 (PSO multiestrategia para despacho económico no convexo) en el grupo de Leonardo Nepomuceno (UNESP Bauru), cuyo perfil Scholar verificado lista trabajos con TG Cabana, LTM Borges, FB da Silva y M de Melo Leal; ahí figura como primer autor de 'Adaptive evolutionary algorithms with linear average convergence rate…' (Applied Soft Computing, 2025) y coautor del algoritmo genético dirigido con prueba de convergencia, lo que indica un perfil matemático en metaheurísticas. Le interesarían sesiones de operación y despacho, optimización y computación avanzada.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "giovanna-sboldrim-pascolat",
+    "nombre": "Giovanna Sboldrim Pascolat",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Bauru",
+    "pais_inferido": "Brasil",
+    "nota_busqueda": "Búsqueda en scholar.google.com: 'Giovanna Sboldrim Pascolat' (sin resultados) y búsqueda web general '\"Giovanna Sboldrim\" UNESP' (sin coincidencias). No figura en las barras de coautores del grupo ni en las publicaciones del perfil de Nepomuceno.",
+    "intereses": {
+      "temas": [
+        "particle swarm optimization for nonconvex economic dispatch",
+        "metaheuristics for generation scheduling"
+      ],
+      "palabras_clave": [
+        "particle swarm optimization",
+        "multi-strategy PSO",
+        "nonconvex economic dispatch",
+        "valve-point effects",
+        "metaheuristics"
+      ],
+      "metodos": [
+        "multi-strategy group PSO"
+      ],
+      "aplicaciones": [
+        "economic dispatch of thermal generating units"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "6": 0.4
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Scholar ni otras fuentes. Presenta PLA-16 (PSO multiestrategia en grupo para despacho económico no convexo) con el grupo de Leonardo Nepomuceno (UNESP Bauru), cuyo perfil Scholar verificado lista trabajos con TG Cabana, LTM Borges, FB da Silva y M de Melo Leal, de donde se infieren afiliación y país; probablemente estudiante. Evidencia escasa: le interesarían sesiones de operación y despacho de sistemas eléctricos y de metaheurísticas.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "leonardo-nepomuceno",
+    "nombre": "Leonardo Nepomuceno",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=PmMTSKkAAAAJ",
+      "user_id": "PmMTSKkAAAAJ",
+      "nombre_perfil": "Leonardo Nepomuceno",
+      "afiliacion": "Professor of Electrical Power Systems, Universidade Estadual Paulista (UNESP)",
+      "email_verificado": "feb.unesp.br",
+      "intereses_scholar": [
+        "Power System Planning and Operation",
+        "Electricity Markets"
+      ],
+      "citas": 847,
+      "citas_desde_2021": 325,
+      "h_index": 14,
+      "publicaciones": [
+        {
+          "titulo": "Equilibria among strategic producers and strategic consumers: a solution approach relying on a single optimization problem",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Linearization and Conic Convexification in a Nonlinear Hydrothermal OPF Model",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "A directed genetic algorithm for economic dispatch and network-constrained economic dispatch: Convergence proof",
+          "anio": 2025,
+          "citas": 5
+        },
+        {
+          "titulo": "Adaptive evolutionary algorithms with linear average convergence rate for optimization problems with Lipschitz continuous functions",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Dualization Process of an Optimization Problem",
+          "anio": 2025,
+          "citas": 0
+        },
+        {
+          "titulo": "Adaptive stochastic approach for solving long-term hydrothermal scheduling problems",
+          "anio": 2025,
+          "citas": 8
+        },
+        {
+          "titulo": "Solving a bilevel strategic offering model for a generation company in a hydrothermal energy market: A new convexification approach",
+          "anio": 2024,
+          "citas": 4
+        },
+        {
+          "titulo": "Discrete optimal power flow with prohibited zones, multiple-fuel options, and practical operational rules for control devices",
+          "anio": 2024,
+          "citas": 11
+        },
+        {
+          "titulo": "A primal–dual penalty-interior-point method for solving the reactive optimal power flow problem with discrete control variables",
+          "anio": 2022,
+          "citas": 26
+        },
+        {
+          "titulo": "Solving nonsmooth and discontinuous optimal power flow problems via interior-point ℓp-penalty approach",
+          "anio": 2022,
+          "citas": 12
+        },
+        {
+          "titulo": "Optimal active power dispatch combining network flow and interior point approaches",
+          "anio": 2003,
+          "citas": 130
+        },
+        {
+          "titulo": "Short term hydroelectric scheduling combining network flow and interior point approaches",
+          "anio": 2005,
+          "citas": 108
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Sus publicaciones incluyen a los coautores CLAGTEE TG Cabana (OPF no suave, 2022), LTM Borges y FB da Silva (algoritmo genético dirigido para despacho económico y algoritmos evolutivos adaptativos, Applied Soft Computing 2025) y M de Melo Leal (dualización, INDUSCON 2025); también publica sobre ofertas estratégicas de generadoras price-maker, la línea de MER-6. Email verificado feb.unesp.br."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Faculdade de Engenharia de Bauru",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "strategic offering and equilibrium models for price-maker generation companies",
+        "optimal power flow with nonsmooth, discrete and nonconvex features",
+        "economic dispatch via interior-point and evolutionary methods",
+        "hydrothermal scheduling and hydrothermal OPF",
+        "retail and distribution-level electricity market models"
+      ],
+      "palabras_clave": [
+        "strategic bidding",
+        "price-maker generation companies",
+        "bilevel optimization",
+        "optimal power flow",
+        "reactive optimal power flow",
+        "economic dispatch",
+        "hydrothermal scheduling",
+        "interior-point methods",
+        "stochastic optimization",
+        "market equilibrium",
+        "retail electricity markets"
+      ],
+      "metodos": [
+        "primal-dual interior-point methods",
+        "bilevel and MPEC formulations with convexification",
+        "stochastic programming",
+        "genetic algorithms and PSO",
+        "penalty methods for nonsmooth optimization"
+      ],
+      "aplicaciones": [
+        "pool-based day-ahead electricity markets",
+        "hydrothermal systems",
+        "retail markets with price-taker distribution areas",
+        "economic dispatch with valve-point effects"
+      ],
+      "afinidad_tracks": {
+        "7": 0.9,
+        "1": 0.9,
+        "6": 0.3
+      },
+      "etapa": "investigador_senior",
+      "resumen": "Profesor de sistemas eléctricos de potencia en la UNESP Bauru que investiga mercados eléctricos (ofertas estratégicas de generadoras price-maker, equilibrios, modelos de FPO para mercado minorista) y optimización de la operación (FPO no suave y discreto, despacho económico, programación hidrotérmica) con métodos de punto interior, programación binivel y metaheurísticas. En CLAGTEE firma MER-4, MER-6 y PLA-16; le interesarían sesiones de mercados y regulación, operación y planificación, y métodos de optimización.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    }
+  },
+  {
+    "id": "livia-teresa-minami-borges",
+    "nombre": "Livia Teresa Minami Borges",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Bauru",
+    "pais_inferido": "Brasil",
+    "nota_busqueda": "Búsquedas en scholar.google.com: 'Livia Teresa Minami Borges' y 'Minami Borges directed genetic algorithm economic dispatch'; sin perfil. No figura en las barras de coautores del grupo. Sus papers aparecen en el perfil de Nepomuceno como LTM Borges.",
+    "intereses": {
+      "temas": [
+        "genetic algorithms with convergence guarantees for economic dispatch",
+        "network-constrained economic dispatch",
+        "metaheuristics for nonconvex dispatch problems"
+      ],
+      "palabras_clave": [
+        "directed genetic algorithm",
+        "convergence proof",
+        "economic dispatch",
+        "network-constrained economic dispatch",
+        "particle swarm optimization",
+        "evolutionary algorithms",
+        "nonconvex optimization"
+      ],
+      "metodos": [
+        "directed genetic algorithms",
+        "multi-strategy group PSO",
+        "convergence analysis of evolutionary algorithms"
+      ],
+      "aplicaciones": [
+        "economic dispatch of thermal generating units"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "6": 0.5
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Scholar. Coautora de PLA-16 (PSO multiestrategia para despacho económico no convexo) en el grupo de Leonardo Nepomuceno (UNESP Bauru), cuyo perfil Scholar verificado lista trabajos con TG Cabana, LTM Borges, FB da Silva y M de Melo Leal; ahí figura como primera autora de 'A directed genetic algorithm for economic dispatch and network-constrained economic dispatch: Convergence proof' (Applied Soft Computing, 2025). Le interesarían sesiones de operación y despacho y de optimización y metaheurísticas.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "matheus-de-melo-leal",
+    "nombre": "Matheus de Melo Leal",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Bauru",
+    "pais_inferido": "Brasil",
+    "nota_busqueda": "Búsquedas en scholar.google.com: 'Matheus de Melo Leal UNESP electricity market' y 'Matheus Leal Nepomuceno strategic offering price-maker'; sin perfil. Su paper 'Dualization Process of an Optimization Problem' (INDUSCON 2025, con L Nepomuceno) aparece en el perfil de Nepomuceno.",
+    "intereses": {
+      "temas": [
+        "optimal power flow models for retail electricity markets",
+        "strategic offering of price-maker generation companies under uncertainty",
+        "duality theory for bilevel market models"
+      ],
+      "palabras_clave": [
+        "retail electricity market",
+        "optimal power flow",
+        "price-taker distribution areas",
+        "strategic offering",
+        "price-maker generation companies",
+        "stochastic optimization",
+        "dualization",
+        "bilevel optimization"
+      ],
+      "metodos": [
+        "stochastic programming",
+        "duality-based reformulation of optimization problems"
+      ],
+      "aplicaciones": [
+        "retail energy markets with distribution areas",
+        "pool-based electricity markets"
+      ],
+      "afinidad_tracks": {
+        "7": 0.9,
+        "1": 0.5
+      },
+      "etapa": "estudiante",
+      "resumen": "Sin perfil de Scholar. Presenta MER-4 (FPO para el mercado minorista con áreas de distribución price-taker) y MER-6 (comparación de modelos estocásticos para la oferta estratégica de generadoras price-maker) con el grupo de Leonardo Nepomuceno (UNESP Bauru), cuyo perfil Scholar verificado lista trabajos con TG Cabana, LTM Borges, FB da Silva y M de Melo Leal; su único otro trabajo visible es un paper de dualización con Nepomuceno (INDUSCON 2025), por lo que probablemente es estudiante de posgrado. Le interesarían sesiones de mercados eléctricos, regulación y optimización de la operación.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "tiago-gomes-cabana",
+    "nombre": "Tiago Gomes Cabana",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=BmKgmRoAAAAJ",
+      "user_id": "BmKgmRoAAAAJ",
+      "nombre_perfil": "Tiago Gomes Cabana",
+      "afiliacion": "Doutorando, Faculdade de Engenharia da Universidade Estadual Paulista (UNESP), Campus de Bauru",
+      "email_verificado": "unesp.br",
+      "intereses_scholar": [
+        "Sistemas Elétricos de Potência"
+      ],
+      "citas": 22,
+      "citas_desde_2021": 21,
+      "h_index": 3,
+      "publicaciones": [
+        {
+          "titulo": "Methodology for Evaluating Price-Quota Curves Used by Price-Maker Generation Companies in Pool-Based Electricity Market",
+          "anio": 2023,
+          "citas": 0
+        },
+        {
+          "titulo": "Cálculo de ofertas estratégicas por meio de sistema de curvas cota-preço Nodais com restrições de rede em mercados do dia seguinte",
+          "anio": 2023,
+          "citas": 0
+        },
+        {
+          "titulo": "Optimization-based models for estimating residual demand curves for a price-maker company",
+          "anio": 2022,
+          "citas": 5
+        },
+        {
+          "titulo": "Solving nonsmooth and discontinuous optimal power flow problems via interior-point ℓp-penalty approach",
+          "anio": 2022,
+          "citas": 12
+        },
+        {
+          "titulo": "Resolvendo Problemas de Despacho Econômico com Zonas de Operação Proibida via Abordagem Baseada em Gradiente",
+          "anio": 2021,
+          "citas": 0
+        },
+        {
+          "titulo": "Problema de Ofertas Estratégicas de uma Companhia Price-Maker: Avaliação da Influência da Previsão de Ofertas dos Demais Agentes",
+          "anio": 2020,
+          "citas": 0
+        },
+        {
+          "titulo": "Novo método de construção da curva cota-preço para companhias geradoras do tipo Price-Maker via modelos de otimização",
+          "anio": 2019,
+          "citas": 5
+        },
+        {
+          "titulo": "Modelos de auto-produção multi-período de companhias price-makers em mercados de energia do tipo pool",
+          "anio": 2017,
+          "citas": 0
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Publica con Leonardo Nepomuceno (coautor de MER-6) varios trabajos sobre curvas cota-precio y ofertas estratégicas de generadoras price-maker, la misma línea de MER-6; doctorando de la UNESP Bauru con email verificado unesp.br. También figura como TG Cabana en el perfil verificado de Nepomuceno."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Faculdade de Engenharia de Bauru",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "strategic offering of price-maker generation companies",
+        "price-quota and residual demand curves in pool-based markets",
+        "nodal strategic bidding with network constraints",
+        "nonsmooth optimal power flow and economic dispatch"
+      ],
+      "palabras_clave": [
+        "price-maker",
+        "price-quota curves",
+        "residual demand curves",
+        "strategic bidding",
+        "day-ahead market",
+        "pool-based electricity market",
+        "self-scheduling",
+        "hydrothermal company",
+        "optimal power flow",
+        "prohibited operating zones"
+      ],
+      "metodos": [
+        "optimization-based market models",
+        "stochastic programming",
+        "interior-point penalty methods",
+        "gradient-based methods"
+      ],
+      "aplicaciones": [
+        "generation companies in pool-based markets",
+        "hydrothermal systems",
+        "economic dispatch with prohibited zones"
+      ],
+      "afinidad_tracks": {
+        "7": 0.9,
+        "1": 0.6
+      },
+      "etapa": "estudiante",
+      "resumen": "Doctorando de la UNESP Bauru que investiga ofertas estratégicas de generadoras price-maker en mercados tipo pool (curvas cota-precio, curvas de demanda residual, ofertas nodales con restricciones de red), además de FPO y despacho económico no suaves. Coautor de MER-6 con Nepomuceno y Melo Leal; le interesarían sesiones de mercados eléctricos y de operación y optimización de sistemas.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    }
+  },
+  {
+    "id": "andres-luis-sabillon-antunez",
+    "nombre": "Andres Luis Sabillon Antunez",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Ilha Solteira",
+    "pais_inferido": "Brasil",
+    "nota_busqueda": "Búsquedas en scholar.google.com: 'Andres Luis Sabillon electric vehicle charging UNESP' y 'Andrés Sabillón UNESP Ilha Solteira'; sin perfil propio. No confundir con Carlos Sabillón Antúnez (user=6VhlRRMAAAAJ, Universidad Loyola), coautor histórico de Franco. Sus papers aparecen como AL Sabillon en los perfiles de Franco y Mejía Alzate.",
+    "intereses": {
+      "temas": [
+        "dynamic pricing and demand management for EV charging stations",
+        "optimal siting and sizing of EV charging stations",
+        "spatio-temporal estimation of EV charging profiles",
+        "GIS-based identification of candidate charging sites"
+      ],
+      "palabras_clave": [
+        "electric vehicle charging stations",
+        "dynamic pricing",
+        "demand management",
+        "nodal capacity constraints",
+        "fuzzy logic",
+        "multi-objective optimization",
+        "geospatial analysis",
+        "Markov chains",
+        "charging infrastructure planning"
+      ],
+      "metodos": [
+        "multi-objective optimization",
+        "fuzzy logic",
+        "Markov chain models",
+        "GIS-based spatial analysis"
+      ],
+      "aplicaciones": [
+        "public EV charging infrastructure in distribution networks"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "2": 0.6,
+        "7": 0.4
+      },
+      "etapa": "estudiante",
+      "resumen": "Sin perfil de Scholar. Presenta PLA-50 (precios dinámicos y gestión de demanda en estaciones de recarga de VE con restricciones nodales de capacidad) con John Fredy Franco y Mario Andrés Mejía Alzate (UNESP Ilha Solteira); en los perfiles de ambos figura como AL Sabillon en trabajos sobre localización y dimensionamiento de estaciones de carga con lógica difusa y optimización multiobjetivo (INDUSCON 2025, XV CLAGTEE 2024) y perfiles de carga de VE con cadenas de Markov, por lo que probablemente es estudiante de posgrado. Le interesarían sesiones de movilidad eléctrica, planificación de distribución y respuesta de la demanda.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "dayara-pereira-basso",
+    "nombre": "Dayara Pereira Basso",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [
+      {
+        "tipo": "institucional",
+        "url": "https://bv.fapesp.br/en/pesquisador/698982/"
+      }
+    ],
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Faculdade de Engenharia de Ilha Solteira",
+    "pais_inferido": "Brasil",
+    "nota_busqueda": "Búsqueda en scholar.google.com: 'Dayara Pereira Basso'; sin perfil. Búsqueda web general: página de la Biblioteca Virtual FAPESP (doctoranda en Ingeniería Eléctrica, UNESP Ilha Solteira; becas sobre microrredes para estaciones de carga de VE y comunidades energéticas ante eventos extremos). Sus papers con Franco aparecen en el perfil de este como DP Basso / D Basso.",
+    "intereses": {
+      "temas": [
+        "stochastic and robust planning of standalone energy communities",
+        "resilience of energy communities under extreme weather events",
+        "sizing of hybrid microgrids for EV charging stations",
+        "vehicle-to-community and load shifting flexibility"
+      ],
+      "palabras_clave": [
+        "energy communities",
+        "extreme weather events",
+        "resilience",
+        "stochastic programming",
+        "robust optimization",
+        "microgrid sizing",
+        "electric vehicle charging stations",
+        "vehicle-to-community",
+        "load shifting",
+        "batteries"
+      ],
+      "metodos": [
+        "stochastic programming",
+        "robust optimization",
+        "mixed-integer linear programming",
+        "multi-objective energy management"
+      ],
+      "aplicaciones": [
+        "standalone energy communities in southern Brazil",
+        "autonomous EV charging stations powered by renewable microgrids"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "2": 0.8
+      },
+      "etapa": "estudiante",
+      "resumen": "Doctoranda en Ingeniería Eléctrica en la UNESP Ilha Solteira (según FAPESP) que trabaja en la planificación estocástica y robusta de comunidades energéticas autónomas y microrredes con VE ante eventos climáticos extremos, con John Fredy Franco. Presenta PLA-48 (caso de estudio en el sur de Brasil); le interesarían sesiones de resiliencia, microrredes, almacenamiento y planificación con incertidumbre.",
+      "base": [
+        "papers_clagtee",
+        "otras_fuentes",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "john-fredy-franco-baquero",
+    "nombre": "John Fredy Franco Baquero",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=DTjQYawAAAAJ",
+      "user_id": "DTjQYawAAAAJ",
+      "nombre_perfil": "John Fredy Franco",
+      "afiliacion": "São Paulo State University (UNESP), Ilha Solteira, Brazil",
+      "email_verificado": "unesp.br",
+      "intereses_scholar": [
+        "Power Systems",
+        "Distribution Networks",
+        "Smart Grids",
+        "Distributed Energy Resources"
+      ],
+      "citas": 6822,
+      "citas_desde_2021": 4371,
+      "h_index": 46,
+      "publicaciones": [
+        {
+          "titulo": "Enhancing the Local Energy Community Participation in Capacity Markets through Electric Vehicle Flexibility",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Optimal Planning of Public Charging Infrastructure with Local Energy Flexibility under Electric Vehicle Adoption Uncertainty and Spatial Constraints",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Optimal Siting and Sizing of EV Charging Stations Using Fuzzy Logic and Multi-Objective Optimization",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Optimization of a Standalone Energy Community with Vehicle-to-Comunnity and Load Shifting Under Extreme Events",
+          "anio": 2025,
+          "citas": 0
+        },
+        {
+          "titulo": "Integrating a spatio-temporal diffusion model with a multi-criteria decision-making approach for optimal planning of electric vehicle charging infrastructure",
+          "anio": 2025,
+          "citas": 15
+        },
+        {
+          "titulo": "Joint planning of distribution systems and EV charging infrastructure using a GIS-based spatial analysis framework",
+          "anio": 2025,
+          "citas": 4
+        },
+        {
+          "titulo": "Stochastic multi-objective optimal energy management of grid-connected unbalanced microgrids with renewable energy generation and plug-in electric vehicles",
+          "anio": 2022,
+          "citas": 145
+        },
+        {
+          "titulo": "Optimal site selection for photovoltaic power plants using a GIS-based multi-criteria decision making and spatial overlay with electric load",
+          "anio": 2021,
+          "citas": 206
+        },
+        {
+          "titulo": "Multi-objective sizing of battery energy storage systems for stackable grid applications",
+          "anio": 2020,
+          "citas": 122
+        },
+        {
+          "titulo": "Imposing radiality constraints in distribution system optimization problems",
+          "anio": 2011,
+          "citas": 785
+        },
+        {
+          "titulo": "Optimal operation of distribution networks considering energy storage devices",
+          "anio": 2015,
+          "citas": 256
+        },
+        {
+          "titulo": "A mixed-integer linear programming model for the electric vehicle charging coordination problem in unbalanced electrical distribution systems",
+          "anio": 2015,
+          "citas": 207
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Sus publicaciones recientes incluyen a los tres coautores CLAGTEE: DP Basso ('Optimization of a Standalone Energy Community… Under Extreme Events', ISGT-LA 2025, línea de PLA-48, firmado como JFF Baquero), AL Sabillon y MA Mejía (estaciones de carga de VE, INDUSCON 2025, línea de PLA-50). Mejía Alzate figura en su barra de coautores vía Macedo; email verificado unesp.br."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Ilha Solteira",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "planning of EV charging infrastructure and distribution networks",
+        "optimal operation of active distribution networks with storage and DER",
+        "distribution system expansion planning and reconfiguration",
+        "energy communities and microgrids under uncertainty and extreme events",
+        "EV charging coordination and vehicle-to-grid"
+      ],
+      "palabras_clave": [
+        "distribution networks",
+        "electric vehicles",
+        "charging infrastructure",
+        "energy storage",
+        "distributed energy resources",
+        "microgrids",
+        "energy communities",
+        "radiality constraints",
+        "expansion planning",
+        "GIS-based multi-criteria analysis",
+        "AC OPF",
+        "resilience"
+      ],
+      "metodos": [
+        "mixed-integer linear programming",
+        "mixed-integer conic and quadratic programming",
+        "stochastic and robust optimization",
+        "multi-objective optimization",
+        "GIS-based spatial analysis and MCDM"
+      ],
+      "aplicaciones": [
+        "unbalanced distribution systems with EVs and PV",
+        "public EV charging station planning",
+        "standalone energy communities",
+        "self-healing and service restoration"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "2": 0.9,
+        "7": 0.4,
+        "6": 0.3
+      },
+      "etapa": "investigador_senior",
+      "resumen": "Profesor de la UNESP Ilha Solteira y referente en optimización de redes de distribución: planificación y operación con DER, almacenamiento y VE, coordinación de carga, reconfiguración y restauración, con programación lineal entera mixta y optimización estocástica y robusta. Hoy trabaja en infraestructura de carga con análisis espacial y en comunidades energéticas ante eventos extremos (PLA-48 y PLA-50); le interesarían sesiones de planificación de distribución, integración de DER y almacenamiento, movilidad eléctrica y resiliencia.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    }
+  },
+  {
+    "id": "mario-andres-mejia-alzate",
+    "nombre": "Mario Andres Mejia Alzate",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=JTlHy1gAAAAJ",
+      "user_id": "JTlHy1gAAAAJ",
+      "nombre_perfil": "Mario Andrés Mejía Alzate",
+      "afiliacion": "Posdoctoral Researcher, UNESP",
+      "email_verificado": "unesp.br",
+      "intereses_scholar": [
+        "Power Systems",
+        "Optimization",
+        "Smart Grid"
+      ],
+      "citas": 232,
+      "citas_desde_2021": 212,
+      "h_index": 7,
+      "publicaciones": [
+        {
+          "titulo": "Optimal Planning of Public Charging Infrastructure with Local Energy Flexibility under Electric Vehicle Adoption Uncertainty and Spatial Constraints",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Optimal Restoration Planning for Low-Inertia Distribution Systems Using Grid-Forming Distributed Energy Resources",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Optimal Siting and Sizing of EV Charging Stations Using Fuzzy Logic and Multi-Objective Optimization",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Integrating a spatio-temporal diffusion model with a multi-criteria decision-making approach for optimal planning of electric vehicle charging infrastructure",
+          "anio": 2025,
+          "citas": 15
+        },
+        {
+          "titulo": "Joint planning of distribution systems and EV charging infrastructure using a GIS-based spatial analysis framework",
+          "anio": 2025,
+          "citas": 4
+        },
+        {
+          "titulo": "Game-Theoretic Approach for Cooperative Planning of Active Distribution Networks and Private Electric Vehicle Charging Stations",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Game-Theoretic Method for Integrated Planning of Electric Power Distribution Systems and Private Renewable Distributed Generation",
+          "anio": 2025,
+          "citas": 0
+        },
+        {
+          "titulo": "Spatiotemporal estimation of the potential adoption of photovoltaic systems on urban residential roofs",
+          "anio": 2024,
+          "citas": 4
+        },
+        {
+          "titulo": "Aplicação de cadeias de Markov para a estimativa espaço-temporal de perfis de carregamento de veículos elétricos",
+          "anio": 2024,
+          "citas": 0
+        },
+        {
+          "titulo": "Identificação de Locais Candidatos para Estações de Carregamento de Veículos Elétricos Usando Análise Geoespacial e Lógica Fuzzy",
+          "anio": 2024,
+          "citas": 0
+        },
+        {
+          "titulo": "Active distribution system planning considering non-utility-owned electric vehicle charging stations and network reconfiguration",
+          "anio": 2023,
+          "citas": 27
+        },
+        {
+          "titulo": "Multi-Objective Distribution System Planning Considering Non-Utility-Owned Distributed Generation and CO2 Emissions Costs",
+          "anio": 2023,
+          "citas": 2
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Publica con John Fredy Franco y AL Sabillon (coautores de PLA-50) varios trabajos sobre localización y dimensionamiento de estaciones de carga de VE (INDUSCON 2025, XV CLAGTEE 2024, ERMAC 2024); Franco figura en su barra de coautores. Postdoc en la UNESP con email verificado unesp.br."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Ilha Solteira",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "planning of EV charging infrastructure with spatial and adoption uncertainty",
+        "joint planning of distribution systems and private charging stations or DG",
+        "spatio-temporal diffusion of PV and EV adoption",
+        "restoration planning with grid-forming DER"
+      ],
+      "palabras_clave": [
+        "electric vehicle charging stations",
+        "distribution system planning",
+        "GIS",
+        "spatio-temporal diffusion",
+        "multi-criteria decision making",
+        "game theory",
+        "non-utility-owned DG",
+        "rooftop PV adoption",
+        "CO2 emissions",
+        "network reconfiguration",
+        "grid-forming inverters"
+      ],
+      "metodos": [
+        "mixed-integer programming",
+        "multi-objective optimization",
+        "game-theoretic models",
+        "GIS-based spatial analysis",
+        "fuzzy logic and MCDM",
+        "Markov chains"
+      ],
+      "aplicaciones": [
+        "active distribution networks with EVs and DG",
+        "urban public charging infrastructure",
+        "residential rooftop PV"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "2": 0.8,
+        "7": 0.3
+      },
+      "etapa": "investigador_inicial",
+      "resumen": "Investigador posdoctoral en la UNESP (grupo de John Fredy Franco) que trabaja en la planificación conjunta de redes de distribución e infraestructura de carga de VE y generación distribuida privada, con análisis espacial (GIS), difusión espacio-temporal de adopción, teoría de juegos y optimización multiobjetivo. Coautor de PLA-50; le interesarían sesiones de planificación de distribución, movilidad eléctrica e integración de DER.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    }
+  },
+  {
+    "id": "ernesto-silva-gonzalez",
+    "nombre": "Ernesto Silva González",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Chile",
+    "nota_busqueda": "Búsqueda en scholar.google.com: 'Ernesto Silva González Chile electric motor PV BESS' (solo apareció Ernesto Silva, Universidad del Desarrollo, ciencia política: otra persona). Búsquedas web generales con el título de MAQ-3 y con 'Ernesto Silva' + 'Gatica': sin resultados.",
+    "intereses": {
+      "temas": [
+        "PV ramp events induced by solar eclipses",
+        "optimal BESS sizing for system flexibility",
+        "design and validation of interior permanent magnet synchronous motors",
+        "electric propulsion for marine outboard retrofits"
+      ],
+      "palabras_clave": [
+        "solar eclipse",
+        "PV ramps",
+        "battery energy storage systems",
+        "flexibility",
+        "Chilean National Electric System",
+        "IPMSM",
+        "electromagnetic finite element analysis",
+        "thermal analysis",
+        "electric outboard",
+        "electric boats"
+      ],
+      "metodos": [
+        "BESS sizing optimization",
+        "electromagnetic and thermal numerical simulation"
+      ],
+      "aplicaciones": [
+        "Chile's 2027 national electric system",
+        "350 hp electric outboard retrofit"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "8": 0.9,
+        "1": 0.5,
+        "3": 0.3
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Scholar ni otras fuentes. Presenta dos papers muy distintos: INT-31 (rampas FV por el eclipse solar y dimensionamiento óptimo de BESS para el SEN de Chile en 2027) y MAQ-3 (validación electromagnética y térmica de un motor IPMSM para reconvertir un motor fuera de borda de 350 hp a eléctrico). País inferido de INT-31; afiliación desconocida. Le interesarían sesiones de flexibilidad e integración de renovables con almacenamiento y de máquinas eléctricas y electromovilidad.",
+      "base": [
+        "papers_clagtee"
+      ]
+    }
+  },
+  {
+    "id": "gonzalo-aguila",
+    "nombre": "Gonzalo Águila",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Chile",
+    "nota_busqueda": "Búsqueda en scholar.google.com: 'Gonzalo Águila Chile energy power systems'; sin perfil coincidente (solo Alexander Aguila Téllez, Ecuador: otra persona). No figura en la barra de coautores de Gustavo Gatica.",
+    "intereses": {
+      "temas": [
+        "PV ramp events induced by solar eclipses",
+        "optimal BESS sizing for system flexibility"
+      ],
+      "palabras_clave": [
+        "solar eclipse",
+        "PV ramps",
+        "battery energy storage systems",
+        "flexibility",
+        "Chilean National Electric System"
+      ],
+      "metodos": [
+        "BESS sizing optimization"
+      ],
+      "aplicaciones": [
+        "Chile's 2027 national electric system"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.5
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Scholar ni otras fuentes. Coautor de INT-31 (rampas FV inducidas por el eclipse solar y dimensionamiento óptimo de BESS para el SEN de Chile en 2027) con Ernesto Silva González, Gustavo Gatica y Miguel Carrasco. Evidencia escasa: le interesarían sesiones de flexibilidad, almacenamiento e integración de renovables.",
+      "base": [
+        "papers_clagtee"
+      ]
+    }
+  },
+  {
+    "id": "gustavo-gatica",
+    "nombre": "Gustavo Gatica",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=T-qTkdAAAAAJ",
+      "user_id": "T-qTkdAAAAAJ",
+      "nombre_perfil": "Gustavo Gatica",
+      "afiliacion": "Professor, Universidad Andrés Bello, and Universidad de Santiago de Chile",
+      "email_verificado": "unab.cl",
+      "intereses_scholar": [
+        "Heuristic"
+      ],
+      "citas": 1020,
+      "citas_desde_2021": 839,
+      "h_index": 17,
+      "publicaciones": [
+        {
+          "titulo": "Techno-Economic Evaluation for Renewable Deployment in Southern Chile: Expanding the Green Hydrogen Frontier",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "A Hybrid Multi-Criteria Decision-Making Framework for Selecting the Most Suitable Photovoltaic Proposal in Healthcare Institutions",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "GSPH-FC: A Geometric Space Partitioning Heuristic with Frontier Connectivity for the Euclidean TSP",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Analysis of Circular Strategies for Waste Electrical and Electronic Equipment: A Chilean Case Study",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Dynamic Generation of Cutting Patterns in Sawmills for Sustainable Planning",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Link Prediction in Telecommunications Networks Using Graph Neural Networks and Community Detection",
+          "anio": 2025,
+          "citas": 0
+        },
+        {
+          "titulo": "Comparison of Faster R-CNN, YOLO, and SSD for Third Molar Angle Detection in Dental Panoramic X-rays",
+          "anio": 2024,
+          "citas": 60
+        },
+        {
+          "titulo": "Route Optimization for Open Vehicle Routing Problem (OVRP): A Mathematical and Solution Approach",
+          "anio": 2024,
+          "citas": 17
+        },
+        {
+          "titulo": "The multi-depot cumulative vehicle routing problem with mandatory visit times and minimum delayed latency",
+          "anio": 2021,
+          "citas": 27
+        },
+        {
+          "titulo": "Multimodal capacitated hub location problems with multi-commodities: an application in freight transport",
+          "anio": 2020,
+          "citas": 38
+        },
+        {
+          "titulo": "Efficient heuristic algorithms for location of charging stations in electric vehicle routing problems",
+          "anio": 2018,
+          "citas": 23
+        },
+        {
+          "titulo": "A multi-operator genetic algorithm for the generalized minimum spanning tree problem",
+          "anio": 2016,
+          "citas": 41
+        }
+      ],
+      "confianza": "media",
+      "evidencia": "Nombre exacto, académico en Chile (UNAB, email verificado unab.cl) que aplica optimización y heurísticas, con trabajos recientes en energía: evaluación técnico-económica de renovables e hidrógeno verde en el sur de Chile (2026), selección multicriterio de proyectos FV (2026) y localización de estaciones de carga de VE (2018). Sin evidencia directa: ningún coautor de INT-31 (Silva González, Águila, Carrasco) aparece en su perfil ni en su barra de coautores (solo Morillo Torres y Contreras-Bolton)."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidad Andrés Bello",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "heuristics and metaheuristics for combinatorial optimization",
+        "vehicle routing and facility location problems",
+        "techno-economic and multi-criteria evaluation of renewable projects",
+        "BESS sizing for flexibility under eclipse-induced PV ramps"
+      ],
+      "palabras_clave": [
+        "heuristics",
+        "metaheuristics",
+        "vehicle routing problem",
+        "hub location",
+        "EV charging station location",
+        "multi-criteria decision making",
+        "photovoltaic projects",
+        "green hydrogen",
+        "BESS sizing",
+        "solar eclipse"
+      ],
+      "metodos": [
+        "metaheuristics (tabu search, genetic algorithms)",
+        "mixed-integer programming",
+        "multi-criteria decision making",
+        "discrete-event simulation",
+        "machine learning"
+      ],
+      "aplicaciones": [
+        "logistics and freight transport",
+        "renewable deployment in Chile",
+        "Chile's 2027 national electric system"
+      ],
+      "afinidad_tracks": {
+        "2": 0.7,
+        "6": 0.6,
+        "1": 0.4,
+        "12": 0.3,
+        "13": 0.2
+      },
+      "etapa": "investigador_consolidado",
+      "resumen": "Profesor de la Universidad Andrés Bello especializado en heurísticas y optimización combinatoria (ruteo de vehículos, localización, logística) con incursiones recientes en energía: renovables e hidrógeno verde en Chile, selección de proyectos FV y estaciones de carga de VE. Coautor de INT-31 (rampas FV por eclipse y dimensionamiento de BESS en el SEN); perfil de confianza media por falta de evidencia directa. Le interesarían sesiones de almacenamiento e integración de renovables y de optimización y computación avanzada.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    }
+  },
+  {
+    "id": "miguel-carrasco",
+    "nombre": "Miguel Carrasco",
+    "busqueda": "ambiguo",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=nmpnCJ8AAAAJ",
+      "user_id": "nmpnCJ8AAAAJ",
+      "nombre_perfil": "Miguel Carrasco, PhD",
+      "afiliacion": "Qinous GmbH",
+      "email_verificado": "qinous.com",
+      "intereses_scholar": [
+        "Power electronics",
+        "power systems",
+        "photovoltaics",
+        "storage systems",
+        "distributed generation"
+      ],
+      "citas": 452,
+      "citas_desde_2021": 239,
+      "h_index": 9,
+      "publicaciones": [
+        {
+          "titulo": "A comparative evaluation of HVDC ties using line commutated and modular multilevel converters",
+          "anio": 2017,
+          "citas": 2
+        },
+        {
+          "titulo": "Low-cost solar irradiance sensing for PV systems",
+          "anio": 2017,
+          "citas": 51
+        },
+        {
+          "titulo": "Proximal Jacobian distribution optimal power flow in a distributed cyber-physical environment",
+          "anio": 2017,
+          "citas": 11
+        },
+        {
+          "titulo": "Experimental parameter extraction in the single-diode photovoltaic model via a reduced-space search",
+          "anio": 2016,
+          "citas": 133
+        },
+        {
+          "titulo": "Maximum Power Point Tracking Algorithms for Single-Stage Photovoltaic Power Plants under Time-Varying Reactive Power Injection",
+          "anio": 2016,
+          "citas": 28
+        },
+        {
+          "titulo": "Photovoltaic inverter dispatch for voltage regulation in power distribution systems: A comparative evaluation",
+          "anio": 2016,
+          "citas": 3
+        },
+        {
+          "titulo": "Unbalanced grid fault ride-through control for single-stage photovoltaic inverters",
+          "anio": 2015,
+          "citas": 73
+        },
+        {
+          "titulo": "An estimator of solar irradiance in photovoltaic arrays with guaranteed stability properties",
+          "anio": 2013,
+          "citas": 59
+        }
+      ],
+      "confianza": "baja",
+      "evidencia": "Tres candidatos con el mismo nombre y ninguno con evidencia directa (ningún coautor de INT-31 en sus perfiles): (1) user=nmpnCJ8AAAAJ, Qinous GmbH (Berlín), PhD U. of Colorado Denver con F. Mancilla-David, FV, almacenamiento y sistemas de potencia, con coautores chilenos (R. Cárdenas) pero publicaciones solo hasta 2017; es el más afín al tema y se registra con confianza baja. (2) user=WYz_08AAAAAJ, Universidad Diego Portales (udp.cl), procesamiento de imágenes e interacción humano-computador. (3) user=cfmvWC0AAAAJ, Universidad de los Andes (uandes.cl), profesor de matemáticas en optimización convexa y machine learning."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Chile",
+    "nota_busqueda": "Búsqueda en scholar.google.com: 'Miguel Carrasco Chile Google Scholar engineering energy'; tres perfiles posibles leídos con WebFetch, sin poder decidir.",
+    "intereses": {
+      "temas": [
+        "PV ramp events induced by solar eclipses",
+        "optimal BESS sizing for system flexibility"
+      ],
+      "palabras_clave": [
+        "solar eclipse",
+        "PV ramps",
+        "battery energy storage systems",
+        "flexibility",
+        "Chilean National Electric System"
+      ],
+      "metodos": [
+        "BESS sizing optimization"
+      ],
+      "aplicaciones": [
+        "Chile's 2027 national electric system"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.5
+      },
+      "etapa": "desconocida",
+      "resumen": "Perfil ambiguo: hay tres Miguel Carrasco en Scholar (Qinous GmbH en FV y almacenamiento; UDP en procesamiento de imágenes; U. de los Andes en optimización) y ninguno se pudo vincular a INT-31, así que los intereses salen solo del paper. Coautor de INT-31 (rampas FV inducidas por el eclipse y dimensionamiento óptimo de BESS para el SEN de Chile en 2027); le interesarían sesiones de flexibilidad, almacenamiento e integración de renovables.",
+      "base": [
+        "papers_clagtee"
+      ]
+    }
+  },
+  {
+    "id": "fernando-gontijo-bernardes-junior",
+    "nombre": "Fernando Gontijo Bernardes Júnior",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "nota_busqueda": "Búsqueda en scholar.google.com: 'Fernando Gontijo Bernardes Júnior' y búsqueda web general con nombre + baterías/armazenamento; sin resultados. No figura en las publicaciones 2020-2026 del perfil de Paulo F. Ribeiro.",
+    "intereses": {
+      "temas": [
+        "battery-as-a-service business models for BESS",
+        "techno-economic optimization of battery storage",
+        "grid flexibility from behind-the-meter storage",
+        "energy storage for agricultural consumers"
+      ],
+      "palabras_clave": [
+        "battery energy storage systems",
+        "battery-as-a-service",
+        "BaaS",
+        "techno-economic analysis",
+        "agricultural profitability",
+        "grid flexibility",
+        "Brazil"
+      ],
+      "metodos": [
+        "techno-economic optimization"
+      ],
+      "aplicaciones": [
+        "rural and agricultural consumers in Brazil"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "7": 0.6,
+        "12": 0.3
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Scholar ni otras fuentes. Presenta INT-29 (optimización de BESS con el modelo battery-as-a-service para la rentabilidad agrícola y la flexibilidad de la red en Brasil) con Paulo F. Ribeiro, cuyo grupo en UNIFEI publica análisis económicos de almacenamiento en Brasil; la afiliación no se pudo confirmar. Le interesarían sesiones de almacenamiento, modelos de negocio y regulación de recursos distribuidos.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    }
+  },
+  {
+    "id": "paulo-fernando-ribeiro",
+    "nombre": "Paulo Fernando Ribeiro",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=38c88BoAAAAJ",
+      "user_id": "38c88BoAAAAJ",
+      "nombre_perfil": "Paulo F. Ribeiro, IEEE Life Fellow",
+      "afiliacion": "Universidade Federal de Itajubá, Brazil",
+      "email_verificado": "ieee.org",
+      "intereses_scholar": [
+        "power quality",
+        "smart grids",
+        "signal processing",
+        "philosophy of technology",
+        "energy storage"
+      ],
+      "citas": 12589,
+      "citas_desde_2021": 4210,
+      "h_index": 54,
+      "publicaciones": [
+        {
+          "titulo": "Identification of Load Behavior Using Digital Signal Processing with Time-Varying Harmonics",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "A Philosophical Systems Engineering Perspective of Energy Storage for Electric Grids",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Smart grid origins, definitions, technologies, and emerging trends: A power community perspective",
+          "anio": 2025,
+          "citas": 9
+        },
+        {
+          "titulo": "The impact of artificial intelligence on learning and teaching of engineering",
+          "anio": 2025,
+          "citas": 10
+        },
+        {
+          "titulo": "Independent component analysis-based harmonic transfer impedance estimation for networks with multiple harmonic sources",
+          "anio": 2024,
+          "citas": 11
+        },
+        {
+          "titulo": "Economic analysis of industrial energy storage systems in Brazil: A stochastic optimization approach",
+          "anio": 2023,
+          "citas": 7
+        },
+        {
+          "titulo": "Distributed Energy Storage in Urban Smart Grids",
+          "anio": 2023,
+          "citas": 2
+        },
+        {
+          "titulo": "The use of deep learning and 2-D wavelet scalograms for power quality disturbances classification",
+          "anio": 2023,
+          "citas": 113
+        },
+        {
+          "titulo": "Adaptive virtual inertia control for stable microgrid operation including ancillary services support",
+          "anio": 2023,
+          "citas": 53
+        },
+        {
+          "titulo": "Renewables with energy storage: a time-series socioeconomic model for business and welfare analysis",
+          "anio": 2022,
+          "citas": 33
+        },
+        {
+          "titulo": "Design of experiments using artificial neural network ensemble for photovoltaic generation forecasting",
+          "anio": 2021,
+          "citas": 143
+        },
+        {
+          "titulo": "Energy storage systems for advanced power applications",
+          "anio": 2001,
+          "citas": 1673
+        }
+      ],
+      "confianza": "media",
+      "evidencia": "Nombre coincide (Paulo F. Ribeiro), académico en Brasil (UNIFEI) con 'energy storage' entre sus intereses y trabajos de su grupo sobre análisis económico de almacenamiento en Brasil ('Economic analysis of industrial energy storage systems in Brazil…', 2023; 'Renewables with energy storage: a time-series socioeconomic model…', 2022), muy afines a INT-29. Sin evidencia directa: Gontijo Bernardes Júnior y Rocha de Oliveira no aparecen en sus 60 publicaciones más recientes ni en su barra de coautores."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal de Itajubá (UNIFEI)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "power quality, harmonics and time-varying waveform analysis",
+        "signal processing for smart grids",
+        "techno-economic analysis of energy storage in Brazil",
+        "smart grids and microgrid control",
+        "philosophy of technology and engineering education"
+      ],
+      "palabras_clave": [
+        "power quality",
+        "harmonics",
+        "interharmonics",
+        "supraharmonics",
+        "wavelet transform",
+        "energy storage systems",
+        "battery storage economics",
+        "smart grids",
+        "virtual inertia",
+        "deep learning for PQ disturbances",
+        "engineering education"
+      ],
+      "metodos": [
+        "digital signal processing",
+        "wavelet and Hilbert-Huang analysis",
+        "stochastic optimization",
+        "deep learning",
+        "independent component analysis"
+      ],
+      "aplicaciones": [
+        "transmission and distribution power quality monitoring",
+        "industrial and agricultural energy storage in Brazil",
+        "DC and AC microgrids"
+      ],
+      "afinidad_tracks": {
+        "2": 0.8,
+        "4": 0.7,
+        "1": 0.4,
+        "6": 0.4,
+        "12": 0.4,
+        "7": 0.3
+      },
+      "etapa": "investigador_senior",
+      "resumen": "IEEE Life Fellow y profesor de la UNIFEI, referente en calidad de energía (armónicos, distorsiones variables en el tiempo, procesamiento de señales para smart grids) y en almacenamiento de energía, con trabajos recientes sobre la economía del almacenamiento en Brasil, aprendizaje profundo para perturbaciones y filosofía de la tecnología. Coautor de INT-29 (BESS bajo modelo BaaS en el agro brasileño); le interesarían sesiones de almacenamiento e integración de renovables, calidad de energía y monitoreo, y aspectos sociales y económicos de la transición.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    }
+  },
+  {
+    "id": "angelo-rocha-de-oliveira",
+    "nombre": "Ângelo Rocha de Oliveira",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "nota_busqueda": "Búsqueda en scholar.google.com: 'Ângelo Rocha de Oliveira energy storage Brazil'; sin perfil coincidente. No figura en las publicaciones recientes ni en la barra de coautores de Paulo F. Ribeiro.",
+    "intereses": {
+      "temas": [
+        "battery-as-a-service business models for BESS",
+        "techno-economic optimization of battery storage for agricultural consumers"
+      ],
+      "palabras_clave": [
+        "battery energy storage systems",
+        "battery-as-a-service",
+        "techno-economic analysis",
+        "agricultural profitability",
+        "grid flexibility"
+      ],
+      "metodos": [
+        "techno-economic optimization"
+      ],
+      "aplicaciones": [
+        "rural and agricultural consumers in Brazil"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "7": 0.5
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Scholar ni otras fuentes. Coautor de INT-29 (BESS bajo modelo battery-as-a-service para rentabilidad agrícola y flexibilidad de red en Brasil) con Fernando Gontijo Bernardes Júnior y Paulo F. Ribeiro. Evidencia escasa: le interesarían sesiones de almacenamiento y modelos de negocio de recursos distribuidos.",
+      "base": [
+        "papers_clagtee"
+      ]
+    }
+  },
+  {
+    "id": "fernando-jose-kurabayashi-barreira",
+    "nombre": "Fernando José Kurabayashi Barreira",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "nota_busqueda": "Búsqueda en scholar.google.com: 'Fernando Kurabayashi Barreira fault location distribution' y búsqueda web general '\"Kurabayashi Barreira\" UNESP'; sin resultados. Probablemente del grupo de J. A. C. Ulson (UNESP Bauru), no confirmado.",
+    "intereses": {
+      "temas": [
+        "machine learning for fault location in distribution networks",
+        "fault diagnosis in active distribution networks with DER"
+      ],
+      "palabras_clave": [
+        "fault location",
+        "machine learning",
+        "active distribution networks",
+        "bus-level fault location",
+        "distributed generation",
+        "protection"
+      ],
+      "metodos": [
+        "supervised machine learning classifiers"
+      ],
+      "aplicaciones": [
+        "active distribution feeders"
+      ],
+      "afinidad_tracks": {
+        "4": 0.9,
+        "6": 0.7,
+        "1": 0.5
+      },
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Scholar ni otras fuentes. Presenta SEN-9 (machine learning para localizar fallas a nivel de barra en redes de distribución activas) con José Alfredo Covolan Ulson, probablemente de la UNESP Bauru (no confirmado); posiblemente estudiante. Evidencia escasa: le interesarían sesiones de monitoreo y diagnóstico de fallas, protección e IA aplicada a redes.",
+      "base": [
+        "papers_clagtee"
+      ]
+    }
+  },
+  {
+    "id": "jose-alfredo-covolan-ulson",
+    "nombre": "José Alfredo Covolan Ulson",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Faculdade de Engenharia de Bauru",
+    "pais_inferido": "Brasil",
+    "nota_busqueda": "Búsquedas en scholar.google.com: 'José Alfredo Covolan Ulson UNESP' y 'Ulson UNESP Bauru engenharia elétrica partial discharge neural networks'; sin perfil propio. Figura como JAC Ulson en publicaciones de los perfiles Scholar de André Luiz Andreoli (iJ7eKc0AAAAJ) y Fabricio Guimarães Baptista (-0nA134AAAAJ), ambos de la FEB-UNESP Bauru, pero no en sus barras de coautores.",
+    "intereses": {
+      "temas": [
+        "machine learning for fault location in active distribution networks",
+        "acoustic partial discharge monitoring in power transformers",
+        "low-cost piezoelectric sensors for equipment monitoring",
+        "impedance-based structural health monitoring"
+      ],
+      "palabras_clave": [
+        "fault location",
+        "machine learning",
+        "active distribution networks",
+        "partial discharge",
+        "power transformers",
+        "piezoelectric sensors",
+        "macro fiber composite sensors",
+        "structural health monitoring",
+        "signal processing"
+      ],
+      "metodos": [
+        "machine learning classifiers",
+        "acoustic emission signal processing",
+        "electromechanical impedance analysis"
+      ],
+      "aplicaciones": [
+        "active distribution feeders",
+        "condition monitoring of power transformers"
+      ],
+      "afinidad_tracks": {
+        "4": 0.9,
+        "6": 0.6,
+        "1": 0.4
+      },
+      "etapa": "investigador_consolidado",
+      "resumen": "Sin perfil de Scholar. Coautor de SEN-9 (machine learning para localizar fallas a nivel de barra en redes de distribución activas); en perfiles de colegas de la UNESP Bauru (Andreoli, Baptista) figura como J. A. C. Ulson en artículos de revista (Sensors, IEEE Sensors Journal, IET SMT, 2014-2019) sobre monitoreo acústico de descargas parciales en transformadores con sensores piezoeléctricos y monitoreo de salud estructural, de donde se infieren afiliación y etapa. Le interesarían sesiones de sensores, monitoreo y diagnóstico, y aplicaciones de IA a redes.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   }
 ]
