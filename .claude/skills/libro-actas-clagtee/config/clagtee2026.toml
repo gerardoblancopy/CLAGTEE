@@ -306,6 +306,16 @@ cuando = "Tuesday, October 27 · 15:00–18:00"
 donde = "Auditorio CEA PUCV · Antonio Bellet 314, Providencia"
 detalle = "“Artificial Intelligence Applied to Power Systems”: talks, hands-on session and expert panel, followed by the CLAGTEE 2026 Welcome Cocktail. Free registration at www.clagtee2026.org."
 
+# Ponencias sumadas después de la última planilla, en un cupo libre de una
+# sesión. Título, autores y track salen de "Ponencias (interno)"; se pueden
+# dar aquí ("titulo", "autores") si no están. "presentador" es opcional (sin
+# él no se subraya a nadie). Si una planilla nueva ya la trae, se ignora.
+[[programa.agregados]]
+codigo = "MER-11"
+sesion = "S6B"
+inicio = "12:20"
+# Pedido de Rolando Pringles (23-10-2026): inscrito después del cierre del programa v7.
+
 # Tracks oficiales CLAGTEE 2026 (sitio web, data/translations/*.ts).
 # El CMS guarda el título en español; "es", "en" y "pt" sirven para
 # reconocerlo. El libro imprime "en".
