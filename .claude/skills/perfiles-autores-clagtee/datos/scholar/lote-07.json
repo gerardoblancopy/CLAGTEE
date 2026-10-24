@@ -32,10 +32,17 @@
         "active distribution networks with DG",
         "PV supply for electric coffee dryers"
       ],
-      "afinidad_tracks": {"2": 0.9, "1": 0.8, "7": 0.3},
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.8,
+        "7": 0.3
+      },
       "etapa": "desconocida",
       "resumen": "Sin perfil de Google Scholar. En CLAGTEE presenta un estudio del impacto de la GD fotovoltaica en el perfil de tensión y la margen de carga del sistema IEEE 14 barras y es coautora de un trabajo de coordinación de protecciones con GD. Como 'Cristiane L de Oliveira' figura junto a Evandro Konopatzki (UTFPR) en trabajos sobre viabilidad económica de plantas FV y el marco regulatorio de la microgeneración distribuida en Brasil. Le interesarían sesiones de integración de GD/FV en redes de distribución y su evaluación técnico-económica.",
-      "base": ["papers_clagtee", "grupo_coautores"]
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   },
   {
@@ -48,23 +55,76 @@
       "nombre_perfil": "Edgar Manuel Carreno Franco",
       "afiliacion": "Professor, Electrical Engineering, UNIOESTE",
       "email_verificado": "unioeste.br",
-      "intereses_scholar": ["Power systems", "operation", "planning", "distribution systems"],
+      "intereses_scholar": [
+        "Power systems",
+        "operation",
+        "planning",
+        "distribution systems"
+      ],
       "citas": 1389,
       "citas_desde_2021": 455,
       "h_index": 17,
       "publicaciones": [
-        {"titulo": "Structural Break in Brazilian Electricity Consumption Growth: A Time Series Analysis", "anio": 2026, "citas": 0},
-        {"titulo": "A multi-objective optimization approach for integrated allocation of distributed generation and protection devices in distribution systems", "anio": 2025, "citas": 10},
-        {"titulo": "Specialized Genetic Operators for the Planning of Passive Optical Networks", "anio": 2024, "citas": 3},
-        {"titulo": "Impact of distributed generation on the effectiveness of electric distribution system reconfiguration", "anio": 2023, "citas": 6},
-        {"titulo": "BiGRU-CNN neural network applied to electric energy theft detection", "anio": 2022, "citas": 38},
-        {"titulo": "Application of intelligent systems in volt-var centralized control in modern distribution systems of electrical energy", "anio": 2022, "citas": 5},
-        {"titulo": "BiGRU-CNN neural network applied to short-term electric load forecasting", "anio": 2021, "citas": 38},
-        {"titulo": "Electrical load forecasting in disaggregated levels using Fuzzy ARTMAP artificial neural network and noise removal by singular spectrum analysis", "anio": 2020, "citas": 16},
-        {"titulo": "An efficient codification to solve distribution network reconfiguration for loss reduction problem", "anio": 2008, "citas": 363},
-        {"titulo": "Efficient method for AC transmission network expansion planning", "anio": 2010, "citas": 116},
-        {"titulo": "A cellular automaton approach to spatial electric load forecasting", "anio": 2010, "citas": 60},
-        {"titulo": "Multi-agent simulation of urban social dynamics for spatial load forecasting", "anio": 2012, "citas": 58}
+        {
+          "titulo": "Structural Break in Brazilian Electricity Consumption Growth: A Time Series Analysis",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "A multi-objective optimization approach for integrated allocation of distributed generation and protection devices in distribution systems",
+          "anio": 2025,
+          "citas": 10
+        },
+        {
+          "titulo": "Specialized Genetic Operators for the Planning of Passive Optical Networks",
+          "anio": 2024,
+          "citas": 3
+        },
+        {
+          "titulo": "Impact of distributed generation on the effectiveness of electric distribution system reconfiguration",
+          "anio": 2023,
+          "citas": 6
+        },
+        {
+          "titulo": "BiGRU-CNN neural network applied to electric energy theft detection",
+          "anio": 2022,
+          "citas": 38
+        },
+        {
+          "titulo": "Application of intelligent systems in volt-var centralized control in modern distribution systems of electrical energy",
+          "anio": 2022,
+          "citas": 5
+        },
+        {
+          "titulo": "BiGRU-CNN neural network applied to short-term electric load forecasting",
+          "anio": 2021,
+          "citas": 38
+        },
+        {
+          "titulo": "Electrical load forecasting in disaggregated levels using Fuzzy ARTMAP artificial neural network and noise removal by singular spectrum analysis",
+          "anio": 2020,
+          "citas": 16
+        },
+        {
+          "titulo": "An efficient codification to solve distribution network reconfiguration for loss reduction problem",
+          "anio": 2008,
+          "citas": 363
+        },
+        {
+          "titulo": "Efficient method for AC transmission network expansion planning",
+          "anio": 2010,
+          "citas": 116
+        },
+        {
+          "titulo": "A cellular automaton approach to spatial electric load forecasting",
+          "anio": 2010,
+          "citas": 60
+        },
+        {
+          "titulo": "Multi-agent simulation of urban social dynamics for spatial load forecasting",
+          "anio": 2012,
+          "citas": 58
+        }
       ],
       "confianza": "alta",
       "evidencia": "El perfil incluye el artículo de IEEE Access 2025 con Katiani Pereira y Juan M. Home-Ortiz (coautores de PLA-21) sobre asignación integrada de GD y dispositivos de protección, la misma línea de PLA-21; Home-Ortiz lo lista además como coautor en su perfil. Email verificado unioeste.br."
@@ -107,10 +167,19 @@
         "non-technical loss detection",
         "passive optical network planning"
       ],
-      "afinidad_tracks": {"1": 0.9, "6": 0.6, "2": 0.5, "7": 0.3, "5": 0.2},
+      "afinidad_tracks": {
+        "1": 0.9,
+        "6": 0.6,
+        "2": 0.5,
+        "7": 0.3,
+        "5": 0.2
+      },
       "etapa": "investigador_senior",
       "resumen": "Profesor de Ingeniería Eléctrica en UNIOESTE con larga trayectoria en planificación y operación de sistemas de potencia: reconfiguración de redes de distribución, planificación de la expansión de transmisión y pronóstico espacial de carga. En los últimos años suma redes neuronales profundas para pronóstico de demanda y detección de hurto de energía, y la asignación conjunta de GD y protecciones (PLA-21). Le interesarían sesiones de planificación de distribución con GD, protección de redes activas y aplicaciones de IA a la red.",
-      "base": ["papers_clagtee", "google_scholar"]
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
   },
   {
@@ -123,23 +192,75 @@
       "nombre_perfil": "Evandro André Konopatzki",
       "afiliacion": "Universidade Tecnológica Federal do Paraná (UTFPR)",
       "email_verificado": "utfpr.edu.br",
-      "intereses_scholar": ["Sistemas de potência", "Eficiência Energética", "Segurança do Trabalho"],
+      "intereses_scholar": [
+        "Sistemas de potência",
+        "Eficiência Energética",
+        "Segurança do Trabalho"
+      ],
       "citas": 97,
       "citas_desde_2021": 72,
       "h_index": 5,
       "publicaciones": [
-        {"titulo": "Lighting modernization: scientific evidence, patents, and historical data", "anio": 2026, "citas": 0},
-        {"titulo": "Barreiras e desafios na transferência de tecnologia em universidades federais brasileiras: uma revisão bibliográfica", "anio": 2026, "citas": 0},
-        {"titulo": "Interação universidade e empresa: barreiras e desafios na transferência de tecnologia", "anio": 2024, "citas": 7},
-        {"titulo": "Planning for distributed photovoltaic microgeneration in Brazil: the regulatory framework and the projection of the PNE 2050", "anio": 2024, "citas": 2},
-        {"titulo": "Method for inspection of atmospheric discharge protection systems: Grain storage plants", "anio": 2024, "citas": 1},
-        {"titulo": "Photovoltaic plant to supply energy for an electric coffee dryer: energy costs and compensation", "anio": 2023, "citas": 1},
-        {"titulo": "Coffee dryer with dehydrated air: a technical and economic viability analysis", "anio": 2022, "citas": 9},
-        {"titulo": "Effects of refrigeration on biochemical, digestibility, and technological parameters of carioca beans during storage", "anio": 2019, "citas": 32},
-        {"titulo": "Price and quality of coffee (Coffea arabica L.) dried using air dehumidified by convection", "anio": 2019, "citas": 3},
-        {"titulo": "Productivity of soybean in management zones with application of different sowing densities", "anio": 2018, "citas": 11},
-        {"titulo": "Comparativo econômico entre condicionadores de ar com tecnologias convencional e inverter", "anio": 2015, "citas": 15},
-        {"titulo": "Análise dos benefícios da adesão à tarifa branca como forma de gestão energética residencial", "anio": 2015, "citas": 4}
+        {
+          "titulo": "Lighting modernization: scientific evidence, patents, and historical data",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Barreiras e desafios na transferência de tecnologia em universidades federais brasileiras: uma revisão bibliográfica",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Interação universidade e empresa: barreiras e desafios na transferência de tecnologia",
+          "anio": 2024,
+          "citas": 7
+        },
+        {
+          "titulo": "Planning for distributed photovoltaic microgeneration in Brazil: the regulatory framework and the projection of the PNE 2050",
+          "anio": 2024,
+          "citas": 2
+        },
+        {
+          "titulo": "Method for inspection of atmospheric discharge protection systems: Grain storage plants",
+          "anio": 2024,
+          "citas": 1
+        },
+        {
+          "titulo": "Photovoltaic plant to supply energy for an electric coffee dryer: energy costs and compensation",
+          "anio": 2023,
+          "citas": 1
+        },
+        {
+          "titulo": "Coffee dryer with dehydrated air: a technical and economic viability analysis",
+          "anio": 2022,
+          "citas": 9
+        },
+        {
+          "titulo": "Effects of refrigeration on biochemical, digestibility, and technological parameters of carioca beans during storage",
+          "anio": 2019,
+          "citas": 32
+        },
+        {
+          "titulo": "Price and quality of coffee (Coffea arabica L.) dried using air dehumidified by convection",
+          "anio": 2019,
+          "citas": 3
+        },
+        {
+          "titulo": "Productivity of soybean in management zones with application of different sowing densities",
+          "anio": 2018,
+          "citas": 11
+        },
+        {
+          "titulo": "Comparativo econômico entre condicionadores de ar com tecnologias convencional e inverter",
+          "anio": 2015,
+          "citas": 15
+        },
+        {
+          "titulo": "Análise dos benefícios da adesão à tarifa branca como forma de gestão energética residencial",
+          "anio": 2015,
+          "citas": 4
+        }
       ],
       "confianza": "alta",
       "evidencia": "Nombre poco común que coincide exactamente. La coautora de INT-17 Cristiane Lionço de Oliveira aparece como 'Cristiane L de Oliveira' en su artículo de Engenharia Agrícola 2023 (planta FV para secador de café) y como 'CL Oliveira' en el de 2024 sobre microgeneración FV distribuida en Brasil, coherente con INT-17 (GD fotovoltaica)."
@@ -178,10 +299,18 @@
         "residential energy management",
         "university-industry technology transfer"
       ],
-      "afinidad_tracks": {"2": 0.8, "7": 0.5, "1": 0.4, "12": 0.3},
+      "afinidad_tracks": {
+        "2": 0.8,
+        "7": 0.5,
+        "1": 0.4,
+        "12": 0.3
+      },
       "etapa": "investigador_consolidado",
       "resumen": "Investigador de la UTFPR que trabaja en eficiencia energética y energía fotovoltaica aplicada, sobre todo en procesos agroindustriales (secado y almacenamiento de granos), con análisis técnico-económico y del marco regulatorio de la microgeneración distribuida en Brasil. En CLAGTEE es coautor del estudio de impacto de la GD FV en tensión y margen de carga (INT-17). Le interesarían sesiones de integración de GD/FV, eficiencia energética y economía de la transición energética.",
-      "base": ["papers_clagtee", "google_scholar"]
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
   },
   {
@@ -194,23 +323,74 @@
       "nombre_perfil": "Juan M. Home-Ortiz",
       "afiliacion": "Universidade Estadual Paulista",
       "email_verificado": "dee.feis.unesp.br",
-      "intereses_scholar": ["Power systems", "Optimization"],
+      "intereses_scholar": [
+        "Power systems",
+        "Optimization"
+      ],
       "citas": 960,
       "citas_desde_2021": 838,
       "h_index": 15,
       "publicaciones": [
-        {"titulo": "A multi-objective optimization approach for integrated allocation of distributed generation and protection devices in distribution systems", "anio": 2025, "citas": 10},
-        {"titulo": "Resilience-Oriented Planning for Distribution Systems Combining Distributed Generation Allocation and Dynamic Operational Strategies", "anio": 2025, "citas": 9},
-        {"titulo": "Optimal operational planning of distribution systems: A neighborhood search-based matheuristic approach", "anio": 2024, "citas": 20},
-        {"titulo": "Bi-level stochastic energy trading model for technical virtual power plants considering various renewable energy sources, energy storage systems and electric vehicles", "anio": 2023, "citas": 47},
-        {"titulo": "A strategy to enhance the distribution systems recoverability via the simultaneous coordination of planning actions and operational resources", "anio": 2023, "citas": 9},
-        {"titulo": "Increasing RES hosting capacity in distribution networks through closed-loop reconfiguration and Volt/VAr control", "anio": 2022, "citas": 94},
-        {"titulo": "Improvement of the Distribution Systems Resilience via Operational Resources and Demand Response", "anio": 2022, "citas": 81},
-        {"titulo": "PV hosting capacity assessment in distribution systems considering resilience enhancement", "anio": 2022, "citas": 38},
-        {"titulo": "Short-circuit constrained distribution network reconfiguration considering closed-loop operation", "anio": 2022, "citas": 21},
-        {"titulo": "Optimal Restoration of Active Distribution Systems With Voltage Control and Closed-Loop Operation", "anio": 2021, "citas": 53},
-        {"titulo": "Optimal location-allocation of storage devices and renewable-based DG in distribution systems", "anio": 2019, "citas": 169},
-        {"titulo": "A stochastic mixed-integer convex programming model for long-term distribution system expansion planning considering greenhouse gas emission mitigation", "anio": 2019, "citas": 88}
+        {
+          "titulo": "A multi-objective optimization approach for integrated allocation of distributed generation and protection devices in distribution systems",
+          "anio": 2025,
+          "citas": 10
+        },
+        {
+          "titulo": "Resilience-Oriented Planning for Distribution Systems Combining Distributed Generation Allocation and Dynamic Operational Strategies",
+          "anio": 2025,
+          "citas": 9
+        },
+        {
+          "titulo": "Optimal operational planning of distribution systems: A neighborhood search-based matheuristic approach",
+          "anio": 2024,
+          "citas": 20
+        },
+        {
+          "titulo": "Bi-level stochastic energy trading model for technical virtual power plants considering various renewable energy sources, energy storage systems and electric vehicles",
+          "anio": 2023,
+          "citas": 47
+        },
+        {
+          "titulo": "A strategy to enhance the distribution systems recoverability via the simultaneous coordination of planning actions and operational resources",
+          "anio": 2023,
+          "citas": 9
+        },
+        {
+          "titulo": "Increasing RES hosting capacity in distribution networks through closed-loop reconfiguration and Volt/VAr control",
+          "anio": 2022,
+          "citas": 94
+        },
+        {
+          "titulo": "Improvement of the Distribution Systems Resilience via Operational Resources and Demand Response",
+          "anio": 2022,
+          "citas": 81
+        },
+        {
+          "titulo": "PV hosting capacity assessment in distribution systems considering resilience enhancement",
+          "anio": 2022,
+          "citas": 38
+        },
+        {
+          "titulo": "Short-circuit constrained distribution network reconfiguration considering closed-loop operation",
+          "anio": 2022,
+          "citas": 21
+        },
+        {
+          "titulo": "Optimal Restoration of Active Distribution Systems With Voltage Control and Closed-Loop Operation",
+          "anio": 2021,
+          "citas": 53
+        },
+        {
+          "titulo": "Optimal location-allocation of storage devices and renewable-based DG in distribution systems",
+          "anio": 2019,
+          "citas": 169
+        },
+        {
+          "titulo": "A stochastic mixed-integer convex programming model for long-term distribution system expansion planning considering greenhouse gas emission mitigation",
+          "anio": 2019,
+          "citas": 88
+        }
       ],
       "confianza": "alta",
       "evidencia": "Edgar Manuel Carreno Franco (coautor de PLA-21) figura en su lista de coautores, y el perfil incluye el artículo de IEEE Access 2025 con K. Pereira y E. M. C. Franco sobre asignación integrada de GD y dispositivos de protección, la misma línea de PLA-21."
@@ -255,10 +435,17 @@
         "PV hosting capacity assessment",
         "virtual power plants with EVs and storage"
       ],
-      "afinidad_tracks": {"1": 0.9, "2": 0.8, "7": 0.3},
+      "afinidad_tracks": {
+        "1": 0.9,
+        "2": 0.8,
+        "7": 0.3
+      },
       "etapa": "investigador_consolidado",
       "resumen": "Investigador de UNESP Ilha Solteira especializado en optimización de redes de distribución activas: planificación de la expansión, resiliencia y restauración, capacidad de alojamiento de renovables y asignación de GD, almacenamiento y protecciones, con programación entera mixta cónica/lineal, estocástica y matheurísticas. En CLAGTEE es coautor del trabajo de coordinación de protecciones con GD (PLA-21). Le interesarían sesiones de planificación y operación de distribución, resiliencia e integración de DER y almacenamiento.",
-      "base": ["papers_clagtee", "google_scholar"]
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
   },
   {
@@ -267,7 +454,10 @@
     "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [
-      {"tipo": "IEEE", "url": "https://ieeexplore.ieee.org/abstract/document/11002463/"}
+      {
+        "tipo": "IEEE",
+        "url": "https://ieeexplore.ieee.org/abstract/document/11002463/"
+      }
     ],
     "afiliacion_inferida": "",
     "pais_inferido": "Brasil",
@@ -302,16 +492,24 @@
         "distribution feeders with EV charging",
         "IEEE 34-bus and 14-bus test systems"
       ],
-      "afinidad_tracks": {"1": 0.9, "2": 0.8, "3": 0.3},
+      "afinidad_tracks": {
+        "1": 0.9,
+        "2": 0.8,
+        "3": 0.3
+      },
       "etapa": "investigador_inicial",
       "resumen": "Sin perfil de Google Scholar. Es primera autora de un artículo de IEEE Access (2025) con Juan M. Home-Ortiz y Edgar M. Carreño Franco sobre la asignación simultánea de GD y dispositivos de control y protección en redes de distribución desbalanceadas, y presenta tres trabajos en CLAGTEE sobre protección con GD, redimensionamiento de protecciones con vehículos eléctricos (G2V/V2G) y modos de control de DER para calidad de energía. Parece estar en una etapa temprana de su carrera, en el grupo UNIOESTE/UNESP. Le interesarían sesiones de protección y planificación de redes de distribución activas, integración de VE y DER.",
-      "base": ["papers_clagtee", "otras_fuentes", "grupo_coautores"]
+      "base": [
+        "papers_clagtee",
+        "otras_fuentes",
+        "grupo_coautores"
+      ]
     }
   },
   {
     "id": "lucas-eduardo-spaciari-barros",
     "nombre": "Lucas Eduardo Spaciari Barros",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
     "afiliacion_inferida": "",
@@ -323,24 +521,35 @@
       ],
       "palabras_clave": [
         "protection coordination",
+        "overcurrent protection",
         "electric vehicles",
         "G2V",
         "V2G",
         "distribution feeder",
         "IEEE 34-bus feeder"
       ],
-      "metodos": [],
-      "aplicaciones": ["distribution feeders with EV charging"],
-      "afinidad_tracks": {"1": 0.9, "2": 0.5},
+      "metodos": [
+        "power flow and short-circuit simulation on IEEE test feeders"
+      ],
+      "aplicaciones": [
+        "distribution feeders with EV charging"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "2": 0.5
+      },
       "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Según su paper CLAGTEE (PLA-22, con Katiani Pereira), trabaja en el redimensionamiento de la protección del alimentador IEEE 34 barras con vehículos eléctricos en modos G2V y V2G. Evidencia escasa; le interesarían sesiones de protección de redes de distribución e integración de VE.",
-      "base": ["papers_clagtee"]
-    }
+      "resumen": "Sin perfil de Google Scholar. Su único paper en CLAGTEE (PLA-22, con Katiani Pereira) trata del redimensionamiento de la protección del alimentador IEEE 34 barras con vehículos eléctricos en modos G2V y V2G; Katiani Pereira trabaja con el grupo de Carreño Franco (UNIOESTE) y Home-Ortiz (UNESP). Hay poca evidencia. Le interesarían sesiones de protección de redes de distribución e integración de VE.",
+      "base": [
+        "papers_clagtee"
+      ]
+    },
+    "nota_busqueda": "No figura en las barras de coautores de Carreño Franco, Home-Ortiz ni Konopatzki. Búsqueda en scholar.google.com: 'Lucas Eduardo Spaciari Barros'; sin perfil."
   },
   {
     "id": "rodrigo-barcelo",
     "nombre": "Rodrigo Barcelo",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
     "afiliacion_inferida": "",
@@ -353,17 +562,29 @@
       "palabras_clave": [
         "distributed energy resources",
         "DER control modes",
+        "volt/var control",
         "power quality",
         "voltage regulation",
         "IEEE 34-bus feeder"
       ],
-      "metodos": ["power flow simulation on IEEE test feeders"],
-      "aplicaciones": ["distribution feeders with high DER penetration"],
-      "afinidad_tracks": {"1": 0.9, "2": 0.6, "3": 0.3},
+      "metodos": [
+        "power flow simulation on IEEE test feeders"
+      ],
+      "aplicaciones": [
+        "distribution feeders with high DER penetration"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "2": 0.6,
+        "3": 0.3
+      },
       "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Según su paper CLAGTEE (PLA-23, con Katiani Pereira), compara modos de control de recursos energéticos distribuidos para garantizar la calidad de energía en el sistema IEEE 34 barras. Evidencia escasa; le interesarían sesiones de integración de DER y calidad de energía en distribución.",
-      "base": ["papers_clagtee"]
-    }
+      "resumen": "Sin perfil de Google Scholar. Su único paper en CLAGTEE (PLA-23, con Katiani Pereira) compara modos de control de recursos energéticos distribuidos para garantizar la calidad de energía en el sistema IEEE 34 barras. Hay poca evidencia. Le interesarían sesiones de integración de DER, control volt/var y calidad de energía en distribución.",
+      "base": [
+        "papers_clagtee"
+      ]
+    },
+    "nota_busqueda": "No figura en las barras de coautores de Carreño Franco, Home-Ortiz ni Konopatzki. Búsqueda en scholar.google.com: 'Rodrigo Barcelo distributed energy resources power quality'; sin perfil."
   },
   {
     "id": "willyan-ferreira-souza",
@@ -385,52 +606,111 @@
         "voltage stability",
         "IEEE 14-bus system"
       ],
-      "metodos": ["power flow simulation on IEEE test systems"],
-      "aplicaciones": ["IEEE 14-bus test system"],
-      "afinidad_tracks": {"2": 0.9, "1": 0.6, "7": 0.2},
+      "metodos": [
+        "power flow simulation on IEEE test systems"
+      ],
+      "aplicaciones": [
+        "IEEE 14-bus test system"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.6,
+        "7": 0.2
+      },
       "etapa": "desconocida",
       "resumen": "Sin perfil de Google Scholar ni otras fuentes identificadas. Su único paper CLAGTEE (INT-17) evalúa el impacto de la GD fotovoltaica en el perfil de tensión y la margen de carga del sistema IEEE 14 barras, junto a Evandro Konopatzki (UTFPR), cuyo grupo trabaja en FV distribuida y eficiencia energética. Evidencia escasa; le interesarían sesiones de integración de GD fotovoltaica y estabilidad de tensión.",
-      "base": ["papers_clagtee", "grupo_coautores"]
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   },
   {
     "id": "abdo-youssif-khoury-filho",
     "nombre": "Abdo Youssif Khoury Filho",
-    "busqueda": "pendiente",
-    "scholar": null,
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=ASYW6TcAAAAJ",
+      "user_id": "ASYW6TcAAAAJ",
+      "nombre_perfil": "Abdo Youssif Khoury Filho",
+      "afiliacion": "Estudante de Doutorado, Unesp, Faculdade de Engenharia, Câmpus de Bauru",
+      "email_verificado": "unesp.br",
+      "intereses_scholar": [
+        "Digital Signal Processing",
+        "Power Transformers"
+      ],
+      "citas": null,
+      "citas_desde_2021": null,
+      "h_index": null,
+      "publicaciones": [
+        {
+          "titulo": "Influence of External Noise on Transformer Fault Classification by Acoustic Emission: A Preliminary Study",
+          "anio": 2025,
+          "citas": 0
+        },
+        {
+          "titulo": "Self-Organized Map based on Acoustic Emission Signals for Power Transformers Monitoring",
+          "anio": null,
+          "citas": 0
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Nombre completo exacto. Es doctorando en UNESP Bauru y en su barra de coautores figura Bruno Albuquerque de Castro (coautor de SEN-4 y PLA-27), con quien publica sobre emisión acústica en transformadores (INDUSCON 2025). Las métricas de citas no cargaron con WebFetch; el perfil tiene 2 publicaciones y probablemente ninguna cita."
+    },
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
-    "pais_inferido": "",
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Faculdade de Engenharia, Bauru",
+    "pais_inferido": "Brasil",
     "intereses": {
       "temas": [
         "partial discharge classification from UHF IQ signals",
-        "ultrasonic localization of surface partial discharges on insulators"
+        "ultrasonic localization of surface partial discharges on insulator arrays",
+        "acoustic emission-based fault classification in power transformers",
+        "robustness of transformer fault classification to external noise"
       ],
       "palabras_clave": [
         "partial discharge",
         "UHF sensing",
         "IQ signals",
+        "acoustic emission",
         "ultrasonic detection",
         "PD localization",
         "insulator arrays",
-        "condition monitoring"
+        "power transformers",
+        "self-organizing maps",
+        "digital signal processing"
       ],
-      "metodos": ["signal classification", "acoustic source localization"],
-      "aplicaciones": ["insulation condition monitoring of high-voltage equipment"],
-      "afinidad_tracks": {"4": 0.9, "6": 0.4, "1": 0.3},
-      "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Presenta dos papers CLAGTEE sobre descargas parciales: clasificación a partir de señales IQ de UHF (SEN-4) y localización ultrasónica de descargas superficiales en un arreglo de aisladores (PLA-27). Le interesarían sesiones de sensores, monitoreo de aislamiento y diagnóstico de equipos.",
-      "base": ["papers_clagtee"]
-    }
+      "metodos": [
+        "digital signal processing",
+        "self-organizing maps",
+        "signal classification",
+        "acoustic source localization"
+      ],
+      "aplicaciones": [
+        "power transformer condition monitoring",
+        "insulator condition monitoring"
+      ],
+      "afinidad_tracks": {
+        "4": 0.9,
+        "6": 0.5,
+        "9": 0.3
+      },
+      "etapa": "estudiante",
+      "resumen": "Doctorando en la UNESP Bauru, en el grupo de Bruno Albuquerque de Castro. Trabaja en el procesamiento de señales de descargas parciales y de emisión acústica para diagnosticar transformadores. En CLAGTEE presenta dos papers: clasificación de descargas parciales con señales IQ de UHF (SEN-4) y localización ultrasónica de descargas superficiales en aisladores (PLA-27). Le interesarían sesiones de sensores, monitoreo de equipos de alta tensión y aprendizaje automático aplicado al diagnóstico.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    },
+    "nota_busqueda": "No apareció con WebSearch (scholar.google.com 'Abdo Youssif Khoury Filho'; web general con UNESP Bauru). El perfil se encontró en los resultados de Scholar (scholar?q=) de su artículo INDUSCON 2025, donde su nombre enlaza a user=ASYW6TcAAAAJ."
   },
   {
     "id": "amanda-de-oliveira-leao",
     "nombre": "Amanda de Oliveira Leão",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
-    "pais_inferido": "",
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Faculdade de Engenharia, Bauru (por el grupo de coautores)",
+    "pais_inferido": "Brasil",
     "intereses": {
       "temas": [
         "partial discharge classification from UHF IQ signals",
@@ -443,54 +723,175 @@
         "ultrasonic detection",
         "PD localization",
         "insulator arrays",
+        "power transformer monitoring",
         "condition monitoring"
       ],
-      "metodos": ["signal classification", "acoustic source localization"],
-      "aplicaciones": ["insulation condition monitoring of high-voltage equipment"],
-      "afinidad_tracks": {"4": 0.9, "6": 0.4, "1": 0.3},
+      "metodos": [
+        "signal classification",
+        "acoustic source localization"
+      ],
+      "aplicaciones": [
+        "insulation condition monitoring of high-voltage equipment"
+      ],
+      "afinidad_tracks": {
+        "4": 0.9,
+        "6": 0.4,
+        "9": 0.2
+      },
       "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Es coautora de dos papers CLAGTEE sobre descargas parciales: clasificación con señales IQ de UHF (SEN-4) y localización ultrasónica en aisladores (PLA-27). Le interesarían sesiones de sensores y monitoreo de condición de aislamiento.",
-      "base": ["papers_clagtee"]
-    }
+      "resumen": "Sin perfil de Google Scholar. Es coautora de los dos papers del grupo de Bruno Albuquerque de Castro (UNESP Bauru) en CLAGTEE: clasificación de descargas parciales con señales IQ de UHF (SEN-4) y localización ultrasónica en aisladores (PLA-27). El grupo trabaja en monitoreo de transformadores con sensores UHF y acústicos. Le interesarían sesiones de sensores y diagnóstico de aislamiento.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Búsqueda en scholar.google.com: 'Amanda de Oliveira Leão'; sin perfil coincidente. El 'JVF Leao' de las publicaciones de B. A. de Castro es otra persona."
   },
   {
     "id": "bruno-albuquerque-de-castro",
     "nombre": "Bruno Albuquerque de Castro",
-    "busqueda": "pendiente",
-    "scholar": null,
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=qh2il2QAAAAJ",
+      "user_id": "qh2il2QAAAAJ",
+      "nombre_perfil": "Bruno Albuquerque de Castro",
+      "afiliacion": "PhD, Electrical Engineering; IEEE Senior Member",
+      "email_verificado": "unesp.br",
+      "intereses_scholar": [
+        "Power transformer monitoring",
+        "UHF sensors",
+        "Acoustics",
+        "Signal processing"
+      ],
+      "citas": 1066,
+      "citas_desde_2021": 827,
+      "h_index": 20,
+      "publicaciones": [
+        {
+          "titulo": "An Innovative Approach to Early Warning of Flashover via Pollution-Induced Radio-Frequency Activity on High-Voltage Ceramic Insulators",
+          "anio": 2026,
+          "citas": 1
+        },
+        {
+          "titulo": "A hybrid CNN-LSTM model for flashover alert on polluted insulators using UHF and acoustic PD signals",
+          "anio": 2025,
+          "citas": 6
+        },
+        {
+          "titulo": "Influence of External Noise on Transformer Fault Classification by Acoustic Emission: A Preliminary Study",
+          "anio": 2025,
+          "citas": 0
+        },
+        {
+          "titulo": "Assessment of UHF frequency range for failure classification in power transformers",
+          "anio": 2024,
+          "citas": 15
+        },
+        {
+          "titulo": "Bioinspired ultrahigh frequency antenna for partial discharge detection in high-voltage equipment",
+          "anio": 2024,
+          "citas": 21
+        },
+        {
+          "titulo": "Frequency range of UHF PD measurements in power transformers",
+          "anio": 2023,
+          "citas": 47
+        },
+        {
+          "titulo": "New algorithm applied to transformers' failures detection based on Karhunen–Loève transform",
+          "anio": 2023,
+          "citas": 25
+        },
+        {
+          "titulo": "A novel E-nose system for the characterization of dissolved gases in dielectric oils",
+          "anio": 2023,
+          "citas": 24
+        },
+        {
+          "titulo": "Separation techniques of partial discharges and electrical noise sources: A review of recent progress",
+          "anio": 2020,
+          "citas": 42
+        },
+        {
+          "titulo": "Three-phase induction motor loading estimation based on Wavelet Transform and low-cost piezoelectric sensors",
+          "anio": 2020,
+          "citas": 42
+        },
+        {
+          "titulo": "Partial Discharge Monitoring in Power Transformers Using Low-Cost Piezoelectric Sensors",
+          "anio": 2016,
+          "citas": 101
+        },
+        {
+          "titulo": "Assessment of macro fiber composite sensors for measurement of acoustic partial discharge signals in power transformers",
+          "anio": 2017,
+          "citas": 70
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Los coautores de CLAGTEE Abdo Y. Khoury Filho (INDUSCON 2025) y João Pedro Gouvêa (primer autor en INDUSCON 2023) figuran en sus publicaciones, y Khoury Filho lo tiene en su barra de coautores. Su línea de descargas parciales con sensores UHF y acústicos es la de SEN-4 y PLA-27."
+    },
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
-    "pais_inferido": "",
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Faculdade de Engenharia, Bauru",
+    "pais_inferido": "Brasil",
     "intereses": {
       "temas": [
-        "partial discharge classification from UHF IQ signals",
-        "ultrasonic localization of surface partial discharges on insulators"
+        "partial discharge detection and classification with UHF sensors",
+        "acoustic emission and ultrasonic monitoring of power transformers",
+        "flashover early warning on polluted insulators from UHF and acoustic PD signals",
+        "transformer failure diagnosis through signal processing",
+        "impedance-based structural health monitoring with piezoelectric transducers"
       ],
       "palabras_clave": [
         "partial discharge",
-        "UHF sensing",
+        "UHF sensors",
         "IQ signals",
-        "ultrasonic detection",
+        "acoustic emission",
+        "piezoelectric sensors",
         "PD localization",
-        "insulator arrays",
-        "condition monitoring"
+        "power transformers",
+        "polluted insulators",
+        "flashover",
+        "dissolved gas analysis",
+        "condition monitoring",
+        "signal processing"
       ],
-      "metodos": ["signal classification", "acoustic source localization"],
-      "aplicaciones": ["insulation condition monitoring of high-voltage equipment"],
-      "afinidad_tracks": {"4": 0.9, "6": 0.4, "1": 0.3},
-      "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Es coautor de dos papers CLAGTEE sobre descargas parciales: clasificación con señales IQ de UHF (SEN-4) y localización ultrasónica en aisladores (PLA-27). Le interesarían sesiones de sensores y monitoreo de condición de aislamiento.",
-      "base": ["papers_clagtee"]
+      "metodos": [
+        "wavelet transform",
+        "Karhunen–Loève transform",
+        "CNN-LSTM deep learning",
+        "PD and noise source separation",
+        "acoustic source localization",
+        "time-reversal damage imaging"
+      ],
+      "aplicaciones": [
+        "power transformer condition monitoring",
+        "high-voltage ceramic insulators",
+        "induction motor diagnostics",
+        "dielectric oil analysis"
+      ],
+      "afinidad_tracks": {
+        "4": 1.0,
+        "6": 0.5,
+        "9": 0.4,
+        "8": 0.3
+      },
+      "etapa": "investigador_consolidado",
+      "resumen": "Investigador de la UNESP Bauru (IEEE Senior Member) en monitoreo de transformadores y aisladores con sensores UHF, acústicos y piezoeléctricos, y en procesamiento de señales para clasificar descargas parciales y fallas, en colaboración con Ardila-Rey (UTFSM, Chile) y Tenbohlen (Stuttgart). En CLAGTEE es coautor de SEN-4 (clasificación de DP con señales IQ de UHF) y PLA-27 (localización ultrasónica de DP en aisladores). Le interesarían sesiones de sensores, metrología, diagnóstico de equipos de alta tensión y IA aplicada al monitoreo.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
   },
   {
     "id": "eduardo-alexandre-chagas-silva",
     "nombre": "Eduardo Alexandre Chagas Silva",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
-    "pais_inferido": "",
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Faculdade de Engenharia, Bauru (por el grupo de coautores)",
+    "pais_inferido": "Brasil",
     "intereses": {
       "temas": [
         "ultrasonic localization of surface partial discharges on insulators"
@@ -498,26 +899,38 @@
       "palabras_clave": [
         "partial discharge",
         "ultrasonic detection",
+        "acoustic emission",
         "PD localization",
         "insulator arrays",
         "condition monitoring"
       ],
-      "metodos": ["acoustic source localization"],
-      "aplicaciones": ["insulator condition monitoring"],
-      "afinidad_tracks": {"4": 0.9, "1": 0.3},
+      "metodos": [
+        "acoustic source localization"
+      ],
+      "aplicaciones": [
+        "insulator condition monitoring"
+      ],
+      "afinidad_tracks": {
+        "4": 0.9,
+        "6": 0.3
+      },
       "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Es coautor del paper CLAGTEE PLA-27 sobre localización ultrasónica de descargas parciales superficiales en un arreglo de aisladores. Evidencia escasa; le interesarían sesiones de sensores y monitoreo de aislamiento.",
-      "base": ["papers_clagtee"]
-    }
+      "resumen": "Sin perfil de Google Scholar. En CLAGTEE es coautor de PLA-27, sobre la localización ultrasónica de descargas parciales superficiales en un arreglo de aisladores, del grupo de Bruno Albuquerque de Castro (UNESP Bauru), que trabaja en monitoreo acústico y UHF de equipos de alta tensión. Hay poca evidencia individual. Le interesarían sesiones de sensores y diagnóstico de aislamiento.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Búsqueda en scholar.google.com: 'Eduardo Alexandre Chagas Silva'; sin perfil coincidente."
   },
   {
     "id": "gustavo-caetano-da-silva",
     "nombre": "Gustavo Caetano da Silva",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
-    "pais_inferido": "",
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Faculdade de Engenharia, Bauru (por el grupo de coautores)",
+    "pais_inferido": "Brasil",
     "intereses": {
       "temas": [
         "partial discharge classification from UHF IQ signals",
@@ -530,24 +943,38 @@
         "ultrasonic detection",
         "PD localization",
         "insulator arrays",
+        "power transformer monitoring",
         "condition monitoring"
       ],
-      "metodos": ["signal classification", "acoustic source localization"],
-      "aplicaciones": ["insulation condition monitoring of high-voltage equipment"],
-      "afinidad_tracks": {"4": 0.9, "6": 0.4, "1": 0.3},
+      "metodos": [
+        "signal classification",
+        "acoustic source localization"
+      ],
+      "aplicaciones": [
+        "insulation condition monitoring of high-voltage equipment"
+      ],
+      "afinidad_tracks": {
+        "4": 0.9,
+        "6": 0.4,
+        "9": 0.2
+      },
       "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Es coautor de dos papers CLAGTEE sobre descargas parciales: clasificación con señales IQ de UHF (SEN-4) y localización ultrasónica en aisladores (PLA-27). Le interesarían sesiones de sensores y monitoreo de condición de aislamiento.",
-      "base": ["papers_clagtee"]
-    }
+      "resumen": "Sin perfil de Google Scholar. Es coautor de los dos papers del grupo de Bruno Albuquerque de Castro (UNESP Bauru) en CLAGTEE: clasificación de descargas parciales con señales IQ de UHF (SEN-4) y localización ultrasónica en aisladores (PLA-27). Hay poca evidencia individual. Le interesarían sesiones de sensores y diagnóstico de aislamiento.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Búsqueda en scholar.google.com: 'Gustavo Caetano da Silva'; sin perfil coincidente."
   },
   {
     "id": "igor-serafim-da-rocha",
     "nombre": "Igor Serafim da Rocha",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
-    "pais_inferido": "",
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Faculdade de Engenharia, Bauru (por el grupo de coautores)",
+    "pais_inferido": "Brasil",
     "intereses": {
       "temas": [
         "partial discharge classification from UHF IQ signals"
@@ -557,50 +984,79 @@
         "UHF sensing",
         "IQ signals",
         "PD classification",
+        "power transformer monitoring",
         "condition monitoring"
       ],
-      "metodos": ["signal classification"],
-      "aplicaciones": ["insulation condition monitoring of high-voltage equipment"],
-      "afinidad_tracks": {"4": 0.9, "6": 0.4},
+      "metodos": [
+        "signal classification"
+      ],
+      "aplicaciones": [
+        "insulation condition monitoring of high-voltage equipment"
+      ],
+      "afinidad_tracks": {
+        "4": 0.9,
+        "6": 0.4
+      },
       "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Es coautor del paper CLAGTEE SEN-4 sobre clasificación de descargas parciales con señales IQ de UHF. Evidencia escasa; le interesarían sesiones de sensores, monitoreo de aislamiento y procesamiento de señales.",
-      "base": ["papers_clagtee"]
-    }
+      "resumen": "Sin perfil de Google Scholar. En CLAGTEE es coautor de SEN-4, sobre la clasificación de descargas parciales a partir de señales IQ de UHF, del grupo de Bruno Albuquerque de Castro (UNESP Bauru). Hay poca evidencia individual. Le interesarían sesiones de sensores, monitoreo de transformadores y clasificación de señales.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Búsqueda en scholar.google.com: 'Igor Serafim da Rocha'; sin perfil. El 'MA Rocha' de las publicaciones de B. A. de Castro es Marco Aurélio Rocha (posdoctorado), no él."
   },
   {
     "id": "joao-pedro-gouvea",
     "nombre": "João Pedro Gouvêa",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
-    "pais_inferido": "",
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Faculdade de Engenharia, Bauru (por el grupo de coautores)",
+    "pais_inferido": "Brasil",
     "intereses": {
       "temas": [
         "partial discharge classification from UHF IQ signals",
-        "ultrasonic localization of surface partial discharges on insulators"
+        "ultrasonic localization of surface partial discharges on insulators",
+        "failure classification in power transformers with high-frequency current transformers"
       ],
       "palabras_clave": [
         "partial discharge",
         "UHF sensing",
         "IQ signals",
+        "HFCT",
         "ultrasonic detection",
         "PD localization",
         "insulator arrays",
+        "power transformers",
         "condition monitoring"
       ],
-      "metodos": ["signal classification", "acoustic source localization"],
-      "aplicaciones": ["insulation condition monitoring of high-voltage equipment"],
-      "afinidad_tracks": {"4": 0.9, "6": 0.4, "1": 0.3},
-      "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Es coautor de dos papers CLAGTEE sobre descargas parciales: clasificación con señales IQ de UHF (SEN-4) y localización ultrasónica en aisladores (PLA-27). Le interesarían sesiones de sensores y monitoreo de condición de aislamiento.",
-      "base": ["papers_clagtee"]
-    }
+      "metodos": [
+        "signal classification",
+        "acoustic source localization"
+      ],
+      "aplicaciones": [
+        "power transformer condition monitoring",
+        "insulation condition monitoring of high-voltage equipment"
+      ],
+      "afinidad_tracks": {
+        "4": 0.9,
+        "6": 0.4,
+        "9": 0.3
+      },
+      "etapa": "investigador_inicial",
+      "resumen": "Sin perfil de Google Scholar. En las publicaciones de Bruno Albuquerque de Castro figura como primer autor de 'Techniques for failures classification in power transformers by high-frequency current transformers' (INDUSCON 2023). En CLAGTEE es coautor de SEN-4 (clasificación de descargas parciales con señales IQ de UHF) y PLA-27 (localización ultrasónica en aisladores). Le interesarían sesiones de sensores y diagnóstico de transformadores.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Búsqueda en scholar.google.com: 'João Pedro Gouvêa transformer UNESP'; sin perfil (solo João Pedro Gouveia, NOVA Lisboa, de otro tema). En Scholar figura como 'JP Gouvêa' sin enlace a perfil."
   },
   {
     "id": "h-octavio-alvarenga",
     "nombre": "H. Octavio Alvarenga",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
     "afiliacion_inferida": "",
@@ -620,57 +1076,178 @@
         "renewable integration",
         "Honduras"
       ],
-      "metodos": ["Monte Carlo simulation"],
-      "aplicaciones": ["Honduran power system", "grid-scale battery storage"],
-      "afinidad_tracks": {"2": 0.9, "1": 0.7, "7": 0.3},
+      "metodos": [
+        "Monte Carlo simulation"
+      ],
+      "aplicaciones": [
+        "Honduran power system",
+        "grid-scale battery storage"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.7,
+        "7": 0.3
+      },
       "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Presenta en CLAGTEE (INT-28) una evaluación basada en Monte Carlo de la flexibilidad del sistema y la vida útil en ciclos de BESS para el caso de Honduras. Le interesarían sesiones de integración de renovables, almacenamiento y planificación de sistemas en Centroamérica.",
-      "base": ["papers_clagtee"]
-    }
+      "resumen": "Sin perfil de Google Scholar. Presenta en CLAGTEE una evaluación con Monte Carlo de la flexibilidad del sistema eléctrico y de la vida útil en ciclos de baterías (BESS) para Honduras (INT-28), junto a Marcelo G. Molina y Maximiliano Martínez (IEE, UNSJ-CONICET, Argentina), un grupo de almacenamiento y microrredes. Sus coautores sugieren un vínculo con la UNSJ, pero no hay confirmación. Le interesarían sesiones de integración de renovables, almacenamiento y planificación de sistemas.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Búsquedas: scholar.google.com 'Octavio Alvarenga Honduras power system'; web general '\"Octavio Alvarenga\" Honduras BESS flexibility'. Sin resultados coincidentes."
   },
   {
     "id": "marcelo-g-molina",
     "nombre": "Marcelo G. Molina",
-    "busqueda": "pendiente",
-    "scholar": null,
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=AoS_0YQAAAAJ",
+      "user_id": "AoS_0YQAAAAJ",
+      "nombre_perfil": "Marcelo Gustavo Molina",
+      "afiliacion": "Instituto de Energía Eléctrica, Universidad Nacional de San Juan-CONICET",
+      "email_verificado": "iee-unsjconicet.org",
+      "intereses_scholar": [
+        "Redes Inteligentes",
+        "microrredes eléctricas",
+        "energías renovables",
+        "almacenamiento de energía"
+      ],
+      "citas": 3818,
+      "citas_desde_2021": 1414,
+      "h_index": 34,
+      "publicaciones": [
+        {
+          "titulo": "Optimization of Calibration Settings for Passive Anti-Islanding Protections Using a Bayesian Entropy Methodology to Support the Sustainable Integration of Renewable Distributed…",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Bayesian Entropy Methodology: A Novel Approach to Setting Anti-Islanding Protections with Enhanced Stability and Sensibility",
+          "anio": 2024,
+          "citas": 4
+        },
+        {
+          "titulo": "Development of control techniques for ac microgrids: A critical assessment",
+          "anio": 2023,
+          "citas": 25
+        },
+        {
+          "titulo": "Enhancing dynamic voltage stability in resilient microgrids using FACTS devices",
+          "anio": 2023,
+          "citas": 42
+        },
+        {
+          "titulo": "Evaluación de la degradación de almacenadores electroquímicos en microrredes eléctricas mediante el método de conteo Rainflow",
+          "anio": 2022,
+          "citas": 1
+        },
+        {
+          "titulo": "A novel methodology for dynamic voltage support with adaptive schemes in photovoltaic generators",
+          "anio": 2022,
+          "citas": 5
+        },
+        {
+          "titulo": "Energy storage and power electronics technologies: A strong combination to empower the transformation to the smart grid",
+          "anio": 2017,
+          "citas": 278
+        },
+        {
+          "titulo": "Microgrid architectures for distributed generation: A brief review",
+          "anio": 2017,
+          "citas": 92
+        },
+        {
+          "titulo": "Power flow stabilization and control of microgrid with wind generation by superconducting magnetic energy storage",
+          "anio": 2010,
+          "citas": 201
+        },
+        {
+          "titulo": "Improving the integration of wind power generation into AC microgrids using flywheel energy storage",
+          "anio": 2012,
+          "citas": 163
+        },
+        {
+          "titulo": "Control design and simulation of DSTATCOM with energy storage for power quality improvements",
+          "anio": 2006,
+          "citas": 145
+        },
+        {
+          "titulo": "Distributed energy storage systems for applications in future smart grids",
+          "anio": 2012,
+          "citas": 119
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "El coautor de CLAGTEE Maximiliano Martínez ('M Martínez') figura en varias publicaciones recientes (Energies 2024, Sustainability 2023 y 2025, ARGENCON 2022) y en 'Microgrid architectures for distributed generation' (2017). Su línea de almacenamiento y microrredes, que incluye la degradación de baterías por conteo Rainflow, coincide con INT-28. El perfil tiene mezcladas publicaciones médicas de otros 'M Molina' (ortopedia, neurocirugía), que no se consideran."
+    },
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
-    "pais_inferido": "",
+    "afiliacion_inferida": "Instituto de Energía Eléctrica, Universidad Nacional de San Juan (UNSJ)-CONICET",
+    "pais_inferido": "Argentina",
     "intereses": {
       "temas": [
-        "power system flexibility assessment with variable renewables",
-        "battery energy storage cycle life and degradation",
-        "probabilistic planning of storage in national power systems"
+        "energy storage and power electronics for smart grids",
+        "control of AC microgrids with renewable generation",
+        "battery degradation assessment in microgrids",
+        "anti-islanding protection settings for distributed generation",
+        "dynamic voltage stability in resilient microgrids with FACTS",
+        "flexibility and BESS cycle life in national power systems"
       ],
       "palabras_clave": [
-        "power system flexibility",
+        "energy storage systems",
         "BESS",
-        "cycle life",
         "battery degradation",
-        "Monte Carlo simulation",
-        "renewable integration"
+        "rainflow counting",
+        "microgrids",
+        "smart grids",
+        "wind power integration",
+        "SMES",
+        "flywheel energy storage",
+        "DSTATCOM",
+        "anti-islanding protection",
+        "power system flexibility"
       ],
-      "metodos": ["Monte Carlo simulation"],
-      "aplicaciones": ["Honduran power system", "grid-scale battery storage"],
-      "afinidad_tracks": {"2": 0.9, "1": 0.7, "7": 0.3},
-      "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Es coautor del paper CLAGTEE INT-28 sobre evaluación Monte Carlo de la flexibilidad del sistema y la vida útil de BESS en Honduras. Le interesarían sesiones de integración de renovables y almacenamiento.",
-      "base": ["papers_clagtee"]
+      "metodos": [
+        "dynamic modeling and control design",
+        "Monte Carlo simulation",
+        "Bayesian entropy-based protection setting",
+        "rainflow cycle counting"
+      ],
+      "aplicaciones": [
+        "AC microgrids",
+        "grid-scale battery storage",
+        "wind and PV integration",
+        "Honduran power system"
+      ],
+      "afinidad_tracks": {
+        "2": 1.0,
+        "3": 0.7,
+        "1": 0.6,
+        "10": 0.3
+      },
+      "etapa": "investigador_senior",
+      "resumen": "Investigador senior del IEE (UNSJ-CONICET, Argentina), referente en almacenamiento de energía, electrónica de potencia y microrredes con renovables. Últimamente trabaja en control de microrredes de CA, estabilidad de tensión con FACTS, degradación de baterías y ajuste de protecciones anti-isla. En CLAGTEE es coautor de una evaluación con Monte Carlo de la flexibilidad y la vida útil de BESS en Honduras (INT-28). Le interesarían sesiones de almacenamiento, microrredes, integración de renovables y electrónica de potencia.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
   },
   {
     "id": "maximiliano-martinez",
     "nombre": "Maximiliano Martínez",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
-    "pais_inferido": "",
+    "afiliacion_inferida": "Instituto de Energía Eléctrica, UNSJ-CONICET (probable, por sus coautorías con M. G. Molina)",
+    "pais_inferido": "Argentina",
     "intereses": {
       "temas": [
         "power system flexibility assessment with variable renewables",
         "battery energy storage cycle life and degradation",
-        "probabilistic planning of storage in national power systems"
+        "probabilistic planning of storage in national power systems",
+        "anti-islanding protection settings for distributed generation",
+        "control techniques for AC microgrids"
       ],
       "palabras_clave": [
         "power system flexibility",
@@ -678,20 +1255,39 @@
         "cycle life",
         "battery degradation",
         "Monte Carlo simulation",
-        "renewable integration"
+        "renewable integration",
+        "anti-islanding protection",
+        "microgrid control",
+        "microgrid architectures"
       ],
-      "metodos": ["Monte Carlo simulation"],
-      "aplicaciones": ["Honduran power system", "grid-scale battery storage"],
-      "afinidad_tracks": {"2": 0.9, "1": 0.7, "7": 0.3},
+      "metodos": [
+        "Monte Carlo simulation",
+        "Bayesian entropy-based protection setting"
+      ],
+      "aplicaciones": [
+        "Honduran power system",
+        "grid-scale battery storage",
+        "AC microgrids with distributed generation"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.7,
+        "3": 0.3,
+        "7": 0.2
+      },
       "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Es coautor del paper CLAGTEE INT-28 sobre evaluación Monte Carlo de la flexibilidad del sistema y la vida útil de BESS en Honduras. Le interesarían sesiones de integración de renovables y almacenamiento.",
-      "base": ["papers_clagtee"]
-    }
+      "resumen": "Sin perfil de Google Scholar. Como 'M Martínez' publica con Marcelo G. Molina (IEE, UNSJ-CONICET) sobre ajuste de protecciones anti-isla con metodología de entropía bayesiana (Energies 2024, Sustainability 2025), técnicas de control de microrredes de CA (Sustainability 2023) y arquitecturas de microrredes (2017). En CLAGTEE es coautor de INT-28, sobre flexibilidad y vida útil de BESS en Honduras. Le interesarían sesiones de microrredes, protección con generación distribuida y almacenamiento.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Búsquedas en scholar.google.com: 'Maximiliano Martínez microgrids San Juan' y 'Maximiliano Martinez anti-islanding Bayesian entropy UNSJ'; sin perfil. En los resultados de Scholar del artículo de Energies 2024 con Molina figura como 'M Martínez', sin enlace a perfil."
   },
   {
     "id": "rafael-a-garcia",
     "nombre": "Rafael A. García",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
     "afiliacion_inferida": "",
@@ -708,28 +1304,43 @@
         "cycle life",
         "battery degradation",
         "Monte Carlo simulation",
-        "renewable integration"
+        "renewable integration",
+        "Honduras"
       ],
-      "metodos": ["Monte Carlo simulation"],
-      "aplicaciones": ["Honduran power system", "grid-scale battery storage"],
-      "afinidad_tracks": {"2": 0.9, "1": 0.7, "7": 0.3},
+      "metodos": [
+        "Monte Carlo simulation"
+      ],
+      "aplicaciones": [
+        "Honduran power system",
+        "grid-scale battery storage"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.7,
+        "7": 0.3
+      },
       "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Es coautor del paper CLAGTEE INT-28 sobre evaluación Monte Carlo de la flexibilidad del sistema y la vida útil de BESS en Honduras. Le interesarían sesiones de integración de renovables y almacenamiento.",
-      "base": ["papers_clagtee"]
-    }
+      "resumen": "Sin perfil de Google Scholar. En CLAGTEE es coautor de una evaluación con Monte Carlo de la flexibilidad del sistema eléctrico y la vida útil de BESS en Honduras (INT-28), con Marcelo G. Molina (IEE, UNSJ-CONICET), cuyo grupo trabaja en almacenamiento y microrredes. Hay poca evidencia individual. Le interesarían sesiones de almacenamiento, integración de renovables y planificación.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Búsqueda en scholar.google.com: 'Rafael A. García Honduras energy storage'; sin perfil coincidente (nombre común)."
   },
   {
     "id": "jessica-cristina-araujo-de-sousa",
     "nombre": "Jessica Cristina Araujo de Sousa",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
-    "pais_inferido": "",
+    "afiliacion_inferida": "Universidade Federal do Pará (UFPA) (por el grupo de coautores)",
+    "pais_inferido": "Brasil",
     "intereses": {
       "temas": [
         "selective restoration of high-demand loads with mobile battery storage",
-        "optimal dispatch of mobile BESS for distribution service restoration"
+        "optimal dispatch of mobile BESS for distribution service restoration",
+        "control of bidirectional high-gain converters for supercapacitor storage"
       ],
       "palabras_clave": [
         "service restoration",
@@ -737,24 +1348,41 @@
         "critical loads",
         "genetic algorithm",
         "OpenDSS",
-        "distribution resilience"
+        "distribution resilience",
+        "supercapacitors",
+        "interleaved bidirectional converter"
       ],
-      "metodos": ["genetic algorithm", "OpenDSS simulation"],
-      "aplicaciones": ["distribution networks under outages"],
-      "afinidad_tracks": {"2": 0.9, "1": 0.7},
-      "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Presenta en CLAGTEE (INT-32) la restauración selectiva de cargas de alta demanda con BESS móviles mediante algoritmo genético y OpenDSS. Le interesarían sesiones de almacenamiento, resiliencia y restauración de redes de distribución.",
-      "base": ["papers_clagtee"]
-    }
+      "metodos": [
+        "genetic algorithm",
+        "OpenDSS simulation",
+        "converter controller design"
+      ],
+      "aplicaciones": [
+        "distribution networks under outages",
+        "energy storage interfaces"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.7,
+        "3": 0.4
+      },
+      "etapa": "investigador_inicial",
+      "resumen": "Sin perfil de Google Scholar. Presenta en CLAGTEE la restauración selectiva de cargas de alta demanda con BESS móviles mediante algoritmo genético y OpenDSS (INT-32), con Thiago Mota Soares (UFPA). Probablemente es la 'JCA Sousa' primera autora, con Soares, de un controlador para convertidor bidireccional de supercapacitores (Energies 2025). Le interesarían sesiones de almacenamiento, resiliencia de redes de distribución y electrónica de potencia.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Búsquedas: scholar.google.com 'Jessica Cristina Araujo de Sousa'; web general '\"Jessica Cristina Araujo de Sousa\" BESS'. Sin perfil. En Scholar figura 'JCA Sousa' sin enlace a perfil (Energies 2025 con T. M. Soares)."
   },
   {
     "id": "maria-dolores-santos-da-conceicao",
     "nombre": "Maria Dolores Santos da Conceição",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
-    "pais_inferido": "",
+    "afiliacion_inferida": "Universidade Federal do Pará (UFPA) (por el grupo de coautores)",
+    "pais_inferido": "Brasil",
     "intereses": {
       "temas": [
         "selective restoration of high-demand loads with mobile battery storage",
@@ -766,83 +1394,316 @@
         "critical loads",
         "genetic algorithm",
         "OpenDSS",
-        "distribution resilience"
+        "distribution resilience",
+        "power quality"
       ],
-      "metodos": ["genetic algorithm", "OpenDSS simulation"],
-      "aplicaciones": ["distribution networks under outages"],
-      "afinidad_tracks": {"2": 0.9, "1": 0.7},
+      "metodos": [
+        "genetic algorithm",
+        "OpenDSS simulation"
+      ],
+      "aplicaciones": [
+        "distribution networks under outages"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.7
+      },
       "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Es coautora del paper CLAGTEE INT-32 sobre restauración selectiva de cargas con BESS móviles vía algoritmo genético y OpenDSS. Le interesarían sesiones de almacenamiento y resiliencia de la distribución.",
-      "base": ["papers_clagtee"]
-    }
+      "resumen": "Sin perfil de Google Scholar. En CLAGTEE es coautora de INT-32, sobre la restauración selectiva de cargas de alta demanda con BESS móviles mediante algoritmo genético y OpenDSS, con Thiago Mota Soares (UFPA), cuyo grupo trabaja en calidad de energía, distribución y almacenamiento. Hay poca evidencia individual. Le interesarían sesiones de almacenamiento y resiliencia de redes de distribución.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Búsqueda en scholar.google.com: 'Maria Dolores Santos da Conceição'; sin perfil coincidente."
   },
   {
     "id": "thiago-mota-soares",
     "nombre": "Thiago Mota Soares",
-    "busqueda": "pendiente",
-    "scholar": null,
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=x8drOsUAAAAJ",
+      "user_id": "x8drOsUAAAAJ",
+      "nombre_perfil": "Thiago Mota Soares",
+      "afiliacion": "Professor de Engenharia, Universidade Federal do Pará",
+      "email_verificado": "ufpa.br",
+      "intereses_scholar": [
+        "Qualidade da energia elétrica",
+        "geração distribuída",
+        "smart grid",
+        "máquinas elétricas",
+        "distribuição de energia elétrica"
+      ],
+      "citas": 641,
+      "citas_desde_2021": 498,
+      "h_index": 15,
+      "publicaciones": [
+        {
+          "titulo": "Design of a controller for supercapacitor's bidirectional high-gain interleaved converter",
+          "anio": 2025,
+          "citas": 3
+        },
+        {
+          "titulo": "Genetic algorithm for parameter optimization of supercapacitor model",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Mathematical Formulation of Intelligent Management Algorithms for Isolated Microgrids: A Pareto-Based Critical Approach",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Energy Flexibility: A Systematic Review with a Perspective from Latin America",
+          "anio": 2024,
+          "citas": 9
+        },
+        {
+          "titulo": "Microgrid Integration into Brazilian Distribution Networks: A Demand Response Case Study",
+          "anio": 2024,
+          "citas": 8
+        },
+        {
+          "titulo": "Assessing energy efficiency and power quality impacts due to high-efficiency motors operating under nonideal energy supply",
+          "anio": 2021,
+          "citas": 59
+        },
+        {
+          "titulo": "Assessing voltage unbalance conditions in IE2, IE3 and IE4 classes induction motors",
+          "anio": 2020,
+          "citas": 55
+        },
+        {
+          "titulo": "Voltage harmonic impacts on electric motors: A comparison between IE2, IE3 and IE4 induction motor classes",
+          "anio": 2020,
+          "citas": 47
+        },
+        {
+          "titulo": "Modelagem de um sistema de distribuição real desbalanceado e análise do impacto da geração distribuída utilizando o software OpenDSS",
+          "anio": 2020,
+          "citas": 19
+        },
+        {
+          "titulo": "Technical and non-technical losses calculation in distribution grids using a defined equivalent operational impedance",
+          "anio": 2019,
+          "citas": 32
+        },
+        {
+          "titulo": "Full-observable three-phase state estimation algorithm applied to electric distribution grids",
+          "anio": 2019,
+          "citas": 17
+        },
+        {
+          "titulo": "Using linear and non-parametric regression models to describe the contribution of non-linear loads on the voltage harmonic distortions in the electrical grid",
+          "anio": 2016,
+          "citas": 37
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Nombre completo exacto; profesor de la UFPA. 'JCA Sousa' (probablemente Jessica Cristina Araujo de Sousa, coautora de INT-32) es primera autora con él en Energies 2025 (controlador para convertidor de supercapacitores). Publica sobre distribución con OpenDSS, almacenamiento y algoritmos genéticos, la misma línea de INT-32. El perfil mezcla trabajos de otros 'T Soares' (ingeniería de software, pesca, anestesia, comunicación), que no se consideran."
+    },
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
-    "pais_inferido": "",
+    "afiliacion_inferida": "Universidade Federal do Pará (UFPA)",
+    "pais_inferido": "Brasil",
     "intereses": {
       "temas": [
-        "selective restoration of high-demand loads with mobile battery storage",
-        "optimal dispatch of mobile BESS for distribution service restoration"
+        "power quality impacts on high-efficiency induction motors",
+        "technical and non-technical loss estimation in distribution grids",
+        "distribution system modeling and DG impact assessment with OpenDSS",
+        "supercapacitor and battery storage in distribution systems",
+        "energy management of isolated microgrids and demand response",
+        "mobile BESS for selective load restoration"
       ],
       "palabras_clave": [
-        "service restoration",
-        "mobile BESS",
-        "critical loads",
-        "genetic algorithm",
+        "power quality",
+        "voltage unbalance",
+        "harmonic distortion",
+        "induction motor efficiency classes",
+        "non-technical losses",
+        "three-phase state estimation",
         "OpenDSS",
-        "distribution resilience"
+        "distributed generation",
+        "supercapacitors",
+        "mobile BESS",
+        "service restoration",
+        "genetic algorithm"
       ],
-      "metodos": ["genetic algorithm", "OpenDSS simulation"],
-      "aplicaciones": ["distribution networks under outages"],
-      "afinidad_tracks": {"2": 0.9, "1": 0.7},
-      "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Es coautor del paper CLAGTEE INT-32 sobre restauración selectiva de cargas con BESS móviles vía algoritmo genético y OpenDSS. Le interesarían sesiones de almacenamiento y resiliencia de la distribución.",
-      "base": ["papers_clagtee"]
-    }
+      "metodos": [
+        "genetic algorithm",
+        "OpenDSS simulation",
+        "regression and neural network models",
+        "three-phase state estimation",
+        "Pareto-based multi-objective optimization"
+      ],
+      "aplicaciones": [
+        "distribution networks in Pará (Amazon region)",
+        "isolated microgrids",
+        "industrial motor systems",
+        "distribution service restoration"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "1": 0.8,
+        "8": 0.5,
+        "4": 0.4,
+        "6": 0.3
+      },
+      "etapa": "investigador_consolidado",
+      "resumen": "Profesor de ingeniería de la UFPA que investiga calidad de energía, pérdidas técnicas y no técnicas, y modelado de redes de distribución con generación distribuida (OpenDSS). Más recientemente trabaja en almacenamiento con supercapacitores, microrredes aisladas y respuesta de la demanda. En CLAGTEE es coautor de INT-32, sobre restauración selectiva de cargas con BESS móviles mediante algoritmo genético y OpenDSS. Le interesarían sesiones de almacenamiento, distribución, calidad de energía y microrredes.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
+    },
+    "nota_busqueda": "Hallado con una segunda búsqueda en scholar.google.com con tema ('Thiago M. Soares distribution system restoration OpenDSS genetic algorithm'); el ID se tomó de los resultados de Scholar (scholar?q=)."
   },
   {
     "id": "gustavo-marchesan",
     "nombre": "Gustavo Marchesan",
-    "busqueda": "pendiente",
-    "scholar": null,
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=WXm1VxQAAAAJ",
+      "user_id": "WXm1VxQAAAAJ",
+      "nombre_perfil": "GUSTAVO MARCHESAN",
+      "afiliacion": "Professor, Universidade Federal de Santa Maria",
+      "email_verificado": "ufsm.br",
+      "intereses_scholar": [
+        "Power systems",
+        "Electrical Energy Systems",
+        "Sistemas de Potência",
+        "Sistemas de Energia Elétrica",
+        "Modelagem de Sistemas Elétrico"
+      ],
+      "citas": 507,
+      "citas_desde_2021": 341,
+      "h_index": 12,
+      "publicaciones": [
+        {
+          "titulo": "Cloud and Sun Detection for Operational Monitoring in Remote PV-Diesel Microgrids",
+          "anio": 2025,
+          "citas": 0
+        },
+        {
+          "titulo": "Computer Vision for Hybrid Systems: Cloud and Sun Segmentation with YOLOv8",
+          "anio": 2025,
+          "citas": 0
+        },
+        {
+          "titulo": "Optimization of Isolated Microgrid Sizing Considering the Trade-Off Between Costs and Power Supply Reliability",
+          "anio": 2025,
+          "citas": 3
+        },
+        {
+          "titulo": "Three-Phase-Two-Wire Rural Distribution System Planning: Load Phase Distribution for Minimum Voltage Unbalance",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Reactive compensation in distribution systems and volt/var control analysis: Mutual performance of inverters and curve slope effects",
+          "anio": 2024,
+          "citas": 11
+        },
+        {
+          "titulo": "Impacts of output voltage control on PV generation islanding detection function",
+          "anio": 2024,
+          "citas": 7
+        },
+        {
+          "titulo": "A logistic regression approach for improved safety of the under-frequency load shedding scheme owing to feeder machine inertia",
+          "anio": 2023,
+          "citas": 15
+        },
+        {
+          "titulo": "A multi-agent approach to distribution system fault section estimation in smart grid environment",
+          "anio": 2022,
+          "citas": 39
+        },
+        {
+          "titulo": "Three-phase-two-wire rural distribution network: influence of design characteristics on voltage unbalance",
+          "anio": 2022,
+          "citas": 15
+        },
+        {
+          "titulo": "Metaheuristic for the allocation and sizing of pv-statcoms for ancillary service provision",
+          "anio": 2022,
+          "citas": 13
+        },
+        {
+          "titulo": "Passive method for distributed-generation island detection based on oscillation frequency",
+          "anio": 2015,
+          "citas": 105
+        },
+        {
+          "titulo": "A morphological filtering algorithm for fault detection in transmission lines during power swings",
+          "anio": 2015,
+          "citas": 55
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "El coautor de CLAGTEE Murilo Neumann Oliveira ('MN Oliveira') es primer autor con él de 'Cloud and Sun Detection for Operational Monitoring in Remote PV-Diesel Microgrids' (ISGT LA 2025) y de 'Computer Vision for Hybrid Systems: Cloud and Sun Segmentation with YOLOv8' (SEPOC 2025), la misma línea de MER-5."
+    },
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
-    "pais_inferido": "",
+    "afiliacion_inferida": "Universidade Federal de Santa Maria (UFSM)",
+    "pais_inferido": "Brasil",
     "intereses": {
       "temas": [
-        "computer vision-based solar forecasting",
-        "techno-economic assessment of isolated microgrids",
-        "renewable integration in remote Amazon communities"
+        "islanding detection and anti-islanding protection for distributed generation",
+        "under-frequency load shedding and power system protection",
+        "voltage unbalance in three-phase two-wire rural distribution networks",
+        "volt/var control with PV inverters",
+        "sizing and operation of isolated PV-diesel microgrids",
+        "computer vision-based cloud and sun detection for solar forecasting"
       ],
       "palabras_clave": [
-        "solar forecasting",
-        "computer vision",
-        "sky imagery",
+        "islanding detection",
+        "distributed generation",
+        "under-frequency load shedding",
+        "transmission line protection",
+        "power swing",
+        "voltage unbalance",
+        "rural distribution networks",
+        "volt/var control",
+        "PV-STATCOM",
         "isolated microgrids",
-        "techno-economic assessment",
-        "Amazon"
+        "solar forecasting",
+        "computer vision"
       ],
-      "metodos": ["computer vision", "techno-economic analysis"],
-      "aplicaciones": ["isolated microgrids in the Amazon"],
-      "afinidad_tracks": {"2": 0.9, "6": 0.6, "7": 0.5, "12": 0.3},
-      "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Es coautor del paper CLAGTEE MER-5 sobre la evaluación técnico-económica de integrar pronóstico solar basado en visión por computador en microrredes aisladas de la Amazonía. Le interesarían sesiones de microrredes, pronóstico de renovables con IA y economía de sistemas aislados.",
-      "base": ["papers_clagtee"]
+      "metodos": [
+        "morphological filtering",
+        "logistic regression",
+        "metaheuristics",
+        "neural networks",
+        "YOLOv8 image segmentation",
+        "techno-economic analysis"
+      ],
+      "aplicaciones": [
+        "rural distribution networks in southern Brazil",
+        "isolated microgrids in the Amazon",
+        "protection of distribution networks with inverter-based DG"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "2": 0.9,
+        "6": 0.5,
+        "7": 0.4,
+        "12": 0.2
+      },
+      "etapa": "investigador_consolidado",
+      "resumen": "Profesor de la UFSM especializado en protección de sistemas eléctricos: detección de islas con generación distribuida, alivio de carga por subfrecuencia y protección de líneas. También estudia el desbalance de tensión en redes rurales trifásicas de dos hilos, el control volt/var con inversores FV y el dimensionamiento de microrredes aisladas. En CLAGTEE es coautor de MER-5, sobre la evaluación técnico-económica del pronóstico solar con visión por computador en microrredes aisladas de la Amazonía. Le interesarían sesiones de protección, integración de renovables, microrredes e IA aplicada.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
   },
   {
     "id": "henrique-fogliarini-neves",
     "nombre": "Henrique Fogliarini Neves",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
-    "pais_inferido": "",
+    "afiliacion_inferida": "Universidade Federal de Santa Maria (UFSM) (por el grupo de coautores)",
+    "pais_inferido": "Brasil",
     "intereses": {
       "temas": [
         "computer vision-based solar forecasting",
@@ -854,55 +1715,92 @@
         "computer vision",
         "sky imagery",
         "isolated microgrids",
+        "PV-diesel hybrid systems",
         "techno-economic assessment",
         "Amazon"
       ],
-      "metodos": ["computer vision", "techno-economic analysis"],
-      "aplicaciones": ["isolated microgrids in the Amazon"],
-      "afinidad_tracks": {"2": 0.9, "6": 0.6, "7": 0.5, "12": 0.3},
+      "metodos": [
+        "computer vision",
+        "techno-economic analysis"
+      ],
+      "aplicaciones": [
+        "isolated microgrids in the Amazon"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "6": 0.6,
+        "7": 0.5,
+        "12": 0.3
+      },
       "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Es coautor del paper CLAGTEE MER-5 sobre la evaluación técnico-económica de integrar pronóstico solar basado en visión por computador en microrredes aisladas de la Amazonía. Le interesarían sesiones de microrredes y pronóstico de renovables con IA.",
-      "base": ["papers_clagtee"]
-    }
+      "resumen": "Sin perfil de Google Scholar. En CLAGTEE es coautor de MER-5, sobre la evaluación técnico-económica de integrar pronóstico solar basado en visión por computador en microrredes aisladas de la Amazonía, con Gustavo Marchesan (UFSM), cuyo grupo trabaja en protección, distribución y microrredes aisladas. Hay poca evidencia individual. Le interesarían sesiones de microrredes, pronóstico de renovables y economía de la energía.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Búsqueda en scholar.google.com: 'Henrique Fogliarini Neves'; sin perfil."
   },
   {
     "id": "murilo-neumann-oliveira",
     "nombre": "Murilo Neumann Oliveira",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
-    "pais_inferido": "",
+    "afiliacion_inferida": "Universidade Federal de Santa Maria (UFSM) (por el grupo de coautores)",
+    "pais_inferido": "Brasil",
     "intereses": {
       "temas": [
         "computer vision-based solar forecasting",
         "techno-economic assessment of isolated microgrids",
-        "renewable integration in remote Amazon communities"
+        "renewable integration in remote Amazon communities",
+        "cloud and sun detection and segmentation in sky images for PV-diesel microgrids",
+        "impact of renewable sources on frequency regulation"
       ],
       "palabras_clave": [
         "solar forecasting",
         "computer vision",
+        "YOLOv8",
+        "cloud segmentation",
         "sky imagery",
+        "PV-diesel hybrid systems",
         "isolated microgrids",
         "techno-economic assessment",
+        "frequency regulation",
         "Amazon"
       ],
-      "metodos": ["computer vision", "techno-economic analysis"],
-      "aplicaciones": ["isolated microgrids in the Amazon"],
-      "afinidad_tracks": {"2": 0.9, "6": 0.6, "7": 0.5, "12": 0.3},
-      "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Presenta en CLAGTEE (MER-5) la evaluación técnico-económica de integrar pronóstico solar basado en visión por computador en microrredes aisladas de la Amazonía. Le interesarían sesiones de microrredes, pronóstico de renovables con IA y economía de sistemas aislados.",
-      "base": ["papers_clagtee"]
-    }
+      "metodos": [
+        "YOLOv8 image segmentation",
+        "computer vision",
+        "techno-economic analysis"
+      ],
+      "aplicaciones": [
+        "isolated microgrids in the Amazon",
+        "operational monitoring of remote PV-diesel systems"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "6": 0.7,
+        "7": 0.4,
+        "1": 0.3
+      },
+      "etapa": "investigador_inicial",
+      "resumen": "Sin perfil de Google Scholar. Como 'MN Oliveira' es primer autor, con Gustavo Marchesan (UFSM), de trabajos de 2025 sobre detección y segmentación de nubes y sol con visión por computador (YOLOv8) para monitorear microrredes FV-diésel remotas, y es coautor de un estudio sobre el impacto de las renovables en la regulación de frecuencia. Presenta en CLAGTEE la evaluación técnico-económica del pronóstico solar con visión por computador en microrredes aisladas de la Amazonía (MER-5). Le interesarían sesiones de pronóstico de renovables, IA aplicada y microrredes.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
+    },
+    "nota_busqueda": "Búsquedas: scholar.google.com 'Murilo Neumann Oliveira'; web general '\"Murilo Neumann Oliveira\" UFSM'. Sin perfil. Figura como 'MN Oliveira' sin enlace a perfil en los resultados de Scholar."
   },
   {
     "id": "anderson-sousa-de-araujo",
     "nombre": "Anderson Sousa de Araujo",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
     "afiliacion_inferida": "",
-    "pais_inferido": "",
+    "pais_inferido": "Brasil",
     "intereses": {
       "temas": [
         "mitigation of structural overloads in transmission planning",
@@ -917,22 +1815,32 @@
         "FACTS",
         "power flow control"
       ],
-      "metodos": ["power flow and contingency analysis"],
-      "aplicaciones": ["transmission network expansion planning"],
-      "afinidad_tracks": {"1": 0.9, "3": 0.6},
+      "metodos": [
+        "power flow and contingency analysis"
+      ],
+      "aplicaciones": [
+        "transmission network expansion planning"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "3": 0.6
+      },
       "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Presenta en CLAGTEE (PLA-31) una solución de planificación para sobrecargas estructurales que pasa del control con transformadores desfasadores a la compensación serie estática síncrona (SSSC). Le interesarían sesiones de planificación de transmisión y dispositivos FACTS.",
-      "base": ["papers_clagtee"]
-    }
+      "resumen": "Sin perfil de Google Scholar ni otras fuentes. Presenta en CLAGTEE una solución de planificación para sobrecargas estructurales que pasa del control con transformador desfasador a la compensación serie con SSSC (PLA-31). Hay poca evidencia; el título en inglés y los coautores con nombres brasileños sugieren un grupo de Brasil, quizá de planificación de la transmisión en una empresa u operador. Le interesarían sesiones de planificación de la transmisión, FACTS y control de flujos.",
+      "base": [
+        "papers_clagtee"
+      ]
+    },
+    "nota_busqueda": "Búsquedas: scholar.google.com 'Anderson Sousa de Araujo'; web general '\"Anderson Sousa de Araujo\" transformador defasador SSSC'. Sin resultados coincidentes."
   },
   {
     "id": "andre-christovao-pio-martins",
     "nombre": "André Christóvão Pio Martins",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
     "afiliacion_inferida": "",
-    "pais_inferido": "",
+    "pais_inferido": "Brasil",
     "intereses": {
       "temas": [
         "mitigation of structural overloads in transmission planning",
@@ -947,22 +1855,32 @@
         "FACTS",
         "power flow control"
       ],
-      "metodos": ["power flow and contingency analysis"],
-      "aplicaciones": ["transmission network expansion planning"],
-      "afinidad_tracks": {"1": 0.9, "3": 0.6},
+      "metodos": [
+        "power flow and contingency analysis"
+      ],
+      "aplicaciones": [
+        "transmission network expansion planning"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "3": 0.6
+      },
       "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Es coautor del paper CLAGTEE PLA-31 sobre el paso del control con transformadores desfasadores a la compensación SSSC como solución de planificación para sobrecargas estructurales. Le interesarían sesiones de planificación de transmisión y FACTS.",
-      "base": ["papers_clagtee"]
-    }
+      "resumen": "Sin perfil de Google Scholar. En CLAGTEE es coautor de PLA-31, sobre el paso del control con transformador desfasador a la compensación serie con SSSC para resolver sobrecargas estructurales en la planificación. Hay poca evidencia. Le interesarían sesiones de planificación de la transmisión, FACTS y control de flujos.",
+      "base": [
+        "papers_clagtee"
+      ]
+    },
+    "nota_busqueda": "Búsqueda en scholar.google.com: 'André Christóvão Pio Martins'; sin perfil coincidente."
   },
   {
     "id": "liamara-de-fatima-ferreira",
     "nombre": "Liamara de Fatima Ferreira",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
     "afiliacion_inferida": "",
-    "pais_inferido": "",
+    "pais_inferido": "Brasil",
     "intereses": {
       "temas": [
         "mitigation of structural overloads in transmission planning",
@@ -977,12 +1895,22 @@
         "FACTS",
         "power flow control"
       ],
-      "metodos": ["power flow and contingency analysis"],
-      "aplicaciones": ["transmission network expansion planning"],
-      "afinidad_tracks": {"1": 0.9, "3": 0.6},
+      "metodos": [
+        "power flow and contingency analysis"
+      ],
+      "aplicaciones": [
+        "transmission network expansion planning"
+      ],
+      "afinidad_tracks": {
+        "1": 0.9,
+        "3": 0.6
+      },
       "etapa": "desconocida",
-      "resumen": "Perfil de Google Scholar no buscado todavía (se agotó el cupo de búsquedas web). Es coautora del paper CLAGTEE PLA-31 sobre el paso del control con transformadores desfasadores a la compensación SSSC como solución de planificación para sobrecargas estructurales. Le interesarían sesiones de planificación de transmisión y FACTS.",
-      "base": ["papers_clagtee"]
-    }
+      "resumen": "Sin perfil de Google Scholar. En CLAGTEE es coautora de PLA-31, sobre el paso del control con transformador desfasador a la compensación serie con SSSC para resolver sobrecargas estructurales en la planificación. Hay poca evidencia. Le interesarían sesiones de planificación de la transmisión, FACTS y control de flujos.",
+      "base": [
+        "papers_clagtee"
+      ]
+    },
+    "nota_busqueda": "Búsquedas en scholar.google.com: 'Liamara de Fatima Ferreira' y 'Liamara Ferreira transmission expansion planning FACTS'; sin perfil coincidente."
   }
 ]
