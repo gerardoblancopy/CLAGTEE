@@ -245,6 +245,7 @@
     "intereses": {
       "temas": [
         "wind curtailment estimation with machine learning",
+        "gradient boosting and neural network models for curtailment prediction",
         "data-driven analysis of wind generation constraints in power system operation"
       ],
       "palabras_clave": ["wind curtailment", "histogram-based gradient boosting", "gradient boosting", "artificial neural networks", "wind power", "machine learning"],
