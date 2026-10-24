@@ -28,6 +28,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import tomllib
 from collections import Counter
 from datetime import date
 from pathlib import Path
@@ -36,6 +37,8 @@ SKILL_DIR = Path(__file__).resolve().parents[1]
 REPO_ROOT = SKILL_DIR.parents[2]
 DATOS = SKILL_DIR / "datos"
 DEFAULT_AUTORES = REPO_ROOT / "scratch" / "perfiles-autores" / "autores.json"
+# Los 13 tracks oficiales (el programa solo lista los que tienen papers).
+CONFIG_LIBRO = REPO_ROOT / ".claude" / "skills" / "libro-actas-clagtee" / "config" / "clagtee2026.toml"
 
 CONFIANZA_USABLE = {"alta", "media"}
 ETAPAS = {"estudiante", "investigador_inicial", "investigador_consolidado", "investigador_senior", "industria", "desconocida"}
@@ -58,7 +61,7 @@ def leer_analisis(carpeta: Path) -> tuple[dict, list[str]]:
 
 
 def hora(h: str) -> str:
-    return h if len(h) == 5 else f"0{h}"
+    return f"0{h}" if len(h) == 4 else h
 
 
 def compromisos(autor: dict, papers: dict, sesiones: dict) -> list[dict]:
@@ -244,7 +247,7 @@ def main() -> None:
 
     salida = Path(args.salida)
     salida.mkdir(parents=True, exist_ok=True)
-    tracks = {str(k): v for k, v in datos["tracks"].items()}
+    tracks = {str(t["numero"]): t["en"] for t in tomllib.loads(CONFIG_LIBRO.read_text(encoding="utf-8"))["tracks"]}
     resultado = {
         "congreso": "CLAGTEE 2026",
         "generado": date.today().isoformat(),
