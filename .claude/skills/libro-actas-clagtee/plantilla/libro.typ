@@ -126,7 +126,28 @@
 #marcador(1, cfg.prefacio.titulo)
 #text(size: s(24pt), weight: "bold", cfg.prefacio.titulo)
 #salto(28pt, s(12pt))
-#for p in parrafos(cfg.prefacio.texto) { par(p) }
+// Párrafos separados por una línea en blanco; un bloque cuyas líneas empiezan
+// con "* " se imprime como viñetas, igual que en la página de información. La
+// lista no se corta entre páginas y va pegada al párrafo que la presenta.
+#{
+  let bloques = cfg.prefacio.texto.trim().split(regex("\n\s*\n"))
+    .map(b => b.split("\n").map(l => l.trim()).filter(l => l != ""))
+  let es-lista(lineas) = lineas.len() > 0 and lineas.all(l => l.starts-with("* "))
+  // Entre bloques, el mismo paso de 14 pt que entre párrafos.
+  set block(spacing: lead(s(12pt), 14pt))
+  for (k, lineas) in bloques.enumerate() {
+    if es-lista(lineas) {
+      block(breakable: false, {
+        set par(justify: false, hanging-indent: 36.7pt)
+        set text(hyphenate: false)
+        for l in lineas { par(h(14.2pt) + box(width: 22.5pt)[•] + l.slice(2)) }
+      })
+    } else {
+      let antes-de-lista = k + 1 < bloques.len() and es-lista(bloques.at(k + 1))
+      block(sticky: antes-de-lista, for p in parrafos(lineas.join(" ")) { par(p) })
+    }
+  }
+}
 #salto(28pt, s(12pt))
 #align(center, cursiva(cfg.prefacio.firma_nombre + "\n" + cfg.prefacio.firma_cargo))
 

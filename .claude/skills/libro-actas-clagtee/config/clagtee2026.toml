@@ -115,13 +115,28 @@ nota_pie = ""
 [prefacio]
 titulo = "Preface"
 texto = """
-Located at the south extreme of South America, Chile is bordered by Argentina on the east, Peru by the north and Bolivia by the northeast. Santiago, the capital city, is located in the central zone. In Santiago will take place the 16th Latin-American Congress on Electricity Generation and Transmission (October 28th - 30th, 2026), recognized as a very important event by the community of power systems science and engineering in Latin-American countries. This congress is preceded by the 15th Latin-American Congress on Electricity Generation and Transmission, organized by the Universidad Nacional de Mar del Plata, that took place in Mar del Plata, Argentina, in November 2024.
+Located at the southern tip of South America, Chile is bordered by Argentina to the east, Peru to the north, and Bolivia to the northeast. Santiago, the capital city, is located in the central region and will host the 16th Latin-American Congress on Electricity Generation and Transmission (XVI CLAGTEE) from October 28 to 30, 2026. This conference is widely recognized as a major event by the power system science and engineering community across Latin America.
 
-This international event has been created with the purpose of contributing with a valuable instance for sharing knowledge and experiences concerned with the operation, planning and technological developments in generation, transmission and distribution of electrical systems.
+This edition follows the successful 15th Latin-American Congress on Electricity Generation and Transmission, organized by the National University of Mar del Plata, which took place in Mar del Plata, Argentina, in November 2024.
 
-The XVI CLAGTEE program includes the discussion of technical papers prepared by professionals and researchers (previously subject to the acceptance of a Review Committee), keynote lectures and panels presented by experts from industry and academia, and a pre-congress workshop on Artificial Intelligence applied to power systems. This edition is technically co-sponsored by the IEEE Chile Section. The topics covered include Power System Planning, Operation and Reliability; Renewable Energy Integration, DER and Storage; Power Electronics and Energy Conversion; Sensors, Metrology and Advanced Monitoring; Telecommunications, Digital Networks and Cybersecurity; Data Science, AI and Advanced Computing; Electricity Markets, Economics, Regulation and Energy Transition; Electrical Machines, Drives and Actuators; Conventional and Alternative Power Plants; Bioenergy and Hydrogen; and Social, Economic and Environmental Issues.
+Since 1993, the Pontificia Universidad Católica de Valparaíso (Chile), the São Paulo State University (UNESP, Brazil), and the National University of Mar del Plata (Argentina) have joined forces to organize this biennial congress. Over more than three decades, this continental meeting space has become firmly institutionalized, traveling across various cities in Latin America to promote the exchange of knowledge on analytical methodologies, operational planning, and technology integration aimed at strengthening power generation and transmission systems.
 
-We welcome all of you, in particular those coming from abroad, and we hope that these days in Santiago will be very fruitful.
+Technically co-sponsored by the IEEE Chile Section, the XVI CLAGTEE program features technical papers reviewed and selected by an expert committee, keynote lectures and panel sessions led by industry and academic leaders, and a pre-congress workshop on Artificial Intelligence applied to power systems.
+
+Key topics covered include:
+
+* Power Systems: Planning, Operation, and Reliability
+* Grid Modernization & Integration: Renewable Energy Integration, DER, and Storage
+* Conversion & Control: Power Electronics and Energy Conversion
+* Sensing & Monitoring: Sensors, Metrology, and Advanced Monitoring
+* Digital Infrastructure: Telecommunications, Digital Networks, and Cybersecurity
+* Advanced Computation: Data Science, AI, and Advanced Computing
+* Markets & Policy: Electricity Markets, Economics, Regulation, and Energy Transition
+* Equipment & Generation: Electrical Machines, Drives, Actuators, and Conventional & Alternative Power Plants
+* Emerging Technologies: Bioenergy and Hydrogen
+* Sustainability: Social, Economic, and Environmental Issues
+
+We extend a warm welcome to all participants, especially those joining us from abroad, and wish you a highly productive and rewarding experience in Santiago.
 """
 firma_nombre = "Jorge Mendoza Baeza"
 firma_cargo = "Executive Chairman"
