@@ -131,3 +131,34 @@ Reglas de formato:
 Responder con un resumen breve: cuántos autores con Scholar (por confianza),
 cuántos sin perfil, cuántos ambiguos, y cualquier caso dudoso que convenga
 revisar a mano. No hacer commit ni push.
+
+## Pasadas siguientes (autores pendientes)
+
+WebSearch tiene un cupo de unas 200 búsquedas por turno, compartido por todos
+los agentes que corren en paralelo. La primera pasada lo agotó a mitad de
+camino y dejó autores con `busqueda: "pendiente"` (no se buscaron; distinto de
+`sin_perfil`). Las pasadas siguientes:
+
+- Trabajan solo sobre los `id` del lote que en
+  `datos/scholar/lote-NN.json` están `pendiente`, `ambiguo` o faltan. Los
+  demás objetos no se tocan. Cada objeto rehecho reemplaza al anterior en su
+  lugar; los que faltan se insertan respetando el orden del lote de entrada.
+- Tienen un **presupuesto fijo de WebSearch** (lo da el pedido). Contar cada
+  llamada y, al llegar al tope, dejar el resto como `pendiente`.
+- Ahorran búsquedas así, en este orden:
+  1. **Barra de coautores.** Antes de buscar, leer con WebFetch los perfiles
+     Scholar ya verificados del lote (confianza alta o media) y de los
+     coautores ya encontrados en esta pasada, pidiendo la lista de coautores
+     con su `user=` ID. Los perfiles que aparecen ahí se leen sin gastar
+     búsquedas. WebFetch no consume el cupo de WebSearch.
+  2. **Una búsqueda por autor** (nombre completo, o forma corta + tema). Una
+     segunda solo si presenta en el congreso o si la primera dio un candidato
+     plausible sin confirmar.
+  3. En un grupo sin ningún perfil conocido, buscar primero al autor que
+     parezca más senior (suele ir último en la lista de autores del paper) y
+     seguir por su barra de coautores.
+  4. La búsqueda web general (otras fuentes) solo para quienes presentan y no
+     tienen Scholar, si sobra cupo.
+- Si con una sola búsqueda no aparece nada, `busqueda: "sin_perfil"` y en
+  `scholar` `null`; anotar en `nota_busqueda` (campo libre, opcional) qué se
+  buscó.
