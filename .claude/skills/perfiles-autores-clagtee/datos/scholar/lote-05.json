@@ -314,433 +314,1307 @@
   {
     "id": "carlos-alberto-aguero",
     "nombre": "Carlos Alberto Agüero",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
+    "afiliacion_inferida": "Universidad Nacional de Mar del Plata (UNMdP), inferida por coautores",
     "pais_inferido": "Argentina",
+    "nota_busqueda": "1 búsqueda en scholar.google.com ('Carlos Agüero' + pérdidas/GD Argentina) más 1 búsqueda grupal: sin perfil propio. Sus trabajos aparecen en el perfil verificado de Jorge Strack (FtY_syEAAAAJ).",
     "intereses": {
       "temas": [
-        "technical energy loss calculation and separation in distribution networks",
-        "impact of renewable distributed generation on network losses",
-        "software tools for distribution network analysis"
+        "technical energy loss calculation and separation in distribution networks with renewable distributed generation",
+        "active losses in real distribution feeders with photovoltaic insertion",
+        "GIS-based topology and network analysis tools for distribution utilities",
+        "fault location in rural distribution feeders using measurements and GIS data",
+        "load imbalance assessment in distribution networks"
       ],
-      "palabras_clave": ["technical losses", "loss separation", "distributed generation", "renewable energy", "distribution networks", "loss allocation"],
-      "metodos": [],
-      "aplicaciones": ["distribution networks of Mar del Plata, Argentina"],
-      "afinidad_tracks": {"2": 1.0, "1": 0.6, "7": 0.3},
+      "palabras_clave": [
+        "technical losses",
+        "loss separation",
+        "distributed generation",
+        "photovoltaic generation",
+        "distribution networks",
+        "GIS",
+        "network topology",
+        "fault location",
+        "load imbalance",
+        "load flow"
+      ],
+      "metodos": [
+        "load flow simulation with power system analysis software",
+        "integration of GIS and network analysis tools"
+      ],
+      "aplicaciones": [
+        "distribution networks of Mar del Plata, Argentina",
+        "rural electric power distributors"
+      ],
+      "afinidad_tracks": {
+        "2": 1.0,
+        "1": 0.7,
+        "4": 0.3
+      },
       "etapa": "desconocida",
-      "resumen": "Búsqueda en Scholar pendiente (se agotó el cupo de búsquedas web). Según su paper en CLAGTEE, trabaja en una herramienta para calcular y separar pérdidas técnicas en redes con generación distribuida renovable, aplicada en Mar del Plata (país inferido del caso de estudio). Le interesarían sesiones de integración de GD y análisis de redes de distribución."
-      ,
-      "base": ["papers_clagtee"]
+      "resumen": "Sin perfil Scholar propio; en el perfil de Jorge Strack figura como coautor recurrente (UNMdP) de trabajos sobre herramientas SIG de topología y análisis de redes, localización de fallas en distribuidores rurales, desequilibrio de carga y pérdidas activas con inserción fotovoltaica (ARGENCON 2018-2022), y como autor único de un trabajo sobre georreferenciación de redes de distribución con imágenes satelitales (2022). En CLAGTEE firma la herramienta de cálculo y separación de pérdidas técnicas con GD renovable en Mar del Plata. Le interesarían sesiones de integración de GD y análisis de redes de distribución.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   },
   {
     "id": "daniel-orlando-anaut",
     "nombre": "Daniel Orlando Anaut",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
+    "afiliacion_inferida": "Universidad Nacional de Mar del Plata (UNMdP), inferida por coautores",
     "pais_inferido": "Argentina",
+    "nota_busqueda": "1 búsqueda en scholar.google.com ('Daniel Anaut Mar del Plata') más 1 búsqueda grupal: sin perfil propio. Sus trabajos aparecen en el perfil verificado de Jorge Strack (FtY_syEAAAAJ).",
     "intereses": {
       "temas": [
-        "technical energy loss calculation and separation in distribution networks",
-        "impact of renewable distributed generation on network losses",
-        "software tools for distribution network analysis"
+        "technical energy loss calculation and separation in distribution networks with renewable distributed generation",
+        "active losses in real distribution feeders with photovoltaic insertion",
+        "GIS-based topology and network analysis tools for distribution utilities",
+        "fault location in rural distribution feeders using measurements and GIS data",
+        "load imbalance assessment in distribution networks"
       ],
-      "palabras_clave": ["technical losses", "loss separation", "distributed generation", "renewable energy", "distribution networks", "loss allocation"],
-      "metodos": [],
-      "aplicaciones": ["distribution networks of Mar del Plata, Argentina"],
-      "afinidad_tracks": {"2": 1.0, "1": 0.6, "7": 0.3},
+      "palabras_clave": [
+        "technical losses",
+        "loss separation",
+        "distributed generation",
+        "photovoltaic generation",
+        "distribution networks",
+        "GIS",
+        "network topology",
+        "fault location",
+        "load imbalance",
+        "load flow"
+      ],
+      "metodos": [
+        "load flow simulation with power system analysis software",
+        "integration of GIS and network analysis tools"
+      ],
+      "aplicaciones": [
+        "distribution networks of Mar del Plata, Argentina",
+        "rural electric power distributors"
+      ],
+      "afinidad_tracks": {
+        "2": 1.0,
+        "1": 0.7,
+        "4": 0.3
+      },
       "etapa": "desconocida",
-      "resumen": "Búsqueda en Scholar pendiente (se agotó el cupo de búsquedas web). Según su paper en CLAGTEE, trabaja en una herramienta para calcular y separar pérdidas técnicas en redes con generación distribuida renovable, aplicada en Mar del Plata (país inferido del caso de estudio). Le interesarían sesiones de integración de GD y análisis de redes de distribución."
-      ,
-      "base": ["papers_clagtee"]
+      "resumen": "Sin perfil Scholar propio; en el perfil de Jorge Strack figura como coautor (UNMdP) de trabajos sobre herramientas SIG para análisis de redes de distribución, localización de fallas en distribuidores rurales y desequilibrio de carga (ARGENCON 2018-2022). En CLAGTEE firma la herramienta de cálculo y separación de pérdidas técnicas con GD renovable aplicada en Mar del Plata. Le interesarían sesiones de integración de GD y análisis de redes de distribución.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   },
   {
     "id": "guillermo-fabian-di-mauro",
     "nombre": "Guillermo Fabián di Mauro",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
+    "afiliacion_inferida": "Universidad Nacional de Mar del Plata (UNMdP), inferida por coautores",
     "pais_inferido": "Argentina",
+    "nota_busqueda": "1 búsqueda en scholar.google.com ('Guillermo di Mauro' UNMdP) más 1 búsqueda grupal: sin perfil propio. Sus trabajos aparecen en el perfil verificado de Jorge Strack (FtY_syEAAAAJ).",
     "intereses": {
       "temas": [
-        "technical energy loss calculation and separation in distribution networks",
-        "impact of renewable distributed generation on network losses",
-        "software tools for distribution network analysis"
+        "technical energy loss calculation and separation in distribution networks with renewable distributed generation",
+        "active losses in real distribution feeders with photovoltaic insertion",
+        "GIS-based topology and network analysis tools for distribution utilities",
+        "fault location in rural distribution feeders using measurements and GIS data",
+        "load imbalance assessment in distribution networks"
       ],
-      "palabras_clave": ["technical losses", "loss separation", "distributed generation", "renewable energy", "distribution networks", "loss allocation"],
-      "metodos": [],
-      "aplicaciones": ["distribution networks of Mar del Plata, Argentina"],
-      "afinidad_tracks": {"2": 1.0, "1": 0.6, "7": 0.3},
+      "palabras_clave": [
+        "technical losses",
+        "loss separation",
+        "distributed generation",
+        "photovoltaic generation",
+        "distribution networks",
+        "GIS",
+        "network topology",
+        "fault location",
+        "load imbalance",
+        "load flow"
+      ],
+      "metodos": [
+        "load flow simulation with power system analysis software",
+        "integration of GIS and network analysis tools"
+      ],
+      "aplicaciones": [
+        "distribution networks of Mar del Plata, Argentina",
+        "rural electric power distributors"
+      ],
+      "afinidad_tracks": {
+        "2": 1.0,
+        "1": 0.7,
+        "4": 0.3
+      },
       "etapa": "desconocida",
-      "resumen": "Búsqueda en Scholar pendiente (se agotó el cupo de búsquedas web). Según su paper en CLAGTEE, trabaja en una herramienta para calcular y separar pérdidas técnicas en redes con generación distribuida renovable, aplicada en Mar del Plata (país inferido del caso de estudio). Le interesarían sesiones de integración de GD y análisis de redes de distribución."
-      ,
-      "base": ["papers_clagtee"]
+      "resumen": "Sin perfil Scholar propio; en el perfil de Jorge Strack aparece como primer autor de 'Behavior of Active Losses in a Real Electrical Distribution System with Insertion of Photovoltaic Generation' (ARGENCON 2022) y de un trabajo sobre identificación y localización de fallas en distribución con mediciones y SIG (2018), además de coautor en herramientas SIG de topología (UNMdP). En CLAGTEE firma la herramienta de separación de pérdidas técnicas con GD renovable en Mar del Plata. Le interesarían sesiones de integración de GD fotovoltaica, pérdidas y análisis de redes de distribución.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   },
   {
     "id": "joaquin-israel-sanchez",
     "nombre": "Joaquín Israel Sanchez",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
+    "afiliacion_inferida": "Universidad Nacional de Mar del Plata (UNMdP), inferida por el grupo del paper",
     "pais_inferido": "Argentina",
+    "nota_busqueda": "1 búsqueda en scholar.google.com ('Joaquín Israel Sanchez Mar del Plata'): sin resultados. Tampoco figura en los trabajos del grupo listados en el perfil de Jorge Strack.",
     "intereses": {
       "temas": [
-        "technical energy loss calculation and separation in distribution networks",
-        "impact of renewable distributed generation on network losses",
-        "software tools for distribution network analysis"
+        "technical energy loss calculation and separation in distribution networks with renewable distributed generation",
+        "active losses in real distribution feeders with photovoltaic insertion",
+        "GIS-based topology and network analysis tools for distribution utilities"
       ],
-      "palabras_clave": ["technical losses", "loss separation", "distributed generation", "renewable energy", "distribution networks", "loss allocation"],
-      "metodos": [],
-      "aplicaciones": ["distribution networks of Mar del Plata, Argentina"],
-      "afinidad_tracks": {"2": 1.0, "1": 0.6, "7": 0.3},
+      "palabras_clave": [
+        "technical losses",
+        "loss separation",
+        "distributed generation",
+        "photovoltaic generation",
+        "distribution networks",
+        "GIS",
+        "network topology",
+        "fault location",
+        "load imbalance",
+        "load flow"
+      ],
+      "metodos": [
+        "load flow simulation with power system analysis software",
+        "integration of GIS and network analysis tools"
+      ],
+      "aplicaciones": [
+        "distribution networks of Mar del Plata, Argentina",
+        "rural electric power distributors"
+      ],
+      "afinidad_tracks": {
+        "2": 1.0,
+        "1": 0.7,
+        "4": 0.3
+      },
       "etapa": "desconocida",
-      "resumen": "Búsqueda en Scholar pendiente (se agotó el cupo de búsquedas web). Según su paper en CLAGTEE, trabaja en una herramienta para calcular y separar pérdidas técnicas en redes con generación distribuida renovable, aplicada en Mar del Plata (país inferido del caso de estudio). Le interesarían sesiones de integración de GD y análisis de redes de distribución."
-      ,
-      "base": ["papers_clagtee"]
+      "resumen": "Sin perfil Scholar ni otras fuentes; no aparece en las publicaciones previas del grupo de la UNMdP (posiblemente estudiante o integrante reciente). Según su paper en CLAGTEE, trabaja en una herramienta para calcular y separar pérdidas técnicas en redes con GD renovable aplicada en Mar del Plata; el contexto de grupo (Strack, di Mauro, Agüero) es análisis de redes de distribución con SIG, pérdidas con inserción FV y calidad de energía. Evidencia propia escasa.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   },
   {
     "id": "jorge-luis-strack",
     "nombre": "Jorge Luis Strack",
-    "busqueda": "pendiente",
-    "scholar": null,
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=FtY_syEAAAAJ",
+      "user_id": "FtY_syEAAAAJ",
+      "nombre_perfil": "Jorge Strack",
+      "afiliacion": "Universidad Nacional de Mar del Plata",
+      "email_verificado": "fi.mdp.edu.ar",
+      "intereses_scholar": [
+        "Calidad de la Energía",
+        "Redes Eléctricas Inteligentes",
+        "Instrumentación Virtual",
+        "Power Quality",
+        "Smart Grids"
+      ],
+      "citas": 183,
+      "citas_desde_2021": 90,
+      "h_index": 7,
+      "publicaciones": [
+        {
+          "titulo": "Impacto Esperable de la Movilidad Eléctrica sobre la Cargabilidad de los Transformadores de un Distribuidor Residencial de Mar del Plata.",
+          "anio": 2024,
+          "citas": 1
+        },
+        {
+          "titulo": "Voltage Event Classification Method Based on Symmetrical Components Models for Extended ABC Classification Criterion.",
+          "anio": 2023,
+          "citas": 1
+        },
+        {
+          "titulo": "Behavior of Active Losses in a Real Electrical Distribution System with Insertion of Photovoltaic Generation",
+          "anio": 2022,
+          "citas": 3
+        },
+        {
+          "titulo": "Sistemas de Información Geográfica y software de Análisis de Sistemas Eléctricos de Potencia para la elaboración de una herramienta que determina el desequilibrio de carga en…",
+          "anio": 2022,
+          "citas": 0
+        },
+        {
+          "titulo": "Geolocation tool for limiting the multiple estimation problem of fault location in rural electric power distributors considering load flow calculations in branch lines",
+          "anio": 2020,
+          "citas": 0
+        },
+        {
+          "titulo": "Vinculación de herramientas de análisis y gestión para optimización de redes de distribución",
+          "anio": 2020,
+          "citas": 0
+        },
+        {
+          "titulo": "Calidad de Energía en Ciudades Inteligentes: primeros resultados en la ciudad de Mar del Plata",
+          "anio": 2020,
+          "citas": 4
+        },
+        {
+          "titulo": "Topology tools for network analysis on GIS platforms",
+          "anio": 2020,
+          "citas": 2
+        },
+        {
+          "titulo": "Smart grids in developing countries: Current status, challenges and upcoming trends",
+          "anio": 2020,
+          "citas": 3
+        },
+        {
+          "titulo": "Three-phase voltage events classification algorithm based on an adaptive threshold",
+          "anio": 2019,
+          "citas": 11
+        },
+        {
+          "titulo": "Three-phase harmonic and sequence components measurement method based on mSDFT and variable sampling period technique",
+          "anio": 2016,
+          "citas": 42
+        },
+        {
+          "titulo": "Impacto de la iluminación residencial eficiente en la calidad de la energía de una red de distribución",
+          "anio": 2014,
+          "citas": 21
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Publica con CA Agüero, JM Vignerte, DO Anaut y GF di Mauro (coautores de INT-9) en ARGENCON 2018/2020/2022 e IJEET 2020, entre ellos 'Behavior of Active Losses in a Real Electrical Distribution System with Insertion of Photovoltaic Generation' (misma línea que INT-9); email verificado de la Facultad de Ingeniería de la UNMdP."
+    },
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
+    "afiliacion_inferida": "Universidad Nacional de Mar del Plata (UNMdP), Facultad de Ingeniería",
     "pais_inferido": "Argentina",
     "intereses": {
       "temas": [
-        "technical energy loss calculation and separation in distribution networks",
-        "impact of renewable distributed generation on network losses",
-        "software tools for distribution network analysis"
+        "technical energy loss calculation and separation in distribution networks with renewable distributed generation",
+        "power quality monitoring and three-phase voltage event (sag) classification",
+        "harmonic and synchrophasor measurement algorithms",
+        "smart metering and smart grids in Argentina",
+        "GIS-based network analysis tools for distribution utilities",
+        "impact of electric mobility on distribution transformer loading"
       ],
-      "palabras_clave": ["technical losses", "loss separation", "distributed generation", "renewable energy", "distribution networks", "loss allocation"],
-      "metodos": [],
-      "aplicaciones": ["distribution networks of Mar del Plata, Argentina"],
-      "afinidad_tracks": {"2": 1.0, "1": 0.6, "7": 0.3},
-      "etapa": "desconocida",
-      "resumen": "Búsqueda en Scholar pendiente (se agotó el cupo de búsquedas web). Según su paper en CLAGTEE, trabaja en una herramienta para calcular y separar pérdidas técnicas en redes con generación distribuida renovable, aplicada en Mar del Plata (país inferido del caso de estudio). Le interesarían sesiones de integración de GD y análisis de redes de distribución."
-      ,
-      "base": ["papers_clagtee"]
+      "palabras_clave": [
+        "power quality",
+        "voltage dips",
+        "voltage event classification",
+        "harmonics",
+        "synchrophasor estimation",
+        "smart metering",
+        "smart grids",
+        "technical losses",
+        "photovoltaic distributed generation",
+        "GIS",
+        "electric mobility"
+      ],
+      "metodos": [
+        "DFT-based estimators (mSDFT)",
+        "symmetrical components / Fortescue-based classification",
+        "adaptive threshold algorithms",
+        "load flow simulation with GIS-linked network models",
+        "virtual instrumentation"
+      ],
+      "aplicaciones": [
+        "distribution networks of Mar del Plata, Argentina",
+        "residential distribution feeders",
+        "rural distribution feeders"
+      ],
+      "afinidad_tracks": {
+        "2": 0.9,
+        "4": 0.8,
+        "1": 0.7,
+        "5": 0.2
+      },
+      "etapa": "investigador_consolidado",
+      "resumen": "Docente-investigador de la UNMdP (tesis doctoral 2019 sobre clasificación automática de eventos de tensión), con trabajo en calidad de energía, algoritmos de medición de armónicos y sincrofasores, medición inteligente y herramientas SIG para redes de distribución. En CLAGTEE firma la herramienta de cálculo y separación de pérdidas técnicas con GD renovable aplicada en Mar del Plata, continuación de su trabajo con Agüero, di Mauro, Anaut y Vignerte. Le interesarían sesiones de integración de GD, calidad de energía, monitoreo y redes de distribución.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
   },
   {
     "id": "juan-manuel-vignerte",
     "nombre": "Juan Manuel Vignerte",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
+    "afiliacion_inferida": "Universidad Nacional de Mar del Plata (UNMdP), inferida por coautores",
     "pais_inferido": "Argentina",
+    "nota_busqueda": "1 búsqueda en scholar.google.com (nombre completo) y 1 búsqueda web general: sin perfil ni otras fuentes. Sus trabajos aparecen en el perfil verificado de Jorge Strack (FtY_syEAAAAJ).",
     "intereses": {
       "temas": [
-        "technical energy loss calculation and separation in distribution networks",
-        "impact of renewable distributed generation on network losses",
-        "software tools for distribution network analysis"
+        "technical energy loss calculation and separation in distribution networks with renewable distributed generation",
+        "active losses in real distribution feeders with photovoltaic insertion",
+        "GIS-based topology and network analysis tools for distribution utilities",
+        "fault location in rural distribution feeders using measurements and GIS data",
+        "impact of electric mobility on distribution transformer loading"
       ],
-      "palabras_clave": ["technical losses", "loss separation", "distributed generation", "renewable energy", "distribution networks", "loss allocation"],
-      "metodos": [],
-      "aplicaciones": ["distribution networks of Mar del Plata, Argentina"],
-      "afinidad_tracks": {"2": 1.0, "1": 0.6, "7": 0.3},
+      "palabras_clave": [
+        "technical losses",
+        "loss separation",
+        "distributed generation",
+        "photovoltaic generation",
+        "distribution networks",
+        "GIS",
+        "network topology",
+        "fault location",
+        "load imbalance",
+        "load flow"
+      ],
+      "metodos": [
+        "load flow simulation with power system analysis software",
+        "integration of GIS and network analysis tools"
+      ],
+      "aplicaciones": [
+        "distribution networks of Mar del Plata, Argentina",
+        "rural electric power distributors"
+      ],
+      "afinidad_tracks": {
+        "2": 1.0,
+        "1": 0.7,
+        "4": 0.3
+      },
       "etapa": "desconocida",
-      "resumen": "Búsqueda en Scholar pendiente (se agotó el cupo de búsquedas web). Presenta en CLAGTEE una herramienta para calcular y separar pérdidas técnicas en redes con generación distribuida renovable, aplicada en Mar del Plata (país inferido del caso de estudio). Le interesarían sesiones de integración de GD y análisis de redes de distribución."
-      ,
-      "base": ["papers_clagtee"]
+      "resumen": "Sin perfil Scholar propio; en el perfil de Jorge Strack figura como primer autor de 'Vinculación de herramientas de análisis y gestión para optimización de redes de distribución' (ARGENCON 2020) y coautor (UNMdP) de trabajos sobre herramientas SIG, localización de fallas, pérdidas con inserción FV y el impacto de la movilidad eléctrica en la cargabilidad de transformadores de un distribuidor residencial (CLAGTEE 2024). Presenta INT-9 (herramienta de cálculo y separación de pérdidas técnicas con GD renovable en Mar del Plata). Le interesarían sesiones de integración de GD, movilidad eléctrica y análisis de redes de distribución.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   },
   {
     "id": "anna-diva-plasencia-lotufo",
     "nombre": "Anna Diva Plasencia Lotufo",
-    "busqueda": "pendiente",
-    "scholar": null,
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=6II9k0QAAAAJ",
+      "user_id": "6II9k0QAAAAJ",
+      "nombre_perfil": "Anna Diva Plasencia Lotufo",
+      "afiliacion": "Professor de Engenharia Elétrica, UNESP Campus de Ilha Solteira",
+      "email_verificado": "ieee.org",
+      "intereses_scholar": [
+        "Redes Neurais Artificiais",
+        "Inteligência Artificial",
+        "Previsão de carga"
+      ],
+      "citas": 1155,
+      "citas_desde_2021": 417,
+      "h_index": 20,
+      "publicaciones": [
+        {
+          "titulo": "Short-term forecasting of total aggregate demand in uncontrolled residential charging with electric vehicles using artificial neural networks",
+          "anio": 2025,
+          "citas": 3
+        },
+        {
+          "titulo": "Autoencoders as a characterization technique and aid in the classification of volcanic earthquakes",
+          "anio": 2023,
+          "citas": 8
+        },
+        {
+          "titulo": "Development of a short-term electrical load forecasting in disaggregated levels using a hybrid modified fuzzy-ARTMAP strategy",
+          "anio": 2023,
+          "citas": 4
+        },
+        {
+          "titulo": "Efficient methodology for detection and classification of short-circuit faults in distribution systems with distributed generation",
+          "anio": 2022,
+          "citas": 26
+        },
+        {
+          "titulo": "Spatio-temporal modeling and simulation of Asian soybean rust based on fuzzy system",
+          "anio": 2022,
+          "citas": 8
+        },
+        {
+          "titulo": "A new approach to online training for the Fuzzy ARTMAP artificial neural network",
+          "anio": 2021,
+          "citas": 4
+        },
+        {
+          "titulo": "Electrical customer profile using fuzzy logic theory",
+          "anio": 2020,
+          "citas": 16
+        },
+        {
+          "titulo": "Electrical load forecasting in disaggregated levels using Fuzzy ARTMAP artificial neural network and noise removal by singular spectrum analysis",
+          "anio": 2020,
+          "citas": 16
+        },
+        {
+          "titulo": "Multinodal load forecasting for distribution systems using a fuzzy-artmap neural network",
+          "anio": 2018,
+          "citas": 42
+        },
+        {
+          "titulo": "Fuzzy based methodologies comparison for high-impedance fault diagnosis in radial distribution feeders",
+          "anio": 2017,
+          "citas": 59
+        },
+        {
+          "titulo": "Short-term multinodal load forecasting using a modified general regression neural network",
+          "anio": 2011,
+          "citas": 162
+        },
+        {
+          "titulo": "Electric load forecasting using a fuzzy ART&ARTMAP neural network",
+          "anio": 2005,
+          "citas": 134
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Mara Lucia Martins Lopes (MLM Lopes, coautora de CIE-3) firma con ella varias publicaciones del perfil (Sensors 2022, Applied Soft Computing 2021, IEEE Latin America Transactions 2020, CBA 2020 con controlador fuzzy); misma línea de lógica fuzzy e IA aplicada a sistemas eléctricos en UNESP Ilha Solteira. La barra de coautores del perfil está vacía."
+    },
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Faculdade de Engenharia de Ilha Solteira",
     "pais_inferido": "Brasil",
     "intereses": {
       "temas": [
         "multicriteria fuzzy controllers for LED public lighting",
-        "comparison of fuzzy controller structures with three and four input variables",
-        "energy efficiency in public lighting systems"
+        "short-term and multinodal electric load forecasting with neural networks",
+        "fault detection and classification in distribution systems with distributed generation",
+        "artificial immune systems for voltage disturbance diagnosis",
+        "EV charging demand forecasting",
+        "transient stability analysis with neural networks"
       ],
-      "palabras_clave": ["fuzzy logic", "fuzzy controllers", "multicriteria control", "LED street lighting", "public lighting", "energy efficiency"],
-      "metodos": ["fuzzy inference systems"],
-      "aplicaciones": ["LED public lighting systems"],
-      "afinidad_tracks": {"6": 1.0},
-      "etapa": "desconocida",
-      "resumen": "Búsqueda en Scholar pendiente (se agotó el cupo de búsquedas web). Según su paper en CLAGTEE (en portugués, de ahí el país inferido), trabaja en controladores fuzzy multicriterio para sistemas de alumbrado público LED. Le interesarían sesiones de inteligencia computacional aplicada y eficiencia energética."
-      ,
-      "base": ["papers_clagtee"]
+      "palabras_clave": [
+        "fuzzy logic",
+        "fuzzy controllers",
+        "LED street lighting",
+        "load forecasting",
+        "fuzzy ARTMAP",
+        "general regression neural network",
+        "artificial immune systems",
+        "high-impedance faults",
+        "short-circuit fault classification",
+        "electric vehicle charging",
+        "customer load profiles"
+      ],
+      "metodos": [
+        "fuzzy inference systems",
+        "fuzzy ARTMAP and ART neural networks",
+        "general regression neural networks",
+        "artificial immune systems (negative selection)",
+        "autoencoders",
+        "wavelet transform"
+      ],
+      "aplicaciones": [
+        "public lighting systems",
+        "distribution feeders with distributed generation",
+        "residential EV charging demand",
+        "electric utility load forecasting"
+      ],
+      "afinidad_tracks": {
+        "6": 1.0,
+        "1": 0.5,
+        "4": 0.5,
+        "2": 0.3
+      },
+      "etapa": "investigador_senior",
+      "resumen": "Profesora de Ingeniería Eléctrica de la UNESP Ilha Solteira con larga trayectoria (h-index 20) en inteligencia artificial aplicada a sistemas eléctricos: previsión de carga con redes neuronales (fuzzy ARTMAP, GRNN), diagnóstico de fallas y perturbaciones en distribución y, más recientemente, previsión de demanda de recarga de vehículos eléctricos. En CLAGTEE firma la comparación de controladores fuzzy multicriterio para iluminación pública LED. Le interesarían sesiones de IA y ciencia de datos, previsión de demanda y monitoreo de redes de distribución.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
   },
   {
     "id": "barbara-lemos",
     "nombre": "Bárbara Lemos",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Ilha Solteira, inferida por coautores",
     "pais_inferido": "Brasil",
+    "nota_busqueda": "2 búsquedas en scholar.google.com (nombre + fuzzy/iluminação pública; nombre + Lotufo/Lopes) y 1 búsqueda web general: sin perfil ni otras fuentes que coincidan con certeza.",
     "intereses": {
       "temas": [
         "multicriteria fuzzy controllers for LED public lighting",
         "comparison of fuzzy controller structures with three and four input variables",
         "energy efficiency in public lighting systems"
       ],
-      "palabras_clave": ["fuzzy logic", "fuzzy controllers", "multicriteria control", "LED street lighting", "public lighting", "energy efficiency"],
-      "metodos": ["fuzzy inference systems"],
-      "aplicaciones": ["LED public lighting systems"],
-      "afinidad_tracks": {"6": 1.0},
+      "palabras_clave": [
+        "fuzzy logic",
+        "fuzzy controllers",
+        "multicriteria control",
+        "LED street lighting",
+        "public lighting",
+        "energy efficiency",
+        "fuzzy ARTMAP",
+        "load forecasting"
+      ],
+      "metodos": [
+        "fuzzy inference systems",
+        "multicriteria decision making"
+      ],
+      "aplicaciones": [
+        "LED public lighting systems"
+      ],
+      "afinidad_tracks": {
+        "6": 1.0,
+        "1": 0.3,
+        "4": 0.3
+      },
       "etapa": "desconocida",
-      "resumen": "Búsqueda en Scholar pendiente (se agotó el cupo de búsquedas web). Presenta en CLAGTEE (paper en portugués, de ahí el país inferido) una comparación de controladores fuzzy multicriterio con tres y cuatro variables de entrada para alumbrado público LED. Le interesarían sesiones de inteligencia computacional aplicada y eficiencia energética."
-      ,
-      "base": ["papers_clagtee"]
+      "resumen": "Sin perfil Scholar ni otras fuentes. Presenta CIE-3 (comparación de controladores fuzzy multicriterio con tres y cuatro variables de entrada para iluminación pública LED), en el grupo de Anna Diva Lotufo y Mara Lopes (UNESP Ilha Solteira), que trabaja en lógica fuzzy y redes neuronales aplicadas a sistemas eléctricos; probablemente estudiante del grupo. Le interesarían sesiones de IA aplicada, eficiencia energética e iluminación.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   },
   {
     "id": "excel-abimael-barahona-bentura",
     "nombre": "Excel Abimael Barahona Bentura",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Ilha Solteira, inferida por coautores",
     "pais_inferido": "",
+    "nota_busqueda": "1 búsqueda en scholar.google.com (nombre completo): sin resultados.",
     "intereses": {
       "temas": [
         "multicriteria fuzzy controllers for LED public lighting",
         "comparison of fuzzy controller structures with three and four input variables",
         "energy efficiency in public lighting systems"
       ],
-      "palabras_clave": ["fuzzy logic", "fuzzy controllers", "multicriteria control", "LED street lighting", "public lighting", "energy efficiency"],
-      "metodos": ["fuzzy inference systems"],
-      "aplicaciones": ["LED public lighting systems"],
-      "afinidad_tracks": {"6": 1.0},
+      "palabras_clave": [
+        "fuzzy logic",
+        "fuzzy controllers",
+        "multicriteria control",
+        "LED street lighting",
+        "public lighting",
+        "energy efficiency",
+        "fuzzy ARTMAP",
+        "load forecasting"
+      ],
+      "metodos": [
+        "fuzzy inference systems",
+        "multicriteria decision making"
+      ],
+      "aplicaciones": [
+        "LED public lighting systems"
+      ],
+      "afinidad_tracks": {
+        "6": 1.0,
+        "1": 0.3,
+        "4": 0.3
+      },
       "etapa": "desconocida",
-      "resumen": "Búsqueda en Scholar pendiente (se agotó el cupo de búsquedas web). Según su paper en CLAGTEE, trabaja en controladores fuzzy multicriterio para sistemas de alumbrado público LED. Le interesarían sesiones de inteligencia computacional aplicada y eficiencia energética."
-      ,
-      "base": ["papers_clagtee"]
+      "resumen": "Sin perfil Scholar ni otras fuentes. Coautor de CIE-3 (controladores fuzzy multicriterio para iluminación pública LED) con Anna Diva Lotufo y Mara Lopes (UNESP Ilha Solteira), grupo de lógica fuzzy y redes neuronales aplicadas a sistemas eléctricos; posiblemente estudiante de posgrado. Evidencia propia escasa.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   },
   {
     "id": "mara-lucia-martins-lopes",
     "nombre": "Mara Lucia Martins Lopes",
-    "busqueda": "pendiente",
-    "scholar": null,
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=SwUw2VgAAAAJ",
+      "user_id": "SwUw2VgAAAAJ",
+      "nombre_perfil": "Mara Lopes",
+      "afiliacion": "Professor Assistente Doutor",
+      "email_verificado": "mat.feis.unesp.br",
+      "intereses_scholar": [
+        "Sistemas Elétricos de Potência",
+        "Inteligência Artificial"
+      ],
+      "citas": 725,
+      "citas_desde_2021": 274,
+      "h_index": 16,
+      "publicaciones": [
+        {
+          "titulo": "Short-Term Disaggregated Load Forecasting Using a Hybrid Fuzzy ARTMAP and K-means Clustering Model",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Solução Nebulosa de Equações Diferenciais Ordinárias por Bandas de α-Níveis para Sistemas com Incertezas Paramétricas",
+          "anio": 2026,
+          "citas": 0
+        },
+        {
+          "titulo": "Analysis and Optimization of Fuzzy ARTMAP Parameters for Multinodal Electric Load Forecasting",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Integrating autoencoders to improve fault classification with PV system insertion",
+          "anio": 2025,
+          "citas": 8
+        },
+        {
+          "titulo": "Estimation of vulnerable areas to faults caused by tree vegetation in power distribution systems",
+          "anio": 2024,
+          "citas": 13
+        },
+        {
+          "titulo": "Power distribution systems' vulnerability by regions caused by electrical discharges",
+          "anio": 2023,
+          "citas": 5
+        },
+        {
+          "titulo": "Efficient methodology for detection and classification of short-circuit faults in distribution systems with distributed generation",
+          "anio": 2022,
+          "citas": 26
+        },
+        {
+          "titulo": "Detecção de Perdas Não Técnicas via Rede Neural ARTMAP Fuzzy em Sistemas de Distribuição de Energia Elétrica",
+          "anio": 2022,
+          "citas": 2
+        },
+        {
+          "titulo": "Using aggregated electrical loads for the multinodal load forecasting",
+          "anio": 2022,
+          "citas": 4
+        },
+        {
+          "titulo": "Electrical customer profile using fuzzy logic theory",
+          "anio": 2020,
+          "citas": 16
+        },
+        {
+          "titulo": "An artificial immune system with continuous-learning for voltage disturbance diagnosis in electrical distribution systems",
+          "anio": 2016,
+          "citas": 32
+        },
+        {
+          "titulo": "Electric load forecasting using a fuzzy ART&ARTMAP neural network",
+          "anio": 2005,
+          "citas": 134
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Perfil 'Mara Lopes' con publicaciones firmadas MLM Lopes junto a ADP Lotufo (coautora de CIE-3): Sensors 2022, Applied Soft Computing 2021, 'Sistema Fuzzy na classificação de patologias da coluna vertebral' 2022; email verificado de la FEIS-UNESP (Ilha Solteira). La barra de coautores está vacía."
+    },
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
+    "afiliacion_inferida": "Universidade Estadual Paulista (UNESP), Faculdade de Engenharia de Ilha Solteira, Departamento de Matemática",
     "pais_inferido": "Brasil",
     "intereses": {
       "temas": [
         "multicriteria fuzzy controllers for LED public lighting",
-        "comparison of fuzzy controller structures with three and four input variables",
-        "energy efficiency in public lighting systems"
+        "multinodal and disaggregated short-term load forecasting with fuzzy ARTMAP",
+        "fault classification in distribution systems with PV insertion",
+        "vulnerability of distribution networks to vegetation and lightning faults",
+        "non-technical loss detection with neural networks",
+        "fuzzy differential equations for systems with parametric uncertainty"
       ],
-      "palabras_clave": ["fuzzy logic", "fuzzy controllers", "multicriteria control", "LED street lighting", "public lighting", "energy efficiency"],
-      "metodos": ["fuzzy inference systems"],
-      "aplicaciones": ["LED public lighting systems"],
-      "afinidad_tracks": {"6": 1.0},
-      "etapa": "desconocida",
-      "resumen": "Búsqueda en Scholar pendiente (se agotó el cupo de búsquedas web). Según su paper en CLAGTEE (en portugués, de ahí el país inferido), trabaja en controladores fuzzy multicriterio para sistemas de alumbrado público LED. Le interesarían sesiones de inteligencia computacional aplicada y eficiencia energética."
-      ,
-      "base": ["papers_clagtee"]
+      "palabras_clave": [
+        "fuzzy logic",
+        "fuzzy controllers",
+        "LED street lighting",
+        "fuzzy ARTMAP",
+        "load forecasting",
+        "fault classification",
+        "distribution system vulnerability",
+        "non-technical losses",
+        "artificial immune systems",
+        "autoencoders",
+        "customer load profiles"
+      ],
+      "metodos": [
+        "fuzzy inference systems",
+        "fuzzy ARTMAP neural networks",
+        "K-means clustering",
+        "autoencoders",
+        "artificial immune systems (negative selection)",
+        "fuzzy differential equations"
+      ],
+      "aplicaciones": [
+        "public lighting systems",
+        "power distribution systems with PV",
+        "electric utility load forecasting",
+        "structural health monitoring"
+      ],
+      "afinidad_tracks": {
+        "6": 1.0,
+        "1": 0.5,
+        "4": 0.5,
+        "2": 0.3
+      },
+      "etapa": "investigador_consolidado",
+      "resumen": "Profesora del área de matemática de la FEIS-UNESP (Ilha Solteira) que trabaja en inteligencia artificial y lógica fuzzy aplicadas a sistemas eléctricos: previsión de carga multinodal con fuzzy ARTMAP, clasificación de fallas con inserción fotovoltaica, vulnerabilidad de redes de distribución y detección de pérdidas no técnicas. En CLAGTEE firma la comparación de controladores fuzzy multicriterio para iluminación pública LED. Le interesarían sesiones de IA y ciencia de datos, monitoreo y confiabilidad de redes de distribución.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
   },
   {
     "id": "franco-victor-penizzotto",
     "nombre": "Franco Victor Penizzotto",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
     "afiliacion_inferida": "",
     "pais_inferido": "Argentina",
+    "nota_busqueda": "2 búsquedas en scholar.google.com ('Franco Penizzotto'; apellido solo) más 1 búsqueda grupal del paper: sin perfil.",
     "intereses": {
       "temas": [
         "economic impact of net billing schemes on residential PV prosumers",
         "distributed generation regulation and tariff design",
         "economics of residential photovoltaic self-consumption"
       ],
-      "palabras_clave": ["net billing", "prosumers", "residential photovoltaics", "distributed generation regulation", "electricity tariffs", "economic evaluation", "user-generators"],
-      "metodos": ["economic assessment of PV user-generators"],
-      "aplicaciones": ["residential PV user-generators in San Juan, Argentina"],
-      "afinidad_tracks": {"7": 1.0, "2": 0.7, "12": 0.3},
+      "palabras_clave": [
+        "net billing",
+        "prosumers",
+        "residential photovoltaics",
+        "distributed generation regulation",
+        "electricity tariffs",
+        "economic evaluation",
+        "user-generators"
+      ],
+      "metodos": [
+        "economic evaluation of PV investments"
+      ],
+      "aplicaciones": [
+        "residential PV users in San Juan province, Argentina"
+      ],
+      "afinidad_tracks": {
+        "7": 1.0,
+        "2": 0.7,
+        "12": 0.3
+      },
       "etapa": "desconocida",
-      "resumen": "Búsqueda en Scholar pendiente (se agotó el cupo de búsquedas web). Según su paper en CLAGTEE, evalúa el impacto económico de esquemas de net billing sobre usuarios-generadores fotovoltaicos residenciales en San Juan (país inferido del caso de estudio). Le interesarían sesiones de regulación, tarifas y generación distribuida."
-      ,
-      "base": ["papers_clagtee"]
+      "resumen": "Sin perfil Scholar en la búsqueda (ningún autor del grupo MER-11 apareció en scholar.google.com). Según su paper en CLAGTEE, evalúa el impacto económico de esquemas net billing sobre usuarios-generadores fotovoltaicos residenciales en la provincia de San Juan (país inferido del caso de estudio). Le interesarían sesiones de regulación y mercados, generación distribuida y transición energética. Evidencia propia escasa.",
+      "base": [
+        "papers_clagtee"
+      ]
     }
   },
   {
     "id": "gustavo-ezequiel-coria",
     "nombre": "Gustavo Ezequiel Coria",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
     "afiliacion_inferida": "",
     "pais_inferido": "Argentina",
+    "nota_busqueda": "2 búsquedas en scholar.google.com (nombre + IEE UNSJ; nombre + generación distribuida San Juan) más 1 búsqueda grupal: sin perfil.",
     "intereses": {
       "temas": [
         "economic impact of net billing schemes on residential PV prosumers",
         "distributed generation regulation and tariff design",
         "economics of residential photovoltaic self-consumption"
       ],
-      "palabras_clave": ["net billing", "prosumers", "residential photovoltaics", "distributed generation regulation", "electricity tariffs", "economic evaluation", "user-generators"],
-      "metodos": ["economic assessment of PV user-generators"],
-      "aplicaciones": ["residential PV user-generators in San Juan, Argentina"],
-      "afinidad_tracks": {"7": 1.0, "2": 0.7, "12": 0.3},
+      "palabras_clave": [
+        "net billing",
+        "prosumers",
+        "residential photovoltaics",
+        "distributed generation regulation",
+        "electricity tariffs",
+        "economic evaluation",
+        "user-generators"
+      ],
+      "metodos": [
+        "economic evaluation of PV investments"
+      ],
+      "aplicaciones": [
+        "residential PV users in San Juan province, Argentina"
+      ],
+      "afinidad_tracks": {
+        "7": 1.0,
+        "2": 0.7,
+        "12": 0.3
+      },
       "etapa": "desconocida",
-      "resumen": "Búsqueda en Scholar pendiente (se agotó el cupo de búsquedas web). Según su paper en CLAGTEE, evalúa el impacto económico de esquemas de net billing sobre usuarios-generadores fotovoltaicos residenciales en San Juan (país inferido del caso de estudio). Le interesarían sesiones de regulación, tarifas y generación distribuida."
-      ,
-      "base": ["papers_clagtee"]
+      "resumen": "Sin perfil Scholar en la búsqueda (ningún autor del grupo MER-11 apareció en scholar.google.com). Según su paper en CLAGTEE, evalúa el impacto económico de esquemas net billing sobre usuarios-generadores fotovoltaicos residenciales en la provincia de San Juan (país inferido del caso de estudio). Le interesarían sesiones de regulación y mercados, generación distribuida y transición energética. Evidencia propia escasa.",
+      "base": [
+        "papers_clagtee"
+      ]
     }
   },
   {
     "id": "mariano-daniel-maya",
     "nombre": "Mariano Daniel Maya",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
     "afiliacion_inferida": "",
     "pais_inferido": "Argentina",
+    "nota_busqueda": "1 búsqueda en scholar.google.com ('Mariano Maya' UNSJ) más 1 búsqueda grupal: sin perfil.",
     "intereses": {
       "temas": [
         "economic impact of net billing schemes on residential PV prosumers",
         "distributed generation regulation and tariff design",
         "economics of residential photovoltaic self-consumption"
       ],
-      "palabras_clave": ["net billing", "prosumers", "residential photovoltaics", "distributed generation regulation", "electricity tariffs", "economic evaluation", "user-generators"],
-      "metodos": ["economic assessment of PV user-generators"],
-      "aplicaciones": ["residential PV user-generators in San Juan, Argentina"],
-      "afinidad_tracks": {"7": 1.0, "2": 0.7, "12": 0.3},
+      "palabras_clave": [
+        "net billing",
+        "prosumers",
+        "residential photovoltaics",
+        "distributed generation regulation",
+        "electricity tariffs",
+        "economic evaluation",
+        "user-generators"
+      ],
+      "metodos": [
+        "economic evaluation of PV investments"
+      ],
+      "aplicaciones": [
+        "residential PV users in San Juan province, Argentina"
+      ],
+      "afinidad_tracks": {
+        "7": 1.0,
+        "2": 0.7,
+        "12": 0.3
+      },
       "etapa": "desconocida",
-      "resumen": "Búsqueda en Scholar pendiente (se agotó el cupo de búsquedas web). Según su paper en CLAGTEE, evalúa el impacto económico de esquemas de net billing sobre usuarios-generadores fotovoltaicos residenciales en San Juan (país inferido del caso de estudio). Le interesarían sesiones de regulación, tarifas y generación distribuida."
-      ,
-      "base": ["papers_clagtee"]
+      "resumen": "Sin perfil Scholar en la búsqueda (ningún autor del grupo MER-11 apareció en scholar.google.com). Según su paper en CLAGTEE, evalúa el impacto económico de esquemas net billing sobre usuarios-generadores fotovoltaicos residenciales en la provincia de San Juan (país inferido del caso de estudio). Le interesarían sesiones de regulación y mercados, generación distribuida y transición energética. Evidencia propia escasa.",
+      "base": [
+        "papers_clagtee"
+      ]
     }
   },
   {
     "id": "rolando-marcelo-pringles",
     "nombre": "Rolando Marcelo Pringles",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
     "afiliacion_inferida": "",
     "pais_inferido": "Argentina",
+    "nota_busqueda": "3 búsquedas en scholar.google.com (nombre + San Juan; nombre solo; apellido + IEE UNSJ CONICET) más 1 búsqueda grupal: sin perfil. Es el autor más senior probable del grupo; conviene revisar a mano.",
     "intereses": {
       "temas": [
         "economic impact of net billing schemes on residential PV prosumers",
         "distributed generation regulation and tariff design",
         "economics of residential photovoltaic self-consumption"
       ],
-      "palabras_clave": ["net billing", "prosumers", "residential photovoltaics", "distributed generation regulation", "electricity tariffs", "economic evaluation", "user-generators"],
-      "metodos": ["economic assessment of PV user-generators"],
-      "aplicaciones": ["residential PV user-generators in San Juan, Argentina"],
-      "afinidad_tracks": {"7": 1.0, "2": 0.7, "12": 0.3},
+      "palabras_clave": [
+        "net billing",
+        "prosumers",
+        "residential photovoltaics",
+        "distributed generation regulation",
+        "electricity tariffs",
+        "economic evaluation",
+        "user-generators"
+      ],
+      "metodos": [
+        "economic evaluation of PV investments"
+      ],
+      "aplicaciones": [
+        "residential PV users in San Juan province, Argentina"
+      ],
+      "afinidad_tracks": {
+        "7": 1.0,
+        "2": 0.7,
+        "12": 0.3
+      },
       "etapa": "desconocida",
-      "resumen": "Búsqueda en Scholar pendiente (se agotó el cupo de búsquedas web). Según su paper en CLAGTEE, evalúa el impacto económico de esquemas de net billing sobre usuarios-generadores fotovoltaicos residenciales en San Juan (país inferido del caso de estudio). Le interesarían sesiones de regulación, tarifas y generación distribuida."
-      ,
-      "base": ["papers_clagtee"]
+      "resumen": "Sin perfil Scholar en la búsqueda (ningún autor del grupo MER-11 apareció en scholar.google.com). Según su paper en CLAGTEE, evalúa el impacto económico de esquemas net billing sobre usuarios-generadores fotovoltaicos residenciales en la provincia de San Juan (país inferido del caso de estudio). Le interesarían sesiones de regulación y mercados, generación distribuida y transición energética. Evidencia propia escasa.",
+      "base": [
+        "papers_clagtee"
+      ]
     }
   },
   {
     "id": "esteban-gil",
     "nombre": "Esteban Gil",
-    "busqueda": "pendiente",
-    "scholar": null,
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=3MsFGHcAAAAJ",
+      "user_id": "3MsFGHcAAAAJ",
+      "nombre_perfil": "Esteban Gil",
+      "afiliacion": "Universidad Técnica Federico Santa María",
+      "email_verificado": "usm.cl",
+      "intereses_scholar": [
+        "Power Systems",
+        "Renewable Energy",
+        "Probabilistic Methods",
+        "Optimization"
+      ],
+      "citas": 1568,
+      "citas_desde_2021": 615,
+      "h_index": 16,
+      "publicaciones": [
+        {
+          "titulo": "Sizing Battery Storage for a Hybrid Power Plant Using Stochastic Optimisation: A Case Study",
+          "anio": 2025,
+          "citas": 1
+        },
+        {
+          "titulo": "Enhancing short-term probabilistic load forecasting and scenario generation with tailored kernel functions in mixture density networks",
+          "anio": 2025,
+          "citas": 9
+        },
+        {
+          "titulo": "Enhancing Automatic Generation Control Performance Under Uncertainty and Congestion Through Detailed Transmission Modeling and Strategic Selection of Units",
+          "anio": 2024,
+          "citas": 6
+        },
+        {
+          "titulo": "Optimizing capacity expansion planning: An efficient two-stage stochastic programming solution using lagrangian relaxation",
+          "anio": 2024,
+          "citas": 4
+        },
+        {
+          "titulo": "Improving the computational efficiency of the unit commitment problem in hydrothermal systems by using multi-agent deep reinforcement learning",
+          "anio": 2024,
+          "citas": 6
+        },
+        {
+          "titulo": "Generation and transmission expansion planning using a nested decomposition algorithm",
+          "anio": 2024,
+          "citas": 3
+        },
+        {
+          "titulo": "Multi-agent deep reinforcement learning for efficient multi-timescale bidding of a hybrid power plant in day-ahead and real-time markets",
+          "anio": 2022,
+          "citas": 61
+        },
+        {
+          "titulo": "Efficient bidding of a PV power plant with energy storage participating in day-ahead and real-time markets using artificial neural networks",
+          "anio": 2022,
+          "citas": 3
+        },
+        {
+          "titulo": "Addressing the effects of climate change on modeling future hydroelectric energy production in Chile",
+          "anio": 2021,
+          "citas": 14
+        },
+        {
+          "titulo": "Ramping ancillary service for cost-based electricity markets with high penetration of variable renewable energy",
+          "anio": 2020,
+          "citas": 57
+        },
+        {
+          "titulo": "Generation capacity expansion planning under hydro uncertainty using stochastic mixed integer programming and scenario reduction",
+          "anio": 2014,
+          "citas": 145
+        },
+        {
+          "titulo": "Short-term hydrothermal generation scheduling model using a genetic algorithm",
+          "anio": 2003,
+          "citas": 344
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Sergio A. Diaz (coautor de MER-10, user 5lXOzcIAAAAJ, AC3E-USM) figura en su barra de coautores y firman juntos trabajos sobre gestión de demanda y energía en minería en Chile; publica sobre mercados eléctricos con almacenamiento (bidding de planta FV+BESS, dimensionamiento de baterías de planta híbrida) y mercados de costos en Chile."
+    },
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
+    "afiliacion_inferida": "Universidad Técnica Federico Santa María (USM), Valparaíso",
     "pais_inferido": "Chile",
     "intereses": {
       "temas": [
-        "capacity payment mechanisms in electricity markets",
-        "revenue cannibalization from battery storage penetration",
-        "market design for energy storage in the Chilean power system"
+        "capacity payment mechanisms and storage revenue cannibalization in the Chilean market",
+        "bidding and sizing of hybrid PV-plus-storage plants in day-ahead and real-time markets",
+        "stochastic generation and transmission expansion planning",
+        "hydrothermal unit commitment and scheduling under uncertainty",
+        "ancillary services and frequency control in low-inertia systems",
+        "probabilistic load and wind forecasting with machine learning"
       ],
-      "palabras_clave": ["capacity payments", "capacity remuneration", "battery energy storage", "revenue cannibalization", "electricity market design", "resource adequacy", "Chilean electricity market"],
-      "metodos": [],
-      "aplicaciones": ["Chilean electricity market with high battery storage penetration"],
-      "afinidad_tracks": {"7": 1.0, "2": 0.7, "1": 0.4},
-      "etapa": "desconocida",
-      "resumen": "Búsqueda en Scholar pendiente (se agotó el cupo de búsquedas web). Según su paper en CLAGTEE, estudia los pagos por capacidad y cómo mitigar la canibalización de ingresos que provoca la penetración de baterías en Chile (país inferido del caso de estudio). Le interesarían sesiones de mercados, regulación y almacenamiento."
-      ,
-      "base": ["papers_clagtee"]
+      "palabras_clave": [
+        "capacity payments",
+        "battery energy storage",
+        "revenue cannibalization",
+        "cost-based electricity markets",
+        "ancillary services",
+        "capacity expansion planning",
+        "transmission expansion planning",
+        "hydrothermal scheduling",
+        "unit commitment",
+        "stochastic optimization",
+        "deep reinforcement learning",
+        "probabilistic forecasting"
+      ],
+      "metodos": [
+        "stochastic mixed-integer programming",
+        "decomposition methods (Lagrangian relaxation, nested decomposition)",
+        "multi-agent deep reinforcement learning",
+        "mixture density networks and LSTM forecasting",
+        "scenario reduction"
+      ],
+      "aplicaciones": [
+        "Chilean electricity market (SEN)",
+        "hybrid PV-BESS power plants",
+        "hydrothermal power systems"
+      ],
+      "afinidad_tracks": {
+        "7": 1.0,
+        "1": 0.9,
+        "2": 0.7,
+        "6": 0.5
+      },
+      "etapa": "investigador_senior",
+      "resumen": "Académico de la USM (Chile) con más de dos décadas en planificación y operación de sistemas eléctricos: expansión estocástica de generación y transmisión, coordinación hidrotérmica, servicios complementarios y, recientemente, participación de plantas híbridas con almacenamiento en mercados y aprendizaje por refuerzo. En CLAGTEE firma el análisis de pagos por capacidad frente a la canibalización de ingresos por penetración de baterías en Chile. Le interesarían sesiones de mercados y regulación, almacenamiento y planificación.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
   },
   {
     "id": "patricio-cortes",
     "nombre": "Patricio Cortes",
-    "busqueda": "pendiente",
-    "scholar": null,
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=3itZwbsAAAAJ",
+      "user_id": "3itZwbsAAAAJ",
+      "nombre_perfil": "Patricio Cortes",
+      "afiliacion": "Universidad Tecnica Federico Santa Maria, Chile",
+      "email_verificado": "usm.cl",
+      "intereses_scholar": [
+        "Power Electronics",
+        "Predictive Control"
+      ],
+      "citas": 18947,
+      "citas_desde_2021": 6070,
+      "h_index": 37,
+      "publicaciones": [
+        {
+          "titulo": "Predictive Control for Induction Machines",
+          "anio": 2025,
+          "citas": 9
+        },
+        {
+          "titulo": "Modulation and control of a three-phase phase-modular isolated matrix-type PFC rectifier",
+          "anio": 2017,
+          "citas": 50
+        },
+        {
+          "titulo": "Predictive control of a back-to-back NPC converter-based wind power system",
+          "anio": 2016,
+          "citas": 130
+        },
+        {
+          "titulo": "Model predictive current control of grid-connected neutral-point-clamped converters to meet low-voltage ride-through requirements",
+          "anio": 2014,
+          "citas": 236
+        },
+        {
+          "titulo": "Predictive control of power converters and electrical drives",
+          "anio": 2012,
+          "citas": 2050
+        },
+        {
+          "titulo": "Delay compensation in model predictive current control of a three-phase inverter",
+          "anio": 2011,
+          "citas": 1399
+        },
+        {
+          "titulo": "Model predictive control—A simple and powerful method to control power converters",
+          "anio": 2008,
+          "citas": 2677
+        },
+        {
+          "titulo": "Predictive control in power electronics and drives",
+          "anio": 2008,
+          "citas": 2353
+        },
+        {
+          "titulo": "Predictive current control of a voltage source inverter",
+          "anio": 2007,
+          "citas": 2177
+        }
+      ],
+      "confianza": "baja",
+      "evidencia": "Único candidato encontrado: mismo nombre y misma institución (usm.cl) que los otros dos autores de MER-10, y Sergio A. Diaz publicó en 2009 con J. Rodriguez y C. Silva, coautores de este perfil. Pero el perfil es de electrónica de potencia/control predictivo, no tiene trabajos de mercados ni almacenamiento, ni E Gil ni S Diaz aparecen en él, y mezcla publicaciones de homónimos (bibliometría, medicina). No se usa para los intereses."
+    },
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
+    "afiliacion_inferida": "Universidad Técnica Federico Santa María (USM), inferida por coautores",
     "pais_inferido": "Chile",
+    "nota_busqueda": "3 búsquedas: 2 en scholar.google.com (nombre + tema del paper; nombre + USM) y 1 por control predictivo que dio el candidato; 1 búsqueda web general con Esteban Gil sin resultados.",
     "intereses": {
       "temas": [
         "capacity payment mechanisms in electricity markets",
         "revenue cannibalization from battery storage penetration",
         "market design for energy storage in the Chilean power system"
       ],
-      "palabras_clave": ["capacity payments", "capacity remuneration", "battery energy storage", "revenue cannibalization", "electricity market design", "resource adequacy", "Chilean electricity market"],
+      "palabras_clave": [
+        "capacity payments",
+        "capacity remuneration",
+        "battery energy storage",
+        "revenue cannibalization",
+        "electricity market design",
+        "resource adequacy",
+        "Chilean electricity market"
+      ],
       "metodos": [],
-      "aplicaciones": ["Chilean electricity market with high battery storage penetration"],
-      "afinidad_tracks": {"7": 1.0, "2": 0.7, "1": 0.4},
+      "aplicaciones": [
+        "Chilean electricity market (SEN)"
+      ],
+      "afinidad_tracks": {
+        "7": 1.0,
+        "2": 0.7,
+        "1": 0.5
+      },
       "etapa": "desconocida",
-      "resumen": "Búsqueda en Scholar pendiente (se agotó el cupo de búsquedas web). Según su paper en CLAGTEE, estudia los pagos por capacidad y cómo mitigar la canibalización de ingresos que provoca la penetración de baterías en Chile (país inferido del caso de estudio). Le interesarían sesiones de mercados, regulación y almacenamiento."
-      ,
-      "base": ["papers_clagtee"]
+      "resumen": "Identidad no confirmada: el único perfil Scholar con su nombre es el de un investigador de electrónica de potencia de la USM (confianza baja, no usado). Según su paper en CLAGTEE, trabaja con Esteban Gil y Sergio Díaz (USM) en pagos por capacidad y canibalización de ingresos por penetración de baterías en Chile; como contexto de grupo, Gil trabaja en mercados, planificación estocástica y almacenamiento. Le interesarían sesiones de mercados, regulación y almacenamiento.",
+      "base": [
+        "papers_clagtee",
+        "grupo_coautores"
+      ]
     }
   },
   {
     "id": "sergio-andres-diaz-pizarro",
     "nombre": "Sergio Andrés Díaz Pizarro",
-    "busqueda": "pendiente",
-    "scholar": null,
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=5lXOzcIAAAAJ",
+      "user_id": "5lXOzcIAAAAJ",
+      "nombre_perfil": "Sergio A. Diaz",
+      "afiliacion": "Advanced Center of Electrical and Electronic Engineering",
+      "email_verificado": "usm.cl",
+      "intereses_scholar": [
+        "Energy and Resources"
+      ],
+      "citas": 122,
+      "citas_desde_2021": 26,
+      "h_index": 4,
+      "publicaciones": [
+        {
+          "titulo": "Demand Side Management, an Imperative Asset for the Mining Industry",
+          "anio": 2016,
+          "citas": 4
+        },
+        {
+          "titulo": "Answers to the expansion planning problems from a sustainable path perspective using PLEXOS: the case of Australia",
+          "anio": 2014,
+          "citas": 0
+        },
+        {
+          "titulo": "Energy Transmission Expansion Planning in the Australian Context: an integrated solution for the gas and electricity markets",
+          "anio": 2014,
+          "citas": 0
+        },
+        {
+          "titulo": "Speed control of a permanent magnet synchronous motor using predictive current control",
+          "anio": 2009,
+          "citas": 59
+        },
+        {
+          "titulo": "Indirect sensorless speed control of a PMSG for wind application",
+          "anio": 2009,
+          "citas": 40
+        },
+        {
+          "titulo": "Rotor flux vector control of DFIG without currents rotor sensor",
+          "anio": 2009,
+          "citas": 10
+        },
+        {
+          "titulo": "Developing a simple, modern and cost effective system for EMC pre-compliance measurements of conducted emissions",
+          "anio": 2007,
+          "citas": 9
+        },
+        {
+          "titulo": "The Problem of Energy Management in Chile and their Impact in Developing Mining Projects",
+          "anio": null,
+          "citas": 0
+        },
+        {
+          "titulo": "PLEXOS Long Term Solutions for Master Generation Plan Studies",
+          "anio": null,
+          "citas": 0
+        }
+      ],
+      "confianza": "alta",
+      "evidencia": "Figura en la barra de coautores del perfil verificado de Esteban Gil (coautor de MER-10) y firma con E Gil 'Demand Side Management, an Imperative Asset for the Mining Industry' (2016) y un trabajo sobre gestión de energía en minería en Chile; email verificado usm.cl (AC3E)."
+    },
     "otras_fuentes": [],
-    "afiliacion_inferida": "",
+    "afiliacion_inferida": "Advanced Center of Electrical and Electronic Engineering (AC3E), Universidad Técnica Federico Santa María",
     "pais_inferido": "Chile",
     "intereses": {
       "temas": [
-        "capacity payment mechanisms in electricity markets",
-        "revenue cannibalization from battery storage penetration",
-        "market design for energy storage in the Chilean power system"
+        "capacity payments and storage revenue cannibalization in the Chilean market",
+        "generation and transmission expansion planning with PLEXOS",
+        "integrated gas and electricity market planning",
+        "demand side management in the mining industry",
+        "wind generator and PMSG control (early work)"
       ],
-      "palabras_clave": ["capacity payments", "capacity remuneration", "battery energy storage", "revenue cannibalization", "electricity market design", "resource adequacy", "Chilean electricity market"],
-      "metodos": [],
-      "aplicaciones": ["Chilean electricity market with high battery storage penetration"],
-      "afinidad_tracks": {"7": 1.0, "2": 0.7, "1": 0.4},
-      "etapa": "desconocida",
-      "resumen": "Búsqueda en Scholar pendiente (se agotó el cupo de búsquedas web). Presenta en CLAGTEE un estudio sobre pagos por capacidad y la mitigación de la canibalización de ingresos que provoca la penetración de baterías en Chile (país inferido del caso de estudio). Le interesarían sesiones de mercados, regulación y almacenamiento."
-      ,
-      "base": ["papers_clagtee"]
+      "palabras_clave": [
+        "capacity payments",
+        "battery energy storage",
+        "revenue cannibalization",
+        "electricity market design",
+        "expansion planning",
+        "PLEXOS",
+        "gas-electricity integration",
+        "demand side management",
+        "mining industry",
+        "Chilean electricity market"
+      ],
+      "metodos": [
+        "production cost and capacity expansion modelling (PLEXOS)",
+        "market simulation"
+      ],
+      "aplicaciones": [
+        "Chilean electricity market (SEN)",
+        "Australian gas and electricity markets",
+        "mining loads"
+      ],
+      "afinidad_tracks": {
+        "7": 1.0,
+        "1": 0.7,
+        "2": 0.6,
+        "3": 0.2
+      },
+      "etapa": "investigador_inicial",
+      "resumen": "Investigador del AC3E-USM con formación inicial en electrónica de potencia y control de generadores eólicos (2007-2009) y posterior trabajo en planificación de la expansión con PLEXOS (caso australiano, integración gas-electricidad) y gestión de demanda en minería con Esteban Gil. Presenta en CLAGTEE el análisis de pagos por capacidad ante la canibalización de ingresos por baterías en Chile. Le interesarían sesiones de mercados, regulación, almacenamiento y planificación.",
+      "base": [
+        "papers_clagtee",
+        "google_scholar"
+      ]
     }
   },
   {
     "id": "leticia-cristina-lucchini",
     "nombre": "Letícia Cristina Lucchini",
-    "busqueda": "pendiente",
+    "busqueda": "sin_perfil",
     "scholar": null,
     "otras_fuentes": [],
     "afiliacion_inferida": "",
     "pais_inferido": "Brasil",
+    "nota_busqueda": "2 búsquedas en scholar.google.com (nombre completo; apellido + etanol/biocombustibles) y 1 búsqueda web general con el nombre entre comillas: sin perfil. Apareció una ficha de BrCris (pers_6d86b63b-…) que no se pudo abrir (HTTP 503), por lo que no se registra.",
     "intereses": {
       "temas": [
         "well-to-gate analysis of biofuel pathways",
         "ethanol production in Brazil",
         "role of bioenergy in the energy transition"
       ],
-      "palabras_clave": ["bioenergy", "biofuels", "ethanol", "well-to-gate", "life cycle assessment", "energy transition"],
-      "metodos": ["well-to-gate life cycle analysis"],
-      "aplicaciones": ["ethanol production in Brazil"],
-      "afinidad_tracks": {"11": 1.0, "13": 0.5, "7": 0.4},
+      "palabras_clave": [
+        "bioenergy",
+        "biofuels",
+        "ethanol",
+        "sugarcane ethanol",
+        "well-to-gate",
+        "life cycle assessment",
+        "energy transition"
+      ],
+      "metodos": [
+        "well-to-gate life cycle analysis"
+      ],
+      "aplicaciones": [
+        "Brazilian ethanol production"
+      ],
+      "afinidad_tracks": {
+        "11": 1.0,
+        "13": 0.5,
+        "7": 0.4
+      },
       "etapa": "desconocida",
-      "resumen": "Búsqueda en Scholar pendiente (se agotó el cupo de búsquedas web). Presenta en CLAGTEE un análisis well-to-gate de rutas de biocombustibles con un caso de estudio de etanol en Brasil (país inferido del caso de estudio). Le interesarían sesiones de bioenergía e hidrógeno, aspectos ambientales y transición energética."
-      ,
-      "base": ["papers_clagtee"]
+      "resumen": "Sin perfil Scholar ni otras fuentes verificadas; es autora única de su paper. Presenta en CLAGTEE un análisis well-to-gate de rutas de biocombustibles con un caso de estudio de etanol en Brasil (país inferido del caso). Le interesarían sesiones de bioenergía e hidrógeno, aspectos ambientales y transición energética. Evidencia propia escasa.",
+      "base": [
+        "papers_clagtee"
+      ]
     }
   }
 ]
