@@ -618,7 +618,8 @@
     "intereses": {
       "temas": [
         "induction motor condition monitoring",
-        "sensitivity of monitoring measurements to motor operating-state changes"
+        "sensitivity of monitoring measurements to motor operating-state changes",
+        "IoT and digital-twin based motor monitoring (group line)"
       ],
       "palabras_clave": [
         "induction motor",
@@ -702,7 +703,8 @@
     "intereses": {
       "temas": [
         "induction motor condition monitoring",
-        "sensitivity of monitoring measurements to motor operating-state changes"
+        "sensitivity of monitoring measurements to motor operating-state changes",
+        "IoT and digital-twin based motor monitoring (group line)"
       ],
       "palabras_clave": [
         "induction motor",
@@ -1010,7 +1012,8 @@
     "intereses": {
       "temas": [
         "comparative analysis of AC optimal power flow models in transmission systems",
-        "AC formulations for transmission planning and operation (group line)"
+        "AC formulations for transmission planning and operation (group line)",
+        "transmission network expansion planning with AC models (group line)"
       ],
       "palabras_clave": [
         "AC optimal power flow",
