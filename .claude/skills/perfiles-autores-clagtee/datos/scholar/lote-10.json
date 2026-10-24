@@ -1,0 +1,987 @@
+[
+  {
+    "id": "chrystian-dalla-lana-da-silva",
+    "nombre": "Chrystian Dalla Lana da Silva",
+    "busqueda": "sin_perfil",
+    "nota_busqueda": "3 búsquedas en Scholar (nombre, nombre+tema, nombre+UNIPAMPA) y 1 web general sin resultados. Figura como coautor 'CDL da Silva' en 7 publicaciones de 2022 del perfil Scholar de Eduardo Machado dos Santos (UNIPAMPA): saturación de TC con RNA, estimación digital de frecuencia, protección de generadores síncronos y faltas de alta impedancia.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do Pampa (UNIPAMPA)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "distance protection under inverter-based photovoltaic generation",
+        "current transformer saturation detection and correction with neural networks",
+        "phasor and frequency estimation algorithms for digital protective relays",
+        "synchronous generator protection (loss of excitation, overexcitation)",
+        "high impedance fault detection"
+      ],
+      "palabras_clave": [
+        "distance relays",
+        "apparent impedance",
+        "inverter-based resources",
+        "solar photovoltaic",
+        "current transformer saturation",
+        "image processing",
+        "artificial neural networks",
+        "phasor estimation",
+        "frequency estimation",
+        "Clarke components",
+        "digital protective relays",
+        "high impedance faults"
+      ],
+      "metodos": [
+        "artificial neural networks",
+        "image processing",
+        "linear prediction of Clarke components",
+        "comparative performance evaluation of phasor estimators",
+        "electromagnetic transient simulation"
+      ],
+      "aplicaciones": [
+        "transmission system distance protection",
+        "protection with high penetration of inverter-based PV",
+        "synchronous generator protection",
+        "digital protective relays"
+      ],
+      "afinidad_tracks": {"1": 0.9, "2": 0.6, "4": 0.6, "6": 0.5},
+      "etapa": "desconocida",
+      "resumen": "Integrante del grupo de protección de sistemas eléctricos de la UNIPAMPA (coautor recurrente de Eduardo Machado dos Santos desde 2022), sin perfil académico público encontrado. Trabaja en relés digitales: estimación fasorial y de frecuencia, detección de saturación de TC con redes neuronales y efecto de la generación FV con inversores sobre la protección de distancia. Le interesarían sesiones de protección, integración de recursos basados en inversores, medición y aplicaciones de IA en sistemas de potencia.",
+      "base": ["papers_clagtee", "grupo_coautores"]
+    }
+  },
+  {
+    "id": "eduardo-machado-dos-santos",
+    "nombre": "Eduardo Machado dos Santos",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=3AVKcqIAAAAJ",
+      "user_id": "3AVKcqIAAAAJ",
+      "nombre_perfil": "Eduardo Machado dos Santos",
+      "afiliacion": "Professor de Engenharia Elétrica, Universidade Federal do Pampa",
+      "email_verificado": "unipampa.edu.br",
+      "intereses_scholar": ["Sistemas Elétricos de Potência"],
+      "citas": 267,
+      "citas_desde_2021": 123,
+      "h_index": 8,
+      "publicaciones": [
+        {"titulo": "A proposal for detection and correction of current transformer distorted secondary currents due to saturation using artificial neural networks", "anio": 2022, "citas": 4},
+        {"titulo": "Performance analysis of clarke components prediction via derivative-functions of different orders applied in digital frequency estimation in electric power systems", "anio": 2022, "citas": 3},
+        {"titulo": "Synchronous generator loss of excitation detection technique based on waveforms envelopes analysis", "anio": 2022, "citas": 2},
+        {"titulo": "2nd Order Linear Prediction Applied to Digital Frequency Estimation for Different Disturbances", "anio": 2022, "citas": 2},
+        {"titulo": "Influence of the Frequency Estimator Response on Synchronous Generator Overexcitation Protection Performance", "anio": 2022, "citas": 1},
+        {"titulo": "A Novel Method to Detect High Impedance Faults Using Time and Frequency Domains Characteristics", "anio": 2022, "citas": 1},
+        {"titulo": "Firefly Algorithm with non-homogeneous population: A case study in economic load dispatch problem", "anio": 2021, "citas": 15},
+        {"titulo": "Efeitos causados por correntes geomagneticamente induzidas em transformadores de corrente e relés de distância do tipo MHO", "anio": 2020, "citas": 1},
+        {"titulo": "High impedance fault detection and classification in medium voltage distribution networks", "anio": 2019, "citas": 6},
+        {"titulo": "Control strategies for smart charging and discharging of plug-in electric vehicles", "anio": 2016, "citas": 23},
+        {"titulo": "Power system frequency estimation using morphological prediction of Clarke components", "anio": 2015, "citas": 20},
+        {"titulo": "CT Saturation Detection Based on the Distance Between Consecutive Points in the Plans Formed by the Secondary Current Samples and Their Difference-Functions", "anio": 2013, "citas": 51}
+      ],
+      "confianza": "alta",
+      "evidencia": "Perfil de la UNIPAMPA (email verificado unipampa.edu.br). El coautor CLAGTEE Chrystian Dalla Lana da Silva ('CDL da Silva') figura en 7 publicaciones de 2022, y la línea de trabajo coincide con PLA-28 y PLA-32: detección de saturación de TC (con RNA), estimación fasorial y de frecuencia para relés, protección. Ojo: el perfil mezcla obras de homónimos (p. ej. 'A negritude e a luta pelas independências na África Portuguesa', 1975, 41 citas; trabajos de derecho, educación y seguridad informática), así que las citas y el h-index están inflados; esas obras se excluyeron de publicaciones."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do Pampa (UNIPAMPA)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "current transformer saturation detection and secondary current correction",
+        "digital frequency and phasor estimation for protective relays",
+        "synchronous generator protection (loss of excitation, overexcitation)",
+        "high impedance fault detection in distribution networks",
+        "impact of inverter-based PV generation on distance protection",
+        "metaheuristic optimization for economic load dispatch and relay coordination"
+      ],
+      "palabras_clave": [
+        "CT saturation",
+        "digital protective relays",
+        "phasor estimation",
+        "frequency estimation",
+        "Clarke components",
+        "distance relays",
+        "high impedance faults",
+        "artificial neural networks",
+        "synchronous generator protection",
+        "overcurrent relay coordination",
+        "firefly algorithm",
+        "inverter-based resources"
+      ],
+      "metodos": [
+        "artificial neural networks",
+        "image processing",
+        "linear prediction of Clarke components",
+        "digital filtering for phasor estimation",
+        "firefly and grey wolf metaheuristics",
+        "time and frequency domain feature analysis"
+      ],
+      "aplicaciones": [
+        "power system protection",
+        "transmission line distance protection",
+        "synchronous generator protection",
+        "medium-voltage distribution networks",
+        "electric vehicle smart charging"
+      ],
+      "afinidad_tracks": {"1": 0.9, "4": 0.6, "2": 0.5, "6": 0.5, "9": 0.3},
+      "etapa": "investigador_consolidado",
+      "resumen": "Profesor de ingeniería eléctrica de la UNIPAMPA dedicado a la protección digital de sistemas eléctricos: detección y corrección de saturación de transformadores de corriente (también con redes neuronales), estimación de frecuencia y fasores para relés, protección de generadores síncronos y faltas de alta impedancia. En CLAGTEE es coautor de tres trabajos de su grupo (efecto de la FV con inversores en relés de distancia, saturación de TC con procesamiento de imágenes y RNA, y algoritmos de estimación fasorial). Le interesarían sesiones de protección, integración de recursos basados en inversores, monitoreo y medición, y aplicaciones de IA en sistemas de potencia.",
+      "base": ["papers_clagtee", "google_scholar"]
+    }
+  },
+  {
+    "id": "jian-borges-dos-santos",
+    "nombre": "Jian Borges dos Santos",
+    "busqueda": "sin_perfil",
+    "nota_busqueda": "2 búsquedas en Scholar (nombre, nombre+tema) y 1 web general (nombre+UNIPAMPA) sin resultados.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do Pampa (UNIPAMPA)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "distance protection under inverter-based photovoltaic generation",
+        "current transformer saturation detection with image processing and neural networks",
+        "phasor estimation algorithms for digital protective relays under transients"
+      ],
+      "palabras_clave": [
+        "distance relays",
+        "apparent impedance",
+        "rate of change of impedance",
+        "inverter-based resources",
+        "solar photovoltaic",
+        "IEEE 9-bus system",
+        "current transformer saturation",
+        "image processing",
+        "artificial neural networks",
+        "phasor estimation",
+        "digital protective relays"
+      ],
+      "metodos": [
+        "electromagnetic transient simulation",
+        "image processing",
+        "artificial neural networks",
+        "comparative performance evaluation of phasor estimators"
+      ],
+      "aplicaciones": [
+        "transmission system distance protection",
+        "protection with high penetration of inverter-based PV",
+        "digital protective relays"
+      ],
+      "afinidad_tracks": {"1": 0.9, "2": 0.6, "4": 0.5, "6": 0.5},
+      "etapa": "desconocida",
+      "resumen": "Coautor de tres trabajos del grupo de protección de la UNIPAMPA (afiliación inferida por sus coautores); sin perfil académico público encontrado, así que el perfil sale solo de los títulos CLAGTEE. Su línea: relés de distancia con generación FV basada en inversores, detección de saturación de TC con procesamiento de imágenes y RNA, y estimación fasorial en transitorios. Le interesarían sesiones de protección, integración de renovables y aplicaciones de IA a la protección.",
+      "base": ["papers_clagtee", "grupo_coautores"]
+    }
+  },
+  {
+    "id": "leonardo-skrebsky-richter",
+    "nombre": "Leonardo Skrebsky Richter",
+    "busqueda": "sin_perfil",
+    "nota_busqueda": "2 búsquedas en Scholar (nombre, nombre corto+tema+UNIPAMPA) y 1 web general sin resultados.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do Pampa (UNIPAMPA)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "distance protection under inverter-based photovoltaic generation",
+        "current transformer saturation detection with image processing and neural networks",
+        "phasor estimation algorithms for digital protective relays under transients"
+      ],
+      "palabras_clave": [
+        "distance relays",
+        "apparent impedance",
+        "rate of change of impedance",
+        "inverter-based resources",
+        "solar photovoltaic",
+        "IEEE 9-bus system",
+        "current transformer saturation",
+        "image processing",
+        "artificial neural networks",
+        "phasor estimation",
+        "digital protective relays"
+      ],
+      "metodos": [
+        "electromagnetic transient simulation",
+        "image processing",
+        "artificial neural networks",
+        "comparative performance evaluation of phasor estimators"
+      ],
+      "aplicaciones": [
+        "transmission system distance protection",
+        "protection with high penetration of inverter-based PV",
+        "digital protective relays"
+      ],
+      "afinidad_tracks": {"1": 0.9, "2": 0.6, "4": 0.5, "6": 0.5},
+      "etapa": "desconocida",
+      "resumen": "Coautor de tres trabajos del grupo de protección de la UNIPAMPA (afiliación inferida por sus coautores); sin perfil académico público encontrado, así que el perfil sale solo de los títulos CLAGTEE. Su línea: relés de distancia con generación FV basada en inversores, detección de saturación de TC con procesamiento de imágenes y RNA, y estimación fasorial en transitorios. Le interesarían sesiones de protección, integración de renovables y aplicaciones de IA a la protección.",
+      "base": ["papers_clagtee", "grupo_coautores"]
+    }
+  },
+  {
+    "id": "lucas-souza-do-prado",
+    "nombre": "Lucas Souza do Prado",
+    "busqueda": "sin_perfil",
+    "nota_busqueda": "2 búsquedas en Scholar (nombre, nombre+UNIPAMPA+tema) sin resultados; la búsqueda web general no se hizo porque se agotó el cupo de WebSearch del turno.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do Pampa (UNIPAMPA)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "distance protection under inverter-based photovoltaic generation",
+        "current transformer saturation detection with image processing and neural networks",
+        "phasor estimation algorithms for digital protective relays under transients"
+      ],
+      "palabras_clave": [
+        "distance relays",
+        "apparent impedance",
+        "rate of change of impedance",
+        "inverter-based resources",
+        "solar photovoltaic",
+        "IEEE 9-bus system",
+        "current transformer saturation",
+        "image processing",
+        "artificial neural networks",
+        "phasor estimation",
+        "digital protective relays"
+      ],
+      "metodos": [
+        "electromagnetic transient simulation",
+        "image processing",
+        "artificial neural networks",
+        "comparative performance evaluation of phasor estimators"
+      ],
+      "aplicaciones": [
+        "transmission system distance protection",
+        "protection with high penetration of inverter-based PV",
+        "digital protective relays"
+      ],
+      "afinidad_tracks": {"1": 0.9, "2": 0.6, "4": 0.5, "6": 0.5},
+      "etapa": "desconocida",
+      "resumen": "Coautor de tres trabajos del grupo de protección de la UNIPAMPA (afiliación inferida por sus coautores); sin perfil académico público encontrado, así que el perfil sale solo de los títulos CLAGTEE. Su línea: relés de distancia con generación FV basada en inversores, detección de saturación de TC con procesamiento de imágenes y RNA, y estimación fasorial en transitorios. Le interesarían sesiones de protección, integración de renovables y aplicaciones de IA a la protección.",
+      "base": ["papers_clagtee", "grupo_coautores"]
+    }
+  },
+  {
+    "id": "pietra-cogo-subtil",
+    "nombre": "Pietra Cogo Subtil",
+    "busqueda": "sin_perfil",
+    "nota_busqueda": "1 búsqueda en Scholar (nombre completo, poco común) y 1 web general sin resultados; no se probaron variantes porque se agotó el cupo de WebSearch del turno.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do Pampa (UNIPAMPA)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "distance protection under inverter-based photovoltaic generation",
+        "current transformer saturation detection with image processing and neural networks",
+        "phasor estimation algorithms for digital protective relays under transients"
+      ],
+      "palabras_clave": [
+        "distance relays",
+        "apparent impedance",
+        "rate of change of impedance",
+        "inverter-based resources",
+        "solar photovoltaic",
+        "IEEE 9-bus system",
+        "current transformer saturation",
+        "image processing",
+        "artificial neural networks",
+        "phasor estimation",
+        "digital protective relays"
+      ],
+      "metodos": [
+        "electromagnetic transient simulation",
+        "image processing",
+        "artificial neural networks",
+        "comparative performance evaluation of phasor estimators"
+      ],
+      "aplicaciones": [
+        "transmission system distance protection",
+        "protection with high penetration of inverter-based PV",
+        "digital protective relays"
+      ],
+      "afinidad_tracks": {"1": 0.9, "2": 0.6, "4": 0.5, "6": 0.5},
+      "etapa": "desconocida",
+      "resumen": "Coautora de tres trabajos del grupo de protección de la UNIPAMPA (afiliación inferida por sus coautores); sin perfil académico público encontrado, así que el perfil sale solo de los títulos CLAGTEE. Su línea: relés de distancia con generación FV basada en inversores, detección de saturación de TC con procesamiento de imágenes y RNA, y estimación fasorial en transitorios. Le interesarían sesiones de protección, integración de renovables y aplicaciones de IA a la protección.",
+      "base": ["papers_clagtee", "grupo_coautores"]
+    }
+  },
+  {
+    "id": "rickelme-cavalcante-barbosa-rocha",
+    "nombre": "Rickelme Cavalcante Barbosa Rocha",
+    "busqueda": "sin_perfil",
+    "nota_busqueda": "1 búsqueda en Scholar (nombre completo, poco común) y 1 web general (Rickelme Rocha UNIPAMPA) sin resultados; no se probaron variantes porque se agotó el cupo de WebSearch del turno.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do Pampa (UNIPAMPA)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "distance protection under inverter-based photovoltaic generation",
+        "current transformer saturation detection with image processing and neural networks",
+        "phasor estimation algorithms for digital protective relays under transients"
+      ],
+      "palabras_clave": [
+        "distance relays",
+        "apparent impedance",
+        "rate of change of impedance",
+        "inverter-based resources",
+        "solar photovoltaic",
+        "IEEE 9-bus system",
+        "current transformer saturation",
+        "image processing",
+        "artificial neural networks",
+        "phasor estimation",
+        "digital protective relays"
+      ],
+      "metodos": [
+        "electromagnetic transient simulation",
+        "image processing",
+        "artificial neural networks",
+        "comparative performance evaluation of phasor estimators"
+      ],
+      "aplicaciones": [
+        "transmission system distance protection",
+        "protection with high penetration of inverter-based PV",
+        "digital protective relays"
+      ],
+      "afinidad_tracks": {"1": 0.9, "2": 0.6, "4": 0.5, "6": 0.5},
+      "etapa": "desconocida",
+      "resumen": "Presenta los tres trabajos del grupo de protección de la UNIPAMPA en CLAGTEE (afiliación inferida por sus coautores); sin perfil académico público encontrado, así que el perfil sale solo de los títulos CLAGTEE. Su línea: relés de distancia con generación FV basada en inversores, detección de saturación de TC con procesamiento de imágenes y RNA, y estimación fasorial en transitorios. Le interesarían sesiones de protección, integración de renovables y aplicaciones de IA a la protección.",
+      "base": ["papers_clagtee", "grupo_coautores"]
+    }
+  },
+  {
+    "id": "virginia-trindade-nunes",
+    "nombre": "Virgínia Trindade Nunes",
+    "busqueda": "pendiente",
+    "nota_busqueda": "Búsqueda incompleta: solo 1 búsqueda en Scholar ('Virginia Trindade Nunes', sin resultados). Se agotó el cupo de WebSearch del turno (200 búsquedas compartidas entre agentes) antes de probar nombre+tema o la búsqueda web general. Intereses provisorios a partir de los títulos CLAGTEE.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidade Federal do Pampa (UNIPAMPA)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "distance protection under inverter-based photovoltaic generation",
+        "current transformer saturation detection with image processing and neural networks",
+        "phasor estimation algorithms for digital protective relays under transients"
+      ],
+      "palabras_clave": [
+        "distance relays",
+        "apparent impedance",
+        "rate of change of impedance",
+        "inverter-based resources",
+        "solar photovoltaic",
+        "IEEE 9-bus system",
+        "current transformer saturation",
+        "image processing",
+        "artificial neural networks",
+        "phasor estimation",
+        "digital protective relays"
+      ],
+      "metodos": [
+        "electromagnetic transient simulation",
+        "image processing",
+        "artificial neural networks",
+        "comparative performance evaluation of phasor estimators"
+      ],
+      "aplicaciones": [
+        "transmission system distance protection",
+        "protection with high penetration of inverter-based PV",
+        "digital protective relays"
+      ],
+      "afinidad_tracks": {"1": 0.9, "2": 0.6, "4": 0.5, "6": 0.5},
+      "etapa": "desconocida",
+      "resumen": "Coautora de tres trabajos del grupo de protección de la UNIPAMPA (afiliación inferida por sus coautores); su búsqueda en Scholar quedó incompleta, así que el perfil es provisorio y sale solo de los títulos CLAGTEE. Línea del grupo: relés de distancia con generación FV basada en inversores, detección de saturación de TC con procesamiento de imágenes y RNA, y estimación fasorial en transitorios.",
+      "base": ["papers_clagtee", "grupo_coautores"]
+    }
+  },
+  {
+    "id": "allan-rodrigo-arrifano-manito",
+    "nombre": "Allan Rodrigo Arrifano Manito",
+    "busqueda": "pendiente",
+    "nota_busqueda": "No se buscó: se agotó el cupo de WebSearch del turno (compartido entre agentes). Intereses provisorios solo a partir del título CLAGTEE.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "induction motor condition monitoring",
+        "sensitivity of monitoring measurements to motor operating-state changes"
+      ],
+      "palabras_clave": [
+        "induction motor",
+        "condition monitoring",
+        "measurement sensitivity",
+        "operating state",
+        "load variation",
+        "electrical machine diagnostics"
+      ],
+      "metodos": [],
+      "aplicaciones": ["industrial induction motor monitoring"],
+      "afinidad_tracks": {"4": 0.9, "8": 0.7},
+      "etapa": "desconocida",
+      "resumen": "Perfil provisorio (Scholar pendiente): coautor de un trabajo sobre cómo los cambios de estado de operación afectan las mediciones usadas para monitorear motores de inducción. Le interesarían sesiones de sensores y monitoreo y de máquinas eléctricas; la evidencia es solo un título.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "arielly-assuncao-pereira",
+    "nombre": "Arielly Assunção Pereira",
+    "busqueda": "pendiente",
+    "nota_busqueda": "No se buscó: se agotó el cupo de WebSearch del turno (compartido entre agentes). Intereses provisorios solo a partir del título CLAGTEE.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "induction motor condition monitoring",
+        "sensitivity of monitoring measurements to motor operating-state changes"
+      ],
+      "palabras_clave": [
+        "induction motor",
+        "condition monitoring",
+        "measurement sensitivity",
+        "operating state",
+        "load variation",
+        "electrical machine diagnostics"
+      ],
+      "metodos": [],
+      "aplicaciones": ["industrial induction motor monitoring"],
+      "afinidad_tracks": {"4": 0.9, "8": 0.7},
+      "etapa": "desconocida",
+      "resumen": "Perfil provisorio (Scholar pendiente): presenta en CLAGTEE un trabajo sobre cómo los cambios de estado de operación afectan las mediciones usadas para monitorear motores de inducción. Le interesarían sesiones de sensores y monitoreo y de máquinas eléctricas; la evidencia es solo un título.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "iago-ranieri-miranda-rodrigues-morais",
+    "nombre": "Iago Ranieri Miranda Rodrigues Morais",
+    "busqueda": "pendiente",
+    "nota_busqueda": "No se buscó: se agotó el cupo de WebSearch del turno (compartido entre agentes). Intereses provisorios solo a partir del título CLAGTEE.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "induction motor condition monitoring",
+        "sensitivity of monitoring measurements to motor operating-state changes"
+      ],
+      "palabras_clave": [
+        "induction motor",
+        "condition monitoring",
+        "measurement sensitivity",
+        "operating state",
+        "load variation",
+        "electrical machine diagnostics"
+      ],
+      "metodos": [],
+      "aplicaciones": ["industrial induction motor monitoring"],
+      "afinidad_tracks": {"4": 0.9, "8": 0.7},
+      "etapa": "desconocida",
+      "resumen": "Perfil provisorio (Scholar pendiente): coautor de un trabajo sobre cómo los cambios de estado de operación afectan las mediciones usadas para monitorear motores de inducción. Le interesarían sesiones de sensores y monitoreo y de máquinas eléctricas; la evidencia es solo un título.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "jhennifer-freitas-dos-santos",
+    "nombre": "Jhennifer Freitas dos Santos",
+    "busqueda": "pendiente",
+    "nota_busqueda": "No se buscó: se agotó el cupo de WebSearch del turno (compartido entre agentes). Intereses provisorios solo a partir del título CLAGTEE.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "induction motor condition monitoring",
+        "sensitivity of monitoring measurements to motor operating-state changes"
+      ],
+      "palabras_clave": [
+        "induction motor",
+        "condition monitoring",
+        "measurement sensitivity",
+        "operating state",
+        "load variation",
+        "electrical machine diagnostics"
+      ],
+      "metodos": [],
+      "aplicaciones": ["industrial induction motor monitoring"],
+      "afinidad_tracks": {"4": 0.9, "8": 0.7},
+      "etapa": "desconocida",
+      "resumen": "Perfil provisorio (Scholar pendiente): coautora de un trabajo sobre cómo los cambios de estado de operación afectan las mediciones usadas para monitorear motores de inducción. Le interesarían sesiones de sensores y monitoreo y de máquinas eléctricas; la evidencia es solo un título.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "marcelo-de-oliveira-e-silva",
+    "nombre": "Marcelo de Oliveira e Silva",
+    "busqueda": "pendiente",
+    "nota_busqueda": "No se buscó: se agotó el cupo de WebSearch del turno (compartido entre agentes). Intereses provisorios solo a partir del título CLAGTEE.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "induction motor condition monitoring",
+        "sensitivity of monitoring measurements to motor operating-state changes"
+      ],
+      "palabras_clave": [
+        "induction motor",
+        "condition monitoring",
+        "measurement sensitivity",
+        "operating state",
+        "load variation",
+        "electrical machine diagnostics"
+      ],
+      "metodos": [],
+      "aplicaciones": ["industrial induction motor monitoring"],
+      "afinidad_tracks": {"4": 0.9, "8": 0.7},
+      "etapa": "desconocida",
+      "resumen": "Perfil provisorio (Scholar pendiente): coautor de un trabajo sobre cómo los cambios de estado de operación afectan las mediciones usadas para monitorear motores de inducción. Le interesarían sesiones de sensores y monitoreo y de máquinas eléctricas; la evidencia es solo un título.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "wellington-da-silva-fonseca",
+    "nombre": "Wellington da Silva Fonseca",
+    "busqueda": "pendiente",
+    "nota_busqueda": "No se buscó: se agotó el cupo de WebSearch del turno (compartido entre agentes). Intereses provisorios solo a partir del título CLAGTEE.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "induction motor condition monitoring",
+        "sensitivity of monitoring measurements to motor operating-state changes"
+      ],
+      "palabras_clave": [
+        "induction motor",
+        "condition monitoring",
+        "measurement sensitivity",
+        "operating state",
+        "load variation",
+        "electrical machine diagnostics"
+      ],
+      "metodos": [],
+      "aplicaciones": ["industrial induction motor monitoring"],
+      "afinidad_tracks": {"4": 0.9, "8": 0.7},
+      "etapa": "desconocida",
+      "resumen": "Perfil provisorio (Scholar pendiente): coautor de un trabajo sobre cómo los cambios de estado de operación afectan las mediciones usadas para monitorear motores de inducción. Le interesarían sesiones de sensores y monitoreo y de máquinas eléctricas; la evidencia es solo un título.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "andreia-da-silva-santos-de-faria",
+    "nombre": "Andréia da Silva Santos de Faria",
+    "busqueda": "pendiente",
+    "nota_busqueda": "No se buscó: se agotó el cupo de WebSearch del turno (compartido entre agentes). Intereses provisorios solo a partir del título CLAGTEE.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "forecasting residential photovoltaic system adoption",
+        "neural network forecasting for distributed generation planning"
+      ],
+      "palabras_clave": [
+        "residential photovoltaic systems",
+        "PV adoption forecasting",
+        "distributed generation",
+        "fuzzy ARTMAP",
+        "neural networks",
+        "time series forecasting"
+      ],
+      "metodos": ["fuzzy ARTMAP neural network"],
+      "aplicaciones": ["distribution system planning with rooftop PV growth"],
+      "afinidad_tracks": {"2": 0.9, "6": 0.7, "7": 0.3},
+      "etapa": "desconocida",
+      "resumen": "Perfil provisorio (Scholar pendiente): presenta en CLAGTEE un trabajo de pronóstico de instalaciones fotovoltaicas residenciales con una red neuronal Fuzzy ARTMAP. Le interesarían sesiones de integración de generación distribuida y de IA aplicada a pronósticos; la evidencia es solo un título.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "josehp-lincey-espiritu-palacin",
+    "nombre": "Josehp Lincey Espiritu Palacin",
+    "busqueda": "pendiente",
+    "nota_busqueda": "No se buscó: se agotó el cupo de WebSearch del turno (compartido entre agentes). Intereses provisorios solo a partir del título CLAGTEE.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "AC optimal power flow formulations for transmission systems",
+        "comparison of exact and approximate AC OPF models"
+      ],
+      "palabras_clave": [
+        "AC optimal power flow",
+        "OPF formulations",
+        "transmission systems",
+        "nonlinear programming",
+        "power system optimization"
+      ],
+      "metodos": ["mathematical programming models of AC OPF"],
+      "aplicaciones": ["transmission system operation"],
+      "afinidad_tracks": {"1": 0.9, "6": 0.2, "7": 0.2},
+      "etapa": "desconocida",
+      "resumen": "Perfil provisorio (Scholar pendiente): coautor de un análisis comparativo de modelos de flujo óptimo de potencia AC en sistemas de transmisión. Le interesarían sesiones de planificación y operación y de optimización en sistemas de potencia; la evidencia es solo un título.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "leonardo-henrique-faria-macedo-possagnolo",
+    "nombre": "Leonardo Henrique Faria Macedo Possagnolo",
+    "busqueda": "pendiente",
+    "nota_busqueda": "No se buscó: se agotó el cupo de WebSearch del turno (compartido entre agentes). Intereses provisorios solo a partir de los títulos CLAGTEE. Al rehacerlo, probar también la forma corta 'Leonardo H. Macedo'.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "AC optimal power flow formulations for transmission systems",
+        "forecasting residential photovoltaic system adoption",
+        "neural network forecasting for distributed generation planning"
+      ],
+      "palabras_clave": [
+        "AC optimal power flow",
+        "OPF formulations",
+        "transmission systems",
+        "power system optimization",
+        "residential photovoltaic systems",
+        "PV adoption forecasting",
+        "fuzzy ARTMAP",
+        "neural networks"
+      ],
+      "metodos": ["mathematical programming models of AC OPF", "fuzzy ARTMAP neural network"],
+      "aplicaciones": ["transmission system operation", "distribution system planning with rooftop PV growth"],
+      "afinidad_tracks": {"1": 0.9, "2": 0.7, "6": 0.5, "7": 0.3},
+      "etapa": "desconocida",
+      "resumen": "Perfil provisorio (Scholar pendiente): presenta en CLAGTEE un análisis comparativo de modelos de flujo óptimo AC en transmisión y es coautor de un pronóstico de instalaciones FV residenciales con Fuzzy ARTMAP. Le interesarían sesiones de planificación y operación, optimización, integración de generación distribuida e IA para pronósticos.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "lucas-teles-de-faria",
+    "nombre": "Lucas Teles de Faria",
+    "busqueda": "pendiente",
+    "nota_busqueda": "No se buscó: se agotó el cupo de WebSearch del turno (compartido entre agentes). Intereses provisorios solo a partir del título CLAGTEE.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "forecasting residential photovoltaic system adoption",
+        "neural network forecasting for distributed generation planning"
+      ],
+      "palabras_clave": [
+        "residential photovoltaic systems",
+        "PV adoption forecasting",
+        "distributed generation",
+        "fuzzy ARTMAP",
+        "neural networks",
+        "time series forecasting"
+      ],
+      "metodos": ["fuzzy ARTMAP neural network"],
+      "aplicaciones": ["distribution system planning with rooftop PV growth"],
+      "afinidad_tracks": {"2": 0.9, "6": 0.7, "7": 0.3},
+      "etapa": "desconocida",
+      "resumen": "Perfil provisorio (Scholar pendiente): coautor de un trabajo de pronóstico de instalaciones fotovoltaicas residenciales con una red neuronal Fuzzy ARTMAP. Le interesarían sesiones de integración de generación distribuida y de IA aplicada a pronósticos; la evidencia es solo un título.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "andres-arturo-romero-quete",
+    "nombre": "Andrés Arturo Romero Quete",
+    "busqueda": "pendiente",
+    "nota_busqueda": "No se buscó: se agotó el cupo de WebSearch del turno (compartido entre agentes). Intereses provisorios solo a partir del título CLAGTEE.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "probabilistic feasible operation region estimation in active distribution networks",
+        "context-aware classification of historical operating data",
+        "flexibility of distribution networks with DER"
+      ],
+      "palabras_clave": [
+        "feasible operation region",
+        "active distribution networks",
+        "probabilistic estimation",
+        "historical data classification",
+        "distributed energy resources",
+        "TSO-DSO coordination",
+        "flexibility"
+      ],
+      "metodos": ["data classification", "probabilistic analysis"],
+      "aplicaciones": ["active distribution network operation", "DER flexibility aggregation at the TSO-DSO interface"],
+      "afinidad_tracks": {"2": 0.9, "1": 0.7, "6": 0.6},
+      "etapa": "desconocida",
+      "resumen": "Perfil provisorio (Scholar pendiente): coautor de un trabajo que clasifica datos históricos según su contexto para estimar de forma probabilística la región de operación factible de redes de distribución activas. Le interesarían sesiones de integración de DER, operación de redes de distribución y ciencia de datos.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "gaston-orlando-suvire",
+    "nombre": "Gastón Orlando Suvire",
+    "busqueda": "pendiente",
+    "nota_busqueda": "No se buscó: se agotó el cupo de WebSearch del turno (compartido entre agentes). Intereses provisorios solo a partir de los títulos CLAGTEE.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "probabilistic feasible operation region estimation in active distribution networks",
+        "multiscale photovoltaic power variability assessment",
+        "representative irradiance scenarios and spatial smoothing"
+      ],
+      "palabras_clave": [
+        "feasible operation region",
+        "active distribution networks",
+        "historical data classification",
+        "photovoltaic power variability",
+        "irradiance scenarios",
+        "spatial smoothing",
+        "distributed energy resources",
+        "flexibility"
+      ],
+      "metodos": ["scenario selection", "data classification", "probabilistic analysis"],
+      "aplicaciones": ["active distribution network operation", "PV plant variability assessment for grid integration"],
+      "afinidad_tracks": {"2": 0.9, "1": 0.6, "6": 0.5},
+      "etapa": "desconocida",
+      "resumen": "Perfil provisorio (Scholar pendiente): coautor de dos trabajos sobre integración de renovables: escenarios representativos de irradiancia y suavizado espacial para evaluar la variabilidad FV en varias escalas, y estimación probabilística de la región de operación factible de redes de distribución activas. Le interesarían sesiones de integración de renovables y DER, operación de redes y ciencia de datos.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "kevin-aaron-raudales-de-vicente",
+    "nombre": "Kevin Aarón Raudales De vicente",
+    "busqueda": "pendiente",
+    "nota_busqueda": "No se buscó: se agotó el cupo de WebSearch del turno (compartido entre agentes). Intereses provisorios solo a partir del título CLAGTEE.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "probabilistic feasible operation region estimation in active distribution networks",
+        "context-aware classification of historical operating data",
+        "flexibility of distribution networks with DER"
+      ],
+      "palabras_clave": [
+        "feasible operation region",
+        "active distribution networks",
+        "probabilistic estimation",
+        "historical data classification",
+        "distributed energy resources",
+        "TSO-DSO coordination",
+        "flexibility"
+      ],
+      "metodos": ["data classification", "probabilistic analysis"],
+      "aplicaciones": ["active distribution network operation", "DER flexibility aggregation at the TSO-DSO interface"],
+      "afinidad_tracks": {"2": 0.9, "1": 0.7, "6": 0.6},
+      "etapa": "desconocida",
+      "resumen": "Perfil provisorio (Scholar pendiente): presenta en CLAGTEE un trabajo que clasifica datos históricos según su contexto para estimar de forma probabilística la región de operación factible de redes de distribución activas. Le interesarían sesiones de integración de DER, operación de redes de distribución y ciencia de datos.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "matias-squiel-sachelaridi-gonzalez",
+    "nombre": "Matías Squiel Sachelaridi González",
+    "busqueda": "pendiente",
+    "nota_busqueda": "No se buscó: se agotó el cupo de WebSearch del turno (compartido entre agentes). Intereses provisorios solo a partir del título CLAGTEE.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "multiscale photovoltaic power variability assessment",
+        "representative irradiance scenarios",
+        "spatial smoothing of PV output"
+      ],
+      "palabras_clave": [
+        "photovoltaic power variability",
+        "solar irradiance",
+        "irradiance scenarios",
+        "spatial smoothing",
+        "multiscale analysis",
+        "PV grid integration"
+      ],
+      "metodos": ["scenario selection", "spatial smoothing models"],
+      "aplicaciones": ["PV plant variability assessment for grid integration"],
+      "afinidad_tracks": {"2": 0.9, "1": 0.4, "6": 0.3},
+      "etapa": "desconocida",
+      "resumen": "Perfil provisorio (Scholar pendiente): presenta en CLAGTEE un trabajo sobre escenarios representativos de irradiancia y suavizado espacial para evaluar la variabilidad de la potencia FV en distintas escalas. Le interesarían sesiones de integración de renovables, pronóstico solar y flexibilidad; la evidencia es solo un título.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "davi-ferreira-de-souza",
+    "nombre": "Davi Ferreira de Souza",
+    "busqueda": "pendiente",
+    "nota_busqueda": "No se buscó: se agotó el cupo de WebSearch del turno (compartido entre agentes). Intereses provisorios solo a partir del título CLAGTEE.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "acoustic detection of partial discharges",
+        "diagnosis and quantification of concurrent partial discharge sources",
+        "spatial acoustic signature analysis"
+      ],
+      "palabras_clave": [
+        "partial discharges",
+        "acoustic emission",
+        "acoustic signatures",
+        "concurrent PD sources",
+        "insulation diagnosis",
+        "high-voltage equipment monitoring"
+      ],
+      "metodos": ["spatial acoustic signature analysis"],
+      "aplicaciones": ["condition monitoring of high-voltage insulation"],
+      "afinidad_tracks": {"4": 0.9, "9": 0.3, "6": 0.2},
+      "etapa": "desconocida",
+      "resumen": "Perfil provisorio (Scholar pendiente): presenta en CLAGTEE un trabajo de diagnóstico y cuantificación de descargas parciales simultáneas mediante el análisis espacial de su firma acústica. Le interesarían sesiones de sensores, monitoreo de condición y diagnóstico de aislamiento; la evidencia es solo un título.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "kleber-rocha-de-oliveira",
+    "nombre": "Kleber Rocha de Oliveira",
+    "busqueda": "pendiente",
+    "nota_busqueda": "No se buscó: se agotó el cupo de WebSearch del turno (compartido entre agentes). Intereses provisorios solo a partir del título CLAGTEE.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "acoustic detection of partial discharges",
+        "diagnosis and quantification of concurrent partial discharge sources",
+        "spatial acoustic signature analysis"
+      ],
+      "palabras_clave": [
+        "partial discharges",
+        "acoustic emission",
+        "acoustic signatures",
+        "concurrent PD sources",
+        "insulation diagnosis",
+        "high-voltage equipment monitoring"
+      ],
+      "metodos": ["spatial acoustic signature analysis"],
+      "aplicaciones": ["condition monitoring of high-voltage insulation"],
+      "afinidad_tracks": {"4": 0.9, "9": 0.3, "6": 0.2},
+      "etapa": "desconocida",
+      "resumen": "Perfil provisorio (Scholar pendiente): coautor de un trabajo de diagnóstico y cuantificación de descargas parciales simultáneas mediante el análisis espacial de su firma acústica. Le interesarían sesiones de sensores, monitoreo de condición y diagnóstico de aislamiento; la evidencia es solo un título.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "marco-aurelio-rocha",
+    "nombre": "Marco Aurélio Rocha",
+    "busqueda": "pendiente",
+    "nota_busqueda": "No se buscó: se agotó el cupo de WebSearch del turno (compartido entre agentes). Intereses provisorios solo a partir del título CLAGTEE.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "acoustic detection of partial discharges",
+        "diagnosis and quantification of concurrent partial discharge sources",
+        "spatial acoustic signature analysis"
+      ],
+      "palabras_clave": [
+        "partial discharges",
+        "acoustic emission",
+        "acoustic signatures",
+        "concurrent PD sources",
+        "insulation diagnosis",
+        "high-voltage equipment monitoring"
+      ],
+      "metodos": ["spatial acoustic signature analysis"],
+      "aplicaciones": ["condition monitoring of high-voltage insulation"],
+      "afinidad_tracks": {"4": 0.9, "9": 0.3, "6": 0.2},
+      "etapa": "desconocida",
+      "resumen": "Perfil provisorio (Scholar pendiente): coautor de un trabajo de diagnóstico y cuantificación de descargas parciales simultáneas mediante el análisis espacial de su firma acústica. Le interesarían sesiones de sensores, monitoreo de condición y diagnóstico de aislamiento; la evidencia es solo un título.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "pablo-ignacio-santis-torrejon",
+    "nombre": "Pablo Ignacio Santis Torrejón",
+    "busqueda": "pendiente",
+    "nota_busqueda": "No se buscó: se agotó el cupo de WebSearch del turno (compartido entre agentes). Intereses provisorios solo a partir del título CLAGTEE.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "lab-scale battery energy storage system platforms",
+        "low-code SCADA architectures for energy management",
+        "energy management education with experimental platforms"
+      ],
+      "palabras_clave": [
+        "BESS",
+        "battery energy storage",
+        "SCADA",
+        "low-code",
+        "energy management system",
+        "engineering education",
+        "laboratory platform"
+      ],
+      "metodos": ["low-code SCADA development", "experimental laboratory validation"],
+      "aplicaciones": ["energy management education", "BESS monitoring and control"],
+      "afinidad_tracks": {"2": 0.9, "5": 0.5, "12": 0.3},
+      "etapa": "desconocida",
+      "resumen": "Perfil provisorio (Scholar pendiente): coautor de una plataforma experimental de almacenamiento en baterías a escala de laboratorio, con arquitectura SCADA low-code, para enseñar gestión de energía. Le interesarían sesiones de almacenamiento y DER, sistemas SCADA y digitalización, y formación en ingeniería.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "pedro-escarate-monetta",
+    "nombre": "Pedro Escarate Monetta",
+    "busqueda": "pendiente",
+    "nota_busqueda": "No se buscó: se agotó el cupo de WebSearch del turno (compartido entre agentes). Intereses provisorios solo a partir del título CLAGTEE. Al rehacerlo, probar también 'Pedro Escárate'.",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "lab-scale battery energy storage system platforms",
+        "low-code SCADA architectures for energy management",
+        "energy management education with experimental platforms"
+      ],
+      "palabras_clave": [
+        "BESS",
+        "battery energy storage",
+        "SCADA",
+        "low-code",
+        "energy management system",
+        "engineering education",
+        "laboratory platform"
+      ],
+      "metodos": ["low-code SCADA development", "experimental laboratory validation"],
+      "aplicaciones": ["energy management education", "BESS monitoring and control"],
+      "afinidad_tracks": {"2": 0.9, "5": 0.5, "12": 0.3},
+      "etapa": "desconocida",
+      "resumen": "Perfil provisorio (Scholar pendiente): presenta en CLAGTEE una plataforma experimental de almacenamiento en baterías a escala de laboratorio, con arquitectura SCADA low-code, para enseñar gestión de energía. Le interesarían sesiones de almacenamiento y DER, sistemas SCADA y digitalización, y formación en ingeniería.",
+      "base": ["papers_clagtee"]
+    }
+  }
+]

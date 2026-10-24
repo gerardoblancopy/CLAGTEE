@@ -1,0 +1,1388 @@
+[
+ {
+  "id": "agnelo-marotta-cassula",
+  "nombre": "Agnelo Marotta Cassula",
+  "busqueda": "encontrado",
+  "scholar": {
+   "url": "https://scholar.google.com/citations?user=G1QqDQsAAAAJ",
+   "user_id": "G1QqDQsAAAAJ",
+   "nombre_perfil": "Agnelo Marotta Cassula",
+   "afiliacion": "Professor de Engenharia Elétrica, UNESP - Universidade Estadual Paulista",
+   "email_verificado": "unesp.br",
+   "intereses_scholar": [
+    "Confiabilidade de Sistemas Elétricos",
+    "Fontes Renováveis",
+    "Smart Grid"
+   ],
+   "citas": 737,
+   "citas_desde_2021": 350,
+   "h_index": 11,
+   "publicaciones": [
+    {
+     "titulo": "Multicriteria Framework for Risk Assessment of Power Transformers",
+     "anio": 2025,
+     "citas": 4
+    },
+    {
+     "titulo": "An assessment of energy efficient motors application by scenarios evaluation",
+     "anio": 2020,
+     "citas": 11
+    },
+    {
+     "titulo": "Robust multi-objective optimization of a renewable based hybrid power system",
+     "anio": 2018,
+     "citas": 126
+    },
+    {
+     "titulo": "Assessment of photovoltaic performance models for system simulation",
+     "anio": 2017,
+     "citas": 125
+    },
+    {
+     "titulo": "Gatoolbox: a matlab-based genetic algorithm toolbox for function optimization",
+     "anio": 2017,
+     "citas": 22
+    },
+    {
+     "titulo": "Assessment of dry residual biomass potential for use as alternative energy source in the party of General Pueyrredón, Argentina",
+     "anio": 2015,
+     "citas": 148
+    },
+    {
+     "titulo": "Simulation and validation of photovoltaic system performance models",
+     "anio": 2015,
+     "citas": 14
+    },
+    {
+     "titulo": "Non-technical losses in Brazil: subsidies for implementation of smart-grid",
+     "anio": 2014,
+     "citas": 7
+    },
+    {
+     "titulo": "Chronological Monte Carlo-based assessment of distribution system reliability",
+     "anio": 2006,
+     "citas": 37
+    },
+    {
+     "titulo": "Analytical and Monte Carlo approaches to evaluate probability distributions of interruption duration",
+     "anio": 2005,
+     "citas": 62
+    },
+    {
+     "titulo": "Integrated reliability evaluation of generation, transmission and distribution systems",
+     "anio": 2002,
+     "citas": 65
+    },
+    {
+     "titulo": "Optimum load shedding strategies in distribution systems",
+     "anio": 2001,
+     "citas": 28
+    }
+   ],
+   "confianza": "alta",
+   "evidencia": "Figura como coautor en los perfiles de Justo José Roberts y Andres Z. Mendiburu (coautores de PLA-57); comparte con ellos papers sobre sistemas híbridos renovables y modelos de desempeño FV."
+  },
+  "otras_fuentes": [],
+  "afiliacion_inferida": "Universidade Estadual Paulista (UNESP)",
+  "pais_inferido": "Brasil",
+  "intereses": {
+   "temas": [
+    "composite generation-transmission-distribution reliability evaluation",
+    "chronological Monte Carlo reliability assessment of distribution systems",
+    "multi-objective sizing of hybrid renewable power systems",
+    "techno-economic assessment of residential photovoltaic systems",
+    "risk assessment of power transformers"
+   ],
+   "palabras_clave": [
+    "power system reliability",
+    "Monte Carlo simulation",
+    "distribution system reliability",
+    "interruption duration indices",
+    "load shedding",
+    "hybrid renewable systems",
+    "photovoltaic systems",
+    "smart grid",
+    "non-technical losses",
+    "power transformers"
+   ],
+   "metodos": [
+    "chronological Monte Carlo simulation",
+    "analytical reliability models",
+    "multi-objective optimization",
+    "genetic algorithms",
+    "multicriteria decision analysis"
+   ],
+   "aplicaciones": [
+    "distribution network reliability planning",
+    "residential PV systems in Argentina",
+    "isolated solar-wind-diesel hybrid systems",
+    "power transformer asset management"
+   ],
+   "afinidad_tracks": {
+    "1": 0.9,
+    "2": 0.8,
+    "7": 0.3
+   },
+   "etapa": "investigador_senior",
+   "resumen": "Profesor de Ingeniería Eléctrica de la UNESP con larga trayectoria en confiabilidad de sistemas eléctricos (evaluación integrada generación-transmisión-distribución y simulación Monte Carlo cronológica) y, más recientemente, en optimización de sistemas híbridos renovables junto a J. J. Roberts. En CLAGTEE es coautor de una comparación técnico-económica de sistemas FV residenciales; le interesarían sesiones de confiabilidad, planificación de distribución e integración de FV y almacenamiento.",
+   "base": [
+    "papers_clagtee",
+    "google_scholar"
+   ]
+  }
+ },
+ {
+  "id": "andres-mendiburu-zeballos",
+  "nombre": "Andrés Mendiburu Zeballos",
+  "busqueda": "encontrado",
+  "scholar": {
+   "url": "https://scholar.google.com/citations?user=DQ3YXTwAAAAJ",
+   "user_id": "DQ3YXTwAAAAJ",
+   "nombre_perfil": "Andres Z. Mendiburu",
+   "afiliacion": "Professor, Federal University of Rio Grande do Sul",
+   "email_verificado": "ufrgs.br",
+   "intereses_scholar": [
+    "Combustion",
+    "Gasification",
+    "Absorption refrigeration"
+   ],
+   "citas": 1777,
+   "citas_desde_2021": 1335,
+   "h_index": 21,
+   "publicaciones": [
+    {
+     "titulo": "Experimental assessment and modeling of solar air heater with V shape roughness on absorber plate",
+     "anio": 2023,
+     "citas": 59
+    },
+    {
+     "titulo": "Flammability limits: a comprehensive review of theory, experiments, and estimation methods",
+     "anio": 2023,
+     "citas": 56
+    },
+    {
+     "titulo": "Theoretical model for flat plate solar collectors operating with nanofluids: Case study for Porto Alegre, Brazil",
+     "anio": 2023,
+     "citas": 40
+    },
+    {
+     "titulo": "Thermodynamic modelling for absorption refrigeration cycles powered by solar energy and a case study for Porto Alegre, Brazil",
+     "anio": 2023,
+     "citas": 33
+    },
+    {
+     "titulo": "Ethanol as a renewable biofuel: Combustion characteristics and application in engines",
+     "anio": 2022,
+     "citas": 200
+    },
+    {
+     "titulo": "Difficulties on the determination of the flammability limits of fuel mixtures by the Law of Le Chatelier",
+     "anio": 2020,
+     "citas": 57
+    },
+    {
+     "titulo": "Energetic analysis of reheating furnaces in the combustion of coke oven gas, Linz-Donawitz gas and blast furnace gas in the steel industry",
+     "anio": 2020,
+     "citas": 53
+    },
+    {
+     "titulo": "Robust multi-objective optimization of a renewable based hybrid power system",
+     "anio": 2018,
+     "citas": 126
+    },
+    {
+     "titulo": "Assessment of photovoltaic performance models for system simulation",
+     "anio": 2017,
+     "citas": 125
+    },
+    {
+     "titulo": "Thermochemical equilibrium modeling of biomass downdraft gasifier: Stoichiometric models",
+     "anio": 2014,
+     "citas": 147
+    },
+    {
+     "titulo": "Thermochemical equilibrium modeling of a biomass downdraft gasifier: Constrained and unconstrained non-stoichiometric models",
+     "anio": 2014,
+     "citas": 98
+    },
+    {
+     "titulo": "Flammability limits: a review with emphasis on ethanol for aeronautical applications and description of the experimental procedure",
+     "anio": 2012,
+     "citas": 113
+    }
+   ],
+   "confianza": "alta",
+   "evidencia": "Coautores de PLA-57 Justo José Roberts y Agnelo Marotta Cassula figuran en su lista de coautores; en sus publicaciones aparece como 'AAM Zevallos' (Andrés A. Mendiburu Zevallos) junto a Roberts y Cassula."
+  },
+  "otras_fuentes": [],
+  "afiliacion_inferida": "Universidade Federal do Rio Grande do Sul (UFRGS)",
+  "pais_inferido": "Brasil",
+  "intereses": {
+   "temas": [
+    "thermochemical equilibrium modeling of biomass downdraft gasifiers",
+    "flammability limits of fuels and fuel mixtures",
+    "ethanol and biofuel combustion in engines",
+    "solar-driven absorption refrigeration cycles",
+    "flat-plate solar collectors with nanofluids",
+    "techno-economic assessment of residential photovoltaic systems"
+   ],
+   "palabras_clave": [
+    "combustion",
+    "gasification",
+    "absorption refrigeration",
+    "flammability limits",
+    "ethanol",
+    "biomass",
+    "solar thermal collectors",
+    "nanofluids",
+    "hybrid renewable systems",
+    "photovoltaic systems"
+   ],
+   "metodos": [
+    "thermochemical equilibrium modeling",
+    "thermodynamic cycle modeling",
+    "experimental flammability measurements",
+    "multi-objective optimization"
+   ],
+   "aplicaciones": [
+    "downdraft gasifiers for distributed power generation",
+    "solar cooling in southern Brazil",
+    "biofuels for engines and aeronautics",
+    "residential PV systems in Argentina"
+   ],
+   "afinidad_tracks": {
+    "11": 0.8,
+    "1": 0.7,
+    "2": 0.6,
+    "10": 0.6,
+    "9": 0.4
+   },
+   "etapa": "investigador_consolidado",
+   "resumen": "Profesor de la UFRGS especializado en combustión, gasificación de biomasa, límites de inflamabilidad y refrigeración por absorción solar, con colaboraciones con J. J. Roberts en sistemas híbridos renovables y modelos FV. En CLAGTEE es coautor de la comparación técnico-económica de sistemas FV residenciales en Mar del Plata; le interesarían sesiones de bioenergía e hidrógeno, centrales alternativas (solar térmica) y evaluación técnico-económica de renovables.",
+   "base": [
+    "papers_clagtee",
+    "google_scholar"
+   ]
+  }
+ },
+ {
+  "id": "ezequiel-leonardi",
+  "nombre": "Ezequiel Leonardi",
+  "busqueda": "sin_perfil",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "Universidad Nacional de Mar del Plata (probable, por el grupo de J. J. Roberts)",
+  "pais_inferido": "Argentina",
+  "intereses": {
+   "temas": [
+    "techno-economic comparison of on-grid and hybrid residential photovoltaic systems",
+    "residential battery storage combined with PV",
+    "distributed solar generation in Argentina"
+   ],
+   "palabras_clave": [
+    "residential photovoltaics",
+    "on-grid PV",
+    "hybrid PV systems",
+    "battery storage",
+    "techno-economic analysis",
+    "distributed generation"
+   ],
+   "metodos": [
+    "techno-economic analysis"
+   ],
+   "aplicaciones": [
+    "residential PV systems in Mar del Plata, Argentina"
+   ],
+   "afinidad_tracks": {
+    "1": 0.8,
+    "2": 0.8,
+    "7": 0.3
+   },
+   "etapa": "desconocida",
+   "resumen": "No se encontró perfil académico (Scholar ni búsqueda web general); su única referencia es el paper PLA-57 sobre la comparación técnico-económica de sistemas FV residenciales on-grid e híbridos en Mar del Plata, en el grupo de J. J. Roberts (UNMdP). Evidencia escasa: le interesarían sesiones de FV residencial, almacenamiento y evaluación económica de generación distribuida.",
+   "base": [
+    "papers_clagtee",
+    "grupo_coautores"
+   ]
+  }
+ },
+ {
+  "id": "gustavo-belliski",
+  "nombre": "Gustavo Belliski",
+  "busqueda": "sin_perfil",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "Universidad Nacional de Mar del Plata (probable, por el grupo de J. J. Roberts)",
+  "pais_inferido": "Argentina",
+  "intereses": {
+   "temas": [
+    "techno-economic comparison of on-grid and hybrid residential photovoltaic systems",
+    "residential battery storage combined with PV",
+    "distributed solar generation in Argentina"
+   ],
+   "palabras_clave": [
+    "residential photovoltaics",
+    "on-grid PV",
+    "hybrid PV systems",
+    "battery storage",
+    "techno-economic analysis",
+    "distributed generation"
+   ],
+   "metodos": [
+    "techno-economic analysis"
+   ],
+   "aplicaciones": [
+    "residential PV systems in Mar del Plata, Argentina"
+   ],
+   "afinidad_tracks": {
+    "1": 0.8,
+    "2": 0.8,
+    "7": 0.3
+   },
+   "etapa": "desconocida",
+   "resumen": "No se encontró perfil académico (Scholar ni búsqueda web general); su única referencia es el paper PLA-57 sobre la comparación técnico-económica de sistemas FV residenciales on-grid e híbridos en Mar del Plata, en el grupo de J. J. Roberts (UNMdP). Evidencia escasa: le interesarían sesiones de FV residencial, almacenamiento y evaluación económica de generación distribuida.",
+   "base": [
+    "papers_clagtee",
+    "grupo_coautores"
+   ]
+  }
+ },
+ {
+  "id": "joaquine-isreal-sanchez",
+  "nombre": "Joaquine Isreal Sánchez",
+  "busqueda": "sin_perfil",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "Universidad Nacional de Mar del Plata (probable, por el grupo de J. J. Roberts)",
+  "pais_inferido": "Argentina",
+  "intereses": {
+   "temas": [
+    "techno-economic comparison of on-grid and hybrid residential photovoltaic systems",
+    "residential battery storage combined with PV",
+    "distributed solar generation in Argentina"
+   ],
+   "palabras_clave": [
+    "residential photovoltaics",
+    "on-grid PV",
+    "hybrid PV systems",
+    "battery storage",
+    "techno-economic analysis",
+    "distributed generation"
+   ],
+   "metodos": [
+    "techno-economic analysis"
+   ],
+   "aplicaciones": [
+    "residential PV systems in Mar del Plata, Argentina"
+   ],
+   "afinidad_tracks": {
+    "1": 0.8,
+    "2": 0.8,
+    "7": 0.3
+   },
+   "etapa": "desconocida",
+   "resumen": "No se encontró perfil académico (Scholar ni búsqueda web general); su única referencia es el paper PLA-57 sobre la comparación técnico-económica de sistemas FV residenciales on-grid e híbridos en Mar del Plata, en el grupo de J. J. Roberts (UNMdP). Evidencia escasa: le interesarían sesiones de FV residencial, almacenamiento y evaluación económica de generación distribuida.",
+   "base": [
+    "papers_clagtee",
+    "grupo_coautores"
+   ]
+  }
+ },
+ {
+  "id": "juan-francisco-calo",
+  "nombre": "Juan Francisco Calo",
+  "busqueda": "sin_perfil",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "Universidad Nacional de Mar del Plata (probable, por el grupo de J. J. Roberts)",
+  "pais_inferido": "Argentina",
+  "intereses": {
+   "temas": [
+    "techno-economic comparison of on-grid and hybrid residential photovoltaic systems",
+    "residential battery storage combined with PV",
+    "distributed solar generation in Argentina"
+   ],
+   "palabras_clave": [
+    "residential photovoltaics",
+    "on-grid PV",
+    "hybrid PV systems",
+    "battery storage",
+    "techno-economic analysis",
+    "distributed generation"
+   ],
+   "metodos": [
+    "techno-economic analysis"
+   ],
+   "aplicaciones": [
+    "residential PV systems in Mar del Plata, Argentina"
+   ],
+   "afinidad_tracks": {
+    "1": 0.8,
+    "2": 0.8,
+    "7": 0.3
+   },
+   "etapa": "desconocida",
+   "resumen": "No se encontró perfil académico (Scholar ni búsqueda web general); su única referencia es el paper PLA-57 sobre la comparación técnico-económica de sistemas FV residenciales on-grid e híbridos en Mar del Plata, en el grupo de J. J. Roberts (UNMdP). Evidencia escasa: le interesarían sesiones de FV residencial, almacenamiento y evaluación económica de generación distribuida.",
+   "base": [
+    "papers_clagtee",
+    "grupo_coautores"
+   ]
+  }
+ },
+ {
+  "id": "justo-jose-roberts",
+  "nombre": "Justo José Roberts",
+  "busqueda": "encontrado",
+  "scholar": {
+   "url": "https://scholar.google.com/citations?user=7ExKJ8EAAAAJ",
+   "user_id": "7ExKJ8EAAAAJ",
+   "nombre_perfil": "Justo José Roberts",
+   "afiliacion": "Professor/Researcher, National University of Mar del Plata (UNMdP)",
+   "email_verificado": "fi.mdp.edu.ar",
+   "intereses_scholar": [
+    "Computer Simulation and Optimization",
+    "Energy Systems",
+    "Distributed Generation",
+    "Renewable Energy",
+    "Enery Managament"
+   ],
+   "citas": 990,
+   "citas_desde_2021": 707,
+   "h_index": 13,
+   "publicaciones": [
+    {
+     "titulo": "Solar heat for industrial processes in Brazil: Sectoral potential, barriers, and integration strategies",
+     "anio": 2027,
+     "citas": 0
+    },
+    {
+     "titulo": "Examination of the theoretical model for flat-plate solar collectors and integration with solar radiation decomposition/transposition models",
+     "anio": 2023,
+     "citas": 3
+    },
+    {
+     "titulo": "Thermodynamic modelling for absorption refrigeration cycles powered by solar energy and a case study for Porto Alegre, Brazil",
+     "anio": 2023,
+     "citas": 33
+    },
+    {
+     "titulo": "Theoretical model for flat plate solar collectors operating with nanofluids: Case study for Porto Alegre, Brazil",
+     "anio": 2023,
+     "citas": 40
+    },
+    {
+     "titulo": "Ethanol as a renewable biofuel: Combustion characteristics and application in engines",
+     "anio": 2022,
+     "citas": 200
+    },
+    {
+     "titulo": "Biodiesel in South American countries: A review on policies, stages of development and imminent competition with hydrotreated vegetable oil",
+     "anio": 2022,
+     "citas": 70
+    },
+    {
+     "titulo": "Calculation of the shading factors for solar modules with matlab",
+     "anio": 2021,
+     "citas": 29
+    },
+    {
+     "titulo": "Renewable Energy-based Electricity Supply System for a School",
+     "anio": 2019,
+     "citas": 0
+    },
+    {
+     "titulo": "Robust multi-objective optimization of a renewable based hybrid power system",
+     "anio": 2018,
+     "citas": 126
+    },
+    {
+     "titulo": "Assessment of photovoltaic performance models for system simulation",
+     "anio": 2017,
+     "citas": 125
+    },
+    {
+     "titulo": "Gatoolbox: a matlab-based genetic algorithm toolbox for function optimization",
+     "anio": 2017,
+     "citas": 22
+    },
+    {
+     "titulo": "Assessment of dry residual biomass potential for use as alternative energy source in the party of General Pueyrredón, Argentina",
+     "anio": 2015,
+     "citas": 147
+    }
+   ],
+   "confianza": "alta",
+   "evidencia": "Coautores de PLA-57 Agnelo Marotta Cassula y Andres Z. Mendiburu figuran en su lista de coautores; investigador de la UNMdP (Mar del Plata) con trabajos previos sobre modelos de desempeño FV y sistemas híbridos, misma línea que PLA-57."
+  },
+  "otras_fuentes": [],
+  "afiliacion_inferida": "Universidad Nacional de Mar del Plata (UNMdP)",
+  "pais_inferido": "Argentina",
+  "intereses": {
+   "temas": [
+    "techno-economic and multi-objective sizing of hybrid renewable power systems",
+    "photovoltaic performance modeling and shading analysis",
+    "deep learning forecasting of PV generation",
+    "model predictive control for energy storage trading",
+    "solar thermal collectors and solar heat for industrial processes",
+    "biomass energy potential assessment"
+   ],
+   "palabras_clave": [
+    "hybrid renewable systems",
+    "photovoltaic systems",
+    "PV forecasting",
+    "LSTM",
+    "attention mechanism",
+    "energy storage",
+    "model predictive control",
+    "genetic algorithms",
+    "distributed generation",
+    "solar thermal",
+    "biomass",
+    "techno-economic analysis"
+   ],
+   "metodos": [
+    "multi-objective optimization",
+    "genetic algorithms",
+    "model predictive control",
+    "LSTM neural networks with attention",
+    "PV performance simulation"
+   ],
+   "aplicaciones": [
+    "residential PV systems in Mar del Plata",
+    "energy storage trading/arbitrage",
+    "isolated rural hybrid systems",
+    "solar heat for industrial processes",
+    "renewable supply for schools"
+   ],
+   "afinidad_tracks": {
+    "2": 0.9,
+    "1": 0.7,
+    "6": 0.6,
+    "7": 0.5,
+    "10": 0.4,
+    "11": 0.4
+   },
+   "etapa": "investigador_consolidado",
+   "resumen": "Profesor-investigador de la UNMdP que trabaja en simulación y optimización de sistemas energéticos: dimensionamiento de sistemas híbridos renovables, modelos de desempeño FV, solar térmica y potencial de biomasa. En CLAGTEE presenta tres trabajos (evaluación técnico-económica de FV residencial, MPC para trading con almacenamiento y pronóstico FV con LSTM y atención); le interesarían sesiones de integración renovable y almacenamiento, IA aplicada a pronóstico y mercados de energía.",
+   "base": [
+    "papers_clagtee",
+    "google_scholar"
+   ]
+  }
+ },
+ {
+  "id": "leticia-maria-seijas",
+  "nombre": "Leticia María Seijas",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "Universidad Nacional de Mar del Plata (inferida por el coautor S. A. González, ICYTE)",
+  "pais_inferido": "Argentina",
+  "intereses": {
+   "temas": [
+    "deep learning forecasting of photovoltaic power generation",
+    "attention-based LSTM networks for energy time series",
+    "PV plant output estimation"
+   ],
+   "palabras_clave": [
+    "PV forecasting",
+    "LSTM",
+    "attention mechanism",
+    "deep learning",
+    "time series forecasting",
+    "photovoltaic plants"
+   ],
+   "metodos": [
+    "LSTM neural networks",
+    "attention mechanisms",
+    "deep learning"
+   ],
+   "aplicaciones": [
+    "photovoltaic plant power forecasting"
+   ],
+   "afinidad_tracks": {
+    "2": 0.9,
+    "6": 0.8
+   },
+   "etapa": "desconocida",
+   "resumen": "Pendiente de búsqueda en Google Scholar: se agotó el cupo de búsquedas web de la sesión antes de llegar a este autor. Solo se hizo 1 de las 3 búsquedas en Scholar (sin resultado). Por su paper PLA-6 y por 'A Predictive Deep Learning Model to Estimate the Power Generated by a Photovoltaic Plant' (ARGENCON 2024, en el perfil de su coautor S. A. González), trabaja en pronóstico de generación FV con aprendizaje profundo; le interesarían sesiones de IA aplicada e integración de renovables.",
+   "base": [
+    "papers_clagtee",
+    "grupo_coautores"
+   ]
+  }
+ },
+ {
+  "id": "sergio-alejandro-gonzalez",
+  "nombre": "Sergio Alejandro Gonzalez",
+  "busqueda": "encontrado",
+  "scholar": {
+   "url": "https://scholar.google.com/citations?user=anAlT-AAAAAJ",
+   "user_id": "anAlT-AAAAAJ",
+   "nombre_perfil": "Sergio Alejandro González",
+   "afiliacion": "ICYTE - Instituto de Investigaciones Científicas y Tecnológicas en Electrónica, Universidad Nacional de Mar del Plata",
+   "email_verificado": "ieee.org",
+   "intereses_scholar": [],
+   "citas": 2128,
+   "citas_desde_2021": 897,
+   "h_index": 24,
+   "publicaciones": [
+    {
+     "titulo": "A Predictive Deep Learning Model to Estimate the Power Generated by a Photovoltaic Plant",
+     "anio": 2024,
+     "citas": 0
+    },
+    {
+     "titulo": "Experimental Implementation of a Fast Direct Digital Power Control Strategy for Single-phase DAB Converters",
+     "anio": 2024,
+     "citas": 0
+    },
+    {
+     "titulo": "Photovoltaic generation forecasting using convolutional and recurrent neural networks",
+     "anio": 2023,
+     "citas": 38
+    },
+    {
+     "titulo": "Control de balance mediante 3LBR en Sistema de Generación Distribuida",
+     "anio": 2022,
+     "citas": 0
+    },
+    {
+     "titulo": "Inverter-side current control of grid-connected voltage source inverters with LCL filter based on generalized predictive control",
+     "anio": 2018,
+     "citas": 112
+    },
+    {
+     "titulo": "Generalized Predictive Current Control (GPCC) for Grid-Tie Three-Phase Inverters",
+     "anio": 2016,
+     "citas": 130
+    },
+    {
+     "titulo": "Robust predictive control of grid-tied converters based on direct power control",
+     "anio": 2013,
+     "citas": 88
+    },
+    {
+     "titulo": "Repetitive control with adaptive sampling frequency for wind power generation systems",
+     "anio": 2013,
+     "citas": 88
+    },
+    {
+     "titulo": "Calculation-delay tolerant predictive current controller for three-phase inverters",
+     "anio": 2013,
+     "citas": 80
+    },
+    {
+     "titulo": "Adaptive dead-time compensation for grid-connected PWM inverters of single-stage PV systems",
+     "anio": 2012,
+     "citas": 229
+    },
+    {
+     "titulo": "A robust predictive current control for three-phase grid-connected inverters",
+     "anio": 2009,
+     "citas": 278
+    },
+    {
+     "titulo": "Harmonic computation technique suitable for active power filters",
+     "anio": 2007,
+     "citas": 138
+    }
+   ],
+   "confianza": "alta",
+   "evidencia": "El perfil (ICYTE, UNMdP; coautores de fi.mdp.edu.ar) lista 'A Predictive Deep Learning Model to Estimate the Power Generated by a Photovoltaic Plant' (LM Seijas, SA González, ARGENCON 2024) con su coautora de CLAGTEE Leticia M. Seijas, misma línea que PLA-6, y trabajos de control predictivo de convertidores afines a INT-3. Ojo: el perfil mezcla publicaciones de homónimos (estudios queer, historia de Chile, biología vegetal), por lo que citas y h-index están inflados; la lista de publicaciones aquí solo incluye las propias."
+  },
+  "otras_fuentes": [],
+  "afiliacion_inferida": "ICYTE (UNMdP-CONICET), Universidad Nacional de Mar del Plata",
+  "pais_inferido": "Argentina",
+  "intereses": {
+   "temas": [
+    "predictive current control of grid-tied three-phase inverters",
+    "generalized predictive control for LCL-filtered converters",
+    "model predictive control for energy storage trading",
+    "deep learning forecasting of PV generation",
+    "digital control of dual active bridge converters",
+    "converter control for wind and PV generation"
+   ],
+   "palabras_clave": [
+    "predictive control",
+    "grid-connected inverters",
+    "LCL filter",
+    "dead-time compensation",
+    "repetitive control",
+    "active power filters",
+    "PV forecasting",
+    "LSTM",
+    "energy storage",
+    "dual active bridge",
+    "distributed generation"
+   ],
+   "metodos": [
+    "model predictive control",
+    "generalized predictive control",
+    "repetitive control",
+    "digital control implementation on DSP/FPGA",
+    "convolutional and recurrent neural networks",
+    "LSTM with attention"
+   ],
+   "aplicaciones": [
+    "grid-tied PV inverters",
+    "wind power generation systems",
+    "battery energy storage trading",
+    "PV plant output forecasting",
+    "DC-DC converters for distributed generation"
+   ],
+   "afinidad_tracks": {
+    "2": 0.9,
+    "3": 0.8,
+    "6": 0.6,
+    "7": 0.4
+   },
+   "etapa": "investigador_senior",
+   "resumen": "Investigador del ICYTE (UNMdP) con larga trayectoria en control predictivo de inversores conectados a red, filtros activos y convertidores para generación eólica y FV, y una línea reciente en pronóstico de generación FV con redes neuronales. En CLAGTEE es coautor de MPC para trading con almacenamiento y de pronóstico FV con LSTM y atención; le interesarían sesiones de electrónica de potencia, integración de renovables y almacenamiento, e IA aplicada.",
+   "base": [
+    "papers_clagtee",
+    "google_scholar"
+   ]
+  }
+ },
+ {
+  "id": "camilo-villegas",
+  "nombre": "Camilo Villegas",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "commutation failures in LCC-HVDC links under AC faults",
+    "AC/DC interaction in parallel HVDC and 500 kV AC corridors",
+    "fault response of the Kimal–Lo Aguirre HVDC link"
+   ],
+   "palabras_clave": [
+    "HVDC",
+    "LCC",
+    "commutation failure",
+    "three-phase faults",
+    "500 kV AC transmission",
+    "AC/DC interaction",
+    "Kimal–Lo Aguirre"
+   ],
+   "metodos": [],
+   "aplicaciones": [
+    "Kimal–Lo Aguirre HVDC-LCC link"
+   ],
+   "afinidad_tracks": {
+    "1": 0.9,
+    "3": 0.5
+   },
+   "etapa": "desconocida",
+   "resumen": "Pendiente de búsqueda en Google Scholar: se agotó el cupo de búsquedas web de la sesión antes de llegar a este autor. Su paper PLA-44 estudia las fallas de conmutación del enlace HVDC-LCC Kimal–Lo Aguirre ante fallas trifásicas en la línea de 500 kV en paralelo. Evidencia limitada al título del paper; le interesarían sesiones de HVDC, transmisión, estabilidad y operación del sistema.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "cristian-e-pesce-g",
+  "nombre": "Cristián E. Pesce G.",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "commutation failures in LCC-HVDC links under AC faults",
+    "AC/DC interaction in parallel HVDC and 500 kV AC corridors",
+    "fault response of the Kimal–Lo Aguirre HVDC link"
+   ],
+   "palabras_clave": [
+    "HVDC",
+    "LCC",
+    "commutation failure",
+    "three-phase faults",
+    "500 kV AC transmission",
+    "AC/DC interaction",
+    "Kimal–Lo Aguirre"
+   ],
+   "metodos": [],
+   "aplicaciones": [
+    "Kimal–Lo Aguirre HVDC-LCC link"
+   ],
+   "afinidad_tracks": {
+    "1": 0.9,
+    "3": 0.5
+   },
+   "etapa": "desconocida",
+   "resumen": "Pendiente de búsqueda en Google Scholar: se agotó el cupo de búsquedas web de la sesión antes de llegar a este autor. Su paper PLA-44 estudia las fallas de conmutación del enlace HVDC-LCC Kimal–Lo Aguirre ante fallas trifásicas en la línea de 500 kV en paralelo. Evidencia limitada al título del paper; le interesarían sesiones de HVDC, transmisión, estabilidad y operación del sistema.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "eduardo-richard",
+  "nombre": "Eduardo Richard",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "commutation failures in LCC-HVDC links under AC faults",
+    "AC/DC interaction in parallel HVDC and 500 kV AC corridors",
+    "fault response of the Kimal–Lo Aguirre HVDC link"
+   ],
+   "palabras_clave": [
+    "HVDC",
+    "LCC",
+    "commutation failure",
+    "three-phase faults",
+    "500 kV AC transmission",
+    "AC/DC interaction",
+    "Kimal–Lo Aguirre"
+   ],
+   "metodos": [],
+   "aplicaciones": [
+    "Kimal–Lo Aguirre HVDC-LCC link"
+   ],
+   "afinidad_tracks": {
+    "1": 0.9,
+    "3": 0.5
+   },
+   "etapa": "desconocida",
+   "resumen": "Pendiente de búsqueda en Google Scholar: se agotó el cupo de búsquedas web de la sesión antes de llegar a este autor. Su paper PLA-44 estudia las fallas de conmutación del enlace HVDC-LCC Kimal–Lo Aguirre ante fallas trifásicas en la línea de 500 kV en paralelo. Evidencia limitada al título del paper; le interesarían sesiones de HVDC, transmisión, estabilidad y operación del sistema.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "felipe-gonzalez",
+  "nombre": "Felipe Gonzalez",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "commutation failures in LCC-HVDC links under AC faults",
+    "AC/DC interaction in parallel HVDC and 500 kV AC corridors",
+    "fault response of the Kimal–Lo Aguirre HVDC link"
+   ],
+   "palabras_clave": [
+    "HVDC",
+    "LCC",
+    "commutation failure",
+    "three-phase faults",
+    "500 kV AC transmission",
+    "AC/DC interaction",
+    "Kimal–Lo Aguirre"
+   ],
+   "metodos": [],
+   "aplicaciones": [
+    "Kimal–Lo Aguirre HVDC-LCC link"
+   ],
+   "afinidad_tracks": {
+    "1": 0.9,
+    "3": 0.5
+   },
+   "etapa": "desconocida",
+   "resumen": "Pendiente de búsqueda en Google Scholar: se agotó el cupo de búsquedas web de la sesión antes de llegar a este autor. Su paper PLA-44 estudia las fallas de conmutación del enlace HVDC-LCC Kimal–Lo Aguirre ante fallas trifásicas en la línea de 500 kV en paralelo. Evidencia limitada al título del paper; le interesarían sesiones de HVDC, transmisión, estabilidad y operación del sistema.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "gabriel-olguin",
+  "nombre": "Gabriel Olguin",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "commutation failures in LCC-HVDC links under AC faults",
+    "AC/DC interaction in parallel HVDC and 500 kV AC corridors",
+    "fault response of the Kimal–Lo Aguirre HVDC link"
+   ],
+   "palabras_clave": [
+    "HVDC",
+    "LCC",
+    "commutation failure",
+    "three-phase faults",
+    "500 kV AC transmission",
+    "AC/DC interaction",
+    "Kimal–Lo Aguirre"
+   ],
+   "metodos": [],
+   "aplicaciones": [
+    "Kimal–Lo Aguirre HVDC-LCC link"
+   ],
+   "afinidad_tracks": {
+    "1": 0.9,
+    "3": 0.5
+   },
+   "etapa": "desconocida",
+   "resumen": "Pendiente de búsqueda en Google Scholar: se agotó el cupo de búsquedas web de la sesión antes de llegar a este autor. Su paper PLA-44 estudia las fallas de conmutación del enlace HVDC-LCC Kimal–Lo Aguirre ante fallas trifásicas en la línea de 500 kV en paralelo. Evidencia limitada al título del paper; le interesarían sesiones de HVDC, transmisión, estabilidad y operación del sistema.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "rodrigo-villalobos",
+  "nombre": "Rodrigo Villalobos",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "commutation failures in LCC-HVDC links under AC faults",
+    "AC/DC interaction in parallel HVDC and 500 kV AC corridors",
+    "fault response of the Kimal–Lo Aguirre HVDC link"
+   ],
+   "palabras_clave": [
+    "HVDC",
+    "LCC",
+    "commutation failure",
+    "three-phase faults",
+    "500 kV AC transmission",
+    "AC/DC interaction",
+    "Kimal–Lo Aguirre"
+   ],
+   "metodos": [],
+   "aplicaciones": [
+    "Kimal–Lo Aguirre HVDC-LCC link"
+   ],
+   "afinidad_tracks": {
+    "1": 0.9,
+    "3": 0.5
+   },
+   "etapa": "desconocida",
+   "resumen": "Pendiente de búsqueda en Google Scholar: se agotó el cupo de búsquedas web de la sesión antes de llegar a este autor. Su paper PLA-44 estudia las fallas de conmutación del enlace HVDC-LCC Kimal–Lo Aguirre ante fallas trifásicas en la línea de 500 kV en paralelo. Evidencia limitada al título del paper; le interesarían sesiones de HVDC, transmisión, estabilidad y operación del sistema.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "felipe-martins-maranhao-da-silva",
+  "nombre": "Felipe Martins Maranhão da Silva",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "battery energy storage providing ancillary services in distribution feeders",
+    "high photovoltaic penetration in real distribution feeders",
+    "impacts of electric vehicle charging on distribution systems"
+   ],
+   "palabras_clave": [
+    "BESS",
+    "ancillary services",
+    "distribution feeders",
+    "high PV penetration",
+    "electric vehicles",
+    "EV charging",
+    "distribution system analysis"
+   ],
+   "metodos": [],
+   "aplicaciones": [
+    "real distribution feeders with high PV penetration",
+    "distribution networks with growing EV adoption"
+   ],
+   "afinidad_tracks": {
+    "2": 0.9,
+    "1": 0.6,
+    "7": 0.2
+   },
+   "etapa": "desconocida",
+   "resumen": "Pendiente de búsqueda en Google Scholar: se agotó el cupo de búsquedas web de la sesión antes de llegar a este autor. Sus papers INT-19 e INT-30 tratan de BESS que prestan servicios auxiliares en alimentadores reales con alta penetración FV y de los impactos del aumento de vehículos eléctricos en la distribución. Evidencia limitada al título del paper; le interesarían sesiones de almacenamiento, movilidad eléctrica y operación de redes de distribución con recursos distribuidos.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "jason-valentin-moreira",
+  "nombre": "Jason Valentin Moreira",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "impacts of electric vehicle charging on distribution systems",
+    "distribution network planning under growing EV penetration"
+   ],
+   "palabras_clave": [
+    "electric vehicles",
+    "EV charging",
+    "distribution systems",
+    "EV penetration",
+    "distribution system analysis"
+   ],
+   "metodos": [],
+   "aplicaciones": [
+    "distribution networks with growing EV adoption"
+   ],
+   "afinidad_tracks": {
+    "2": 0.9,
+    "1": 0.6
+   },
+   "etapa": "desconocida",
+   "resumen": "Pendiente de búsqueda en Google Scholar: se agotó el cupo de búsquedas web de la sesión antes de llegar a este autor. Su paper INT-30 estudia los impactos del aumento de la penetración de vehículos eléctricos en el sistema de distribución. Evidencia limitada al título del paper; le interesarían sesiones de movilidad eléctrica, recursos distribuidos y planificación de redes de distribución.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "matheus-alves-ruiz",
+  "nombre": "Matheus Alves Ruiz",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "battery energy storage providing ancillary services in distribution feeders",
+    "high photovoltaic penetration in real distribution feeders"
+   ],
+   "palabras_clave": [
+    "BESS",
+    "ancillary services",
+    "distribution feeders",
+    "high PV penetration",
+    "battery storage",
+    "distribution system analysis"
+   ],
+   "metodos": [],
+   "aplicaciones": [
+    "real distribution feeders with high PV penetration"
+   ],
+   "afinidad_tracks": {
+    "2": 0.9,
+    "1": 0.6,
+    "7": 0.2
+   },
+   "etapa": "desconocida",
+   "resumen": "Pendiente de búsqueda en Google Scholar: se agotó el cupo de búsquedas web de la sesión antes de llegar a este autor. Su paper INT-19 analiza BESS que prestan servicios auxiliares en alimentadores de distribución reales con alta penetración fotovoltaica. Evidencia limitada al título del paper; le interesarían sesiones de almacenamiento, integración de recursos distribuidos y operación de redes de distribución.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "rafael-mendonca-rocha-barros",
+  "nombre": "Rafael Mendonça Rocha Barros",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "battery energy storage providing ancillary services in distribution feeders",
+    "high photovoltaic penetration in real distribution feeders",
+    "impacts of electric vehicle charging on distribution systems"
+   ],
+   "palabras_clave": [
+    "BESS",
+    "ancillary services",
+    "distribution feeders",
+    "high PV penetration",
+    "electric vehicles",
+    "EV charging",
+    "distribution system analysis"
+   ],
+   "metodos": [],
+   "aplicaciones": [
+    "real distribution feeders with high PV penetration",
+    "distribution networks with growing EV adoption"
+   ],
+   "afinidad_tracks": {
+    "2": 0.9,
+    "1": 0.6,
+    "7": 0.2
+   },
+   "etapa": "desconocida",
+   "resumen": "Pendiente de búsqueda en Google Scholar: se agotó el cupo de búsquedas web de la sesión antes de llegar a este autor. Sus papers INT-19 e INT-30 tratan de BESS que prestan servicios auxiliares en alimentadores reales con alta penetración FV y de los impactos del aumento de vehículos eléctricos en la distribución. Evidencia limitada al título del paper; le interesarían sesiones de almacenamiento, movilidad eléctrica y operación de redes de distribución con recursos distribuidos.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "elizete-maria-lourenco",
+  "nombre": "Elizete Maria Lourenço",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "linearized AC power flow models",
+    "very short-term identification of voltage problems",
+    "voltage security assessment in real-time operation"
+   ],
+   "palabras_clave": [
+    "linearized power flow",
+    "AC power flow",
+    "voltage violations",
+    "very short-term operation",
+    "power system operation",
+    "voltage control"
+   ],
+   "metodos": [
+    "linearized AC power flow"
+   ],
+   "aplicaciones": [
+    "very short-term operation of power systems"
+   ],
+   "afinidad_tracks": {
+    "1": 0.9
+   },
+   "etapa": "desconocida",
+   "resumen": "Pendiente de búsqueda en Google Scholar: se agotó el cupo de búsquedas web de la sesión antes de llegar a este autor. Su paper PLA-26 propone un flujo de potencia AC linealizado para identificar problemas de tensión en el muy corto plazo. Evidencia limitada al título del paper; le interesarían sesiones de operación y planificación de sistemas, flujo de potencia y control de tensión.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "ewerlyn-ane-perussolo-guelbert",
+  "nombre": "Ewerlyn Ane Perússolo Guelbert",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "linearized AC power flow models",
+    "very short-term identification of voltage problems",
+    "voltage security assessment in real-time operation"
+   ],
+   "palabras_clave": [
+    "linearized power flow",
+    "AC power flow",
+    "voltage violations",
+    "very short-term operation",
+    "power system operation",
+    "voltage control"
+   ],
+   "metodos": [
+    "linearized AC power flow"
+   ],
+   "aplicaciones": [
+    "very short-term operation of power systems"
+   ],
+   "afinidad_tracks": {
+    "1": 0.9
+   },
+   "etapa": "desconocida",
+   "resumen": "Pendiente de búsqueda en Google Scholar: se agotó el cupo de búsquedas web de la sesión antes de llegar a este autor. Su paper PLA-26 propone un flujo de potencia AC linealizado para identificar problemas de tensión en el muy corto plazo. Evidencia limitada al título del paper; le interesarían sesiones de operación y planificación de sistemas, flujo de potencia y control de tensión.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "odilon-luis-tortelli",
+  "nombre": "Odilon Luís Tortelli",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "linearized AC power flow models",
+    "very short-term identification of voltage problems",
+    "voltage security assessment in real-time operation"
+   ],
+   "palabras_clave": [
+    "linearized power flow",
+    "AC power flow",
+    "voltage violations",
+    "very short-term operation",
+    "power system operation",
+    "voltage control"
+   ],
+   "metodos": [
+    "linearized AC power flow"
+   ],
+   "aplicaciones": [
+    "very short-term operation of power systems"
+   ],
+   "afinidad_tracks": {
+    "1": 0.9
+   },
+   "etapa": "desconocida",
+   "resumen": "Pendiente de búsqueda en Google Scholar: se agotó el cupo de búsquedas web de la sesión antes de llegar a este autor. Su paper PLA-26 propone un flujo de potencia AC linealizado para identificar problemas de tensión en el muy corto plazo. Evidencia limitada al título del paper; le interesarían sesiones de operación y planificación de sistemas, flujo de potencia y control de tensión.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "vitor-samuel-ruppel-ferreira",
+  "nombre": "Vitor Samuel Ruppel Ferreira",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "linearized AC power flow models",
+    "very short-term identification of voltage problems",
+    "voltage security assessment in real-time operation"
+   ],
+   "palabras_clave": [
+    "linearized power flow",
+    "AC power flow",
+    "voltage violations",
+    "very short-term operation",
+    "power system operation",
+    "voltage control"
+   ],
+   "metodos": [
+    "linearized AC power flow"
+   ],
+   "aplicaciones": [
+    "very short-term operation of power systems"
+   ],
+   "afinidad_tracks": {
+    "1": 0.9
+   },
+   "etapa": "desconocida",
+   "resumen": "Pendiente de búsqueda en Google Scholar: se agotó el cupo de búsquedas web de la sesión antes de llegar a este autor. Su paper PLA-26 propone un flujo de potencia AC linealizado para identificar problemas de tensión en el muy corto plazo. Evidencia limitada al título del paper; le interesarían sesiones de operación y planificación de sistemas, flujo de potencia y control de tensión.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "ahda-pionkoski-grilo-pavani",
+  "nombre": "Ahda Pionkoski Grilo Pavani",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "modeling of active distribution network resources",
+    "ancillary services from distributed energy resources"
+   ],
+   "palabras_clave": [
+    "active distribution networks",
+    "ancillary services",
+    "distributed energy resources",
+    "DER modeling",
+    "flexibility"
+   ],
+   "metodos": [],
+   "aplicaciones": [
+    "ancillary service provision from active distribution networks"
+   ],
+   "afinidad_tracks": {
+    "2": 0.9,
+    "1": 0.6,
+    "7": 0.3
+   },
+   "etapa": "desconocida",
+   "resumen": "Pendiente de búsqueda en Google Scholar: se agotó el cupo de búsquedas web de la sesión antes de llegar a este autor. Su paper INT-34 trata del modelado de recursos de redes de distribución activas para la provisión de servicios auxiliares. Evidencia limitada al título del paper; le interesarían sesiones de recursos distribuidos, servicios auxiliares y operación de redes de distribución activas.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "joao-vitor-silva-colombo",
+  "nombre": "João Vitor Silva Colombo",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "modeling of active distribution network resources",
+    "ancillary services from distributed energy resources"
+   ],
+   "palabras_clave": [
+    "active distribution networks",
+    "ancillary services",
+    "distributed energy resources",
+    "DER modeling",
+    "flexibility"
+   ],
+   "metodos": [],
+   "aplicaciones": [
+    "ancillary service provision from active distribution networks"
+   ],
+   "afinidad_tracks": {
+    "2": 0.9,
+    "1": 0.6,
+    "7": 0.3
+   },
+   "etapa": "desconocida",
+   "resumen": "Pendiente de búsqueda en Google Scholar: se agotó el cupo de búsquedas web de la sesión antes de llegar a este autor. Su paper INT-34 trata del modelado de recursos de redes de distribución activas para la provisión de servicios auxiliares. Evidencia limitada al título del paper; le interesarían sesiones de recursos distribuidos, servicios auxiliares y operación de redes de distribución activas.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ },
+ {
+  "id": "thamilly-rodrigues-mota",
+  "nombre": "Thamilly Rodrigues Mota",
+  "busqueda": "pendiente",
+  "scholar": null,
+  "otras_fuentes": [],
+  "afiliacion_inferida": "",
+  "pais_inferido": "",
+  "intereses": {
+   "temas": [
+    "modeling of active distribution network resources",
+    "ancillary services from distributed energy resources"
+   ],
+   "palabras_clave": [
+    "active distribution networks",
+    "ancillary services",
+    "distributed energy resources",
+    "DER modeling",
+    "flexibility"
+   ],
+   "metodos": [],
+   "aplicaciones": [
+    "ancillary service provision from active distribution networks"
+   ],
+   "afinidad_tracks": {
+    "2": 0.9,
+    "1": 0.6,
+    "7": 0.3
+   },
+   "etapa": "desconocida",
+   "resumen": "Pendiente de búsqueda en Google Scholar: se agotó el cupo de búsquedas web de la sesión antes de llegar a este autor. Su paper INT-34 trata del modelado de recursos de redes de distribución activas para la provisión de servicios auxiliares. Evidencia limitada al título del paper; le interesarían sesiones de recursos distribuidos, servicios auxiliares y operación de redes de distribución activas.",
+   "base": [
+    "papers_clagtee"
+   ]
+  }
+ }
+]

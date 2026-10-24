@@ -1,0 +1,653 @@
+[
+  {
+    "id": "fernando-nunes-belchior",
+    "nombre": "Fernando Nunes Belchior",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "energy storage to mitigate reverse power flow from PV plants",
+        "high penetration of solar photovoltaic plants in distribution networks",
+        "integration of distributed energy resources in distribution grids"
+      ],
+      "palabras_clave": ["energy storage systems", "reverse power flow", "solar photovoltaic plants", "distribution networks", "distributed generation"],
+      "metodos": [],
+      "aplicaciones": ["distribution feeders with large PV plants"],
+      "afinidad_tracks": {"2": 0.9, "1": 0.4},
+      "etapa": "desconocida",
+      "resumen": "Coautor de un trabajo sobre almacenamiento de energía como estrategia para reducir el flujo reverso en redes con alta inserción de plantas solares fotovoltaicas. No se encontró perfil Scholar ni otra fuente; la evidencia se limita a ese título. Le interesarían sesiones de integración de renovables, almacenamiento y operación de redes de distribución.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "gelson-a-a-brigatto",
+    "nombre": "Gelson A. A. Brigatto",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "static voltage stability of unbalanced distribution systems",
+        "modal analysis for voltage stability assessment",
+        "impact of distributed generation on distribution system voltage stability"
+      ],
+      "palabras_clave": ["voltage stability", "modal analysis", "unbalanced distribution systems", "three-phase distribution networks", "distributed generation", "eigenvalue analysis"],
+      "metodos": ["static modal analysis", "unbalanced three-phase power flow"],
+      "aplicaciones": ["unbalanced distribution feeders with distributed generation"],
+      "afinidad_tracks": {"2": 0.8, "1": 0.7},
+      "etapa": "desconocida",
+      "resumen": "Coautor de un trabajo de análisis modal estático de la estabilidad de tensión en sistemas de distribución desequilibrados con generación distribuida. Evidencia limitada al título de su paper CLAGTEE (búsqueda Scholar incompleta). Le interesarían sesiones de estabilidad y operación de redes de distribución con GD.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "getulio-s-dos-santos-junior",
+    "nombre": "Getúlio S. dos Santos Júnior",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=YLNHRGUAAAAJ",
+      "user_id": "YLNHRGUAAAAJ",
+      "nombre_perfil": "Getúlio Santiago dos Santos Júnior",
+      "afiliacion": "Engenheiro Eletricista",
+      "email_verificado": "ime.eb.br",
+      "intereses_scholar": ["Engenharia Elétrica"],
+      "citas": 4,
+      "citas_desde_2021": 4,
+      "h_index": 1,
+      "publicaciones": [
+        {"titulo": "Integrated Platform for Energy Consumption Management and Efficiency in Public Buildings in the State of Goiás", "anio": 2025, "citas": 0},
+        {"titulo": "Power Generation in Goiás: Infrastructure Limitations and Opportunities for Distributed Generation", "anio": 2024, "citas": 0},
+        {"titulo": "Thermal Energy Storage Systems in Solar Thermal Power Plants: Potential for Solar Generation in the State of Goiás", "anio": 2024, "citas": 0},
+        {"titulo": "Sensible and Latent Heat Storage: A Review of the State of the Art in the Brazilian Context", "anio": 2024, "citas": 0},
+        {"titulo": "Energy Efficiency and Sustainability: Technological Advances in Key Sectors of Goiás", "anio": 2024, "citas": 0},
+        {"titulo": "Study of the hosting capacity of photovoltaic distributed generators in low voltage distribution networks: A probabilistic approach using Monte Carlo simulations", "anio": 2022, "citas": 3},
+        {"titulo": "Estudo da capacidade de hospedagem de geradores distribuídos fotovoltaicos em redes de distribuição de baixa tensão: …", "anio": 2022, "citas": 0},
+        {"titulo": "ESTUDO DA CAPACIDADE DE HOSPEDAGEM DE GERADORES DISTRIBUÍDOS FOTOVOLTAICOS EM REDES DE DISTRIBUIÇÃO DE BAIXA TENSÃO: …", "anio": 2021, "citas": 1},
+        {"titulo": "GRUPO DE ESTUDO DE SISTEMAS DE DISTRIBUIÇÃO-GDI", "anio": null, "citas": 0},
+        {"titulo": "SUPERVISÓRIO PARA CONTROLE E MONITORAMENTO DE APLICAÇÕES INDUSTRIAIS UTILIZANDO O PROTOCOLO DE COMUNICAÇÃO MQTT", "anio": null, "citas": 0}
+      ],
+      "confianza": "alta",
+      "evidencia": "El nombre coincide (Getúlio Santiago dos Santos Júnior). En sus publicaciones figura 'Power Generation in Goiás...' (2024) con primer autor S.F.S. Mendes (Saymon Fonseca Santos Mendes, coautor CLAGTEE del mismo grupo en INT-15), y su trabajo principal sobre capacidad de alojamiento de GD fotovoltaica en redes de BT (IFG) es la misma línea que INT-24 (BESS con alta penetración FV)."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Instituto Militar de Engenharia (IME), email verificado; formado en el Instituto Federal de Goiás (IFG)",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "allocation and coordinated operation of BESS with high PV penetration",
+        "photovoltaic hosting capacity of low-voltage distribution networks",
+        "probabilistic assessment of distributed generation impacts",
+        "distributed generation and energy infrastructure in the state of Goiás"
+      ],
+      "palabras_clave": ["hosting capacity", "photovoltaic distributed generation", "low-voltage distribution networks", "BESS", "Monte Carlo simulation", "energy efficiency", "thermal energy storage", "MQTT"],
+      "metodos": ["Monte Carlo simulation", "probabilistic hosting capacity analysis", "optimization-based BESS siting and sizing"],
+      "aplicaciones": ["low-voltage feeders with rooftop PV", "energy management in public buildings", "industrial supervisory systems with MQTT"],
+      "afinidad_tracks": {"2": 0.9, "1": 0.6, "7": 0.3, "5": 0.2},
+      "etapa": "estudiante",
+      "resumen": "Ingeniero electricista joven (formado en el IFG, hoy con email del IME) que estudia la capacidad de alojamiento de generación fotovoltaica en redes de baja tensión con simulación de Monte Carlo y la ubicación y operación coordinada de BESS en redes con alta penetración FV. También colabora en trabajos sobre generación distribuida, almacenamiento térmico y eficiencia energética en Goiás. Le interesarían sesiones de integración de GD, almacenamiento y planificación de redes de distribución.",
+      "base": ["papers_clagtee", "google_scholar"]
+    }
+  },
+  {
+    "id": "giovanna-luiza-v-correa",
+    "nombre": "Giovanna Luiza V. Correa",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "harmonic distortion caused by electric vehicle charging",
+        "power quality in distribution networks with EV integration",
+        "impacts of EV chargers on distribution grids"
+      ],
+      "palabras_clave": ["harmonic distortion", "electric vehicles", "EV charging", "power quality", "distribution networks", "total harmonic distortion"],
+      "metodos": [],
+      "aplicaciones": ["distribution networks with EV charging"],
+      "afinidad_tracks": {"2": 0.8, "4": 0.3, "3": 0.3, "1": 0.3},
+      "etapa": "desconocida",
+      "resumen": "Coautora de un trabajo que evalúa las distorsiones armónicas en redes de distribución con integración de vehículos eléctricos. Evidencia limitada al título de su paper CLAGTEE (búsqueda Scholar incompleta). Le interesarían sesiones de calidad de energía, electromovilidad e integración de recursos distribuidos.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "gloria-patricia-lopez-sepulveda",
+    "nombre": "Gloria Patrícia López Sepúlveda",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "optimal allocation of battery energy storage systems in distribution networks",
+        "coordinated operation of BESS with photovoltaic generation",
+        "high photovoltaic penetration in distribution networks"
+      ],
+      "palabras_clave": ["BESS", "optimal siting and sizing", "solar photovoltaic generation", "distribution networks", "energy storage operation", "distributed generation"],
+      "metodos": ["optimization-based BESS siting and sizing"],
+      "aplicaciones": ["distribution feeders with high PV penetration"],
+      "afinidad_tracks": {"2": 0.9, "1": 0.6},
+      "etapa": "desconocida",
+      "resumen": "Presenta un trabajo sobre ubicación y operación coordinada de sistemas de almacenamiento con baterías (BESS) en redes de distribución con alta penetración solar fotovoltaica. Evidencia limitada al título de su paper CLAGTEE (búsqueda Scholar incompleta). Le interesarían sesiones de almacenamiento, integración FV y planificación de redes de distribución.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "gustavo-nunes-rios",
+    "nombre": "Gustavo Nunes Rios",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "harmonic distortion caused by electric vehicle charging",
+        "power quality in distribution networks with EV integration",
+        "impacts of EV chargers on distribution grids"
+      ],
+      "palabras_clave": ["harmonic distortion", "electric vehicles", "EV charging", "power quality", "distribution networks", "total harmonic distortion"],
+      "metodos": [],
+      "aplicaciones": ["distribution networks with EV charging"],
+      "afinidad_tracks": {"2": 0.8, "4": 0.3, "3": 0.3, "1": 0.3},
+      "etapa": "desconocida",
+      "resumen": "Coautor de un trabajo que evalúa las distorsiones armónicas en redes de distribución con integración de vehículos eléctricos. Evidencia limitada al título de su paper CLAGTEE (Scholar no buscado). Le interesarían sesiones de calidad de energía, electromovilidad e integración de recursos distribuidos.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "hugo-andres-ruiz-florez",
+    "nombre": "Hugo Andrés Ruiz Flórez",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "energy storage to mitigate reverse power flow from PV plants",
+        "allocation and coordinated operation of BESS in distribution networks",
+        "high photovoltaic penetration in distribution systems"
+      ],
+      "palabras_clave": ["BESS", "reverse power flow", "solar photovoltaic generation", "distribution networks", "optimal siting and sizing", "energy storage operation", "distributed generation"],
+      "metodos": ["optimization-based BESS siting and sizing"],
+      "aplicaciones": ["distribution networks with high PV penetration", "distribution feeders with large PV plants"],
+      "afinidad_tracks": {"2": 0.9, "1": 0.6},
+      "etapa": "desconocida",
+      "resumen": "Presenta un trabajo sobre almacenamiento de energía para reducir el flujo reverso en redes con alta inserción fotovoltaica y es coautor de otro sobre ubicación y operación coordinada de BESS en redes de distribución. No se encontró perfil Scholar ni otra fuente; la evidencia se limita a esos títulos. Le interesarían sesiones de almacenamiento, integración FV y operación de redes de distribución.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "igor-kopcak",
+    "nombre": "Igor Kopcak",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "static voltage stability of unbalanced distribution systems",
+        "modal analysis for voltage stability assessment",
+        "impact of distributed generation on distribution system voltage stability"
+      ],
+      "palabras_clave": ["voltage stability", "modal analysis", "unbalanced distribution systems", "three-phase distribution networks", "distributed generation", "eigenvalue analysis"],
+      "metodos": ["static modal analysis", "unbalanced three-phase power flow"],
+      "aplicaciones": ["unbalanced distribution feeders with distributed generation"],
+      "afinidad_tracks": {"2": 0.8, "1": 0.7},
+      "etapa": "desconocida",
+      "resumen": "Coautor de un trabajo de análisis modal estático de la estabilidad de tensión en sistemas de distribución desequilibrados con generación distribuida. No se encontró perfil Scholar ni otra fuente; la evidencia se limita a ese título. Le interesarían sesiones de estabilidad y operación de redes de distribución con GD.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "ivan-santos-pereira",
+    "nombre": "Ivan Santos Pereira",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "energy storage to mitigate reverse power flow from PV plants",
+        "high penetration of solar photovoltaic plants in distribution networks",
+        "integration of distributed energy resources in distribution grids"
+      ],
+      "palabras_clave": ["energy storage systems", "reverse power flow", "solar photovoltaic plants", "distribution networks", "distributed generation"],
+      "metodos": [],
+      "aplicaciones": ["distribution feeders with large PV plants"],
+      "afinidad_tracks": {"2": 0.9, "1": 0.4},
+      "etapa": "desconocida",
+      "resumen": "Coautor de un trabajo sobre almacenamiento de energía como estrategia para reducir el flujo reverso en redes con alta inserción de plantas solares fotovoltaicas. Evidencia limitada al título de su paper CLAGTEE (Scholar no buscado). Le interesarían sesiones de integración de renovables, almacenamiento y operación de redes de distribución.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "lina-paola-garces-negrete",
+    "nombre": "Lina Paola Garcés Negrete",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [
+      {"tipo": "institucional", "url": "https://bv.fapesp.br/en/pesquisador/71041/"},
+      {"tipo": "Lattes", "url": "https://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4594374D6"}
+    ],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "integration of distributed generation in distribution systems",
+        "voltage stability of unbalanced distribution systems with DG",
+        "allocation and operation of BESS under high PV penetration",
+        "harmonic impacts of electric vehicles on distribution networks",
+        "transmission network expansion planning under reliability and demand uncertainty"
+      ],
+      "palabras_clave": ["distributed generation", "distribution systems", "BESS", "reverse power flow", "voltage stability", "modal analysis", "harmonic distortion", "electric vehicles", "transmission expansion planning", "genetic algorithms", "Monte Carlo simulation", "reliability"],
+      "metodos": ["genetic algorithms", "Monte Carlo simulation", "static modal analysis", "reliability-based optimization"],
+      "aplicaciones": ["distribution networks with high PV penetration", "distribution networks with EV charging", "transmission system expansion planning"],
+      "afinidad_tracks": {"2": 0.9, "1": 0.8, "6": 0.3},
+      "etapa": "investigador_consolidado",
+      "resumen": "Investigadora nacida en Colombia (UTP Pereira; doctorado UNESP 2010, posdoctorado FAPESP) que trabaja en planificación de la expansión de transmisión con confiabilidad e incertidumbre de demanda y en integración de generación distribuida en redes de distribución. En CLAGTEE es coautora de cuatro trabajos: estabilidad de tensión con GD, BESS y flujo reverso con alta penetración FV, y armónicos por vehículos eléctricos. No se halló perfil Scholar; le interesarían sesiones de planificación y operación de redes con DER, almacenamiento y electromovilidad.",
+      "base": ["papers_clagtee", "otras_fuentes"]
+    }
+  },
+  {
+    "id": "marcelo-escobar-de-oliveira",
+    "nombre": "Marcelo Escobar de Oliveira",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "energy storage to mitigate reverse power flow from PV plants",
+        "high penetration of solar photovoltaic plants in distribution networks",
+        "integration of distributed energy resources in distribution grids"
+      ],
+      "palabras_clave": ["energy storage systems", "reverse power flow", "solar photovoltaic plants", "distribution networks", "distributed generation"],
+      "metodos": [],
+      "aplicaciones": ["distribution feeders with large PV plants"],
+      "afinidad_tracks": {"2": 0.9, "1": 0.4},
+      "etapa": "desconocida",
+      "resumen": "Coautor de un trabajo sobre almacenamiento de energía como estrategia para reducir el flujo reverso en redes con alta inserción de plantas solares fotovoltaicas. Evidencia limitada al título de su paper CLAGTEE (Scholar no buscado). Le interesarían sesiones de integración de renovables, almacenamiento y operación de redes de distribución.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "saymon-fonseca-santos-mendes",
+    "nombre": "Saymon Fonseca Santos Mendes",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "harmonic distortion caused by electric vehicle charging",
+        "power quality in distribution networks with EV integration",
+        "infrastructure limitations and distributed generation opportunities in Goiás"
+      ],
+      "palabras_clave": ["harmonic distortion", "electric vehicles", "EV charging", "power quality", "distribution networks", "distributed generation"],
+      "metodos": [],
+      "aplicaciones": ["distribution networks with EV charging", "regional power generation planning in Goiás"],
+      "afinidad_tracks": {"2": 0.8, "4": 0.3, "3": 0.3, "1": 0.3, "7": 0.2},
+      "etapa": "desconocida",
+      "resumen": "Coautor de un trabajo que evalúa las distorsiones armónicas en redes de distribución con integración de vehículos eléctricos; además figura como primer autor de 'Power Generation in Goiás: Infrastructure Limitations and Opportunities for Distributed Generation' (2024) en el perfil Scholar de su colega de grupo Getúlio S. dos Santos Júnior. Evidencia limitada (Scholar propio no buscado). Le interesarían sesiones de calidad de energía, electromovilidad y generación distribuida.",
+      "base": ["papers_clagtee", "grupo_coautores"]
+    }
+  },
+  {
+    "id": "vinicius-ariel-lima",
+    "nombre": "Vinicius Ariel Lima",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "energy storage to mitigate reverse power flow from PV plants",
+        "high penetration of solar photovoltaic plants in distribution networks",
+        "integration of distributed energy resources in distribution grids"
+      ],
+      "palabras_clave": ["energy storage systems", "reverse power flow", "solar photovoltaic plants", "distribution networks", "distributed generation"],
+      "metodos": [],
+      "aplicaciones": ["distribution feeders with large PV plants"],
+      "afinidad_tracks": {"2": 0.9, "1": 0.4},
+      "etapa": "desconocida",
+      "resumen": "Coautor de un trabajo sobre almacenamiento de energía como estrategia para reducir el flujo reverso en redes con alta inserción de plantas solares fotovoltaicas. Evidencia limitada al título de su paper CLAGTEE (Scholar no buscado). Le interesarían sesiones de integración de renovables, almacenamiento y operación de redes de distribución.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "vinicius-morais-c-dos-santos",
+    "nombre": "Vinícius Morais C. dos Santos",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "static voltage stability of unbalanced distribution systems",
+        "modal analysis for voltage stability assessment",
+        "impact of distributed generation on distribution system voltage stability"
+      ],
+      "palabras_clave": ["voltage stability", "modal analysis", "unbalanced distribution systems", "three-phase distribution networks", "distributed generation", "eigenvalue analysis"],
+      "metodos": ["static modal analysis", "unbalanced three-phase power flow"],
+      "aplicaciones": ["unbalanced distribution feeders with distributed generation"],
+      "afinidad_tracks": {"2": 0.8, "1": 0.7},
+      "etapa": "desconocida",
+      "resumen": "Coautor de un trabajo de análisis modal estático de la estabilidad de tensión en sistemas de distribución desequilibrados con generación distribuida. Evidencia limitada al título de su paper CLAGTEE (Scholar no buscado). Le interesarían sesiones de estabilidad y operación de redes de distribución con GD.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "andre-luiz-andreoli",
+    "nombre": "Andre Luiz Andreoli",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "incipient fault detection in three-phase induction motors",
+        "inter-turn short-circuit detection with machine learning",
+        "multiple fault diagnosis with wavelet transform and deep learning",
+        "low-cost accelerometer sensing for rotor fault detection"
+      ],
+      "palabras_clave": ["induction motors", "inter-turn short circuit", "rotor faults", "fault diagnosis", "support vector machine", "convolutional neural networks", "discrete wavelet transform", "power quality analyzer", "accelerometers", "condition monitoring"],
+      "metodos": ["support vector machines", "convolutional neural networks", "discrete wavelet transform", "vibration signal analysis"],
+      "aplicaciones": ["condition monitoring and predictive maintenance of induction motors"],
+      "afinidad_tracks": {"4": 0.9, "8": 0.9, "6": 0.7},
+      "etapa": "desconocida",
+      "resumen": "Coautor de tres trabajos sobre detección de fallas incipientes en motores de inducción trifásicos: cortocircuito entre espiras con analizador de calidad de energía y SVM, diagnóstico de fallas múltiples con wavelet discreta y redes convolucionales, y sensores acelerómetros de bajo costo para fallas en rotores. Evidencia limitada a esos títulos (Scholar no buscado). Le interesarían sesiones de monitoreo de condición, máquinas eléctricas e IA aplicada a diagnóstico.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "bruno-da-silva-nassula",
+    "nombre": "Bruno da Silva Nassula",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "multiple fault diagnosis in three-phase induction motors",
+        "low-cost accelerometer sensing for rotor fault detection",
+        "deep learning for motor condition monitoring"
+      ],
+      "palabras_clave": ["induction motors", "rotor faults", "fault diagnosis", "convolutional neural networks", "discrete wavelet transform", "accelerometers", "vibration analysis", "condition monitoring"],
+      "metodos": ["convolutional neural networks", "discrete wavelet transform", "vibration signal analysis"],
+      "aplicaciones": ["condition monitoring and predictive maintenance of induction motors"],
+      "afinidad_tracks": {"4": 0.9, "8": 0.7, "6": 0.6},
+      "etapa": "desconocida",
+      "resumen": "Coautor de trabajos sobre diagnóstico de fallas múltiples en motores de inducción con wavelet discreta y redes convolucionales, y sobre sensores acelerómetros de bajo costo para detectar fallas incipientes en rotores. Evidencia limitada a esos títulos (Scholar no buscado). Le interesarían sesiones de sensores, monitoreo de condición y máquinas eléctricas.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "gabriel-miglionni",
+    "nombre": "Gabriel Miglionni",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "incipient detection of inter-turn short circuits in induction motors",
+        "multiple fault diagnosis with wavelet transform and deep learning",
+        "machine learning for motor condition monitoring"
+      ],
+      "palabras_clave": ["induction motors", "inter-turn short circuit", "fault diagnosis", "support vector machine", "convolutional neural networks", "discrete wavelet transform", "power quality analyzer"],
+      "metodos": ["support vector machines", "convolutional neural networks", "discrete wavelet transform"],
+      "aplicaciones": ["condition monitoring and predictive maintenance of induction motors"],
+      "afinidad_tracks": {"8": 0.9, "4": 0.8, "6": 0.7},
+      "etapa": "desconocida",
+      "resumen": "Coautor de trabajos sobre detección incipiente de cortocircuitos entre espiras en motores de inducción con analizador de calidad de energía y SVM, y sobre diagnóstico de fallas múltiples con wavelet discreta y redes convolucionales. Evidencia limitada a esos títulos (Scholar no buscado). Le interesarían sesiones de máquinas eléctricas, monitoreo e IA aplicada.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "guilherme-beraldi-lucas",
+    "nombre": "Guilherme Beraldi Lucas",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "incipient fault detection in three-phase induction motors",
+        "inter-turn short-circuit detection with machine learning",
+        "multiple fault diagnosis with wavelet transform and deep learning",
+        "low-cost accelerometer sensing for rotor fault detection"
+      ],
+      "palabras_clave": ["induction motors", "inter-turn short circuit", "rotor faults", "fault diagnosis", "support vector machine", "convolutional neural networks", "discrete wavelet transform", "power quality analyzer", "accelerometers", "condition monitoring"],
+      "metodos": ["support vector machines", "convolutional neural networks", "discrete wavelet transform", "vibration signal analysis"],
+      "aplicaciones": ["condition monitoring and predictive maintenance of induction motors"],
+      "afinidad_tracks": {"8": 0.9, "4": 0.9, "6": 0.7},
+      "etapa": "desconocida",
+      "resumen": "Presenta un trabajo sobre detección incipiente de cortocircuitos entre espiras en motores de inducción con analizador de calidad de energía y SVM, y es coautor de otros dos sobre diagnóstico de fallas con wavelet y redes convolucionales y con acelerómetros de bajo costo. Evidencia limitada a esos títulos (Scholar no buscado). Le interesarían sesiones de máquinas eléctricas, monitoreo de condición e IA aplicada a diagnóstico.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "matheus-boldarini-de-spin-godoy",
+    "nombre": "Matheus Boldarini de Spin Godoy",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "multiple fault diagnosis in three-phase induction motors",
+        "low-cost accelerometer sensing for rotor fault detection",
+        "deep learning for motor condition monitoring"
+      ],
+      "palabras_clave": ["induction motors", "rotor faults", "fault diagnosis", "convolutional neural networks", "discrete wavelet transform", "accelerometers", "vibration analysis", "condition monitoring"],
+      "metodos": ["convolutional neural networks", "discrete wavelet transform", "vibration signal analysis"],
+      "aplicaciones": ["condition monitoring and predictive maintenance of induction motors"],
+      "afinidad_tracks": {"4": 0.9, "8": 0.7, "6": 0.6},
+      "etapa": "desconocida",
+      "resumen": "Coautor de trabajos sobre diagnóstico de fallas múltiples en motores de inducción con wavelet discreta y redes convolucionales, y sobre sensores acelerómetros de bajo costo para detectar fallas incipientes en rotores. Evidencia limitada a esos títulos (Scholar no buscado). Le interesarían sesiones de sensores, monitoreo de condición y máquinas eléctricas.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "edmarcio-antonio-belati",
+    "nombre": "Edmarcio Antonio Belati",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "transient-based fault location in power networks",
+        "deep learning for fault location",
+        "maximum transient deviation as fault signature"
+      ],
+      "palabras_clave": ["fault location", "LSTM", "recurrent neural networks", "transient signals", "maximum transient deviation", "power system protection"],
+      "metodos": ["LSTM neural networks", "transient signal analysis"],
+      "aplicaciones": ["fault location in power networks"],
+      "afinidad_tracks": {"1": 0.9, "6": 0.7, "4": 0.5},
+      "etapa": "desconocida",
+      "resumen": "Coautor de una técnica de localización de fallas basada en la desviación transitoria máxima y redes neuronales LSTM. Evidencia limitada al título de su paper CLAGTEE (Scholar no buscado). Le interesarían sesiones de protección, localización de fallas e IA aplicada a sistemas de potencia.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "nathanael-gomes-de-sa",
+    "nombre": "Nathanael Gomes de Sá",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "transient-based fault location in power networks",
+        "deep learning for fault location",
+        "maximum transient deviation as fault signature"
+      ],
+      "palabras_clave": ["fault location", "LSTM", "recurrent neural networks", "transient signals", "maximum transient deviation", "power system protection"],
+      "metodos": ["LSTM neural networks", "transient signal analysis"],
+      "aplicaciones": ["fault location in power networks"],
+      "afinidad_tracks": {"1": 0.9, "6": 0.7, "4": 0.5},
+      "etapa": "desconocida",
+      "resumen": "Coautor de una técnica de localización de fallas basada en la desviación transitoria máxima y redes neuronales LSTM. Evidencia limitada al título de su paper CLAGTEE (Scholar no buscado). Le interesarían sesiones de protección, localización de fallas e IA aplicada a sistemas de potencia.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "ricardo-caneloi-dos-santos",
+    "nombre": "Ricardo Caneloi dos Santos",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "transient-based fault location in power networks",
+        "deep learning for fault location",
+        "maximum transient deviation as fault signature"
+      ],
+      "palabras_clave": ["fault location", "LSTM", "recurrent neural networks", "transient signals", "maximum transient deviation", "power system protection"],
+      "metodos": ["LSTM neural networks", "transient signal analysis"],
+      "aplicaciones": ["fault location in power networks"],
+      "afinidad_tracks": {"1": 0.9, "6": 0.7, "4": 0.5},
+      "etapa": "desconocida",
+      "resumen": "Presenta una técnica de localización de fallas basada en la desviación transitoria máxima y redes neuronales LSTM. Evidencia limitada al título de su paper CLAGTEE (Scholar no buscado). Le interesarían sesiones de protección, localización de fallas e IA aplicada a sistemas de potencia.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "alisson-mesquita-da-silva",
+    "nombre": "Álisson Mesquita da Silva",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "transient-based fault location in power networks",
+        "deep learning for fault location",
+        "maximum transient deviation as fault signature"
+      ],
+      "palabras_clave": ["fault location", "LSTM", "recurrent neural networks", "transient signals", "maximum transient deviation", "power system protection"],
+      "metodos": ["LSTM neural networks", "transient signal analysis"],
+      "aplicaciones": ["fault location in power networks"],
+      "afinidad_tracks": {"1": 0.9, "6": 0.7, "4": 0.5},
+      "etapa": "desconocida",
+      "resumen": "Coautor de una técnica de localización de fallas basada en la desviación transitoria máxima y redes neuronales LSTM. Evidencia limitada al título de su paper CLAGTEE (Scholar no buscado). Le interesarían sesiones de protección, localización de fallas e IA aplicada a sistemas de potencia.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "cruz-diaz-castaneda",
+    "nombre": "Cruz Díaz Castañeda",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "protection coordination of traction rectifier substations",
+        "DC traction power supply for trolleybus systems"
+      ],
+      "palabras_clave": ["protection coordination", "rectifier substations", "trolleybus", "DC traction systems", "overcurrent protection", "electric public transport"],
+      "metodos": [],
+      "aplicaciones": ["urban trolleybus power supply networks"],
+      "afinidad_tracks": {"1": 0.9, "3": 0.4},
+      "etapa": "desconocida",
+      "resumen": "Coautor de un trabajo sobre coordinación de protecciones en subestaciones rectificadoras para trolebuses. Evidencia limitada al título de su paper CLAGTEE (Scholar no buscado). Le interesarían sesiones de protección, sistemas de tracción y transporte eléctrico.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "fernando-toledo-toledo",
+    "nombre": "Fernando Toledo Toledo",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "protection coordination of traction rectifier substations",
+        "DC traction power supply for trolleybus systems"
+      ],
+      "palabras_clave": ["protection coordination", "rectifier substations", "trolleybus", "DC traction systems", "overcurrent protection", "electric public transport"],
+      "metodos": [],
+      "aplicaciones": ["urban trolleybus power supply networks"],
+      "afinidad_tracks": {"1": 0.9, "3": 0.4},
+      "etapa": "desconocida",
+      "resumen": "Presenta un trabajo sobre coordinación de protecciones en subestaciones rectificadoras para trolebuses. Evidencia limitada al título de su paper CLAGTEE (Scholar no buscado). Le interesarían sesiones de protección, sistemas de tracción y transporte eléctrico.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "hector-toledo-zamudio",
+    "nombre": "Héctor Toledo Zamudio",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "",
+    "intereses": {
+      "temas": [
+        "protection coordination of traction rectifier substations",
+        "DC traction power supply for trolleybus systems"
+      ],
+      "palabras_clave": ["protection coordination", "rectifier substations", "trolleybus", "DC traction systems", "overcurrent protection", "electric public transport"],
+      "metodos": [],
+      "aplicaciones": ["urban trolleybus power supply networks"],
+      "afinidad_tracks": {"1": 0.9, "3": 0.4},
+      "etapa": "desconocida",
+      "resumen": "Coautor de un trabajo sobre coordinación de protecciones en subestaciones rectificadoras para trolebuses. Evidencia limitada al título de su paper CLAGTEE (Scholar no buscado). Le interesarían sesiones de protección, sistemas de tracción y transporte eléctrico.",
+      "base": ["papers_clagtee"]
+    }
+  },
+  {
+    "id": "leticia-aparecida-sanches",
+    "nombre": "Leticia Aparecida Sanches",
+    "busqueda": "pendiente",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "",
+    "pais_inferido": "Brasil",
+    "intereses": {
+      "temas": [
+        "low-carbon hydrogen development in Brazil",
+        "hydrogen certification schemes",
+        "industrial demand and decarbonization with hydrogen",
+        "energy transition policy and regulation"
+      ],
+      "palabras_clave": ["low-carbon hydrogen", "hydrogen certification", "industrial decarbonization", "energy transition", "energy policy", "Brazil"],
+      "metodos": [],
+      "aplicaciones": ["hydrogen certification and policy in Brazil", "industrial hydrogen demand"],
+      "afinidad_tracks": {"7": 0.9, "11": 0.8, "12": 0.3, "13": 0.3},
+      "etapa": "desconocida",
+      "resumen": "Presenta, como única autora, un trabajo sobre el potencial estratégico de la industria brasileña para el hidrógeno de bajo carbono y el papel de la certificación. Evidencia limitada al título de su paper CLAGTEE (Scholar no buscado). Le interesarían sesiones de transición energética, regulación e hidrógeno.",
+      "base": ["papers_clagtee"]
+    }
+  }
+]

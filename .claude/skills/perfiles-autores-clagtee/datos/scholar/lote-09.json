@@ -1,0 +1,405 @@
+[
+  {
+    "id": "alfredo-marengo",
+    "nombre": "Alfredo Marengo",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidad Técnica Federico Santa María",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "voltage regulator scheduling in active and unbalanced distribution networks",
+        "voltage control in distribution networks with distributed generation",
+        "three-phase power flow modeling of unbalanced distribution systems"
+      ],
+      "palabras_clave": [
+        "step voltage regulators",
+        "tap optimization",
+        "unbalanced distribution networks",
+        "active distribution networks",
+        "distributed generation",
+        "voltage regulation",
+        "three-phase power flow"
+      ],
+      "metodos": [
+        "optimization of regulator tap settings",
+        "linearized three-phase power flow models"
+      ],
+      "aplicaciones": [
+        "medium-voltage distribution feeders with distributed generation"
+      ],
+      "afinidad_tracks": {"2": 0.9, "1": 0.6},
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Scholar ni otras fuentes. Presenta INT-25 sobre la operación óptima de reguladores de tensión en redes de distribución activas y desbalanceadas, con el grupo de la Universidad Técnica Federico Santa María (Saltos-Rodríguez, Espín-Sarzosa, Álvarez-Malebrán), de donde se infieren afiliación y país; probablemente estudiante o tesista. Evidencia escasa: le interesarían sesiones de control de tensión, integración de DER y flujo de potencia en distribución.",
+      "base": ["papers_clagtee", "grupo_coautores"]
+    }
+  },
+  {
+    "id": "daniel-aliaga",
+    "nombre": "Daniel Aliaga",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidad Técnica Federico Santa María",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "voltage regulator scheduling in active and unbalanced distribution networks",
+        "voltage control in distribution networks with distributed generation",
+        "three-phase power flow modeling of unbalanced distribution systems"
+      ],
+      "palabras_clave": [
+        "step voltage regulators",
+        "tap optimization",
+        "unbalanced distribution networks",
+        "active distribution networks",
+        "distributed generation",
+        "voltage regulation",
+        "three-phase power flow"
+      ],
+      "metodos": [
+        "optimization of regulator tap settings",
+        "linearized three-phase power flow models"
+      ],
+      "aplicaciones": [
+        "medium-voltage distribution feeders with distributed generation"
+      ],
+      "afinidad_tracks": {"2": 0.9, "1": 0.6},
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Scholar (el único Daniel Aliaga en Scholar es Daniel G. Aliaga, de computación gráfica en Purdue, otra persona). Presenta INT-25 sobre la operación óptima de reguladores de tensión en redes de distribución activas y desbalanceadas, con el grupo de la Universidad Técnica Federico Santa María, de donde se infieren afiliación y país; probablemente estudiante o tesista. Evidencia escasa: le interesarían sesiones de control de tensión, integración de DER y flujo de potencia en distribución.",
+      "base": ["papers_clagtee", "grupo_coautores"]
+    }
+  },
+  {
+    "id": "danny-espin-sarzosa",
+    "nombre": "Danny Espín-Sarzosa",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=XKasT6wAAAAJ",
+      "user_id": "XKasT6wAAAAJ",
+      "nombre_perfil": "Danny Espín-Sarzosa",
+      "afiliacion": "Professor, Universidad Técnica Federico Santa María",
+      "email_verificado": "usm.cl",
+      "intereses_scholar": ["Microgrids", "Energy management", "Load modeling", "Distributed generation", "Small-scale productive processes"],
+      "citas": 199,
+      "citas_desde_2021": 181,
+      "h_index": 5,
+      "publicaciones": [
+        {"titulo": "Multi-objective energy management for modern distribution power systems considering industrial flexibility mechanisms", "anio": 2022, "citas": 19},
+        {"titulo": "Integration of Small Productive Processes Into an Energy Management System for Microgrids", "anio": 2022, "citas": 5},
+        {"titulo": "Modeling of small productive solar processes and their integration into an energy management system for a microgrid", "anio": 2022, "citas": 0},
+        {"titulo": "Modeling of small productive processes for the operation of a microgrid", "anio": 2021, "citas": 9},
+        {"titulo": "Energy management systems for microgrids: Main existing trends in centralized control architectures", "anio": 2020, "citas": 160},
+        {"titulo": "Control possibilities for community microgrids considering small production processes and its benefits to the whole system", "anio": 2020, "citas": 1},
+        {"titulo": "Incorporation of productive solar solutions for communities into microgrid energy management systems", "anio": 2019, "citas": 5},
+        {"titulo": "Impact of battery aging model in an energy management system for an isolated solar microgrid", "anio": 2019, "citas": 0}
+      ],
+      "confianza": "alta",
+      "evidencia": "Nombre poco común e idéntico; perfil en la USM (usm.cl), la misma institución de sus coautores CLAGTEE Saltos-Rodríguez y Álvarez-Malebrán, en cuyos perfiles figura como coautor (Renewable Energy 2025 sobre Ecuador; IEEE PESGM 2025 sobre planificación de transmisión). Su línea de microrredes y EMS coincide con PLA-52 (microrredes aisladas)."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidad Técnica Federico Santa María",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "energy management systems for microgrids",
+        "integration of small productive processes into microgrid operation",
+        "multi-objective planning of isolated microgrids with the water-energy-food nexus",
+        "industrial demand flexibility in distribution system energy management",
+        "voltage regulator operation in unbalanced distribution networks",
+        "low-carbon expansion with renewables and storage in hydro-dominated systems"
+      ],
+      "palabras_clave": [
+        "microgrids",
+        "energy management system",
+        "small productive processes",
+        "load modeling",
+        "demand flexibility",
+        "isolated microgrids",
+        "community microgrids",
+        "battery aging",
+        "water-energy-food nexus",
+        "distributed generation",
+        "unbalanced distribution networks"
+      ],
+      "metodos": [
+        "centralized EMS optimization",
+        "multi-objective optimization",
+        "productive process and load modeling",
+        "battery degradation modeling"
+      ],
+      "aplicaciones": [
+        "rural community microgrids with productive uses",
+        "isolated solar microgrids",
+        "industrial flexibility in distribution systems",
+        "Ecuadorian and Chilean power systems"
+      ],
+      "afinidad_tracks": {"1": 0.9, "2": 0.9, "12": 0.3, "7": 0.2},
+      "etapa": "investigador_inicial",
+      "resumen": "Profesor de la Universidad Técnica Federico Santa María, doctorado en la Universidad de Chile (2022) con una tesis sobre sistemas de gestión de energía (EMS) para microrredes que integran pequeños procesos productivos solares. Coautor de INT-25 (reguladores de tensión en redes desbalanceadas) y PLA-52 (planificación multiobjetivo de microrredes aisladas con el nexo agua-energía-alimentos). Le interesarían sesiones sobre microrredes, EMS, flexibilidad de la demanda, planificación con DER y almacenamiento, y electrificación rural.",
+      "base": ["papers_clagtee", "google_scholar"]
+    }
+  },
+  {
+    "id": "hernan-caviedes",
+    "nombre": "Hernán Caviedes",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidad Técnica Federico Santa María",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "voltage regulator scheduling in active and unbalanced distribution networks",
+        "voltage control in distribution networks with distributed generation",
+        "three-phase power flow modeling of unbalanced distribution systems"
+      ],
+      "palabras_clave": [
+        "step voltage regulators",
+        "tap optimization",
+        "unbalanced distribution networks",
+        "active distribution networks",
+        "distributed generation",
+        "voltage regulation",
+        "three-phase power flow"
+      ],
+      "metodos": [
+        "optimization of regulator tap settings",
+        "linearized three-phase power flow models"
+      ],
+      "aplicaciones": [
+        "medium-voltage distribution feeders with distributed generation"
+      ],
+      "afinidad_tracks": {"2": 0.9, "1": 0.6},
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Scholar ni otras fuentes. Coautor de INT-25 sobre la operación óptima de reguladores de tensión en redes de distribución activas y desbalanceadas, con el grupo de la Universidad Técnica Federico Santa María, de donde se infieren afiliación y país; podría ser estudiante o venir de la industria. Evidencia escasa: le interesarían sesiones de control de tensión, integración de DER y operación de redes de distribución.",
+      "base": ["papers_clagtee", "grupo_coautores"]
+    }
+  },
+  {
+    "id": "jhon-topa-soria",
+    "nombre": "Jhon Topa Soria",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidad Técnica Federico Santa María",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "multi-objective planning of isolated microgrids",
+        "water-energy-food nexus in rural microgrids",
+        "sizing of off-grid renewable generation and storage",
+        "microgrids supplying productive processes"
+      ],
+      "palabras_clave": [
+        "isolated microgrids",
+        "water-energy-food nexus",
+        "multi-objective optimization",
+        "microgrid planning",
+        "rural electrification",
+        "battery energy storage",
+        "renewable energy sources"
+      ],
+      "metodos": [
+        "multi-objective optimization"
+      ],
+      "aplicaciones": [
+        "isolated rural communities",
+        "off-grid microgrids with water pumping and agricultural loads"
+      ],
+      "afinidad_tracks": {"1": 0.9, "2": 0.7, "12": 0.3, "13": 0.2},
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Scholar ni otras fuentes. Presenta PLA-52, un marco de planificación multiobjetivo para microrredes aisladas que integra el nexo agua-energía-alimentos, con el grupo de la Universidad Técnica Federico Santa María (Espín-Sarzosa, Saltos-Rodríguez, Álvarez-Malebrán), de donde se infieren afiliación y país; probablemente estudiante o tesista. Evidencia escasa: le interesarían sesiones de microrredes, planificación con renovables y almacenamiento, y electrificación rural.",
+      "base": ["papers_clagtee", "grupo_coautores"]
+    }
+  },
+  {
+    "id": "juan-pablo-mendez",
+    "nombre": "Juan Pablo Méndez",
+    "busqueda": "sin_perfil",
+    "scholar": null,
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidad Técnica Federico Santa María",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "multi-objective planning of isolated microgrids",
+        "water-energy-food nexus in rural microgrids",
+        "sizing of off-grid renewable generation and storage",
+        "microgrids supplying productive processes"
+      ],
+      "palabras_clave": [
+        "isolated microgrids",
+        "water-energy-food nexus",
+        "multi-objective optimization",
+        "microgrid planning",
+        "rural electrification",
+        "battery energy storage",
+        "renewable energy sources"
+      ],
+      "metodos": [
+        "multi-objective optimization"
+      ],
+      "aplicaciones": [
+        "isolated rural communities",
+        "off-grid microgrids with water pumping and agricultural loads"
+      ],
+      "afinidad_tracks": {"1": 0.9, "2": 0.7, "12": 0.3, "13": 0.2},
+      "etapa": "desconocida",
+      "resumen": "Sin perfil de Scholar ni otras fuentes (los Méndez que aparecen en Scholar son otras personas). Coautor de PLA-52 sobre planificación multiobjetivo de microrredes aisladas con el nexo agua-energía-alimentos, con el grupo de la Universidad Técnica Federico Santa María, de donde se infieren afiliación y país. Evidencia escasa: le interesarían sesiones de microrredes, planificación con renovables y almacenamiento, y electrificación rural.",
+      "base": ["papers_clagtee", "grupo_coautores"]
+    }
+  },
+  {
+    "id": "miguel-saltos-rodriguez",
+    "nombre": "Miguel Saltos-Rodríguez",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=qUlXNnQAAAAJ",
+      "user_id": "qUlXNnQAAAAJ",
+      "nombre_perfil": "Miguel Angel Saltos Rodriguez",
+      "afiliacion": "Universidad Técnica Federico Santa María",
+      "email_verificado": "usm.cl",
+      "intereses_scholar": ["Microredes", "Energías renovables", "Sistemas eléctricos de potencia"],
+      "citas": 112,
+      "citas_desde_2021": 112,
+      "h_index": 6,
+      "publicaciones": [
+        {"titulo": "Deploying renewable energy sources and energy storage systems for achieving low-carbon emissions targets in hydro-dominated power systems: A case study of Ecuador", "anio": 2025, "citas": 26},
+        {"titulo": "Dimensionamiento óptimo de sistemas fotovoltaicos y baterías en entornos residenciales para reducir la dependencia de la infraestructura eléctrica centralizada", "anio": 2025, "citas": 4},
+        {"titulo": "Assessing the impact of distributed generation on power distribution systems", "anio": 2023, "citas": 3},
+        {"titulo": "Linear Three-Phase Power Flow for Unbalanced Power Distribution Systems with Distributed Generation and Approximating Distribution Losses", "anio": 2023, "citas": 0},
+        {"titulo": "Comparative Analysis of Linearized AC Power Flow Models for Power Distribution Systems", "anio": 2023, "citas": 0},
+        {"titulo": "Planificación Óptima de Recursos Energéticos Distribuidos para Mejorar la Resiliencia de Sistemas de Distribución de Energía Eléctrica frente a Desastres Naturales: Caso en Lahares Volcánicos", "anio": 2022, "citas": 15},
+        {"titulo": "Practical Framework for Optimal Planning of Isolated Rural Microgrids", "anio": 2022, "citas": 7},
+        {"titulo": "Optimizing resource and restoration scheduling for power distribution systems after a natural hazard: A case study with volcanic lahars", "anio": 2022, "citas": 5},
+        {"titulo": "Practical Framework for Optimal Planning of Microgrids for Production Processes", "anio": 2022, "citas": 2},
+        {"titulo": "Resilience assessment in electric power systems against volcanic eruptions: Case on lahars occurrence", "anio": 2021, "citas": 11},
+        {"titulo": "Optimal Planning of VAR Compensator for Voltage Regulation Enhancement on Power Distribution Systems Against Volcanic Eruptions Events", "anio": 2021, "citas": 9},
+        {"titulo": "Distributed Generation for Resilience Enhancement on Power Distribution System Against Lahars Occurrence After a Volcanic Eruption", "anio": 2021, "citas": 8}
+      ],
+      "confianza": "alta",
+      "evidencia": "El perfil indica también el nombre M. Saltos-Rodríguez; su coautor CLAGTEE Danny Espín-Sarzosa firma con él el artículo de Renewable Energy 2025 listado en el perfil. Mismo dominio (usm.cl) que Espín-Sarzosa y Álvarez-Malebrán; publica sobre microrredes rurales aisladas y flujo de potencia trifásico desbalanceado, en línea con PLA-52 e INT-25."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidad Técnica Federico Santa María",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "resilience of distribution systems against natural hazards (volcanic lahars, ash, earthquakes)",
+        "optimal planning of distributed energy resources and BESS for resilience enhancement",
+        "linearized three-phase power flow for unbalanced distribution systems with DG",
+        "planning of isolated rural microgrids and microgrids for productive processes",
+        "low-carbon expansion with renewables and storage in hydro-dominated systems",
+        "voltage regulator operation in active unbalanced distribution networks"
+      ],
+      "palabras_clave": [
+        "power system resilience",
+        "volcanic eruptions",
+        "distribution system restoration",
+        "distributed generation",
+        "battery energy storage systems",
+        "isolated microgrids",
+        "unbalanced power flow",
+        "voltage regulation",
+        "water-energy-food nexus",
+        "hydro-dominated power systems",
+        "residential PV-battery systems"
+      ],
+      "metodos": [
+        "optimal placement and sizing of DER and BESS",
+        "linearized AC and three-phase power flow models",
+        "multi-objective optimization",
+        "resource and restoration scheduling optimization",
+        "resilience assessment"
+      ],
+      "aplicaciones": [
+        "Ecuadorian distribution and transmission systems",
+        "isolated rural microgrids",
+        "residential PV and battery sizing",
+        "hydro-dominated national power systems"
+      ],
+      "afinidad_tracks": {"1": 0.9, "2": 0.9, "7": 0.3, "12": 0.2},
+      "etapa": "investigador_inicial",
+      "resumen": "Investigador de la Universidad Técnica Federico Santa María, con trayectoria previa en Ecuador (coautores de la ESPE). Trabaja en la resiliencia de redes de distribución frente a desastres naturales (lahares, ceniza volcánica, sismos), en la planificación de DER y BESS, en flujos de potencia trifásicos linealizados y en microrredes rurales aisladas; es coautor de INT-25 y PLA-52. Le interesarían sesiones de resiliencia, planificación de distribución con DER, microrredes y descarbonización con renovables y almacenamiento.",
+      "base": ["papers_clagtee", "google_scholar"]
+    }
+  },
+  {
+    "id": "ricardo-alvarez",
+    "nombre": "Ricardo Álvarez",
+    "busqueda": "encontrado",
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=Ivz6_IEAAAAJ",
+      "user_id": "Ivz6_IEAAAAJ",
+      "nombre_perfil": "Ricardo Alvarez-Malebrán",
+      "afiliacion": "Universidad Técnica Federico Santa María",
+      "email_verificado": "usm.cl",
+      "intereses_scholar": ["Power system planning", "Artificial intelligence applications"],
+      "citas": 740,
+      "citas_desde_2021": 489,
+      "h_index": 13,
+      "publicaciones": [
+        {"titulo": "Hedging against asset-heavy network expansion delays through rapid deployments of FACTS and BESS", "anio": 2027, "citas": 0},
+        {"titulo": "Towards Resilient Transmission Grids: Enhancing Stochastic Transmission Planning Through Deep Uncertainty Sources Considerations", "anio": 2025, "citas": 0},
+        {"titulo": "Artificial intelligence techniques for dynamic security assessments-a survey", "anio": 2024, "citas": 20},
+        {"titulo": "Optimal sizing and allocation of Battery Energy Storage for improving voltage robustness", "anio": 2024, "citas": 0},
+        {"titulo": "Identification and design of special protection schemes for the energy transition", "anio": 2024, "citas": 7},
+        {"titulo": "Review of wide-area controllers for supporting power system stability", "anio": 2023, "citas": 38},
+        {"titulo": "Determination of control requirements to impose on CIG for ensuring frequency stability of low inertia power systems", "anio": 2022, "citas": 39},
+        {"titulo": "The role of fast frequency response of energy storage systems and renewables for ensuring frequency stability in future low-inertia power systems", "anio": 2021, "citas": 60},
+        {"titulo": "Multi-year stochastic transmission network expansion planning considering line uprating", "anio": 2021, "citas": 12},
+        {"titulo": "Practical framework for frequency stability studies in power systems with renewable energy sources", "anio": 2020, "citas": 70},
+        {"titulo": "A novel meta-heuristic model for the multi-year transmission network expansion planning", "anio": 2019, "citas": 39},
+        {"titulo": "Optimal allocation and capacity of energy storage systems in a future European power system with 100% renewable energy generation", "anio": 2014, "citas": 185}
+      ],
+      "confianza": "alta",
+      "evidencia": "Su coautor CLAGTEE Danny Espín-Sarzosa firma con él 'Towards Resilient Transmission Grids...' (IEEE PESGM 2025), listado en el perfil. Mismo dominio usm.cl que Espín-Sarzosa y Saltos-Rodríguez, y coautores compartidos con ellos (D. Ortiz-Villalba, R. Palma-Behnke, F. Valencia). Variante del nombre: Ricardo Alvarez-Malebrán."
+    },
+    "otras_fuentes": [],
+    "afiliacion_inferida": "Universidad Técnica Federico Santa María",
+    "pais_inferido": "Chile",
+    "intereses": {
+      "temas": [
+        "multi-year stochastic transmission network expansion planning",
+        "frequency stability of low-inertia systems with high renewable penetration",
+        "energy storage sizing and allocation for stability and flexibility",
+        "artificial intelligence for dynamic security assessment",
+        "special protection schemes and wide-area control for the energy transition",
+        "voltage regulation and isolated microgrid planning (CLAGTEE papers)"
+      ],
+      "palabras_clave": [
+        "transmission network expansion planning",
+        "low-inertia power systems",
+        "frequency stability",
+        "fast frequency response",
+        "battery energy storage systems",
+        "converter-interfaced generation",
+        "dynamic security assessment",
+        "wide-area control",
+        "special protection schemes",
+        "FACTS",
+        "deep uncertainty",
+        "metaheuristics"
+      ],
+      "metodos": [
+        "stochastic optimization",
+        "metaheuristics (ant colony optimization)",
+        "dynamic simulation for frequency stability studies",
+        "machine learning for security assessment",
+        "representative operating point selection"
+      ],
+      "aplicaciones": [
+        "Chilean national electric system",
+        "European 100% renewable power system",
+        "low-inertia grids with high PV and wind shares",
+        "unbalanced distribution networks and isolated microgrids"
+      ],
+      "afinidad_tracks": {"1": 0.9, "2": 0.8, "6": 0.5, "7": 0.3, "3": 0.2},
+      "etapa": "investigador_consolidado",
+      "resumen": "Académico de la Universidad Técnica Federico Santa María (h-index 13) especializado en planificación de sistemas de potencia: expansión estocástica de la transmisión, estabilidad de frecuencia en sistemas de baja inercia, dimensionamiento de almacenamiento y aplicaciones de inteligencia artificial a la evaluación de seguridad dinámica. En CLAGTEE es coautor de INT-25 (reguladores de tensión) y PLA-52 (microrredes aisladas). Le interesarían sesiones de planificación y operación, integración de renovables y almacenamiento, estabilidad y IA aplicada a sistemas eléctricos.",
+      "base": ["papers_clagtee", "google_scholar"]
+    }
+  }
+]

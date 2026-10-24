@@ -1,0 +1,20 @@
+# Configuración de los perfiles de autores CLAGTEE 2026.
+
+# Variantes de nombre de una misma persona en el programa: "variante" = "nombre canónico".
+# extraer_autores.py las une antes de armar los lotes. Revisar la sección
+# "Nombres que podrían ser la misma persona" de reporte-autores.md.
+# (André Nunes de Souza y Antônio André Zago Nunes de Souza firman juntos: son dos personas.)
+[alias]
+"Juan Tapia" = "Juan A. Tapia"
+"Matheus Leal" = "Matheus de Melo Leal"
+"Matheus Boldarini Spin de Godoy" = "Matheus Boldarini de Spin Godoy"
+"Carlos Madariaga" = "Carlos Madariaga Cifuentes"
+"Gabriel Hermosilla" = "Gabriel Hermosilla Vigneau"
+"Gabriel Olmos" = "Gabriel Olmos Leiva"
+"Gino Furlano" = "Gino Leonel Furlano"
+"John Fredy Franco" = "John Fredy Franco Baquero"
+"Juan I. Amaya" = "Juan Ignacio Amaya"
+"Justo Roberts" = "Justo José Roberts"
+"Leonardo H. Macedo" = "Leonardo Henrique Faria Macedo Possagnolo"
+"Lisa Soto" = "Lisa Alejandra Soto Barreda"
+"Sergio N. Bragagnolo" = "Sergio Nicolás Bragagnolo"
