@@ -18,6 +18,11 @@
    "h_index": null,
    "publicaciones": [
     {
+     "titulo": "Study of Demagnetization in a Coreless Axial-Flux Permanent Magnet Synchronous Generator for Small Hybrid Vertical-Axis Wind Turbines",
+     "anio": 2025,
+     "citas": null
+    },
+    {
      "titulo": "A Dual Three-Plus-Two Phases Synchronous Reluctance Motor for Electric Traction Applications",
      "anio": 2025,
      "citas": 2
@@ -49,7 +54,7 @@
     }
    ],
    "confianza": "alta",
-   "evidencia": "La búsqueda encontró el perfil (Universidad San Sebastián; Electrical Machines, Electrical Drives; citado por 112), pero WebFetch devolvió HTTP 404 tres veces, así que no se pudieron leer el email, el h-index ni las citas desde 2021. Las publicaciones salen de los perfiles de coautores: figura como AE Hoffer con Roberto Moncada y Juan A. Tapia (coautores CLAGTEE) en trabajos sobre generadores de reluctancia sincrónica, y con César Gallardo en asimetrías de rotor de SynRM, la misma línea que MAQ-4 y MAQ-7."
+   "evidencia": "La búsqueda encontró el perfil (Universidad San Sebastián; Electrical Machines, Electrical Drives; citado por 112), pero WebFetch devolvió HTTP 404 tres veces, así que no se pudieron leer el email, el h-index ni las citas desde 2021. Las publicaciones salen de los perfiles de coautores: figura como AE Hoffer con Roberto Moncada y Juan A. Tapia (coautores CLAGTEE) en trabajos sobre generadores de reluctancia sincrónica, y con César Gallardo en asimetrías de rotor de SynRM, la misma línea que MAQ-4 y MAQ-7. Segunda pasada: WebFetch volvió a dar 404 (hl=es, sin hl y scholar.google.cl), aunque una búsqueda confirmó el ID iAybwesAAAAJ y mostró además un paper 2020 en IEEE Access sobre una PMSM de devanado concentrado (22 citas) y uno 2021 sobre una PMSM sumergible de núcleo inoxidable. En el perfil de Diego Obando figura como primer autor de un estudio 2025 de desmagnetización de un PMSG de flujo axial sin núcleo para eólica vertical pequeña, con M. Jiménez y D. Obando (coautores CLAGTEE)."
   },
   "otras_fuentes": [],
   "afiliacion_inferida": "Universidad San Sebastián",
@@ -73,7 +78,8 @@
     "voltage unbalance",
     "finite element modeling",
     "small wind turbines",
-    "electric traction"
+    "electric traction",
+    "coreless axial-flux PMSG"
    ],
    "metodos": [
     "finite element analysis",
@@ -98,12 +104,13 @@
     "papers_clagtee",
     "google_scholar"
    ]
-  }
+  },
+  "nota_busqueda": "Perfil Scholar sigue devolviendo 404 con WebFetch en la segunda pasada; h-index, citas desde 2021 y email sin leer."
  },
  {
   "id": "carlos-galvez-araya",
   "nombre": "Carlos Gálvez Araya",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
   "afiliacion_inferida": "Universidad de Concepción",
@@ -113,7 +120,8 @@
     "AC losses in hairpin windings",
     "physics-guided graph neural networks as surrogate models for electrical machines",
     "low-computational-cost electromagnetic analysis of traction motors",
-    "hairpin windings for axial flux and double-cage induction motors"
+    "hairpin windings for axial flux and double-cage induction motors",
+    "rotor fault diagnosis of induction machines via MCSA"
    ],
    "palabras_clave": [
     "hairpin windings",
@@ -138,15 +146,17 @@
    ],
    "afinidad_tracks": {
     "8": 1.0,
-    "6": 0.6
+    "6": 0.6,
+    "4": 0.3
    },
    "etapa": "estudiante",
-   "resumen": "Trabaja en el cálculo de pérdidas AC en devanados hairpin combinando elementos finitos con redes neuronales de grafos guiadas por la física (MAQ-6). En los perfiles Scholar de Madariaga y Tapia (UdeC) aparece como primer autor de trabajos 2025 sobre hairpin en motores de inducción de flujo axial y de doble jaula; parece estudiante de posgrado. Le interesarían las sesiones de máquinas para electromovilidad y de IA aplicada al diseño. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "resumen": "Trabaja en el cálculo de pérdidas AC en devanados hairpin combinando elementos finitos con redes neuronales de grafos guiadas por la física (MAQ-6). En los perfiles Scholar de Madariaga y Tapia (UdeC) aparece como primer autor de trabajos 2025 sobre hairpin en motores de inducción de flujo axial y de doble jaula; parece estudiante de posgrado. Le interesarían las sesiones de máquinas para electromovilidad y de IA aplicada al diseño. No se encontró perfil Scholar; sus trabajos 2025 (pérdidas AC y frecuencia de corte en hairpin, motores de doble jaula para EV, diagnóstico de fallas de rotor por MCSA) aparecen en los perfiles de Tapia, Madariaga y Gallardo.",
    "base": [
     "papers_clagtee",
     "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Búsquedas en scholar.google.com: 'Carlos Gálvez-Araya hairpin windings' y 'Carlos Gálvez-Araya'; sin perfil. No figura en las barras de coautores de Madariaga, Tapia ni Gallardo."
  },
  {
   "id": "carlos-madariaga-cifuentes",
@@ -285,7 +295,7 @@
  {
   "id": "carlos-schulz",
   "nombre": "Carlos Schulz",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
   "afiliacion_inferida": "",
@@ -315,12 +325,13 @@
     "2": 0.4
    },
    "etapa": "desconocida",
-   "resumen": "Coautor de MAQ-4, diseño optimizado de bajo cogging torque con asimetrías de rotor en un PMSG spoke-type para eólica pequeña, con el grupo de máquinas de Hoffer, Moncada, W. Jara y Rodríguez. La evidencia se reduce a ese título y al contexto del grupo. Le interesarían las sesiones de máquinas eléctricas y generación eólica de baja potencia. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "resumen": "Coautor de MAQ-4, diseño optimizado de bajo cogging torque con asimetrías de rotor en un PMSG spoke-type para eólica pequeña, con el grupo de máquinas de Hoffer, Moncada, W. Jara y Rodríguez. La evidencia se reduce a ese título y al contexto del grupo. Le interesarían las sesiones de máquinas eléctricas y generación eólica de baja potencia. No se encontró perfil Scholar.",
    "base": [
     "papers_clagtee",
     "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Búsqueda en scholar.google.com: 'Carlos Schulz Chile'; sin perfil coincidente. No figura en las barras de coautores del grupo."
  },
  {
   "id": "cesar-gallardo",
@@ -454,49 +465,94 @@
  {
   "id": "diego-obando",
   "nombre": "Diego Obando",
-  "busqueda": "pendiente",
-  "scholar": null,
+  "busqueda": "encontrado",
+  "scholar": {
+   "url": "https://scholar.google.com/citations?user=b5HB9xUAAAAJ",
+   "user_id": "b5HB9xUAAAAJ",
+   "nombre_perfil": "Diego Patricio Obando Beltran",
+   "afiliacion": "Ph.D. Student, Universidad San Sebastián",
+   "email_verificado": "correo.uss.cl",
+   "intereses_scholar": [
+    "Power Electronics",
+    "DC-DC converters",
+    "Renewable energy systems",
+    "Model Predictive Control"
+   ],
+   "citas": 4,
+   "citas_desde_2021": 4,
+   "h_index": 2,
+   "publicaciones": [
+    {
+     "titulo": "Study of Demagnetization in a Coreless Axial-Flux Permanent Magnet Synchronous Generator for Small Hybrid Vertical-Axis Wind Turbines",
+     "anio": 2025,
+     "citas": null
+    },
+    {
+     "titulo": "Model Predictive Control of a Dual Active Bridge: Real-Time HIL Validation with FPGA Modulator",
+     "anio": 2024,
+     "citas": 2
+    },
+    {
+     "titulo": "Observer-based ultralocal model-free predictive voltage control of a grid forming inverter",
+     "anio": 2024,
+     "citas": 2
+    }
+   ],
+   "confianza": "alta",
+   "evidencia": "Email verificado correo.uss.cl. José Rodríguez (coautor de MAQ-7) figura en su barra de coautores, y su paper 2025 sobre desmagnetización de un PMSG de flujo axial es con A. Hoffer y M. Jiménez, también coautores de MAQ-7. Trabaja en control predictivo y model-free, la línea del control super-twisting model-free de MAQ-7."
+  },
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
+  "afiliacion_inferida": "Universidad San Sebastián",
   "pais_inferido": "Chile",
   "intereses": {
    "temas": [
-    "model-free speed control of synchronous reluctance machines",
-    "super-twisting sliding mode control of electric drives",
-    "robust speed regulation of variable-speed drives"
+    "model-free super-twisting speed control of synchronous reluctance machines",
+    "model predictive control of dual active bridge DC-DC converters",
+    "model-free predictive voltage control of grid-forming inverters",
+    "demagnetization analysis of coreless axial-flux PMSG for small vertical-axis wind turbines"
    ],
    "palabras_clave": [
     "synchronous reluctance machine",
-    "SynRM",
-    "super-twisting algorithm",
-    "sliding mode control",
+    "super-twisting control",
     "model-free control",
-    "speed regulation",
-    "electric drives"
+    "model predictive control",
+    "dual active bridge",
+    "DC-DC converters",
+    "grid-forming inverter",
+    "hardware-in-the-loop",
+    "FPGA modulator",
+    "axial-flux PMSG",
+    "small wind turbines"
    ],
    "metodos": [
     "super-twisting sliding mode control",
-    "model-free control"
+    "finite control set model predictive control",
+    "ultralocal model-free predictive control",
+    "real-time HIL validation"
    ],
    "aplicaciones": [
-    "variable-speed drives"
+    "SynRM speed drives",
+    "DC-DC conversion in renewable energy systems",
+    "grid-forming inverters",
+    "small hybrid vertical-axis wind turbines"
    ],
    "afinidad_tracks": {
     "8": 1.0,
-    "3": 0.5
+    "3": 0.9,
+    "2": 0.5
    },
-   "etapa": "desconocida",
-   "resumen": "Presenta MAQ-7, control super-twisting model-free para regular la velocidad de una máquina de reluctancia sincrónica, con el grupo de Rodríguez (USS), Tapia y Madariaga (UdeC) y W. Jara (PUCV). La evidencia es solo ese título y el grupo. Le interesarían las sesiones de accionamientos, control de máquinas y electrónica de potencia. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "etapa": "estudiante",
+   "resumen": "Doctorando de la Universidad San Sebastián (grupo de José Rodríguez) que trabaja en control predictivo y model-free de convertidores (dual active bridge, inversores grid-forming) y presenta MAQ-7, control super-twisting model-free de velocidad de una SynRM. También participa con Hoffer y M. Jiménez en generadores de flujo axial para eólica vertical pequeña. Le interesarían las sesiones de accionamientos, electrónica de potencia y control predictivo.",
    "base": [
     "papers_clagtee",
-    "grupo_coautores"
+    "google_scholar"
    ]
   }
  },
  {
   "id": "felipe-martin",
   "nombre": "Felipe Martín",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
   "afiliacion_inferida": "",
@@ -527,11 +583,12 @@
     "4": 0.3
    },
    "etapa": "desconocida",
-   "resumen": "Presenta CIE-8, un marco de inteligencia artificial híbrida para evaluar el riesgo de vegetación en redes de distribución, con Julio Jara. La evidencia es solo ese título. Le interesarían las sesiones de IA y ciencia de datos aplicadas a redes, confiabilidad de distribución y monitoreo de activos. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "resumen": "Presenta CIE-8, un marco de inteligencia artificial híbrida para evaluar el riesgo de vegetación en redes de distribución, con Julio Jara. La evidencia es solo ese título. Le interesarían las sesiones de IA y ciencia de datos aplicadas a redes, confiabilidad de distribución y monitoreo de activos. No se encontró perfil Scholar ni otras fuentes.",
    "base": [
     "papers_clagtee"
    ]
-  }
+  },
+  "nota_busqueda": "Búsqueda en scholar.google.com: 'Felipe Martín vegetation risk distribution networks artificial intelligence'; búsqueda web general: 'Felipe Martín' 'Julio Jara' vegetación redes de distribución. Sin resultados coincidentes."
  },
  {
   "id": "javier-riedemann",
@@ -669,7 +726,7 @@
  {
   "id": "joaquin-valenzuela",
   "nombre": "Joaquín Valenzuela",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
   "afiliacion_inferida": "",
@@ -699,12 +756,13 @@
     "2": 0.4
    },
    "etapa": "desconocida",
-   "resumen": "Presenta MAQ-4, diseño optimizado de bajo cogging torque con asimetrías de rotor en un PMSG spoke-type para eólica pequeña, con el grupo de Hoffer, Moncada, W. Jara y Rodríguez. La evidencia es solo ese título y el grupo. Le interesarían las sesiones de diseño de máquinas y generación eólica de baja potencia. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "resumen": "Presenta MAQ-4, diseño optimizado de bajo cogging torque con asimetrías de rotor en un PMSG spoke-type para eólica pequeña, con el grupo de Hoffer, Moncada, W. Jara y Rodríguez. La evidencia es solo ese título y el grupo. Le interesarían las sesiones de diseño de máquinas y generación eólica de baja potencia. No se encontró perfil Scholar ni otras fuentes.",
    "base": [
     "papers_clagtee",
     "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Búsquedas en scholar.google.com: 'Joaquín Valenzuela Chile electrical engineering' y 'Joaquín Valenzuela'; búsqueda web general con el tema de MAQ-4 (spoke-type PMSG, cogging torque). Sin perfil coincidente."
  },
  {
   "id": "jose-rodriguez",
@@ -974,7 +1032,7 @@
  {
   "id": "julio-jara",
   "nombre": "Julio Jara",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
   "afiliacion_inferida": "",
@@ -1010,17 +1068,18 @@
     "1": 0.4
    },
    "etapa": "desconocida",
-   "resumen": "Coautor de MAQ-5 (dinámica de torque de PMSM y motor de inducción con tensiones desequilibradas) y de CIE-8 (IA híbrida para el riesgo de vegetación en distribución). En el perfil de Werner Jara aparece un J. Jara en un trabajo 2023 sobre devanados trifásicos duales en máquinas PM de estator modular, posiblemente la misma persona (no verificado). Le interesarían las sesiones de máquinas y de IA aplicada a redes. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "resumen": "Coautor de MAQ-5 (dinámica de torque de PMSM y motor de inducción con tensiones desequilibradas) y de CIE-8 (IA híbrida para el riesgo de vegetación en distribución). En el perfil de Werner Jara aparece un J. Jara en un trabajo 2023 sobre devanados trifásicos duales en máquinas PM de estator modular, posiblemente la misma persona (no verificado). Le interesarían las sesiones de máquinas y de IA aplicada a redes. No se encontró perfil Scholar.",
    "base": [
     "papers_clagtee",
     "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Búsqueda en scholar.google.com: 'Julio Jara electrical machines'; sin perfil coincidente. No figura en las barras de coautores de W. Jara, Tapia ni Riedemann."
  },
  {
   "id": "macarena-madrid-becerra",
   "nombre": "Macarena Madrid Becerra",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
   "afiliacion_inferida": "",
@@ -1053,17 +1112,18 @@
     "6": 0.6
    },
    "etapa": "desconocida",
-   "resumen": "Coautora de MAQ-6: cálculo de bajo costo computacional de pérdidas AC en devanados hairpin con redes neuronales de grafos residuales guiadas por la física, con el grupo de máquinas de la UdeC (Madariaga, Tapia, Gallardo). La evidencia es solo ese título y el grupo. Le interesarían las sesiones de IA aplicada y de máquinas eléctricas. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "resumen": "Coautora de MAQ-6: cálculo de bajo costo computacional de pérdidas AC en devanados hairpin con redes neuronales de grafos residuales guiadas por la física, con el grupo de máquinas de la UdeC (Madariaga, Tapia, Gallardo). La evidencia es solo ese título y el grupo. Le interesarían las sesiones de IA aplicada y de máquinas eléctricas. No se encontró perfil Scholar.",
    "base": [
     "papers_clagtee",
     "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Búsqueda en scholar.google.com: 'Macarena Madrid Becerra'; sin perfil coincidente."
  },
  {
   "id": "matias-jimenez",
   "nombre": "Matías Jiménez",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
   "afiliacion_inferida": "",
@@ -1073,7 +1133,8 @@
     "axial flux permanent magnet machines",
     "magnetic equivalent circuit modeling of multi-stage machines",
     "low cogging torque design of spoke-type PMSG",
-    "model-free speed control of synchronous reluctance machines"
+    "model-free speed control of synchronous reluctance machines",
+    "demagnetization of coreless axial-flux PMSG for small vertical-axis wind turbines"
    ],
    "palabras_clave": [
     "axial flux PM machine",
@@ -1096,24 +1157,25 @@
    ],
    "afinidad_tracks": {
     "8": 1.0,
-    "2": 0.3,
+    "2": 0.4,
     "3": 0.3
    },
    "etapa": "desconocida",
-   "resumen": "Coautor de MAQ-4 (PMSG spoke-type de bajo cogging) y MAQ-7 (control super-twisting de SynRM), y chair de S2B y S6C. En los perfiles de Tapia y Madariaga aparece un M. Jiménez como primer autor de un circuito magnético equivalente para máquinas PM de flujo axial multietapa (2026) y en trabajos sobre rotor sin hierro y motores para vehículos eléctricos livianos, probablemente la misma persona (no verificado). Le interesarían las sesiones de diseño de máquinas y accionamientos. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "resumen": "Coautor de MAQ-4 (PMSG spoke-type de bajo cogging) y MAQ-7 (control super-twisting de SynRM), y chair de S2B y S6C. En los perfiles de Tapia y Madariaga aparece un M. Jiménez como primer autor de un circuito magnético equivalente para máquinas PM de flujo axial multietapa (2026) y en trabajos sobre rotor sin hierro y motores para vehículos eléctricos livianos, probablemente la misma persona (no verificado). Le interesarían las sesiones de diseño de máquinas y accionamientos. No se encontró perfil Scholar. Además, en los perfiles de Diego Obando y Felipe Ruiz (USS) figura un M. Jiménez en un estudio 2025 de desmagnetización de un PMSG de flujo axial sin núcleo para eólica vertical pequeña, con A. Hoffer y D. Obando, coautores de MAQ-7, lo que refuerza que sea la misma persona.",
    "base": [
     "papers_clagtee",
     "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Búsquedas en scholar.google.com: 'Matías Jiménez axial flux permanent magnet machine' y 'Matias Jimenez Universidad de Concepcion'; sin perfil. No figura en las barras de coautores del grupo."
  },
  {
   "id": "moslem-dehghani",
   "nombre": "Moslem Dehghani",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
+  "afiliacion_inferida": "Universidad San Sebastián",
   "pais_inferido": "Chile",
   "intereses": {
    "temas": [
@@ -1131,7 +1193,8 @@
    ],
    "metodos": [
     "design optimization",
-    "super-twisting sliding mode control"
+    "super-twisting sliding mode control",
+    "metaheuristic optimization"
    ],
    "aplicaciones": [
     "small wind turbine generators",
@@ -1143,17 +1206,18 @@
     "6": 0.2
    },
    "etapa": "desconocida",
-   "resumen": "Coautor de MAQ-4 (diseño optimizado de PMSG spoke-type) y MAQ-7 (control super-twisting de SynRM) con José Rodríguez (USS). En el perfil de Rodríguez figura un M. Dehghani como primer autor de un algoritmo de optimización inspirado en la naturaleza (Biomimetics, 2025), lo que sugiere un rol en optimización metaheurística (no verificado). Le interesarían las sesiones de máquinas, accionamientos y optimización. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "resumen": "Coautor de MAQ-4 (diseño optimizado de PMSG spoke-type) y MAQ-7 (control super-twisting de SynRM) con José Rodríguez (USS). En el perfil de Rodríguez figura un M. Dehghani como primer autor de un algoritmo de optimización inspirado en la naturaleza (Biomimetics, 2025), lo que sugiere un rol en optimización metaheurística (no verificado). Le interesarían las sesiones de máquinas, accionamientos y optimización. No se encontró perfil Scholar. En el perfil de Felipe Ruiz (USS) figura un M. Dehghani en tres trabajos 2025 con F. Ruiz y J. Rodríguez: gestión energética de hogares con almacenamiento y EV, control backstepping por modos deslizantes de un inversor UPS y MPPT fotovoltaico con controlador ANN-PI; sugiere que trabaja en la USS en control y optimización, pero la identidad de ese M. Dehghani no está verificada.",
    "base": [
     "papers_clagtee",
     "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Búsquedas en scholar.google.com: 'Moslem Dehghani' y 'Moslem Dehghani power systems Universidad San Sebastián'; solo aparecieron homónimos (Moslem Dehghanizadeh, terapia ocupacional; otros Dehghani). No figura en las barras de coautores de Rodríguez (lista completa), Obando, Burgos ni Ruiz."
  },
  {
   "id": "nicolas-vergara",
   "nombre": "Nicolás Vergara",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
   "afiliacion_inferida": "",
@@ -1181,12 +1245,13 @@
     "1": 0.2
    },
    "etapa": "desconocida",
-   "resumen": "Presenta MAQ-5, una comparación de la dinámica de torque de PMSM y motor de inducción jaula de ardilla con desequilibrios de tensión simétricos y asimétricos, con W. Jara, Tapia, Riedemann, Hoffer y J. Jara. La evidencia es solo ese título y el grupo. Le interesarían las sesiones de máquinas eléctricas y calidad de energía. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "resumen": "Presenta MAQ-5, una comparación de la dinámica de torque de PMSM y motor de inducción jaula de ardilla con desequilibrios de tensión simétricos y asimétricos, con W. Jara, Tapia, Riedemann, Hoffer y J. Jara. La evidencia es solo ese título y el grupo. Le interesarían las sesiones de máquinas eléctricas y calidad de energía. No se encontró perfil Scholar ni otras fuentes.",
    "base": [
     "papers_clagtee",
     "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Búsquedas en scholar.google.com: 'Nicolás Vergara Chile electrical machines' y 'Nicolás Vergara'; búsqueda web general con el tema de MAQ-5. Solo homónimos (U. de los Andes, física/ML; ISP Chile, virología)."
  },
  {
   "id": "roberto-moncada",
@@ -1458,7 +1523,7 @@
  {
   "id": "yosmani-almira-ramirez",
   "nombre": "Yosmani Almira-Ramírez",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
   "afiliacion_inferida": "",
@@ -1491,70 +1556,158 @@
     "6": 0.6
    },
    "etapa": "desconocida",
-   "resumen": "Coautor de MAQ-6: cálculo de bajo costo computacional de pérdidas AC en devanados hairpin con redes neuronales de grafos residuales guiadas por la física, con el grupo de máquinas de la UdeC (Madariaga, Tapia, Gallardo). La evidencia es solo ese título y el grupo. Le interesarían las sesiones de IA aplicada y de máquinas eléctricas. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "resumen": "Coautor de MAQ-6: cálculo de bajo costo computacional de pérdidas AC en devanados hairpin con redes neuronales de grafos residuales guiadas por la física, con el grupo de máquinas de la UdeC (Madariaga, Tapia, Gallardo). La evidencia es solo ese título y el grupo. Le interesarían las sesiones de IA aplicada y de máquinas eléctricas. No se encontró perfil Scholar.",
    "base": [
     "papers_clagtee",
     "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Búsqueda en scholar.google.com: 'Yosmani Almira-Ramírez'; sin perfil coincidente."
  },
  {
   "id": "alexandre-rasi-aoki",
   "nombre": "Alexandre Rasi Aoki",
-  "busqueda": "pendiente",
-  "scholar": null,
+  "busqueda": "encontrado",
+  "scholar": {
+   "url": "https://scholar.google.com/citations?user=bJqA6xoAAAAJ",
+   "user_id": "bJqA6xoAAAAJ",
+   "nombre_perfil": "Alexandre Rasi Aoki",
+   "afiliacion": "Professor of Electrical Engineering, Federal University of Paraná",
+   "email_verificado": "ufpr.br",
+   "intereses_scholar": [
+    "Power System"
+   ],
+   "citas": 1156,
+   "citas_desde_2021": 559,
+   "h_index": 17,
+   "publicaciones": [
+    {
+     "titulo": "Cyber-physical power system digital twins—a study on the state of the art",
+     "anio": 2025,
+     "citas": 22
+    },
+    {
+     "titulo": "Adaptive Charging Simulation Model for Different Electric Vehicles and Mobility Patterns",
+     "anio": 2024,
+     "citas": 7
+    },
+    {
+     "titulo": "Real-Time Testing Optimal Power Flow in Smart-Transformer-Based Meshed Hybrid Microgrids: Design and Validation",
+     "anio": 2024,
+     "citas": 7
+    },
+    {
+     "titulo": "Evaluating a microgrid operation through real-time digital twin simulation",
+     "anio": 2023,
+     "citas": 4
+    },
+    {
+     "titulo": "Adoption of local peer-to-peer energy markets: Technical and economical perspectives for utilities",
+     "anio": 2023,
+     "citas": 7
+    },
+    {
+     "titulo": "Electrical event detection and monitoring data storage from wide area measurement system",
+     "anio": 2023,
+     "citas": 6
+    },
+    {
+     "titulo": "Active distribution networks with microgrid and distributed energy resources optimization using hierarchical model",
+     "anio": 2022,
+     "citas": 20
+    },
+    {
+     "titulo": "Multiperiod optimum power flow for active distribution networks with provisioning of ancillary services",
+     "anio": 2021,
+     "citas": 37
+    },
+    {
+     "titulo": "Optimal day-ahead scheduling of microgrids with battery energy storage system",
+     "anio": 2020,
+     "citas": 61
+    },
+    {
+     "titulo": "Distributed intelligent system for self-healing in smart grids",
+     "anio": 2018,
+     "citas": 53
+    },
+    {
+     "titulo": "Simultaneous allocation of capacitors and voltage regulators at distribution networks using Genetic Algorithms and Optimal Power Flow",
+     "anio": 2012,
+     "citas": 103
+    },
+    {
+     "titulo": "Particle swarm optimization for fuzzy membership functions optimization",
+     "anio": 2002,
+     "citas": 121
+    }
+   ],
+   "confianza": "alta",
+   "evidencia": "Nombre exacto y poco común; profesor de la UFPR con email verificado ufpr.br. Sus trabajos recientes son la misma línea de sus dos papers CLAGTEE: redes de distribución activas con DER y microrredes (INT-6) y gemelos digitales y simulación en tiempo real de sistemas ciberfísicos y microrredes (TEL-4). Los coautores CLAGTEE (Alves, Brigati, Borges de Andrade) no aparecen en las 40 publicaciones visibles."
+  },
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
+  "afiliacion_inferida": "Universidade Federal do Paraná (UFPR)",
+  "pais_inferido": "Brasil",
   "intereses": {
    "temas": [
-    "hosting capacity of distributed energy resources",
-    "four-quadrant analysis of active distribution networks",
-    "operational limits for DER integration in distribution networks",
-    "real-time co-simulation of cyber-physical microgrids",
-    "cybersecurity threat assessment in microgrids",
-    "cyber-physical testbeds for microgrid control"
+    "hosting capacity of distributed energy resources in active distribution networks",
+    "real-time co-simulation and digital twins of cyber-physical power systems and microgrids",
+    "optimal operation of active distribution networks and microgrids with battery storage",
+    "self-healing and service restoration in smart distribution grids",
+    "demand response and local peer-to-peer energy markets"
    ],
    "palabras_clave": [
     "hosting capacity",
     "distributed energy resources",
-    "DER",
     "active distribution networks",
-    "four-quadrant methodology",
-    "real-time co-simulation",
-    "cybersecurity",
-    "cyber attacks",
     "microgrids",
-    "cyber-physical systems"
+    "cybersecurity",
+    "real-time co-simulation",
+    "digital twins",
+    "optimal power flow",
+    "battery energy storage",
+    "self-healing",
+    "demand response",
+    "peer-to-peer energy markets"
    ],
    "metodos": [
     "four-quadrant hosting capacity methodology",
-    "real-time co-simulation"
+    "real-time digital simulation",
+    "multiperiod optimal power flow",
+    "hierarchical optimization",
+    "metaheuristics (PSO, genetic algorithms)",
+    "reinforcement learning"
    ],
    "aplicaciones": [
-    "distribution network planning with DER",
-    "microgrid cybersecurity testing"
+    "Brazilian distribution utilities",
+    "microgrid cybersecurity testing",
+    "EV charging planning",
+    "fault detection with WAMS"
    ],
    "afinidad_tracks": {
-    "2": 0.9,
-    "5": 0.9,
-    "1": 0.5
+    "2": 1.0,
+    "5": 0.8,
+    "1": 0.8,
+    "7": 0.4,
+    "6": 0.4,
+    "4": 0.3
    },
-   "etapa": "desconocida",
-   "resumen": "Coautor de INT-6 (metodología de cuatro cuadrantes para la capacidad de alojamiento de recursos energéticos distribuidos en redes activas) y TEL-4 (co-simulación en tiempo real de amenazas de ciberseguridad en microrredes); por aparecer en ambos, probablemente es el investigador senior del grupo. La evidencia son solo los títulos. Le interesarían las sesiones de integración de DER, redes de distribución activas y ciberseguridad. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "etapa": "investigador_senior",
+   "resumen": "Profesor de la UFPR con más de veinte años de trabajo en redes de distribución activas, microrredes con almacenamiento, self-healing, respuesta de la demanda y, recientemente, gemelos digitales ciberfísicos y simulación en tiempo real. En CLAGTEE es coautor de INT-6 (capacidad de alojamiento de DER) y TEL-4 (ciberseguridad en microrredes). Le interesarían las sesiones de integración de DER, operación de distribución, microrredes, ciberseguridad y mercados locales de energía.",
    "base": [
-    "papers_clagtee"
+    "papers_clagtee",
+    "google_scholar"
    ]
   }
  },
  {
   "id": "arileide-cristina-alves",
   "nombre": "Arileide Cristina Alves",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
+  "afiliacion_inferida": "Universidade Federal do Paraná (UFPR)",
+  "pais_inferido": "Brasil",
   "intereses": {
    "temas": [
     "real-time co-simulation of cyber-physical microgrids",
@@ -1580,20 +1733,22 @@
     "2": 0.4
    },
    "etapa": "desconocida",
-   "resumen": "Coautora de TEL-4, co-simulación en tiempo real para evaluar amenazas de ciberseguridad en microrredes, con Alexandre Rasi Aoki y Giovanni Mota Brigati. La evidencia es solo ese título. Le interesarían las sesiones de ciberseguridad, redes digitales y microrredes. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "resumen": "Coautora de TEL-4, co-simulación en tiempo real para evaluar amenazas de ciberseguridad en microrredes, con Alexandre Rasi Aoki y Giovanni Mota Brigati. La evidencia es solo ese título. Le interesarían las sesiones de ciberseguridad, redes digitales y microrredes. No se encontró perfil Scholar. Como contexto de grupo, Alexandre Rasi Aoki (UFPR, coautor senior) trabaja en redes de distribución activas, microrredes y gemelos digitales ciberfísicos; la afiliación UFPR se infiere de él.",
    "base": [
-    "papers_clagtee"
+    "papers_clagtee",
+    "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Búsqueda en scholar.google.com: 'Arileide Cristina Alves'; sin perfil coincidente. No figura en la barra de coautores de Aoki."
  },
  {
   "id": "giovanni-mota-brigati",
   "nombre": "Giovanni Mota Brigati",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
+  "afiliacion_inferida": "Universidade Federal do Paraná (UFPR)",
+  "pais_inferido": "Brasil",
   "intereses": {
    "temas": [
     "real-time co-simulation of cyber-physical microgrids",
@@ -1619,20 +1774,22 @@
     "2": 0.4
    },
    "etapa": "desconocida",
-   "resumen": "Presenta TEL-4, un marco de co-simulación en tiempo real para evaluar amenazas de ciberseguridad en microrredes, con Alexandre Rasi Aoki y Arileide Cristina Alves. La evidencia es solo ese título. Le interesarían las sesiones de ciberseguridad, redes digitales y microrredes. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "resumen": "Presenta TEL-4, un marco de co-simulación en tiempo real para evaluar amenazas de ciberseguridad en microrredes, con Alexandre Rasi Aoki y Arileide Cristina Alves. La evidencia es solo ese título. Le interesarían las sesiones de ciberseguridad, redes digitales y microrredes. No se encontró perfil Scholar. Como contexto de grupo, Alexandre Rasi Aoki (UFPR, coautor senior) trabaja en redes de distribución activas, microrredes y gemelos digitales ciberfísicos; la afiliación UFPR se infiere de él.",
    "base": [
-    "papers_clagtee"
+    "papers_clagtee",
+    "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Búsquedas en scholar.google.com: 'Giovanni Mota Brigati' y 'Giovanni Brigati UFPR' (solo homónimo matemático en ISTA); búsqueda web general con el tema de TEL-4. Sin resultados coincidentes."
  },
  {
   "id": "guilherme-borges-de-andrade",
   "nombre": "Guilherme Borges de Andrade",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
+  "afiliacion_inferida": "Universidade Federal do Paraná (UFPR)",
+  "pais_inferido": "Brasil",
   "intereses": {
    "temas": [
     "hosting capacity of distributed energy resources",
@@ -1658,20 +1815,27 @@
     "1": 0.5
    },
    "etapa": "desconocida",
-   "resumen": "Presenta INT-6, una metodología de cuatro cuadrantes para analizar la capacidad de alojamiento de recursos energéticos distribuidos en redes de distribución activas, con Alexandre Rasi Aoki. La evidencia es solo ese título. Le interesarían las sesiones de integración de DER, almacenamiento y planificación de distribución. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "resumen": "Presenta INT-6, una metodología de cuatro cuadrantes para analizar la capacidad de alojamiento de recursos energéticos distribuidos en redes de distribución activas, con Alexandre Rasi Aoki. La evidencia es solo ese título. Le interesarían las sesiones de integración de DER, almacenamiento y planificación de distribución. No se encontró perfil Scholar. Como contexto de grupo, Alexandre Rasi Aoki (UFPR, coautor senior) trabaja en redes de distribución activas, microrredes y gemelos digitales ciberfísicos; la afiliación UFPR se infiere de él.",
    "base": [
-    "papers_clagtee"
+    "papers_clagtee",
+    "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Búsquedas en scholar.google.com: 'Guilherme Borges de Andrade' y 'Guilherme Andrade UFPR hosting capacity distributed energy resources'; búsqueda web general '\"Guilherme Borges de Andrade\" UFPR'. Solo homónimos."
  },
  {
   "id": "edsson-frank-medina-vigoria",
   "nombre": "Edsson Frank Medina Vigoria",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
-  "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
+  "otras_fuentes": [
+   {
+    "tipo": "institucional",
+    "url": "https://www.teses.usp.br/teses/disponiveis/18/18154/tde-14062023-095148/publico/DissertVigoriaEdssonFrankMCorrected.pdf"
+   }
+  ],
+  "afiliacion_inferida": "Universidade de São Paulo (EESC, São Carlos)",
+  "pais_inferido": "Brasil",
   "intereses": {
    "temas": [
     "online estimation of synchronous generator mechanical parameters",
@@ -1685,10 +1849,14 @@
     "inertia constant",
     "damping coefficient",
     "hybrid estimation method",
-    "power system dynamics"
+    "power system dynamics",
+    "MVMO",
+    "trajectory sensitivity"
    ],
    "metodos": [
-    "hybrid parameter estimation"
+    "hybrid parameter estimation",
+    "mean-variance mapping optimization (MVMO)",
+    "trajectory sensitivity method"
    ],
    "aplicaciones": [
     "power system dynamic model validation"
@@ -1697,61 +1865,162 @@
     "1": 1.0,
     "9": 0.3
    },
-   "etapa": "desconocida",
-   "resumen": "Presenta PLA-38, estimación en línea de los parámetros mecánicos de un modelo transitorio de generador con un método híbrido, con Elmer Pablo Tito Cari y Manuel Lau Pacheco. La evidencia es solo ese título. Le interesarían las sesiones de dinámica y estabilidad de sistemas de potencia e identificación de modelos de generadores. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "etapa": "investigador_inicial",
+   "resumen": "Presenta PLA-38, estimación en línea de los parámetros mecánicos de un modelo transitorio de generador con un método híbrido, con Elmer Pablo Tito Cari y Manuel Lau Pacheco. La evidencia es solo ese título. Le interesarían las sesiones de dinámica y estabilidad de sistemas de potencia e identificación de modelos de generadores. No se encontró perfil Scholar. Su disertación de maestría en la USP São Carlos (2023, orientada por Elmer Pablo Tito Cari) propone un método híbrido MVMO + sensibilidad de trayectoria para estimar parámetros de modelos de generador de un eje, validado en un generador síncrono de 2 kVA; PLA-38 sigue esa línea. Como contexto de grupo, Tito Cari trabaja en estimación de parámetros de generadores, parques eólicos equivalentes y módulos fotovoltaicos.",
    "base": [
-    "papers_clagtee"
+    "papers_clagtee",
+    "otras_fuentes",
+    "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Búsqueda en scholar.google.com: 'Edsson Frank Medina Vigoria'; sin perfil. Búsqueda web general: '\"Medina Vigoria\" generator parameter estimation', que dio su disertación de maestría en la USP."
  },
  {
   "id": "elmer-pablo-tito-cari",
   "nombre": "Elmer Pablo Tito Cari",
-  "busqueda": "pendiente",
-  "scholar": null,
+  "busqueda": "encontrado",
+  "scholar": {
+   "url": "https://scholar.google.com/citations?user=QYkMjMQAAAAJ",
+   "user_id": "QYkMjMQAAAAJ",
+   "nombre_perfil": "Elmer Pablo Tito Cari",
+   "afiliacion": "Sao Paulo University, Brazil",
+   "email_verificado": "sc.usp.br",
+   "intereses_scholar": [
+    "Parameter estimation",
+    "validation",
+    "synchronous generator",
+    "wind turbine",
+    "photovoltaic systems"
+   ],
+   "citas": 282,
+   "citas_desde_2021": 140,
+   "h_index": 10,
+   "publicaciones": [
+    {
+     "titulo": "A Sensitivity Analysis for Parameter Estimation of Induction Motor Using Data from the Manufacturer",
+     "anio": 2026,
+     "citas": null
+    },
+    {
+     "titulo": "An Approach for Modeling, Simulation, and Parameter Estimation of Half-Cell Bifacial PV Modules",
+     "anio": 2026,
+     "citas": null
+    },
+    {
+     "titulo": "Master-Slave Synchronization for Parameter Estimation of Photovoltaic Module Model",
+     "anio": 2025,
+     "citas": 2
+    },
+    {
+     "titulo": "A hybrid method (MVMO+ TSM) for the parameter estimation of one-axis generators model",
+     "anio": 2023,
+     "citas": null
+    },
+    {
+     "titulo": "An analysis of structural and practical identifiability applied to a transient generator model",
+     "anio": 2022,
+     "citas": 7
+    },
+    {
+     "titulo": "A comparative analysis of artificial neural networks for photovoltaic power forecast using remotes and local measurements",
+     "anio": 2022,
+     "citas": 23
+    },
+    {
+     "titulo": "A fast and accurate single-diode model for photovoltaic design",
+     "anio": 2020,
+     "citas": 33
+    },
+    {
+     "titulo": "Online parameter estimation of a transient induction generator model based on the hybrid method",
+     "anio": 2018,
+     "citas": 20
+    },
+    {
+     "titulo": "A constrained minimization approach for the estimation of parameters of transient generator models",
+     "anio": 2017,
+     "citas": 9
+    },
+    {
+     "titulo": "Assessment of model parameters to identify an equivalent wind power plant",
+     "anio": 2015,
+     "citas": 11
+    },
+    {
+     "titulo": "Parameter estimation of synchronous generators from different types of disturbances",
+     "anio": 2011,
+     "citas": 35
+    },
+    {
+     "titulo": "A methodology for parameter estimation of synchronous generators based on trajectory sensitivity and synchronization technique",
+     "anio": 2006,
+     "citas": 25
+    }
+   ],
+   "confianza": "alta",
+   "evidencia": "Email verificado sc.usp.br. Edsson Frank Medina Vigoria (coautor de PLA-38) figura como 'EFM Vigoria' en su trabajo 2023 sobre un método híbrido MVMO+TSM para estimar parámetros de modelos de generador, y el perfil incluye 'Online parameter estimation of a transient induction generator model based on the hybrid method' (2018), la misma línea que PLA-38."
+  },
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
+  "afiliacion_inferida": "Universidade de São Paulo (EESC, São Carlos)",
+  "pais_inferido": "Brasil",
   "intereses": {
    "temas": [
-    "online estimation of synchronous generator mechanical parameters",
-    "transient generator model identification",
-    "hybrid parameter estimation methods for power system dynamics"
+    "parameter estimation of synchronous and transient generator models from disturbance measurements",
+    "hybrid metaheuristic and trajectory-sensitivity estimation methods",
+    "structural and practical identifiability of power system models",
+    "equivalent wind power plant model identification",
+    "photovoltaic module parameter estimation and PV power forecasting"
    ],
    "palabras_clave": [
-    "online parameter estimation",
+    "parameter estimation",
     "synchronous generator",
     "transient generator model",
-    "inertia constant",
-    "damping coefficient",
-    "hybrid estimation method",
-    "power system dynamics"
+    "trajectory sensitivity",
+    "MVMO",
+    "identifiability",
+    "equivalent wind power plant",
+    "photovoltaic modules",
+    "double-diode model",
+    "PV power forecasting",
+    "induction motor"
    ],
    "metodos": [
-    "hybrid parameter estimation"
+    "trajectory sensitivity method",
+    "mean-variance mapping optimization (MVMO)",
+    "hybrid metaheuristic and nonlinear least squares estimation",
+    "master-slave synchronization",
+    "artificial neural networks"
    ],
    "aplicaciones": [
-    "power system dynamic model validation"
+    "power system dynamic model validation",
+    "synchronous generator testing",
+    "wind power plants",
+    "photovoltaic systems"
    ],
    "afinidad_tracks": {
     "1": 1.0,
-    "9": 0.3
+    "2": 0.6,
+    "9": 0.5,
+    "10": 0.4,
+    "4": 0.3,
+    "6": 0.3
    },
-   "etapa": "desconocida",
-   "resumen": "Coautor de PLA-38, estimación en línea de los parámetros mecánicos de un modelo transitorio de generador con un método híbrido, con Edsson Frank Medina Vigoria y Manuel Lau Pacheco. La evidencia es solo ese título. Le interesarían las sesiones de dinámica y estabilidad de sistemas de potencia. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "etapa": "investigador_consolidado",
+   "resumen": "Investigador de la USP São Carlos especializado en estimación de parámetros de generadores síncronos y modelos transitorios a partir de perturbaciones, con métodos de sensibilidad de trayectoria e híbridos metaheurísticos, extendido a parques eólicos equivalentes y módulos fotovoltaicos. En CLAGTEE es coautor de PLA-38 con su exalumno Medina Vigoria. Le interesarían las sesiones de dinámica y estabilidad, validación de modelos, integración eólica y fotovoltaica.",
    "base": [
-    "papers_clagtee"
+    "papers_clagtee",
+    "google_scholar"
    ]
   }
  },
  {
   "id": "manuel-lau-pacheco",
   "nombre": "Manuel Lau Pacheco",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
-  "afiliacion_inferida": "",
-  "pais_inferido": "",
+  "afiliacion_inferida": "Universidade de São Paulo (EESC, São Carlos)",
+  "pais_inferido": "Brasil",
   "intereses": {
    "temas": [
     "online estimation of synchronous generator mechanical parameters",
@@ -1778,16 +2047,18 @@
     "9": 0.3
    },
    "etapa": "desconocida",
-   "resumen": "Presenta PLA-38, estimación en línea de los parámetros mecánicos de un modelo transitorio de generador con un método híbrido, con Edsson Frank Medina Vigoria y Elmer Pablo Tito Cari. La evidencia es solo ese título. Le interesarían las sesiones de dinámica y estabilidad de sistemas de potencia. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "resumen": "Presenta PLA-38, estimación en línea de los parámetros mecánicos de un modelo transitorio de generador con un método híbrido, con Edsson Frank Medina Vigoria y Elmer Pablo Tito Cari. La evidencia es solo ese título. Le interesarían las sesiones de dinámica y estabilidad de sistemas de potencia. No se encontró perfil Scholar ni otras fuentes. Como contexto de grupo, Elmer Pablo Tito Cari (USP, coautor senior) trabaja en estimación de parámetros de generadores; la afiliación USP se infiere de los coautores y no está confirmada.",
    "base": [
-    "papers_clagtee"
+    "papers_clagtee",
+    "grupo_coautores"
    ]
-  }
+  },
+  "nota_busqueda": "Búsqueda en scholar.google.com: 'Manuel Lau Pacheco'; búsqueda web general '\"Manuel Lau Pacheco\" ingeniería eléctrica'. Sin resultados coincidentes."
  },
  {
   "id": "adrian-gonnet",
   "nombre": "Adrián Gonnet",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
   "afiliacion_inferida": "",
@@ -1819,16 +2090,17 @@
     "7": 0.3
    },
    "etapa": "desconocida",
-   "resumen": "Presenta PLA-33, un estudio técnico-económico de microrredes híbridas con celdas de combustible y paneles fotovoltaicos, con Carlos Mainetti. La evidencia es solo ese título. Le interesarían las sesiones de centrales alternativas, hidrógeno, microrredes e integración renovable. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "resumen": "Presenta PLA-33, un estudio técnico-económico de microrredes híbridas con celdas de combustible y paneles fotovoltaicos, con Carlos Mainetti. La evidencia es solo ese título. Le interesarían las sesiones de centrales alternativas, hidrógeno, microrredes e integración renovable. No se encontró perfil Scholar ni otras fuentes.",
    "base": [
     "papers_clagtee"
    ]
-  }
+  },
+  "nota_busqueda": "Búsqueda en scholar.google.com: 'Adrián Gonnet'; búsqueda web general '\"Adrián Gonnet\" OR \"Adrian Gonnet\" microrredes energía'. Sin resultados coincidentes."
  },
  {
   "id": "carlos-mainetti",
   "nombre": "Carlos Mainetti",
-  "busqueda": "pendiente",
+  "busqueda": "sin_perfil",
   "scholar": null,
   "otras_fuentes": [],
   "afiliacion_inferida": "",
@@ -1860,10 +2132,11 @@
     "7": 0.3
    },
    "etapa": "desconocida",
-   "resumen": "Coautor de PLA-33, un estudio técnico-económico de microrredes híbridas con celdas de combustible y paneles fotovoltaicos, con Adrián Gonnet. La evidencia es solo ese título. Le interesarían las sesiones de centrales alternativas, hidrógeno, microrredes e integración renovable. No se buscó su perfil Scholar porque se agotó el cupo de búsquedas web; queda pendiente.",
+   "resumen": "Coautor de PLA-33, un estudio técnico-económico de microrredes híbridas con celdas de combustible y paneles fotovoltaicos, con Adrián Gonnet. La evidencia es solo ese título. Le interesarían las sesiones de centrales alternativas, hidrógeno, microrredes e integración renovable. No se encontró perfil Scholar.",
    "base": [
     "papers_clagtee"
    ]
-  }
+  },
+  "nota_busqueda": "Búsqueda en scholar.google.com: 'Carlos Mainetti'; sin perfil coincidente."
  }
 ]
